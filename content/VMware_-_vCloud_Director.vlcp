@@ -1,0 +1,637 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Operational Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{}",
+                  "name": "vApps Deployed",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpwizlqnrxxs3lfnz2a0000) FROM timestamp >= 1404244827588 & timestamp <= 1404331227587 & (FIELD_EXISTS(ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpwizlqnrxxs3lfnz2a0000) & text=~\"VAPP_DEPLOY\\(com\\.vmware\\.vcloud\\.entity\\.task:(?<ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpwizlqnrxxs3lfnz2a0000>\\S+)\\)\\. \\| vcd=\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "<span>This count is the number of vApps deployed by vCD. <b>The count is not the number of currently running vApps</b>, it is only the number of deployments and never decreases because a vApp is undeployed.</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{}",
+                  "name": "VMs deployed",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu) FROM timestamp >= 1402835509872 & timestamp <= 1404330707611 & (FIELD_EXISTS(ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu) & text=~\"PlacementSolverImpl .*/VirtualMachine#(?<ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu>\\S+) with requirements:\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "This count is the number of VMs deployed by vCD. <b>The count is not the number of currently running VMs</b>, it is only the number of deployments and never decreases because a vApp is undeployed.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{}",
+                  "name": "vApps Undeployed",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpxk3temvygy33z) FROM timestamp >= 1404245067693 & timestamp <= 1404331467692 & (FIELD_EXISTS(ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpxk3temvygy33z) & text=~\"VAPP_UNDEPLOY_POWER_OFF\\(com\\.vmware\\.vcloud\\.entity\\.task:(?<ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpxk3temvygy33z>\\S+)\\)\\. \\| vcd\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "This count is the number of vApps un-deployed by vCD.&nbsp;<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Filtered Errors by Hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404676820961 & timestamp <= 1404763220960 & ((!text:\"snmpd: lookup_vswitch: fetch VSI_MODULE_NODE_PortCfgs failed Not found\" & !text:\"SSL_VerifyCbHelper: Certificate verification is disabled\" & !text:\"so connection will proceed despite the error\" & !text:\"Unable to parse\" & !text:\"Connection reset by peer\" & !text:\"Unable to obtain the default HW version\" & !text:\"Problem processing indication to\" & !text:\"[RemoveConnection] Connection removed\" & !text:\"Valid sense data\" & !text:\"HA will attempt to restart it after a failure\" & !text:\"Failed to deliver indication\" & !text:\"HostCtl Exception in stats collection\" & !text:\"ipmiifcfruboard\" & !text:\"Alarm 'vSphere HA virtual machine failover failed'\" & !text:\"InvalidPowerState\" & !text:\"The virtual machine needs to be powered on\" & !text:\"Error executing backend call\" & !text:\"Could not find Vim Network Info\" & !text:\"Row was updated or deleted by another transaction\" & !text:\"Exception talking to the database\" & !text:\"Could not synchronize database state with session\" & !text:\"Failed to delete expired configuration\" & !text:\"Error on deleting the vApp\" & !text:\"Error suspending VM\" & !text:\"vApp: Failed to undeploy\" & !text:\"VMSuspended\" & !text:\"Suspended\" & !text:\"suspend\" & !text:\"PowerOperationActivity$PowerPhase\" & !text:\"Violation of UNIQUE KEY constraint\" & !text:\"sending lease alert\" & !text:\"Violation of PRIMARY KEY\" & !text:\"Hostd\" & !text:\"localhost\" & !text:\"vpxd*\" & !text:\"vpxa\" & !text:\"fetch VSI_MODULE_NODE_PortCfgs_properties\" & !text:\"Transfer session urn:uuid\" & !text:\"vmauthd\" & !text:\"vmkwarning\" & !text:\"esxupdate\" & !text:\"rhttpproxy\" & !text:\"hostprofiletrace\") & (text:\"error\" | text:\"failed\" | text:\"failure\") & (!facility:\"kern\" & !facility:\"daemon\" & !facility:\"user\") & !appname:\"vmkernel\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "While this graph may look large and daunting its usefulness comes from the trending that it provides. Due to the wide nature of the errors that it collects these events are not necessarily bad or end user impacting, some are quite benign. That said if you notice a spike in the numbers it's usually a very good sign that something is amiss... The formula for the filtering is based on experiences we've had, you probably will want to adjust it for your environment.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "vApp failures over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404320344658 & timestamp <= 1404406744657 & (!text:\"Invalid vApp properties: Invalid property value size\" & (text:\"com.vmware.ssdc.util.LMException: Unable to start vApp\" | text:\"Error deploying vApp:\")) as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows failed vApp deployments and failed vApp power on operations.&nbsp;"
+                },
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Failed vCD tasks by vCD Server and Org",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404240837352 & timestamp <= 1404327237351 & text:\"Unable\" & text:\"to\" & text:\"execute\" & text:\"task\" & (!text:\"vdc_delete_vapp\" & !text:\"VAPP_INSERT_CD_FLOPPY\" & !text:\"VAPP_EJECT_CD_FLOPPY\") & text=~\"orgName=(?<ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th>\\S+)\\, cellInstanceId=[\\d]*, targetId=\" as item0 GROUP BY item0.hostname,item0.ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows you the occurrences of when vCD is unable to complete a task and an error is thrown."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "Binding errors over time by server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395325867616 & timestamp <= 1395329467615 & text:\"com.vmware.vim.binding.vim.fault.\" & (!text:\"ToolsUnavailable\" & !text:\"inherited from com.vmware.vim.binding.vim.fault.VimFault:\" & !text:\"com.vmware.vim.binding.vim.fault.InvalidState:\" & !text:\"com.vmware.vim.binding.vim.fault.ToolsImageNotAvailable:\" & !text:\"com.vmware.vim.binding.vim.fault.VmToolsUpgradeFault:\" & !text:\"inherited from com.vmware.vim.binding.vim.fault.VmConfigFault:\" & !text:\"inherited from com.vmware.vim.binding.vim.fault.InvalidVmConfig:\" & !text:\"com.vmware.vim.binding.vim.fault.InvalidDeviceSpec:\") as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The vCD Cell or a vCenter Server has experienced a binding issue (com.vmware.vim.binding.vim) that needs investigated. This value has been filtered to exclude all VM related issues. Additional investigation in vCD or vCenter logs may be required.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1383756216501 & timestamp <= 1384361016500 & text:\"com.vmware.ssdc.library.exceptions.VimSystemErrorException\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "vCenter Server errors over time by server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1383756216501 & timestamp <= 1384361016500 & text:\"com.vmware.ssdc.library.exceptions.VimSystemErrorException\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Errors reported against a vCenter Server (VimSystemErrorException), additional investigation in vCD or vCenter logs may be required."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "vApp Operations",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "vApps deployed over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404235458918 & timestamp <= 1404235758917 & text:\"No\" & text:\"active\" & text:\"collaboration\" & text:\"found\" & text:\"for\" & text:\"task\" & text:\"VAPP_DEPLOY(com.vmware.vcloud.entity.task:\" as item0 GROUP BY item0.timestamp/5000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows a count of vApp deployments for each vCD Cell Server over time.<br>"
+                },
+                {
+                  "chartType": "line",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "VMs deployed over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404152086790 & timestamp <= 1404238486789 & text:\"Placing\" & text:\"Subject:\" & text:\"moref://*\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows a count of VM deployments for each vCD Cell Server over time.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "VM consoles opened over time from vCD",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404235141471 & timestamp <= 1404235441470 & text:\"Invoking\" & text:\"acquireCloneTicket\" & text:\"for\" & text:\"vm\" & text:\"[vcId=\" as item0 GROUP BY item0.timestamp/5000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows a count of VM consoles that have been opened for each vCD Cell Server over time.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "vApps powered off over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404234466196 & timestamp <= 1404234766195 & text:\"No\" & text:\"active\" & text:\"collaboration\" & text:\"found\" & text:\"for\" & text:\"task\" & text:\"VAPP_UNDEPLOY_POWER_OFF(com.vmware.vcloud.entity.task:\" as item0 GROUP BY item0.timestamp/5000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows a count of vApps that have been powered off for each vCD Cell Server over time.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Modify vApp operations over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404235340590 & timestamp <= 1404235640589 & text:\"No\" & text:\"active\" & text:\"collaboration\" & text:\"found\" & text:\"for\" & text:\"task\" & text:\"VDC_UPDATE_VAPP(com.vmware.vcloud.entity.task:\" as item0 GROUP BY item0.timestamp/5000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows a count of vApp Update Operations (example: adding a disk to a VM)&nbsp;for each vCD Cell Server over time.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1384271817115 & timestamp <= 1384358217114 & text:\"Done\" & text:\"with\" & text:\"CloneVM_Task\" & text:\"for\" & text:\"vm\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "VMs cloned over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384271817115 & timestamp <= 1384358217114 & text:\"Done\" & text:\"with\" & text:\"CloneVM_Task\" & text:\"for\" & text:\"vm\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows a count of vApps that have been cloned for each vCD Cell Server over time.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "vApps copied over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404247854774 & timestamp <= 1404334254773 & text:\"No\" & text:\"active\" & text:\"collaboration\" & text:\"found\" & text:\"for\" & text:\"task\" & text:\"VDC_COPY_VAPP\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows a count of vApp Template copy operations for each vCD Cell Server over time.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "vApps deleted over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404235531279 & timestamp <= 1404235831278 & text:\"No\" & text:\"active\" & text:\"collaboration\" & text:\"found\" & text:\"for\" & text:\"task\" & text:\"VDC_DELETE_VAPP(com.vmware.vcloud.entity.task:\" as item0 GROUP BY item0.timestamp/5000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows a count of vApps that have been deleted for each vCD Cell Server over time.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Troubleshooting",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1384378648741 & timestamp <= 1384382248740 & text:\"Error\" & text:\"deploying\" & text:\"vApp:\" & !text:\"Invalid vApp properties: Invalid property value size\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "vApp failed deployments over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384378648741 & timestamp <= 1384382248740 & text:\"Error\" & text:\"deploying\" & text:\"vApp:\" & !text:\"Invalid vApp properties: Invalid property value size\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget will show all failed vApp deployments however it will filter out: \"Invalid vApp Properties: Invalid property value size.\" which is an indicator that a VM inside of that vApp needs a root password set under the Guest Properties.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "vApp failed starting over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395242543789 & timestamp <= 1395328943788 & text:\"com.vmware.ssdc.util.LMException:\" & text:\"Unable\" & text:\"to\" & text:\"start\" & text:\"vApp\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget will show all vApps where a start command was issued against a vApp and the attempt by vCD to start the vApp failed for some reason.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "vCD vApp failed undeploy over time by vCD Server",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395326042219 & timestamp <= 1395329642218 & text:\"com.vmware.ssdc.library.exceptions.UndeployException\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget will show all instances where vCD attempted to undeploy a vApp and the operation failed for some reason.<br><span style=\"font-weight: bold;\"><br>DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "VM cloned due to chain length or lack of shadow VM",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404245206186 & timestamp <= 1404331606185 & text:\"MostFreeSpaceFilter\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "This widget will show all VMs that were cloned due to the linked clone chain length or because a datastore where the VM was placed does not have a valid shadow VM already on it.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1384293505805 & timestamp <= 1384379905804 & (text:\"Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1\" | text:\"com.vmware.vcloud.fabric.nsm.error.VsmException\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "vCNS (vShield) related errors over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384293505805 & timestamp <= 1384379905804 & (text:\"Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1\" | text:\"com.vmware.vcloud.fabric.nsm.error.VsmException\") as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget will show when there are vCNS (vShield Manager or vShield Edges) errors that are normally associated with problematic edge devices during day to day operations. Additional follow up in the vCNS logs may be required.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "SQL errors over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395671780136 & timestamp <= 1395672083647 & text:\"java.sql.SQLException\" & (!text:\"deadlock\" & !text:\"deadlocked\") as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp DESC",
+                  "info": "This widget will show when vCD has attempted to talk to its database and that operation has returned an error.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 600000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395242079104 & timestamp <= 1395328479103 & text:\"com.vmware.ssdc.library.exceptions.UndeployException\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "vCD - vApp failed to undeploy",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395242079104 & timestamp <= 1395328479103 & text:\"com.vmware.ssdc.library.exceptions.UndeployException\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "A vApp failed to undeploy for an unknown reason and an error has been displayed to the vCD tenant. More information on the root cause of the failure is available in surrounding logs. This alert can generate quite a bit of noise and is not recommended for day to day operations."
+    },
+    {
+      "searchPeriod": 600000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1383756495309 & timestamp <= 1384361295308 & text:\"Failed\" & text:\"to\" & text:\"delete\" & text:\"expired\" & text:\"configuration\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "vCD - failed to delete expired vApp",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1383756495309 & timestamp <= 1384361295308 & text:\"Failed\" & text:\"to\" & text:\"delete\" & text:\"expired\" & text:\"configuration\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "vCD has attempted to delete an expired vApp and the operation failed for an unknown reason, probably because a VM is still powered on. This alert can generate quite a bit of noise and is not recommended for day to day operations."
+    },
+    {
+      "searchPeriod": 600000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384272872383 & timestamp <= 1384359272382 & text:\"failed\" & text:\"in\" & text:\"vCenter\" & text:\"Server\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "vCD - vCenter task failed",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384272872383 & timestamp <= 1384359272382 & text:\"failed\" & text:\"in\" & text:\"vCenter\" & text:\"Server\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This alert signals that vCD is reporting a task it has given to a vCenter Server has failed. More information on the root cause of the failure is available in surrounding logs. This alert can generate quite a bit of noise and is not recommended for day to day operations."
+    },
+    {
+      "searchPeriod": 600000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384277447470 & timestamp <= 1384299047469 & text:\"Contact\" & text:\"the\" & text:\"Administrator\" & text:\"if\" & text:\"the\" & text:\"problem\" & text:\"persists\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "vCD - contact administrator generic error",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384277447470 & timestamp <= 1384299047469 & text:\"Contact\" & text:\"the\" & text:\"Administrator\" & text:\"if\" & text:\"the\" & text:\"problem\" & text:\"persists\" as item0 GROUP BY item0.timestamp/600000 ORDER BY item0.timestamp DESC",
+      "info": "This error is a very generic error but one that appears to a vCD tenant so an end user has seen a big red error in vCD, however it does not particularly signify any infrastructure issues. This alert can generate quite a bit of noise and is not recommended for day to day operations."
+    },
+    {
+      "searchPeriod": 600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384273705920 & timestamp <= 1384360105919 & text:\"Unable\" & text:\"to\" & text:\"execute\" & text:\"task\" & (!text:\"vdc_delete_vapp\" & !text:\"VAPP_INSERT_CD_FLOPPY\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "vCD - failed tasks",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384273705920 & timestamp <= 1384360105919 & text:\"Unable\" & text:\"to\" & text:\"execute\" & text:\"task\" & (!text:\"vdc_delete_vapp\" & !text:\"VAPP_INSERT_CD_FLOPPY\") as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "A vCD Task has failed. This alert removes noise from failed media operations and deletes that failed (very commonly caused by VMs that are still powered on). This alert still mainly revolves around failed common (due to tenant misconfiguration) vApp operations and is not recommended for day to day operations."
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395585204500 & timestamp <= 1395671604499 & text:\"Application\" & text:\"startup\" & text:\"event:\" & text:\"Unable\" & text:\"to\" & text:\"start\" & text:\"service:\" & text:\"com.vmware.vcloud.common.core\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - core services failed to start",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395585204500 & timestamp <= 1395671604499 & text:\"Application\" & text:\"startup\" & text:\"event:\" & text:\"Unable\" & text:\"to\" & text:\"start\" & text:\"service:\" & text:\"com.vmware.vcloud.common.core\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "vCD has attempted to start its core services but failed to do so, obviously a very serious problem. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395586006613 & timestamp <= 1395672406612 & text:\"ServiceInitializationTracker\" & text:\"Application startup begins\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - core service startup",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395586006613 & timestamp <= 1395672406612 & text:\"ServiceInitializationTracker\" & text:\"Application startup begins\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "vCD has received a command to start the vCD core services and has begun to initialize those services. This alert is very useful to detect vCD Cell outages. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1383756704537 & timestamp <= 1384361504536 & text:\"com.vmware.vim.binding.vim.fault.CannotAccessFile\" & (!text:\"Caused by:\" & !text:\"current.png\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - file level datastore access problem",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1383756704537 & timestamp <= 1384361504536 & text:\"com.vmware.vim.binding.vim.fault.CannotAccessFile\" & (!text:\"Caused by:\" & !text:\"current.png\") as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "vCD has attempted to access a file on a datastore and was unable to do so. This is typically not a datastore level issue but more a file level issue. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395268660764 & timestamp <= 1395268960763 & text:\"org.apache.http.conn.HttpHostConnectException:\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - HTTP connection error talking to vCenter",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395268660764 & timestamp <= 1395268960763 & text:\"org.apache.http.conn.HttpHostConnectException:\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp DESC",
+      "info": "vCD's connection to a vCenter Server is experiencing connectivity issues along the way. Check your vCenter Server and networking in between. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384361329516 & timestamp <= 1384447729515 & text:\"java.net.ConnectException:\" & text:\"Connection\" & text:\"refused\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - connection refused",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384361329516 & timestamp <= 1384447729515 & text:\"java.net.ConnectException:\" & text:\"Connection\" & text:\"refused\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "A device (usually vCD) attempted a task and received a connection refused error. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1396868171200 & timestamp <= 1396889771199 & text:\"Error\" & text:\"processing\" & text:\"websocket\" & text:\"ticket\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - console proxy errors",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1396868171200 & timestamp <= 1396889771199 & text:\"Error\" & text:\"processing\" & text:\"websocket\" & text:\"ticket\" as item0 GROUP BY item0.timestamp/600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "vCD has attempted to process a mks websocket ticket and has failed for some reason (hint: check your time sync between vCD, vCenter and ESX). This normally results in remote consoles that show black and never connect to the VM.&nbsp;<br><span style=\"font-weight: bold;\">Recommended to be enabled for day to day operations.</span>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395268088720 & timestamp <= 1395268388719 & text:\"Starting\" & text:\"ActiveMQ\" & text:\"Cell\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - starting ActiveMQ",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395268088720 & timestamp <= 1395268388719 & text:\"Starting\" & text:\"ActiveMQ\" & text:\"Cell\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp DESC",
+      "info": "The ActiveMQ Cell Discovery Agent was just started which should only happen when the other core services are starting. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384274197174 & timestamp <= 1384360597173 & text:\"rejected\" & text:\"from\" & text:\"com.vmware.vcloud.common.threading.ExtendedThreadPoolExecutor\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - thread execution was rejected",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384274197174 & timestamp <= 1384360597173 & text:\"rejected\" & text:\"from\" & text:\"com.vmware.vcloud.common.threading.ExtendedThreadPoolExecutor\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "A vCD thread execution was rejected for some reason. This could be due to security policy or a misconfiguration but further investigation is highly recommended. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395066885959 & timestamp <= 1395671685958 & text:\"Application\" & text:\"shutdown\" & text:\"event:\" & text:\"Beginning\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - service shutdown requested",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395066885959 & timestamp <= 1395671685958 & text:\"Application\" & text:\"shutdown\" & text:\"event:\" & text:\"Beginning\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "The vCD server received a request to stop its core services and the shutdown process has begun. This is only bad if it is unplanned. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395242543789 & timestamp <= 1395328943788 & text:\"com.vmware.ssdc.util.LMException:\" & text:\"Unable\" & text:\"to\" & text:\"start\" & text:\"vApp\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - vApp failed to start",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395242543789 & timestamp <= 1395328943788 & text:\"com.vmware.ssdc.util.LMException:\" & text:\"Unable\" & text:\"to\" & text:\"start\" & text:\"vApp\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "A start command was issued by vCD against a vApp and the attempt failed to start the vApp. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384273991781 & timestamp <= 1384360391780 & text:\"com.vmware.vcloud.fabric.nsm.error.VsmException\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - vSM/vSE publish error",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384273991781 & timestamp <= 1384360391780 & text:\"com.vmware.vcloud.fabric.nsm.error.VsmException\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "vCNS (vShield) has thrown an exception. This is can be caused by a timeout when attempting to publish a configuration to a vShield Edge device. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395268034235 & timestamp <= 1395268334234 & text:\"Successfully\" & text:\"connected\" & text:\"to\" & text:\"database:\" & text:\"jdbc:jtds:sqlserver://\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - connected to database",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395268034235 & timestamp <= 1395268334234 & text:\"Successfully\" & text:\"connected\" & text:\"to\" & text:\"database:\" & text:\"jdbc:jtds:sqlserver://\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp DESC",
+      "info": "The vCD Server has just connected to its database which is good if you were expecting it, bad if you did not. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1394660281434 & timestamp <= 1395265081433 & text:\"Changing\" & text:\"state\" & text:\"to\" & text:\"CONNECTING\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - connecting to vCenter",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1394660281434 & timestamp <= 1395265081433 & text:\"Changing\" & text:\"state\" & text:\"to\" & text:\"CONNECTING\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "vCD is connecting to a vCenter Server. This means that a cell is coming online as planned or that an outage just happened and the cell is reconnecting. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 600000,
+      "hitCount": 5.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384273239212 & timestamp <= 1384359639211 & text:\"java.net.SocketException\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 60000,
+      "name": "vCD - network error, java broken pipe",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384273239212 & timestamp <= 1384359639211 & text:\"java.net.SocketException\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "Java has experienced an error due to a broken pipe that likely indicates a network connectivity issue to vCenter. Check your vCenter and the networking in between. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384299294806 & timestamp <= 1384385694805 & text:\"HTTP\" & text:\"NFC\" & text:\"Error\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - NTP sync issues",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384299294806 & timestamp <= 1384385694805 & text:\"HTTP\" & text:\"NFC\" & text:\"Error\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "There appears to be a time mismatch between vCD, vSphere and ESX that needs addressed. Accurate time sync between vCD, vCenter and ESX is absolutely critical. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395585629911 & timestamp <= 1395672029910 & text:\"java.sql.SQLException\" & (!text:\"deadlock\" & !text:\"deadlocked\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - SQL exception thrown",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395585629911 & timestamp <= 1395672029910 & text:\"java.sql.SQLException\" & (!text:\"deadlock\" & !text:\"deadlocked\") as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "The vCD server has attempted a task and it failed due to an exception thrown when communicating to the vCD Database. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384274240442 & timestamp <= 1384360640441 & text:\"com.vmware.vim.vmomi.client.exception.SslException\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - SSL exception",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384274240442 & timestamp <= 1384360640441 & text:\"com.vmware.vim.vmomi.client.exception.SslException\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "vCD has experienced a SSL Exception that needs investigated as connectivity might be compromised. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384361473763 & timestamp <= 1384447873762 & text:\"org.springframework.beans.factory.BeanCreationException\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - Spring Framework bean creation failure",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384361473763 & timestamp <= 1384447873762 & text:\"org.springframework.beans.factory.BeanCreationException\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "The Spring Framework has experienced a failure creating a bean. Check the Java dump for more information. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 600000,
+      "hitCount": 2.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384273451188 & timestamp <= 1384359851187 & text:\"Error\" & text:\"deploying\" & text:\"vApp:\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 60000,
+      "name": "vCD - failed vApp deployment",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384273451188 & timestamp <= 1384359851187 & text:\"Error\" & text:\"deploying\" & text:\"vApp:\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "A vApp failed to deploy and the root cause needs investigated. <br><b>Recommended to be enabled for day to day operations.</b>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1395267517967 & timestamp <= 1395267817966 & text:\"org.apache.http.NoHttpResponseException\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCD - connection exception",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1395267517967 & timestamp <= 1395267817966 & text:\"org.apache.http.NoHttpResponseException\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp DESC",
+      "info": "vCD has attempted to connect to another device (usually vCenter) and has failed with an exception. Check the logs for more information. <br><b>Recommended to be enabled for day to day operations.</b>"
+    }
+  ],
+  "name": "VMware - vCloud Director",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "5\\, affinity type:",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpwiylumfzxi33smvpw233smvta0000",
+      "preContext": "moref://.*/Datastore#",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_datastore_moref"
+    },
+    {
+      "postContext": "\\, cellInstanceId=[\\d]*, targetId=",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th",
+      "preContext": "orgName=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_org"
+    },
+    {
+      "postContext": "\\], providerVdc=\\[id=",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64thl5xgc3lf",
+      "preContext": "\\, displayName=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_org_name"
+    },
+    {
+      "postContext": "\\, enabled=.*org=\\[",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw65temnpw4ylnmu000000",
+      "preContext": "name=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_ovdc_name"
+    },
+    {
+      "postContext": "\\, highestSupportedHwVersion=[\\d]*,",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxa5temnpw4ylnmu000000",
+      "preContext": "providerVdc=\\[id=.*, name=",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcd_pvdc_name"
+    },
+    {
+      "postContext": "\\(com\\.vmware\\.vcloud\\.",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxiyltnnpxi6lqmu000000",
+      "preContext": "task ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcd_task_type"
+    },
+    {
+      "postContext": "\\) \\| ",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxiyltnnpxk5ljmq000000",
+      "preContext": "task:",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_task_uuid"
+    },
+    {
+      "postContext": "\\,task",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxk5ljmq000000",
+      "preContext": "vcd=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_uuid"
+    },
+    {
+      "postContext": "\\)\\. \\| vcd=",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpwizlqnrxxs3lfnz2a0000",
+      "preContext": "VAPP_DEPLOY\\(com\\.vmware\\.vcloud\\.entity\\.task:",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_vapp_deployment"
+    },
+    {
+      "postContext": "\" \\(.* in VDC",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpw4ylnmu000000",
+      "preContext": "vApp \"",
+      "regexValue": ".*",
+      "displayName": "vmw_vcd_vapp_name"
+    },
+    {
+      "postContext": "\\)\\. \\| vcd",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpxk3temvygy33z",
+      "preContext": "VAPP_UNDEPLOY_POWER_OFF\\(com\\.vmware\\.vcloud\\.entity\\.task:",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_vapp_undeploy"
+    },
+    {
+      "postContext": "\\, moref=.*]",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmy27ov2wsza0",
+      "preContext": "\\[vcId=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_vc_uuid"
+    },
+    {
+      "postContext": " with requirements:",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu",
+      "preContext": "PlacementSolverImpl .*/VirtualMachine#",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcd_vm_moref_placement"
+    },
+    {
+      "postContext": "\\, fabricIds=\\[",
+      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nzqw2zi0",
+      "preContext": "for virtual machine id=.* name=",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcd_vm_name"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "1.0",
+  "namespace": "com.vmware.vcd",
+  "icon": "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",
+  "author": "VMware, Inc.",
+  "contentVersion": "5.5",
+  "url": "http://www.vmware.com",
+  "info": "This VMware vCloud Director (vCD) content pack provides you with information from vCD that will help you to have a more through understanding about the health and operational status of your private cloud. Using it you will provide you with: <br><br><b>Detailed vApp activity information:</b> This content pack will give you visibility into what vApp operations are happening and when to show you load as well as usage trends. <br><br><b>Consolidated operational overview:</b> Have a clear picture of the overall health of your vCD environment and find problematic areas that you did not know existed. <br><br><b>Robust alerting:</b> Capitalize on an collection of alerts built by an experienced cloud team to help you quickly detect and respond to issues in your environment when something goes wrong."
+}

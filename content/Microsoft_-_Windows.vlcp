@@ -1,0 +1,1309 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "General - Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "Total number of events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399302717785 & timestamp <= 1399306319082 & (channel:\"system\" | channel:\"application\" | channel:\"security\") as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+                  "info": "The total number of events received over time. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For common System events, see <a href=\"http://technet.microsoft.com/en-us/library/bb742496.aspx\">System Event Log Error IDs</a>. &nbsp;For Security events, see <a href=\"http://support.microsoft.com/default.aspx?scid=kb;EN-US;947226\">Vista and Server 2008</a>, <a href=\"http://support.microsoft.com/kb/947226/en-us\">Windows 7 and Server 2008 R2</a>, or <a href=\"http://www.microsoft.com/en-us/download/details.aspx?id=35753\">Windows 8 and Server 2012</a>."
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Hostnames with the most events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404133065596 & timestamp <= 1404136665595 & (channel:\"system\" | channel:\"application\" | channel:\"security\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The host names with the highest number of events. An increase in events \nmay point to a change on a hostname whereas a large increase in events may be an \nindication of an issue on a hostname.<br><br>For common System events, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/bb742496.aspx\">System Event Log Error IDs</a>. &nbsp;For Security events, see<a href=\"http://support.microsoft.com/default.aspx?scid=kb;EN-US;947226\">Vista and Server 2008</a>,&nbsp;<a href=\"http://support.microsoft.com/kb/947226/en-us\">Windows 7 and Server 2008 R2</a>, or&nbsp;<a href=\"http://www.microsoft.com/en-us/download/details.aspx?id=35753\">Windows 8 and Server 2012</a>.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Total number of critical and error events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400083316607 & timestamp <= 1400169718403 & ((channel:\"system\" | channel:\"application\" | channel:\"security\") & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "The total number of critical and error events received over time. An increase in \nevents may point to a change in the environment whereas a large increase in \nevents may be an indication of an issue in the environment.<br><br>For common System events, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/bb742496.aspx\">System Event Log Error IDs</a>. &nbsp;For Security events, see <a href=\"http://support.microsoft.com/default.aspx?scid=kb;EN-US;947226\">Vista and Server 2008</a>,&nbsp;<a href=\"http://support.microsoft.com/kb/947226/en-us\">Windows 7 and Server 2008 R2</a>, or&nbsp;<a href=\"http://www.microsoft.com/en-us/download/details.aspx?id=35753\">Windows 8 and Server 2012</a>.<br>"
+                },
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+                  "name": "Total number of events over time grouped by level",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400249197947 & timestamp <= 1400252797946 & (channel:\"system\" | channel:\"application\" | channel:\"security\") as item0 GROUP BY item0.timestamp/60000,item0.level ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of events received over time&nbsp;by level. Windows event \nlevels can be Critical, Error, Warning, Informational, or Verbose.&nbsp;<span></span>An increase in events \nmay point to a change in the environment whereas a large increase in events may be an \nindication of an issue in the environment.<br><span><br>For common System events, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/bb742496.aspx\">System Event Log Error IDs</a>. &nbsp;For Security events, see <a href=\"http://support.microsoft.com/default.aspx?scid=kb;EN-US;947226\">Vista and Server 2008</a>,&nbsp;<a href=\"http://support.microsoft.com/kb/947226/en-us\">Windows 7 and Server 2008 R2</a>, or&nbsp;<a href=\"http://www.microsoft.com/en-us/download/details.aspx?id=35753\">Windows 8 and Server 2012</a>.<br></span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "Total number of warning events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399306008870 & timestamp <= 1399309615935 & ((channel:\"system\" | channel:\"application\" | channel:\"security\") & level:\"warning\") as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+                  "info": "The total number of warning events received over time. An increase in \nevents may point to a change in the environment whereas a large increase in \nevents may be an indication of an issue in the environment.<br><br>For common System events, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/bb742496.aspx\">System Event Log Error IDs</a>. &nbsp;For Security events, see <a href=\"http://support.microsoft.com/default.aspx?scid=kb;EN-US;947226\">Vista and Server 2008</a>,&nbsp;<a href=\"http://support.microsoft.com/kb/947226/en-us\">Windows 7 and Server 2008 R2</a>, or&nbsp;<a href=\"http://www.microsoft.com/en-us/download/details.aspx?id=35753\">Windows 8 and Server 2012</a>.<br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Providernames with the most events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404050446574 & timestamp <= 1404136846573 & (channel:\"system\" | channel:\"application\" | channel:\"security\") as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The provider names with the highest number of events. An increase in events \nmay point to a change in the environment whereas a large increase in events may be an \nindication of an issue in the environment.<br><br>For common System events, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/bb742496.aspx\">System Event Log Error IDs</a>. &nbsp;For Security events, see <a href=\"http://support.microsoft.com/default.aspx?scid=kb;EN-US;947226\">Vista and Server 2008</a>,&nbsp;<a href=\"http://support.microsoft.com/kb/947226/en-us\">Windows 7 and Server 2008 R2</a>, or&nbsp;<a href=\"http://www.microsoft.com/en-us/download/details.aspx?id=35753\">Windows 8 and Server 2012</a>.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "General - Events by Hostname",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of critical and error events by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400262444694 & timestamp <= 1400266044693 & ((channel:\"system\" | channel:\"application\" | channel:\"security\") & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of critical and error events received by hostname. An increase in events \nmay point to a change on a hostname whereas a large increase in events may be an \nindication of an issue on a hostname.<br><br>For more information see:<span><br></span>- <a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\"><span>Windows Server 2008 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\"><span>Windows Server 2008 R2 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a>"
+                },
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of critical and error events by providername, hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404059302657 & timestamp <= 1404145702656 & ((channel:\"system\" | channel:\"application\" | channel:\"security\") & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.providername,item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of critical and error events received by provider name and host name.<br><br>For more information see:<span><br></span>- <a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\"><span>Windows Server 2008 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\"><span>Windows Server 2008 R2 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of warning events by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400262493804 & timestamp <= 1400266093953 & ((channel:\"system\" | channel:\"application\" | channel:\"security\") & level:\"warning\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of warning events received by hostname. An increase in events \nmay point to a change on a hostname whereas a large increase in events may be an \nindication of an issue on a hostname.<br><br>For more information see:<span><br></span>- <a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\"><span>Windows Server 2008 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\"><span>Windows Server 2008 R2 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a>"
+                },
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of warning events by providername, hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404059379941 & timestamp <= 1404145779940 & ((channel:\"system\" | channel:\"application\" | channel:\"security\") & level:\"warning\") as item0 GROUP BY item0.providername,item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of warning events received by provider name and host name.<br><br>For more information see:<span><br></span>- <a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\"><span>Windows Server 2008 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\"><span>Windows Server 2008 R2 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of all events by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400262382690 & timestamp <= 1400265982828 & (channel:\"system\" | channel:\"application\" | channel:\"security\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of events received over time by hostname. An increase in events \nmay point to a change on a hostname whereas a large increase in events may be an \nindication of an issue on a hostname.<br><br>For more information see:<span><br></span>- <a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\"><span>Windows Server 2008 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\"><span>Windows Server 2008 R2 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a><br>"
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Service Control Manager and Diagnostic queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404159758544 & timestamp <= 1404163358543 & (providername:\"service control manager\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Service Control Manager error and warning events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404159758544 & timestamp <= 1404163358543 & (providername:\"service control manager\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":true,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "The Service Control Manager (SCM) maintains a database of the installed \nservices and driver services that allow the operating system to start \nsuccessfully, and provides a unified and secure means of controlling \nthem.<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/dd349449%28v=WS.10%29.aspx\">Service Control Manager</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404160340462 & timestamp <= 1404163940461 & ((providername:\"microsoft-windows-diagnostics-networking\" | providername:\"microsoft-windows-diskdiagnostic\" | providername:\"microsoft-windows-memorydiagnostic*\" | providername:\"microsoft-windows-memory-diagnostic*\" | providername:\"Windows disk diagnostic*\") & !level:\"information\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Diagnostic events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404160340462 & timestamp <= 1404163940461 & ((providername:\"microsoft-windows-diagnostics-networking\" | providername:\"microsoft-windows-diskdiagnostic\" | providername:\"microsoft-windows-memorydiagnostic*\" | providername:\"microsoft-windows-memory-diagnostic*\" | providername:\"Windows disk diagnostic*\") & !level:\"information\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Windows diagnostic error and warning events for memory, disk, and networking.<br><br>For more information see:<br>-&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\">Windows Server 2008 Errors and Events</a><br>-&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\">Windows Server 2008 R2 Errors and Events</a><br>-&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a><br>"
+                    }
+                  ],
+                  "info": "Service Manager and Diagnostic errors and warning event queries by hostname"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "System - Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most frequent services entering running state by service name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400085937361 & timestamp <= 1400172339403 & (channel:\"system\" & providername:\"service control manager\" & eventid=7036 & (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpxg5dborsq0000:\"running\" & text=~\"The.*service entered the\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpxg5dborsq0000>.*)\\s+state\\.\")) & text=~\"The\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpw4ylnmu000000>.*)\\s+service entered the.*state\\.\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpw4ylnmu000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The services that have entered the running state most frequently by service name. For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd349381%28v=ws.10%29.aspx\"><span>Event ID 7036 — Basic Service Operations</span></a>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most frequent services entering stopped state by service name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400086098779 & timestamp <= 1400172500993 & (channel:\"system\" & providername:\"service control manager\" & eventid=7036 & (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpxg5dborsq0000:\"stopped\" & text=~\"The.*service entered the\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpxg5dborsq0000>.*)\\s+state\\.\")) & text=~\"The\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpw4ylnmu000000>.*)\\s+service entered the.*state\\.\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpw4ylnmu000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The services that have entered the stopped state most frequently by service name. For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd349381%28v=ws.10%29.aspx\"><span>Event ID 7036 — Basic Service Operations</span></a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of time differences by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399989681577 & timestamp <= 1400011281576 & (channel:\"system\" & providername:\"microsoft-windows-time-service\" & eventid=50) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of significant time differences detected by the time service. The time difference might be caused by \nsynchronization with  low-accuracy time sources or by suboptimal network\n conditions. The time service is no longer synchronized and cannot \nprovide the time to other clients or update  the system clock. When a \nvalid time stamp is received from a time service  provider, the time \nservice will correct itself. For more information, see <a href=\"http://technet.microsoft.com/en-us/library/cc756549%28v=ws.10%29.aspx\"><span>Event ID 50 — Local Time Synchronization</span></a>.<br>"
+                },
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of time synchronization errors by error and domain controller",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399521600000 & timestamp <= 1400079769974 & (channel:\"system\" & providername:\"microsoft-windows-time-service\" & eventid=24) & text=~\"Time Provider NtpClient.*controller\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7oruw2zk7on4w4y27mrxw2yljnzpwg33oorzg63dmmvza0000>\\S+)\\s+after 8 attempts to contact it.\" & text=~\"Time Provider NtpClient.*The error was:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7oruw2zk7on4w4y27mvzhe33s>.*)$\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7oruw2zk7on4w4y27mvzhe33s,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7oruw2zk7on4w4y27mrxw2yljnzpwg33oorzg63dmmvza0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number time synchronization errors generated byt the Time Provider NtpClient when no valid response has been received from a domain\n controller after 8 attempts to contact it. That domain controller \nwill be discarded as a time source and NtpClient will attempt to \ndiscover a  new domain controller from which to synchronize. For more information, see <span><a href=\"http://technet.microsoft.com/en-us/library/cc756494%28v=ws.10%29.aspx\">Event ID 24 — Domain Hierarchy Time Source Acquisition</a>.</span><br><span></span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Additional System queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404153416883 & timestamp <= 1404157016882 & providername:\"Microsoft-Windows-CodeIntegrity\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "CodeIntegrity events by level, hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404153416883 & timestamp <= 1404157016882 & providername:\"Microsoft-Windows-CodeIntegrity\" as item0 GROUP BY item0.level,item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Code Integrity is a feature that validates the integrity of a&nbsp;driver or \nsystem file each time&nbsp;it is loaded into memory. Code Integrity&nbsp;detects \nwhether an unsigned driver or system file&nbsp;is being loaded into the \nkernel, or whether a system file has been modified by malicious software\n that is being run by a user account with&nbsp;administrative privileges. On \nx64-based versions of the operating system,&nbsp;kernel-mode drivers must be \ndigitally&nbsp;signed.<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc733982%28v=ws.10%29.aspx\">Code Integrity</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404153643287 & timestamp <= 1404157243286 & providername:\"Microsoft-Windows-DiskDiagnostic\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "DiskDiagnostic events by level, hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404153643287 & timestamp <= 1404157243286 & providername:\"Microsoft-Windows-DiskDiagnostic\" as item0 GROUP BY item0.level,item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "The Microsoft-Windows-Disk-Failure-Diagnostic-Module controls the \nWindows® Disk Diagnostic feature on a computer. This feature alerts \nusers to the imminent failure of their hard disks and assists users in \nbacking up their files. When imminent disk failure is diagnosed, users \nare presented with a wizard that helps users initiate backup procedures.<br><br>See <a href=\"http://technet.microsoft.com/en-us/library/ff715595.aspx\">M<span>icrosoft-Windows-Disk-Failure-Diagnostic-Module</span></a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404154411144 & timestamp <= 1404158011143 & (providername:\"Microsoft-Windows-ntfs\" | providername:\"ntfs\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "NTFS events by level, hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404154411144 & timestamp <= 1404158011143 & (providername:\"Microsoft-Windows-ntfs\" | providername:\"ntfs\") as item0 GROUP BY item0.level,item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "NTFS provides performance and reliability, and includes built-in \nsecurity features, such as file and folder permissions. NTFS also \nprovides support for volumes up to 256 terabytes in size, support for \ndisk quotas and compression, and support for mounted drives.<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/ff383236%28v=ws.10%29.aspx\">What's New in NTFS</a>&nbsp;and&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/dn466522.aspx\">NTFS</a>"
+                    }
+                  ],
+                  "info": "Relevant Windows System queries."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "System - Startup & Uptime",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Startup and shutdown events by event ID, hostname",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400099038590 & timestamp <= 1400185443053 & (channel:\"system\" & providername:\"eventlog\" & (eventid:\"6005\" | eventid:\"6006\" | eventid:\"6008\")) as item0 GROUP BY item0.eventid,item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "When the Event Log service starts (and it is one of the first services \nto start when you start the computer), event 6005 is generated in the \nsystem log. When the Event Log service shuts down gracefully, such as \nwhen the administrator shuts down the system, event 6006 is logged. When\n the system restarts unexpectedly, event 6008 is logged. These events \nare logged automatically; no configuration is needed to turn them on, \nand they cannot be turned off except by disabling the Event Log service.<br><br>Event ID <span>&nbsp; Description<br>----------&nbsp; ---------------------------<br></span><span style=\"font-weight: bold;\">6005</span> <span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span></span>Windows started up<br><span style=\"font-weight: bold;\">6006</span> <span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span></span>Windows shut down gracefully<br><span style=\"font-weight: bold;\">6008</span> <span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span></span>Windows shut down unexpectedly<br><br>Any occurrences of 6008 - Windows shut down unexpectedly should be investigated. Look for critical, error, or warning events that occurred just before the system restart time on the affected computer.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "chartOptions": "{}",
+                  "name": "Average uptime in seconds by hostname",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT AVG(item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovyhi2lnmvpxgzldn5xgi4y0) FROM timestamp >= 1399581978985 & timestamp <= 1400186778984 & (channel:\"system\" & providername:\"eventlog\" & eventid=6013) & text=~\"The system uptime is\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovyhi2lnmvpxgzldn5xgi4y0>-?\\d+)\\s+seconds\\.\" as item0 GROUP BY item0.hostname ORDER BY AVG(item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovyhi2lnmvpxgzldn5xgi4y0) DESC LIMIT 1,100",
+                  "info": "The average system running time in seconds since the last boot for each monitored system. This \ninformation is typically generated in the local event log every 24 hours.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{}",
+                  "name": "Average uptime in seconds",
+                  "chartQuery": "SELECT AVG(item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovyhi2lnmvpxgzldn5xgi4y0) FROM timestamp >= 1400101317733 & timestamp <= 1400187717732 & (channel:\"system\" & providername:\"eventlog\" & eventid=6013) & text=~\"The system uptime is\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovyhi2lnmvpxgzldn5xgi4y0>-?\\d+)\\s+seconds\\.\" as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "The average system running time in seconds since the last boot for all monitored systems. This \ninformation is typically generated in the local event log every 24 hours.<br><br>Sample rough conversion of seconds to greater time units:<br><span style=\"font-weight: bold;\">&nbsp;&nbsp;&nbsp;&nbsp; seconds&nbsp;&nbsp;&nbsp; minutes&nbsp;&nbsp; hours&nbsp;&nbsp; days&nbsp; weeks<br></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 10,000&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 166.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>&nbsp; &nbsp; &nbsp; 100,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 27.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>&nbsp;&nbsp; 1,000,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; 11.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.7 <br>&nbsp;10,000,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; 16.5 <br><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{}",
+                  "name": "Number of systems reporting uptime",
+                  "chartQuery": "SELECT UCOUNT(item0.hostname) FROM timestamp >= 1400101792904 & timestamp <= 1400188192903 & (channel:\"system\" & providername:\"eventlog\" & eventid=6013) as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "The number of monitored systems reporting system running time in seconds since the last boot. This \ninformation is typically generated in the local event log every 24 hours.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{}",
+                  "name": "Maximum uptime in seconds",
+                  "chartQuery": "SELECT MAX(item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovyhi2lnmvpxgzldn5xgi4y0) FROM timestamp >= 1400101317733 & timestamp <= 1400187717732 & (channel:\"system\" & providername:\"eventlog\" & eventid=6013) & text=~\"The system uptime is\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovyhi2lnmvpxgzldn5xgi4y0>-?\\d+)\\s+seconds\\.\" as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "The maximum system running time in seconds since the last boot for all monitored systems. This \ninformation is typically generated in the local event log every 24 hours.<br><br>Sample rough conversion of seconds to greater time units:<br><span style=\"font-weight: bold;\">&nbsp;&nbsp;&nbsp;&nbsp; seconds&nbsp;&nbsp;&nbsp; minutes&nbsp;&nbsp; hours&nbsp;&nbsp; days&nbsp; weeks<br></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 16.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; 10,000&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 166.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>&nbsp; &nbsp; &nbsp; 100,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 27.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -<br>&nbsp;&nbsp; 1,000,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; 11.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.7 <br>&nbsp;10,000,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; 16.5 <br><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Application - Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most frequent application events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400081300199 & timestamp <= 1400167700198 & channel:\"application\" as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The provider names of the most frequently occurring application events of any kind.<br><br>For more information see:<span><br></span>- <a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\"><span>Windows Server 2008 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\"><span>Windows Server 2008 R2 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a><br>"
+                },
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Systems requiring a restart by hostname",
+                  "chartQuery": "SELECT UCOUNT(item0.hostname) FROM timestamp >= 1399435200000 & timestamp <= 1400254109635 & text:\"restart\" & text:\"required\" & ((channel:\"application\" | channel:\"system\" | channel:\"security\") & (providername:\"microsoft-windows-restartmanager\" | providername:\"microsoft-windows-windowsupdateclient\" | providername:\"msiinstaller\")) as item0 GROUP BY item0.hostname ORDER BY UCOUNT(item0.hostname) DESC LIMIT 1,100",
+                  "info": "The unique count of systems requiring a restart grouped by hostname. Select a hostname, choose \"Add Value as Filter\" - \"This Dashboard\", then\n compare the Restart required events over time by hostname to the \nRestarts over time by hostname."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most frequent application critical and error events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400082156408 & timestamp <= 1400168557928 & (channel:\"application\" & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The provider names of the most frequently occurring application critical and error events.<br><br>For more information see:<span><br></span>- <a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\"><span>Windows Server 2008 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\"><span>Windows Server 2008 R2 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Restart required events over time by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399435200000 & timestamp <= 1400254109635 & text:\"restart\" & text:\"required\" & ((channel:\"application\" | channel:\"system\" | channel:\"security\") & (providername:\"microsoft-windows-restartmanager\" | providername:\"microsoft-windows-windowsupdateclient\" | providername:\"msiinstaller\")) as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of events requiring a system restart over time grouped by hostname. Select a hostname, choose \"Add Value as Filter\" - \"This Dashboard\", then compare the Restart required events over time by hostname to the Restarts over time by hostname.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most frequent application warning events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400081756046 & timestamp <= 1400168157510 & (channel:\"application\" & level:\"warning\") as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The provider names of the most frequently occurring application warning  events.<br><br>For more information see:<span><br></span>- <a href=\"http://technet.microsoft.com/en-us/library/cc754424%28v=WS.10%29.aspx\"><span>Windows Server 2008 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/dd299434%28v=ws.10%29.aspx\"><span>Windows Server 2008 R2 Errors and Events</span></a><br>- <a href=\"http://technet.microsoft.com/en-us/library/hh831490.aspx\"><span>Support Windows Server 2012 R2 and Windows Server 2012</span></a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Restarts over time by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399435200000 & timestamp <= 1400254109635 & (channel:\"system\" & providername:\"eventlog\" & eventid:\"6005\") as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of system restarts over time grouped by hostname.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Application - Errors",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of Windows Error Reporting events by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399471078817 & timestamp <= 1399557478816 & (channel:\"application\" & providername:\"Windows Error Reporting\" & eventid=1001) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of reports logged by Windows Error Reporting infrastructure, grouped by hostname.<br><br>Windows\n Error Reporting infrastructure logs event 1001 for all reports (for \nexample, application crashes, hangs, and generic reports).<br><br>For more information, see <a href=\"http://social.technet.microsoft.com/wiki/contents/articles/3116.event-id-1001-windows-error-reporting.aspx\">Event ID 1001: Windows Error Reporting</a>.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "Number of Windows Error Reporting events by event name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398788057351 & timestamp <= 1398874457350 & (channel:\"application\" & providername:\"Windows Error Reporting\" & eventid=1001) & text=~\"Event Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf6ylqobwgsy3boruw63s7mvzhe33sl5sxmzloorpw4ylnmu000000>\\w+)\\s+Response:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf6ylqobwgsy3boruw63s7mvzhe33sl5sxmzloorpw4ylnmu000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of reports logged by Windows Error Reporting infrastructure, grouped by event name.<br><br>Windows\n Error Reporting infrastructure logs event 1001 for all reports (for \nexample, application crashes, hangs, and generic reports).<br><br>For more information, see <a href=\"http://social.technet.microsoft.com/wiki/contents/articles/3116.event-id-1001-windows-error-reporting.aspx\">Event ID 1001: Windows Error Reporting</a>.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of events by Windows Application Error Event Name, hostname",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400241600000 & timestamp <= 1400385600000 & (channel:\"application\" & providername:\"Windows Error Reporting\" & eventid=1001) & text=~\"Event Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf6ylqobwgsy3boruw63s7mvzhe33sl5sxmzloorpw4ylnmu000000>\\w+)\\s+Response:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf6ylqobwgsy3boruw63s7mvzhe33sl5sxmzloorpw4ylnmu000000,item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of reports logged by Windows Error Reporting infrastructure grouped by event name and hostname.<br><br>Windows\n Error Reporting infrastructure logs event 1001 for all reports (for \nexample, application crashes, hangs, and generic reports).<br><br>For more information, see <a href=\"http://social.technet.microsoft.com/wiki/contents/articles/3116.event-id-1001-windows-error-reporting.aspx\">Event ID 1001: Windows Error Reporting</a>.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of application crashing events by hostname",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399488867404 & timestamp <= 1400093667403 & (channel:\"application\" & providername:\"application error\" & eventid=1000) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of application crashing events, grouped by hostname. The indicated program stopped unexpectedly. The message contains details on which program and module stopped. This is a generic error that gives information for the crashing application that you should use to research on <a href=\"http://social.technet.microsoft.com/Search/en-US/?query=Event%20ID%201000%20Application%20Error\">Microsoft Technet</a>.<br>"
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Windows Server Backup queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404066378670 & timestamp <= 1404152778669 & (channel:\"application\" & providername:\"microsoft-windows-backup\" & level:\"critical\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Critical events for Windows Server Backup by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404066378670 & timestamp <= 1404152778669 & (channel:\"application\" & providername:\"microsoft-windows-backup\" & level:\"critical\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Windows Server Backup is a feature that provides a set of wizards and \nother tools for you to perform basic backup and recovery tasks for the \nserver it is installed on.&nbsp;<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc734312%28v=ws.10%29.aspx\">Windows Server Backup</a>&nbsp;and&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/jj614621.aspx\">Windows Server Backup Feature Overview</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404066927752 & timestamp <= 1404153327751 & (channel:\"application\" & providername:\"microsoft-windows-backup\" & level:\"error\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Error events for Windows Server Backup by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404066927752 & timestamp <= 1404153327751 & (channel:\"application\" & providername:\"microsoft-windows-backup\" & level:\"error\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Windows Server Backup is a feature that provides a set of wizards and other tools for you to perform basic backup and recovery tasks for the server it is installed on.&nbsp;<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc734312%28v=ws.10%29.aspx\">Windows Server Backup</a>&nbsp;and&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/jj614621.aspx\">Windows Server Backup Feature Overview</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404066985541 & timestamp <= 1404153385540 & (channel:\"application\" & providername:\"microsoft-windows-backup\" & level:\"warning\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Warning events for Windows Server Backup by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404066985541 & timestamp <= 1404153385540 & (channel:\"application\" & providername:\"microsoft-windows-backup\" & level:\"warning\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Windows Server Backup is a feature that provides a set of wizards and other tools for you to perform basic backup and recovery tasks for the server it is installed on.&nbsp;<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc734312%28v=ws.10%29.aspx\">Windows Server Backup</a>&nbsp;and&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/jj614621.aspx\">Windows Server Backup Feature Overview</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404067044481 & timestamp <= 1404153444480 & (channel:\"application\" & providername:\"microsoft-windows-backup\" & level:\"information\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Information events for Windows Server Backup by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404067044481 & timestamp <= 1404153444480 & (channel:\"application\" & providername:\"microsoft-windows-backup\" & level:\"information\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Windows Server Backup is a feature that provides a set of wizards and other tools for you to perform basic backup and recovery tasks for the server it is installed on.&nbsp;<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc734312%28v=ws.10%29.aspx\">Windows Server Backup</a>&nbsp;and&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/jj614621.aspx\">Windows Server Backup Feature Overview</a><br>"
+                    }
+                  ],
+                  "info": "Event level queries for Windows Server Backup."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Application - Installer",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of application installations by product name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398052800000 & timestamp <= 1399561860444 & (channel:\"application\" & providername:\"msiinstaller\" & eventid=1033) & text=~\"Windows Installer.*Product Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5xgc3lf>.*)\\.\\s+Product Version:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5xgc3lf ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of successful installations performed by the Microsoft Windows Installer grouped by product name.<br><br>Microsoft Windows Installer (MSI) is an installation and configuration \nservice that provides a standard format for component management and \nenables network administrators to&nbsp;deploy corporate servers&nbsp;very \nefficiently.<br><br>For more information, see <span style=\"text-decoration: underline;\"></span><span><a href=\"http://technet.microsoft.com/en-us/library/cc735575%28v=ws.10%29.aspx\">Windows Installer</a>.</span>"
+                },
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of Windows updates by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398052800000 & timestamp <= 1399561860444 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & eventid=19) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of successful updates performed by the Windows Update Agent grouped by hostname.<br><br>The Windows Update Agent installs updates from Windows Update, Microsoft Update, or Windows Server Update Services.<br><br>For more information, see <span><a href=\"http://technet.microsoft.com/en-us/library/cc735621%28v=ws.10%29.aspx\">WUA Update Installation</a>.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of application updates by product name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398052800000 & timestamp <= 1399561860444 & (channel:\"application\" & providername:\"msiinstaller\" & eventid=1036) & text=~\"Windows Installer.*Product Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5xgc3lf>.*)\\.\\s+Product Version:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5xgc3lf ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of successful updates performed by the Microsoft Windows Installer grouped by product name.<br><br>Microsoft Windows Installer (MSI) is an installation and configuration \nservice that provides a standard format for component management and \nenables network administrators to&nbsp;deploy corporate servers&nbsp;very \nefficiently.<br><br>For more information, see <span style=\"text-decoration: underline;\"></span><span><a href=\"http://technet.microsoft.com/en-us/library/cc735575%28v=ws.10%29.aspx\">Windows Installer</a>.</span>"
+                },
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of Windows update failures by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398052800000 & timestamp <= 1399561860444 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & eventid=20) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of failed updates attempted by the Windows Update Agent grouped by hostname.<br><br>The Windows Update Agent installs updates from Windows Update, Microsoft Update, or Windows Server Update Services.<br><br>For more information, see <span><a href=\"http://technet.microsoft.com/en-us/library/cc735621%28v=ws.10%29.aspx\">WUA Update Installation</a>.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of application installer errors by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398052800000 & timestamp <= 1399561860444 & (channel:\"application\" & providername:\"msiinstaller\" & level:\"error\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of errors reported by the Microsoft Windows Installer grouped by hostname.<br><br>Microsoft Windows Installer (MSI) is an installation and configuration \nservice that provides a standard format for component management and \nenables network administrators to&nbsp;deploy corporate servers&nbsp;very \nefficiently.<br><br>For more information, see <span style=\"text-decoration: underline;\"></span><span><a href=\"http://technet.microsoft.com/en-us/library/cc735575%28v=ws.10%29.aspx\">Windows Installer</a>.</span>"
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Additional Windows Installer queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404060803001 & timestamp <= 1404147204694 & (channel:\"application\" & providername:\"msiinstaller\" & eventid=1035) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Number of application reconfigurations by product name",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404060803001 & timestamp <= 1404147204694 & (channel:\"application\" & providername:\"msiinstaller\" & eventid=1035) & text=~\"Windows Installer.*Product Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5xgc3lf>.*)\\.\\s+Product Version:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5xgc3lf ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "The number of successful reconfigurations performed by the Microsoft Windows Installer grouped by product name.<br><br>Microsoft Windows Installer (MSI) is an installation and configuration \nservice that provides a standard format for component management and \nenables network administrators to&nbsp;deploy corporate servers&nbsp;very \nefficiently.<br><br>For more information, see <span style=\"text-decoration: underline;\"></span><span><a href=\"http://technet.microsoft.com/en-us/library/cc735575%28v=ws.10%29.aspx\">Windows Installer</a>.</span>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1396094717867 & timestamp <= 1404147914516 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"27\" | eventid:\"28\" | eventid:\"38\" | eventid:\"39\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Windows Update Service Availability events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1396094717867 & timestamp <= 1404147914516 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"27\" | eventid:\"28\" | eventid:\"38\" | eventid:\"39\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Windows Update enables the detection, download, and installation of \nupdates for Windows and other programs. If this service is disabled, \nusers of this computer will not be able to use Windows Update or its \nautomatic updating feature, and programs will not be able to use the \nWindows Update Agent API.<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc735618%28v=ws.10%29.aspx\">WU Service Availability</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1396094717867 & timestamp <= 1404148206073 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"16\" | eventid:\"29\" | eventid:\"30\" | eventid:\"32\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Windows Update Agent Server Connectivity events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1396094717867 & timestamp <= 1404148206073 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"16\" | eventid:\"29\" | eventid:\"30\" | eventid:\"32\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "<span>The Windows Update&nbsp;Agent runs on client computers&nbsp;and must connect to either one of the following:</span><br><span><span>&nbsp; &nbsp; - A Windows Update server running Windows Server Update Services (WSUS) on the corporate network.</span>\n        <br><span>&nbsp; &nbsp; - The Windows Update/Microsoft Update (WU/MU) service publicly available from Microsoft.</span></span>\n      <br><span><br>If connectivity fails, the Windows&nbsp;Update Agent cannot communicate with the Windows Update server or to the WU/MU service.<br></span><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc735607%28v=ws.10%29.aspx\">WUA Server Connectivity</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1396094717867 & timestamp <= 1404148330000 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"25.26\" | eventid:\"34\" | eventid:\"35\" | eventid:\"36\" | eventid:\"37\" | eventid:\"40\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Windows Update Agent Update Detection events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1396094717867 & timestamp <= 1404148330000 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"25.26\" | eventid:\"34\" | eventid:\"35\" | eventid:\"36\" | eventid:\"37\" | eventid:\"40\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "<span>The Windows Update Agent Update Detection is designed to check for \nupdates and install them on a daily basis. Windows Update Agent can be \nconfigured to detect and install updates automatically or can be set to \ndetect updates and manually install them.</span><br>\n      <span>Windows Update Agent detects updates every day at user \nconfigured scheduled time or at 3:00 A.M. by default and installs them \nif Automatic Updates is turned on.<br></span><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc735622%28v=ws.10%29.aspx\">WUA Update Detection</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1396094717867 & timestamp <= 1404148429000 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"17.18\" | eventid:\"31\" | eventid:\"33\" | eventid:\"41\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Windows Update Agent Update Download events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1396094717867 & timestamp <= 1404148429000 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"17.18\" | eventid:\"31\" | eventid:\"33\" | eventid:\"41\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Windows Update Agent downloads updates from Windows Update, Microsoft \nUpdate, or Windows Server Update Services. Windows Update Agent can be \nconfigured to automatically detect and download updates or can be set to\n manually download updates by the user.<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc735623%28v=ws.10%29.aspx\">WUA Update Download</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1396094717867 & timestamp <= 1404148517918 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"19\" | eventid:\"20\" | eventid:\"21\" | eventid:\"22\" | eventid:\"23\" | eventid:\"24\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Windows Update Agent Update Installation events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1396094717867 & timestamp <= 1404148517918 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & (eventid:\"19\" | eventid:\"20\" | eventid:\"21\" | eventid:\"22\" | eventid:\"23\" | eventid:\"24\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "<br><span>Windows Update Agent installs updates from Windows Update, Microsoft Update, or Windows Server Update Services.</span><br>\n      <span>Windows Update Agent detects updates&nbsp;every day at the \nuser&nbsp;configured time or by default at 3:00 A.M. If the computer is \nconfigured for Automatic Updates to take place,&nbsp;the downloading and \ninstallation of updates also take place at this time.<br></span><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc735621%28v=ws.10%29.aspx\">WUA Update Installation</a>"
+                    }
+                  ],
+                  "info": "Queries for Windows Update and Windows Installer.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Security - Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Windows Firewall Errors",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400511000246 & timestamp <= 1400511300245 & text:\"windows firewall\" & text:\"error\" & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & level:\"information\") & text=~\"Windows Firewall(.*\\s+)+Error Information:\\s+\\tReason:\\s(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwm2lsmv3wc3dml5sxe4tpojpxezlbonxw4000>.*)\\.\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwm2lsmv3wc3dml5sxe4tpojpxezlbonxw4000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The Windows Firewall was unable to apply a rule for a particular reason. &nbsp;For more information on the applicable Windows Event IDs, please see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc733428(v=ws.10).aspx\">4957</a>&nbsp;and&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc733259(v=ws.10).aspx\">4958</a>.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Windows Firewall - Count of rules modified over time grouped by rule and whether it is active or not",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399914000000 & timestamp <= 1400180400000 & (channel:\"microsoft-windows-windows firewall with advanced security/firewall\" & level:\"information\" & providername:\"microsoft-windows-windows firewall with advanced security\" & eventid=2005) & text=~\"Windows Firewall (.*\\s+)Modified Rule:(\\S+\\s+){3,5}Active:\\s(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf6yldoruxmzi0>.*)\" & text=~\"A rule has been modified in the Windows Firewall exception list\\.\\s+.*\\s+.*\\s+Rule Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwm2lsmv3wc3dml5zhk3dfl5xgc3lf>.*)\\s+Origin:\" as item0 GROUP BY item0.timestamp/21600000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf6yldoruxmzi0,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwm2lsmv3wc3dml5zhk3dfl5xgc3lf ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The Windows Event that corresponds to modified events is&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/dd364379(v=ws.10).aspx\">2005</a>.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Windows Firewall - Rules added or removed over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399867200000 & timestamp <= 1400299200000 & (channel:\"microsoft-windows-windows firewall with advanced security/firewall\" & (eventid:\"2004\" | eventid:\"2006\" | eventid:\"2033\") & level:\"information\" & providername:\"microsoft-windows-windows firewall with advanced security\") as item0 GROUP BY item0.timestamp/21600000,item0.eventid ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The Windows Firewall event for adding exceptions to the firewall is&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/dd364408(v=ws.10).aspx\">2004</a>. &nbsp;The events for deleting exceptions are&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/dd364381(v=ws.10).aspx\">2006</a>&nbsp;and&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/dd364358(v=ws.10).aspx\">2033</a>.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "UAC - Privilege elevation events over time grouped by eventid",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400183866064 & timestamp <= 1400184166063 & ((eventid:\"4648\" | eventid:\"4624\") & channel:\"security\" & level:\"information\" & providername:\"microsoft-windows-security-auditing\") as item0 GROUP BY item0.timestamp/5000,item0.eventid ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "When a user elevates their privileges using the UAC consent dialogue box, then a higher correlation of events 4624 and 4648 can be seen. &nbsp;For further information, please reference <a href=\"http://technet.microsoft.com/en-us/library/dd941635(v=ws.10).aspx\">this page</a>."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "UAC - Admin approval mode accessed to grant full administrator privileges over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399581237330 & timestamp <= 1400186037329 & (eventid=4688 & providername:\"microsoft-windows-security-auditing\" & channel:\"security\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp DESC",
+                  "info": "Windows Event Log id <a href=\"http://technet.microsoft.com/en-us/library/dd941613(v=ws.10).aspx\">4688</a> is raised when admin approval mode is accessed to grand full administrator privileges to a process."
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Additional Security queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1404065967010 & timestamp <= 1404152367009 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4616) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Number of system time changes by process name",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404065967010 & timestamp <= 1404152367009 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4616) & text=~\"Process Information:\\s+Process ID:.*\\s+.*Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f64dsn5rwk43tl5xgc3lf>.*)\\s+\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f64dsn5rwk43tl5xgc3lf ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "The number of system time changes by process name. The Advanced Security Audit policy setting,&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/dn311493.aspx\">Audit Security State Change</a>&nbsp;generates&nbsp;event 4616 when the system time is changed. It is normal for the Windows Time Service, which runs with System privilege, to change the system time on a regular basis. Other system time changes may be indicative of attempts to tamper with the computer.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1396094717867 & timestamp <= 1404152070527 & (providername:\"Microsoft-Windows-SoftwareRestrictionPolicies\" & (eventid:\"865\" | eventid:\"866\" | eventid:\"867\" | eventid:\"868\" | eventid:\"882\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Software Restriction Policy Notification events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1396094717867 & timestamp <= 1404152174050 & (providername:\"Microsoft-Windows-SoftwareRestrictionPolicies\" & (eventid:\"865\" | eventid:\"866\" | eventid:\"867\" | eventid:\"868\" | eventid:\"882\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"column\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Software Restriction Policy Notification displays a messages to&nbsp;the user\n and writes an event to the event log when the user attempts to run a \nprogram that is not allowed by the policy. If the software restriction \npolicy is enforced on all users, then messages will be displayed to both\n standard users and administrators. If the policy is enforced on all \nusers except local administrators, then users logged on with \nadministrative credentials will not be notified as the policy will not \napply to the programs that they run.<br><br>See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc734084%28v=ws.10%29.aspx\">Software Restriction Policy Notification</a>"
+                    }
+                  ],
+                  "info": "Windows Security queries."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Security - Logons",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of logons by logon account name and domain",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398052800000 & timestamp <= 1399561860444 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4624) & text=~\"Logon Type:(\\S+\\s+){4,5}Account Domain:\\t\\t(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpwi33nmfuw4000>.*)\" & text=~\"Logon Type:(\\S+\\s+){3,4}Account Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpw4ylnmu000000>.*)\\s+Account Domain:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpw4ylnmu000000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpwi33nmfuw4000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of successful logons recorded by the Audit Logon Policy grouped by logon account name and domain.<br><br>For more information, see <span><a href=\"http://technet.microsoft.com/en-us/library/dd941635%28v=WS.10%29.aspx\">Audit Logon</a>.</span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of logons by source address and port",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399483343887 & timestamp <= 1399569743886 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4624) & text=~\"Source Network Address:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv6ylemrzgk43t>\\S+)\\s+Source Port:\" & text=~\"Source Port:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv64dpoj2a0000>\\S+)\\s+Detailed Authentication Information:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv6ylemrzgk43t,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv64dpoj2a0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of successful logons recorded by the Audit Logon Policy grouped by source address and port.<br><br>For more information, see <span><a href=\"http://technet.microsoft.com/en-us/library/dd941635%28v=WS.10%29.aspx\">Audit Logon</a>.</span>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of logons by logon type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399471861020 & timestamp <= 1399558261019 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4624) & text=~\"Logon Type:\\s*(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3upfygk000>.*)\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3upfygk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of successful logons recorded by the Audit Logon Policy grouped by logon type.<br><br>Code Name<br>-----&nbsp; ------------------------<br><span style=\"font-weight: bold;\">0</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Undefined Logon Type<br><span style=\"font-weight: bold;\">2</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Interactive<br><span style=\"font-weight: bold;\">3</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Network<br><span style=\"font-weight: bold;\">4</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Batch<br><span style=\"font-weight: bold;\">5</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Service<br><span style=\"font-weight: bold;\">6</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Proxy<br><span style=\"font-weight: bold;\">7</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Unlock<br><span style=\"font-weight: bold;\">8</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>NetworkCleartext<br><span style=\"font-weight: bold;\">9</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>NewCredentials<br><span style=\"font-weight: bold;\">10</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;</span>RemoteInteractive<br><span style=\"font-weight: bold;\">11</span>&nbsp;&nbsp;&nbsp;&nbsp; CachedInteractive<br><span style=\"font-weight: bold;\">12</span>&nbsp;&nbsp;&nbsp;&nbsp; CachedRemoteInteractive<br><span style=\"font-weight: bold;\">13</span>&nbsp;&nbsp;&nbsp;&nbsp; CachedUnlock<br><br>For more information, see <span><a href=\"http://technet.microsoft.com/en-us/library/dd941635%28v=WS.10%29.aspx\">Audit Logon</a>.</span><br>See the LogonType section of <span><a href=\"http://msdn.microsoft.com/en-us/library/aa394189%28v=vs.85%29.aspx\">Win32_LogonSession class</a></span> for a detailed meaning of logon types.<br><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of logons by network workstation name and source address",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399435200000 & timestamp <= 1399566839472 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4624) & text=~\"Source Network Address:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv6ylemrzgk43t>\\S+)\\s+Source Port:\" & text=~\"Workstation Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll53w64tlon2gc5djn5xf63tbnvsq0000>.*)\\s+Source Network Address:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll53w64tlon2gc5djn5xf63tbnvsq0000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv6ylemrzgk43t ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of successful logons recorded by the Audit Logon Policy grouped by network workstation name and source address.<br><br>For more information, see <span><a href=\"http://technet.microsoft.com/en-us/library/dd941635%28v=WS.10%29.aspx\">Audit Logon</a>.</span>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Security - Logon Failures",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "Number of logon failures by failure reason, status, sub-status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1397620800000 & timestamp <= 1398784689399 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4625) & text=~\"Failure Reason:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zgkyltn5xa0000>.*)\\s+Status:\" & text=~\"Status:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxiyluovzq0000>.*)\\s+Sub Status:\" & text=~\"Sub Status:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxkys7on2gc5dvom000000>.*)\\s+Process Information:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zgkyltn5xa0000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxiyluovzq0000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxkys7on2gc5dvom000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of logon failures recorded by the Audit Logon Policy grouped by failure reason, status, and sub-status.<br><br>This event is generated when a logon request fails. It is generated on the computer where access was attempted. The status and sub-status failure codes give the reason the logon failed. Some common failure codes are listed below.<br><br>Failure code&nbsp;&nbsp;&nbsp; Name<br>---------------&nbsp;&nbsp; --------------------------------<br><span style=\"font-weight: bold;\">0xC0000064</span>&nbsp;&nbsp;&nbsp; STATUS_NO_SUCH_USER<br><span style=\"font-weight: bold;\">0xC000006A</span>&nbsp;&nbsp;&nbsp; STATUS_WRONG_PASSWORD<br><span style=\"font-weight: bold;\">0xC000006D</span>&nbsp;&nbsp;&nbsp; STATUS_LOGON_FAILURE<br><span style=\"font-weight: bold;\">0xC000006F</span>&nbsp;&nbsp;&nbsp; STATUS_INVALID_LOGON_HOURS<br><span style=\"font-weight: bold;\">0xC0000070</span>&nbsp;&nbsp;&nbsp; STATUS_INVALID_WORKSTATION<br><span style=\"font-weight: bold;\">0xC0000071</span>&nbsp;&nbsp;&nbsp; STATUS_PASSWORD_EXPIRED<br><span style=\"font-weight: bold;\">0xC0000072</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_DISABLED<br><span style=\"font-weight: bold;\">0xC00000DC</span>&nbsp;&nbsp; STATUS_INVALID_SERVER_STATE<br><span style=\"font-weight: bold;\">0xC0000133</span>&nbsp;&nbsp;&nbsp; STATUS_TIME_DIFFERENCE_AT_DC<br><span style=\"font-weight: bold;\">0xC000015B</span>&nbsp;&nbsp;&nbsp; STATUS_LOGON_TYPE_NOT_GRANTED<br><span style=\"font-weight: bold;\">0xC0000193</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_EXPIRED<br><span style=\"font-weight: bold;\">0xC0000224</span>&nbsp;&nbsp;&nbsp; STATUS_PASSWORD_MUST_CHANGE<br><span style=\"font-weight: bold;\">0xC0000234</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_LOCKED_OUT<br><br>See <a href=\"http://msdn.microsoft.com/en-us/library/cc704588.aspx\"><span>2.3.1 NTSTATUS values</span></a> or ntstatus.h from the Windows SDK for a comprehensive list of status codes and descriptions.<br><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Number of logon failures over time by failure reason, status and sub-status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398052800000 & timestamp <= 1399566839472 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4625) & text=~\"Failure Reason:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zgkyltn5xa0000>.*)\\s+Status:\" & text=~\"Status:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxiyluovzq0000>.*)\\s+Sub Status:\" & text=~\"Sub Status:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxkys7on2gc5dvom000000>.*)\\s+Process Information:\" as item0 GROUP BY item0.timestamp/43200000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zgkyltn5xa0000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxiyluovzq0000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxkys7on2gc5dvom000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of logon failures recorded by the Audit Logon Policy over time grouped by failure reason, status, and sub-status.<br><br>This\n event is generated when a logon request fails. It is generated on the \ncomputer where access was attempted. The status and sub-status failure \ncodes give the reason the logon failed. Some common failure codes are \nlisted below.<br><br>Failure code&nbsp;&nbsp;&nbsp; Name<br>---------------&nbsp;&nbsp; --------------------------------<br><span style=\"font-weight: bold;\">0xC0000064</span>&nbsp;&nbsp;&nbsp; STATUS_NO_SUCH_USER<br><span style=\"font-weight: bold;\">0xC000006A</span>&nbsp;&nbsp;&nbsp; STATUS_WRONG_PASSWORD<br><span style=\"font-weight: bold;\">0xC000006D</span>&nbsp;&nbsp;&nbsp; STATUS_LOGON_FAILURE<br><span style=\"font-weight: bold;\">0xC000006F</span>&nbsp;&nbsp;&nbsp; STATUS_INVALID_LOGON_HOURS<br><span style=\"font-weight: bold;\">0xC0000070</span>&nbsp;&nbsp;&nbsp; STATUS_INVALID_WORKSTATION<br><span style=\"font-weight: bold;\">0xC0000071</span>&nbsp;&nbsp;&nbsp; STATUS_PASSWORD_EXPIRED<br><span style=\"font-weight: bold;\">0xC0000072</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_DISABLED<br><span style=\"font-weight: bold;\">0xC00000DC</span>&nbsp;&nbsp; STATUS_INVALID_SERVER_STATE<br><span style=\"font-weight: bold;\">0xC0000133</span>&nbsp;&nbsp;&nbsp; STATUS_TIME_DIFFERENCE_AT_DC<br><span style=\"font-weight: bold;\">0xC000015B</span>&nbsp;&nbsp;&nbsp; STATUS_LOGON_TYPE_NOT_GRANTED<br><span style=\"font-weight: bold;\">0xC0000193</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_EXPIRED<br><span style=\"font-weight: bold;\">0xC0000224</span>&nbsp;&nbsp;&nbsp; STATUS_PASSWORD_MUST_CHANGE<br><span style=\"font-weight: bold;\">0xC0000234</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_LOCKED_OUT<br><br>See <a href=\"http://msdn.microsoft.com/en-us/library/cc704588.aspx\"><span>2.3.1 NTSTATUS values</span></a> or ntstatus.h from the Windows SDK for a comprehensive list of status codes and descriptions.<br><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\",\"swapfields\":false}",
+                  "name": "Number of logon failures by logon account name and domain",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398962469583 & timestamp <= 1399567269582 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4625) & text=~\"Logon Type:(\\S+\\s+){4,5}Account Domain:\\t\\t(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpwi33nmfuw4000>.*)\" & text=~\"Logon Type:(\\S+\\s+){3,4}Account Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpw4ylnmu000000>.*)\\s+Account Domain:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpw4ylnmu000000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpwi33nmfuw4000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of logon failures recorded by the Audit Logon Policy grouped by logon account name and domain.<br><br>This\n event is generated when a logon request fails. It is generated on the \ncomputer where access was attempted. The status and sub-status failure \ncodes give the reason the logon failed. Some common failure codes are \nlisted below.<br><br>Failure code&nbsp;&nbsp;&nbsp; Name<br>---------------&nbsp;&nbsp; --------------------------------<br><span style=\"font-weight: bold;\">0xC0000064</span>&nbsp;&nbsp;&nbsp; STATUS_NO_SUCH_USER<br><span style=\"font-weight: bold;\">0xC000006A</span>&nbsp;&nbsp;&nbsp; STATUS_WRONG_PASSWORD<br><span style=\"font-weight: bold;\">0xC000006D</span>&nbsp;&nbsp;&nbsp; STATUS_LOGON_FAILURE<br><span style=\"font-weight: bold;\">0xC000006F</span>&nbsp;&nbsp;&nbsp; STATUS_INVALID_LOGON_HOURS<br><span style=\"font-weight: bold;\">0xC0000070</span>&nbsp;&nbsp;&nbsp; STATUS_INVALID_WORKSTATION<br><span style=\"font-weight: bold;\">0xC0000071</span>&nbsp;&nbsp;&nbsp; STATUS_PASSWORD_EXPIRED<br><span style=\"font-weight: bold;\">0xC0000072</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_DISABLED<br><span style=\"font-weight: bold;\">0xC00000DC</span>&nbsp;&nbsp; STATUS_INVALID_SERVER_STATE<br><span style=\"font-weight: bold;\">0xC0000133</span>&nbsp;&nbsp;&nbsp; STATUS_TIME_DIFFERENCE_AT_DC<br><span style=\"font-weight: bold;\">0xC000015B</span>&nbsp;&nbsp;&nbsp; STATUS_LOGON_TYPE_NOT_GRANTED<br><span style=\"font-weight: bold;\">0xC0000193</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_EXPIRED<br><span style=\"font-weight: bold;\">0xC0000224</span>&nbsp;&nbsp;&nbsp; STATUS_PASSWORD_MUST_CHANGE<br><span style=\"font-weight: bold;\">0xC0000234</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_LOCKED_OUT<br><br>See <a href=\"http://msdn.microsoft.com/en-us/library/cc704588.aspx\"><span>2.3.1 NTSTATUS values</span></a> or ntstatus.h from the Windows SDK for a comprehensive list of status codes and descriptions.<br><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of logon failures by logon type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399472771738 & timestamp <= 1399559171737 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4625) & text=~\"Logon Type:\\s*(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3upfygk000>.*)\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3upfygk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of logon failures recorded by the Audit Logon Policy grouped by logon type.<br><br>Code Name<br>-----&nbsp; ------------------------<br><span style=\"font-weight: bold;\">0</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Undefined Logon Type<br><span style=\"font-weight: bold;\">2</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Interactive<br><span style=\"font-weight: bold;\">3</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Network<br><span style=\"font-weight: bold;\">4</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Batch<br><span style=\"font-weight: bold;\">5</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Service<br><span style=\"font-weight: bold;\">6</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Proxy<br><span style=\"font-weight: bold;\">7</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>Unlock<br><span style=\"font-weight: bold;\">8</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>NetworkCleartext<br><span style=\"font-weight: bold;\">9</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;&nbsp;</span>NewCredentials<br><span style=\"font-weight: bold;\">10</span>&nbsp;&nbsp;&nbsp; <span>&nbsp;</span>RemoteInteractive<br><span style=\"font-weight: bold;\">11</span>&nbsp;&nbsp;&nbsp;&nbsp; CachedInteractive<br><span style=\"font-weight: bold;\">12</span>&nbsp;&nbsp;&nbsp;&nbsp; CachedRemoteInteractive<br><span style=\"font-weight: bold;\">13</span>&nbsp;&nbsp;&nbsp;&nbsp; CachedUnlock<br><br>See the LogonType section of <span><a href=\"http://msdn.microsoft.com/en-us/library/aa394189%28v=vs.85%29.aspx\">Win32_LogonSession class</a></span> for a detailed meaning of logon types.<br><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\",\"swapfields\":false}",
+                  "name": "Number of logon failures by network workstation name and source address",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399480378232 & timestamp <= 1399566778231 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4625) & text=~\"Source Network Address:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv6ylemrzgk43t>\\S+)\\s+Source Port:\" & text=~\"Workstation Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll53w64tlon2gc5djn5xf63tbnvsq0000>.*)\\s+Source Network Address:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll53w64tlon2gc5djn5xf63tbnvsq0000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv6ylemrzgk43t ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of logon failures recorded by the Audit Logon Policy grouped by network workstation name and source address.<br><br>This\n event is generated when a logon request fails. It is generated on the \ncomputer where access was attempted. The status and sub-status failure \ncodes give the reason the logon failed. Some common failure codes are \nlisted below.<br><br>Failure code&nbsp;&nbsp;&nbsp; Name<br>---------------&nbsp;&nbsp; --------------------------------<br><span style=\"font-weight: bold;\">0xC0000064</span>&nbsp;&nbsp;&nbsp; STATUS_NO_SUCH_USER<br><span style=\"font-weight: bold;\">0xC000006A</span>&nbsp;&nbsp;&nbsp; STATUS_WRONG_PASSWORD<br><span style=\"font-weight: bold;\">0xC000006D</span>&nbsp;&nbsp;&nbsp; STATUS_LOGON_FAILURE<br><span style=\"font-weight: bold;\">0xC000006F</span>&nbsp;&nbsp;&nbsp; STATUS_INVALID_LOGON_HOURS<br><span style=\"font-weight: bold;\">0xC0000070</span>&nbsp;&nbsp;&nbsp; STATUS_INVALID_WORKSTATION<br><span style=\"font-weight: bold;\">0xC0000071</span>&nbsp;&nbsp;&nbsp; STATUS_PASSWORD_EXPIRED<br><span style=\"font-weight: bold;\">0xC0000072</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_DISABLED<br><span style=\"font-weight: bold;\">0xC00000DC</span>&nbsp;&nbsp; STATUS_INVALID_SERVER_STATE<br><span style=\"font-weight: bold;\">0xC0000133</span>&nbsp;&nbsp;&nbsp; STATUS_TIME_DIFFERENCE_AT_DC<br><span style=\"font-weight: bold;\">0xC000015B</span>&nbsp;&nbsp;&nbsp; STATUS_LOGON_TYPE_NOT_GRANTED<br><span style=\"font-weight: bold;\">0xC0000193</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_EXPIRED<br><span style=\"font-weight: bold;\">0xC0000224</span>&nbsp;&nbsp;&nbsp; STATUS_PASSWORD_MUST_CHANGE<br><span style=\"font-weight: bold;\">0xC0000234</span>&nbsp;&nbsp;&nbsp; STATUS_ACCOUNT_LOCKED_OUT<br><br>See <a href=\"http://msdn.microsoft.com/en-us/library/cc704588.aspx\"><span>2.3.1 NTSTATUS values</span></a> or ntstatus.h from the Windows SDK for a comprehensive list of status codes and descriptions.<br><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Security - Object Auditing",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "eventid",
+              "operator": "EQUAL"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f643vmjvgky3ul5qwgy3povxhix3omfwwk000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Access requests over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1406310721383 & timestamp <= 1406314321382 & text:\"Access request information\" & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\") as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+                  "info": "The number of objects under auditing that have been accessed. This query reports requests that succeeded and/or failed depending on how object auditing has been enabled.<br><br><span style=\"font-weight: bold;\">Important:</span> In order to receive results for this query, object auditing must be enabled. For more information, see <a href=\"http://technet.microsoft.com/en-us/library/cc784387(v=ws.10).aspx\">Apply or modify auditing policy settings for a local file or folder</a>.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Denied access requests over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1406314200000 & timestamp <= 1406314259999 & text:\"Access request information\" & text:\"denied\" & ((ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mfrwgzltonpxg6ltl5zwkyy0:\"Denied*\" & text=~\"ACCESS_SYS_SEC:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mfrwgzltonpxg6ltl5zwkyy0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mrswyzlumu000000:\"Denied*\" & text=~\"DELETE:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mrswyzlumu000000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczc7mnxw45dsn5wa0000:\"Denied*\" & text=~\"READ_CONTROL:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczc7mnxw45dsn5wa0000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdbor2he2lcov2gk4y0:\"Denied*\" & text=~\"ReadAttributes:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdbor2he2lcov2gk4y0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdemf2gc000:\"Denied*\" & text=~\"ReadData.*?:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdemf2gc000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdfme000000:\"Denied*\" & text=~\"ReadEA:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdfme000000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5sgcyy0:\"Denied*\" & text=~\"WRITE_DAC:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5sgcyy0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5xxo3tfoi000000:\"Denied*\" & text=~\"WRITE_OWNER:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5xxo3tfoi000000>.*)\")) as item0 GROUP BY item0.timestamp/1000 ORDER BY item0.timestamp DESC",
+                  "info": "The number of objects under auditing where access has been attempted and denied. This query reports requests that have failed.<br><br><span style=\"font-weight: bold;\">Important:</span>&nbsp;In order to receive results for this query, object auditing must be enabled. For more information, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc784387(v=ws.10).aspx\">Apply or modify auditing policy settings for a local file or folder</a>.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Access requests over time by eventid",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1406314200000 & timestamp <= 1406314259999 & text:\"Access request information\" & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\") as item0 GROUP BY item0.timestamp/1000,item0.eventid ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span><span><span><span style=\"font-weight: bold;\"><span style=\"font-weight: bold;\">46xx Event IDs<br>-------------------</span><br><span style=\"font-weight: bold;\">o 4656 - A handle to an object was requested.</span>&nbsp;</span>An application attempted to access an object under audit. This event does not always mean any access successfully requested was actually exercised - just that it was successfully obtained.<br><span style=\"font-weight: bold;\"><span style=\"font-weight: bold;\">o 4658 - The handle to an object was closed.</span>&nbsp;</span>After successfully opening an object, a program eventually closes it which is documented by this event. In correlation with event 4656, this information can be used to determine how long an object was open.<br><span><span style=\"font-weight: bold;\">o 4659 - A handle to an object was requested with intent to delete.&nbsp;</span>This event is logged whenever your install a patch that requires replacement of a file that is already opened by Windows and can't be closed until shut down.<br><span style=\"font-weight: bold;\">o 4660 - An object was deleted.&nbsp;</span>To find out the object's name and type you will need to correlate back to to the event 4656 that has the same Handle ID. In addition to this event you will also get event 4663 when you delete the object; Accesses: will include DELETE. 4663 identifies the object's name without requiring correlation to 4656.<br><span style=\"font-weight: bold;\">o 4661 - A handle to an object was requested.&nbsp;</span>Most objects, when opened (handle request), generate event 4656 but when you open a SAM object you get 4661 instead. When the object is closed you get event ID 4658 with the same handle ID.</span><br><span><span style=\"font-weight: bold;\">o 4663 - An attempt was made to access an object.&nbsp;</span>This event documents actual operations performed against files and other objects. &nbsp;This event is logged between the open (4656) and close (4658) events for the object being opened and can be correlated to those events via Handle ID. This event means a requested permission was exercised. If the program repeatedly exercises a permission while the object is open, this event is only logged the first time.<br><span style=\"font-weight: bold;\">o More information</span>&nbsp;- &nbsp;see <a href=\"http://technet.microsoft.com/en-us/library/dd772626(v=ws.10).aspx\">Audit Handle Manipulation</a>&nbsp;and <a href=\"http://technet.microsoft.com/en-us/library/dd772719(v=ws.10).aspx\">Audit SAM</a>.<br></span><br></span></span></span><span><span style=\"font-weight: bold;\">51xx Event IDs</span><br><span style=\"font-weight: bold;\">-------------------</span><br><span><span style=\"font-weight: bold;\">o 5140 - A network share object was accessed.&nbsp;</span>Windows logs this event the first time you access a given network share during a given logon session.</span><br><span><span style=\"font-weight: bold;\">o 5142 - A network share object was added.</span></span><br><span><span style=\"font-weight: bold;\">o 5143 - A network share object was modified.</span></span><br><span><span style=\"font-weight: bold;\">o 5144 - A network share object was deleted.</span></span><br><span><span style=\"font-weight: bold;\">o 5145 - A network share object was checked to see whether the client can be granted desired access.<br></span></span><span style=\"font-weight: bold;\">o More information</span>&nbsp;- &nbsp;see <a href=\"http://technet.microsoft.com/en-us/library/dn311489.aspx\">Audit File Share</a> and <a href=\"http://technet.microsoft.com/en-us/library/dn319118.aspx\">Audit Detailed File Share</a>.<br></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Denied access requests by account name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1406271600000 & timestamp <= 1406444400000 & text:\"Access request information\" & text:\"denied\" & ((ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mfrwgzltonpxg6ltl5zwkyy0:\"Denied*\" & text=~\"ACCESS_SYS_SEC:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mfrwgzltonpxg6ltl5zwkyy0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mrswyzlumu000000:\"Denied*\" & text=~\"DELETE:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mrswyzlumu000000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczc7mnxw45dsn5wa0000:\"Denied*\" & text=~\"READ_CONTROL:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczc7mnxw45dsn5wa0000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdbor2he2lcov2gk4y0:\"Denied*\" & text=~\"ReadAttributes:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdbor2he2lcov2gk4y0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdemf2gc000:\"Denied*\" & text=~\"ReadData.*?:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdemf2gc000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdfme000000:\"Denied*\" & text=~\"ReadEA:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdfme000000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5sgcyy0:\"Denied*\" & text=~\"WRITE_DAC:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5sgcyy0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5xxo3tfoi000000:\"Denied*\" & text=~\"WRITE_OWNER:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5xxo3tfoi000000>.*)\")) & text=~\"Subject:\\s+.*\\s+Account Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f643vmjvgky3ul5qwgy3povxhix3omfwwk000>.*)\\s+Account Domain:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f643vmjvgky3ul5qwgy3povxhix3omfwwk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of objects under auditing where access has been attempted and denied by user. This query reports requests that have failed by user.<br><br><span style=\"font-weight: bold;\">Important:</span>&nbsp;In order to receive results for this query, object auditing must be enabled. For more information, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc784387(v=ws.10).aspx\">Apply or modify auditing policy settings for a local file or folder</a>.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Access requests by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1406306709727 & timestamp <= 1406393109726 & text:\"Access request information\" & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of objects under auditing that have been accessed by hostname. This query reports requests that succeeded and/or failed depending on how object auditing has been enabled.<br><br><span style=\"font-weight: bold;\">Important:</span>&nbsp;In order to receive results for this query, object auditing must be enabled. For more information, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc784387(v=ws.10).aspx\">Apply or modify auditing policy settings for a local file or folder</a>.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Denied access requests by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1406306771049 & timestamp <= 1406393171048 & text:\"Access request information\" & text:\"denied\" & ((ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mfrwgzltonpxg6ltl5zwkyy0:\"Denied*\" & text=~\"ACCESS_SYS_SEC:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mfrwgzltonpxg6ltl5zwkyy0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mrswyzlumu000000:\"Denied*\" & text=~\"DELETE:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mrswyzlumu000000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczc7mnxw45dsn5wa0000:\"Denied*\" & text=~\"READ_CONTROL:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczc7mnxw45dsn5wa0000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdbor2he2lcov2gk4y0:\"Denied*\" & text=~\"ReadAttributes:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdbor2he2lcov2gk4y0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdemf2gc000:\"Denied*\" & text=~\"ReadData.*?:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdemf2gc000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdfme000000:\"Denied*\" & text=~\"ReadEA:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdfme000000>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5sgcyy0:\"Denied*\" & text=~\"WRITE_DAC:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5sgcyy0>.*)\") | (ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5xxo3tfoi000000:\"Denied*\" & text=~\"WRITE_OWNER:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5xxo3tfoi000000>.*)\")) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of objects under auditing where access has been attempted and denied by hostname. This query reports requests that have failed.<br><br><span style=\"font-weight: bold;\">Important:</span>&nbsp;In order to receive results for this query, object auditing must be enabled. For more information, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc784387(v=ws.10).aspx\">Apply or modify auditing policy settings for a local file or folder</a>.<br>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 3.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1398973488940 & timestamp <= 1399059888976 & (channel:\"application\" & providername:\"msiinstaller\" & level:\"error\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Microsoft Windows Installer error count high",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398973488940 & timestamp <= 1399059888976 & (channel:\"application\" & providername:\"msiinstaller\" & level:\"error\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "The number of application installer errors reported by the Microsoft Windows Installer is high. Consult the 'Review' section for individual error event ID's at <span style=\"text-decoration: underline;\"></span><span><a href=\"http://technet.microsoft.com/en-us/library/cc735575%28v=ws.10%29.aspx\">Windows Installer</a>.</span><br>"
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 5.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1398976115288 & timestamp <= 1399062517695 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & eventid=20) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Windows update client failure count high",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398976115288 & timestamp <= 1399062517695 & (channel:\"system\" & providername:\"microsoft-windows-windowsupdateclient\" & eventid=20) as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "The number of errors reported by the \nWindows update client is high. Open the Windows Update applet from the Control Panel of the affected computer and review the information displayed about the latest failed update.<span></span>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 5.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1398369507658 & timestamp <= 1398455907657 & (channel:\"application\" & providername:\"Windows Error Reporting\" & eventid=1001) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Windows Error Reporting infrastructure report count high",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398369507658 & timestamp <= 1398455907657 & (channel:\"application\" & providername:\"Windows Error Reporting\" & eventid=1001) as item0 GROUP BY item0.timestamp/3600000,item0.computer ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "The number of reports logged by Windows Error Reporting infrastructure is high. For more information, see <a href=\"http://social.technet.microsoft.com/wiki/contents/articles/3116.event-id-1001-windows-error-reporting.aspx\">Event ID 1001: Windows Error Reporting</a>.<br><br>"
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 3.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1399487249618 & timestamp <= 1399490849617 & ((channel:\"system\" | channel:\"application\" | channel:\"security\") & level:\"critical\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Windows critical event count is high",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1399487249618 & timestamp <= 1399490849617 & ((channel:\"system\" | channel:\"application\" | channel:\"security\") & level:\"critical\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "The number of reports logged by Windows Error Reporting infrastructure is high. For more information, see <span><a href=\"http://technet.microsoft.com/en-us/library/cc753935%28v=ws.10%29.aspx\">Troubleshoot Windows Server 2008</a>.</span><br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1400102736273 & timestamp <= 1400189141449 & (channel:\"system\" & providername:\"eventlog\" & eventid:\"6008\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Windows unexpected shutdown detected",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400102736273 & timestamp <= 1400189141449 & (channel:\"system\" & providername:\"eventlog\" & eventid:\"6008\") as item0 GROUP BY item0.eventid,item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "At least one unexpected shutdown of a Windows computer was detected. When Windows detect a restart after an unexpected shutdown, event 6008 is logged by the Event Log service. Look for critical, error, or warning events that occurred \njust before the system restart time on the affected system.<br><br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 3.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1398877200000 & timestamp <= 1398888000000 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4625) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Windows audit logon failure count high",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1398877200000 & timestamp <= 1398888000000 & (channel:\"security\" & providername:\"microsoft-windows-security-auditing\" & eventid=4625) & text=~\"Logon Type:(\\S+\\s+){4,5}Account Domain:\\t\\t(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpwi33nmfuw4000>.*)\" & text=~\"Logon Type:(\\S+\\s+){3,4}Account Name:\\s+(?<ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpw4ylnmu000000>.*)\\s+Account Domain:\" as item0 GROUP BY item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpw4ylnmu000000,item0.ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpwi33nmfuw4000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "The number of logon failures recorded by the Audit Logon Policy is high. Analyze the pattern of failed logons to determine if action should be taken for security of resources or training of users.<br>"
+    }
+  ],
+  "name": "Microsoft - Windows",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mfrwgzltonpxg6ltl5zwkyy0",
+      "preContext": "ACCESS_SYS_SEC:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_object_access_sys_sec"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7mrswyzlumu000000",
+      "preContext": "DELETE:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_object_delete"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczc7mnxw45dsn5wa0000",
+      "preContext": "READ_CONTROL:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_object_read_control"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdbor2he2lcov2gk4y0",
+      "preContext": "ReadAttributes:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_object_readattributes"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdemf2gc000",
+      "preContext": "ReadData.*?:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_object_readdata"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7ojswczdfme000000",
+      "preContext": "ReadEA:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_object_readea"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5sgcyy0",
+      "preContext": "WRITE_DAC:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_object_write_dac"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f633cnjswg5c7o5zgs5dfl5xxo3tfoi000000",
+      "preContext": "WRITE_OWNER:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_object_write_owner"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf6yldoruxmzi0",
+      "preContext": "Windows Firewall (.*\\s+)Modified Rule:(\\S+\\s+){3,5}Active:\\s",
+      "regexValue": ".*",
+      "displayName": "ms_win_active"
+    },
+    {
+      "postContext": "\\s+Response:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf6ylqobwgsy3boruw63s7mvzhe33sl5sxmzloorpw4ylnmu000000",
+      "preContext": "Event Name:\\s+",
+      "regexValue": "\\w+",
+      "displayName": "ms_win_application_error_event_name"
+    },
+    {
+      "postContext": "\\..*success or error status:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5wwc3tvmzqwg5dvojsxe000",
+      "preContext": "Windows Installer.*Manufacturer:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_installer_product_manufacturer"
+    },
+    {
+      "postContext": "\\.\\s+Product Version:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5xgc3lf",
+      "preContext": "Windows Installer.*Product Name:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_installer_product_name"
+    },
+    {
+      "postContext": "\\.$",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul5zxiyluovzq0000",
+      "preContext": "Windows Installer.*success or error status:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_installer_product_status"
+    },
+    {
+      "postContext": "\\.\\s+Product Language:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf64dsn5shky3ul53gk4ttnfxw4000",
+      "preContext": "Windows Installer.*Product Version:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_installer_product_version"
+    },
+    {
+      "postContext": "\\. Installation success or error status:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf62loon2gc3dmmvzf65lqmrqxizk7nzqw2zi0",
+      "preContext": "Windows Installer.*Update Name: ",
+      "regexValue": "\\w+",
+      "displayName": "ms_win_installer_update_name"
+    },
+    {
+      "postContext": "\\s+Authentication Package:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ylvorugk3tunfrwc5djn5xf63dpm5xw4x3qojxwgzltom000000",
+      "preContext": "Logon Process:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_authentication_logon_process"
+    },
+    {
+      "postContext": "\\s+Transited Services:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ylvorugk3tunfrwc5djn5xf64dbmnvwcz3f",
+      "preContext": "Authentication Package:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_authentication_package"
+    },
+    {
+      "postContext": "\\s+Status:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zgkyltn5xa0000",
+      "preContext": "Failure Reason:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_failure_reason"
+    },
+    {
+      "postContext": "\\s+Sub Status:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxiyluovzq0000",
+      "preContext": "Status:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_failure_status"
+    },
+    {
+      "postContext": "\\s+Process Information:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f6ztbnfwhk4tfl5zxkys7on2gc5dvom000000",
+      "preContext": "Sub Status:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_failure_sub_status"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f62lnobsxe43pnzqxi2lpnzpwyzlwmvwa0000",
+      "preContext": "Logon Type:(\\S+\\s+){2}Impersonation Level:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_impersonation_level"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpwi33nmfuw4000",
+      "preContext": "Logon Type:(\\S+\\s+){4,5}Account Domain:\\t\\t",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_logon_account_domain"
+    },
+    {
+      "postContext": "\\s+Account Domain:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3bmnrw65loorpw4ylnmu000000",
+      "preContext": "Logon Type:(\\S+\\s+){3,4}Account Name:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_logon_account_name"
+    },
+    {
+      "postContext": "\\s+Process Information:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3hovuwi000",
+      "preContext": "Logon GUID:\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_win_security_audit_logon_guid"
+    },
+    {
+      "postContext": "\\s+Logon GUID:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3jmq000000",
+      "preContext": "New Logon:(\\S+\\s+){4}Logon ID:\t\t",
+      "regexValue": "\\S+",
+      "displayName": "ms_win_security_audit_logon_id"
+    },
+    {
+      "postContext": "\\s+Account Name:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3tmvrxk4tjor4v62le",
+      "preContext": "Logon Type:(\\S+\\s+){2,3}Security ID:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_logon_security_id"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63dpm5xw4x3upfygk000",
+      "preContext": "Logon Type:\\s*",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_logon_type"
+    },
+    {
+      "postContext": "\\s+Source Port:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv6ylemrzgk43t",
+      "preContext": "Source Network Address:\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_win_security_audit_network_source_address"
+    },
+    {
+      "postContext": "\\s+Detailed Authentication Information:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll5zw65lsmnsv64dpoj2a0000",
+      "preContext": "Source Port:\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_win_security_audit_network_source_port"
+    },
+    {
+      "postContext": "\\s+Source Network Address:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f63tfor3w64tll53w64tlon2gc5djn5xf63tbnvsq0000",
+      "preContext": "Workstation Name:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_network_workstation_name"
+    },
+    {
+      "postContext": "\\s+.*Name:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f64dsn5rwk43tl5uwi000",
+      "preContext": "Process Information:\\s+Process ID:\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_win_security_audit_process_id"
+    },
+    {
+      "postContext": "\\s+",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f64dsn5rwk43tl5xgc3lf",
+      "preContext": "Process Information:\\s+Process ID:.*\\s+.*Name:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_process_name"
+    },
+    {
+      "postContext": "\\s+Logon ID:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f643vmjvgky3ul5qwgy3povxhix3en5wwc2lo",
+      "preContext": "Account Domain:\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_win_security_audit_subject_account_domain"
+    },
+    {
+      "postContext": "\\s+Account Domain:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f643vmjvgky3ul5qwgy3povxhix3omfwwk000",
+      "preContext": "Subject:\\s+.*\\s+Account Name:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_audit_subject_account_name"
+    },
+    {
+      "postContext": "\\s+Logon Type:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f643vmjvgky3ul5wg6z3pnzpwsza0",
+      "preContext": "Logon ID:\t\\s+",
+      "regexValue": "\\w+",
+      "displayName": "ms_win_security_audit_subject_logon_id"
+    },
+    {
+      "postContext": "\\s+Account Name:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwc5lenf2f643vmjvgky3ul5zwky3vojuxi6k7nfsa0000",
+      "preContext": "Subject:\\s+Security ID:\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_win_security_audit_subject_security_id"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwm2lsmv3wc3dml5sxe4tpojpxezlbonxw4000",
+      "preContext": "Windows Firewall(.*\\s+)+Error Information:\\s+\\tReason:\\s",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_firewall_error_reason"
+    },
+    {
+      "postContext": "\\s+Origin:",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643fmn2xe2lupfpwm2lsmv3wc3dml5zhk3dfl5xgc3lf",
+      "preContext": "A rule has been modified in the Windows Firewall exception list\\.\\s+.*\\s+.*\\s+Rule Name:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_security_firewall_rule_name"
+    },
+    {
+      "postContext": " has been restricted by your Administrator",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643sobpxg33gor3wc4tfl5xgc3lf",
+      "preContext": "Access to ",
+      "regexValue": ".*",
+      "displayName": "ms_win_srp_software_name"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7mv3gk3tul5wg6z27on2gc5df",
+      "preContext": "The Event log service was\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_system_event_log_state"
+    },
+    {
+      "postContext": "\\s+service entered the.*state\\.",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpw4ylnmu000000",
+      "preContext": "The\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_system_scm_service_name"
+    },
+    {
+      "postContext": "\\s+state\\.",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onrw2x3tmvzhm2ldmvpxg5dborsq0000",
+      "preContext": "The.*service entered the\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_system_scm_service_state"
+    },
+    {
+      "postContext": "\\s+was unexpected\\.",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onuhk5den53w4x3vnzsxq4dfmn2gkzc7mrqxizi0",
+      "preContext": "The previous system shutdown at.*on\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_system_shutdown_unexpected_date"
+    },
+    {
+      "postContext": " on.*was unexpected\\.",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7onuhk5den53w4x3vnzsxq4dfmn2gkzc7oruw2zi0",
+      "preContext": "The previous system shutdown at\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_system_shutdown_unexpected_time"
+    },
+    {
+      "postContext": "\\s+after 8 attempts to contact it.",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7oruw2zk7on4w4y27mrxw2yljnzpwg33oorzg63dmmvza0000",
+      "preContext": "Time Provider NtpClient.*controller\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_win_system_time_sync_domain_controller"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7oruw2zk7on4w4y27mvzhe33s",
+      "preContext": "Time Provider NtpClient.*The error was:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_system_time_sync_error"
+    },
+    {
+      "postContext": ":",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovygiylumvpwk4tsn5za0000",
+      "preContext": "Installation .*: Windows .*failed to install the following update with error\\s+",
+      "regexValue": "\\w+",
+      "displayName": "ms_win_system_update_error"
+    },
+    {
+      "postContext": "\\)",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovygiylumvpwwys7nz2w2ytfoi000000",
+      "preContext": "Installation .*: Windows .*following update(:| with error.*:)\\s+.*\\(",
+      "regexValue": "\\w+",
+      "displayName": "ms_win_system_update_kb_number"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovygiylumvpxa4tpmr2wg5c7nzqw2zi0",
+      "preContext": "Installation .*: Windows .*following update(:| with error.*:)\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_win_system_update_product_name"
+    },
+    {
+      "postContext": "\\s+seconds\\.",
+      "internalName": "ibademk7mnxw2ltnnfrxe33tn5thiltxnfxgi33xonwxgx3xnfxf643zon2gk3k7ovyhi2lnmvpxgzldn5xgi4y0",
+      "preContext": "The system uptime is\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_win_system_uptime_seconds"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "2.0",
+  "namespace": "com.microsoft.windows",
+  "icon": "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",
+  "author": "VMware, Inc.",
+  "contentVersion": "1.2.201407301311",
+  "url": "http://www.vmware.com",
+  "info": "<span>The content pack for Microsoft® Windows® OS provides you with\ninformation about the fundamental elements of any Windows installation’s health\nthrough the use of the recently added feature to analyze events in the Windows\nEvent Log.&nbsp; The content pack enables:<span></span></span><br>\n\n<span>&nbsp;<span></span></span><br>\n\n<span><u>Accurate monitoring of your Windows infrastructure</u><span></span></span><br>\n\n<span>Focus on known problems through monitoring events raised in the\nWindows Event Log.<span></span></span><br>\n\n<span>&nbsp;<span></span></span><br>\n\n<span><u>Essential Windows categories are covered—Application,\nSystem, and Security</u><span></span></span><br>\n\n<span>Ten dashboards containing a total of 52 widgets are included\nfrom Application, System, and Security that go in depth to quantify your data\nin a multitude of manners to help diagnose problems in your infrastructure. <span></span></span><br>\n\n<span>&nbsp;<span></span></span><br>\n\n<span><u>Employs features added in Log Insight 2.0</u><span></span></span><br>\n\n<span>Version 2.0 of Log Insight included the ability to view logs\nposted to the Windows Event Log, which is pivotal to providing a minimally\ninvasive Windows OS log monitoring solution.&nbsp;\nThe dashboards feature widgets that showcase the slick new chart types\nfor effortless visual consumption.<span></span></span><br>"
+}

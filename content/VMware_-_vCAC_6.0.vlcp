@@ -1,0 +1,926 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Non-info vCAC events by message",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391723973136 & timestamp <= 1391810373135 & ((FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk5tfnz2hgx3cpfpw2zltonqwozi0) & text=~\"com\\.vmware\\.vcac.* \\- (received \\d+ )?(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk5tfnz2hgx3cpfpw2zltonqwozi0>.*?)(:| \\[|\\[| starts at)\") & !priority:\"info\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk5tfnz2hgx3cpfpw2zltonqwozi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>Displays errors and warnings grouped by message type, indicating when there is a reoccurring issue in the environment. For example:<br><br>* A large number of notification-related messages like 'failed to parse message from pop3', 'failed message with id', and 'no matching notification found for message' can be indicative of an inbound email box receiving a significant amount of spam or other incorrectly formatted emails.<br>* A large number of repeated messages related to the Component Registry (cafe-component-registry) for various CAFE services can indicate the VA was rebooted (the services repeatedly try to register themselves until all of their pre-requisite dependancies are registered and then they are able to register themselves).</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Workflow events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391206619230 & timestamp <= 1391811419229 & ((text:\"Workflow Run:\" | text:\"Workflow Complete:\" | text:\"Scheduling workflow. Schedule Name:\" | text:\"workflow * failed with the following exception\") & (text:\"vmware dem\" | text:\"utc * local\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>All events related to IaaS workflows (provisioning, data collection, etc).<br></span><br>For more information on IaaS workflows, see: <a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.extensibility.doc/GUID-65DA0ED9-AACB-4A2A-8143-ADD39096C438.html?resultof=%2522%2577%256f%2572%256b%2566%256c%256f%2577%2522%2520\">IaaS Workflow Types</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "DEM events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391720546719 & timestamp <= 1391806946718 & text:\"vmware dem\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>Events triggered by Distributed Execution Managers (DEMs), which may indicate overall activity of the DEM as well as an increase in errors related to specific processes managed by the DEMs.<br></span><br>For more information on DEMs, see: <a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.install.doc/GUID-1C5EE1A9-1464-4AB9-B14F-001738D8597F.html?resultof=%2522%2544%2545%254d%2522%2520%2522%2564%2565%256d%2522%2520\">Distributed Execution Managers</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Workflows scheduled over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391717192833 & timestamp <= 1391803592832 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527onrwqzleovwgkza0) & text=~\"Scheduling workflow. Schedule Name: \\S+ Workflow Name: (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527onrwqzleovwgkza0>.*)\") as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>Scheduled workflow indicates that the DEM(s) was not able to handle all requests on demand and needed to schedule some workflows at future date. If this happens frequently, it may be an indication that additional worker DEMs are needed.<br></span><br>For more information on IaaS workflows, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.extensibility.doc/GUID-65DA0ED9-AACB-4A2A-8143-ADD39096C438.html?resultof=%2522%2577%256f%2572%256b%2566%256c%256f%2577%2522%2520\">IaaS Workflow Types</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "DEM failed to collect data by host",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5ug643u) & text=~\"Failed to collect data on host (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5ug643u>\\S+) for virtual machine \\S+,\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5ug643u ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>One or more hosts had data collection failures. See events for specific details; these will likely reoccur until the root cause is found and resolved. &nbsp;<br><br>For more information, see: <a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.iaas.all.doc/GUID-FCEA5791-BC3D-470A-A60C-1B9B671AC6DC.html\">IaaS Configuration for all Platforms</a></span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Workflows executed over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391023807103 & timestamp <= 1391628607102 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527oj2w4000) & text=~\"Workflow Run:\\s+\\d+ - (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527oj2w4000>\\w+) \\- \") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>Workflow executed Indicates the overall volume of IaaS workflow execution, which can indicate general overall system usage for provisioning.<br></span><br>For more information on IaaS workflows, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.extensibility.doc/GUID-65DA0ED9-AACB-4A2A-8143-ADD39096C438.html?resultof=%2522%2577%256f%2572%256b%2566%256c%256f%2577%2522%2520\">IaaS Workflow Types</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "DEM failed to collect data by VM",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5ug643u) & text=~\"Failed to collect data on host (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5ug643u>\\S+) for virtual machine \\S+,\") & text=~\"Failed to collect data on host \\S+ for virtual machine (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53g2000>\\S+),\" as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53g2000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>Data collection for one or more specific VMs failed. See events for specific details; these will likely reoccur until the root cause is found and resolved.<br><br></span>For more information, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.iaas.all.doc/GUID-FCEA5791-BC3D-470A-A60C-1B9B671AC6DC.html\">IaaS Configuration for all Platforms</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Alert Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1391828713224 & timestamp <= 1391829613223 & text:\"vcac\" & text:\"to establish a connection to vCenter Orchestrator server\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "vCO service unavailable",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391828713224 & timestamp <= 1391829613223 & text:\"vcac\" & text:\"to establish a connection to vCenter Orchestrator server\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                      "info": "<span>If vCO is unavailable then this could impact Advanced Service Designer workflows or customized IAAS workflows that leverage vCO.&nbsp;<br><br>For more information, check configuration under Administration, Advanced Services, Server Configuration and see: <a href=\"https://www.vmware.com/support/pubs/vcac-pubs.html\">Advanced Service Designer Configuration manual</a></span>"
+                    }
+                  ],
+                  "info": ""
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1391729856053 & timestamp <= 1391816256052 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7nfxge33vnzshg000) & text=~\"\\[\\[Payload=InboundNotification \\[getNotificationId\\(\\)=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7nfxge33vnzshg000>\\S+)\\, getUserToken\\(\\)\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All inbound messages by ID",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391729856053 & timestamp <= 1391816256052 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7nfxge33vnzshg000) & text=~\"\\[\\[Payload=InboundNotification \\[getNotificationId\\(\\)=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7nfxge33vnzshg000>\\S+)\\, getUserToken\\(\\)\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7nfxge33vnzshg000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "<span>Any errors are likely related to badly formatted emails trying to be processed by inbound notification service (i.e. approvals by email).</span><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1391729883416 & timestamp <= 1391816283415 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7ovzwk4tt) & text=~\"\\[getNotificationId\\(\\).* getFromUser\\(\\)=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7ovzwk4tt>\\S+)\\, getMessageReceivedAt\\(\\)\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All notifications grouped by users",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391729883416 & timestamp <= 1391816283415 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7ovzwk4tt) & text=~\"\\[getNotificationId\\(\\).* getFromUser\\(\\)=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7ovzwk4tt>\\S+)\\, getMessageReceivedAt\\(\\)\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7ovzwk4tt ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "Any errors are likely related to badly formatted emails trying to be processed by inbound notification service (i.e. approvals by email).<br>"
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "vCAC",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "vCAC tenant events by tenant name",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389129408647 & timestamp <= 1392951437419 & ((appname:\"cafe-notification\" | appname:\"cafe-plugin\" | appname:\"cafe-catalog\" | appname:\"cafe-shell\" | appname:\"cafe-component-registry\" | appname:\"cafe-authentication\" | appname:\"cafe-authorization\" | appname:\"cafe-branding\" | appname:\"cafe-iaas-proxy\" | appname:\"cafe-management\" | appname:\"cafe-branding\") & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000) & text=~\"cafe-.*? tenant\\s+(\\[|: )?(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000>\\S+?)(\\])?( |\\. |\\.$|$)\")) as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Tenant events grouped by tenant name indicate the most active tenants within the environment."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Warning vCAC service events over time by service",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & ((appname:\"cafe-notification\" | appname:\"cafe-plugin\" | appname:\"cafe-catalog\" | appname:\"cafe-shell\" | appname:\"cafe-component-registry\" | appname:\"cafe-authentication\" | appname:\"cafe-authorization\" | appname:\"cafe-branding\" | appname:\"cafe-iaas-proxy\" | appname:\"cafe-management\" | appname:\"cafe-approvals\" | appname:\"cafe-asd\" | appname:\"cafe-eventlog\" | appname:\"cafe-portal\") & priority:\"warning\") as item0 GROUP BY item0.timestamp/15552000000,item0.appname ORDER BY item0.appname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "<span>Shows distribution of warnings per CAFE common services over time.&nbsp;</span><span>The vCAC CAFE platform is comprised of several independent common services:</span><br><br><span>*&nbsp;<span style=\"font-weight: bold;\">Approvals</span>&nbsp;- Work item processing details, including evaluation of approval policies</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">ASD</span>&nbsp;- Advanced Service Designer messages</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Authentication</span>&nbsp;- manages user authentication via SSO</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Authorization</span>&nbsp;- manages user authorization via SSO / assigned roles</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Branding</span>&nbsp;- customization of UI Chrome (logo, colors, etc)</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Catalog</span>&nbsp;- all items related to the Catalog tab and it's contents (Catalog Items) and Approvals</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Component Registry</span>&nbsp;- allows components to register themselves with CAFE</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Event Log</span>&nbsp;- CAFE event log messages</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">IaaS Proxy</span>&nbsp;- supports display of IaaS forms in CAFE UI</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Management</span></span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Notification</span>&nbsp;- manages inbound and outbound email messages</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Plugin</span></span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Portal</span></span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Shell</span>&nbsp;- the CAFE user interface</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Error vCAC service events over time by service",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & ((appname:\"cafe-notification\" | appname:\"cafe-plugin\" | appname:\"cafe-catalog\" | appname:\"cafe-shell\" | appname:\"cafe-component-registry\" | appname:\"cafe-authentication\" | appname:\"cafe-authorization\" | appname:\"cafe-branding\" | appname:\"cafe-iaas-proxy\" | appname:\"cafe-management\" | appname:\"cafe-approvals\" | appname:\"cafe-asd\" | appname:\"cafe-eventlog\" | appname:\"cafe-portal\") & priority:\"err\") as item0 GROUP BY item0.timestamp/15552000000,item0.appname ORDER BY item0.appname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "<span>Shows distribution of errors per CAFE common services over time.&nbsp;The vCAC CAFE platform is comprised of several independent common services:</span><br><br><span>*&nbsp;<span style=\"font-weight: bold;\">Approvals</span>&nbsp;- Work item processing details, including evaluation of approval policies</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">ASD</span>&nbsp;- Advanced Service Designer messages</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Authentication</span>&nbsp;- manages user authentication via SSO</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Authorization</span>&nbsp;- manages user authorization via SSO / assigned roles</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Branding</span>&nbsp;- customization of UI Chrome (logo, colors, etc)</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Catalog</span>&nbsp;- all items related to the Catalog tab and it's contents (Catalog Items) and Approvals</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Component Registry</span>&nbsp;- allows components to register themselves with CAFE</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Event Log</span>&nbsp;- CAFE event log messages</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">IaaS Proxy</span>&nbsp;- supports display of IaaS forms in CAFE UI</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Management</span></span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Notification</span>&nbsp;- manages inbound and outbound email messages</span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Plugin</span></span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Portal</span></span><br><span>*&nbsp;<span style=\"font-weight: bold;\">Shell</span>&nbsp;- the CAFE user interface</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Non-info vCAC events by message type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391723884686 & timestamp <= 1391810284685 & ((appname:\"cafe-notification\" | appname:\"cafe-plugin\" | appname:\"cafe-catalog\" | appname:\"cafe-shell\" | appname:\"cafe-component-registry\" | appname:\"cafe-authentication\" | appname:\"cafe-authorization\" | appname:\"cafe-branding\" | appname:\"cafe-iaas-proxy\" | appname:\"cafe-management\" | appname:\"cafe-branding\") & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk5tfnz2hgx3cpfpw2zltonqwozi0) & text=~\"com\\.vmware\\.vcac.* \\- (received \\d+ )?(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk5tfnz2hgx3cpfpw2zltonqwozi0>.*?)(:| \\[|\\[| starts at)\") & !priority:\"info\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk5tfnz2hgx3cpfpw2zltonqwozi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>Shows most common non-Info events for vCAC CAFE components by message. Can highlight environmental issues (i.e. communicating to particular host), token renewal issues, etc.</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "vCAC error events by error message",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385874670000 & timestamp <= 1391230800000 & ((FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000) & text=~\"com\\.vmware\\.vcac\\..*(\\{|\\[)error code:\\s+(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000>-?\\d+)(\\}| \\])\") & !ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000:\"50**\") & text=~\"com\\.vmware\\.vcac\\..*(\\{|\\[)error msg:\\s+(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf63ltm4000000>.*?)(\\}|\\])\" as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf63ltm4000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>Shows most common error events for vCAC CAFE components by message. Can highlight environmental issues (i.e. communicating to particular host), token renewal issues, etc.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1389589870000 & timestamp <= 1391543778000 & text:\"ProviderCatalogItemServiceImpl.registerCatalogItem\" as item0 ORDER BY item0.timestamp DESC",
+                  "name": "Catalog register events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389589870000 & timestamp <= 1391543778000 & text:\"ProviderCatalogItemServiceImpl.registerCatalogItem\" as item0 GROUP BY item0.timestamp/43200000 ORDER BY item0.timestamp ASC",
+                  "info": "<span><span>Catalog Item registration events from service providers (e.g. IaaS, APPD, ASD) publishing blueprints over time for new and updated Catalog Items.</span></span><br><span><span><br>* <span style=\"font-weight: bold;\">104</span>: Create or update status</span></span><br><span><span>* <span style=\"font-weight: bold;\">76</span>: Registration of CI after create or update<br></span></span><br>For more information, see publish blueprint information under:<br><br>*&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.iaas.all.doc/GUID-FCEA5791-BC3D-470A-A60C-1B9B671AC6DC.html\">IaaS Configuration for all Platforms</a><br>* <a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.concepts.doc/GUID-5E6EDC34-1E94-44D0-9103-3D134AF31EDF.html?resultof=%2522%2561%2564%2576%2561%256e%2563%2565%2564%2522%2520%2522%2561%2564%2576%2561%256e%2563%2522%2520%2522%2573%2565%2572%2576%2569%2563%2565%2522%2520%2522%2573%2565%2572%2576%2569%2563%2522%2520%2522%2564%2565%2573%2569%2567%256e%2565%2572%2522%2520%2522%2564%2565%2573%2569%2567%256e%2522%2520\">Advanced Service Designer</a><br>*&nbsp;<a href=\"http://pubs.vmware.com/appdirector-6/index.jsp#com.vmware.appdirector6.using.doc/GUID-046F254E-5DA8-4C59-AD22-09276A2EA8F7.html?resultof=%2522%2562%256c%2575%2565%2570%2572%2569%256e%2574%2522%2520%2522%2576%2563%2561%2563%2522%2520\">Publish a Deployment Profile to the vCloud Automation Center Service Catalog</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Catalog events by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"ProviderCatalogItemServiceImpl.registerCatalogItem\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27on2gc5dvom000000) & text=~\"com\\.vmware\\.vcac\\.catalog\\.service\\.impl.* CatalogItem \\S+ from provider \\S+ .* with status (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27on2gc5dvom000000>\\w+)\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27on2gc5dvom000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>Catalog Item registration events to create or update Catalog (e.g. blueprint) Items.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Alert Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"license has expired\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "vCAC license has expired",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"license has expired\" as item0 GROUP BY item0.timestamp/15552000000 ORDER BY item0.timestamp ASC",
+                      "info": "<span>Notification when the a vCAC license key has expired. Advise enabling this alert if a permanent key is not in use.</span><br>"
+                    }
+                  ],
+                  "info": ""
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (appname:\"cafe-notification\" | appname:\"cafe-plugin\" | appname:\"cafe-catalog\" | appname:\"cafe-shell\" | appname:\"cafe-component-registry\" | appname:\"cafe-authentication\" | appname:\"cafe-authorization\" | appname:\"cafe-branding\" | appname:\"cafe-iaas-proxy\" | appname:\"cafe-management\" | appname:\"cafe-approvals\" | appname:\"cafe-asd\" | appname:\"cafe-eventlog\" | appname:\"cafe-portal\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "vCAC service events grouped by services",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (appname:\"cafe-notification\" | appname:\"cafe-plugin\" | appname:\"cafe-catalog\" | appname:\"cafe-shell\" | appname:\"cafe-component-registry\" | appname:\"cafe-authentication\" | appname:\"cafe-authorization\" | appname:\"cafe-branding\" | appname:\"cafe-iaas-proxy\" | appname:\"cafe-management\" | appname:\"cafe-approvals\" | appname:\"cafe-asd\" | appname:\"cafe-eventlog\" | appname:\"cafe-portal\") as item0 GROUP BY item0.appname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "<span>The vCAC CAFE platform is comprised of several independent common services:</span><br><br><span>* <span style=\"font-weight: bold;\">Approvals</span> - Work item processing details, including evaluation of approval policies</span><br><span>* <span style=\"font-weight: bold;\">ASD</span> - Advanced Service Designer messages</span><br><span>* <span style=\"font-weight: bold;\">Authentication</span> - manages user authentication via SSO</span><br><span>* <span style=\"font-weight: bold;\">Authorization</span> - manages user authorization via SSO / assigned roles</span><br><span>* <span style=\"font-weight: bold;\">Branding</span> - customization of UI Chrome (logo, colors, etc)</span><br><span>* <span style=\"font-weight: bold;\">Catalog</span> - all items related to the Catalog tab and it's contents (Catalog Items) and Approvals</span><br><span>* <span style=\"font-weight: bold;\">Component Registry</span> - allows components to register themselves with CAFE</span><br><span>* <span style=\"font-weight: bold;\">Event Log</span> - CAFE event log messages</span><br><span>* <span style=\"font-weight: bold;\">IaaS Proxy</span> - supports display of IaaS forms in CAFE UI</span><br><span>* <span style=\"font-weight: bold;\">Management</span></span><br><span>* <span style=\"font-weight: bold;\">Notification</span> - manages inbound and outbound email messages</span><br><span>* <span style=\"font-weight: bold;\">Plugin</span></span><br><span>* <span style=\"font-weight: bold;\">Portal</span></span><br><span>* <span style=\"font-weight: bold;\">Shell</span> - the CAFE user interface</span><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1391742670355 & timestamp <= 1391829070354 & ((FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000) & text=~\"com\\.vmware\\.vcac\\..*(\\{|\\[)error code:\\s+(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000>-?\\d+)(\\}| \\])\") & !ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000:\"50**\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "vCAC error events by error code",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391742670355 & timestamp <= 1391829070354 & ((FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000) & text=~\"com\\.vmware\\.vcac\\..*(\\{|\\[)error code:\\s+(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000>-?\\d+)(\\}| \\])\") & !ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000:\"50**\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "<span><span><span><span>Error code format = <span style=\"font-weight: bold;\">XX</span>YYY. Where <span style=\"font-weight: bold;\">XX</span> is:<br><br>* <span style=\"font-weight: bold;\">10</span> -&nbsp;</span><span>Core Platform</span><span><br></span></span><span><span>* <span style=\"font-weight: bold;\">12</span> -&nbsp;</span><span>Work Item Service<br></span></span><span><span>* <span style=\"font-weight: bold;\">13</span> -&nbsp;</span><span>Component Registry<br></span></span><span><span>* <span style=\"font-weight: bold;\">14</span> -&nbsp;</span><span>Event Log<br></span></span><span><span>* <span style=\"font-weight: bold;\">15</span> -&nbsp;</span><span>Branding Service<br></span></span><span><span>* <span style=\"font-weight: bold;\">16</span> - Shared Data Driven Components<br></span></span><span><span>* <span style=\"font-weight: bold;\">17</span> -&nbsp;</span><span>Licensing<br></span></span><span><span>* <span style=\"font-weight: bold;\">20</span> -&nbsp;</span><span>Service Catalog<br></span></span><span><span>* <span style=\"font-weight: bold;\">25</span> -&nbsp;</span><span>Extensibility Service<br></span></span><span><span>* <span style=\"font-weight: bold;\">30</span> -&nbsp;</span><span>Suite Landing Page<br></span></span><span><span>* <span style=\"font-weight: bold;\">42</span> -&nbsp;</span><span>IaaS<br></span></span><span><span>* <span style=\"font-weight: bold;\">50</span> -&nbsp;</span><span>Default<br></span></span><span><span>* <span style=\"font-weight: bold;\">70</span> -&nbsp;</span><span>Notification Service<br></span></span><span><span>* <span style=\"font-weight: bold;\">80</span> -&nbsp;</span><span>Approval Service<br></span></span><span><span>* <span style=\"font-weight: bold;\">85</span> -&nbsp;</span><span>Advanced Services Designer<br></span></span><span><span>* <span style=\"font-weight: bold;\">90</span> -&nbsp;</span><span>Authentication Service<br></span></span><span><span>* <span style=\"font-weight: bold;\">95</span> -&nbsp;</span><span>Authorization Service</span></span></span></span>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & ((appname:\"cafe-notification\" | appname:\"cafe-plugin\" | appname:\"cafe-catalog\" | appname:\"cafe-shell\" | appname:\"cafe-component-registry\" | appname:\"cafe-authentication\" | appname:\"cafe-authorization\" | appname:\"cafe-branding\" | appname:\"cafe-iaas-proxy\" | appname:\"cafe-management\" | appname:\"cafe-branding\") & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000) & text=~\"cafe-.*? tenant\\s+(\\[|: )?(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000>\\S+?)(\\])?( |\\. |\\.$|$)\") & !text:\"INFO\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Non-info vCAC tenant events by tenant name",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & ((appname:\"cafe-notification\" | appname:\"cafe-plugin\" | appname:\"cafe-catalog\" | appname:\"cafe-shell\" | appname:\"cafe-component-registry\" | appname:\"cafe-authentication\" | appname:\"cafe-authorization\" | appname:\"cafe-branding\" | appname:\"cafe-iaas-proxy\" | appname:\"cafe-management\" | appname:\"cafe-branding\") & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000) & text=~\"cafe-.*? tenant\\s+(\\[|: )?(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000>\\S+?)(\\])?( |\\. |\\.$|$)\") & !text:\"INFO\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "Tenant events grouped by tenant name indicate the most active tenants within the environment. Non-info events indicates issues that tenants are experiencing.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"ProviderCatalogItemServiceImpl.registerCatalogItem\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27obzg65tjmrsxe000) & text=~\"com\\.vmware\\.vcac\\.catalog\\.service\\.impl.* CatalogItem \\S+ from provider (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27obzg65tjmrsxe000>\\S+)\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Catalog events by provider",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"ProviderCatalogItemServiceImpl.registerCatalogItem\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27obzg65tjmrsxe000) & text=~\"com\\.vmware\\.vcac\\.catalog\\.service\\.impl.* CatalogItem \\S+ from provider (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27obzg65tjmrsxe000>\\S+)\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27obzg65tjmrsxe000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "Catalog events from service providers (e.g. IaaS, APPD, ASD) publishing blueprints.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"ProviderCatalogItemServiceImpl.registerCatalogItem\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27nf2gk3i0) & text=~\"com\\.vmware\\.vcac\\.catalog\\.service\\.impl.* CatalogItem (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27nf2gk3i0>\\S+) from provider \\S+\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Catalog events by item",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"ProviderCatalogItemServiceImpl.registerCatalogItem\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27nf2gk3i0) & text=~\"com\\.vmware\\.vcac\\.catalog\\.service\\.impl.* CatalogItem (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27nf2gk3i0>\\S+) from provider \\S+\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27nf2gk3i0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": ""
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "IAAS",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Non-info DEM events over time",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391725182236 & timestamp <= 1391811582235 & text:\"vmware dem\" & !priority:\"info\" as item0 GROUP BY item0.timestamp/3600000,item0.priority ORDER BY item0.priority DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "<span>Non-info events triggered by Distributed Execution Managers (DEMs), which may indicate potential issues within the environment over time.<br></span><br>For more information on DEMs, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.install.doc/GUID-1C5EE1A9-1464-4AB9-B14F-001738D8597F.html?resultof=%2522%2544%2545%254d%2522%2520%2522%2564%2565%256d%2522%2520\">Distributed Execution Managers</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Workflows scheduled over time by type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391717220173 & timestamp <= 1391803620172 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527onrwqzleovwgkza0) & text=~\"Scheduling workflow. Schedule Name: \\S+ Workflow Name: (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527onrwqzleovwgkza0>.*)\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527onrwqzleovwgkza0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>All IaaS workflows (provisioning, data collection, etc) scheduled to run. Workflows should not be scheduled unless the IAAS systems are unable to keep up (perhaps due to a large increase in load). If multiple events are seen, this may indicate the need for additional IAAS systems.<br></span><br>For more information on IaaS workflows, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.extensibility.doc/GUID-65DA0ED9-AACB-4A2A-8143-ADD39096C438.html?resultof=%2522%2577%256f%2572%256b%2566%256c%256f%2577%2522%2520\">IaaS Workflow Types</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Workflow run by type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391717052915 & timestamp <= 1391803452914 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527oj2w4000) & text=~\"Workflow Run:\\s+\\d+ - (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527oj2w4000>\\w+) \\- \") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527oj2w4000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>All IaaS workflows (provisioning, data collection, etc) run. An increase in the number of events indicates increased utilization.<br></span><br>For more information on IaaS workflows, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.extensibility.doc/GUID-65DA0ED9-AACB-4A2A-8143-ADD39096C438.html?resultof=%2522%2577%256f%2572%256b%2566%256c%256f%2577%2522%2520\">IaaS Workflow Types</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Workflows completed but failed by error message",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391718513226 & timestamp <= 1391804913225 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxo33snntgy33xl5rw63lqnrsxizk7mzqws3dfmrpw2zltonqwozi0) & text=~\"\\[Debug\\]: Workflow Complete:\\s+\\d+ - Failed: (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxo33snntgy33xl5rw63lqnrsxizk7mzqws3dfmrpw2zltonqwozi0>.*)\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxo33snntgy33xl5rw63lqnrsxizk7mzqws3dfmrpw2zltonqwozi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "IAAS workflows that completed, but ended in failure. Events are grouped by error message to make it easy to determine trends and correct commonly occurring issues.<br><br>For more information on IaaS workflows, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.extensibility.doc/GUID-65DA0ED9-AACB-4A2A-8143-ADD39096C438.html?resultof=%2522%2577%256f%2572%256b%2566%256c%256f%2577%2522%2520\">IaaS Workflow Types</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Workflow failures over time by type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391717102293 & timestamp <= 1391803502292 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg65y0) & text=~\"vmware dem\\[error\\].*Workflow \\\"(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg65y0>\\w+)\\\" failed with the following exception:\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg65y0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "IAAS workflows that failed prior to completion. Events are grouped by type to make it easy to determine trends and correct commonly occurring issues.<br><br>For more information on IaaS workflows, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.extensibility.doc/GUID-65DA0ED9-AACB-4A2A-8143-ADD39096C438.html?resultof=%2522%2577%256f%2572%256b%2566%256c%256f%2577%2522%2520\">IaaS Workflow Types</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Workflow failures over time by message",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391716905670 & timestamp <= 1391803305669 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527mv4ggzlqoruw63s7nvsxg43bm5sq0000) & text=~\"vmware dem\\[error\\].*Workflow \\\"\\w+\\\" failed with the following exception: .*: (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527mv4ggzlqoruw63s7nvsxg43bm5sq0000>.*?)\\s+at \") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527mv4ggzlqoruw63s7nvsxg43bm5sq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "IAAS workflows that failed prior to completion. Events are grouped by message to make it easy to determine trends and correct commonly occurring issues.<br><br>For more information on IaaS workflows, see:&nbsp;<a href=\"http://pubs.vmware.com/vCAC-60/index.jsp#com.vmware.vcac.extensibility.doc/GUID-65DA0ED9-AACB-4A2A-8143-ADD39096C438.html?resultof=%2522%2577%256f%2572%256b%2566%256c%256f%2577%2522%2520\">IaaS Workflow Types</a><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tomcat",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "vCAC Tomcat events over time",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385874670000 & timestamp <= 1391230800000 & text:\"vcac\" & text:\"request for\" & text:\"resulted in\" as item0 GROUP BY item0.timestamp/86400000 ORDER BY item0.timestamp ASC",
+                  "info": "Tomcat events over time are a good indication of Tomcat load. An increase in events represents an increase in Tomcat operations while a decrease in events represents a decrease in Tomcat operations.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "vCAC Tomcat events over time by request",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"request for\" & text:\"resulted in\" & text=~\"com\\.vmware\\.vcac\\..*? \\- (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpxezlrovsxg5a0>\\w+) request for \\\"\\S+\\\" resulted in \\d+\" as item0 GROUP BY item0.timestamp/15552000000,item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpxezlrovsxg5a0 ORDER BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpxezlrovsxg5a0 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "<span>The following HTTP method definitions are used:<br><br>* <span style=\"font-weight: bold;\">GET</span> - The GET method means retrieve whatever information (in the form of an\n   entity) is identified by the Request-URI.<br>*&nbsp;</span><span><span style=\"font-weight: bold;\">HEAD</span> -&nbsp;</span><span>The HEAD method is identical to GET except that the server MUST NOT\n   return a message-body in the response.<br>*&nbsp;</span><span><span style=\"font-weight: bold;\">POST</span> -&nbsp;</span><span>The POST method is used to request that the origin server accept the\n   entity enclosed in the request as a new subordinate of the resource\n   identified by the Request-URI in the Request-Line.<br>*&nbsp;</span><span><span style=\"font-weight: bold;\">PUT</span> -&nbsp;</span><span>The PUT method requests that the enclosed entity be stored under the\n   supplied Request-URI.<br>*&nbsp;</span><span><span style=\"font-weight: bold;\">DELETE</span> -&nbsp;</span><span>The DELETE method requests that the origin server delete the resource\n   identified by the Request-URI.<br>*&nbsp;</span><span><span style=\"font-weight: bold;\">TRACE</span> -&nbsp;</span><span>The TRACE method is used to invoke a remote, application-layer loop-\n   back of the request message.<br>*&nbsp;</span><span><span style=\"font-weight: bold;\">CONNECT</span> -&nbsp;</span><span>This specification reserves the method name CONNECT for use with a\n   proxy that can dynamically switch to being a tunnel (e.g. SSL\n   tunneling [44]).<br><br>For a complete list of HTTP methods see:&nbsp;<a href=\"https://www.ietf.org/rfc/rfc2616.txt\">RFC 2616 section 9</a><br></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "vCAC Tomcat events over time by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"request for\" & text:\"resulted in\" & text=~\"com\\.vmware\\.vcac\\..*? \\- \\w+ request for \\\"\\S+\\\" resulted in (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpxg5dbor2xg000>\\d+)\" as item0 GROUP BY item0.timestamp/15552000000,item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpxg5dbor2xg000 ORDER BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpxg5dbor2xg000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "<span>The HTTP status code is a 3-digit integer result code of the\n   attempt to understand and satisfy the request.&nbsp;<span>The first digit of the HTTP status code defines the class of response. The&nbsp;</span><span>last two digits do not have any categorization role. There are 5\n   values for the first digit:<br><br>* <span style=\"font-weight: bold;\">1xx: Informational</span> - Request received, continuing process<br>* <span style=\"font-weight: bold;\">2xx: Success</span> - The action was successfully received,\n        understood, and accepted<br>* <span style=\"font-weight: bold;\">3xx: Redirection</span> - Further action must be taken in order to\n        complete the request<br>* <span style=\"font-weight: bold;\">4xx: Client Error</span> - The request contains bad syntax or cannot\n        be fulfilled<br>* <span style=\"font-weight: bold;\">5xx: Server Error</span> - The server failed to fulfill an apparently\n        valid request</span><br><br>Common HTTP statuses include:<br></span><br>*&nbsp;<span><span style=\"font-weight: bold;\">200 OK</span> -&nbsp;</span><span>The request has succeeded.<br></span>*&nbsp;<span><span style=\"font-weight: bold;\">301 Moved Permanently</span> -&nbsp;</span><span>The requested resource has been assigned a new permanent URI and any future references to this resource SHOULD use one of the returned URIs.<br></span>*&nbsp;<span><span style=\"font-weight: bold;\">401 Unauthorized</span> -&nbsp;</span><span>The request requires user authentication.<br></span>*&nbsp;<span><span style=\"font-weight: bold;\">403 Forbidden</span> -&nbsp;</span><span>The server understood the request, but is refusing to fulfill it.<br></span>*&nbsp;<span><span style=\"font-weight: bold;\">404 Not Found</span> -&nbsp;</span><span>The server has not found anything matching the Request-URI.<br></span>*&nbsp;<span><span style=\"font-weight: bold;\">500 Internal Server Error</span> -&nbsp;</span><span>The server encountered an unexpected condition which prevented it from fulfilling the request.<br></span>*&nbsp;<span><span style=\"font-weight: bold;\">503 Service Unavailable</span> -&nbsp;</span><span>The server is currently unable to handle the request due to a temporary overloading or maintenance of the server.<br></span>*&nbsp;<span><span style=\"font-weight: bold;\">504 Gateway Timeout</span> -&nbsp;</span><span>The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI (e.g. HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed to access in attempting to complete the request.</span><br><br>For a complete list of HTTP status codes see: <a href=\"https://www.ietf.org/rfc/rfc2616.txt\">RFC 2616 section 10</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "vCAC Tomcat events over time by component",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"request for\" & text:\"resulted in\" & text=~\"com\\.vmware\\.vcac\\..*? \\- \\w+ request for \\\"https://\\S+?/(/)?(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpwg33nobxw4zlooq000000>\\S+?)/\" as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpwg33nobxw4zlooq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span><span>The vCAC CAFE platform is comprised of several independent common services:<br></span><br>*&nbsp;<span style=\"font-weight: bold;\">Approvals</span>&nbsp;- Work item processing details, including evaluation of approval policies</span><br>*&nbsp;<span style=\"font-weight: bold;\">ASD</span>&nbsp;- Advanced Service Designer messages<br>*&nbsp;<span style=\"font-weight: bold;\">Authentication</span>&nbsp;- manages user authentication via SSO<br>*&nbsp;<span style=\"font-weight: bold;\">Authorization</span>&nbsp;- manages user authorization via SSO / assigned roles<br>*&nbsp;<span style=\"font-weight: bold;\">Branding</span>&nbsp;- customization of UI Chrome (logo, colors, etc)<br>*&nbsp;<span style=\"font-weight: bold;\">Catalog</span>&nbsp;- all items related to the Catalog tab and it's contents (Catalog Items) and Approvals<br>*&nbsp;<span style=\"font-weight: bold;\">Component Registry</span>&nbsp;- allows components to register themselves with CAFE<br>*&nbsp;<span style=\"font-weight: bold;\">Event Log</span>&nbsp;- CAFE event log messages<br>*&nbsp;<span style=\"font-weight: bold;\">IaaS Proxy</span>&nbsp;- supports display of IaaS forms in CAFE UI<br>*&nbsp;<span style=\"font-weight: bold;\">Management</span><br>*&nbsp;<span style=\"font-weight: bold;\">Notification</span>&nbsp;- manages inbound and outbound email messages<br>*&nbsp;<span style=\"font-weight: bold;\">Plugin</span><br>*&nbsp;<span style=\"font-weight: bold;\">Portal</span><br>*&nbsp;<span style=\"font-weight: bold;\">Shell</span>&nbsp;- the CAFE user interface<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "vCAC Tomcat events over time by message",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"request for\" & text:\"resulted in\" & text=~\"com\\.vmware\\.vcac\\..*? \\- \\w+ request for \\\"\\S+\\\" resulted in \\d+ \\((?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpw2zltonqwozi0>.*?)\\)\" as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpw2zltonqwozi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>The HTTP reason phrase is intended to give a short\n   textual description of the HTTP status code. Common reason phrases include:<br><br>*&nbsp;<span style=\"font-weight: bold;\">200 OK</span>&nbsp;-&nbsp;The request has succeeded.<br>*&nbsp;<span style=\"font-weight: bold;\">301 Moved Permanently</span>&nbsp;-&nbsp;The requested resource has been assigned a new permanent URI and any future references to this resource SHOULD use one of the returned URIs.<br>*&nbsp;<span style=\"font-weight: bold;\">401 Unauthorized</span>&nbsp;-&nbsp;The request requires user authentication.<br>*&nbsp;<span style=\"font-weight: bold;\">403 Forbidden</span>&nbsp;-&nbsp;The server understood the request, but is refusing to fulfill it.<br>*&nbsp;<span style=\"font-weight: bold;\">404 Not Found</span>&nbsp;-&nbsp;The server has not found anything matching the Request-URI.<br>*&nbsp;<span style=\"font-weight: bold;\">500 Internal Server Error</span>&nbsp;-&nbsp;The server encountered an unexpected condition which prevented it from fulfilling the request.<br>*&nbsp;<span style=\"font-weight: bold;\">503 Service Unavailable</span>&nbsp;-&nbsp;The server is currently unable to handle the request due to a temporary overloading or maintenance of the server.<br>*&nbsp;<span style=\"font-weight: bold;\">504 Gateway Timeout</span>&nbsp;-&nbsp;<span>The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI (e.g. HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed to access in attempting to complete the request.</span><br><br>For a complete list of HTTP status codes see:&nbsp;<a href=\"https://www.ietf.org/rfc/rfc2616.txt\">RFC 2616 section 10</a>. Please note that some reason phrases are vCAC specific and not part of RFC2616 section 10.<br></span>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "APPD",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "APPD events over time",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391726827364 & timestamp <= 1391813227363 & appname:\"APPD\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                  "info": "APPD events over time are a good indication of APPD load. An increase in events represents an increase in APPD operations while a decrease in events represents a decrease in APPD operations."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "APPD task events by task",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391730591694 & timestamp <= 1391816991693 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxg5dbor2xg000) & text=~\"APPD:.* Processed status of task runId=\\d+ nodeId='\\S+' taskId=\\S+\\, status=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxg5dbor2xg000>\\S+)\") & text=~\"APPD:.* Processed status of task runId=\\d+ nodeId='\\S+' taskId=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxiyltnnuwi000>\\S+)\\, status=\\S+\" as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxiyltnnuwi000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span><span>This chart displays the events grouped by task. When a blueprint is being deployed, the first step is to provision virtual machines in the cloud. After all virtual machines are provisioned and running, it will first use cloud provider provided mechanism to run guest customization which is called \"host\" in the chart. After that it will try to bootstrap the Application Director agent process, which is called \"agent_bootstrap\" in the chart. If there are any network configuration required, it will run \"network_bootstrap\" task. After all of these are done, agent will process all the script tasks to install, configure and start services as defined in the blueprint, or run customized tasks as defined in deployment profile.<br></span></span><br><span><span>From the chart, we can drill down to see which exact task has problems in the provisioning process.</span></span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "APPD instance events by VM",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3i0) & text=~\"APPD:.* VM='(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3i0>\\S+)' found with status='\\S+'\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3i0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This chart displays the events grouped by the deployed virtual machines. Each virtual machine deployed in the cloud will have a different instance in this chart, even they are deployed from the same node of the same blueprint. From this chart, you can diagnose the provisioning error for a specific virtual machine.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "APPD task events by node",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391730591694 & timestamp <= 1391816991693 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxg5dbor2xg000) & text=~\"APPD:.* Processed status of task runId=\\d+ nodeId='\\S+' taskId=\\S+\\, status=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxg5dbor2xg000>\\S+)\") & text=~\"APPD:.* Processed status of task runId=\\d+ nodeId='(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpw433emvuwi000>\\S+)' taskId=\\S+\\, status=\\S+\" as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpw433emvuwi000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span><span>This chart displays the events grouped by node names. Each node will have a default name in a blueprint, for example, \"load-balancer\", \"databaseMaster\". The name will be used as node's name when deployed, unless it is changed in the deployment profile. Please note that if a blueprint is deployed multiple time, the node time can be the same (if not changed) across multiple deployments.<br></span></span><br><span><span>From this chart you will see the events associated to each different node name as provided by blueprint. You can also optionally choose to see error events associated to each node to understand which node is likely to cause problems at deployment time.</span></span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "APPD instance events by VM status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3i0) & text=~\"APPD:.* VM='(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3i0>\\S+)' found with status='\\S+'\") & text=~\"APPD:.* VM='\\S+' found with status='(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3k7on2gc5dvom000000>\\S+)'\" as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3k7on2gc5dvom000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This chart displays the virtual machine operation events in cloud provider grouped by virtual machine status. Application Director will run different cloud provider drivers to create, search, update and delete virtual machines or other virtual resources (like resource pool or datastore). A virtual machine can be on different status while being operated by Application Director. This chart will help to narrow down the issues specific to a certain type of cloud provider operations.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "APPD cloud provider error events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391472000000 & timestamp <= 1391925599999 & (appname:\"APPD\" & ((ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000:\"com.vmware.darwin.cal.driver.*\" & text=~\"APPD: .*? \\w+\\s+\\[\\S+\\] \\[\\S+\\] (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000>\\S+) \\-\") | ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000:\"com.vmware.darwin.vcacsdk.*\") & (ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000:\"error\" & text=~\"appd: .*? (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000>\\w+)\\s+\\[\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This chart displays all the error logging messages related to the cloud providers, including vCAC IAAS and vCloud Director.</span><br><br><span>If you are trying to diagnose an issue regarding cloud providers, please also look at the saved query of \"APPD cloud provider exceptions over time\".</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "APPD vCAC interaction error events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391472000000 & timestamp <= 1391925599999 & (appname:\"APPD\" & ((ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000:\"com.vmware.darwin.csp.*\" & text=~\"APPD: .*? \\w+\\s+\\[\\S+\\] \\[\\S+\\] (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000>\\S+) \\-\") | ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000:\"com.vmware.darwin.service.csp.*\") & (ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000:\"error\" & text=~\"appd: .*? (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000>\\w+)\\s+\\[\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This chart displays all the error logging messages for vCAC server registration, connection initialization and interaction.</span><br><br><span>If you are trying to diagnose an issue regarding vCAC integration, please also look at the saved query of \"APPD vCAC interaction exceptions over time\".<br><br></span>For more details about registering Application Director to vCAC server, please refer to:&nbsp;<a href=\"http://pubs.vmware.com/appdirector-6/topic/com.vmware.appdirector6.using.doc/GUID-856E5A2A-D33C-4BAE-9DD2-D71438F4156F.html\"><span>Register&nbsp;</span>vCloud Application Director&nbsp;to vCloud Automation Center</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1391472000000 & timestamp <= 1391925599999 & (appname:\"APPD\" & ((ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000:\"com.vmware.darwin.security.*\" & text=~\"APPD: .*? \\w+\\s+\\[\\S+\\] \\[\\S+\\] (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000>\\S+) \\-\") | ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000:\"com.vmware.darwin.authentication.*\") & (ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000:\"error\" & text=~\"appd: .*? (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000>\\w+)\\s+\\[\\S+\\]\")) as item0 ORDER BY item0.timestamp DESC",
+                  "name": "APPD security and authentication error events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391472000000 & timestamp <= 1391925599999 & (appname:\"APPD\" & ((ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000:\"com.vmware.darwin.security.*\" & text=~\"APPD: .*? \\w+\\s+\\[\\S+\\] \\[\\S+\\] (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000>\\S+) \\-\") | ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000:\"com.vmware.darwin.authentication.*\") & (ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000:\"error\" & text=~\"appd: .*? (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000>\\w+)\\s+\\[\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This chart displays all the error logging messages related to security and authentication.</span><br><br><span>If you are trying to diagnose a security and authentication issue, please also look at the saved query of \"APPD security and authentication exceptions over time\".</span><br>"
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1391404270000 & timestamp <= 1391716578000 & text:\"license\" & (appname:\"APPD\" & ((ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000:\"warn\" & text=~\"appd: .*? (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000>\\w+)\\s+\\[\\S+\\]\") | ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000:\"error\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "APP license warning or error events over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391404270000 & timestamp <= 1391716578000 & text:\"license\" & (appname:\"APPD\" & ((ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000:\"warn\" & text=~\"appd: .*? (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000>\\w+)\\s+\\[\\S+\\]\") | ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000:\"error\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "This query will display all warning or error messages related to license checking."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1391404270000 & timestamp <= 1391716578000 & (appname:\"APPD\" & (text:\"CALCatalogLocationNotFoundException\" | text:\"CALCloudServiceException\" | text:\"CALConnectionException\" | text:\"CALConnectionInterruptedException\" | text:\"CALConnectionRefusedException\" | text:\"CALConnectionTimeoutException\" | text:\"CALDatastoreNotFoundException\" | text:\"CALDeploymentExistsException\" | text:\"CALDeploymentNotFoundException\" | text:\"CALHardwareNotFoundException\" | text:\"CALHardwareViolationException\" | text:\"CALHostNotFoundException\" | text:\"CALIllegalStateException\" | text:\"CALInvalidCredentialsException\" | text:\"CALInvalidProviderException\" | text:\"CALLocationNotFoundException\" | text:\"CALLocationViolationException\" | text:\"CALNetworkNotFoundException\" | text:\"CALOperationException\" | text:\"CALOrganizationLocationNotFoundException\" | text:\"CALPostconditionException\" | text:\"CALPreconditionException\" | text:\"CALProviderLocationNotFoundException\" | text:\"CALProxyConnectionFailureException\" | text:\"CALTemplateNotFoundException\" | text:\"CALUnsupportedVersionException\" | text:\"CALVirtualMachineNotFoundException\" | text:\"VCACApiException\" | text:\"VCACMultipleResourceFoundException\" | text:\"VCACOperationException\" | text:\"VCACResourceNotFoundException\" | text:\"VCACUnsupportedBlueprintException\" | text:\"VCACConnectionRefusedException\" | text:\"VCACInvalidCredentialException\" | text:\"VCACOperationException\" | text:\"VCACResourceNotFoundException\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "APPD cloud provider exceptions over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391404270000 & timestamp <= 1391716578000 & (appname:\"APPD\" & (text:\"CALCatalogLocationNotFoundException\" | text:\"CALCloudServiceException\" | text:\"CALConnectionException\" | text:\"CALConnectionInterruptedException\" | text:\"CALConnectionRefusedException\" | text:\"CALConnectionTimeoutException\" | text:\"CALDatastoreNotFoundException\" | text:\"CALDeploymentExistsException\" | text:\"CALDeploymentNotFoundException\" | text:\"CALHardwareNotFoundException\" | text:\"CALHardwareViolationException\" | text:\"CALHostNotFoundException\" | text:\"CALIllegalStateException\" | text:\"CALInvalidCredentialsException\" | text:\"CALInvalidProviderException\" | text:\"CALLocationNotFoundException\" | text:\"CALLocationViolationException\" | text:\"CALNetworkNotFoundException\" | text:\"CALOperationException\" | text:\"CALOrganizationLocationNotFoundException\" | text:\"CALPostconditionException\" | text:\"CALPreconditionException\" | text:\"CALProviderLocationNotFoundException\" | text:\"CALProxyConnectionFailureException\" | text:\"CALTemplateNotFoundException\" | text:\"CALUnsupportedVersionException\" | text:\"CALVirtualMachineNotFoundException\" | text:\"VCACApiException\" | text:\"VCACMultipleResourceFoundException\" | text:\"VCACOperationException\" | text:\"VCACResourceNotFoundException\" | text:\"VCACUnsupportedBlueprintException\" | text:\"VCACConnectionRefusedException\" | text:\"VCACInvalidCredentialException\" | text:\"VCACOperationException\" | text:\"VCACResourceNotFoundException\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "This query will display all the exceptions represents cloud provider&nbsp;(vCAC IAAS and vCloud Director) issues in Application Director."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1391404270000 & timestamp <= 1391716578000 & (appname:\"APPD\" & (text:\"DarwinSecurityException\" | text:\"InvalidCertificateException\" | text:\"InvalidCertificateStoreEntryException\" | text:\"InvalidCertificateTypeException\" | text:\"DarwinNoGroupsException\" | text:\"DarwinNoRolesException\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "APPD security and authentication exceptions over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391404270000 & timestamp <= 1391716578000 & (appname:\"APPD\" & (text:\"DarwinSecurityException\" | text:\"InvalidCertificateException\" | text:\"InvalidCertificateStoreEntryException\" | text:\"InvalidCertificateTypeException\" | text:\"DarwinNoGroupsException\" | text:\"DarwinNoRolesException\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "This query will display all the exceptions represents security or authentication issues in Application Director."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1391404270000 & timestamp <= 1391716578000 & (appname:\"APPD\" & (text:\"CspException\" | text:\"AuthorizationConfigurationException\" | text:\"CatalogItemDeleteException\" | text:\"CatalogItemFindException\" | text:\"CatalogItemSaveException\" | text:\"CspAuthenticationException\" | text:\"CspInvalidTenantException\" | text:\"NonSsoUserException\" | text:\"PublishException\" | text:\"RequestCompletionException\" | text:\"ResourceCreateException\" | text:\"ResourceDeleteException\" | text:\"ResourceFindException\" | text:\"ResourceUpdateException\" | text:\"ServiceRegistrationException\" | text:\"UnpublishException\" | text:\"UnregistrationException\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "APPD vCAC interaction exceptions over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391404270000 & timestamp <= 1391716578000 & (appname:\"APPD\" & (text:\"CspException\" | text:\"AuthorizationConfigurationException\" | text:\"CatalogItemDeleteException\" | text:\"CatalogItemFindException\" | text:\"CatalogItemSaveException\" | text:\"CspAuthenticationException\" | text:\"CspInvalidTenantException\" | text:\"NonSsoUserException\" | text:\"PublishException\" | text:\"RequestCompletionException\" | text:\"ResourceCreateException\" | text:\"ResourceDeleteException\" | text:\"ResourceFindException\" | text:\"ResourceUpdateException\" | text:\"ServiceRegistrationException\" | text:\"UnpublishException\" | text:\"UnregistrationException\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "This query will display all the exceptions representing the issues captured for vCAC registration, connection or interaction."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwgylumfwg6z27nvsxg43bm5sq0000) & text=~\"APPD:.* Unable to find vcloud catalog item:.* message=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwgylumfwg6z27nvsxg43bm5sq0000>.*?)( \\\"|$)\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "APPD unable to find catalog events by message",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwgylumfwg6z27nvsxg43bm5sq0000) & text=~\"APPD:.* Unable to find vcloud catalog item:.* message=(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwgylumfwg6z27nvsxg43bm5sq0000>.*?)( \\\"|$)\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwgylumfwg6z27nvsxg43bm5sq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": ""
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"err*\" & appname:\"APPD\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "APPD error events over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"err*\" & appname:\"APPD\" as item0 GROUP BY item0.timestamp/15552000000 ORDER BY item0.timestamp DESC",
+                      "info": "<span>Shows distribution of APPD errors over time. An increase in the number of error events may indicate an issue that could be impacting the environment.</span><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"warn*\" & appname:\"APPD\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "APPD warning events over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"warn*\" & appname:\"APPD\" as item0 GROUP BY item0.timestamp/15552000000 ORDER BY item0.timestamp DESC",
+                      "info": "Shows distribution of APPD warning over time. An increase in the number of warning events may indicate an issue that could be impacting the environment.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (appname:\"APPD\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000) & text=~\"APPD: .*? \\w+\\s+\\[\\S+\\] \\[\\S+\\] (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000>\\S+) \\-\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "APPD events by component",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (appname:\"APPD\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000) & text=~\"APPD: .*? \\w+\\s+\\[\\S+\\] \\[\\S+\\] (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000>\\S+) \\-\")) as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": ""
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "SSO",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "SSO error events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391209922106 & timestamp <= 1391814722105 & text:\"err*\" & appname:\"SSO_Catalina\" as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This shows the error events from the SSO services. An increase in events may point to a change in the environment. A large increase in events may be an indication of an issue in the environment. For example Identity Provider failure or connectivity issue.</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "SSO tokens failed over time by tenant ID",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"SAMLResponse received, but failed to parse and validate it\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3jmrpws3s7ovzgy000) & text=~\"cafe-.*/shell-ui-app/org/(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3jmrpws3s7ovzgy000>\\w+)/\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3jmrpws3s7ovzgy000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This chart shows problems in validating SAML tokens by vCAC services. An increase in events may be caused by several reasons:</span><br><span><br>* Clocks of the servers are not synchronized</span><br><span>* Tokens are expired and not renewed</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "SSO debug events over time by component",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391209922106 & timestamp <= 1391814722105 & (appname:\"SSO_Catalina\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxg43pl5sgkytvm5pwg33nobxw4zlooq000000) & text=~\"SSO_Catalina:.* DEBUG  \\[(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxg43pl5sgkytvm5pwg33nobxw4zlooq000000>\\w+)\\] \")) as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxg43pl5sgkytvm5pwg33nobxw4zlooq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "SSO error events by error code",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391209922106 & timestamp <= 1391814722105 & (appname:\"SSO_Catalina\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxg43pl5sxe4tpojpwg33emu000000) & text=~\"SSO_Catalina:.* Responded with ERROR (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxg43pl5sxe4tpojpwg33emu000000>-?\\d+)\\, message\")) as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxg43pl5sxe4tpojpwg33emu000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This chart shows SSO errors by HTTP error code. The error codes are defined as:<br></span><br><span>* <span style=\"font-weight: bold;\">400 - Bad Request</span> - shows failure in the Identity Provider</span><br><span>* <span style=\"font-weight: bold;\">401 - Unauthorized</span> - the provided user credentials are wrong</span><br><span>* <span style=\"font-weight: bold;\">403 - Forbidden</span> - shows errors during logout of the session</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "vCAC user logins over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1392104332150 & timestamp <= 1392190732149 & text:\"Client\" & text:\"loaded\" & text:\"com.vmware.vcac.shell.services.impl.ShellServiceProvider.generateClientId\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000) & text=~\"cafe-.*? tenant\\s+(\\[|: )?(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000>\\S+?)(\\])?( |\\. |\\.$|$)\") as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                  "info": "The number of vCAC user logins over time is an indication of system load and times of peak utilization."
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "vCAC user logins by tenant",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1392104358203 & timestamp <= 1392190758202 & text:\"Client\" & text:\"loaded\" & text:\"com.vmware.vcac.shell.services.impl.ShellServiceProvider.generateClientId\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000) & text=~\"cafe-.*? tenant\\s+(\\[|: )?(?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000>\\S+?)(\\])?( |\\. |\\.$|$)\") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The number of vCAC tenant logins over time is an indication of system load and times of peak utilization.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "APPD authentication failures by username",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391730785007 & timestamp <= 1391817185006 & (appname:\"APPD\" & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxk43foi000000) & text=~\"APPD:.* Failed authenticate user with SSO: (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxk43foi000000>\\w+)\\, reason\")) as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxk43foi000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Authentication failures may indicate a security breach."
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Alert Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1392240989972 & timestamp <= 1392241289971 & text:\"com.vmware.vcac.authentication\" & text:\"error\" & text:\"findMembershipForPrincipals\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "vCAC authentication issue detected",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1392240989972 & timestamp <= 1392241289971 & text:\"com.vmware.vcac.authentication\" & text:\"error\" & text:\"findMembershipForPrincipals\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp ASC",
+                      "info": ""
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"to establish a connection to vCenter Orchestrator server\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCO service unavalilable!",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"to establish a connection to vCenter Orchestrator server\" as item0 GROUP BY item0.timestamp/15552000000 ORDER BY item0.timestamp ASC",
+      "info": "If vCO is unavailable then this could impact Advanced Service Designer workflows or customized IAAS workflows that leverage vCO.&nbsp;<br><br>For more information, check configuration under Administration, Advanced Services, Server Configuration and see the&nbsp;<a href=\"https://www.vmware.com/support/pubs/vcac-pubs.html\">Advanced Service Designer Configuration manual</a>.<br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"license has expired\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCAC license has expired!",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & text:\"vcac\" & text:\"license has expired\" as item0 GROUP BY item0.timestamp/15552000000 ORDER BY item0.timestamp ASC",
+      "info": "Notification when the a vCAC license key has expired. Advise enabling this alert if a permanent key is not in use.<br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1392240989972 & timestamp <= 1392241289971 & text:\"com.vmware.vcac.authentication\" & text:\"error\" & text:\"findMembershipForPrincipals\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCAC authentication issue detected",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1392240989972 & timestamp <= 1392241289971 & text:\"com.vmware.vcac.authentication\" & text:\"error\" & text:\"findMembershipForPrincipals\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp ASC",
+      "info": "<span>The SSO server of the identity appliance is unable to correctly collect information on the account since the UPN domain is not associated with the AD domain.&nbsp;</span><span>For example, the AD domain is corp.mydomain.com, but the UPN (userPrincipalName) is myname@mydomain.com. As a result, a</span><span>fter authenticating user's may be getting a blank page or a page with a single submit button appears and the URL loops between the identity server and the vCAC server URLs.</span><br><br><span style=\"font-weight: bold;\">Solution 1:</span><br><span>If the UPN domain and the Active Directory domain are part of the same hierarchy (e.g., the UPN domain is mydomain.com and the AD domain is corp.mydomain.com), specify a domain alias in the identity store for the UPN domain:</span><br><span>* Log in with a user that has permission to edit the tenants.</span><br><span>* Navigate to 'Tenants' under the 'Administration' tab.</span><br><span>* Edit the desired tenant and select the 'Identity stores' tab.</span><br><span>* If the identity store already exists for the domain, record the information and delete it, since the domain alias cannot be altered after the identity store has been created.</span><br><span>* Add a new Identity store.</span><br><span>* Select the identity store type of 'Active Directory'. Please note, the 'Native Active Directory' type does not permit the specification of a domain alias and should not be selected.</span><br><span>* Enter the required information and (optionally) the User search base DN.</span><br><span>* Add the UPN domain to the Domain alias field.</span><br><span>* Test the connection with the 'Test Connection' button.</span><br><span>* If the connection is successful, select 'Add' to complete the creation of the identity store.</span><br><span>* Select 'Update' on the tenant edit page to save the changes made to the tenant.</span><br><br><span style=\"font-weight: bold;\">Solution 2:</span><br><span>Contact VMware support to obtain a fix to add the UPN suffixes to the identity store.</span><br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxgzlsozuwgzljnztg6x3torqxi5lt:\"not available\" & text=~\"com\\.vmware\\.vcac\\..* Marking serviceInfo \\S+ of type \\S+ as (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxgzlsozuwgzljnztg6x3torqxi5lt>.*)\\.\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "vCAC service unavailable!",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxgzlsozuwgzljnztg6x3torqxi5lt:\"not available\" & text=~\"com\\.vmware\\.vcac\\..* Marking serviceInfo \\S+ of type \\S+ as (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxgzlsozuwgzljnztg6x3torqxi5lt>.*)\\.\") & text=~\"com\\.vmware\\.vcac\\..* Marking serviceInfo \\S+ of type (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxgzlsozuwgzljnztg6x3upfygk000>\\S+) as\" as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxgzlsozuwgzljnztg6x3upfygk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "A vCAC service has become unavailable. This may happen because:<br><br>* A service has failed - if the service does not automatically restart this may impact vCAC's ability to function<br>* A service is blocked and cannot response at the moment - this may indicate increased load within the environment<br>* vCAC is starting and certain dependencies of the component are not available yet - this issue should clear automatically as all services come online"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5zgkz3jon2gk4tjnztv6zlsojxxex3nmvzxgylhmu000000) & text=~\"Error occurred while registering the DEM(\\n)?\\S+:.* \\S+: (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5zgkz3jon2gk4tjnztv6zlsojxxex3nmvzxgylhmu000000>.*?)\\s+at \") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "DEM registration error",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1062389470000 & timestamp <= 1702929378000 & (FIELD_EXISTS(ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5zgkz3jon2gk4tjnztv6zlsojxxex3nmvzxgylhmu000000) & text=~\"Error occurred while registering the DEM(\\n)?\\S+:.* \\S+: (?<ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5zgkz3jon2gk4tjnztv6zlsojxxex3nmvzxgylhmu000000>.*?)\\s+at \") as item0 GROUP BY item0.ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5zgkz3jon2gk4tjnztv6zlsojxxex3nmvzxgylhmu000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "An error occurred while registering a DEM&nbsp;to its IAAS instance. This may indicate impact your ability to execute IAAS workflows.&nbsp;<span><br></span><br><span>For more information see:<br><br>* <a href=\"http://pubs.vmware.com/vCAC-60/index.jsp?topic=%2Fcom.vmware.vcac.install.doc%2FGUID-3CABD137-CC9A-41E4-BCB4-65A0D5919270.html&amp;amp;__utma=207178772.1996237946.1378501824.1393447977.1393478048.16&amp;amp;__utmb=207178772.2.10.1393478048&amp;amp;__utmc=207178772&amp;amp;__utmx=-&amp;amp;__utmz=207178772.1393478048.16.8.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)&amp;amp;__utmv=-&amp;amp;__utmk=45339687\">vCloud Automation Center Installation and Configuration</a><br>* <a href=\"http://pubs.vmware.com/vCAC-60/   index.jsp?topic=%2Fcom.vmware.vcac.install.doc%2FGUID-CE2C7AC4-DF45-4E99-B8B9-884AC61EAF04.html\">Distributed Installation</a></span>"
+    }
+  ],
+  "name": "VMware - vCAC 6.0",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "\\] ",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxg43pl5sgkytvm5pwg33nobxw4zlooq000000",
+      "preContext": "SSO_Catalina:.* DEBUG  \\[",
+      "regexValue": "\\w+",
+      "displayName": "vmw_sso_debug_component"
+    },
+    {
+      "postContext": "\\, message",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxg43pl5sxe4tpojpwg33emu000000",
+      "preContext": "SSO_Catalina:.* Responded with ERROR ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_sso_error_code"
+    },
+    {
+      "postContext": "\\] ",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwcy3dn52w45a0",
+      "preContext": "APPD: .*? \\w+\\s+\\[\\S+\\] \\[",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_appd_account"
+    },
+    {
+      "postContext": "( \"|$)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwgylumfwg6z27nvsxg43bm5sq0000",
+      "preContext": "APPD:.* Unable to find vcloud catalog item:.* message=",
+      "regexValue": ".*?",
+      "displayName": "vmw_vcac_appd_catalog_message"
+    },
+    {
+      "postContext": " \\-",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwg33nobxw4zlooq000000",
+      "preContext": "APPD: .*? \\w+\\s+\\[\\S+\\] \\[\\S+\\] ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_appd_component"
+    },
+    {
+      "postContext": "\\s+\\[\\S+\\]",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpwk5tfnz2f643fozsxe2lupe000000",
+      "preContext": "appd: .*? ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcac_appd_event_severity"
+    },
+    {
+      "postContext": "' taskId=\\S+\\, status=\\S+",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpw433emvuwi000",
+      "preContext": "APPD:.* Processed status of task runId=\\d+ nodeId='",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_appd_nodeid"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxg5dbor2xg000",
+      "preContext": "APPD:.* Processed status of task runId=\\d+ nodeId='\\S+' taskId=\\S+\\, status=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_appd_status"
+    },
+    {
+      "postContext": "\\, status=\\S+",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxiyltnnuwi000",
+      "preContext": "APPD:.* Processed status of task runId=\\d+ nodeId='\\S+' taskId=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_appd_taskid"
+    },
+    {
+      "postContext": "\\] \\[",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxi2dsmvqwi000",
+      "preContext": "APPD: .*? \\w+\\s+\\[",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_appd_thread"
+    },
+    {
+      "postContext": "\\, reason",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxk43foi000000",
+      "preContext": "APPD:.* Failed authenticate user with SSO: ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcac_appd_user"
+    },
+    {
+      "postContext": "' found with status='\\S+'",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3i0",
+      "preContext": "APPD:.* VM='",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_appd_vm"
+    },
+    {
+      "postContext": "'",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc4dqmrpxm3k7on2gc5dvom000000",
+      "preContext": "APPD:.* VM='\\S+' found with status='",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_appd_vm_status"
+    },
+    {
+      "postContext": "\\] \\w+\\s+com\\.vmware\\.vcac\\..*?:\\d+ \\- \\w+",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwc43el5rw63lqn5xgk3tu",
+      "preContext": "\\[\\S+\\] \\[",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_asd_component"
+    },
+    {
+      "postContext": "\\, getUserToken\\(\\)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7nfxge33vnzshg000",
+      "preContext": "\\[\\[Payload=InboundNotification \\[getNotificationId\\(\\)=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_cafe_notification_inbounds"
+    },
+    {
+      "postContext": "\\, getMessageReceivedAt\\(\\)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylgmvpw433unftgsy3boruw63s7ovzwk4tt",
+      "preContext": "\\[getNotificationId\\(\\).* getFromUser\\(\\)=",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_cafe_notification_users"
+    },
+    {
+      "postContext": " from provider \\S+",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27nf2gk3i0",
+      "preContext": "com\\.vmware\\.vcac\\.catalog\\.service\\.impl.* CatalogItem ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_catalog_item"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27obzg65tjmrsxe000",
+      "preContext": "com\\.vmware\\.vcac\\.catalog\\.service\\.impl.* CatalogItem \\S+ from provider ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_catalog_provider"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwgylumfwg6z27on2gc5dvom000000",
+      "preContext": "com\\.vmware\\.vcac\\.catalog\\.service\\.impl.* CatalogItem \\S+ from provider \\S+ .* with status ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcac_catalog_status"
+    },
+    {
+      "postContext": " for virtual machine \\S+,",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5ug643u",
+      "preContext": "Failed to collect data on host ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_dem_host"
+    },
+    {
+      "postContext": "(:|,| on host|Category)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5wwk43tmftwk000",
+      "preContext": "vmware dem\\[\\w+\\] .*Message: (.*boolean>)?",
+      "regexValue": ".*?",
+      "displayName": "vmw_vcac_dem_message"
+    },
+    {
+      "postContext": "\\s+at ",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl5zgkz3jon2gk4tjnztv6zlsojxxex3nmvzxgylhmu000000",
+      "preContext": "Error occurred while registering the DEM(\\n)?\\S+:.* \\S+: ",
+      "regexValue": ".*?",
+      "displayName": "vmw_vcac_dem_registering_error_message"
+    },
+    {
+      "postContext": ",",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53g2000",
+      "preContext": "Failed to collect data on host \\S+ for virtual machine ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_dem_vm"
+    },
+    {
+      "postContext": "\" failed with the following exception:",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg65y0",
+      "preContext": "vmware dem\\[error\\].*Workflow \"",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcac_dem_workflow"
+    },
+    {
+      "postContext": "(:| |$)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527mnxw24dmmv2gkx3torqxi5lt",
+      "preContext": "\\[Debug\\]: Workflow Complete:\\s+\\d+ - ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcac_dem_workflow_complete_status"
+    },
+    {
+      "postContext": "( |:)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527mv4ggzlqoruw63q0",
+      "preContext": "vmware dem\\[error\\].*Workflow \"\\w+\" failed with the following exception: ",
+      "regexValue": "\\S+?",
+      "displayName": "vmw_vcac_dem_workflow_exception"
+    },
+    {
+      "postContext": "\\s+at ",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527mv4ggzlqoruw63s7nvsxg43bm5sq0000",
+      "preContext": "vmware dem\\[error\\].*Workflow \"\\w+\" failed with the following exception: .*: ",
+      "regexValue": ".*?",
+      "displayName": "vmw_vcac_dem_workflow_exception_message"
+    },
+    {
+      "postContext": " \\- ",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527oj2w4000",
+      "preContext": "Workflow Run:\\s+\\d+ - ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcac_dem_workflow_run"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwizlnl53w64tlmzwg6527onrwqzleovwgkza0",
+      "preContext": "Scheduling workflow. Schedule Name: \\S+ Workflow Name: ",
+      "regexValue": ".*",
+      "displayName": "vmw_vcac_dem_workflow_scheduled"
+    },
+    {
+      "postContext": "(\\}| \\])",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf6y3pmrsq0000",
+      "preContext": "com\\.vmware\\.vcac\\..*(\\{|\\[)error code:\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vcac_error_code"
+    },
+    {
+      "postContext": "(\\}|\\])",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk4tsn5zf63ltm4000000",
+      "preContext": "com\\.vmware\\.vcac\\..*(\\{|\\[)error msg:\\s+",
+      "regexValue": ".*?",
+      "displayName": "vmw_vcac_error_msg"
+    },
+    {
+      "postContext": "(:| \\[|\\[| starts at)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwk5tfnz2hgx3cpfpw2zltonqwozi0",
+      "preContext": "com\\.vmware\\.vcac.* \\- (received \\d+ )?",
+      "regexValue": ".*?",
+      "displayName": "vmw_vcac_events_by_message"
+    },
+    {
+      "postContext": "/",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpwg33nobxw4zlooq000000",
+      "preContext": "com\\.vmware\\.vcac\\..*? \\- \\w+ request for \"https://\\S+?/(/)?",
+      "regexValue": "\\S+?",
+      "displayName": "vmw_vcac_http_component"
+    },
+    {
+      "postContext": "\\)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpw2zltonqwozi0",
+      "preContext": "com\\.vmware\\.vcac\\..*? \\- \\w+ request for \"\\S+\" resulted in \\d+ \\(",
+      "regexValue": ".*?",
+      "displayName": "vmw_vcac_http_message"
+    },
+    {
+      "postContext": " request for \"\\S+\" resulted in \\d+",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpxezlrovsxg5a0",
+      "preContext": "com\\.vmware\\.vcac\\..*? \\- ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcac_http_request"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpwq5duobpxg5dbor2xg000",
+      "preContext": "com\\.vmware\\.vcac\\..*? \\- \\w+ request for \"\\S+\" resulted in ",
+      "regexValue": "\\d+",
+      "displayName": "vmw_vcac_http_status"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxgzlsozuwgzljnztg6x3torqxi5lt",
+      "preContext": "com\\.vmware\\.vcac\\..* Marking serviceInfo \\S+ of type \\S+ as ",
+      "regexValue": ".*",
+      "displayName": "vmw_vcac_serviceinfo_status"
+    },
+    {
+      "postContext": " as",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxgzlsozuwgzljnztg6x3upfygk000",
+      "preContext": "com\\.vmware\\.vcac\\..* Marking serviceInfo \\S+ of type ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vcac_serviceinfo_type"
+    },
+    {
+      "postContext": "/",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3jmrpws3s7ovzgy000",
+      "preContext": "cafe-.*/shell-ui-app/org/",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vcac_tenant_id_in_url"
+    },
+    {
+      "postContext": "(\\])?( |\\. |\\.$|$)",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxizlomfxhix3omfwwk000",
+      "preContext": "cafe-.*? tenant\\s+(\\[|: )?",
+      "regexValue": "\\S+?",
+      "displayName": "vmw_vcac_tenant_name"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcoc7mnxw2ltwnv3wc4tffz3ggyldfy3da5tno5pxmy3bmnpxo33snntgy33xl5rw63lqnrsxizk7mzqws3dfmrpw2zltonqwozi0",
+      "preContext": "\\[Debug\\]: Workflow Complete:\\s+\\d+ - Failed: ",
+      "regexValue": ".*",
+      "displayName": "vmw_vcac_workflow_complete_failed_message"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "2.0",
+  "namespace": "com.vmware.vcac.60",
+  "icon": "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",
+  "author": "VMware, Inc.",
+  "contentVersion": "1.0",
+  "url": "http://www.vmware.com",
+  "info": "<span>The vCAC content pack for Log Insight provides you with important information across all components of your vCAC environment and key dependencies such as vCenter Orchestrator and SSO. The content pack enables:</span><br><br><span style=\"font-weight: bold;\">Proactive monitoring of your vCAC environment</span><br><br><span>Quickly identify issues and drill down to determine the root cause with powerful visualizations of your data and targeted queries.</span><br><br><span style=\"font-weight: bold;\">Component-specific breakdown of vCAC events</span><span><br></span><br><span>Ability to analysis every component and every event dependencies to get a complete picture within an environment.</span><span><br></span><br><span style=\"font-weight: bold;\">Troubleshooting and root-cause analysis</span><br><br><span>Specific queries to focus on the important events that indicate real problems with additional information and context to resolve detected issues quickly.</span><br>"
+}

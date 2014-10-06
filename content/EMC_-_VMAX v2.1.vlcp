@@ -1,0 +1,935 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000",
+              "operator": "EQUAL"
+            },
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000",
+              "operator": "EQUAL"
+            },
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+                  "name": "All events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1399241081268 & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph is a compilation of all events that are present in the log files.&nbsp; It may include levels ranging from info to fatal, depending on how Unisphere has been configured. <br><br>To setup storage events review article 90558 on support.emc.com.<br><br>For information on why events have multiple timestamps, see article 77312.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{}",
+                  "name": "Number of unique VMAX arrays in log entries",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000) FROM timestamp >= 1391439728717 & timestamp <= 1399241081268 & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "This number is determined by the number of unique Symmetrix IDs (symmid) seen in the log entries.<br>"
+                },
+                {
+                  "chartType": "line",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Major or critical events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & ((ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0:\"major\" & text=~\"symid=.*sev=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0>\\w+)\\]\") | ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0:\"critical\") & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph contains the count of major or critical events that are \npresent in the log files.&nbsp; Note that this is a consolidation of events \nand are not grouped other than by severity.&nbsp; Once an event is identified\n it may be beneficial to look to an alternate graph in this or other \ndashboards.&nbsp; For instance, a critical severity on threshold events might\n lead the user to examine the widget I/O rate threshold events in this \ndashboard.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "All events grouped by event id",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400022770890 & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This graph will show all events.&nbsp; The event ids will typically fall into one of the categories below:<br><br></span><span style=\"font-weight: bold;\"><span style=\"text-decoration: underline;\">Event daemon events: Event IDs 0-199:</span></span><br><br>Events\n in this range are generated by the event daemon - and reflect its \ninternal state. They are automatically delivered to any registered \napplications as needed. <br><span style=\"text-decoration: underline;\"><span style=\"font-weight: bold;\"><br>Symmetrix Events: Event IDs 1050-1199:</span></span><br><br>Events\n in this range correspond to entries retrieved from the Error log on a \nSymmetrix array. Some of these are informational in nature; others \ncorrespond to actual errors. There are a number of categories that can \nbe used to register for a related subset of these events:<br><br>* array subsystem<br>* db checksum<br>* diagnostic<br>* environmental<br>* device pool<br>* service<br>* srdf link<br>* srdfa session<br>* srdf consistency group<br>* director<br>* device<br>* disk<br><br><span style=\"text-decoration: underline;\"><span style=\"font-weight: bold;\">Symmetrix Events: Event IDs 1200-1999:</span></span><br><br>Events\n in this range are manufactured by the event daemon itself based on its \nregular polling of conditions on a Symmetrix array.<br><br>There are two categories that can be used to register for a related of these events:<br>- status<br>- optimizer<br><br>For devices the following apply:<br><br>* 'Not Present' means that the device could not be seen by Solutions Enabler.<br>* 'Online' means that the device service state is normal.<br>* 'Online [Degraded]' means one or more of the device's mirrors are in a Not-Ready state.<br>* 'Offline' means that the device service state is failed.<br><span style=\"text-decoration: underline;\"><span style=\"font-weight: bold;\"><br>Symmetrix Events: Event ID 5200:</span></span><br><br>A threshold has been exceeded.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "I/O rate threshold events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"I/O rate\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000=5200 & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & text=~\"symid=.*Object is: (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5xwe2tfmn2hi6lqmu000000>.*)\\,\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5xwe2tfmn2hi6lqmu000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph shows any breach in a custom I/O rate threshold which may be \nset on an object - e.g. director, storage group.&nbsp; As these are custom \nthresholds set by the customer, the events may signal some defined \ncustomer action that should be taken.<br><br>An alternative to using I/O\n thresholds would be to take advantage of Host I/O limits which is set \nat the storage group level.&nbsp; More information on using Host I/O limits \nin a VMware environment can be found in the TechBook:&nbsp; <a href=\"http://www.emc.com/collateral/hardware/solution-overview/h2529-vmware-esx-svr-w-symmetrix-wp-ldv.pdf\">Using EMC Symmetrix Storage in VMware vSphere Environments</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+                  "name": "Array state changes",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"emcstorevntd\" & text:\"Array state\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & text=~\"Array state has changed to (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxe4tbpfpxg5dborsq0000>.*)\\.\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxe4tbpfpxg5dborsq0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will note any changes to the array state.&nbsp; The following states are possible along with the log level:<br><br>If <span style=\"font-weight: bold;\">Online</span>- Normal<br>If <span style=\"font-weight: bold;\">Online</span>- Degraded Warning<br>If <span style=\"font-weight: bold;\">Offline</span>- Major<br>If <span style=\"font-weight: bold;\">Not Present</span> - Warning or Major (depending on situation)<br>If <span style=\"font-weight: bold;\">Unknown</span>- Warning or Major (depending on situation)<br><br>- This event reflects the overall state of the array - including its Disks, Directors, Ports.<br>- 'Not Present' means that the array couldn't be seen by Solutions Enabler.<br>- 'Online' means that the array is operational.<br>- 'Online [Degraded]' means that:<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - One or more Ports are in an Offline or Write-Disabled state.<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - One or more Directors are in an Offline or Dead state.<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; - Device events [1200] events are also enabled and one or more device is in a Not-Ready state.<br>&nbsp;&nbsp;&nbsp;\n &nbsp;&nbsp;&nbsp; - Array sub-component events [1404] are also enabled and one or \nmore are in a failed (Offline) state (Fans, Power Supplies, LCCs, MIBEs,\n Enclosures, etc.).<br>- 'Unknown' means that there was a problem communicating with the array.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum response times events",
+                  "chartQuery": "SELECT MAX(item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0) & text=~\"symid=.*Response Time \\(ms\\) \\((?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0>-?\\d*\\.?\\d+)\\) exceeds threshold\")) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, MAX(item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0) DESC LIMIT 1,100",
+                  "info": "This graph shows events where a custom response time on an object - e.g.\n director, storage group has been exceeded.&nbsp; As these are custom \nlatencies set by the customer, the events may signal some defined \ncustomer action that should be taken.<br><br>When response times for \ncertain devices are critical, it may be useful to look at the capability\n of Symmetrix to do quality of service operations.&nbsp; Quality of Service \n(QoS) allows you more flexibility in managing your Symmetrix systems \nperformance. By increasing the response time for specific copy \noperations on selected devices or groups, you can increase the overall \nperformance of the other Symmetrix devices.<br><br>In addition to QoS, it is highly recommended that FAST VP be used.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "All configuration changes",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000=1218 & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will show the count of configuration changes on the array, \nsuch as when a device is created.&nbsp; These are informative and will only \nbe present if Unisphere and/or Solutions Enabler is configured at the \n\"info\" level."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Hardware power events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg653foi000000) & text=~\"\\[symid=\\d+\\] \\[sev=\\w+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg653foi000000>.*Power (System|Supply).*)\\.\")) & text=~\"symid=.*sev=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0>\\w+)\\]\" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph includes all power events for the array.&nbsp; Any event that has a\n severity of fatal should be addressed immediately.&nbsp; One such example \nwould be the failure of a power supply.&nbsp; Events of this nature are also \nautomatically \"dialed-home\" meaning that EMC will be aware of the \nfailure and have a case pending."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Local & remote replication",
+          "constraints": [
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000",
+              "operator": "EQUAL"
+            },
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxezdgl5zxiylumu000000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "SRDF events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"emcstorevntd\" & text:\"srdf\" & text=~\"symid=.*sev=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0>\\w+)\\]\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will show all SRDF events that are present in the logs.&nbsp; Many\n of the messages may refer to the state of an RDF mirror and are only \ninformative, not indicating any problems - e.g. <span style=\"font-weight: bold;\">R2 is not ready</span>.&nbsp; However there will also be entries when links are down or not operational, e.g.<span style=\"font-weight: bold;\">[SRDF-grp=6] [sev=warning] = Single SRDF link in an RDF group is not operationa</span>l.&nbsp; <br><br>Note\n that in a VMware SRM environment that utilizes the SRA for SRDF, events\n that appear here may be coordinated with those from the vSphere content\n pack.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+                  "name": "SRDF events with a state",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"SRDF\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxezdgl5zxiylumu000000) & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxezdgl5zxiylumu000000>.*SRDF.*)\\.\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxezdgl5zxiylumu000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will show all SRDF events that have a state.&nbsp; This could be \nthe state of a device or the state of the link for example.<br><br>The \nSRDF devices undergo logical device state transitions like ordinary \nSymmetrix logical devices and SRDF mirror state transitions that are \nunique to SRDF devices. Because of the SRDF pairing between the R1 and \nthe R2 devices, the overall state of the SRDF operations is adequately \ndescribed only by examining both the R1 and R2 devices and their SRDF \nmirrors.<br><br>An R1 device can have one of the following states to the host connected to the primary system:<br><br>-\n Read/Write (Write Enabled) - In this state, the R1 device is available \nfor read/write operations. This is the default R1 device state.<br>- \nRead Only (Write Disabled) - In this state, the R1 device responds with \nWrite Protected to all write operations to that device.<br>- Not Ready - In this state, the R1 device responds Not Ready to the host for read and write operations to that device.<br><br>An R2 device can have one of the following states to the host connected to the secondary system:<br><br>-\n Read Only (Write Disabled) - In this state, the secondary (R2) device \nresponds Write Protected to the host for all write operations to that \ndevice.<br>- Read/Write (Write Enabled) . In this state, the secondary \n(R2) device is available for read/write operations. This state is \npossible in recovery or parallel processing operations.<br>- Not Ready -\n In this state, the R2 device responds Not Ready (Intervention Required)\n to the host for read and write operations to that device.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "SRDF link events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"emcstorevntd\" & text:\"srdf\" & (!text:\"volume\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxezdgl5zxiylumu000000:\"link\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxezdgl5zxiylumu000000>.*SRDF.*)\\.\")) & text=~\"symid=.*sev=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0>\\w+)\\]\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph records all events related to SRDF links.&nbsp; At the warning \nlevel, these messages will indicate when a link is not operational.&nbsp; If \nthe log level is set to \"info\" it will also include messages when the \nlink is operational."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of snap sessions created, activated, or deleted",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"snap session\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "If the log level in Unisphere is set to \"info\" this graph will include \nall events related to creating, activating, or deleting a snap.&nbsp; Detail \nis not provided in the log file of the specific action.<br><br>The event id for this is 1234."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Virtual provisioning overview",
+          "constraints": [
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000",
+              "operator": "EQUAL"
+            },
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63domfwwk000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Thin pool events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400022770890 & text:\"Data\" & text:\"Pool\" & text:\"emcstorevntd\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will show all thin pool events.&nbsp; A thin pool is a collection \nof data devices that provides storage capacity for thin devices. It \nshould be noted that a thin pool can exist without any storage \nassociated to it.<br><br>EMC Virtual Provisioning (VP) is an Enginuity \nfeature available with Enginuity versions 5773 and higher. Virtual \nProvisioning allows for storage to be allocated and accessed on demand \nfrom a pool of storage that services one or many applications. This type\n of storage has multiple benefits:<br><br>- Enables LUNs to be grown into over time with no impact to the host or application as space is added to the thin pool.<br>- Delivers space from the thin pool on demand.<br>- Provides wide striping for a thin pool.<br>- Relieves the storage administrators efforts of physical device/LUN configuration<br><br>The\n Virtual Provisioning feature has three concepts: thin devices, data \ndevices, and thin pools. Thin devices can be created with an inflated \ncapacity, because the actual storage space for the data written to the \nthin devices is on the data devices. In this way, when additional \nstorage is needed, more data devices can be created in the thin pool.<br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Total pool capacity exceeded",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"emcstorevntd\" & text:\"Total Pool Capacity\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" & text=~\"symid=.*TP Pool\\, (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63c7nzqw2zi0>\\w+)\" as item0 GROUP BY item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63c7nzqw2zi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will only show events if the thresholds for total pool \ncapacity have been breached.&nbsp; These are custom thresholds a user would \nsetup in Unisphere.&nbsp; The capacity threshold need not have a direct \nassociation with the total capacity available in the pool.&nbsp; It may be a \nbusiness value, or a previously agreed upon amount between the VMware \nand storage administrators.<br><br>The total pool capacity is defined as the sum of the capacities of the member data devices."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Thin pool utilization > 50%",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400022770890 & text:\"Data pool utilization\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" & text=~\"symid=.*TPDataPool=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63domfwwk000>\\S+)\\] \\[sev\" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63domfwwk000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This dashboard will show results if the thin pool thresholds have been exceeded by 50%.&nbsp; The legend shows the VMAX SID and associated thin pool name for any event.&nbsp; Note that the alert in Unisphere must be setup with a custom alert for utilization of 50% on a thin pool.&nbsp; When setting thresholds, the following applies:<br><br>These threshold filters define bands of event value. Events are generated as the value crosses from one band to another. For instance, a pool's utilization that rose gradually from 60% to 92% and then dropped back to 50% again would result in delivery of the following events:<br><br>WARNING severity when the value passes 60%<br>MINOR severity when the value passes 65%<br>MAJOR severity when the value passes 70%<br>CRITICAL severity when the value passes 80%<br>MAJOR severity when the value drops below 80%<br>MINOR severity when the value drops below 70%<br>WARNING severity when the value drops below 65%<br>NORMAL severity when the value drops below 60%<br><br>If an event's value crosses into a range that does not match any of the configured thresholds, the event daemon will automatically deliver an event with a severity of NORMAL to indicate that it no longer falls into one of the defined threshold bands. In essence, NORMAL should serve as an all-OK indicator.<br>"
+                },
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+                  "name": "Thin device utilization exceeded",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1400168572023 & timestamp <= 1400172172022 & text:\"thin device\" & text=~\"symid=.*sev=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0>\\w+)\\]\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/60000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will only show events if the thresholds for thin device \nutilization have been breached.&nbsp; To see these entries, within Unisphere \nthe Alert Policy for Thin Device Usage should be enabled and the \nNotification set to syslog.<br><br>Thin device utilization may also be \nmonitored through VMware vCenter when integrated with VASA.&nbsp; EMC offers \nimplementation of VASA through the SMI-S provider which is a component \nof Solutions Enabler.&nbsp; For further information about configuring VASA \nwith VMAX see the whitepaper: <a href=\"http://www.emc.com/collateral/software/white-papers/h10630-vmware-vasa-symmetrix-wp.pdf\">Implementing VMware vStorage API for Storage Awareness with Symmetrix Storage Arrays</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Enabled pool capacity exceeded",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"emcstorevntd\" & text:\"Enabled Pool Capacity\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" & text=~\"symid=.*TP Pool\\, (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63c7nzqw2zi0>\\w+)\" as item0 GROUP BY item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63c7nzqw2zi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will only show events if the thresholds for enabled pool \ncapacity have been breached.&nbsp; These are custom thresholds a user would \nsetup in Unisphere.&nbsp; A threshold, for instance, may be setup to alert \nthe user when more disabled devices in the pool need to be enabled.<br><br>Enabled\n pool capacity is the sum of the capacities of enabled data devices \nbelonging to a thin pool.&nbsp; A thin pool may contain enabled and disabled \ndevices."
+                },
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Allocated pool capacity exceeded",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"emcstorevntd\" & text:\"Allocated Pool Capacity\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" & text=~\"symid=.*TP Pool\\, (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63c7nzqw2zi0>\\w+)\" as item0 GROUP BY item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63c7nzqw2zi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will only show events if the thresholds for allocated pool capacity have been breached.&nbsp;&nbsp; <br><br>Allocated\n pool capacity is a subset of thin pool enabled capacity that has been \nallocated to thin devices bound to that thin pool.&nbsp; It is important to \nunderstand that allocated pool capacity does not necessarily mean that \ndata is written to the space.&nbsp; When binding thin devices to a pool it is\n possible to pre-allocate space.&nbsp; That would be included in this \nstatistic.&nbsp; <br><br>It is possible to reduce the amount of allocated \ncapacity through the VAAI primitive UNMAP.&nbsp; If the pre-allocated space, \nfor instance, has not been labeled as \"persistent\", the space can be \nreclaimed.&nbsp; To use the UNMAP functionality, refer to the whitepaper: <a href=\"http://www.emc.com/collateral/hardware/white-papers/h8115-vmware-vstorage-vmax-wp.pdf\">Using VMware vStorage APIs for Array Integration with EMC Symmetrix VMAX</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Director events",
+          "constraints": [
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000",
+              "operator": "EQUAL"
+            },
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq4tfonug63del53gc3dvmu000000",
+              "operator": "EQUAL"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"donut\"}",
+                  "name": "Front-end and back-end director events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400022770890 & text:\"director\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \") as item0 GROUP BY item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph shows all events related to front-end and back-end directors.&nbsp; These events may be a change in state or a threshold event.&nbsp; It is also possible to get additional information about director statistics through Solutions Enabler.&nbsp; This is explained below.<br><br>Director Statistics<br>Using symstat, you can display the I/O requests and throughput activity performance statistics on any or all directors. To return a list of directors available on all visible Symmetrix arrays, use symcfg list -dir all.<br><br>Director I/O Requests<br>From the list, select the Symmetrix array for which you want to examine I/O requests and throughput activity on the directors. Choose the interval and number of samples (counts) for the statistical run.<br><br>For example, to output statistics for all directors on Symmetrix array 150, enter:<br><br>symstat -type REQUESTS -sid 150 -dir ALL -i 60 -c 100<br><br>The following statistics are returned:<br><br>1. Host timestamp of sample.<br>2. Active director identifier and number.<br>3. I/O rates (operations per second) for:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Host to Front-end directors<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Disk to Back-end directors<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Local to Remote link directors<br>4. Read cache request rate (requests per second).<br>5. Write cache request rate (requests per second).<br>6. Total read/write cache request rate (requests per second).<br>7. Cache hit ratio (percentage of cache read and write hits).<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Front-end directors exceeding I/O threshold",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400022770890 & text:\"FE\" & text:\"director\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & text=~\"symid=.*FE Director\\, (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5tgkx3enfzgky3un5za0000>\\S+)\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5tgkx3enfzgky3un5za0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will only show events if the thresholds for I/O have been breached.&nbsp; These events may be triggered due to a custom alert or through the default system alerts. If default system thresholds are exceeded contact EMC support for assistance.&nbsp; This may indicate a system problem or the system may require more resources.<br><br>User-defined alerts may be useful when configuring Host I/O Limits to monitor the total amount of I/O passing through the FAs.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Back-end directors exceeding I/O threshold",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400022770890 & text:\"Object\" & text:\"is\" & text:\"BE\" & text:\"director\" & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygg5dcovzxs000) & text=~\"symid=.*busy \\((?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygg5dcovzxs000>-?\\d*\\.?\\d+)\\) exceeds\")) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will only show entries if the user-defined pct busy threshold for the back-end director has been exceeded.&nbsp; These events may be triggered due to a custom alert or through the default system alerts. If default system thresholds are exceeded contact EMC support for assistance.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+                  "name": "Director events with a state change",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"director\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df) & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") & text=~\"Director=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7nzqw2zi0>\\S+)\\] \\[sev\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will show director events that indicate a change such as if a\n director goes offline.&nbsp; An event will be generated for directors in the following states, with the log level next to it:<br><br>If <span style=\"font-weight: bold;\">Online</span>- <span style=\"text-decoration: underline;\">Normal</span><br>If <span style=\"font-weight: bold;\">Online Degraded</span> - <span style=\"text-decoration: underline;\">Warning</span><br>If <span style=\"font-weight: bold;\">Offline</span> - <span style=\"text-decoration: underline;\">Major</span><br>If <span style=\"font-weight: bold;\">Failed</span>- <span style=\"text-decoration: underline;\">Fatal</span><br>If <span style=\"font-weight: bold;\">Not Present</span> - <span style=\"text-decoration: underline;\">Info</span><br><br>'Not Present' means the director was not seen by Solutions Enabler.<br>'Online' means that the director status is Online.<br>'Online [Degraded]' means that one or more of the director's ports were in an Offline or Write-Disabled state.<br>'Offline' means that the director status is Offline.<br>'Failed' means that the director status is Dead.<br>"
+                },
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+                  "name": "Director port events with a state change",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1407526483789 & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg64tul5xgc3lf) & text=~\"symid=.*Port=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg64tul5xgc3lf>\\S+)\\] \\[sev\") & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg64tul5xgc3lf ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph will show director port events that indicate a change such as if a\nport goes offline.&nbsp; An event will be generated for ports in the following states, with the log level next to it:<br><br>If <span style=\"font-weight: bold;\">Online</span>- <span style=\"text-decoration: underline;\">Normal</span><br>If <span style=\"font-weight: bold;\">Offline</span> - <span style=\"text-decoration: underline;\">Major</span><br>If <span style=\"font-weight: bold;\">Write Disabled</span> - <span style=\"text-decoration: underline;\">Warning</span><br>If <span style=\"font-weight: bold;\">Unknown</span> - <span style=\"text-decoration: underline;\">Warning</span><br>If <span style=\"font-weight: bold;\">Not Present</span> - <span style=\"text-decoration: underline;\">Info</span><br><br>'Not Present' means the port was not seen by Solutions Enabler.<br>'Online' means that the port status is Online.<br>'Offline' means that the director status is Offline.<br>'Write-Disabled' means a port status of Write-Disabled.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Auditing",
+          "constraints": [
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000",
+              "operator": "EQUAL"
+            },
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mfyha3djmnqxi2lpnzpwsza0",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7orsxq5a0",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "All verbose audit records grouped by host name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390006713702 & timestamp <= 1390859657257 & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxezldn5zgix3oovwwezls) & text=~\"Record Number .* (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxezldn5zgix3oovwwezls>-?\\d+).*\\n.*Records in Seq.*\\n.*Offset\") & text=~\"API Version .*\\n.*   : (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwq33torpw4ylnmu000000>\\S+).*\\n.*OS Name.*\\n.*OS Revision\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwq33torpw4ylnmu000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph is a compilation of all audit events grouped by host name.&nbsp; The host name may be a server running Solutions Enabler or the VMAX itself, in which case the host name will be prefixed with \"HK\". <br><br>This graph will only be populated if verbose records are being sent to Log Insight from the symaudit output.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "All abbreviated audit records grouped by host name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1399241081268 & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7ojswg33smrpw45lnmjsxe000) & text=~\"fmt=symaud\\].*\\[symid=.*\\[aud\\-num=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7ojswg33smrpw45lnmjsxe000>-?\\d+).*.*] \") & text=~\"fmt=symaud\\].*\\[symid=.*\\[host=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7nbxxg5c7nzqw2zi0>\\S+)\\] \\[actid.*\\[appid=\" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7nbxxg5c7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph is a compilation of all audit events grouped by host name.&nbsp; \nThe host name may be a server running Solutions Enabler or the VMAX \nitself, in which case the host name will be prefixed with \"HK\".<br><br>This graph will only be populated if audit records are being sent to Log Insight from the event daemon."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "All verbose audit events sorted by function class",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390280400000 & timestamp <= 1390997988610 & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxezldn5zgix3oovwwezls) & text=~\"Record Number .* (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxezldn5zgix3oovwwezls>-?\\d+).*\\n.*Records in Seq.*\\n.*Offset\") & text=~\"Task ID .*\\n.*   : (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwm5lomn2gs33ol5rwyyltom000000>\\S+).*\\n.*Action Code.*\\n.*Text\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwm5lomn2gs33ol5rwyyltom000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph is a compilation of all audit events grouped by function class.&nbsp; \nThe function class may include values such as:&nbsp; Recovery, RDF, CfgChg, and Security, among others.<br><br>This graph will only be populated if verbose records are being sent to Log Insight from the symaudit output.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "All abbreviated audit records grouped by function class",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1399241081268 & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7ojswg33smrpw45lnmjsxe000) & text=~\"fmt=symaud\\].*\\[symid=.*\\[aud\\-num=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7ojswg33smrpw45lnmjsxe000>-?\\d+).*.*] \") & text=~\"fmt=symaud\\].*\\[symid=.*\\[aud\\-cls=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mz2w4y3unfxw4x3dnrqxg4y0>\\w+)\\] \\[aud\\-act\" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mz2w4y3unfxw4x3dnrqxg4y0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph is a compilation of all audit events grouped by function class.&nbsp; \nThe function class may include values such as:&nbsp; Recovery, RDF, CfgChg, and Security, among others.<br><br>This graph will only be populated if audit records are being sent to Log Insight from the event daemon."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "SRDF SRA audit entries",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391439728717 & timestamp <= 1400212800000 & text:\"emcsrdfsra\" & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7ojswg33smrpw45lnmjsxe000) & text=~\"fmt=symaud\\].*\\[symid=.*\\[aud\\-num=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7ojswg33smrpw45lnmjsxe000>-?\\d+).*.*] \") & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mfyha3djmnqxi2lpnzpwsza0:\"emcsrdfsra\" & text=~\"fmt=symaud\\].*\\[symid=.*\\[appid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mfyha3djmnqxi2lpnzpwsza0>\\S+)\\] \\[aud\\-cls.*\\[aud\\-act\")) & text=~\"fmt=symaud\\].*\\[symid=.*\\[aud\\-cls=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mz2w4y3unfxw4x3dnrqxg4y0>\\w+)\\] \\[aud\\-act\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mz2w4y3unfxw4x3dnrqxg4y0,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This graph is a compilation of all audit events that have an application\n id of 'emcsrdfsra'.&nbsp; The events are generated as a results of SRDF SRA \nactivity related to VMware Site Recovery Manager.<br><br>This graph will only be populated if audit records are being sent to Log Insight from the event daemon.<br>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df:\"Offline\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Director is offline",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df:\"Offline\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "A director has gone offline.&nbsp; This alert will trigger for a single type of event id:1<span id=\"yui_3_10_2_1_1384267206943_4939\" class=\"messagefield\" data-internalname=\"ibadax3fnvrv65tnmf4f6zlwmvxhi2le\" data-displayname=\"emc_vmax_eventid\">202</span>,\n which indicates that a director has gone offline.&nbsp; This may be an \nexpected state if maintenance is being conducted on the array; however, \ndirectors in \nthis state may require intervention by EMC support or the local EMC \nrepresentative to resolve."
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df) & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "A front-end or back-end director has changed state",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df) & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "The state of a director has changed.&nbsp; A director state can be Online, Online Degraded, Offline, Failed, or Not Present.&nbsp; All alerts other than one indicating \"Online\" should be addressed with the system administrator.&nbsp; If the alert is indicating an \"Online\" state it is most likely generated from a return from another state. <br><br>Note there are two other specific alerts for directors.&nbsp; In the event one of those alarms is tripped, this one will be also.<br id=\"yui_3_10_2_2_1384272974342_40\">"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0) & text=~\"symid=.*Response Time \\(ms\\) \\((?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0>-?\\d*\\.?\\d+)\\) exceeds threshold\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "An object has exceeded a defined threshold for response time",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT MAX(item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0) & text=~\"symid=.*Response Time \\(ms\\) \\((?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0>-?\\d*\\.?\\d+)\\) exceeds threshold\")) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, MAX(item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0) DESC LIMIT 1,100",
+      "info": "This alert is triggered because an object such as a device or storage group has exceeded the acceptable response time.&nbsp; These are user-defined thresholds and as such the user should examine the log entry responsible for the alert to determine what, if any, action is required.&nbsp; Occasional breaches may be expected while frequent ones could be indicative of a configuration problem, or perhaps the need to institute different Quality of Service settings.<br id=\"yui_3_10_2_2_1384272974342_300\">"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg653foi000000) & text=~\"\\[symid=\\d+\\] \\[sev=\\w+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg653foi000000>.*Power (System|Supply).*)\\.\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Power system change detected",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg653foi000000) & text=~\"\\[symid=\\d+\\] \\[sev=\\w+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg653foi000000>.*Power (System|Supply).*)\\.\")) as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg653foi000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "The VMAX has a power related event, e.g. power supply fault, AC line interruption.&nbsp; An alert triggered due to an event that has a severity of fatal should be addressed immediately."
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"Object\" & text:\"is\" & text:\"BE\" & text:\"director\" & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygg5dcovzxs000) & text=~\"symid=.*busy \\((?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygg5dcovzxs000>-?\\d*\\.?\\d+)\\) exceeds\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 60000,
+      "name": "Percent busy on back-end director exceeds threshold",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"Object\" & text:\"is\" & text:\"BE\" & text:\"director\" & ((FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygg5dcovzxs000) & text=~\"symid=.*busy \\((?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygg5dcovzxs000>-?\\d*\\.?\\d+)\\) exceeds\")) & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "The back-end director has either exceeded the user-defined or system percent busy setting.&nbsp; This alert triggers when the user-defined pct busy threshold for the back-end director has been exceeded.&nbsp; This alert may be triggered due to a custom alert or through the default system alerts. If default system thresholds are exceeded contact EMC support for assistance."
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"FE\" & text:\"director\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Front-End director exceeds threshold",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"FE\" & text:\"director\" & (FIELD_EXISTS(ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000) & text=~\"evtid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000>-?\\d+)\\] \\[date.*symid\") & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "One or more front-end directors have exceeded the user-defined threshold.&nbsp; This alert will be triggered if there a custom or default system alert that is breached. If default system thresholds are exceeded contact EMC support for assistance.&nbsp; This may indicate a system problem or the system may require more resources."
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 80.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"Data pool utilization\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Thin Pool utilization exceeds 80%",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT AVG(item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygk4tdmvxhi000) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"Data pool utilization\" & text=~\"symid=.*is now (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygk4tdmvxhi000>-?\\d*\\.?\\d+) percent\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, AVG(item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygk4tdmvxhi000) DESC LIMIT 1,100",
+      "info": "This alert triggers when the percent full of a thin pool exceeds 80%.&nbsp; This value is a critical severity level.&nbsp; The alert does not mean action must be taken immediately, rather it should instruct the user to monitor the thin pool closely.<br id=\"yui_3_10_2_2_1384272974342_544\">"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"emcstorevntd\" & text:\"Total Pool Capacity\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Total thin pool capacity exceeded",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"emcstorevntd\" & text:\"Total Pool Capacity\" & text=~\" \\[symid=(?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000>-?\\d+)\\] \" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "This alert triggers when the user-defined total capacity for a thin pool is exceeded.&nbsp; Using custom alerts in Unisphere users can set any total capacity value.&nbsp; That value need not indicate that the pool is filling up.&nbsp; For instance, the value may signal that some other action must be taken.<br>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df:\"not responding\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Director is not responding",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df:\"not responding\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "A director has stopped responding.&nbsp; This alert will trigger for a single type of event id:1<span id=\"yui_3_10_2_1_1384267206943_4939\" class=\"messagefield\" data-internalname=\"ibadax3fnvrv65tnmf4f6zlwmvxhi2le\" data-displayname=\"emc_vmax_eventid\">117</span>,\n which indicates that a director has stopped responding.&nbsp; Directors in \nthis state may require intervention by EMC support or the local EMC \nrepresentative to resolve."
+    }
+  ],
+  "name": "EMC - VMAX",
+  "queries": [
+    {
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df:\"not responding\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 ORDER BY item0.timestamp DESC",
+      "name": "Directors that stopped responding",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df:\"not responding\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "This query will return a single type of event id:1<span id=\"yui_3_10_2_1_1384267206943_4939\" class=\"messagefield\" data-internalname=\"ibadax3fnvrv65tnmf4f6zlwmvxhi2le\" data-displayname=\"emc_vmax_eventid\">117</span>, which indicates that a director has stopped responding.&nbsp; Directors in this state may require intervention by EMC support or the local EMC representative to resolve.<br id=\"yui_3_10_2_3_1384269314314_79\">"
+    },
+    {
+      "messageQuery": "SELECT item0 FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df:\"offline\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 ORDER BY item0.timestamp DESC",
+      "name": "Directors that are offline",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371020997687 & timestamp <= 1382393720266 & text:\"director\" & (ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df:\"offline\" & text=~\"symid=.*\\[\\S+\\]  = (?<ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df>.*Director .*)\\.\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "This query will return a single type of event id:1<span id=\"yui_3_10_2_1_1384267206943_4939\" class=\"messagefield\" data-internalname=\"ibadax3fnvrv65tnmf4f6zlwmvxhi2le\" data-displayname=\"emc_vmax_eventid\">202</span>,\n which indicates that a director has gone offline.&nbsp; This may be an expected state if maintenance is being conducted on the array; however, directors in \nthis state may require intervention by EMC support or the local EMC \nrepresentative to resolve."
+    }
+  ],
+  "extractedFields": [
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxe4tbpfpxg5dborsq0000",
+      "preContext": "Array state has changed to ",
+      "regexValue": ".*",
+      "displayName": "emc_vmax_array_state"
+    },
+    {
+      "postContext": "\\] \\[aud\\-num",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mfrxi2lpnzpwg33emu000000",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[aud\\-act=",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_aud_action_code"
+    },
+    {
+      "postContext": "\\] \\[appid.*\\[aud-cls=",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mfrxi2lwnf2hsx3jmq000000",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[actid=",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_aud_activity_id"
+    },
+    {
+      "postContext": "\\] \\[aud\\-cls.*\\[aud\\-act",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mfyha3djmnqxi2lpnzpwsza0",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[appid=",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_aud_application_id"
+    },
+    {
+      "postContext": "\\] \\[aud\\-act",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7mz2w4y3unfxw4x3dnrqxg4y0",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[aud\\-cls=",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_aud_function_class"
+    },
+    {
+      "postContext": "\\] \\[actid.*\\[appid=",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7nbxxg5c7nzqw2zi0",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[host=",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_aud_host_name"
+    },
+    {
+      "postContext": "\\] \\[user.*\\[host=",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7n5zgsz3jnzqxi33s",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[orig=",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_aud_originator"
+    },
+    {
+      "postContext": ".*.*] ",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7ojswg33smrpw45lnmjsxe000",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[aud\\-num=",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_aud_record_number"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7orsxq5a0",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[actid=.*\\[aud\\-num=.*] = ",
+      "regexValue": ".*",
+      "displayName": "emc_vmax_aud_text"
+    },
+    {
+      "postContext": "\\] \\[host.*\\[actid",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzc7ovzwk4tomfwwk000",
+      "preContext": "fmt=symaud\\].*\\[symid=.*\\[user=",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_aud_username"
+    },
+    {
+      "postContext": ".*\\n.*Text.*\\n.*Username",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwcy3unfxw4x3dn5sgk000",
+      "preContext": "Function Class .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_action_code"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwcy3unf3gs5dzl5uwi000",
+      "preContext": "Action Code.*\\n.*Text.*\\n.*Username .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_activity_id"
+    },
+    {
+      "postContext": ".*\\n.*API Version.*\\n.*Host Name",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwc4djl5wgsytsmfzhs000",
+      "preContext": "Application Version .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_api_library"
+    },
+    {
+      "postContext": ".*\\n.* Host Name.*\\n.*OS Name",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwc4djl53gk4ttnfxw4000",
+      "preContext": "API Library .*\\n.*   : ",
+      "regexValue": "\\S.*",
+      "displayName": "emc_vmax_audit_api_version"
+    },
+    {
+      "postContext": ".*\\n.*Application Version.*\\n.*API LIbrary",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwc4dqnruwgylunfxw4x3jmq000000",
+      "preContext": "Vendor ID .*\\n.*   : ",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_audit_application_id"
+    },
+    {
+      "postContext": ".*\\n.*API Library.*\\n.*API Version",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwc4dqnruwgylunfxw4x3wmvzhg2lpny000000",
+      "preContext": "Application ID .*\\n.*: ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_application_version"
+    },
+    {
+      "postContext": ".*\\n.*Process ID.*\\n.*Task ID",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwg3djmvxhix3in5zxi000",
+      "preContext": "OS Revision .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_client_host"
+    },
+    {
+      "postContext": ".*\\n.*Action Code.*\\n.*Text",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwm5lomn2gs33ol5rwyyltom000000",
+      "preContext": "Task ID .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_function_class"
+    },
+    {
+      "postContext": ".*\\n.*OS Name.*\\n.*OS Revision",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpwq33torpw4ylnmu000000",
+      "preContext": "API Version .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_host_name"
+    },
+    {
+      "postContext": ".*\\n.*Time.*\\n.*Vendor ID",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpw6ztgonsxix3jnzpxgzlr",
+      "preContext": "Records in Seq .*\\n.* ",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_audit_offset_in_seq"
+    },
+    {
+      "postContext": ".*\\n.*OS Revision.*\\n.*Client Host",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpw6427nzqw2zi0",
+      "preContext": "Host Name .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_os_name"
+    },
+    {
+      "postContext": ".*\\n.*Client Host.*\\n.*Process ID",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpw6427ojsxm2ltnfxw4000",
+      "preContext": "OS Name .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_os_revision"
+    },
+    {
+      "postContext": ".*\\n.*Task ID.*\\n.*Function Class",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxa4tpmnsxg427nfsa0000",
+      "preContext": "Client Host .*\\n.*   : ",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_audit_process_id"
+    },
+    {
+      "postContext": ".*\\n.*Records in Seq.*\\n.*Offset",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxezldn5zgix3oovwwezls",
+      "preContext": "Record Number .* ",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_audit_record_number"
+    },
+    {
+      "postContext": ".*\\n.*Offset in Seq.*\\n.*Time",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxezldn5zgi427nfxf643foe000000",
+      "preContext": "Record Number .*\\n.*",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_audit_records_in_seq"
+    },
+    {
+      "postContext": ".*\\n.*Function Class.*\\n.*Action Code",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxiyltnnpwsza0",
+      "preContext": "Process ID .*\\n.*   : ",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_audit_task_id"
+    },
+    {
+      "postContext": ".*\\n.*Username.*\\n.*Activity ID",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxizlyoq000000",
+      "preContext": "Action Code .*\\n.*   : ",
+      "regexValue": ".*",
+      "displayName": "emc_vmax_audit_text"
+    },
+    {
+      "postContext": ".*\\n.*Vendor ID.*\\n.*Application ID",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxi2lnmu000000",
+      "preContext": "Offset in Seq .*\\n.*   : ",
+      "regexValue": ".*",
+      "displayName": "emc_vmax_audit_time"
+    },
+    {
+      "postContext": ".*\\n.*Activity ID",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxk43fojxgc3lf",
+      "preContext": "Action Code.*\\n.*Text .*\\n.*   : ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_audit_username"
+    },
+    {
+      "postContext": ".*\\n.*Application ID.*\\n.*Application Version",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5qxkzdjorpxmzlomrxxex3jmq000000",
+      "preContext": "Time .*\\n.*   : ",
+      "regexValue": ".*",
+      "displayName": "emc_vmax_audit_vendor_id"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5rgkx3enfzgky3un5za0000",
+      "preContext": "symid=.*BE Director\\, ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_be_director"
+    },
+    {
+      "postContext": "\\] \\- Object is",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgk5tjmnsxg000",
+      "preContext": "symid=.*\\) \\[",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_devices"
+    },
+    {
+      "postContext": "\\] \\[sev",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7nzqw2zi0",
+      "preContext": "Director=",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_director_name"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sgs4tfmn2g64s7on2gc5df",
+      "preContext": "symid=.*\\[\\S+\\]  = ",
+      "regexValue": ".*Director .*",
+      "displayName": "emc_vmax_director_state"
+    },
+    {
+      "postContext": "\\] .*symid",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzloorpwiylumu000000",
+      "preContext": "date=",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_event_date"
+    },
+    {
+      "postContext": ".*.*date",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzloorpwm33snvqxix3upfygk000",
+      "preContext": "fmt=",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_event_format_type"
+    },
+    {
+      "postContext": "\\] \\[date.*symid",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5sxmzlooruwi000",
+      "preContext": "evtid=",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_eventid"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5tgkx3enfzgky3un5za0000",
+      "preContext": "symid=.*FE Director\\, ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_fe_director"
+    },
+    {
+      "postContext": "\\) exceeds",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5uw64tborsq0000",
+      "preContext": "symid=.*I/O rate \\(",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "emc_vmax_iorate"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5xwe2tfmn2hi6lqmu000000",
+      "preContext": "symid=.*Object is: ",
+      "regexValue": ".*",
+      "displayName": "emc_vmax_objecttype"
+    },
+    {
+      "postContext": "\\) exceeds",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygg5dcovzxs000",
+      "preContext": "symid=.*busy \\(",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "emc_vmax_pctbusy"
+    },
+    {
+      "postContext": "\\) dropped below threshold",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygg5dinf2a0000",
+      "preContext": "symid=.*hit \\(",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "emc_vmax_pcthit"
+    },
+    {
+      "postContext": " percent",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5ygk4tdmvxhi000",
+      "preContext": "symid=.*is now ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "emc_vmax_percent"
+    },
+    {
+      "postContext": "\\] \\[sev",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg64tul5xgc3lf",
+      "preContext": "symid=.*Port=",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_port_name"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg64tul5zxiyluovzq0000",
+      "preContext": "symid=.*Port state has changed to ",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_port_status"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5yg653foi000000",
+      "preContext": "\\[symid=\\d+\\] \\[sev=\\w+\\]  = ",
+      "regexValue": ".*Power (System|Supply).*",
+      "displayName": "emc_vmax_power"
+    },
+    {
+      "postContext": "\\) exceeds threshold",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zgk43qn5xhgzk7oruw2zi0",
+      "preContext": "symid=.*Response Time \\(ms\\) \\(",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "emc_vmax_response_time"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zwk5tfojuxi6i0",
+      "preContext": "symid=.*sev=",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_severity"
+    },
+    {
+      "postContext": "\\] \\[sev",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxezdgl5txe33voa000000",
+      "preContext": "symid.*SRDF\\-grp=",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_srdf_group"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxezdgl5zxiylumu000000",
+      "preContext": "symid=.*\\[\\S+\\]  = ",
+      "regexValue": ".*SRDF.*",
+      "displayName": "emc_vmax_srdf_state"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxi33smftwkz3soa000000",
+      "preContext": "symid=.*Object is: SG\\, ",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_storagegrp"
+    },
+    {
+      "postContext": "\\] ",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl5zxs3lnnfsa0000",
+      "preContext": " \\[symid=",
+      "regexValue": "-?\\d+",
+      "displayName": "emc_vmax_symmid"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gk6du",
+      "preContext": "sev=*.* = ",
+      "regexValue": ".*",
+      "displayName": "emc_vmax_text"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63c7nzqw2zi0",
+      "preContext": "symid=.*TP Pool\\, ",
+      "regexValue": "\\w+",
+      "displayName": "emc_vmax_thinpool_name"
+    },
+    {
+      "postContext": "\\] \\[sev",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq2loobxw63domfwwk000",
+      "preContext": "symid=.*TPDataPool=",
+      "regexValue": "\\S+",
+      "displayName": "emc_vmax_thinpoolname"
+    },
+    {
+      "postContext": "\\)",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl52gq4tfonug63del53gc3dvmu000000",
+      "preContext": "symid=.*threshold \\(",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "emc_vmax_threshold_value"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcms7mnxw2ltfnvrs45tnmf4gk3ldl53g2ylyl53g63dvnvsq0000",
+      "preContext": "symid=.*Device=",
+      "regexValue": "[A-Fa-f0-9]+",
+      "displayName": "emc_vmax_volume"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "2.0",
+  "namespace": "com.emc.vmax",
+  "icon": "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",
+  "author": "EMC Corporation",
+  "contentVersion": "2.1",
+  "url": "http://www.emc.com",
+  "info": "<span>The EMC VMAX content\npack provides you with important information about your Symmetrix VMAX array(s)\nfrom sources such as Solutions Enabler and Unisphere for VMAX. The content pack\nenables:</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><span style=\"font-weight: bold;\">Proactive monitoring of your VMAX array</span></span><br>\n\n<span>Quickly identify\nissues using dashboards and pre-defined alerts.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><span style=\"font-weight: bold;\">Historical viewing of VMAX events</span></span><br>\n\n<span>Using the custom\ndate functionality view VMAX trends over extended periods of times to help\nidentify potential problems before they impact production.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><span style=\"font-weight: bold;\">Additional information and context</span></span><br>\n\n<span>Each dashboard\nwidget includes information about the widget with links to documentation or any\nother information that might be applicable.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>The EMC VMAX content\npack will help bridge the gap between the VMware and system administrators,\nproviding a common set of data by which the VMAX can be monitored and issues\naddressed.</span><br>"
+}

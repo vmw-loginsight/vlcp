@@ -1,0 +1,1033 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Systems",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "CPU Usage in Percent of Allocation",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg6ltorsw2x3dob2q0000) FROM timestamp >= 1390327430583 & timestamp <= 1390331031035 & text:\"ws_perfmon\" & text:\"CPU\" & text=~\"\\[ws_perfmon\\] System CPU use: (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg6ltorsw2x3dob2q0000>-?\\d+)\\%$\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The percentage of time the system processor is busy.&nbsp; Systems that are busy a high percentage of the time will respond slowly and could lose network connections.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Memory Use in Percent of Allocation",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg6ltorsw2x3nmvwq0000) FROM timestamp >= 1390327476165 & timestamp <= 1390331076723 & text:\"ws_perfmon\" & text:\"memory\" & text=~\"\\[ws_perfmon\\] Commit memory use: (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg6ltorsw2x3nmvwq0000>-?\\d+)\\%$\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Percentage of system memory that is in use.&nbsp; If a system uses too much memory it will begin to spill over onto disk, greatly reducing the system speed.&nbsp; Consider increasing the virtual machine memory allocation if memory usage is too high.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Health Updates",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390401671035 & timestamp <= 1390423271034 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"VcHealth\" as item0 GROUP BY item0.timestamp/600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "View servers send health updates at regular intervals.&nbsp; If a server is not sending health updates it could be disconnected from the network or unavailable.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Tracker Message Types",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390402962963 & timestamp <= 1390424562962 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text=~\"TrackerMessage SYNC \\{_MS_MSGIDENTIFIER=\\S+\\}: \\{v=\\d+, tn=(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxi4tbmnvwk4s7nvsxg43bm5sv65dzobsq0000>\\w+)\\, u=\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxi4tbmnvwk4s7nvsxg43bm5sv65dzobsq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Tracker messages fall into different categories each containing details about how the system functions: BrokerHealth, TaskTracker, VcCacheTrackedVCs, SGHealth, TaskClusterControllerTracker, DomainHealth, SamlAuthHealth, VcHealth<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Broker Sessions",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwe4tpnnsxex3oovwv643fonzws33oom000000) FROM timestamp >= 1390404935114 & timestamp <= 1390426535144 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"BrokerHealth\" & text=~\"ATTR_BROKER_NUM_SESSIONS\\\",\\\"type\\\":\\\"INTEGER\\\",\\\"integerValue\\\":(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwe4tpnnsxex3oovwv643fonzws33oom000000>-?\\d+)\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"ATTR_BROKER_NUM_SESSION_HIGH\" as item0 GROUP BY item0.timestamp/600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The View Broker component, which is the core of View Connection Server, \nis responsible for all user interaction between VMware View clients and \nView Connection Server. View Broker also includes the Administration \nServer that is used by the View Administrator Web client.&nbsp; View Broker works closely with vCenter Server to provide advanced \nmanagement of View desktops, including virtual machine creation and \npower operations.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Connections to Host Failed",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391461115154 & timestamp <= 1391461416790 & text:\"JMSException\" & (FIELD_EXISTS(ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f6zlsojxxex3dn5sgk000) & text=~\"Agent \\[Error Code:(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f6zlsojxxex3dn5sgk000>[A-Fa-f0-9]+)\\, Error\") & text=~\"Error Text:javax.jms.JMSException: Unable to create a connection to: \\[\\[ServerEntry, hostname=(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f6y3pnzxgky3ul5tgc2lml5ug643u>.*)\\]\\]\\, Active Broker\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f6y3pnzxgky3ul5tgc2lml5ug643u ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Connections will fail if the server is unavailable, having network trouble or under heavy processor, disk or memory load.<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1006734\">VMware KB 1006734</a> - Troubleshooting connectivity issues between the agent, client, and connection server in VMware Virtual Desktop Manager<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Tracker Message Queue Delay",
+                  "chartQuery": "SELECT MAX(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxi4tbmnvwk4s7of2wk5lfl5sgk3dbpe000000) FROM timestamp >= 1390417260000 & timestamp <= 1390417319999 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"queuedelay\" & hostname:\"AT-VIEW-CS02.vmware.com\" & text=~\"queuedelay=(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxi4tbmnvwk4s7of2wk5lfl5sgk3dbpe000000>-?\\d+) \\(TrackerMessage\" as item0 GROUP BY item0.timestamp/1000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Tracker Messages are queued during periods of high activity.&nbsp; A high queue value may indicate a network problem, a system under high load or a failing disk.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cluster",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Cluster Controller Last Seen in Milliseconds",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwg3dvon2gk4s7mnxw45dsn5wgyzlsl5wgc43ul5zwkzlo) FROM timestamp >= 1390334271147 & timestamp <= 1390420671146 & text:\"TaskControllerImpl\" & text:\"cluster\" & text:\"controller\" & text=~\"The cluster controller \\S+ was last seen by this this node (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwg3dvon2gk4s7mnxw45dsn5wgyzlsl5wgc43ul5zwkzlo>-?\\d+) ms ago\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The cluster controller monitors the health of the nodes in the cluster.&nbsp; On regular intervals the members of the cluster log the amount of time it has been since they have received a message from the controller.&nbsp; Values under 3,000 milliseconds indicate normal operation.&nbsp; If the value is to great, the controller may be down or unreachable by one or more of the members of the cluster.<br><a href=\"http://blogs.vmware.com/euc/2012/05/demystifying-vmware-view-large-scale-designs.html\"><br><span>Demystifying VMware View Large Scale Designs</span></a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Cluster Node Down",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1386634427950 & timestamp <= 1390499949102 & text:\"NodesState\" & text:\"missing\" & text:\"removing\" & text=~\"NodesState\\] (\\S+) Node found to be missing, removing: (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pw22ltonuw4z27nzxwizi0>\\S+)\" as item0 GROUP BY item0.timestamp/86400000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pw22ltonuw4z27nzxwizi0 ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pw22ltonuw4z27nzxwizi0 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Count of systems in the cluster that are unreachable, rebooted or removed from the cluster.&nbsp; An unexpected cluster node down may cause a degradation in service or redundancy.&nbsp; This may be caused by hardware failure or software crash.&nbsp; If the node is returned to service it will log a message once it is available.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Cluster Node Up",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1386634427950 & timestamp <= 1390500013412 & text:\"NodesState\" & text:\"Missing\" & text:\"node\" & text:\"returned\" & text=~\"NodesState\\] (\\S+ \\S+) Missing node has returned: (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxezluovzg4zlel5xg6zdf>\\S+) state\" as item0 GROUP BY item0.timestamp/86400000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxezluovzg4zlel5xg6zdf ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxezluovzg4zlel5xg6zdf DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Count of nodes that were missing and have joined the cluster and returned to online status.&nbsp; If a node is going up and down it could indicate a software problem or misconfiguration that requires manual intervention to fix.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Authentication",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Average LDAP Search Time in Milliseconds",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpxgzlbojrwqx3unfwwk000) FROM timestamp >= 1390334010328 & timestamp <= 1390420410327 & text:\"LDAPSearch\" & text=~\"Operation=LDAPSearch, Object=[^,]+, Time=(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpxgzlbojrwqx3unfwwk000>-?\\d+) ms\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The amount of time it takes for a Lightweight Directory Access Protocol (LDAP) request to complete will be perceived by the user as a delay during login.&nbsp; If the LDAP requests takes longer than the view client connection timeout it will prevent users from connecting.<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1023347\">VMware KB 1023347</a><span><span>- Changing the VMware View Client connection timeout</span></span><a href=\"http:///\"><span><span></span></span></a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Authentication Failures",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389901458122 & timestamp <= 1390506258121 & text:\"MessageFrameWork\" & text:\"Unable\" & text:\"accept\" & text:\"connection\" & text:\"authentication\" & text:\"failed\" & !text:\"ws_perfmon\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "When a user is unable to complete a login request, it is logged as an authentication failure.&nbsp; Infrequent authentication failures are usually cause by a user typing the providing the wrong password.&nbsp; If a user may become locked out after a number of authentication failures.&nbsp; A high count of authentication failures may be a problem with the authentication service..<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1007293\">VMWare KB 1007293</a> - Windows user account gets locked out when VirtualCenter Server service is running<br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1014189\"><br>VMWare KB 1014189</a> - View Client users are locked out before exceeding the account lockout threshold<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Single Sign On Authentication Status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390341389779 & timestamp <= 1390427789778 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"SamlAuthHealth\" & text=~\"SamlAuthHealth, u=\\[\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"STATE\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000>\\w+)\\\"\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"STATEDESCRIPTION\" as item0 GROUP BY item0.timestamp/3600000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000 ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "When using Single Sign On, the Simple Authentication Markup Language returns a status code which should be 'OK'.&nbsp; Other values may indicate an error condition with single sign on authentication that prevented a user from connecting.<br><br><a href=\"http://blogs.vmware.com/horizontech/2013/08/vmware-horizon-workspace-web-application-integration-saml-protocol.html\"><span>Using the SAML Protocol to Integrate a Web Application with VMware Horizon Workspace</span></a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Domain Status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390335070778 & timestamp <= 1390338670777 & text:\"DomainHealth\" & (FIELD_EXISTS(ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwi33nmfuw4x3torqxizi0) & text=~\"\\\"name\\\":\\\"ATTR_DOMAIN_STATE\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwi33nmfuw4x3torqxizi0>\\w+)\\\"\\}\\}\\,\\{\\\"type\") as item0 GROUP BY item0.timestamp/60000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwi33nmfuw4x3torqxizi0 ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwi33nmfuw4x3torqxizi0 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Regular domain status messages are exchanged by the members of the cluster and contain an overall domain status.&nbsp; A value of \"OK\" is expected for the system to operation properly.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Users",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Active User Count",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzltonuw63s7ovzwk4q0) FROM timestamp >= 1390851248321 & timestamp <= 1390937648320 & text:\"TERMINALRESPONSE\" & text:\"LOGGEDINASUSER\" & text=~\"LOGGEDINASUSER>(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzltonuw63s7ovzwk4q0>\\w+)</LOGGEDINASUSER\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                  "info": "The number of active users is limited by allocation of cpu, memory and network. These allocations need to be tuned to the type of users on the system, for instance if the memory allocation is too low, storage I/O can be negatively affected because too much memory swapping <span>occurs. If the memory allocation is too high, storage capacity can be negatively affected because the paging file</span><span>in the guest operating system and the swap and suspend files for each virtual machine grow too large.</span><span><br></span><br><a href=\"http://pubs.vmware.com/view-51/topic/com.vmware.ICbase/PDF/view-51-architecture-planning.pdf\"><span>VMware View Architecture Planning</span></a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Terminal Status Codes over Time",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxizlsnvuw4ylml5sxe4tpojpwg33emu000000) FROM timestamp >= 1390851789494 & timestamp <= 1390938189493 & text:\"TERMINALRESPONSE\" & text:\"ERROR-CODE\" & text=~\"ACCEPTINGCONNECTIONS\\>\\<ERROR\\-CODE>(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxizlsnvuw4ylml5sxe4tpojpwg33emu000000>\\w+)</ERROR\\-CODE\" as item0 GROUP BY item0.timestamp/3600000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxizlsnvuw4ylml5sxe4tpojpwg33emu000000 ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxizlsnvuw4ylml5sxe4tpojpwg33emu000000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "An active desktop session will cause a regular log entry on the condition of the session.&nbsp; The terminal status code of 'AGENT_ERR_OK' indicates the system is functioning normally.&nbsp; Other status codes may indicate an error condition.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Active Users",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1386634427950 & timestamp <= 1390506301908 & text:\"TERMINALRESPONSE\" & text:\"LOGGEDINASUSER\" & text=~\"LOGGEDINASUSER>(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzltonuw63s7ovzwk4q0>\\w+)</LOGGEDINASUSER\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzltonuw63s7ovzwk4q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "An active desktop session will cause a regular log entry on the condition of the session.&nbsp; The count of entries that have a user logged in is an indication of the amount of time the user has been actively using the system.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Active Agent Versions",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1386634427950 & timestamp <= 1390506301908 & text:\"TERMINALRESPONSE\" & text:\"AGENTVERSION\" & text=~\"AGENTVERSION>(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f65tfojzws33o>\\S+)</AGENTVERSION\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f65tfojzws33o ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "An active desktop session will cause a regular log entry on the condition of the session.&nbsp; The agent is the software running on the user's device that allows access to the View desktop.&nbsp; It is important that users are running a recent version of the client in order to have the latest updates and security patches.<br><br><a href=\"http://pubs.vmware.com/view-50/topic/com.vmware.view.upgrade.doc/GUID-9D6BE4B8-B122-4EF5-B68F-3B74C03742F0.html\">Upgrading View Agents</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Active Virtual Desktop Operating System",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390508808021 & timestamp <= 1390509108020 & text:\"TERMINALRESPONSE\" & text:\"PLATFORM\" & text:\"OSVERMAJOR\" & text:\"OSVERMINOR\" & text=~\"DYNAMICIPADDRESS><PLATFORM>(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7obwgc5dgn5zg2000>\\w+)</PLATFORM\" & text=~\"PLATFORM><OSVERMAJOR>(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7nvqwu33sl53gk4ttnfxw4000>-?\\d+)</OSVERMAJOR\" & text=~\"OSVERMAJOR><OSVERMINOR>(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7nvuw433sl53gk4ttnfxw4000>-?\\d+)</OSVERMINOR\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7obwgc5dgn5zg2000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7nvqwu33sl53gk4ttnfxw4000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7nvuw433sl53gk4ttnfxw4000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "An active desktop session will cause a regular log entry on the condition of the session that includes the platform and version of the virtual desktop operating system.&nbsp; It is important that the virtual desktop operating system has the most recent security patches and updates.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Desktop Sessions",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Sessions Started",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1386634427950 & timestamp <= 1390502060353 & text:\"DesktopControlJMS\" & text:\"connected\" & text:\"allocated\" & !text:\"disconnected\" as item0 GROUP BY item0.timestamp/86400000 ORDER BY item0.timestamp ASC",
+                  "info": "Once a user has connected and authenticated, a session will be allocated.&nbsp; A session is the time that a user has reserved a virtual desktop.&nbsp; An idle session will use less processor, memory, and bandwidth than an active session.&nbsp; <br><br><a href=\"https://10.16.13.240/home/kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1028719\">VMWare KB 1028719</a> - Unable to connect to VMware View desktops using PCoIP<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Sessions Closed",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390419225133 & timestamp <= 1390505625132 & text:\"DesktopControlJMS\" & text:\"disconnected\" & text:\"session\" & text:\"connected\" & text:\"mins\" & text:\"secs\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                  "info": "When a session is closed, the processor, memory and bandwidth reservations are lifted and can be used by another user's session.<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1007581\">VMware KB 1007581</a> - When a user connects to a desktop through multiple View Clients desktop sessions are disconnected<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2038436\">VMWare KB 2038436</a> - PCoIP sessions disconnect when Windows 7 Interactive Services Detection is enabled<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Session Reconnect",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390317972438 & timestamp <= 1390339572717 & text:\"EVENT_SYSTEM_DESKTOPSWITCH\" as item0 GROUP BY item0.timestamp/600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "A user may disconnect on purpose or by losing network connectivity.&nbsp; If a user disconnects from a desktop, depending on system settings the session may stay active for a period of time.&nbsp; When the user logs in again they will be attached to their previous session.<br><br><a href=\"https://communities.vmware.com/thread/403671\">Unable to reconnect to View over PCoIP</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average Session Length in Minutes",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7onsxg43jn5xf63dfnztxi2a0) FROM timestamp >= 1386634427950 & timestamp <= 1390501660637 & text:\"DesktopControlJMS\" & text:\"disconnected\" & text:\"session\" & text:\"connected\" & text:\"mins\" & text:\"secs\" & text=~\"DesktopTracker\\] User \\S+ disconnected from machine \\S+ for desktop \\S+ - session allocated at \\S+ \\d+, \\d+ \\S+ \\S+ \\S+, connected for (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7onsxg43jn5xf63dfnztxi2a0>-?\\d+) mins\" as item0 GROUP BY item0.timestamp/86400000 ORDER BY item0.timestamp ASC",
+                  "info": "When a session is disconnected there is a record of the length of the session.&nbsp; A user's session may stay active even if the user has logged off, so that they can reconnect later.&nbsp; <br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1031783\"><br>VMware KB 1031783</a> -View sessions are logged-out before their timeout values when using PCoIP<br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1030697\"><br>VMware KB 1030697</a> -Troubleshooting frequent PCoIP disconnects in a VMware View environment<br><span><span></span></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Average Session Connect Time in Minutes",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7onsxg43jn5xf6y3pnzxgky3ul5wgk3thorua0000) FROM timestamp >= 1386634427950 & timestamp <= 1390502015505 & text:\"DesktopControlJMS\" & text:\"connected\" & text:\"allocated\" & !text:\"disconnected\" & text=~\"DesktopTracker\\] User \\S+ connected to machine \\S+ for desktop \\S+ - session allocated at \\S+ \\d+, \\d+ \\S+ \\S+ \\S+, connected after (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7onsxg43jn5xf6y3pnzxgky3ul5wgk3thorua0000>-?\\d+) mins\" as item0 GROUP BY item0.timestamp/86400000 ORDER BY item0.timestamp ASC",
+                  "info": "After authentication, the amount of time it takes to connect the session is determined by disk and network load and rate.&nbsp; A large delay connecting may be caused by a slow login script, a problem with Domain Name Service (DNS), or migrating a roaming profile.<br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1009307\"><br>VMware KB 1009307</a> - Slow log in for View desktops<br><br><a href=\"https://10.16.13.240/home/kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2019937\">VMware KB 2019937</a> - Desktop login takes a long time when using View Persona Management in VMware View Manager 5.0.x / 5.1.x () <br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "SSL Protocols and Cipher Suites",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390341499343 & timestamp <= 1390427899467 & text:\"handshakecompletednotify-thread\" & text=~\"HandshakeCompletedNotify-Thread> \\[PooledProcessor\\] Using secure protocol (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwqylomrzwqyllmvpxa4tporxwg33m>\\w+) and cipher suite\" & text=~\"HandshakeCompletedNotify-Thread> \\[PooledProcessor\\] Using secure protocol \\S+ and cipher suite (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwqylomrzwqyllmvpwg2lqnbsxex3tovuxizi0>\\w+)$\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwqylomrzwqyllmvpxa4tporxwg33m,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwqylomrzwqyllmvpwg2lqnbsxex3tovuxizi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The Secure Socket Layer (SSL) contains a large number of protocols and ciphers that are used to encrypt the communication between server and client.&nbsp; Both the server and client must support the same protocol and cipher, this is determined by a handshake negotiation.&nbsp; <br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1038613\">VMWare KB 1038613</a> - Connecting to a View desktop using PCoIP fails with the error: Unable to connect to the desktop, a common encryption protocol is not available<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Channel Aborts",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389312000000 & timestamp <= 1389398399999 & text:\"MessageFrameWork\" & text:\"Aborting\" & text:\"channel\" & text:\"on\" & text:\"missing\" & text:\"keep\" & text:\"alive\" & text:\"requests\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "When a keep alive packet is missed, indicating one side of a two way communication \"channel\" has gone away, the channel will be closed or aborted.&nbsp; This could be caused by a network disconnection or software crash.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Security Gateway",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Secure Gateways Available",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm) FROM timestamp >= 1390852082145 & timestamp <= 1390938482144 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"SGHealth\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpwi33xny000000:\"false\" & text=~\"ATTR_SG_ISDOWN\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpwi33xny000000>\\w+)\\\"\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"ATTR_SG_ALL_SESSIONS\") & text=~\"ATTR_SG_URL\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm>\\S+)\\\"\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"ATTR_SG_HOSTNAME\" as item0 GROUP BY item0.timestamp/3600000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "<span>View Secure Gateway Server is the server-side component \nfor the secure HTTPS connection between VMware View clients and a \nsecurity server or View Connection Server instance.</span><span>When\n you configure the tunnel connection for View Connection Server, RDP, \nUSB, and Multimedia Redirection (MMR) traffic is tunneled through the \nView Secure Gateway component. When you configure direct client \nconnections, these protocols connect directly from the client to the \nView desktop and are not tunneled through the View Secure Gateway Server\n component.<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1036208\">VMware KB 1036208</a> - Configuring PCoIP Secure Gateway in VMware View<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2007345\">VMware KB 2007345</a> - VMware View PCoIP Security Gateway<br></span><span><span style=\"text-decoration: underline;\"></span></span><span><span></span></span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Requests over Time",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390416352058 & timestamp <= 1390419952057 & text:\"SimpleAJPService\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "The Security Gateway handles Hypertext Transfer Protocol (HTTP) requests with Secure Socket Layer (SSL) encryption that initiates the user's connections.&nbsp; The number of requests over time correspond to the amount of pages requested.&nbsp; If all or some Security Gateways are not available, the system will not be able to server as many requests.&nbsp; A large number of requests and an unresponsive portal could indicate a Denial of Service (DoS) attack on the system.<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2046427\">VMWare KB 2046427</a> - VMware Horizon View 5.2 HTML Access FAQ and troubleshooting<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Popular Pages",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390419588476 & timestamp <= 1390419888475 & text:\"SimpleAJPService\" & text=~\"ajp:misc:Request\\d+\\) Request from /\\S+: GET (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwq5duobpxezlrovsxg5c7obqxi2a0>\\S+)$\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwq5duobpxezlrovsxg5c7obqxi2a0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The Hypertext Transfer Protocol uses a Universal Resource Locator (URL) to request a \"page\" on the server that is returned.&nbsp; The most popularly requested pages are generally the front page, called \"/\".&nbsp; A large number of pages with various URLs could indicate a security scan of the system for weaknesses.<br><br><a href=\"http://www.vmware.com/files/pdf/techpaper/vmware-horizon-view-security.pdf\">Security Considerations for VMware® Horizon View™ 5.2</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Request Source Address",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390416352058 & timestamp <= 1390419952057 & text:\"SimpleAJPService\" & text=~\"ajp:misc:Request\\d+\\) Request from /(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwq5duobpxezlnn52gkx3in5zxi000>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}): GET\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwq5duobpxezlnn52gkx3in5zxi000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The client Internet Protocol (IP) Address of a Hypertext Transfer Protocol (HTTP) request is recorded for each request.&nbsp; If a single client is making a large number of requests it could indicate a misconfiguration, network problem or a Denial of Service attack.&nbsp; If a large number of clients are making a large number or requests, it could be a sign of a Distribute Denial of Service attack.<br><br><a href=\"http://www.vmware.com/files/pdf/view/VMware-Security-Solution-Architecture-for-VDI.pdf\">Security Solution Architecture for VDI</a><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PC Over IP Network",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average Outgoing Bandwidth in Kilobytes per Second",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf6ylwm5pxi6a0) FROM timestamp >= 1390331567024 & timestamp <= 1390331868122 & text:\"MGMT_PCOIP_DATA\" & text:\"bw\" & text:\"limit\" & text=~\"MGMT_PCOIP_DATA :Tx thread info: bw limit = \\d+, plateau = \\d+.\\d+, avg tx = (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf6ylwm5pxi6a0>-?\\d*\\.?\\d+)\\, avg\" as item0 GROUP BY item0.timestamp/5000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Message sent from the server to the client will be used to update the display, play sound, print or transfer files.&nbsp; If total outgoing network usage is greater than available bandwidth, packets may be dropped and retransmitted resulting in a lower framerate for the user.<br><br><a href=\"http://pubs.vmware.com/view-52/index.jsp?topic=%2Fcom.vmware.view.administration.doc%2FGUID-6C22A209-AFC1-47EF-9DFF-39AFB38D655D.html\">View 5.2 PCoIP Session Bandwidth Variables</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Maximum Outgoing Packet Loss by Host",
+                  "chartQuery": "SELECT MAX(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000) FROM timestamp >= 1390848733418 & timestamp <= 1391453533417 & text:\"GenericLog\" & text:\"VGMAC\" & text:\"Loss\" & text=~\"\\(A/I/O\\) Loss=\\d+\\.\\d+%/(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000>-?\\d*\\.?\\d+)% \\(R/T\\)\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "If the network is faulty, misconfigured or bandwidth is limited, packets may be lost or dropped.&nbsp; These packets will be retransmitted after some delay, causing slowness or stalling in the user's desktop.&nbsp; Outgoing packets are generally screen updates, sound or file transfer.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average Incoming Bandwidth in Kilobytes per Second",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf6ylwm5pxe6a0) FROM timestamp >= 1390331567024 & timestamp <= 1390331868122 & text:\"MGMT_PCOIP_DATA\" & text:\"bw\" & text:\"limit\" & text=~\"MGMT_PCOIP_DATA :Tx thread info: bw limit = \\d+, plateau = \\d+\\.\\d+, avg tx = \\d+\\.\\d+, avg rx = (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf6ylwm5pxe6a0>-?\\d*\\.?\\d+) \\(KBytes\" as item0 GROUP BY item0.timestamp/5000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Messages from the client to the server will be used to send key presses, mouse movements or file contents over the network.&nbsp; If incoming message network usage exceeds available bandwidth there may be dropped packets resulting in degraded user experience.<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1020894\">VMware KB&nbsp;</a><span><span><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1020894\">1020894</a></span> -</span><span><span>Ensuring that there are enough network resources in a VMware View environment</span></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Maximum Incoming Packet Loss by Host",
+                  "chartQuery": "SELECT MAX(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pxayldnnsxix3mn5zxg000) FROM timestamp >= 1390848733418 & timestamp <= 1391453533417 & text:\"GenericLog\" & text:\"VGMAC\" & text:\"Loss\" & text=~\"\\(A/I/O\\) Loss=(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pxayldnnsxix3mn5zxg000>-?\\d*\\.?\\d+)%/\\d+.\\d+% \\(R/T\\)\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "If the network is faulty, misconfigured or bandwidth is limited, packets may be lost or dropped.&nbsp; These packets will be retransmitted after some delay, causing slowness or stalling in the user's desktop.&nbsp; Incoming packets are generally key presses, mouse clicks or file transfer.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average Network Round Trip Time in Milliseconds",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64tpovxgi5dsnfyf65djnvsq0000) FROM timestamp >= 1390331567024 & timestamp <= 1390331868122 & text:\"MGMT_PCOIP_DATA\" & text:\"trip\" & text:\"time\" & text=~\"MGMT_PCOIP_DATA :Tx thread info: round trip time \\(ms\\) =\\s+(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64tpovxgi5dsnfyf65djnvsq0000>-?\\d+)\\, variance\" as item0 GROUP BY item0.timestamp/5000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The average round trip time is a measurement of how long it takes a message, like key press or mouse movement, to go from the client to the server and back.&nbsp; Users have a difficulty interacting with the system if this number is over 250 milliseconds.&nbsp; Values over 1000 milliseconds may indicate a problem with network settings, dropped packets or memory allocations.<br><br><a href=\"http://www.vmware.com/files/pdf/view/vmware-horizon-view-best-practices-performance-study.pdf\">Horizon View 5.2 Performance and Best Practices</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Maximum Roundtrip Variance",
+                  "chartQuery": "SELECT MAX(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64tpovxgi5dsnfyf65tbojuwc3tdmu000000) FROM timestamp >= 1391113709268 & timestamp <= 1391200109267 & text:\"MGMT_PCOIP_DATA\" & text:\"trip\" & text:\"time\" & text=~\"MGMT_PCOIP_DATA :Tx thread info: round trip time \\(ms\\) =\\s+\\d+, variance =\\s+(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64tpovxgi5dsnfyf65tbojuwc3tdmu000000>-?\\d+)\\, rto\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The round trip time is a measurement of how long it takes a \nmessage, like key press or mouse movement, to go from the client to the \nserver and back.&nbsp; The variance is a measurement of the range of round trip values that are being measured.&nbsp; A high variance can be an indication of infrequent packet loss or a oversubscribed virtual machine.<br><br><a href=\"http://pubs.vmware.com/view-50/index.jsp?topic=/com.vmware.view.planning.doc/GUID-5DC232B4-778B-4D9C-B995-B8850CF35096.html\">WAN Support and PCoIP</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average Bandwidth Target by Host",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6ytbnzsho2leoruf65dbojtwk5a0) FROM timestamp >= 1391112279060 & timestamp <= 1391198679059 & text:\"MGMT_IMG\" & text:\"decode\" & text:\"rate\" & text:\"MBit\" & text=~\"MGMT_IMG :log: cur_s\\s+\\d+ max_s\\s+\\d+ bwc\\s+\\d+.\\d+ bwt\\s+(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6ytbnzsho2leoruf65dbojtwk5a0>-?\\d*\\.?\\d+) changed\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The server and agent will measure statistics such as round trip time and frame rate to create a target bandwidth value.&nbsp; <span>When a PCoIP session experiences packet loss, the PCoIP protocol scales back bandwidth utilization rapidly</span><span>to the</span><span>Device Bandwidth Target</span><span>, and more slowly below this value. This provides a more even distribution of</span><span>bandwidth between users sharing a congested network.</span><br><br><a href=\"http://www.vmware.com/files/pdf/VMware-PCoIP-Zero-Clients-Host-Cards-TN-EN.pdf\"><span>Using PCoIP®Zero Clients with PCoIP Host Cards</span></a><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PC Over IP Quality",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Maximum Outgoing Image Packets by Host",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT MAX(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pws3lbm5sv64dbmnvwk5dt) FROM timestamp >= 1390849285126 & timestamp <= 1391454085125 & text:\"GenericLog\" & text:\"VGMAC\" & text:\"Loss\" & text=~\"VGMAC :Stat frms: R=\\d+/\\d+/\\d+  T=\\d+/(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pws3lbm5sv64dbmnvwk5dt>-?\\d+)/\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The PCIOP driver logs a count of packets that were sent to the agent for updating the image, or screen.&nbsp; The value is a counter that resets with each session.&nbsp; When the value is rising it is an indication of an active desktop session.&nbsp; When the value falls it signals a new desktop session.&nbsp; If it stays at a value it is either an idle or disconnected session.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average Display Rate in Frame per Second",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6ztsmfwwk427obsxex3tmvrw63te) FROM timestamp >= 1390851008782 & timestamp <= 1390937408781 & text:\"MGMT_IMG\" & text:\"decode\" & text:\"rate\" & text:\"MBit\" & text=~\"changed fps (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6ztsmfwwk427obsxex3tmvrw63te>-?\\d*\\.?\\d+) decode rate est \\(MBit/sec\\) - \" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The count of imaging frames that are encoded and transmitted per second.&nbsp; Framerate is a measure of the number of screen updates per second.&nbsp; If there are problems with network, cpu or memory allocations this value may become lower and the user experience may be degraded.<br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2053644\"><br>VMWare KB 2053644</a> - Setting Frame Rates and Resolution for Real-Time Audio-Video on Horizon View Clients<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Image Decode Rate in Megabits per Second",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6zdfmnxwizk7ojqxizi0) FROM timestamp >= 1390332831322 & timestamp <= 1390336431321 & text:\"MGMT_IMG\" & text:\"decode\" & text:\"rate\" & text:\"MBit\" & text=~\"decode rate est \\(MBit/sec\\) - (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6zdfmnxwizk7ojqxizi0>-?\\d*\\.?\\d+)\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The virtual desktop display is compressed by an encoder into a format that takes less bandwidth.&nbsp; The image decode rate is number of pixels per second are sent into the encoder.<br><br><a href=\"http://pubs.vmware.com/view-51/index.jsp#com.vmware.view.integration.doc/view_integration_pcoipstats.8.1.html\">Examining PCoIP Session Statistics</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Greatest Display Round Trip Time in Milliseconds",
+                  "chartQuery": "SELECT MAX(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5uw4z27ojxxk3teorzgs4c7nvqxq000) FROM timestamp >= 1390848750159 & timestamp <= 1390935150158 & text:\"MGMT_IMG\" & text:\"Imaging\" & text=~\"MGMT_IMG :Imaging rtt last:\\s+\\d+ min:\\s+\\d+ max:\\s+(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5uw4z27ojxxk3teorzgs4c7nvqxq000>-?\\d+) avg\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The time it takes to send display updates to the view client and have the view client acknowledge them.&nbsp; Values around 1000 milliseconds are usually caused by a singe dropped packet that was retransmitted and alone are not a cause for concern.&nbsp; If the display round trip is high then users desktop updates are being delayed and may seem \"stuck\".&nbsp; If this is happening often, it could indicate a problem with the bandwidth, CPU or memory allocations for the virtual machine.<br><br><a href=\"http://www.vmware.com/resources/techresources/10271\">VMware View 5 with PCoIP Network Optimization Guide</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Maximum Quality Table by Host",
+                  "chartQuery": "SELECT MAX(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64lvmfwgs5dzl52gcytmmu000000) FROM timestamp >= 1391024025664 & timestamp <= 1391110425663 & text:\"MGMT_IMG\" & text:\"tbl\" & text=~\"MGMT_IMG :log \\(SoftIPC\\): tbl\\s+(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64lvmfwgs5dzl52gcytmmu000000>-?\\d+)\\s+fps\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The quality table is a measure of the amount of compression that is applied to the desktop images sent to the client.&nbsp; A value of 0 is the best quality.&nbsp; If network bandwidth is congested or slow, a lower quality (higher table number) will be applied to the connection.&nbsp; Values of 0-2 are good, 3-4 are fair and anything over 5 is low quality.<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1014686\">VMWare KB 1014686</a> - Configuring PCoIP session variables<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Errors",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Exceptions over Time by Host",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390336006649 & timestamp <= 1390422406648 & text:\"VirtualCenterDriver\" & text:\"Error Code\" & text:\"Error Text\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Exceptions indicate an error has occurred.&nbsp; A large number, or sudden increase, of exceptions could indicate a misconfiguration or failure in the system.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Pool Virtual Machines in Error",
+                  "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxa33pnrpwk4tsn5zf65tnl5rw65looq000000) FROM timestamp >= 1390335649944 & timestamp <= 1390422049943 & text:\"VirtualCenterDriver\" & text:\"Pool\" & text:\"error\" & text:\"VMs\" & text:\"found\" & text=~\"VirtualCenterDriver\\] Pool \\S+ recovery: (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxa33pnrpwk4tsn5zf65tnl5rw65looq000000>-?\\d+) error VMs found\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "The count of virtual machines in error that the Recovery Agent is attempting to fix automatically.&nbsp; If this number stays over 0 it indicates there are virtual machines that can not be automatically repaired and require manual intervention.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Invalid Certificate Exceptions",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390435637233 & timestamp <= 1390435937232 & text:\"InvalidCertificateException\" & text=~\"for (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3twmfwgszc7mnsxe5c7nbxxg5a0>\\S+) InvalidCertificateException\" & text=~\"InvalidCertificateException\\[reasons:(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3twmfwgszc7mnsxe5c7ojswc43pny000000>\\w+); subject\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3twmfwgszc7mnsxe5c7nbxxg5a0,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3twmfwgszc7mnsxe5c7ojswc43pny000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "An invalid certificate exception is recorded when there is a problem with the verification of a Transport Layer Security (TLS) certificate.&nbsp; The certificate may be invalid, have expired, or the certificate authority may be unreachable.&nbsp; <br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1008705\">VMware KB 1008705</a><span><span>- Guidelines for generating and importing an SSL certificate for the View Connection Server for View 5.0.1 and earlier</span></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Unknown Host Exceptions",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390335975242 & timestamp <= 1390422375241 & text:\"VirtualCenterDriver\" & text:\"Error Code\" & text:\"Error Text\" & text:\"UnknownHostException\" & text=~\"GuestInfo Agent \\[Error Code:ffffffff, Error Text:java.net.UnknownHostException: (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwk4tsn5zf65lonnxg653ol5ug643u>\\S+)\\, Active Broker:\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwk4tsn5zf65lonnxg653ol5ug643u ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "An unknown host exception is recorded when there is a failure looking up a host using the Domain Name Service (DNS).&nbsp; Exceptions like this may be caused because a nameserver is unreachable or a misconfiguration.&nbsp; Failure in DNS lookups can cause long delays when connecting to a server.<span><span style=\"text-decoration: underline;\"><br><br></span></span><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1003735\">VMware KB 1003735</a><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1003735\"><span></span></a><span>-</span><span><span>Identifying issues with and setting up name resolution on ESX/ESXi Server</span></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "LDAP Entries Missing Attribute Exceptions",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1390434524124 & timestamp <= 1390438124123 & text:\"DesktopControlLdap\" & text:\"Attribute\" & text:\"missing\" & text=~\"DesktopControlLdap> \\[Util\\] Attribute (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpw22ltonuw4z27mf2hi4tjmj2xizi0>\\S+) missing for entry:\" & text=~\"DesktopControlLdap> \\[Util\\] Attribute \\S+ missing for entry: (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpw22ltonuw4z27mf2hi4tjmj2xizi0l5sw45dspe000000>\\S+)$\" as item0 GROUP BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpw22ltonuw4z27mf2hi4tjmj2xizi0l5sw45dspe000000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpw22ltonuw4z27mf2hi4tjmj2xizi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This type of error is caused when an entry is requested using the Lightweight Directory Access Protocol (LDAP) that does not contain an expected attribute.&nbsp; The lack of an attribute can prevent a user from connecting successfully.<br><br><a href=\"http://pubs.vmware.com/view-50/index.jsp?topic=/com.vmware.view.integration.doc/view_integration_ldap.6.4.html\">Modify LDAP Configuration Data</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Connection Lost Exception",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1386634427950 & timestamp <= 1390514726065 & text:\"ConnectionLostException\" as item0 GROUP BY item0.timestamp/86400000 ORDER BY item0.timestamp ASC",
+                  "info": "When a connection is closed improperly, a Connect Lost Exception is recorded.&nbsp; It is not uncommon for a connection to unexpectedly close on occasion, but a high amount or sudden increase in connection losts could indicate a a large delay in the network, disk, processor or RAM for a server or virtual machine.<br><br><a href=\"https://10.16.13.240/home/kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1011993\">VMWare KB</a><span><span><a href=\"https://10.16.13.240/home/kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1011993\">1011993</a></span> -</span><span><span>The View Connection Server might become unavailable at regular intervals, such as every 24 or 48 hours</span></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Socket Exceptions",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389910317965 & timestamp <= 1390515117964 & text:\"java\" & text:\"SocketException\" & !text:\"javax\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "A socket exception occurs when software connected over a network closes a\n network connection unexpectedly, likely because of a program crash or \nsystem reboot.&nbsp; Using the \"see logs in context\" option on a log entry \ncan help to identify the cause of the crash.<br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1003658\">VMWare KB <span>1003658</span></a> \n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t \n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t  \n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t- <span><span>Troubleshooting pooling issues</span></span><br><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1020566\"><span><span>VMWare KB</span></span></a><span><span><span><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=1020566\"><span>1020566</span></a></span> - The Connection Broker service fails with the error: An HTTP error occurred: status code=500</span></span><br><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2037577\"><br>VMWare KB&nbsp;</a><span><span><a href=\"http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;amp;cmd=displayKC&amp;amp;externalId=2037577\">2037577</a></span> -</span><span><span>View Composer Server appears Red in the View \nAdministrator Console dashboard with the message: The service is not \nworking properly<br></span></span>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1391463406705 & timestamp <= 1391549807089 & text:\"NodesState\" & text:\"missing\" & text:\"removing\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Horizon View Cluster Node Down",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391463406705 & timestamp <= 1391549807089 & text:\"NodesState\" & text:\"missing\" & text:\"removing\" & text=~\"NodesState\\] (\\S+) Node found to be missing, removing: (?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pw22ltonuw4z27nzxwizi0>\\S+)\" as item0 GROUP BY item0.timestamp/3600000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pw22ltonuw4z27nzxwizi0 ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pw22ltonuw4z27nzxwizi0 DESC,item0.timestamp DESC LIMIT 1,2000",
+      "info": "When a member of the cluster is removed it indicates a reboot or crash of a server.<br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "LESS_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1391546354034 & timestamp <= 1391549954074 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"SGHealth\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpwi33xny000000:\"false\" & text=~\"ATTR_SG_ISDOWN\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpwi33xny000000>\\w+)\\\"\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"ATTR_SG_ALL_SESSIONS\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Horizon View All Security Gateways Down",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT UCOUNT(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm) FROM timestamp >= 1391546354034 & timestamp <= 1391549954074 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"SGHealth\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpwi33xny000000:\"false\" & text=~\"ATTR_SG_ISDOWN\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpwi33xny000000>\\w+)\\\"\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"ATTR_SG_ALL_SESSIONS\") & text=~\"ATTR_SG_URL\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm>\\S+)\\\"\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"ATTR_SG_HOSTNAME\" as item0 GROUP BY item0.timestamp/60000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm DESC,item0.timestamp DESC LIMIT 1,2000",
+      "info": "When no security gateways are available, users are unable to login to the system<br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "LESS_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1391550270226 & timestamp <= 1391550570225 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"SamlAuthHealth\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000:\"OK*\" & text=~\"SamlAuthHealth, u=\\[\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"STATE\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000>\\w+)\\\"\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"STATEDESCRIPTION\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Horizon View SAML Auth Gateway Unavailable",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1391550270226 & timestamp <= 1391550570225 & text:\"Tracker\" & text:\"Message\" & text:\"TrackerManager\" & text:\"SamlAuthHealth\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000:\"OK*\" & text=~\"SamlAuthHealth, u=\\[\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"STATE\\\",\\\"type\\\":\\\"STRING\\\",\\\"stringValue\\\":\\\"(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000>\\w+)\\\"\\}\\}\\,\\{\\\"type\\\":\\\"SET\\\",\\\"item\\\":\\{\\\"name\\\":\\\"STATEDESCRIPTION\") as item0 GROUP BY item0.timestamp/5000,item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000 ORDER BY item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000 DESC,item0.timestamp DESC LIMIT 1,2000",
+      "info": "If the system is unsing Single Sign On, if the same authentication gateway is not functioning then users will not be able to login<br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 2.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1391463732117 & timestamp <= 1391550132116 & text:\"GenericLog\" & text:\"VGMAC\" & text:\"Loss\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000>2 & text=~\"\\(A/I/O\\) Loss=\\d+\\.\\d+%/(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000>-?\\d*\\.?\\d+)% \\(R/T\\)\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Horizon View High Average Outgoing Packet Loss",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000) FROM timestamp >= 1391463732117 & timestamp <= 1391550132116 & text:\"GenericLog\" & text:\"VGMAC\" & text:\"Loss\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000>2 & text=~\"\\(A/I/O\\) Loss=\\d+\\.\\d+%/(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000>-?\\d*\\.?\\d+)% \\(R/T\\)\") as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+      "info": "Packet loss causes delayed and jittery desktop for users.&nbsp; If the system average is above 2%, this could indicate a problem with the server or network.<br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 2.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1391463732117 & timestamp <= 1391550132116 & text:\"GenericLog\" & text:\"VGMAC\" & text:\"Loss\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pxayldnnsxix3mn5zxg000>2 & text=~\"\\(A/I/O\\) Loss=(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pxayldnnsxix3mn5zxg000>-?\\d*\\.?\\d+)%/\\d+.\\d+% \\(R/T\\)\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Horizon View High Average Incoming Packet Loss",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT AVG(item0.ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000) FROM timestamp >= 1391463732117 & timestamp <= 1391550132116 & text:\"GenericLog\" & text:\"VGMAC\" & text:\"Loss\" & (ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pxayldnnsxix3mn5zxg000>2 & text=~\"\\(A/I/O\\) Loss=(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pxayldnnsxix3mn5zxg000>-?\\d*\\.?\\d+)%/\\d+.\\d+% \\(R/T\\)\") & text=~\"\\(A/I/O\\) Loss=\\d+\\.\\d+%/(?<ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000>-?\\d*\\.?\\d+)% \\(R/T\\)\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+      "info": "Packet loss causes delayed and jittery desktop for users.&nbsp; If the system\n average is above 2%, this could indicate a problem with the server or \nnetwork."
+    }
+  ],
+  "name": "VMware - Horizon View",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "</AGENTBUILDNUM",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f6ytvnfwgi000",
+      "preContext": "AGENTVERSION><AGENTBUILDNUM>",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_agent_build"
+    },
+    {
+      "postContext": "\\]\\]\\, Active Broker",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f6y3pnzxgky3ul5tgc2lml5ug643u",
+      "preContext": "Error Text:javax.jms.JMSException: Unable to create a connection to: \\[\\[ServerEntry, hostname=",
+      "regexValue": ".*",
+      "displayName": "vmw_view_agent_connect_fail_host"
+    },
+    {
+      "postContext": "\\, Active Broker",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f6zlsojxxe000",
+      "preContext": ", Error Text:",
+      "regexValue": ".*",
+      "displayName": "vmw_view_agent_error"
+    },
+    {
+      "postContext": "\\, Error",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f6zlsojxxex3dn5sgk000",
+      "preContext": "Agent \\[Error Code:",
+      "regexValue": "[A-Fa-f0-9]+",
+      "displayName": "vmw_view_agent_error_code"
+    },
+    {
+      "postContext": "</AGENTVERSION",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwcz3fnz2f65tfojzws33o",
+      "preContext": "AGENTVERSION>",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_agent_version"
+    },
+    {
+      "postContext": "\\}\\}\\,\\{\"type\":\"SET\",\"item\":\\{\"name\":\"ATTR_BROKER_NUM_CHECKEDOUT_VMS_HIGH",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwe4tpnnsxex3dnbswg23fmrxxk5c7ozwxg000",
+      "preContext": "ATTR_BROKER_NUM_CHECKEDOUT_VMS\",\"type\":\"INTEGER\",\"integerValue\":",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_broker_checkedout_vms"
+    },
+    {
+      "postContext": "\\}\\}\\,\\{\"type\":\"SET\",\"item\":\\{\"name\":\"ATTR_BROKER_NUM_SESSION_HIGH",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwe4tpnnsxex3oovwv643fonzws33oom000000",
+      "preContext": "ATTR_BROKER_NUM_SESSIONS\",\"type\":\"INTEGER\",\"integerValue\":",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_broker_num_sessions"
+    },
+    {
+      "postContext": " DELAYED",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwe4tpnnsxex3qovwhgzk7mrswyylz",
+      "preContext": "PulseTimer\\] \\S+ pulse \\d+, wallclock delay \\d+, elapsed delay ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_broker_pulse_delay"
+    },
+    {
+      "postContext": " ms ago",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwg3dvon2gk4s7mnxw45dsn5wgyzlsl5wgc43ul5zwkzlo",
+      "preContext": "The cluster controller \\S+ was last seen by this this node ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_cluster_controller_last_seen"
+    },
+    {
+      "postContext": "\\}\\}\\]\\, nn",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwg3dvon2gk4s7mnxw45dsn5wgyzlsl5wg6ylenfxgo000",
+      "preContext": "TaskClusterControllerTracker, u=\\[\\{\"type\":\"SET\",\"item\":\\{\"name\":\"CurrentLoading\",\"type\":\"INTEGER\",\"integerValue\":",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_cluster_controller_loading"
+    },
+    {
+      "postContext": " \\-\\-pitch",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7mjyha000",
+      "preContext": "IMG_FRONTEND :configure_display\\[\\d+\\]\\-\\-bpp: ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_desktop_bpp"
+    },
+    {
+      "postContext": "</OSVERMAJOR",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7nvqwu33sl53gk4ttnfxw4000",
+      "preContext": "PLATFORM><OSVERMAJOR>",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_desktop_major_version"
+    },
+    {
+      "postContext": "</OSVERMINOR",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7nvuw433sl53gk4ttnfxw4000",
+      "preContext": "OSVERMAJOR><OSVERMINOR>",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_desktop_minor_version"
+    },
+    {
+      "postContext": "</PLATFORM",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7obwgc5dgn5zg2000",
+      "preContext": "DYNAMICIPADDRESS><PLATFORM>",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_desktop_platform"
+    },
+    {
+      "postContext": " mins",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7onsxg43jn5xf6y3pnzxgky3ul5wgk3thorua0000",
+      "preContext": "DesktopTracker\\] User \\S+ connected to machine \\S+ for desktop \\S+ - session allocated at \\S+ \\d+, \\d+ \\S+ \\S+ \\S+, connected after ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_desktop_session_connect_length"
+    },
+    {
+      "postContext": " mins",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7onsxg43jn5xf63dfnztxi2a0",
+      "preContext": "DesktopTracker\\] User \\S+ disconnected from machine \\S+ for desktop \\S+ - session allocated at \\S+ \\d+, \\d+ \\S+ \\S+ \\S+, connected for ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_desktop_session_length"
+    },
+    {
+      "postContext": " connected ",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwizltnn2g64c7onsxg43jn5xf65ltmvza0000",
+      "preContext": "DesktopTracker] User \\S+\\\\",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_desktop_session_user"
+    },
+    {
+      "postContext": "\"\\}\\}\\,\\{\"type",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwi33nmfuw4x3dn5xhiyldorqwe3df",
+      "preContext": "\"name\":\"ATTR_DOMAIN_CONTACTABLE\",\"type\":\"STRING\",\"stringValue\":\"",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_domain_contactable"
+    },
+    {
+      "postContext": "\"\\}\\}\\,\\{\"type",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwi33nmfuw4x3torqxizi0",
+      "preContext": "\"name\":\"ATTR_DOMAIN_STATE\",\"type\":\"STRING\",\"stringValue\":\"",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_domain_state"
+    },
+    {
+      "postContext": "\\, Active Broker:",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwk4tsn5zf65lonnxg653ol5ug643u",
+      "preContext": "GuestInfo Agent \\[Error Code:ffffffff, Error Text:java.net.UnknownHostException: ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_error_unknown_host"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwm5lmnrpxgylyl5qxe4tbpfpxg2l2mu000000",
+      "preContext": "\\[SAX2EventRecorder\\] Events array full, will double from currentSize: ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_full_sax_array_size"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwqylomrzwqyllmvpwg2lqnbsxex3tovuxizi0",
+      "preContext": "HandshakeCompletedNotify-Thread> \\[PooledProcessor\\] Using secure protocol \\S+ and cipher suite ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_handshake_cipher_suite"
+    },
+    {
+      "postContext": " and cipher suite",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwqylomrzwqyllmvpxa4tporxwg33m",
+      "preContext": "HandshakeCompletedNotify-Thread> \\[PooledProcessor\\] Using secure protocol ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_handshake_protocol"
+    },
+    {
+      "postContext": ": GET",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwq5duobpxezlnn52gkx3in5zxi000",
+      "preContext": "ajp:misc:Request\\d+\\) Request from /",
+      "regexValue": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+      "displayName": "vmw_view_http_remote_host"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwq5duobpxezlrovsxg5c7obqxi2a0",
+      "preContext": "ajp:misc:Request\\d+\\) Request from /\\S+: GET ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_http_request_path"
+    },
+    {
+      "postContext": " changed",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6ytbnzsho2leoruf65dbojtwk5a0",
+      "preContext": "MGMT_IMG :log: cur_s\\s+\\d+ max_s\\s+\\d+ bwc\\s+\\d+.\\d+ bwt\\s+",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_image_bandwidth_target"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6zdfmnxwizk7ojqxizi0",
+      "preContext": "decode rate est \\(MBit/sec\\) - ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_image_decode_rate"
+    },
+    {
+      "postContext": " decode rate est \\(MBit/sec\\) - ",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5sv6ztsmfwwk427obsxex3tmvrw63te",
+      "preContext": "changed fps ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_image_frames_per_second"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5uw4z27ojxxk3teorzgs4c7mf3go000",
+      "preContext": "MGMT_IMG :Imaging rtt last:[ ]+\\d+ min:[ ]+\\d+ max:[ ]+\\d+ avg:[ ]+",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_imaging_roundtrip_avg"
+    },
+    {
+      "postContext": " min",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5uw4z27ojxxk3teorzgs4c7nrqxg5a0",
+      "preContext": "MGMT_IMG :Imaging rtt last:\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_imaging_roundtrip_last"
+    },
+    {
+      "postContext": " avg",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5uw4z27ojxxk3teorzgs4c7nvqxq000",
+      "preContext": "MGMT_IMG :Imaging rtt last:\\s+\\d+ min:\\s+\\d+ max:\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_imaging_roundtrip_max"
+    },
+    {
+      "postContext": " max",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3lbm5uw4z27ojxxk3teorzgs4c7nvuw4000",
+      "preContext": "MGMT_IMG :Imaging rtt last:\\s+\\d+ min:\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_imaging_roundtrip_min"
+    },
+    {
+      "postContext": " InvalidCertificateException",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3twmfwgszc7mnsxe5c7nbxxg5a0",
+      "preContext": "for ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_invalid_cert_host"
+    },
+    {
+      "postContext": "; subject",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pws3twmfwgszc7mnsxe5c7ojswc43pny000000",
+      "preContext": "InvalidCertificateException\\[reasons:",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_invalid_cert_reason"
+    },
+    {
+      "postContext": " missing for entry:",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpw22ltonuw4z27mf2hi4tjmj2xizi0",
+      "preContext": "DesktopControlLdap> \\[Util\\] Attribute ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_ldap_missing_attribute"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpw22ltonuw4z27mf2hi4tjmj2xizk7mvxhi4tz",
+      "preContext": "DesktopControlLdap> \\[Util\\] Attribute \\S+ missing for entry: ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_ldap_missing_attribute_entry"
+    },
+    {
+      "postContext": " ms",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pwyzdbobpxgzlbojrwqx3unfwwk000",
+      "preContext": "Operation=LDAPSearch, Object=[^,]+, Time=",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_ldap_search_time"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pw2zltonqwozi0",
+      "preContext": " \\[MessageFrameWork\\] ",
+      "regexValue": ".*",
+      "displayName": "vmw_view_message"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pw22ltonuw4z27nzxwizi0",
+      "preContext": "NodesState\\] (\\S+) Node found to be missing, removing: ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_missing_node"
+    },
+    {
+      "postContext": "/",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pwc5lenfxv64dbmnvwk5dt",
+      "preContext": "VGMAC :Stat frms: R=",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pciop_incoming_audio_packets"
+    },
+    {
+      "postContext": "/",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pws3lbm5sv64dbmnvwk5dt",
+      "preContext": "VGMAC :Stat frms: R=\\d+/",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pciop_incoming_image_packets"
+    },
+    {
+      "postContext": "  T",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pw65dimvzf64dbmnvwk5dt",
+      "preContext": "VGMAC :Stat frms: R=\\d+/\\d+/",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pciop_incoming_other_packets"
+    },
+    {
+      "postContext": "%/\\d+.\\d+% \\(R/T\\)",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf62lomnxw22lom5pxayldnnsxix3mn5zxg000",
+      "preContext": "\\(A/I/O\\) Loss=",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_pciop_incoming_packet_loss"
+    },
+    {
+      "postContext": "/",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pwc5lenfxv64dbmnvwk5dt",
+      "preContext": "VGMAC :Stat frms: R=\\d+/\\d+/\\d+  T=",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pciop_outgoing_audio_packets"
+    },
+    {
+      "postContext": "/",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pws3lbm5sv64dbmnvwk5dt",
+      "preContext": "VGMAC :Stat frms: R=\\d+/\\d+/\\d+  T=\\d+/",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pciop_outgoing_image_packets"
+    },
+    {
+      "postContext": " \\(A/I/O\\) Loss",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pw65dimvzf64dbmnvwk5dt",
+      "preContext": "VGMAC :Stat frms: R=\\d+/\\d+/\\d+  T=\\d+/\\d+/",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pciop_outgoing_other_packets"
+    },
+    {
+      "postContext": "% \\(R/T\\)",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3jn5yf633vortw62lom5pxayldnnsxix3mn5zxg000",
+      "preContext": "\\(A/I/O\\) Loss=\\d+\\.\\d+%/",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_pciop_outgoing_packet_loss"
+    },
+    {
+      "postContext": " \\(KBytes",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf6ylwm5pxe6a0",
+      "preContext": "MGMT_PCOIP_DATA :Tx thread info: bw limit = \\d+, plateau = \\d+\\.\\d+, avg tx = \\d+\\.\\d+, avg rx = ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_pcoip_avg_rx"
+    },
+    {
+      "postContext": "\\, avg",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf6ylwm5pxi6a0",
+      "preContext": "MGMT_PCOIP_DATA :Tx thread info: bw limit = \\d+, plateau = \\d+.\\d+, avg tx = ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_pcoip_avg_tx"
+    },
+    {
+      "postContext": "\\s+fps",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64lvmfwgs5dzl52gcytmmu000000",
+      "preContext": "MGMT_IMG :log \\(SoftIPC\\): tbl\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pcoip_quality_table"
+    },
+    {
+      "postContext": "\\, variance",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64tpovxgi5dsnfyf65djnvsq0000",
+      "preContext": "MGMT_PCOIP_DATA :Tx thread info: round trip time \\(ms\\) =\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pcoip_roundtrip_time"
+    },
+    {
+      "postContext": "\\, rto",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxay3pnfyf64tpovxgi5dsnfyf65tbojuwc3tdmu000000",
+      "preContext": "MGMT_PCOIP_DATA :Tx thread info: round trip time \\(ms\\) =\\s+\\d+, variance =\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pcoip_roundtrip_variance"
+    },
+    {
+      "postContext": " error VMs found",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxa33pnrpwk4tsn5zf65tnl5rw65looq000000",
+      "preContext": "VirtualCenterDriver\\] Pool \\S+ recovery: ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_pool_error_vm_count"
+    },
+    {
+      "postContext": " state",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxezluovzg4zlel5xg6zdf",
+      "preContext": "NodesState\\] (\\S+ \\S+) Missing node has returned: ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_returned_node"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxe5dpl5zwk5dunfxgo000",
+      "preContext": "\\]\\[RTOLogSettings            \\] ",
+      "regexValue": ".*",
+      "displayName": "vmw_view_rto_setting"
+    },
+    {
+      "postContext": "\"\\}\\}\\,\\{\"type\":\"SET\",\"item\":\\{\"name\":\"STATEDESCRIPTION",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgylnnrpwc5lunbpxg5dborsq0000",
+      "preContext": "SamlAuthHealth, u=\\[\\{\"type\":\"SET\",\"item\":\\{\"name\":\"STATE\",\"type\":\"STRING\",\"stringValue\":\"",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_saml_auth_state"
+    },
+    {
+      "postContext": "\"\\}\\}\\,\\{\"type\":\"SET\",\"item\":\\{\"name\":\"ATTR_SG_ALL_SESSIONS",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpwi33xny000000",
+      "preContext": "ATTR_SG_ISDOWN\",\"type\":\"STRING\",\"stringValue\":\"",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_secure_gateway_down"
+    },
+    {
+      "postContext": "\"\\}\\}\\,\\{\"type\":\"SET\",\"item\":\\{\"name\":\"ATTR_SG_HOSTNAME",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzldovzgkx3hmf2gk53bpfpxk4tm",
+      "preContext": "ATTR_SG_URL\",\"type\":\"STRING\",\"stringValue\":\"",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_secure_gateway_url"
+    },
+    {
+      "postContext": "</LOGGEDINASUSER",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxgzltonuw63s7ovzwk4q0",
+      "preContext": "LOGGEDINASUSER>",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_session_user"
+    },
+    {
+      "postContext": " quality",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg33goruxay27mzyhg000",
+      "preContext": "MGMT_IMG :log \\(SoftIPC\\): tbl \\d+ fps ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_view_softipc_fps"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg33goruxay27of2wc3djor4q0000",
+      "preContext": "MGMT_IMG :log \\(SoftIPC\\): tbl \\d+ fps \\d+.\\d+ quality ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_softipc_quality"
+    },
+    {
+      "postContext": ":\\S+ to version:",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg6lomnpws5dfnu000000",
+      "preContext": ":SYNC\\) Sync complete: ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_sync_item"
+    },
+    {
+      "postContext": "\\%$",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg6ltorsw2x3dob2q0000",
+      "preContext": "\\[ws_perfmon\\] System CPU use: ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_system_cpu"
+    },
+    {
+      "postContext": "\\%$",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxg6ltorsw2x3nmvwq0000",
+      "preContext": "\\[ws_perfmon\\] Commit memory use: ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_system_mem"
+    },
+    {
+      "postContext": "</ERROR\\-CODE",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxizlsnvuw4ylml5sxe4tpojpwg33emu000000",
+      "preContext": "ACCEPTINGCONNECTIONS\\>\\<ERROR\\-CODE>",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_terminal_error_code"
+    },
+    {
+      "postContext": "\\, u=",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxi4tbmnvwk4s7nvsxg43bm5sv65dzobsq0000",
+      "preContext": "TrackerMessage SYNC \\{_MS_MSGIDENTIFIER=\\S+\\}: \\{v=\\d+, tn=",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_tracker_message_type"
+    },
+    {
+      "postContext": " \\(TrackerMessage",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxi4tbmnvwk4s7of2wk5lfl5sgk3dbpe000000",
+      "preContext": "queuedelay=",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_view_tracker_queue_delay"
+    },
+    {
+      "postContext": "\"\\}\\}\\,\\{\"type\":\"SET\",\"item\":\\{\"name\":\"ATTR_VC_STATUS_DESCRIPTION",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxmy27on2gc5dvom000000",
+      "preContext": "VcHealth, u=\\[\\{\"type\":\"SET\",\"item\":\\{\"name\":\"ATTR_VC_STATUS\",\"type\":\"STRING\",\"stringValue\":\"",
+      "regexValue": "\\w+",
+      "displayName": "vmw_view_vc_status"
+    },
+    {
+      "postContext": "> \\[VirtualCenterDriver",
+      "internalName": "ibadem27mnxw2ltwnv3wc4tffzug64tjpjxw4ltwnfsxo5tno5pxm2lfo5pxm2lsor2wc3c7mnsw45dfojpwo5ljmq000000",
+      "preContext": "VirtualCenterDriver\\-",
+      "regexValue": "\\S+",
+      "displayName": "vmw_view_virtual_center_guid"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "1.0",
+  "namespace": "com.vmware.horizon.view",
+  "icon": "iVBORw0KGgoAAAANSUhEUgAAAE4AAABICAIAAADXkVRXAAAYIGlDQ1BJQ0MgUHJvZmlsZQAAWAmtWXk8Vd3X3+eOpmu65nkek3nOPA+Zh0i4rukaLq55LlMZUiSEKCSSKJUhJDQhGUKjDCmiogkR79FTz/P8Pr/3/e89Pvfc7137u9dee6191j57AYDrOiE0NAjBCEAwOYJiZ6IvcMDFVQA7BSD4jxEIA2YCMTxUz8bGEvyf1/cJmAtfYzK7uv5P2v/ewOTtE04EALKBm728w4nBML4OALKVGEqJAAC9q08kOiJ0F5+EMQsFNhDG1bvY7y/cuou9/sKDvzgOdgYwZxoAKjoCgeIHAG4ZlgtEEf1gPfR0AGCYyd4kMtxNAMbaRH+CNwBcnjBnT3BwyC7OgbGE17/0+P0LEwhef+skEPz+xn/NBe4JD2xICg8NIsT++vH/eQsOioT99evig+904YH2FvA3G+y3GCLByB7GHDDO9fcxs/wtrwmN0Lf7Le8gRZg5wJgF5jzxjzR1/I0XIgMd9WDMA8u3AkMsdvmwnxAcZC8raxgzw1iEGG4A+353LIRKnL+D82+OpbePoRGM4VWEOEAJsfvD9w+Psv8jj4vzN7D6ww8gmO/Gmx7mZxEoMPplD6LYJ8hkd1whWH45NMJm187dsYbIQVa/54J440sx3uXsyn/4hP+a765t/hH+DqawHLYZyRhBcdjlwHNE8viSjM1gDNuGlPOnmP6R64YG/VrTcF+kAyXSbtcPIjD29SE77vpwV57lTTDc9S3sE2QZMAYEQAE+wAuQwSIQAJbAABj+vgvAcjIsI4IQEAR/KAIMf1rQb9Ej6Fn0OHoa/eyPDO75mwdIwBvGf+n6V39Ybg/iwAdYqw8I/zMaiguljdJEWcJ3XfijgFJDqf9pG1puWf6Df9vqB/eV+a1b/7f1UbDGn394HqQUyh/8u4/X3z3+2yZj8Ab2gN8fhly93KLc1p/+/8wYY4QxxJhijDGSyGPIZuR95B3kQ2QHsgUIIG8jW5GDyM5d/NuuP6MQYMmuV3Y9HA4sYC/6gMhfv8h/xvsPL0X+zfitgV6KXhnYwb3IIBBuI/09gtMvq0n/pSUSZnjBIwbAXIu/4/HbLpQY7F1llD5KC/Yz7GMUG4oLyKCUYI/roXTgGCjD0n+i+J+zkQG+v7wd9WsugeAtPI/gCJ+YCHgtAYOQ0FgKyc8/QkAPzpY+ewTMyMS9ewQU5OSVwG7u3eUA8MXuV06F2B7/IwtuBECNBD+f7v/IvOCc2C4D57D6f2RihXC+CwBgQIQYSYn6Sx9q9wsNaAAD/FRwAj44s0vAHlEAKkAT6AIjYA6sgQNwAe7wGvYHwbDF0SABHAEZIBucBKdBCagAVaAWNIBroAV0gDvgHhgAw2AcvADTYB4sgRXwHWxCEISFcBAe4oT4IVFIGlKA1CBtyAiyhOwgF8gT8oPIUCSUAKVC2VA+VAKdh+qgq1AbdAd6CI1Az6AZaBH6DP1AIBF0CBYEL0IMIYtQQ+ghLBAOiEMIP0QYIg6RhshFFCMqEZcRNxF3EAOIccQ0YgnxDQmQtEg2pCBSBqmGNEBaI12RvkgKMgmZhSxEViKvINvhtTiGnEYuIzdQGBQeJYCSgSNpinJEEVFhqCRUDqoEVYu6iepDjaFmUCuobTQOzYOWRmugzdAH0H7oaHQGuhBdg76Bvgs/z/Po7xgMhg0jjlGFV7sLJgATj8nBnMU0YroxI5g5zDcsFsuJlcZqYa2xBGwENgN7BnsZexs7ip3HrlPRUvFTKVAZU7lSkalSqAqpLlF1UY1SvaPapGakFqXWoLam9qaOpT5BXU3dTv2Yep56k4aJRpxGi8aBJoDmCE0xzRWauzQvab7Q0tIK0arT2tKSaA/TFtM20T6gnaHdoGOmk6IzoHOji6TLpbtI1033jO4LDocTw+niXHERuFxcHa4XN4Vbp8fT76U3o/emT6Yvpb9JP0r/kYGaQZRBj8GdIY6hkKGZ4THDMiM1oxijASOBMYmxlLGNcZLxGxOeSZ7JmimYKYfpEtNDpgVmLLMYsxGzN3MacxVzL/McHokXxhvgifhUfDX+Ln6eBcMizmLGEsCSzdLAMsSywsrMqsTqxBrDWsrayTrNhmQTYzNjC2I7wXaNbYLtBzsvux67D3sm+xX2UfY1Dm4OXQ4fjiyORo5xjh+cApxGnIGceZwtnK+4UFxSXLZc0VzlXHe5lrlZuDW5idxZ3Ne4n/MgeKR47Hjieap4Bnm+8fLxmvCG8p7h7eVd5mPj0+UL4Cvg6+Jb5Mfza/OT+Av4b/O/F2AV0BMIEigW6BNYEeQRNBWMFDwvOCS4KSQu5CiUItQo9EqYRlhN2Fe4QLhHeEWEX2S/SIJIvchzUWpRNVF/0SLR+6JrYuJizmJHxVrEFsQ5xM3E48TrxV9K4CR0JMIkKiWeSGIk1SQDJc9KDkshpJSl/KVKpR5LI6RVpEnSZ6VH9qD3qO8h76ncMylDJ6MnEyVTLzOzl22v5d6UvS17P8qKyLrK5snel92WU5YLkquWeyHPLG8unyLfLv9ZQUqBqFCq8EQRp2ismKzYqriqJK3ko1Su9FQZr7xf+ahyj/JPFVUVisoVlUVVEVVP1TLVSTUWNRu1HLUH6mh1ffVk9Q71DQ0VjQiNaxqfNGU0AzUvaS7sE9/ns69635yWkBZB67zWtLaAtqf2Oe1pHUEdgk6lzqyusK63bo3uOz1JvQC9y3of9eX0Kfo39NcMNAwSDboNkYYmhlmGQ0bMRo5GJUZTxkLGfsb1xismyibxJt2maFML0zzTSTNeM6JZndmKuap5onmfBZ2FvUWJxayllCXFsn0/Yr/5/lP7X1qJWpGtWqyBtZn1KetXNuI2YTa3bDG2Nraltm/t5O0S7O7b4+097C/Zf3fQdzjh8MJRwjHSsceJwcnNqc5pzdnQOd95+oDsgcQDAy5cLiSXVlesq5Nrjeu3g0YHTx+cd1N2y3CbOCR+KObQQ3cu9yD3Tg8GD4JHsyfa09nzkucWwZpQSfjmZeZV5rVCNCAWEZe8db0LvBd9tHzyfd75avnm+y74afmd8lv01/Ev9F8mGZBKSKsBpgEVAWuB1oEXA3eCnIMag6mCPYPbyMzkQHJfCF9ITMhIqHRoRuh0mEbY6bAVigWlJhwKPxTeGsECv+QORkpEpkfORGlHlUatRztFN8cwxZBjBmOlYjNj38UZx12IR8UT43sSBBOOJMwk6iWeT4KSvJJ6koWT05LnD5scrj1CcyTwyKMUuZT8lK+pzqntabxph9Pm0k3S6zPoMygZk0c1j1YcQx0jHRvKVMw8k7md5Z3Vny2XXZi9lUPM6T8uf7z4+E6ub+7QCZUT5ScxJ8knJ/J08mrzmfLj8udO7T91s0CgIKvg62mP0w8LlQorimiKIoumiy2LW8+InDl5ZqvEv2S8VL+0sYynLLNs7az32dFy3fIrFbwV2RU/zpHOPT1vcv5mpVhlYRWmKqrqbbVT9f0Lahfqarhqsmt+XiRfnK61q+2rU62ru8Rz6UQ9oj6yfvGy2+XhBsOG1isyV843sjVmN4GmyKb3Vz2vTlyzuNbTrNZ85bro9bIb+BtZN6GbsTdXWvxbpltdWkfazNt62jXbb9zae+tih2BHaSdr54kumq60rp3bcbe/dYd2L9/xuzPX49HzovdA75M+276huxZ3H9wzvtd7X+/+7QdaDzoeajxs61frbxlQGbg5qDx445HyoxtDKkM3H6s+bh1WH24f2TfSNaozemfMcOzeE7MnA+NW4yMTjhNPJ90mp596P114FvRs9XnU880Xh1+iX2a9YnxVOMUzVfla8nXjtMp054zhzOCs/eyLOeLc0pvwN1vzaW9xbwvf8b+rW1BY6Fg0Xhx+f/D9/FLo0uZyxgemD2UfJT5e/6T7aXDlwMr8KmV153POF84vF78qfe35ZvNt6nvw9821rHXO9doNtY37P5x/vNuM3sJuFf+U/Nm+bbH9cid4ZyeUQCH8ehdAwneEry8Any/C7wkuAOCHAaCh/+ts9IsBv+5CMAfGTtBeaAlxFumOEkW9R3djirGhVHbURjQqtLJ0e3HS9GoMFoyeTJHMp/FtLDNsdOx6HBTOBq4lHkneAL4m/nVBQ6GTwrOi8mJHxV9JKkudlF6WMdpbJbst76bQrsSlHKMyrqaonquxvM9E65z2D107vQv6G4YWRiXGC6ZKZvHmXZbQfl2rOOsmmzk7JnstB2/HdKdzzs0Hbrv0unYfbHNrPFTjXuZx0jOFEOblTrT0VvUR8sX5rvnN+PeTrgWUBKYEkYJtyMoh7CFroWNh9ZTkcOsI/ohPkV1RudFuMdIxP2L740riSQlqiZjEsaSK5KDD+kdEUlhSGdIY05kyGI/ijlFnojJ3sjayP+csHZ/NfX5i9ORAXk9+26krBVWnzxTmFqUWx5+JLUkpLS67cXa4fLZi+dzK+ZXKlapP1R8vfKhZurhQ+6Zu5tJc/WoD0xWDxqSmlquvr61fx97A3+RvkWpVbtNpN7tl3+HVGdNVfPtO90IPqhffx3VX4J7UfdUH+g/1+yX6Pw1kDXIOnn+k82h5qOExZVh9BBp5NFo+FvbEaJxz/ONE72TRU/9nKs92nne/iHup+HL5VcNU+Ot905jp0ZmyWd85+bnNN/fmC976vNNYYF54v9j1PmfJeVlwefHD1Y9xn/RXaFfGVxs+l3+5/nXtu+/a8w3dHwWb0z8Vtwt2dn7FXxhqQrggmZEPUBloCwwr5hW2mSqHOojGkdaQThEnSS/KIMEoy6TMbIx3YiGzprFVsfdxLHExcWvzkHhL+Ab5dwTVhCKEr4i8F5MW95eolVySltlDkbmxd0NOR/6Iwn0lWmVLlVzVEXW8ho1m7r5+bYyOjm6UXq3+C0NaIw1jL5NM03qzAfNFS8R+ditxa0UbDVsNO0V7EQd6h2+Oz526nasPZLmQXe0Pqrpxu+0cmnXv86jxzCB4e+kSeYhr3iM+9b7pfu7+qiRG0kLA7cCiIHKwEZmL/CHkdmhumCtFiLIY3hQRHakR+TOqKzo5RjcWFfsg7ni8TQI+YTyxKOkgnFlXDvceqUhJTSWnuaabZCgdFTxGd2wtczZrMPtmzrnjx3IpJw6dtMzTyVc+tbdA4rRQIU8RezHTGZoSVMlW6deypbPT5ZMVI+eGz49Xvq5aql6vQV6kr+WsE7kkV7/vsnGD9RWXRp+mqKs512qb+65P3VhtgVoZ2wTbFW8ZdxzsDO3KuF3aXXenoae692RfxF2Hewr3me6vPngC56aKgfTBwEe2Q2qPBYdph9dH5kYfjV17UjSeOEGctHiq9Iz3Ofr58osnL2+9qpo6/jphOnQmcDZ4LuJN4nzG27x3pQsXFpvety/1Lj/68OLj+or6avUX/W+037+uL/wY3arcdvkdfx7oOEICMYAMRnGjBtApGG3MOraT6ii1C40iLT3tAt1DXDN9OcNxxlSmOOYofCxLLGsiWwb7CY6znI1cfdxPeT7y4fhFBPQFPYVShatE7oouitNLyEs6SsVLV+zpk1mUZZJTlXdViFcsV7qtPKWyrcatrq5hp0nal6SVp12lc1W3Q++ufr/BoOGA0X3j2ybNppVmWeZkCwtLAcuv++9ZFVmTbNRtsbYTdhfswx10HekcJ52qnUMPaLpgXIZdSw76uO11+36oyz3Dw8oT7zlJKIHzBD9x2vucj6cvv+9rv3P+niR+0lTA2UCXIHzQUHAm2SgECrkVGhEmHvaUcixcNfxdRGGkYeTnqHPRVtGbMXWxTnGIuMb4gwnohKbEg0nopKZk98Msh0eOFKb4pKql0afNp3dmFBwNPKaXyZ75IetOdkGO73HVXJrc6ROtJ/PzKPn2p5QLOAu2T78p7C9qLD51JqrEpVSjjAveLcfLb1SUnjt+PqMyrSq9+uiFozXpFxNrg+sOXDKq17ys1WBxhdCY0FR89fq1R83z1zdvMrWIte5rs233u5XUcbrzUlfH7fvd/Xce9tztvdPXebf1XvP9hgcXH1b0nxnIH8x5lDGU+jh9OG+kdvTh2Oo474TZZNTTymdDzzdeiryynzrxenqGNMfx5ts79GLScu/qqXWR3fj/VSPb3RMwKgDUwLUcp8MA2MIttbYAiBbA5ZY2AGxwADioA0RgOkAwLQGoTOLv/QMCKEAN11444fOmLNCCz9kH4bN5EsgHNeAWGAGL8HmRC1KCrKFA6Ch0AeqFZhEIhDDCCD7pZSMaEU8QP+DznCkyDFmC7EN+gtegCSoSVYUaQyPRSvCJrAQ9hEFi1DGhmFrMLJYHewBbgB2lYqKypTpFNU7NSe1BXUP9kUaNJpVmmJaPlkzbTcdCF0B3B8eNi8aN06vQn6HfYfBjGGXUY2xmkmKqYRZnbsRr4gdZPFi+sh5nk2IbYA/lYOfo5QzjEuKa4D7OY8qL4b3Hl8VvK8Aj8EGwT6hKOFskTjRYzFvcQ8Jd0lPKRzp4T6xM5t5y2Xa5Sfn3Ch8V3yg9Ue5Vual6Re2Sep3GJc2mfa1afdpjOvO6G/oMBpKGxkZ+xtkmV01fmGMtFCyd91OsUq1P2JTbtti9cKB21HaKhve7z65KB2Pc7rjjPNw86wjLRF5vHR9n32C/Y/7XSB8CVYMyg1+HqISeDPsI72/XolijI2L649jj3RNqE3eS/Q/PpBBSX6e7ZIwfc8ncyl7Izc07W8BVaF4cWlJc1lo+dG6m8vsF+ouSdRb1MQ3tTXzXKm9It5S37XS4dd26I9CbdXfjgX//2COlx9kjc0/2Tww983yxMVU0ozb3+m3awuaS0PL2x+oVkdWKL5xfK79rr73bKN7U35rapvzKHxBcc6AFeMALJIEqXGFyhmstCSAPXARdYAJ8gmjgGoE+5AElQeVQFzQNx14MYY4IRRQiuhBvkYxIDaQPMg+uGn1A8aD2wyf0q6g3aE60FTod3QmfvuUwQXDc32JFsb7YWuwSlSxVJFUnNYbahvos9XsaDZpsmte0SrTZtG/odOjO0v3EeeLu0svQFzGgGaIYlhiJjNNMXkzvmWPxDPhLLCYsC6zZbPJsz9kzOJQ43nKWcjlwM3KP8hTzevHJ8gP+cYEGwUwhP2FzEXlRbjEqsU3xrxJfJbekcXuEZbT3espmyrXJv1fkUbJRzlYZVGNSd9Y4ozmmBWmL6Rjr+uod028wGDdCGCuY+JqeNZu0YLN02l9oNWZDb2til2zf7rDmpOIcc6DTFX3Qxq3i0GcPc89qwk+iLZyn3vsp+ieSBgJ5g8KC74XwhkaFjYUrRRRFbkV7xHTFccSTE+4lCSdnHV5PCUh9lW6T0XtMNbMhWyinJJf9REWeRv6HgtbCouKUkrAyj3Lzc0qV/NX0F3Yufq57W/+04UFjx9W25js3Hre8alu6tdFF0y3Qo9F34F7sg9L+9sHhoRfDT0cHn3RMXH569nney6NTydOxs9FvYt7GL8S8P7TM9qHmE/sKabXq8/iXtW/s3xXXbNbDN878eLSF/Wm7Xf07/hiAA+zw0y8P9OH6kj9IBAVwDek+mAU7EC+0DzoEx/48dA9+y2RGaCCIiOOIVsQ8Eo/Ugys3VcgJFDVcf4tEXUbNo/nRB9HF6Am44uKMKcFMYYWxAdhm7DaVOVUx1QJcMTlOPQfHvIBmhdaatokOTxdLN4uzwnXSy9FfYOBnKGPkY6yG6xZ9zB54BBxvZ1Ys6y22CHY59hWO65yJXGbcHNzLPH285/iS+YkCloLqQlLCgiL8ooJikuIqEmaSHlKx0kV72mVmZZnlzOUzFHqV0Mq2Kg1qePVkjdV9JK0FnSDd7/oZhjxG7SYeZrTmHZYkK7R1ti2wC7F/5Wjl1APvSa0H1d263a08ZggxRAbvKl8lv26SRcBkEDF4NeRIGCulMWJ/5Er0mVjzeCihNYmYvH0kN5UjrTJD5mhnpkPWes6VXPJJqbyxUwEFXwoji76diS7ZKssoZ6moOa9ZOVYdXENzsbbO9NLi5ZwrSo1vrp5vDrph2CLUhmpf7Bjp6uxu6KnsK7lX8CCv/8TgiaHs4cRR9ydy498mrz0LfiH58u3UhWnfWam51fmOd+mLhu9Xl499+PzJbCVnteXzqy/LXze+zX1/uJa/vm/97UbaxsYP8o+5zQObt7dYtkhbXT9ZfpJ+dm1TbdtsF2+/3hHfCdlp2Y1/uK+iwu7uASA6fbj8OLWz80UMAGw+AD/zdnY2K3d2flbBh42XAHQH/fV/l10yBq7Vn/tVsHzIO3d4V/Lv638AlxfZLDFY4jQAAAGbaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA1LjEuMiI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPGV4aWY6UGl4ZWxYRGltZW5zaW9uPjc4PC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjcyPC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cnf7q2cAACUiSURBVHgBvZtZrGVXmd/3PJx5uPdW1a26NXgqlwdcDdimke0wCDtOTAsCeYAIlISopVYUKSJ5iZSnPESKkiiDRDpCPKRRIkQjNU2bFjHdgJ12Osa4uqHsKpcpl+1yDbfueOY9D/l9e5176laB4SEoy+V911577bXXf33zt9bRy7LUNC3Pc67UyzKvrnKhxbZtTTOo6HInFVUKjfti704r9YIOpS7d1HXxqKoY1et7bXohg91SFiMvKjcHv6Xj/8ONpd4FoWVZo9G42aqnWR5GYbvVDsLAKLQi10zdsg07SbIoiAzD8H0/SELNKA1DVicvs0IvTE3XTCNPE+Zo6jrDGmqNdF0vDaukTae/Zsh9CfYK/SwIpadh6bppaKZWGtUKl5rOMDfRqnWnZ5ZlpmkyVWhAhfaiKKATlXq9HoYhHZrNZhzHaZo2Gg0e0YGnfJXPyhLv7Gz1+30qQTg1TNN2rCiKHMcZDUadds8y7O2N7etX17e2tjfXNze2tpqdhmYZzI4ZCkn1kg+DhHF1GitAgGJdBABMEdOHtVhAFeLzaa5Sk0XhZZ1lrSZWZnkMVOlQFYZlEKoAkNF0HaitVuvQoUNra2tLS0u1Wm0ymXieR/uiMhqNQHs7VIZgILCBuSeYi+2d7aX+EpNeX19/9WevnT372vUr1yejSRBA7BgG1i3TMS3d0k1LqMJKg5alFSIalqmzYoDnidCRe6YowFkZnbUpBGA16wqLDmGKrMz5V9EhSSPYhVlSVAsVegKDSgKDZRmzXV5ePnbs2MGDBx977LEjR44AnqfVuJpCBHL1Ih+dU5XH4/GYl5kfzAHUWTCr1+rr168/++yzzz33Zztb2/AYX617/tLSiiZUZBy4SHBYliFQLYMPMCbPKCyEqvAR2xHagpWnMKeSVabOksm1EGWRpwUAFDC5qUBySyOFW9XCMNzCovAdT9XnVlZWvvCFLzz66KNAgMJMA2YGuRqNT9BtDjXLtSSJa77LQNNpkKZxt9s9f/781772tXPnzm1u3oBJaGE5+V6t1sgT8NjAExY1IKDuVFT1PFcGrTDO8ctiIHmoPeFhSsWuAlHAVwWoFYxUgBVCTJhXAatgZkydR7zCLW+ocegAHugsjBaGkPdzn/vcU089BVohgm3TSJ1uCupcLcVx4rpuGKR+zXZseN5bv7711a9+7Uc/+kG92VhaWYZGk2gCw5Z6PpiFvdayaYAWTcSH4Vg4vdTMPExmVMyiIidim0tFZgYHV0VwijqroBaKiSvKCm3nHMvMIKVc9wrTVTMGM8tNYTBGBjYLDR4IePHixa9//es0Pv300+CkJ6+opVTXOVR6sMosA6O02/XRaPbtb//xn33/B+0ug9QQyPFsCFPUmvV6w7c9Y5oPTI3p2xbKVDcRPhv2LTWYRxjFMHILJaTn6GRZC3i9zoJQEQ0rqFBeJlyFPDIPadtTQpU2mgNT8NREwUYFXaAQKjrTwi1Eohw4cODNN9/85je/efjw4YcffhgOZwnUu+o6hwpIZtnptKbTEBP7k5+88q1vfUvp9OFkbDpls1Ovt3q6CekKy7ErpgWcaHxIixJSakmmI9jQzPQEcqFu43CmlbaJyRE7I2sg7CyAxZBCQNDmQlWEUhRkxa66IK5K1UEuKFX6802Q86TqJnIIG9MI2nffffcb3/gGahkttbu72263FU6uc6i+7zqOUWQayzMdhz/88x+Nh5NGo5lmMVpkdzQ4/ch9jz3xId0tWt1mnIdpmWBdk1DYvubV4jBhpgyHsUQsLdd2PJuKKFKj9NxWMjHjAFuhh+PwhR+9aOlew20ieEBV3gXvVeK538CIuCo8ipGByoLub6GuVoGlh1rUISaE/cxnPgNUiMcnWAjIy1osZDWGv5krjLG1tXXjxg042a+7zVYLCbTr2vKBfmelkeqRXSuSNDH0tHD1rIiLPMKxwI2AsBTGRXlGMbRBUNIMwpmanU1trV2KQvacwvDrjq27nuWkmhmHMeQVpsVVEeuC8pm7a7JuVWFW/OWqKqrxtiufVhSGw1n9119//ZFHHqECHBQ1CyRFDZGVGdTDJ8iy9Pr1q5QsS3h/ONzV3TwuZ7N0PI4Gk3jHDMpxOE6NlHdFASU4S8BBSXHVIXWu4T3FGEhcJMPFpSqyFDWwbWQY+EaZ6MNg1yn8xEzTILNNF5aGYYWqmmimCjBuprFHMAH1K0AqzHQAKldcJdC+/PLLzzzzDIQFLYwNqSlzqK5n4+OwvIgMVN3e3qSHgaOGFSpzzch0q9DMJNECqBYXM9f107zoNdtGoadR7ppOFonOnE4CTGiJlq1IAoMlaRjMEt/Bx9AK29JzuzCA7uhGoUhRdVRQFU78iMKsDASvL4qCtLhdVFQ7VyYsEmEYmI9Lly7BzyCfTqc8gpN//OMfz6F6LspKdAIPYGsKy8ObjmtrTgmLOa5ueIWZ5VzrKPfm0vrVzdLFGzCKOMdPYwFsw1xuNfH+kNK4jDM9Fe5FbF2ZGMtumrmYgDLKC0OzGjAR9hKoimg5PSoellgC56lyL5SUKmDMbYFwUaGRAqMigEwY6oEWpqUDMlh5b6Irv/KVr8yhcod45YkY+iCchVHQ63ejKNAtnP8o1qdBPImiWRhPIAzypxfW229cuWpuGrmeBnnLb6ZBwuowOrKQlUlSxrmRuQ33wKGl/qFuoskaM3wQFePprp0npWOZCfwNA4t5FKW7B1UYCcJr8PBNr5A6kBTCRUU18joggUo7UGlUUiqkchwcDKh6zz33zKGyjHmRwsGOYyGlqE7eTMIZlgnjZ1qaBcdRT0qulm6f+9mF733nB2hsR7e1WG/WmtE0Wur2+GqM0jZz3dGRZ6/pnbr/HoxT6yC+aGZrhuPiJBpGrHxEXAWoKp4iOAsdVwkHUGRG5/9fICFIVFEI9+7kL99VamkBG8akThkMBijLL3/5y3OoeGK0SnSE+8MilQXurRGj1tLCYDnFI8LLwb1jcfHYT9553+rSmTItu40O7kLDrU92p71eX1Ypi9FGlm+gyUor77dWVleODJIbjIHugnWT3DAzLQFfmuFXibERgiGu6F7RxSVmh2igoiAcDWQ8QhaDEEo60I2HyhjPX8CAo1DFT1byDwSgIr1Uej0hAHHbHGqGtTAcBozC2LJdMA/HIyStlLjEnk0jrXTyqGzW+rkW23qtDPThxvhAbyWZpFpamI7tFLVoWFq671m1NEqSNDUtz7JydJCe6Vrmuo2alnimbQzHZcP0sUY8tFm8NCGowbOsZmYCqYC/DNBmiDFMbOQQOgVIUmKeLOFzoQy0EePE4glZCy3JUnDOZnCig6cBNsBTuIVDWYU5VIwYxrxyAZT7gvRIBV9UJ6zmC7hDplepC+ZiGYWDudUKcX2qj3K19RRfD+/QEj+Pj6NkCdoz/CsDNwP2iOPScVurJ+5d7d9VZnY6y2ejcUJMOJuGwbREJ5Ti0xLnEuKr6WtZahMP4uhaWp7qEBdDlOMpSewugaAwhfCvUBlGldq+glqShRBX1VhA3fd8r0oPnDXWlSHoyqqjkAryDVJY8SqSpoYuo5kCX4m2hsFEejIt100iEvEucCvwig3LafT6q3ffd8/dj/reAaY+3B1lUTjcXL9y6cLVty4Ew0HddTpNPwkSuiPFRHUsm2iQskDN4lwCla8IReFy4e2Kqsq4yWdvKbwCnbkS2c6hChi0gyzVvMhKsMboQT6l6nxZ8BLe4PRBRgmmMy1DCWOksLewqSww8zBAi5QTu4qMsUwN1849exbaO+PJmQtvXtoybOdgadRP3nXSb7cPHlg9fO+p0cblt14/+/NzZ8+9c3ml0/FwrgyA2QnaCjuQZ6h3qCvWqVpY4RvYm8lJkUkydXXdAyGaGcIq72IOVZh1r0jvKklApWInE1JBHFaQj5NmcjQP17aylJXQCOHFbCJd8gpuPhQ30DOoGFQFZsUaBVOxy6VLKJ0YTuI2jday5fUujsIUY2Dmxw51Tpx8sH3ooNPpWPUzO1euxllO9IwyxAnDDjK4CCoFqBVYBZWpSoEie2XBxqqCoFLAfBMjzpLQdq9j9SL5n4r7qwXjuzwUqlpkvSoehb9lCRBJrAZkTJgJg0pirTKJcA5T4RVyPNg6lVziFsHBlZhGsdfsaH5tEKXn3776kwtv3pilx973gU994UuN5UMEDYMwCSTS0RNhWXGDGB8dJddfKArpHr3mf+lFDXYQjlBtBEXURMSrQl0EBeoyqOh2mZwpIZut8nqqm3xTMiMQU3gZZgUkFVqEtyq0zIAkVBClBHE1t9Zw8LsKV0u6jnGwXRtvXGk6xonja6tHjqSadWUw2Zzmkek/+vGnDp64q7TcqDAYC4mPU9ZTHOUKo+he+S68JDw7n7dCq65qhjgPVHiFyn61JC+IDtwDzC1QcH6hIaEp+RVUH2BYBLoBj08LdalhcKgxDxS5EF+Uh5jBShIq5efVvHac+uvvbJ15/gdB/H/85uFmd/WR334ijobGtOb4+KZOUdrDsBxNdv/Wx/9mNJ1du3I9HY0yXAti2ERyiNV4zE8+L1YWkPwH8+0DrECqK2zF5PET4Yg5VHRtxZvIpjwTzChdkRI9TfELoAk5E4cWwyxd04v0fDwe4m50mpKqmoRjx65zi1kYie3Wfc2OkgCdgu1IssKyG5NpYRX5kU6nlswOtzoEmIMr53745tlDR084re4HPvz46l33Xd8dG7bv11s/eunMXQ+e7nR6//33f5+V9G1nMt4lAULSS9RuJaDCgxVUZkuAiOAI8qrIGrAWgkHYFvHh6U0NDD4xLhXX8aASM9robDg6K47Cd2Od9qyMI8evdbotopadceI5LnQLk0mJr6I74ky5TlqSfg5qru75FswzDGPDcp3cxnTUs7iZjn1T2Njvt4fb725eeeuvo3D7xvaRex7qHzz49uW3e7XazjTsHjh8/2998OyL/6u30s3jgLkJEDDgJCvLCkkgSsWiPFXAKrC/5LJHVTScJStBFxaDBVP/YEaGZxS+wsOKK0UKJ5PR2rHDxAPkGeANxJiQxbZ89CWwJZLFM4q1Rss2bX1j64bRath4AYhtEdtJ5MWzplU40GES46TkmbX189cuX772SFyuHjrWb7ZLK9oYbh65+8gHfvuxV19+CbXk+fV4NkKxw6uipKopMVtspMhTtQpMXCaqIFSitR/xHCpkrCSKlL1B1p7JoqAJYFIkE0uDaWNKJCYloy/K6cHTp3q9Jc9zyOApVmHa3c5yhkNDOpfApcwMK8Fd9HzTrNmXd4bIsSXMJyJRRJFm63qcBGHS6a+0mq0r43h3c/3imZePHj5+4sEHt6IyLs1plh9cO3bn3afe/OnLhzr1MI5qHh4jrjImjIlV5kKkTchTKXYxe4pgNCrYC7RzqNxLj0q66UEBGIlQBlCjCAM7HjQriK8KbXe01e61anWHtUshimUlccGM00TUFO8WJVKalFoUhKPxxhZ+ErkzvEs0AcmzrNSjHBnWXK8BYWajoVPad6+uDAbrP33+ewcO9uxer9btb+2ODjf8Dz322P/+/p92PeWRyTwpIqiVTqHO5JEcuJepojgW2ECxqFOZQ6Uf7pso1TzHBBHjEb8Dv9Z0WX6QkEkhUou1aUICNQeX7P/sjiLXhw2TWrOFJ7s92ily03NrbGZJgimZamVoWoXIOhocBYHlwo/EXTTcRHeisvAsP0vKySwsTLfT1Tc3Ny4NdjYf/eDSyuO1Vifc3ZlG6akHHqw1mgznwSQ5pkf0DRqHPyhL2edCx2DmqkK8yjNkqupTUXwPrigoiuTtKq9QvYYjBseSB0dNAxs3kivYREU5jsBu1v26TxBba3oE53iCJIfzMjUsYjxsvsQslmvYnkmHXr9dc6uUQxoHSTxNtVC3A7MeGLWdsBglmlNvsf6TwbaVTs1g9/ql85hrnKN6s401NS3n5Kn7IQAsCqGYITCoU5iP6ChdY56qkGdR0bkQrwriFECue2pJ3iBPJExPJ7LVOLnc8R6CNY3Hg83pbBDXO36DNJRvzsahj/vTdvpL3WASsFakVzXY1PET0oV5QVRXcz1cdHIv2aR07BrpQ5RyGBRRXCQuUk9GDadai+Kw7zsaWYsoO7LcJmC89sa502GYl1F3uR9Eu7vT4MTJtWsX/womJbUy10Pk6PG5acA3y7UokaiIhWBF0DJqOQTIvjKHapo+HrVtu3E6tnw7yEJN9qg0z/ezKWFU7Zv/7dt/+fwrx04c7fU6bEkmUXho9cA7197qLLUiLSI1YbgWyotvdJu93e3RbDg70Dkw2Z2sdJd3hoMSKXDsa1e3fv76W71mj6glCSZEZeTpPFtP4h0f6HkRT0YITLC97e7s3r12NA63k3RLazvNZTvMtoui06n7oIp1bTCd5Gz7uk4wnRQhcXbWrDf4OoYN8kIFMCrMC7ALtcQCiHxX/KC8HImRIDL4SXaNdmfDndfPvnIeNsaOW1qJrdueDDrLfmPJP3HvcbflyPappl0zrr565vzOxriuNaYDXPk6PDfNgna3A/HZam7UmoZLG8kI2M8iKsd9kQxEacFOBPel7mWTqCAN5aLzzdwxJd5tdh2vMR1HUVry+TA1iXRJ72Cpa+QSyFk6mAPZGaAgutQVhX8R6qLllgppC3QS3gbvo1d5v1oq37exRlav3cRssllw+vT7cJZwkBEB8gqDzWEWlW2r1/S6kjD3a1E6dXxHHAxCW80ZsV+SlF6jeWPrRk6uBDPJDhu7G2wCkSGw7NCo1/S67mBb8p3x9I23B9cu3LiWkNZyJCzEmlo2EZTmkzp34+ms0cB2SWGeXMFA5Zdr4Fvw7bsBGFBF+quAjpXjloJcobbwGaYBezqS4zDJPRC5Erlbbq/X+unw1fZKF8VQ9+pIFy5FOgtJPuqGG2bxMIiaSwdO3P/g737yk4lh4kCnaAqSp5pt6HZp+J0Dx6x2c1ZOctfqt459/O/2P3j6I4fY+xhFhJEpoazrzILR9o31C6+cef7ZP0TPgx1sCqfSScxzH5Q9tbS/aX+dN6Ek/KBUH4+qsYy6Q7zLfrmts01BYtKyOh2fRDWM41jeyXvv+dPvvDhFd40Lp9uYDAaeSWhAnGCbXgOJ6C0vPfihxz7yO5+22t3AgJK2I4ksMs4sl5loxrZuRUW2Pp0lZVhPE7uw+0dPJU49rM2azQ4rqjtmUysOnTbX7nv/II4uvPSsX/nAShUxSVX2Y7kF9/4Hqg67K5aAblCYgYCdZ3qEJsDxR5MZVhzEpK0OHe1IHk68CWdt7XCnY27t7ISj3DObo+Fwue6jdUhSFMlkksxCa9bfmezM8lffOBsYTmxCSSwhzGNoKWFhOUGS237iFo1uw4jKfBJ0Mjvbvd6udxuFsyUiO0umo6NLvYOum/m1AuEhir+Ve5mpQq6w/Bqo2GLepyuLBGEhIAWovt0i7Aqzke3ro2h94/r6/e87IVsYZe669nJn+SMffeL55162SA5pWa3RSNgBIjcC6SRGZCvSCrJ8EMRe92CKZpL9SSaLTsKfYheoQEZDqwjiYDzJcGbwrZz2wSArt7cHtaxMLX1pba0Y+ztxBOA3NzZgF7hfQaX2iyQFwq+BqnACkkKdRRJx9f3pKHN89gtiXPjxMF9f30jjzHI1fCTi72aj9uEPf/jMS68ljjEbTBpOC9bFUcol6gETDOsCeMp2AuYNJxFDjDwYOGb0SzGyZpjUPNtzzEanMxXVkB9bWtlIdlcOHb26O7i8u9nsN/FSYRO8ML9em1WEAyEzBCqspa6Knup6O1S1HrxAWfTbfwtgpJdcAuYL19/FYBraX7xw7jOffYap1utN4oXNzc0jR1Y/89lP/4d/+9WV5YMZzi6LarvwNtkIyTO1cB99Tr+QksryotlotJu118+85GVRnQTLbNoxfUl+WPmu7HQRXpnvlpc0zTv76vnusWPvO7G2NdrVksA3NQchKrK6hyGViES5hMyQwkeZuSISuG6HuoBHhcf7b/fXGQK27rW7bEOurCwF6c5//k9f+Tf//l/Lnqokf8pWp/XJTz0TzKL/8h+/jqt/7PBdcZhBz0bdGWdZEIwmsxGLWX0gS8Lx+u71V1/8obb+jjbb0aaBm7OXo0d8BJaH3CWG3NN0V1s5dMfDD3t9/Gw5ilHXNV8vfZeNk/ec6mLaN6EqXuWBIuyvwFm9TBpGUo/UbU636P6ln01f+cnPHnjfff2lZRxmdkpmdvR7/+R3+yv9P/nO//zZi6+TOa0vd9eOnGi0nWCWNlvu2tGD0xvDFvbLtuN8ZsSjYrphhiMvS5a8JUjCRkoqaRxCFr6Wxro1ffvs7OSqZYZGzS8TslhZSlIc3T6PARZzn5vWBU4qN7lUtSqEN994jxral7ThYLDjexx3w8HOeqvu//iDPxwP8eeLrc0BIj2eDN65cvHzX/w7/+JffvlL/+wfHv2tO2Y7gws//avNzcvs1s6i0esXXp1FE7wa1rtmmx3Pbte9E/36XQc7uEO6Fpta6GiRpwVuMXWLmaNNtLreZhekZhjItJGS8OQfxlQW/lYiQbkF8RS0OVX3ty7QqR6/5MoSkvVHTqrzH7jyqMr77rn/xb985Zvf+OMv/aMv9vvQRDu8tnr+/GtsQB+949Dn//5nn3z6E5vXrl56852zr128NkyPHjt0eO3QlZkelWztkuklj5PC2WkyDAo8rGW2YMVxIgCXf+Lp4xHsQmOLPVnyamgwBMK3YXLHV4RXOkVRiwnsB8XtTQZeQPr1UDX20BKOq3R77cFot9PvzKLw3XeuHz5y4IXvncFP/OI/+Hwcz1qGf/zE4VmwO56Njh27b/lAbXXl5GOPP2KYTaCeuzq9uDOqt9cwHeQ7DAt1a5GGs3Hs8jJM4lQCS1RsTB6xOveTEtJrEVs9iZOxh+eQ+Pd0z8zSfEYanLBnMXGpCE0rM7nAdTtUOqlni8qi660VTnCyz4eLIfEMZ2E4injinqNLq9Gf/NEPg3j6yd950qvjThUcZbEt542LPzVKgj/bs+pJjg+gb83cJK8TCIeFV9ge+ztEplCKTTC266qNEjRSTjrKxQPLJfOVmForKZdzu186XuakmVVPLTco7YCIAR6QCQrKPQi3TvhWqr5Xp9ve4bZW9wiXNjY3iQQI3PvLS5jN4dak5rc++NCxP//2y3mUfurTT9919zHM8Hg8OXzwCNofvx4JC6fsv7GF3GOXPeX4gcE+pZdXx6lwvxAN4jkP64gFlt0oTtJgJhFHdgTxc9lmN5u6C1NHGZlJTs7ZjVZzcKOC+B4g1fxvyip+HyTC8nIFhpiTWxlgH2CSNvk0mLDzg2JDhGbDqae5ZE9JdY9vxGtLh//6hZ+f//FbDz304N9+5qlHHn/48uByvemz24QZrXNCqCwHYzmHm5lJvdPnbEjdt9nQ4ppsTZo11yJuZweviGW7hoyXYWW2EZtWwLElTgFFqd9skEcbx8PUrc18Es0imYSpTF6ZVuo4hjSqNWDytzOwwqPIy/W90dJRHEbidx2jR2FrhjxAxjkE3IMamRYcurMvX7h07or3X//g6b/31PJq/1C/3/CbUC4JcJ6d5d5ymdY4BZWliZBJdi85gY3RxwIjR3xfEl6MLfvspp1Ztt+teY06VMGQujYH/wjPtVgjQJD0nExjrywQ7jXsQd0PaT9OVV/03qtIYqaq336tLG3JVFhaWeM0gHSTjdG/+1df6Sz5h0jPdJd0qx6bjQOnHjn1OFn+5uY0Ik4V38zgwEGKomH3EldRthsIyoSz5P9MKyItG4ynk9mUJJ8gsVzfR65ZYuknLXtlb563/L1JVYWWzjxXr6jKLd0XNwpjtbM+N85of03vdDoc1CUPnrD/L56o02hYfunXWm0ctHCQR4PdWbwV283aygOdendLMsxJjRnjBFhGkGVt2y1wGM16iXAS32jkaMmHQDU0lu/lVrvXXVrqpaZD9gn6c2yGxD+LRUHoFvNfzHRRuQl10aRwquui8dbKe1KV0B+AhunJJOSMDRkrUdG9/gHiAfwrtmeLLIkSIw20LOTIU8SxFznDloxN3+dAY8gJateb4ChBVTmVWeXLiOx1g5RcOBgOJkRwke4jnRkBkeu4nUZtJim2m9aGTyvM+6d9C9TF41+Jk9fFMa2SqVASzoO/uAqh0caEcjAwipfbsiQZx7afQdKR5CEpb8+uNTyfbeV+Z6nX6XNwglwGZw6uroeYFcT2ys5A5ud2NR3XAoOZw59wXC7uuuWvHoFtZ0nikorgkK5peDa5GY9zWVUiTE1croyhrjJaVW6Bqpp+ab9595t/GEtEbK+h2uQh9CDNyQQlb67OZauzz1an1csTTdLLWYFHNDNK/ORgMr0xDryVA27DO3L0xD/+p/+8nv1eW484d7qL6oUBtMJBJXHURU6PcNjAurY55HCQxf4NuVadk2Ccvp3u7mxRV9wrKN/D5NwOVfVb9F5U9iAt/kLY24qoSpCgYPgqR/d5dy7/Jeekdj0O4BHjmg754qT6VQOJ/naLI08e2+dxGBw8vNLnFNiEM9apV69zuNOViAYvgjMaclaGX8Hcv3rnMIg3d0ZBHLWbJPMsmIXzICS2KIvZLir7pziHijmlsNCYdSRHHc2jha6QCI3Cy9yCgVuKerR/oKouB7sWjQutjsIy3bLWsHYG25yfNsn5ZiUJZPxLjnnOwinjI+EbNwYjvMSk+vFBQ46Hs29hlgkbBmLGZG/QSsuArQ3C+uNrR69fu8yZsXajttLrb115o7vUHQ6HDMXccGwYEBOwmAOzmnMggs4NngMmGLScyJPQZDymKyAXmo2B5J3KMlTvLhiYdrUXtKgsIEsf29Vn6UjjOCYHEzJ2fYI0HvfaGJbQ4RS1XtRInBKBck7L8EzL5zu4X3KigsNw7LqRma5OB5AMZfOaPetwMub8XreBwGQGm0aeHMviQyAkzjp+/DiH0KDcYhLySN1AKLUeCBM/vqDrxsaGWhUFlW7AXiBnBfZGUZXqWu36SLsYQrUKRNUE4DkZwfE08Gp1w+aopOjk61feGt64UustuTi5bP4Q9makUOQXAPgCxG9ifaAj7gSqleHk3KGVJWm72QQbvI1+M8t0/eq7W9ffbbPhMJrwOwOYn9z1yZMniTog294k5e8cKhYfGmIVUZ78ZgW09OMWjQoNKYBkOXih4mRJFElZYJvX94g8t7fV4AKV17E9RaNZizPMA1QrL//8/F98/9m1kyc1lyiAHzeYHHOCjhxdw9fMQMlR7Er94gtWLpP8DmASRK1eP5jOyAbYJgZ1dPXti8HOjV6rTpgAbSAp3HvnnXdCOSSxmuX8MocKu+LHiRTmOVAfeOCBF154AfAKp4LKy4JoXqr3RdftUVXqlXKQlr1G6YVZ4rdIpcteHRwcxr5T9zvOu9fXX33pxReff47DpByFkmQi55/YuChI21vsx7A0mBkSsKQhq6FZVzx+OUM9m04ss+S3Bjm/CShig1/FtCQoAAJcefr06XvvvReRFHO9b7t1DpUZIahc4W/Y4PHHHz9z5gy/m2KFgCYTxrZgzCvRpb7XiL1Ruo/rvFvVV9XVFapySJKt80Yc5PyyoWk36q4ft1pBOO6x60oKCfspQxKxVWkvcsHCC5hb/qGTZInZgJbwldMi0axj655DxphfS8QEEZ0DR2ckB4IInBxif/LJJxFAdh8llhK1Mi9zqLCrUqqA4Qkv8DMkfrzx2muv0QI9mQivca1u0VV7Q6iF2FuOvWH3Q+UZNLJqbpOf77h6zS7MZBr0PL8mex+k/NNC0itoeEI0orXqIH+V3xOceqZ0OlBJn5KBg2sJjfiVVsz+PfvU8WyyPXPrck70jjvu+OhHP/rEE0/ApIoT9+Yjf+dQWQBu6AHRYXdgP/TQQ/AAvxWDBxR+GoGqbkEtb4usKlSQd1GXB5VaYtVkRYCBDubHarjxjYbIDz8y7HbbnCIkc4NSZkyhKbOTH+awEwlCeuGjILisstSrHeOyXvPTeGpxKCEKiyTuthqcE59MJA3M9GDdT3ziEydOnEAbo5aY9n4Gnlt56EbhmaIedegMfn7F8d3vfve5555DbmFslBaDotBxFagwVHXlPVBJC69z3VO/VVWhrZhwX7t0rlanqtwU8vm7kFuei1goncTo0gLl2V9lRThxwqmM2WyCUfJcf3Xt6N/4yMfAefToUeZAUYShwluq3JRV7qs+8owKw9H7/e9/PwuDKr58+TKJbH5/Q9aTFh6p9yuQqirX/UPfbP3N1VhrmI7x8lyOUnW6y/xiil+xfuxjH0PrgpNGxaELLIuPz6nK7NWkQUgn6rA+tMUIYW8Aee3atXfeeQfACDBjqe/tB6bq+1sW3/gNVlhiJsaA2BVkDT8B+Tx+/PipU6e45etMDCw8pScoqC++Poeq3qerKnSiABVzjJPIm8gtAgBsGJv34WeGoPMvvS5G/41X1KyAAfWQIygBWn5tyvxFznGVq19oK0FToBZzmEOFUHsw5y0KA9gYjjcV2dVwoFXv//+HyuzBwzSYEoCZFbdMhhZumQ9roebGI0CxIuqW6/wZs6e3mrp6mbpq4R2e0sjoFCoMQUUNoV65Odw+NbBo/A1W+LpadIBBVUZmMmo+zJaiyM6Vid0+N7UMC6jcLsZSL/NIsQfwaNk/b/WualH12zrs7/wbqauvAJgK31KUVKuvxgee6qPWYj8P/19+n421aBgoQAAAAABJRU5ErkJggg==",
+  "author": "VMware, Inc.",
+  "contentVersion": "2.0.3",
+  "url": "https://solutionexchange.vmware.com/store/loginsight",
+  "info": "<span><span><span><span></span><span><span><span><span><span><span><span><span><span>VMware®\n Horizon View™ (formerly VMware View) is a virtual desktop \ninfrastructure solution that simplifies desktop management. This Content\n Pack simplifies managing View servers with analytic dashboards for \nServer, Sessions, Users, Domain and more by inspecting the Horizon View™\n logs.</span></span></span></span></span></span></span></span><br></span></span></span></span>"
+}

@@ -1,0 +1,1385 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Number of Error events over time by hostname",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403236800000 & ((providername:\"msftesql-exchange\" | providername:\"msexchange*\" | providername:\"exchange*\" | providername:\"microsoft-exchange*\") & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of events received over time. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/bb124558%28v=exchg.141%29.aspx\">Exchange Server 2010</a> or <a href=\"http://technet.microsoft.com/en-us/library/bb124558%28v=exchg.150%29.aspx\">Exchange Server 2013</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of events by level",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403236800000 & (providername:\"msftesql-exchange\" | providername:\"MSExchange*\" | providername:\"exchange*\" | providername:\"microsoft-exchange*\") as item0 GROUP BY item0.level ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of events received grouped by level. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/bb124558%28v=exchg.141%29.aspx\">Exchange Server 2010</a> or <a href=\"http://technet.microsoft.com/en-us/library/bb124558%28v=exchg.150%29.aspx\">Exchange Server 2013</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum number of services for server roles not running over time grouped by FQDN",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0) FROM timestamp >= 1403018379885 & timestamp <= 1403018679884 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000) & text=~\"Fqdn='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000>.*)' ExchangeVersion\") & text=~\"NumberOfServicesNotRunningForServerRoles='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0>-?\\d+)' DataPath\" as item0 GROUP BY item0.timestamp/5000,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000 ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0) DESC LIMIT 1,100",
+                  "info": "Specific services need to be running on each Exchange Server, based on the roles it has been designated to fulfill. &nbsp;The total number of services not running at any given execution of the script that supplies this data will appear in this widget, grouped by FQDN.<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/bb331967(v=exchg.141).aspx\">2010 - Services used by a Client Access Server</a><br><a href=\"http://technet.microsoft.com/en-us/library/bb124699(v=exchg.141).aspx\">2010 - Overview of the Mailbox Server Role, Services and Port Executables section</a><br><a href=\"http://technet.microsoft.com/en-us/library/ee423542(v=exchg.141).aspx\">2010 - Overview of Services Installed by Exchange Setup</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mailbox",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Mailbox Server error events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403205079116 & timestamp <= 1403208685809 & ((providername:\"msexchange adaccess\" | providername:\"msexchangeapplicationlogic\" | providername:\"msexchange common\" | providername:\"msexchange control panel\" | providername:\"exchangestoredb\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeal\" | providername:\"msexchangeis\" | providername:\"msexchange mailbox replication\" | providername:\"msexchangerpc\" | providername:\"msexchangesa\" | providername:\"msexchangesetup\" | providername:\"msexchange oab maintenance\" | providername:\"msexchange search indexer\" | providername:\"microsoft-exchange-mailboxdatabasefailureitems\" | providername:\"msexchange mailboxsearch\" | providername:\"msexchangeis mailbox store\" | providername:\"exchange migration\" | providername:\"msexchange provisioning mailboxassistant\" | providername:\"msexchangemailboxassistants\" | providername:\"msexchange auditlogsearch\" | providername:\"msexchange mid-tier storage\" | providername:\"msexchange sacl watcher\" | providername:\"msftesql-exchange\" | providername:\"msexchangetransportlogsearch\" | providername:\"msexchangerepl\" | providername:\"microsoft-exchange-highavailability\" | providername:\"msexchangeis public store\" | providername:\"msexchange topology\" | providername:\"msexchangemailsubmission\" | providername:\"msexchangethrottling\" | providername:\"msexchangeservicehost\" | providername:\"msexchange x400 proxy\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of error events received grouped by provider name. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd351040%28v=exchg.141%29.aspx\">Mailbox</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Mailbox Server warning events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403205135468 & timestamp <= 1403208746673 & ((providername:\"msexchange adaccess\" | providername:\"msexchangeapplicationlogic\" | providername:\"msexchange common\" | providername:\"msexchange control panel\" | providername:\"exchangestoredb\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeal\" | providername:\"msexchangeis\" | providername:\"msexchange mailbox replication\" | providername:\"msexchangerpc\" | providername:\"msexchangesa\" | providername:\"msexchangesetup\" | providername:\"msexchange oab maintenance\" | providername:\"msexchange search indexer\" | providername:\"microsoft-exchange-mailboxdatabasefailureitems\" | providername:\"msexchange mailboxsearch\" | providername:\"msexchangeis mailbox store\" | providername:\"exchange migration\" | providername:\"msexchange provisioning mailboxassistant\" | providername:\"msexchangemailboxassistants\" | providername:\"msexchange auditlogsearch\" | providername:\"msexchange mid-tier storage\" | providername:\"msexchange sacl watcher\" | providername:\"msftesql-exchange\" | providername:\"msexchangetransportlogsearch\" | providername:\"msexchangerepl\" | providername:\"microsoft-exchange-highavailability\" | providername:\"msexchangeis public store\" | providername:\"msexchange topology\" | providername:\"msexchangemailsubmission\" | providername:\"msexchangethrottling\" | providername:\"msexchangeservicehost\" | providername:\"msexchange x400 proxy\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & level:\"warning\") as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of warning events received grouped by provider name. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd351040%28v=exchg.141%29.aspx\">Mailbox</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"normal\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Database Health Check events by hostname, health check status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403265586001 & timestamp <= 1403269188882 & (providername:\"msexchange*\" & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3upfygk000) & text=~\"Database\\s+(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3upfygk000>.*)\\s+health check\")) & text=~\"Database.*health check\\s+(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3torqxi5lt>.*)( on node '.*'\\.|\\.\\s+Database copy:|\\.\\s+Mailbox server:|\\.\\s+Network:)\" as item0 GROUP BY item0.hostname,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3torqxi5lt ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Number of Database health check events grouped by hostname and health check status.<br><br>For more information, see:&nbsp;<br><a href=\"http://technet.microsoft.com/en-us/library/bb331958%28v=exchg.141%29.aspx\">Understanding the Exchange 2010 Store</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Insufficient Data Redundancy events by server, status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403265650001 & timestamp <= 1403269255692 & (providername:\"msexchange*\" & eventid:\"4138\") & text=~\"Databases on server (?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643foj3gk4q0>.*) have (in|)sufficient\" & text=~\"Databases on server.*have\\s(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643umf2hk4y0>.*)\\sdata (protection\\.|redundancy\\.)\" as item0 GROUP BY item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643foj3gk4q0,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643umf2hk4y0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Some databases have insufficient data redundancy.<br><br>When running in an Exchange 2013 mailbox resiliency environment, it's \nimportant that you monitor the health and status of the DAG and your \nmailbox database copies. It's especially vital to perform data redundancy risk management and monitor for periods in which a replicated database is down to just a single copy. <br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd638137%28v=exchg.150%29.aspx\">High Availability and Site Resilience</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Free space on drive with Exchange data path over time, grouped by FQDN",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000) FROM timestamp >= 1402947853139 & timestamp <= 1402951453138 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000) & text=~\"FreeSpaceAsPercentage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000>-?\\d*\\.?\\d+)'\") & text=~\"Fqdn='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000>.*)' ExchangeVersion\" as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000 ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000) DESC LIMIT 1,100",
+                  "info": "Monitoring the amount of free disk space that Mailbox databases have available on their respective Mailbox Server is critical to avoid impact end-users. &nbsp;If you see the percentage of free space rapidly dwindling between collections, it is wise to address the problem immediately.<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd351078(v=exchg.141).aspx\">2010 - Managing Mailbox Databases</a><br><a href=\"http://technet.microsoft.com/en-us/library/jj150580(v=exchg.150).aspx\">2013 - Managing Mailbox Databases</a>"
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Additional Mailbox Server Queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403029938001 & timestamp <= 1403634748660 & (providername:\"msexchange adaccess\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "ADAccess error and warning of events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403029938001 & timestamp <= 1403634748660 & (providername:\"msexchange adaccess\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates MSExchange ADAccess events in Event Viewer so that you can troubleshoot and verify the ADAccessfeatures, and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994891%28v=exchg.141%29.aspx\">ADAccess Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030068168 & timestamp <= 1403634871188 & (providername:\"msexchangeApplicationLogic\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "ApplicationLogic error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030068168 & timestamp <= 1403634871188 & (providername:\"msexchangeApplicationLogic\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Application Logic events in Event Viewer so that you can troubleshoot and verify the MSExchangeApplicationLogic features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994869%28v=exchg.141%29.aspx\">ApplicationLogic Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030277001 & timestamp <= 1403635085427 & (providername:\"msexchange common\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Common error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030277001 & timestamp <= 1403635085427 & (providername:\"msexchange common\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Exchange Common errors and events in Event Viewer so that you can troubleshoot and verify the Common features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994893%28v=exchg.141%29.aspx\">Common Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030341418 & timestamp <= 1403635150248 & (providername:\"msexchange control panel\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Control Panel error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030341418 & timestamp <= 1403635150248 & (providername:\"msexchange control panel\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates MSExchange Control Panel events in Event Viewer so that you can troubleshoot and verify the Exchange Control Panel features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994885%28v=exchg.141%29.aspx\">Control Panel Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030418001 & timestamp <= 1403635225417 & (providername:\"ExchangeStoreDB\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "ExchangeStoreDB error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030418001 & timestamp <= 1403635225417 & (providername:\"ExchangeStoreDB\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates ExchangeStoreDB events in Event Viewer so that you can troubleshoot and verify the ExchangeStoreDB features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994887%28v=exchg.141%29.aspx\">ExchangeStoreDB Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030488299 & timestamp <= 1403635302445 & (providername:\"ExchangeMonitoringCorrelation\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Monitoring Correlation error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030488299 & timestamp <= 1403635302445 & (providername:\"ExchangeMonitoringCorrelation\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft&nbsp;Exchange Server generates Monitoring Correlation events \nin Event Viewer so that you can troubleshoot and verify the \nMonitoringCorrelation features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994873%28v=exchg.141%29.aspx\">MonitoringCorrelation Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030580001 & timestamp <= 1403635392774 & (providername:\"MSExchangeAL\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "MSExchangeAL error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030580001 & timestamp <= 1403635392774 & (providername:\"MSExchangeAL\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Exchange Address List events in Event Viewer so that you can troubleshoot and verify the Address List Service features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994875%28v=exchg.141%29.aspx\">MSExchangeAL Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030688054 & timestamp <= 1403635501316 & (providername:\"MSExchangeFDS\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "MSExchangeFDS error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030688054 & timestamp <= 1403635501316 & (providername:\"MSExchangeFDS\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Microsoft Exchange File Distribution service events in Event Viewer so that you can troubleshoot and verify the Microsoft Exchange File Distribution features and services. See&nbsp; <a href=\"http://technet.microsoft.com/en-us/library/hh994882%28v=exchg.141%29.aspx\">Expand<br>MSExchangeFDS Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030755988 & timestamp <= 1403635569891 & (providername:\"MSExchangeIS\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "MSExchangeIS error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030755988 & timestamp <= 1403635569891 & (providername:\"MSExchangeIS\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Exchange Information Store events in Event Viewer so that you can troubleshoot and verify the MSExchangeIS features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994899%28v=exchg.141%29.aspx\">MSExchangeIS Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030838001 & timestamp <= 1403635652080 & (providername:\"MSExchangeRepl\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "MSExchangeRepl error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030838001 & timestamp <= 1403635652080 & (providername:\"MSExchangeRepl\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Replication service errors and events in Event Viewer so that you can troubleshoot and verify the Exchange Replication service features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994877%28v=exchg.141%29.aspx\">MSExchangeRepl Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403030941734 & timestamp <= 1403635753508 & (providername:\"MSExchangeRPC\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "MSExchangeRPC error and warning events grouped by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403030941734 & timestamp <= 1403635753508 & (providername:\"MSExchangeRPC\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Exchange RPC events in Event Viewer so that you can troubleshoot and verify the Exchange RPC features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994890%28v=exchg.141%29.aspx\">MSExchangeRPC Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403031018001 & timestamp <= 1403635827962 & (providername:\"MSExchangeSA\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "MSExchangeSA error and warning events grouped by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403031018001 & timestamp <= 1403635827962 & (providername:\"MSExchangeSA\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Exchange System Attendant service events in Event Viewer so that you can troubleshoot and verify the System Attendant features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994898%28v=exchg.141%29.aspx\">MSExchangeSA Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403031155691 & timestamp <= 1403635970639 & (providername:\"MSExchangeSetup\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "MSExchangeSetup error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403031155691 & timestamp <= 1403635970639 & (providername:\"MSExchangeSetup\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Exchange Setup events in Event Viewer so that you can troubleshoot and verify the MSExchangeSetup features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994881%28v=exchg.141%29.aspx\">MSExchangeSetup Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403031241669 & timestamp <= 1403636044580 & (providername:\"MSExchange OAB Maintenance\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "OAB Maintenance error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403031241669 & timestamp <= 1403636044580 & (providername:\"MSExchange OAB Maintenance\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates OAB Maintenance events in Event Viewer so that you can troubleshoot and verify the OAB Maintenance features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994880%28v=exchg.141%29.aspx\">OAB Maintenance Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403031318001 & timestamp <= 1403636129919 & (providername:\"MSExchange Progress Manager\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Progress Manager error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403031318001 & timestamp <= 1403636129919 & (providername:\"MSExchange Progress Manager\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Process Manager events in Event Viewer so that you can troubleshoot and verify the Process Manager features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994897%28v=exchg.141%29.aspx\">Progress Manager Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403031383104 & timestamp <= 1403636202856 & (providername:\"MSExchange Search Indexer\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Search Indexer error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403031383104 & timestamp <= 1403636202856 & (providername:\"MSExchange Search Indexer\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates MSExchange Search Indexer events in Event Viewer so that you can troubleshoot and verify the Search Indexer features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994902%28v=exchg.141%29.aspx\">Search Indexer Errors and Events</a><br>"
+                    }
+                  ],
+                  "info": "Mailbox Server error and warning event queries.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Transport",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Transport Server error events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403205470719 & timestamp <= 1403209077884 & ((providername:\"msexchange antispam\" | providername:\"msexchange anti-spam update\" | providername:\"msexchange edgesync\" | providername:\"msexchange extensibility\" | providername:\"msexchange messaging policies\" | providername:\"msexchange messagingpolicies\" | providername:\"msexchange store driver\" | providername:\"msexchangetransport\" | providername:\"msexchange transportservice\" | providername:\"msexchangetransportsyncworker\" | providername:\"msexchangetransportsynccommon\" | providername:\"msexchange topology\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeprotectedservicehost\" | providername:\"msexchangeservicehost\" | providername:\"msexchangetransportlogsearch\" | providername:\"msftesql-exchange\" | providername:\"Exchange antimalware\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of error events received grouped by provider name. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd351247%28v=exchg.141%29.aspx\">Transport</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Transport Server warning events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403205502462 & timestamp <= 1403209108146 & ((providername:\"msexchange antispam\" | providername:\"msexchange anti-spam update\" | providername:\"msexchange edgesync\" | providername:\"msexchange extensibility\" | providername:\"msexchange messaging policies\" | providername:\"msexchange messagingpolicies\" | providername:\"msexchange store driver\" | providername:\"msexchangetransport\" | providername:\"msexchange transportservice\" | providername:\"msexchangetransportsyncworker\" | providername:\"msexchangetransportsynccommon\" | providername:\"msexchange topology\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeprotectedservicehost\" | providername:\"msexchangeservicehost\" | providername:\"msexchangetransportlogsearch\" | providername:\"msftesql-exchange\" | providername:\"Exchange antimalware\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & level:\"warning\") as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of warning events received grouped by provider name. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd351247%28v=exchg.141%29.aspx\">Transport</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"normal\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Back Pressure events by hostname, event ID",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & ((providername:\"msexchange antispam\" | providername:\"msexchange anti-spam update\" | providername:\"msexchange edgesync\" | providername:\"msexchange extensibility\" | providername:\"msexchange messaging policies\" | providername:\"msexchange messagingpolicies\" | providername:\"msexchange store driver\" | providername:\"msexchangetransport\" | providername:\"msexchange transportservice\" | providername:\"msexchangetransportsyncworker\" | providername:\"msexchangetransportsynccommon\" | providername:\"msexchange topology\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeprotectedservicehost\" | providername:\"msexchangeservicehost\" | providername:\"msexchangetransportlogsearch\" | providername:\"msftesql-exchange\" | providername:\"Exchange antimalware\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\" | providername:\"microsoft-windows-iis-w3svc-wp\") & (eventid:\"15004\" | eventid:\"15005\" | eventid:\"15006\" | eventid:\"15007\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Back pressure is a system resource monitoring feature of the \nMicrosoft&nbsp;Exchange Transport service that exists on Microsoft&nbsp;Exchange \nServer 2010 Hub Transport and Edge Transport servers. Exchange transport\n can detect when vital resources, such as available hard disk space and \nmemory, are under pressure, and take action in an attempt to prevent \nservice unavailability. For more information see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/bb201658%28v=exchg.141%29.aspx\">Understanding Back Pressure</a><br><br>MS Exchange Transport<br><span style=\"font-weight: bold;\">Event ID&nbsp;&nbsp; Description</span><br>----------&nbsp;&nbsp; ----------------------------------------<br><a href=\"http://technet.microsoft.com/en-us/library/ff983066%28v=exchg.141%29.aspx\">15004</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Increase in any resource utilization level<br><a href=\"http://technet.microsoft.com/en-us/library/ff983232%28v=exchg.141%29.aspx\">15005</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Decrease in any resource utilization level<br><a href=\"http://technet.microsoft.com/en-us/library/ff983474%28v=exchg.141%29.aspx\">15006</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Critically low available disk space<br><a href=\"http://technet.microsoft.com/en-us/library/ff981403%28v=exchg.141%29.aspx\">15007</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Critically low available memory"
+                },
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"normal\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Critical Storage Error events by hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & text:\"critical\" & text:\"storage\" & text:\"error\" & (providername:\"msexchange antispam\" | providername:\"msexchange anti-spam update\" | providername:\"msexchange edgesync\" | providername:\"msexchange extensibility\" | providername:\"msexchange messaging policies\" | providername:\"msexchange messagingpolicies\" | providername:\"msexchange store driver\" | providername:\"msexchangetransport\" | providername:\"msexchange transportservice\" | providername:\"msexchangetransportsyncworker\" | providername:\"msexchangetransportsynccommon\" | providername:\"msexchange topology\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeprotectedservicehost\" | providername:\"msexchangeservicehost\" | providername:\"msexchangetransportlogsearch\" | providername:\"msftesql-exchange\" | providername:\"Exchange antimalware\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The MSExchangeTransport service detected a critical storage error. More \ninformation is available in the event(s) that triggered this alert.<br><br>MS Exchange Transport<br><span style=\"font-weight: bold;\">Event ID&nbsp;&nbsp; Description</span><br>----------&nbsp;&nbsp; ----------------------------------------<br><a href=\"http://technet.microsoft.com/en-us/library/ff985194%28v=exchg.141%29.aspx\">17101</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manual recovery actions required<br><a href=\"http://technet.microsoft.com/en-us/library/ff981605%28v=exchg.141%29.aspx\">17102</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Automated recovery action taken by moving the database<br><a href=\"http://technet.microsoft.com/en-us/library/ff985324%28v=exchg.141%29.aspx\">17103</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Automated recovery action was taken<br><a href=\"http://technet.microsoft.com/en-us/library/ff982493%28v=exchg.141%29.aspx\">17104</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Failed to complete recovery action<br><a href=\"http://technet.microsoft.com/en-us/library/ff980838%28v=exchg.141%29.aspx\">17105</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Insufficient permission to update the registry<br><a href=\"http://technet.microsoft.com/en-us/library/ff982662%28v=exchg.141%29.aspx\">17106</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Corrupted database detected<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Resource Pressure Increase events by ending pressure level, hostname, change direction",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403265738353 & timestamp <= 1403269344629 & (providername:\"msexchange*\" & eventid:\"15004\") & text=~\"The resource pressure\\s(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfonxxk4tdmvpxa4tfonzxk4tfl5sgs4tfmn2gs33o>\\w+)\\s+from\" & text=~\"The resource pressure.*from.*to\\s(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfonxxk4tdmvpxa4tfonzxk4tfl52g6x3mmv3gk3a0>\\S+)\\.\" as item0 GROUP BY item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfonxxk4tdmvpxa4tfonzxk4tfl52g6x3mmv3gk3a0,item0.hostname,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfonxxk4tdmvpxa4tfonzxk4tfl5sgs4tfmn2gs33o ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This Warning event indicates that the Microsoft Exchange Transport service is experiencing a resource usage issue. See&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/ff983066%28v=exchg.141%29.aspx\">MSExchangeTransport 15004</a>&nbsp;for and explanation and possible solutions."
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Additional Transport Server Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & text:\"The Microsoft Exchange Transport service is shutting down.\" & ((providername:\"msexchange antispam\" | providername:\"msexchange anti-spam update\" | providername:\"msexchange edgesync\" | providername:\"msexchange extensibility\" | providername:\"msexchange messaging policies\" | providername:\"msexchange messagingpolicies\" | providername:\"msexchange store driver\" | providername:\"msexchangetransport\" | providername:\"msexchange transportservice\" | providername:\"msexchangetransportsyncworker\" | providername:\"msexchangetransportsynccommon\" | providername:\"msexchange topology\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeprotectedservicehost\" | providername:\"msexchangeservicehost\" | providername:\"msexchangetransportlogsearch\" | providername:\"msftesql-exchange\" | providername:\"Exchange antimalware\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & level:\"error\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Transport Shutting Down events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & text:\"The Microsoft Exchange Transport service is shutting down.\" & ((providername:\"msexchange antispam\" | providername:\"msexchange anti-spam update\" | providername:\"msexchange edgesync\" | providername:\"msexchange extensibility\" | providername:\"msexchange messaging policies\" | providername:\"msexchange messagingpolicies\" | providername:\"msexchange store driver\" | providername:\"msexchangetransport\" | providername:\"msexchange transportservice\" | providername:\"msexchangetransportsyncworker\" | providername:\"msexchangetransportsynccommon\" | providername:\"msexchange topology\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeprotectedservicehost\" | providername:\"msexchangeservicehost\" | providername:\"msexchangetransportlogsearch\" | providername:\"msftesql-exchange\" | providername:\"Exchange antimalware\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & level:\"error\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"column\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Events that cause the MS Exchange Transport service to shut down, grouped by hostname.<br><br>See:&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/hh994900%28v=exchg.141%29.aspx\">Transport Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange antispam\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Antispam error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange antispam\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft&nbsp;Exchange Server generates Antispam events in Event Viewer\n so that you can troubleshoot and verify the Antispam features and \nservices. See <a href=\"http://technet.microsoft.com/en-us/library/hh994886%28v=exchg.141%29.aspx\">Antispam Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange anti-spam update\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Anti-Spam Updates error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange anti-spam update\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft&nbsp;Exchange Server generates Anti-spam Update events in \nEvent Viewer so that you can troubleshoot and verify the Anti-spam \nUpdate features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994871%28v=exchg.141%29.aspx\">Antispam Update Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange edgesync\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "EdgeSync error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange edgesync\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft&nbsp;Exchange Server generates EdgeSync events in Event Viewer\n so that you can troubleshoot and verify the EdgeSync features and \nservices. See <a href=\"http://technet.microsoft.com/en-us/library/hh994883%28v=exchg.141%29.aspx\">EdgeSync Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange extensibility\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Extensibility error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange extensibility\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft&nbsp;Exchange Server generates Extensibility events in Event \nViewer so that you can troubleshoot and verify the Extensibility \nfeatures and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994872%28v=exchg.141%29.aspx\">Extensibility Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchangeMailSubmission\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Mail Submission error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchangeMailSubmission\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft&nbsp;Exchange Server generates Mail Submission events in Event\n Viewer so that you can troubleshoot and verify the \nMSExchangeMailSubmission features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994874%28v=exchg.141%29.aspx\">Mail Submission Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange Messaging Policies\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Messaging Policies error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403025844856 & timestamp <= 1403630644855 & (providername:\"msexchange Messaging Policies\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft&nbsp;Exchange Server generates Messaging Policies events in \nEvent Viewer so that you can troubleshoot and verify the Messaging \nPolicies features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994879%28v=exchg.141%29.aspx\"><span>Messaging Policies Errors and Events</span></a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & (providername:\"msexchange message security\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Message Security error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & (providername:\"msexchange message security\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft&nbsp;Exchange Server generates Message Security events in \nEvent Viewer so that you can troubleshoot and verify the Message \nSecurity features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994876%28v=exchg.141%29.aspx\">Message Security Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & (providername:\"msexchange store driver\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Store Driver error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & (providername:\"msexchange store driver\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates MSExchange Store Driver events in Event Viewer so that you can troubleshoot and verify the Store Driver features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994889%28v=exchg.141%29.aspx\">Store Driver Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & (providername:\"msexchangetransport\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Transport error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & (providername:\"msexchangetransport\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates MSExchangeTransport events in Event Viewer so that you can troubleshoot and verify the Exchange Transport features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994900%28v=exchg.141%29.aspx\">Transport Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & (providername:\"msexchangetransportlogsearch\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "TransportLogSearch error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402891200000 & timestamp <= 1403621385329 & (providername:\"msexchangetransportlogsearch\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates TransportLogSearch events in Event Viewer so that you can troubleshoot and verify the TransportLogSearch features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994884%28v=exchg.141%29.aspx\">TransportLogSearch Errors and Events</a><br>"
+                    }
+                  ],
+                  "info": "Transport Server error and warning event queries.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Client Access & Unified Messaging",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Client Access Server error events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403206313190 & timestamp <= 1403209920053 & ((providername:\"msexchange activesync\" | providername:\"msexchange availability\" | providername:\"msexchange autodiscover\" | providername:\"msexchange certificate deployment\" | providername:\"msexchange owa\" | providername:\"msexchange rpc over http autoconfig\" | providername:\"msexchangeservicehost\" | providername:\"msexchange imap4 service\" | providername:\"msexchange pop3 service\" | providername:\"msexchangeimap4\" | providername:\"msexchangepop3\" | providername:\"msexchange web services\" | providername:\"msexchange mailtips\" | providername:\"msexchange certificate authentication module\" | providername:\"msexchange internet proxy\" | providername:\"msexchangethrottlingclient\" | providername:\"msexchangeab\" | providername:\"msexchange topology\" | providername:\"msexchangefds\" | providername:\"msexchange outlookprotectionrules\" | providername:\"msexchange delegated authentication module\" | providername:\"msexchangemailboxreplication\" | providername:\"msexchangemonitoring\" | providername:\"msexchangerpc\" | providername:\"msexchange certificate notification\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of error events received grouped by provider name. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd298114%28v=exchg.141%29.aspx\">Client Access</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Unified Messaging Server error events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403206405001 & timestamp <= 1403210005867 & ((providername:\"msexchange unified messaging\" | providername:\"msexchange topology\" | providername:\"msexchangefds\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeservicehost\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of error events received grouped by provider name. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd298185%28v=exchg.141%29.aspx\">Unified Messaging</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Client Access Server warning events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403206333424 & timestamp <= 1403209937747 & ((providername:\"msexchange activesync\" | providername:\"msexchange availability\" | providername:\"msexchange autodiscover\" | providername:\"msexchange certificate deployment\" | providername:\"msexchange owa\" | providername:\"msexchange rpc over http autoconfig\" | providername:\"msexchangeservicehost\" | providername:\"msexchange imap4 service\" | providername:\"msexchange pop3 service\" | providername:\"msexchangeimap4\" | providername:\"msexchangepop3\" | providername:\"msexchange web services\" | providername:\"msexchange mailtips\" | providername:\"msexchange certificate authentication module\" | providername:\"msexchange internet proxy\" | providername:\"msexchangethrottlingclient\" | providername:\"msexchangeab\" | providername:\"msexchange topology\" | providername:\"msexchangefds\" | providername:\"msexchange outlookprotectionrules\" | providername:\"msexchange delegated authentication module\" | providername:\"msexchangemailboxreplication\" | providername:\"msexchangemonitoring\" | providername:\"msexchangerpc\" | providername:\"msexchange certificate notification\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & level:\"warning\") as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of warning events received grouped by provider name. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd298114%28v=exchg.141%29.aspx\">Client Access</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Unified Messaging Server warning events by providername",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403206485502 & timestamp <= 1403210089374 & ((providername:\"msexchange unified messaging\" | providername:\"msexchange topology\" | providername:\"msexchangefds\" | providername:\"msexchangemonitoring\" | providername:\"msexchangeservicehost\" | providername:\"msexchange configuration core\" | providername:\"msexchange diagnosticsaggregation\" | providername:\"msexchange client diagnostics module\" | providername:\"msexchangediagnostics\" | providername:\"msexchange failfast module\" | providername:\"msexchange remotepowershell backendcmdletproxy module\" | providername:\"msexchangesubmission\" | providername:\"msexchangehm\" | providername:\"msexchangehmhost\" | providername:\"msexchangefastsearch\") & level:\"warning\") as item0 GROUP BY item0.providername ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The total number of warning events received grouped by provider name. An increase in events may\n point to a change in the environment whereas a large increase in events may be\n an indication of an issue in the environment.<br><br>For more information, see <a href=\"http://technet.microsoft.com/en-us/library/dd298185%28v=exchg.141%29.aspx\">Unified Messaging</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Addtional Client Access Queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403032099001 & timestamp <= 1403636903098 & (providername:\"msexchange ActiveSync\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "ActiveSync error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403032099001 & timestamp <= 1403636903098 & (providername:\"msexchange ActiveSync\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server ActiveSync generates events in Event Viewer so that you can troubleshoot and verify the performance of ActiveSync features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994894%28v=exchg.141%29.aspx\">ActiveSync Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403032188412 & timestamp <= 1403637002552 & (providername:\"msexchange Availability\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Availability Service error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403032188412 & timestamp <= 1403637002552 & (providername:\"msexchange Availability\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server Availability generates events in Event Viewer so that you can troubleshoot and verify the performance of the Exchange Availability features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994896%28v=exchg.141%29.aspx\">Availability Service Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403032638001 & timestamp <= 1403637441996 & (providername:\"msexchange Autodiscover\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Autodiscover error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403032638001 & timestamp <= 1403637441996 & (providername:\"msexchange Autodiscover\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Autodiscover service events in Event Viewer so that you can troubleshoot and verify the performance of the Autodiscover features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994895%28v=exchg.141%29.aspx\">Autodiscover Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403032708001 & timestamp <= 1403637508802 & (providername:\"msexchange Certificate Deployment\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Certificate Deployment error and warning events by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403032708001 & timestamp <= 1403637508802 & (providername:\"msexchange Certificate Deployment\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Certificate Deployment events in Event Viewer so that you can troubleshoot and verify the Certificate Deployment features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994892%28v=exchg.141%29.aspx\">Certificate Deployment Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403032775001 & timestamp <= 1403637579990 & (providername:\"msexchange OWA\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "OWA error and warning events grouped by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403032775001 & timestamp <= 1403637579990 & (providername:\"msexchange OWA\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Outlook Web App events in Event Viewer so that you can troubleshoot and verify the OWA features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994878%28v=exchg.141%29.aspx\">OWA Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403032843623 & timestamp <= 1403637647965 & (providername:\"msexchangeRPCHTTPAutoConfig\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "RPCHTTPAutoConfig error and warning events grouped by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403032843623 & timestamp <= 1403637647965 & (providername:\"msexchangeRPCHTTPAutoConfig\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates RPC Over Autonconfig events in Event Viewer so that you can troubleshoot and verify the RPC Over Autonconfig features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994870%28v=exchg.141%29.aspx\">RPCHTTPAutoConfig Errors and Events</a><br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1403032939001 & timestamp <= 1403637739768 & (providername:\"msexchangeServiceHost\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "ServiceHost error and warning events grouped by hostname, eventid",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403032939001 & timestamp <= 1403637739768 & (providername:\"msexchangeServiceHost\" & (level:\"critical\" | level:\"error\" | level:\"warning\")) as item0 GROUP BY item0.hostname,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"normal\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Microsoft Exchange Server generates Microsoft Exchange Service Host service Certificate Deployment events in Event Viewer so that you can troubleshoot and verify the Microsoft Exchange Service Host features and services. See <a href=\"http://technet.microsoft.com/en-us/library/hh994901%28v=exchg.141%29.aspx\">ServiceHost Errors and Events</a><br>"
+                    }
+                  ],
+                  "info": "Client Access error and warning event queries.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Administrator Audit Log",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Count of error events over time grouped by originating server",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403098194776 & timestamp <= 1403101794775 & ((FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000) & text=~\"OriginatingServer='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000>\\S+)'\\, Caller=.*ObjectModified=\") & (!ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6zlsojxxe000:\"None*\" & text=~\"OriginatingServer=.*Error='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6zlsojxxe000>.*)'\\, IsValid\")) as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "When an Exchange user or administrator makes actions which make changes to the organization, entries are recorded in an Administrator Audit Log. &nbsp;Any changes that fail in error will be displayed in this widget under the originating server where the user or administrator initiated the action.<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335052(v=exchg.141).aspx\">Overview of Administrator Audit Logging</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Count of error events over time grouped by caller",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1403098194776 & timestamp <= 1403101794775 & ((FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000) & text=~\"OriginatingServer='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000>\\S+)'\\, Caller=.*ObjectModified=\") & (!ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6zlsojxxe000:\"None*\" & text=~\"OriginatingServer=.*Error='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6zlsojxxe000>.*)'\\, IsValid\")) & text=~\"OriginatingServer=.*Caller='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3bnrwgk4q0>.*)'\\, ObjectModified\" as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3bnrwgk4q0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "When an Exchange user or administrator makes actions which make changes to the organization, entries are recorded in an Administrator Audit Log. &nbsp;Any changes that fail in error will be displayed in this widget under the username of the initiating user or administrator.<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335052(v=exchg.141).aspx\">Overview of Administrator Audit Logging</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Unique count of Cmdlets called",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3nmrwgk5c7nzqw2zi0) FROM timestamp >= 1403081566417 & timestamp <= 1403103167649 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000) & text=~\"OriginatingServer='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000>\\S+)'\\, Caller=.*ObjectModified=\") & text=~\"OriginatingServer=.*CmdletName='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3nmrwgk5c7nzqw2zi0>\\S+)'\\, CmdletParameters\" as item0 GROUP BY item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3nmrwgk5c7nzqw2zi0 ORDER BY UCOUNT(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3nmrwgk5c7nzqw2zi0) DESC LIMIT 1,100",
+                  "info": "Cmdlets can be called by users or Administrators to make changes to the organization.<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/bb124413(v=exchg.141).aspx\">Exchange 2010 Cmdlets</a><br><a href=\"http://technet.microsoft.com/en-us/library/bb124413(v=exchg.150).aspx\">Exchange 2013 Cmdlets</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Unique count of objects modified",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633cnjswg5c7nvxwi2lgnfswi000) FROM timestamp >= 1403082022919 & timestamp <= 1403103622918 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000) & text=~\"OriginatingServer='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000>\\S+)'\\, Caller=.*ObjectModified=\") & text=~\"OriginatingServer=.*ObjectModified='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633cnjswg5c7nvxwi2lgnfswi000>.*)'\\, CmdletName\" as item0 GROUP BY item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633cnjswg5c7nvxwi2lgnfswi000 ORDER BY UCOUNT(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633cnjswg5c7nvxwi2lgnfswi000) DESC LIMIT 1,100",
+                  "info": "When Cmdlets are called by users or Administrators, they modify an underlying object.<br><br><span>For more information, see:</span><br><a href=\"http://technet.microsoft.com/en-us/library/bb124413(v=exchg.141).aspx\">Exchange 2010 Cmdlets</a><br><a href=\"http://technet.microsoft.com/en-us/library/bb124413(v=exchg.150).aspx\">Exchange 2013 Cmdlets</a><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Performance Counters",
+          "constraints": [],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum of SMTP Average bytes/message received over time grouped by hostname",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) FROM timestamp >= 1403628240287 & timestamp <= 1403631840286 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) & text=~\"SMTPReceive_AverageBytesPerMessage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f>-?\\d+)' SMTPReceive_MessagesReceivedPerSecond\") as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) DESC LIMIT 1,100",
+                  "info": "<span>Shows the average number of message bytes per inbound message received. Determines sizes of messages being received for an SMTP receive connector.<br></span><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335215(v=exchg.141).aspx\">Exchange Performance Counters</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum of SMTP messages received/second over time grouped by hostname",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7nvsxg43bm5sxgx3smvrwk2lwmvsf64dfojpxgzldn5xgi000) FROM timestamp >= 1403628240287 & timestamp <= 1403631840286 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) & text=~\"SMTPReceive_AverageBytesPerMessage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f>-?\\d+)' SMTPReceive_MessagesReceivedPerSecond\") & text=~\"SMTPReceive_MessagesReceivedPerSecond='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7nvsxg43bm5sxgx3smvrwk2lwmvsf64dfojpxgzldn5xgi000>-?\\d+)' SmtpSend_MessagesSentPerSecond\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7nvsxg43bm5sxgx3smvrwk2lwmvsf64dfojpxgzldn5xgi000) DESC LIMIT 1,100",
+                  "info": "<span>Shows the number of messages received by the SMTP server each second. Determines current load. Compare values to historical baselines.<br></span><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335215(v=exchg.141).aspx\">Exchange Performance Counters</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum of SMTP messages sent/second over time grouped by hostname",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxgzlomrpw2zltonqwozltl5zwk3tul5ygk4s7onswg33omq000000) FROM timestamp >= 1403628240287 & timestamp <= 1403631840286 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) & text=~\"SMTPReceive_AverageBytesPerMessage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f>-?\\d+)' SMTPReceive_MessagesReceivedPerSecond\") & text=~\"SmtpSend_MessagesSentPerSecond='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxgzlomrpw2zltonqwozltl5zwk3tul5ygk4s7onswg33omq000000>-?\\d+)' StoreDriver_Inbound_LocalDeliveryCallsPerSecond\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxgzlomrpw2zltonqwozltl5zwk3tul5ygk4s7onswg33omq000000) DESC LIMIT 1,100",
+                  "info": "<span>Shows the number of messages sent by the SMTP send connector each second. Determines current load. Compare values to historical baselines.<br></span><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335215(v=exchg.141).aspx\">Exchange Performance Counters</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum of local delivery calls/second (inbound) over time grouped by hostname",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf63dpmnqwyx3emvwgs5tfoj4v6y3bnrwhgx3qmvzf643fmnxw4za0) FROM timestamp >= 1403628240287 & timestamp <= 1403631840286 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) & text=~\"SMTPReceive_AverageBytesPerMessage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f>-?\\d+)' SMTPReceive_MessagesReceivedPerSecond\") & text=~\"StoreDriver_Inbound_LocalDeliveryCallsPerSecond='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf63dpmnqwyx3emvwgs5tfoj4v6y3bnrwhgx3qmvzf643fmnxw4za0>-?\\d+)' StoreDriver_Inbound_MessageDeliveryAttemptsPerSecond\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf63dpmnqwyx3emvwgs5tfoj4v6y3bnrwhgx3qmvzf643fmnxw4za0) DESC LIMIT 1,100",
+                  "info": "<span>Shows the number of local delivery attempts per second. Determines current load. Compare values to historical baselines.<br></span><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335215(v=exchg.141).aspx\">Exchange Performance Counters</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum of message delivery attempts/second (inbound) over time grouped by hostname",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf63lfonzwcz3fl5sgk3djozsxe6k7mf2hizlnob2hgx3qmvzf643fmnxw4za0) FROM timestamp >= 1403628240287 & timestamp <= 1403631840286 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) & text=~\"SMTPReceive_AverageBytesPerMessage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f>-?\\d+)' SMTPReceive_MessagesReceivedPerSecond\") & text=~\"StoreDriver_Inbound_MessageDeliveryAttemptsPerSecond='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf63lfonzwcz3fl5sgk3djozsxe6k7mf2hizlnob2hgx3qmvzf643fmnxw4za0>-?\\d+)' StoreDriver_Inbound_RecipientsDeliveredPerSecond\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf63lfonzwcz3fl5sgk3djozsxe6k7mf2hizlnob2hgx3qmvzf643fmnxw4za0) DESC LIMIT 1,100",
+                  "info": "<span>Shows the number of attempts for delivering transport mail items per second. Determines current load. Compare values to historical baselines.<br></span><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335215(v=exchg.141).aspx\">Exchange Performance Counters</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum of recipients delivered/second (inbound) over time grouped by hostname",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf64tfmnuxa2lfnz2hgx3emvwgs5tfojswix3qmvzf643fmnxw4za0) FROM timestamp >= 1403628240287 & timestamp <= 1403631840286 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) & text=~\"SMTPReceive_AverageBytesPerMessage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f>-?\\d+)' SMTPReceive_MessagesReceivedPerSecond\") & text=~\"StoreDriver_Inbound_RecipientsDeliveredPerSecond='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf64tfmnuxa2lfnz2hgx3emvwgs5tfojswix3qmvzf643fmnxw4za0>-?\\d+)' StoreDriver_Outbound_SubmittedMailItemsPerSecond\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf64tfmnuxa2lfnz2hgx3emvwgs5tfojswix3qmvzf643fmnxw4za0) DESC LIMIT 1,100",
+                  "info": "<span>Shows the number of inbound recipients delivered per second. Determines current load. Compare values to historical baselines.<br></span><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335215(v=exchg.141).aspx\">Exchange Performance Counters</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Maximum of submitted mail items/second (outbound) over time grouped by hostname",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7n52xiytpovxgix3tovrg22luorswix3nmfuwyx3jorsw2427obsxex3tmvrw63te) FROM timestamp >= 1403628240287 & timestamp <= 1403631840286 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f) & text=~\"SMTPReceive_AverageBytesPerMessage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f>-?\\d+)' SMTPReceive_MessagesReceivedPerSecond\") & text=~\"StoreDriver_Outbound_SubmittedMailItemsPerSecond='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7n52xiytpovxgix3tovrg22luorswix3nmfuwyx3jorsw2427obsxex3tmvrw63te>-?\\d+)'\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7n52xiytpovxgix3tovrg22luorswix3nmfuwyx3jorsw2427obsxex3tmvrw63te) DESC LIMIT 1,100",
+                  "info": "<span>Shows the number of mail items per second being submitted. Determines current load. Compare values to historical baselines.<br></span><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd335215(v=exchg.141).aspx\">Exchange Performance Counters</a><br>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1402938513104 & timestamp <= 1403024913487 & (providername:\"MSExchange*\" & (ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3torqxi5lt:\"failed\" & text=~\"Database.*health check\\s+(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3torqxi5lt>.*)( on node '.*'\\.|\\.\\s+Database copy:|\\.\\s+Mailbox server:|\\.\\s+Network:)\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Exchange database health check failed",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402938513104 & timestamp <= 1403024913487 & (providername:\"MSExchange*\" & (ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3torqxi5lt:\"failed\" & text=~\"Database.*health check\\s+(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3torqxi5lt>.*)( on node '.*'\\.|\\.\\s+Database copy:|\\.\\s+Mailbox server:|\\.\\s+Network:)\")) as item0 GROUP BY item0.hostname,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3torqxi5lt ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "A database health check failed. More information is available in the event(s) that triggered this alert.<br><br>See also: <a href=\"http://technet.microsoft.com/en-us/library/dd351258%28v=exchg.150%29.aspx\"><span>Monitoring Database Availability Groups</span></a>"
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1403018600657 & timestamp <= 1403018900656 & ((FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000) & text=~\"Fqdn='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000>.*)' ExchangeVersion\") & (ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0>0 & text=~\"NumberOfServicesNotRunningForServerRoles='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0>-?\\d+)' DataPath\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Services required for Exchange Server roles are not running",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0) FROM timestamp >= 1403018600657 & timestamp <= 1403018900656 & ((FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000) & text=~\"Fqdn='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000>.*)' ExchangeVersion\") & (ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0>0 & text=~\"NumberOfServicesNotRunningForServerRoles='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0>-?\\d+)' DataPath\")) as item0 GROUP BY item0.timestamp/5000,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000 ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0) DESC LIMIT 1,100",
+      "info": "<span>Exchange servers are assigned roles for the system to work and each role requires certain services to be up and running.</span><br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1402936175491 & timestamp <= 1403036975597 & text:\"critical\" & text:\"storage\" & text:\"error\" & (providername:\"MSExchange*\" & (level:\"error\" | level:\"critical\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Exchange critical storage error",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402936175491 & timestamp <= 1403036975597 & text:\"critical\" & text:\"storage\" & text:\"error\" & (providername:\"MSExchange*\" & (level:\"error\" | level:\"critical\")) as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+      "info": "A critical storage error has occurred. Review the event(s) that triggered this alert for more information.<br>"
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 200.0,
+      "hitOperator": "LESS_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1402949427822 & timestamp <= 1402953028733 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000) & text=~\"FreeSpaceAsPercentage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000>-?\\d*\\.?\\d+)'\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Exchange mailbox disk drive space is low",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000) FROM timestamp >= 1402949427822 & timestamp <= 1402953028733 & (FIELD_EXISTS(ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000) & text=~\"FreeSpaceAsPercentage='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000>-?\\d*\\.?\\d+)'\") & text=~\"Fqdn='(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000>.*)' ExchangeVersion\" as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000 ORDER BY item0.timestamp DESC, MAX(item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000) DESC LIMIT 1,100",
+      "info": "The amount of storage space is low on the disk drive that hosts an Exchange mailbox database.<br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1402940228106 & timestamp <= 1403026629271 & (providername:\"MSExchange*\" & eventid:\"4138\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Exchange database with insufficient data redundancy",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402940229272 & timestamp <= 1403026629271 & (providername:\"MSExchange*\" & eventid:\"4138\") & text=~\"Databases on server (?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643foj3gk4q0>.*) have (in|)sufficient\" & text=~\"Databases on server.*have\\s(?<ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643umf2hk4y0>.*)\\sdata (protection\\.|redundancy\\.)\" as item0 GROUP BY item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643foj3gk4q0,item0.ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643umf2hk4y0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "Some databases have insufficient data redundancy. See the server and database list in the event that triggered this alert.<br><br>See also: <a href=\"http://technet.microsoft.com/en-us/library/dd638137%28v=exchg.150%29.aspx\"><span>High Availability and Site Resilience</span></a>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1402925180188 & timestamp <= 1403011581094 & (providername:\"MSExchange*\" & eventid=15007) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Exchange is rejecting message submissions due to critically low available memory",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402925180188 & timestamp <= 1403011581094 & (providername:\"MSExchange*\" & eventid=15007) as item0 GROUP BY item0.providername,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "<span>The Microsoft Exchange Transport service is rejecting message \nsubmissions because the service continues to consume more memory than \nthe configured threshold. This may require that this service be \nrestarted to continue normal operation. Additional information is available in the event(s) that triggered this alert.<br><br>See</span> <a href=\"http://technet.microsoft.com/en-us/library/bb201658%28v=exchg.141%29.aspx\"><span>Understanding Back Pressure</span></a>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1402924359563 & timestamp <= 1403010759562 & (providername:\"MSExchange*\" & (eventid:\"15004\" | eventid:\"15005\" | eventid:\"15006\" | eventid:\"15007\") & eventid=15006) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Exchange is rejecting message submissions due to critically low available disk space",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402924359563 & timestamp <= 1403010759562 & (providername:\"MSExchange*\" & (eventid:\"15004\" | eventid:\"15005\" | eventid:\"15006\" | eventid:\"15007\") & eventid=15006) as item0 GROUP BY item0.providername,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "<span>The Microsoft Exchange Transport service is rejecting messages because \navailable disk space is below the configured threshold. Administrative \naction may be required to free disk space for the service to continue \noperations. Additional information is available in the event(s) that triggered this alert.<br><br>See</span> <a href=\"http://technet.microsoft.com/en-us/library/bb201658%28v=exchg.141%29.aspx\"><span>Understanding Back Pressure</span></a>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1402928185623 & timestamp <= 1403014587074 & text:\"\" & text:\"Attempting\" & text:\"to\" & text:\"unmount\" & text:\"the\" & text:\"database\" & text:\"\" & providername:\"MSExchange*\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Exchange database critical disk resource issue",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402928185623 & timestamp <= 1403014587074 & text:\"\" & text:\"Attempting\" & text:\"to\" & text:\"unmount\" & text:\"the\" & text:\"database\" & text:\"\" & providername:\"MSExchange*\" as item0 GROUP BY item0.providername,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "A critical disk resource issue has occurred for the Exchange database listed in the event(s) that triggered this alert. <span>Additional information is available in the event(s) that triggered this alert.</span><a href=\"http://technet.microsoft.com/en-us/library/bb201658%28v=exchg.141%29.aspx\"><span></span></a>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1402926256305 & timestamp <= 1403012656580 & (providername:\"MSExchange*\" & eventid=15004) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Exchange resource pressure increased",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1402926256305 & timestamp <= 1403012656580 & (providername:\"MSExchange*\" & eventid=15004) as item0 GROUP BY item0.providername,item0.eventid ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "A strain on Exchange system resources (backpressure) has caused the changes described in the event(s) that triggered this alert.<br><br><span>See</span> <a href=\"http://technet.microsoft.com/en-us/library/bb201658%28v=exchg.141%29.aspx\"><span>Understanding Back Pressure</span></a><br>"
+    }
+  ],
+  "name": "Microsoft - Exchange",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpwi3ttl5sxe4tpojpwi33nmfuw4000",
+      "preContext": "DNS was queried for the service location \\(SRV\\) resource record used to locate a domain controller for domain\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_adaccess_dns_error_domain"
+    },
+    {
+      "postContext": "\\) occurred",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpwi3ttl5sxe4tpojpxey3pmrsv63tbnvsv6zlsojzg64q0",
+      "preContext": "DNS_ERROR_RCODE_NAME_ERROR \\(",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_adaccess_dns_error_rcode_name_errror"
+    },
+    {
+      "postContext": "\\) occurred",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpwi3ttl5sxe4tpojpxey3pmrsv643foj3gk4s7mzqws3dvojsq0000",
+      "preContext": "DNS_ERROR_RCODE_SERVER_FAILURE \\(",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_adaccess_dns_error_rcode_server_failure"
+    },
+    {
+      "postContext": "\\. This event may be caused by network",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpw4327mf3gc2lmmfrgyzk7mrrv6zdpnvqws3q0",
+      "preContext": "Exchange Active Directory Provider could not find an available domain controller in domain\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_adaccess_no_available_dc_domain"
+    },
+    {
+      "postContext": "' set by Requester",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpxgzlsozsxey3pnvyg63tfnz2hg5dborsv6y3pnvyg63tfnz2a0000",
+      "preContext": "ServerComponentState for Component '",
+      "regexValue": ".*",
+      "displayName": "ms_ex_adaccess_servercomponentstate_component"
+    },
+    {
+      "postContext": "' to",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpxgzlsozsxey3pnvyg63tfnz2hg5dborsv64tfof2wk43umvza0000",
+      "preContext": "ServerComponentState for Component '.*' set by Requester '",
+      "regexValue": ".*",
+      "displayName": "ms_ex_adaccess_servercomponentstate_requester"
+    },
+    {
+      "postContext": "'\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpxgzlsozsxey3pnvyg63tfnz2hg5dborsv643umf2gk000",
+      "preContext": "ServerComponentState for Component '.*' set by Requester '.* to '",
+      "regexValue": ".*",
+      "displayName": "ms_ex_adaccess_servercomponentstate_state"
+    },
+    {
+      "postContext": "\\) to",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpxoy3gl5zgk4lvmvzxi000",
+      "preContext": "WCF request \\(",
+      "regexValue": ".*",
+      "displayName": "ms_ex_adaccess_wcf_request"
+    },
+    {
+      "postContext": "\\) failed\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6ylemfrwgzltonpxoy3gl5zgk4lvmvzxix3tmvzhmzls",
+      "preContext": "Microsoft Exchange Active Directory Topology service on server \\(",
+      "regexValue": ".*",
+      "displayName": "ms_ex_adaccess_wcf_request_server"
+    },
+    {
+      "postContext": "\\, parameters",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3nmrwgk5dmn5txgx3dnvsgyzlul5xgc3lf",
+      "preContext": "Cmdlet failed.\\s+Cmdlet\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_cmdletlogs_cmdlet_name"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3nmrwgk5dmn5txgx3dnvsgyzlul5ygc4tbnvsxizlsom000000",
+      "preContext": "Cmdlet failed.\\s+Cmdlet.*\\, parameters\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_cmdletlogs_cmdlet_parameters"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7mvzhe33sl5zgk4dpoj2gs3thl5sw4ylcnrswi000",
+      "preContext": "Watson report about to be sent for process id:.*\\s+ErrorReportingEnabled:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_common_error_reporting_enabled"
+    },
+    {
+      "postContext": "\\s+because of the error:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7nrxwox3enfzgky3un5zhs000",
+      "preContext": ": Failed to create the log directory:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_common_log_directory"
+    },
+    {
+      "postContext": "\\. Logs will not be generated",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7nrxwox3enfzgky3un5zhsx3fojzg64q0",
+      "preContext": ": Failed to create the log directory:.*because of the error:",
+      "regexValue": ".*",
+      "displayName": "ms_ex_common_log_directory_error"
+    },
+    {
+      "postContext": "\\. Optional code:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7obsxezs7mnxxk3tumvzf6y3borswo33spe000000",
+      "preContext": "Counter name is.*\\, category name is\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_common_perf_counter_category"
+    },
+    {
+      "postContext": "\\, category name is",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7obsxezs7mnxxk3tumvzf63tbnvsq0000",
+      "preContext": "Counter name is\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_common_perf_counter_name"
+    },
+    {
+      "postContext": "\\. Exception:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7obsxezs7mnxxk3tumvzf633qorpwg33emu000000",
+      "preContext": "Counter name is.*\\. Optional code:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_common_perf_counter_opt_code"
+    },
+    {
+      "postContext": "\\, with parameters:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7obzg6y3fonzv62le",
+      "preContext": "Watson report about to be sent for process id:\\s+",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_common_process_id"
+    },
+    {
+      "postContext": ": Failed to create the log directory:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7obzg6y3fonzv63tbnvsq0000",
+      "preContext": "",
+      "regexValue": ".*",
+      "displayName": "ms_ex_common_process_name"
+    },
+    {
+      "postContext": "\\.\\s+ErrorReportingEnabled:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6y3pnvww63s7o5qxi43pnzpxezlqn5zhix3qmfzgc3lforsxe4y0",
+      "preContext": "Watson report about to be sent for process id:.*\\, with parameters:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_common_watson_report_parameters"
+    },
+    {
+      "postContext": "\".*Attempting to unmount the database\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpw4ylnmu000000",
+      "preContext": "database \"",
+      "regexValue": ".*",
+      "displayName": "ms_ex_database_name"
+    },
+    {
+      "postContext": " have (in|)sufficient",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643foj3gk4q0",
+      "preContext": "Databases on server ",
+      "regexValue": ".*",
+      "displayName": "ms_ex_database_protection_server"
+    },
+    {
+      "postContext": "\\sdata (protection\\.|redundancy\\.)",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdborqweyltmvpxa4tporswg5djn5xf643umf2hk4y0",
+      "preContext": "Databases on server.*have\\s",
+      "regexValue": ".*",
+      "displayName": "ms_ex_database_protection_status"
+    },
+    {
+      "postContext": "\\s+Redundancy count:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3emf2gcytbonsv6y3pob4q0000",
+      "preContext": "Database.*health check.*\\s+Database copy:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_database_copy"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3fojzg64q0",
+      "preContext": "Database.*health check.*\\s+Network:.*\\s+Error:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_error"
+    },
+    {
+      "postContext": "\\s+Message:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3nmfuwyytppbpxgzlsozsxe000",
+      "preContext": "Database.*health check.*\\s+Mailbox server:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_mailbox_server"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3nmvzxgylhmu000000",
+      "preContext": "Database.*health check.*\\s+Mailbox server:.*\\s+Message:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_message"
+    },
+    {
+      "postContext": "\\s+Error:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3omv2ho33snm000000",
+      "preContext": "Database.*health check.*\\s+Network:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_network"
+    },
+    {
+      "postContext": "'\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3on5sgk000",
+      "preContext": "Database.*health check.*on node '",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_node"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3smvshk3temfxgg6k7mnxxk3tu",
+      "preContext": "Database.*health check.*\\s+Database copy:.*\\s+Redundancy count:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_redundancy_count"
+    },
+    {
+      "postContext": "( on node '.*'\\.|\\.\\s+Database copy:|\\.\\s+Mailbox server:|\\.\\s+Network:)",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3torqxi5lt",
+      "preContext": "Database.*health check\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_status"
+    },
+    {
+      "postContext": "\\s+health check",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdcl5ugkylmoruf6y3imvrwwx3upfygk000",
+      "preContext": "Database\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_db_health_check_type"
+    },
+    {
+      "postContext": "\\. Exception:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427mnzgc43imvsf62tpmjpws3tgn4000000",
+      "preContext": "job has crashed\\.\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_diagnostics_crashed_job_info"
+    },
+    {
+      "postContext": "\\s+job has crashed.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427mnzgc43imvsf62tpmjpw4ylnmu000000",
+      "preContext": "The\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_diagnostics_crashed_job_name"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427mzqws3dfmrpxi327on2gc4tul5vg6yq0",
+      "preContext": "The EDS Job manager failed to start the following jobs:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_diagnostics_failed_to_start_job"
+    },
+    {
+      "postContext": "\\. Trigger Name:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427obsxeztpojwwc3tdmvpwg33vnz2gk4s7mfsgi2lunfxw4ylml5uw4ztp",
+      "preContext": "The performance counter .* Additional information: ",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_diagnostics_performance_counter_additional_info"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427obsxeztpojwwc3tdmvpwg33vnz2gk4s7nfxhg5dbnzrwk000",
+      "preContext": "The performance counter .* Trigger Name:.* Instance:",
+      "regexValue": ".*",
+      "displayName": "ms_ex_diagnostics_performance_counter_instance"
+    },
+    {
+      "postContext": "' minute\\(s\\) interval starting at",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427obsxeztpojwwc3tdmvpwg33vnz2gk4s7nfxhizlsozqwy000",
+      "preContext": "The performance counter .* for the '",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_diagnostics_performance_counter_interval"
+    },
+    {
+      "postContext": "' sustained a value of",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427obsxeztpojwwc3tdmvpwg33vnz2gk4s7nzqw2zi0",
+      "preContext": "The performance counter '",
+      "regexValue": ".*",
+      "displayName": "ms_ex_diagnostics_performance_counter_name"
+    },
+    {
+      "postContext": "'\\. Additional information:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427obsxeztpojwwc3tdmvpwg33vnz2gk4s7on2gc4tu",
+      "preContext": "The performance counter .* interval starting at '",
+      "regexValue": ".*",
+      "displayName": "ms_ex_diagnostics_performance_counter_start"
+    },
+    {
+      "postContext": "\\. Instance:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427obsxeztpojwwc3tdmvpwg33vnz2gk4s7orzgsz3hmvzf63tbnvsq0000",
+      "preContext": "The performance counter .* Trigger Name:",
+      "regexValue": ".*",
+      "displayName": "ms_ex_diagnostics_performance_counter_trigger_name"
+    },
+    {
+      "postContext": "'\\, for the",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zdjmftw433toruwg427obsxeztpojwwc3tdmvpwg33vnz2gk4s7ozqwy5lf",
+      "preContext": "The performance counter .* sustained a value of '",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_diagnostics_performance_counter_value"
+    },
+    {
+      "postContext": "'\\, ObjectModified",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3bnrwgk4q0",
+      "preContext": "OriginatingServer=.*Caller='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_eaal_caller"
+    },
+    {
+      "postContext": "'\\, CmdletParameters",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3nmrwgk5c7nzqw2zi0",
+      "preContext": "OriginatingServer=.*CmdletName='",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_eaal_cmdlet_name"
+    },
+    {
+      "postContext": "'\\, ModifiedProperties",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6y3nmrwgk5c7obqxeylnmv2gk4tt",
+      "preContext": "OriginatingServer=.*CmdletParameters='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_eaal_cmdlet_parameters"
+    },
+    {
+      "postContext": "'\\, IsValid",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf6zlsojxxe000",
+      "preContext": "OriginatingServer=.*Error='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_eaal_error"
+    },
+    {
+      "postContext": "'",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf62ltl53gc3djmq000000",
+      "preContext": "OriginatingServer=.*Caller=.*IsValid='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_eaal_is_valid"
+    },
+    {
+      "postContext": "'\\, Succeeded",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf63lpmruwm2lfmrpxa4tpobsxe5djmvzq0000",
+      "preContext": "OriginatingServer=.*ModifiedProperties='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_eaal_modified_properties"
+    },
+    {
+      "postContext": "'\\, CmdletName",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633cnjswg5c7nvxwi2lgnfswi000",
+      "preContext": "OriginatingServer=.*ObjectModified='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_eaal_object_modified"
+    },
+    {
+      "postContext": "'\\, Caller=.*ObjectModified=",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf633snftws3tboruw4z27onsxe5tfoi000000",
+      "preContext": "OriginatingServer='",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_eaal_originating_server"
+    },
+    {
+      "postContext": "'\\, Error=",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlbmfwf643vmnrwkzlemvsa0000",
+      "preContext": "OriginatingServer=.*Succeeded='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_eaal_succeeded"
+    },
+    {
+      "postContext": "' SMTPReceive_MessagesReceivedPerSecond",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7mf3gk4tbm5sv6ytzorsxgx3qmvzf63lfonzwcz3f",
+      "preContext": "SMTPReceive_AverageBytesPerMessage='",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_epc_smtp_receive_average_bytes_per_message"
+    },
+    {
+      "postContext": "' SmtpSend_MessagesSentPerSecond",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxezldmvuxmzk7nvsxg43bm5sxgx3smvrwk2lwmvsf64dfojpxgzldn5xgi000",
+      "preContext": "SMTPReceive_MessagesReceivedPerSecond='",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_epc_smtp_receive_messages_received_per_second"
+    },
+    {
+      "postContext": "' StoreDriver_Inbound_LocalDeliveryCallsPerSecond",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg3luobpxgzlomrpw2zltonqwozltl5zwk3tul5ygk4s7onswg33omq000000",
+      "preContext": "SmtpSend_MessagesSentPerSecond='",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_epc_smtp_send_messages_sent_per_second"
+    },
+    {
+      "postContext": "' StoreDriver_Inbound_MessageDeliveryAttemptsPerSecond",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf63dpmnqwyx3emvwgs5tfoj4v6y3bnrwhgx3qmvzf643fmnxw4za0",
+      "preContext": "StoreDriver_Inbound_LocalDeliveryCallsPerSecond='",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_epc_store_driver_inbound_local_delivery_calls_per_second"
+    },
+    {
+      "postContext": "' StoreDriver_Inbound_RecipientsDeliveredPerSecond",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf63lfonzwcz3fl5sgk3djozsxe6k7mf2hizlnob2hgx3qmvzf643fmnxw4za0",
+      "preContext": "StoreDriver_Inbound_MessageDeliveryAttemptsPerSecond='",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_epc_store_driver_inbound_message_delivery_attempts_per_second"
+    },
+    {
+      "postContext": "' StoreDriver_Outbound_SubmittedMailItemsPerSecond",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7nfxge33vnzsf64tfmnuxa2lfnz2hgx3emvwgs5tfojswix3qmvzf643fmnxw4za0",
+      "preContext": "StoreDriver_Inbound_RecipientsDeliveredPerSecond='",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_epc_store_driver_inbound_recipients_delivered_per_second"
+    },
+    {
+      "postContext": "'",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zlqmnpxg5dpojsv6zdsnf3gk4s7n52xiytpovxgix3tovrg22luorswix3nmfuwyx3jorsw2427obsxex3tmvrw63te",
+      "preContext": "StoreDriver_Outbound_SubmittedMailItemsPerSecond='",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_epc_store_driver_outbound_submitted_mail_items_per_second"
+    },
+    {
+      "postContext": "' FreeSpaceInMBOnDataPathDrive",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwiylumfpxayluna000000",
+      "preContext": "DataPath='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_esc_data_path"
+    },
+    {
+      "postContext": "' Site",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwkzdjoruw63q0",
+      "preContext": "Edition='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_esc_edition"
+    },
+    {
+      "postContext": "' Edition",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwk6ddnbqw4z3fl53gk4ttnfxw4000",
+      "preContext": "ExchangeVersion='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_esc_exchange_version"
+    },
+    {
+      "postContext": "' ExchangeVersion",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4leny000000",
+      "preContext": "Fqdn='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_esc_fqdn"
+    },
+    {
+      "postContext": "'",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv6yltl5ygk4tdmvxhiylhmu000000",
+      "preContext": "FreeSpaceAsPercentage='",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "ms_ex_esc_free_space_as_percentage"
+    },
+    {
+      "postContext": "' FreeSpaceAsPercentage",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpwm4tfmvpxg4dbmnsv62lol5wwex3pnzpwiylumfpxaylunbpwi4tjozsq0000",
+      "preContext": "FreeSpaceInMBOnDataPathDrive='",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "ms_ex_esc_free_space_in_mb_on_data_path_drive"
+    },
+    {
+      "postContext": "' IsEdgeServer",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpws427mnwgszloorpwcy3dmvzxgx3tmvzhmzls",
+      "preContext": "IsClientAccessServer='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_esc_is_client_access_server"
+    },
+    {
+      "postContext": "' IsMailboxServer",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpws427mvsgozk7onsxe5tfoi000000",
+      "preContext": "IsEdgeServer='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_esc_is_edge_server"
+    },
+    {
+      "postContext": "' IsClientAccessServer",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpws427nb2wex3uojqw443qn5zhix3tmvzhmzls",
+      "preContext": "IsHubTransportServer='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_esc_is_hub_transport_server"
+    },
+    {
+      "postContext": "' IsProvisionedServer",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpws427nvqws3dcn54f643foj3gk4q0",
+      "preContext": "IsMailboxServer='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_esc_is_mailbox_server"
+    },
+    {
+      "postContext": "' IsUnifiedMessagingServer",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpws427obzg65tjonuw63tfmrpxgzlsozsxe000",
+      "preContext": "IsProvisionedServer='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_esc_is_provisioned_server"
+    },
+    {
+      "postContext": "' ServerRole",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpws427ovxgsztjmvsf63lfonzwcz3jnztv643foj3gk4q0",
+      "preContext": "IsUnifiedMessagingServer='",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_esc_is_unified_messaging_server"
+    },
+    {
+      "postContext": "' DataPath",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpw45lnmjsxex3pmzpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0",
+      "preContext": "NumberOfServicesNotRunningForServerRoles='",
+      "regexValue": "-?\\d+",
+      "displayName": "ms_ex_esc_number_of_services_not_running_for_server_roles"
+    },
+    {
+      "postContext": "' ServicesRunningForServerRoles",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpxgzlsozsxex3sn5wgk000",
+      "preContext": "ServerRole='",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_esc_server_role"
+    },
+    {
+      "postContext": "' NumberOfServicesNotRunningForServerRoles",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpxgzlsozuwgzltl5xg65c7oj2w43tjnztv6ztpojpxgzlsozsxex3sn5wgk4y0",
+      "preContext": "ServicesNotRunningForServerRoles='",
+      "regexValue": ".*",
+      "displayName": "ms_ex_esc_services_not_running_for_server_roles"
+    },
+    {
+      "postContext": "' ServicesNotRunningForServerRoles",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpxgzlsozuwgzltl5zhk3tonfxgox3gn5zf643foj3gk4s7ojxwyzlt",
+      "preContext": "ServicesRunningForServerRoles='",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_esc_services_running_for_server_roles"
+    },
+    {
+      "postContext": "' IsHubTransportServer",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f6zltmnpxg2lumu000000",
+      "preContext": "Site='",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_esc_site"
+    },
+    {
+      "postContext": "\\)",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64dsn5rwk43tl5uwi000",
+      "preContext": "Process .*( \\(|, )PID(=| )",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_process_id"
+    },
+    {
+      "postContext": "( \\(|, )PID(=| )",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64dsn5rwk43tl5xgc3lf",
+      "preContext": "Process ",
+      "regexValue": ".*",
+      "displayName": "ms_ex_process_name"
+    },
+    {
+      "postContext": "\\. Reason:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tcmfrv6yldmnsxg427mrsw42lfmrpwgzlsoruwm2ldmf2gk000",
+      "preContext": "RBAC authorization returns Access Denied for certificate ",
+      "regexValue": ".*",
+      "displayName": "ms_ex_rbac_access_denied_certificate"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tcmfrv6yldmnsxg427mrsw42lfmrpxezlbonxw4000",
+      "preContext": "RBAC authorization returns Access Denied for.*Reason:\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_rbac_access_denied_reason"
+    },
+    {
+      "postContext": "(\\.| \\(.*\\)\\.) Reason:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tcmfrv6yldmnsxg427mrsw42lfmrpxk43foi000000",
+      "preContext": "RBAC authorization returns Access Denied for( the | )user\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_rbac_access_denied_user"
+    },
+    {
+      "postContext": "\\s+on server",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfobwf6zdborqweyltmvpw4ylnmu000000",
+      "preContext": "Active Manager failed to mount database\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_repl_database_name"
+    },
+    {
+      "postContext": "\\. Error:",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfobwf6zdborqweyltmvpxgzlsozsxe000",
+      "preContext": "Active Manager failed to mount database.*on server\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_repl_database_server"
+    },
+    {
+      "postContext": "\\s+from",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfonxxk4tdmvpxa4tfonzxk4tfl5sgs4tfmn2gs33o",
+      "preContext": "The resource pressure\\s",
+      "regexValue": "\\w+",
+      "displayName": "ms_ex_resource_pressure_direction"
+    },
+    {
+      "postContext": "\\s+to\\s",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfonxxk4tdmvpxa4tfonzxk4tfl5the33nl5wgk5tfnq000000",
+      "preContext": "The resource pressure.*from\\s+",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_resource_pressure_from_level"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f64tfonxxk4tdmvpxa4tfonzxk4tfl52g6x3mmv3gk3a0",
+      "preContext": "The resource pressure.*from.*to\\s",
+      "regexValue": "\\S+",
+      "displayName": "ms_ex_resource_pressure_to_level"
+    },
+    {
+      "postContext": "\\sThe Microsoft Exchange Transport service is shutting down\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65dsmfxhg4dpoj2f643iov2gi33xnzpxezlbonxw4000",
+      "preContext": ":\\s",
+      "regexValue": ".*",
+      "displayName": "ms_ex_transport_shutdown_reason"
+    },
+    {
+      "postContext": ":\\s.*The Microsoft Exchange Transport service is shutting down\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65dsmfxhg4dpoj2f643iov2gi33xnzpxg5lcnjswg5a0",
+      "preContext": "",
+      "regexValue": ".*",
+      "displayName": "ms_ex_transport_shutdown_subject"
+    },
+    {
+      "postContext": "\\) and associated",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65dsmfxhg4dpoj2f643un5zgcz3fl5sxe4tpojpwiylumfrgc43f",
+      "preContext": ": MSExchangeTransport has detected a critical storage error.*this database \\(",
+      "regexValue": ".*",
+      "displayName": "ms_ex_transport_storage_error_database"
+    },
+    {
+      "postContext": "\\sdue to error",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65dsmfxhg4dpoj2f643un5zgcz3fl5sxe4tpojpxezldn53gk4tzl5qwg5djn5xa0000",
+      "preContext": ": MSExchangeTransport has detected a critical storage error.*recovery action on\\s",
+      "regexValue": ".*",
+      "displayName": "ms_ex_transport_storage_error_recovery_action"
+    },
+    {
+      "postContext": "\\) used",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65dsmfxhg4dpoj2f643un5zgcz3fl5sxe4tpojpxezlhnfzxi4tzl5vwk6i0",
+      "preContext": ": MSExchangeTransport has detected a critical storage error.*registry key \\(",
+      "regexValue": ".*",
+      "displayName": "ms_ex_transport_storage_error_registry_key"
+    },
+    {
+      "postContext": ": MSExchangeTransport has detected a critical storage error",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65dsmfxhg4dpoj2f643un5zgcz3fl5sxe4tpojpxg5lcnjswg5a0",
+      "preContext": "",
+      "regexValue": ".*",
+      "displayName": "ms_ex_transport_storage_error_subject"
+    },
+    {
+      "postContext": "\\)\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65dsmfxhg4dpoj2f643un5zgcz3fl5sxe4tpojpxi4tbnzzv63dpm4000000",
+      "preContext": ": MSExchangeTransport has detected a critical storage error.*associated transaction logs \\(",
+      "regexValue": ".*",
+      "displayName": "ms_ex_transport_storage_error_trans_log"
+    },
+    {
+      "postContext": "\\. The Service Control Manager",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65lnl5sxe4tpojswix3tmvzhm2ldmu000000",
+      "preContext": "error occurred in the\\s+",
+      "regexValue": ".*",
+      "displayName": "ms_ex_um_errored_service"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65lnl5sxqy3fob2gs33o",
+      "preContext": "An unhandled exception occurred in a UM worker process: \"",
+      "regexValue": ".*",
+      "displayName": "ms_ex_um_exception"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65lnl53w64tlmvzf64dsn5rwk43tl5sxe4tpoi000000",
+      "preContext": "The UM worker process \\(UMWorkerProcess.exe\\) couldn't start\\.\\s+More information: ",
+      "regexValue": ".*",
+      "displayName": "ms_ex_um_worker_process_error"
+    },
+    {
+      "postContext": " was unable to start\\.",
+      "internalName": "ibadems7mnxw2ltnnfrxe33tn5thiltfpbrwqylom5sw2427mv4f65loon2gc4tumfrgyzk7obzg6y3fonzq0000",
+      "preContext": "The (?=.*Exchange)",
+      "regexValue": ".*",
+      "displayName": "ms_ex_unstartable_process"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "2.0",
+  "namespace": "com.microsoft.exchange",
+  "icon": "iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAEJGlDQ1BJQ0MgUHJvZmlsZQAAOBGFVd9v21QUPolvUqQWPyBYR4eKxa9VU1u5GxqtxgZJk6XtShal6dgqJOQ6N4mpGwfb6baqT3uBNwb8AUDZAw9IPCENBmJ72fbAtElThyqqSUh76MQPISbtBVXhu3ZiJ1PEXPX6yznfOec7517bRD1fabWaGVWIlquunc8klZOnFpSeTYrSs9RLA9Sr6U4tkcvNEi7BFffO6+EdigjL7ZHu/k72I796i9zRiSJPwG4VHX0Z+AxRzNRrtksUvwf7+Gm3BtzzHPDTNgQCqwKXfZwSeNHHJz1OIT8JjtAq6xWtCLwGPLzYZi+3YV8DGMiT4VVuG7oiZpGzrZJhcs/hL49xtzH/Dy6bdfTsXYNY+5yluWO4D4neK/ZUvok/17X0HPBLsF+vuUlhfwX4j/rSfAJ4H1H0qZJ9dN7nR19frRTeBt4Fe9FwpwtN+2p1MXscGLHR9SXrmMgjONd1ZxKzpBeA71b4tNhj6JGoyFNp4GHgwUp9qplfmnFW5oTdy7NamcwCI49kv6fN5IAHgD+0rbyoBc3SOjczohbyS1drbq6pQdqumllRC/0ymTtej8gpbbuVwpQfyw66dqEZyxZKxtHpJn+tZnpnEdrYBbueF9qQn93S7HQGGHnYP7w6L+YGHNtd1FJitqPAR+hERCNOFi1i1alKO6RQnjKUxL1GNjwlMsiEhcPLYTEiT9ISbN15OY/jx4SMshe9LaJRpTvHr3C/ybFYP1PZAfwfYrPsMBtnE6SwN9ib7AhLwTrBDgUKcm06FSrTfSj187xPdVQWOk5Q8vxAfSiIUc7Z7xr6zY/+hpqwSyv0I0/QMTRb7RMgBxNodTfSPqdraz/sDjzKBrv4zu2+a2t0/HHzjd2Lbcc2sG7GtsL42K+xLfxtUgI7YHqKlqHK8HbCCXgjHT1cAdMlDetv4FnQ2lLasaOl6vmB0CMmwT/IPszSueHQqv6i/qluqF+oF9TfO2qEGTumJH0qfSv9KH0nfS/9TIp0Wboi/SRdlb6RLgU5u++9nyXYe69fYRPdil1o1WufNSdTTsp75BfllPy8/LI8G7AUuV8ek6fkvfDsCfbNDP0dvRh0CrNqTbV7LfEEGDQPJQadBtfGVMWEq3QWWdufk6ZSNsjG2PQjp3ZcnOWWing6noonSInvi0/Ex+IzAreevPhe+CawpgP1/pMTMDo64G0sTCXIM+KdOnFWRfQKdJvQzV1+Bt8OokmrdtY2yhVX2a+qrykJfMq4Ml3VR4cVzTQVz+UoNne4vcKLoyS+gyKO6EHe+75Fdt0Mbe5bRIf/wjvrVmhbqBN97RD1vxrahvBOfOYzoosH9bq94uejSOQGkVM6sN/7HelL4t10t9F4gPdVzydEOx83Gv+uNxo7XyL/FtFl8z9ZAHF4bBsrEwAADZFJREFUeAHtXXuMVNUZ/907zLDsg5lZEepGBKXEGorUFhRJaqNsREDLCnGpCsaYKIEY48ZS26S0sZpYi80S/oCIyVoRSdiWFfAVrK9ABVSUbISYBl8VuqC7MrMs+5rZmdtzdlmcncc5587cc3d655tks/ee75zvfN/v/O693z2vayDb74Fn/MHpv7zd9BlLLJ8x20iixjCMymxZKc2bCFiWdc4y0WYkrMPJhLW78/iel7BlVTzdWyM9IdTYthSGud6EeUW6jM5LF4Ekkl/ASq6NNtS0pKKQSiAz/NdvnjJ8xq9TM9AxIZCKgJWwno48MulRlpbk6RcIxMiznsiTChUd50LgPInWcvkggfhjyzTG7MxVgNIJgXQEktbAMv4484EFzGUTr9pjwAinZ6JzQiAXApaBOX2XTd9sBNefqvf5fTtyZaR0QiAXAol4YrnJX9VzZaB0QkCEAOeOyft5RJlIRgjkQoBzx+SdhLkyUDohIEKAc8ekHmYRRCQTIcC5Y4oykIwQkCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCFABJIhRHIhAkQgITwklCEwRpaB5JkITJvox+LqoWuvr3sAW04kMjNpTzFx2+V+XD6WVTRg4cOTMRzs015pRgWjRqD62VVYN2csagIXNsvPME53Qrw/iUMfd6Hug5haVX4/tt0RxMKLR9r8ZG8MjzV3YmNUTU2huaZNrsCuunK2QWGqJgtHPjiL2oOKvqQWLeDYqN7wrVVA+TyKmni8rhprpoxshDwUOVYk+lUnpu2WAT8GzavCmF+Wq9oEGp8/gyc0k2jWD8fj7cX8tpP9d+zAGdzwoXt3xBEczm6Ss6mzZlYVFXm4d6GpQTRdKvZz1swKAXl4WR8a7gziNrGawqThcWgRkIcrnzG3ErWF1WKrtOsEum16wJaBbmW+bJIYigVT/HJTAgFsuj3nLUpeXphjDF77VSVCwjxMaPrAOOTaT4ya42b4MPtix5U6onBS2CfWoxgtll9WhX1zJLrENWWVPr40hOuK8NpzmUCALNLIip4LiV+fGhDW8mn74OexhHmGhTPmhbHhB87FeLXXhbFmsqK+WBxvnRu2RP9/1wmk36V8aohjx7/F7xIvf9SLdmXVBlbeMR71YpVq2moq8Nxcxdsf0/jV0R4cVNPsSC4iEBJo2tmJreIbENDXiz8csfF2Ywaw8a5xmFBQMwWwb1k5ylV1dPXiwf02bFTVK8inTm2BEqdF8WgMLx1nLarRurE+A2e7YniuNYbWjE/JZveoeV8U8y69CCsV4zj/xEq8cn0Mcw/m06gmNtwVxAzlSzyO320/5+rdh6OksYmyN4JKandHD1YfUGxVFYWO5Uni4e2d+PHqIK5RDGinXxvG5hMdWH3SnhH180LKRAUsNO+MYsso9EQr89ue+wXmHqMYMBZYTX7FY6jdds5WPFS/LIR7bFyqEyZXYaONN7ljByK2CZqf75mlipNAmXYWVwqLNRa/2m/DJj8al5erxUP+sdi7tAwKvU6D9fNedDd7ntOdJgKlI6J4/vlnZ9FgJ6ieUIG9N8puQyaa7h6PqYo2gBF5qXQIRlVZfvmIQPnhNlhq674zaDqlrmDq1WE0Tcmd/4GbQ1gSzC0fKRkKmltHJrp+RgQqEPK1zRG8byN4XVIXwv1ZbkTT2CDpk1ep9mCPXtCcDhcRKB0R2+cDWMRen9uUy/nx57srcEVq/rIy7JIMkqZmPzKKQXOqHfyYCJSOSD7nLBap22MjqA6VY3ftcJjsQ/PdVcofruVBc62L0zVkcBCBZAgpyj//8izuPSzrzv5eWc2MELZNMcHjnvmqo+ddPaMeNH/vwdARESgdkQLOX34vgk0n1AfAFtZdxOIe1SaI47dbuzHaQXM6PKrWp5ej8xwIrGuJ4i0bQXUONWnJFl7Y0Yln1W9waeX1nRKBHMd2APXPd+ErB/Ue+dcZPHxa/c7mYNVSVVleKKVltGfgU0xPP6gBMPaWHO+K429vdGHdSfX5PbYd7uvDghY/jtroUc5VRzvrsKz9SKOtuSpWTC/aO5CfjZY7/gcD5VUBrFl2EZqvVO1zUUQyLVvHiS6sOFTgMyfag+W2hkzSjHDhtGgJpNv3+bdUOTPhS2Dom+9H0PiffO+kcTS8WHxBc7q7JUsgPpNlZjgdDufPn9gVwe5Ou3otNG2PyCe52VWrIX8JE8jAzIluTBtJ4Lse+y13yXg3bLNvV3qJEiZQAofb8n28pMOY+/yeG6px3yW55dklBhbeWo3fqHYwZlfiSmrpEijaDzaEpfXHB0gbr8k3WPfh0ZVVri4SzAeM0iQQW8vesKMbX+SDmGoZtor0VRsDpFnVBsrYWvxCJ+Zn1exYYlH2A8XZZPfXvkwgoMG6U6f68dTRODocgzCbogDeZKtIFefeZ1NwIc1fU8kmosXxs3cK7BK4oNHZAw1NVLiB3d/04L53inFSvYpvQ6spVCfdq2jkE9G2ff0dVnxefB2KxfkIK+pJ9eImv+cmO6spxLpSpQtvDeH30oXxqSXcOS5OArnju+O1zPpREI0zVYNmth3MzrM4pnxTcWH3jzwQIQLlAVrWIuFytCxQXCzGFOx/K4onTvZj6a4+KD+s2e4fz95ZXEE1ESgrG+wmsiXIKyrkW6+cV8sHSOuODt16+JjZ/TYmovHVrvLVHXbtzz8/ESh/7M6XNLF5pY0lyGz6a/oAKZ+IZnd1R/OVxdFTTQQqkEAP3RJGfbWqkgE8xnovs80qXMv2WDxiY++b+azeYgiqiUCqbZ8l37yZQfzxSnUIX38lgo05ZyuyJdM7u6G+xWJxBNXq3mcBsKSTWCyy4yb1oLmttZP140gQ+7YHK/cph9RAEQTVRCBJm2YVs+1+Dy0fp75vT0c3bnxX7fl04EgUT9mYQzQUVKsTOas/BSQSgWyDx9evhzBdGTk2MWxHj62hk7/simJ/zkddpsFTrw6yGZajE1Qrw5BptsYUtvN6sf4euqXaxvp1tppCZfezDGcHUMeCbfUt9YDRCqqLciysYsI4bJjnx1jdQxoDSbzzaR+aI2qErZ0dYkGz+pV+7IMIHj6ppjuDQ/x1f28Abyt3Tg4F1a2bO/FyhjJ9CS7vVM+W8a6qlmzYrc/ZXJqPfRzBDfslo90saD7BeoFV9yvsaTuHyX/vzVWlcvoDN9tZfMjUst3d5rC51FqnqqRYX5yPsBQD3Tic8dOwJIZgcc8idfIgFsMaB8jDfd/yhs051RPK8acpbqA2VAcR6DzW8+eWj9wxI6UNJrCPmyxS3rcngU3/iDr4GEnivhftLVS8/ifuvZW5TiD3XEthgMphuYFJOfIFx5rKW84dejeKde3qcVKOKkcmx/lCRfVB11BNANeP1KDtzGUCJfCJnVcLbW7bU1yp+KoR/awTi1uV52fYMoIPuj6kuqVev4U8FoLYsmc4s8sEAl4/rtahNmygW/+jX/fn3GO59Zu4vEF6e7HiVb2+8X2qX1C4ANv/y/a+dgk41wl04JMuNNnYAsUdHOJ4bK9gCCHSh3+KFgcmWWfhVjc2+R7ap1q8pd4ANr0n8MVhQF0nEJDE2pYONLzXj/ZYnn0kjoFgoa2tB/c+E5WsAuWBLHsbas+0t6ejF6s3s/I2eo4LMz+GRc9ktwX9cTRuj2Kj5uVKqfa73A+UWvX/5/Hg91LZp6HKAhZOn45jq42v+Djt8Sz27dZfTGK2MF5HO+Oj8u1WIpDTrVpi+kbhEVZiCHvcXSKQxxtYt3tEIN0Ie1w/EcjjDazbPSKQboQ9rp8I5PEG1u0eEUg3wh7XTwTyeAPrdo8IpBthj+snAnm8gXW7RwTSjbDH9ROBPN7Aut0jAulG2OP6iUAeb2Dd7hGBdCPscf1EII83sG73iEC6Efa4fiKQxxtYt3tEIN0Ie1w/EcjjDazbPSKQboQ9rp8I5PEG1u0eEUg3wh7XTwTyeAPrdo8IpBthj+snAnm8gXW7RwTSjbDH9ROBPN7Aut0jAulG2OP6iUAeb2Dd7hGBdCPscf1EII83sG73iEC6Efa4fiKQxxtYt3tEIN0Ie1w/EcjjDazbPdOyLBc3hdXtDul3EwHOHdMy0eZmpVSXdxDg3DGNhHXYOy6RJ24iwLljJhPWbjcrpbq8gwDnjtl5fM9LSSTd+sCdd9ArcU84Zzh3Bj9sFWpsW2oaY3aWOCbkvg0EktbAsmhDTcvgazw/sBLW0zbKU9YSRoBzhXOGQ3ChHyjyyKRHiUQlzApF1zlHOFeGs2d8m5E/zmCY602YVwxnov+EwGCcbCXXDt95hhHJINCg4I7mQPDan9eZPmOJ5TNmG0nUGIZROVyI/nsfAd5JyPt5+Ks6f9viATO2rMr4kt3/ABTCRLdWDUWmAAAAAElFTkSuQmCC",
+  "author": "VMware, Inc.",
+  "contentVersion": "1.0.201406270754",
+  "url": "http://www.vmware.com",
+  "info": "<span>The content pack for Microsoft® Exchange™ provides you with information about key entities of any Exchange installation’s health using vCenter Log Insight’s ability to monitor Windows® Event Logs.&nbsp;The content pack enables:</span><br><span>&nbsp;</span><br><span><u>Accurate monitoring of your Exchange infrastructure</u></span><br><span>Focus on known problems through monitoring events raised in the Windows Event Log.</span><br><span>&nbsp;</span><br><span><u>Key Exchange components are covered—Mailbox, Transport, Client Access, Unified Messaging</u></span><br><span>Six dashboards containing more than 30 widgets are included from Mailbox, Transport, Client Access, and Unified Messaging that go in depth to quantify your data in a multitude of manners to help diagnose problems in your Exchange infrastructure.</span><br><span>&nbsp;</span><br><span><u>Employs features added in Log Insight 2.0</u></span><br><span>Version 2.0 of Log Insight includes the ability to view logs posted to the Windows Event Log, which is pivotal to providing a minimally invasive Exchange log monitoring solution.&nbsp;The dashboards feature widgets that showcase the slick new chart types for effortless visual consumption.</span><br>"
+}

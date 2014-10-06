@@ -1,0 +1,611 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [
+            {
+              "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "User events by user",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407887861143 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Commands run by user. A spike in events for any user indicates more activity, which may mean configuration changes.<br><br>o The <span style=\"font-weight: bold;\">system</span> user is a special user account used by Synology. For more information on system events see the <span style=\"font-style: italic;\">System</span> dashboard. <br>o The <span style=\"font-weight: bold;\">admin</span> user is the default user account for Synology devices. For security purposes, it is recommended not to use this account."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Authentication events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1407780274546 & timestamp <= 1407866674545 & ((FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3torqxi5lt) & text=~\"system \\S+:\\s+user \\[\\S+\\] (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3torqxi5lt>.*? in)\") & (text:\"System admin\" | text:\"System SYSTEM\")) as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "Log in / out events. For more detailed information, see the <span style=\"font-style: italic;\">Security</span> dashboard."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Backup events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1407780162059 & timestamp <= 1407866562210 & text:\"networkbackup\" & text:\"system\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "For more detailed information, see the&nbsp;<span style=\"font-style: italic;\">Events</span>&nbsp;dashboard.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Package events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1407780224418 & timestamp <= 1407866624417 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpw4ylnmu000000) & text=~\"System \\S+:\\s+Package \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpw4ylnmu000000>.*)\\] has been successfully \\w+\\.\") as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "For more detailed information, see the&nbsp;<span style=\"font-style: italic;\">Events</span>&nbsp;dashboard.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Shared folder events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389502800000 & timestamp <= 1407888452342 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000) & text=~\"system \\S+:.* shared folder \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000>\\S+)\\]\") as item0 GROUP BY item0.timestamp/604800000 ORDER BY item0.timestamp DESC",
+                  "info": "For more detailed information, see the&nbsp;<span style=\"font-style: italic;\">Events</span>&nbsp;dashboard.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Alarm queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1359254880000 & timestamp <= 1407889431145 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf) & text=~\"system system:.* (\\\")?volume \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf>\\w+)\\] was\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "*** CRITICAL *** Volume degraded",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407889431145 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf) & text=~\"system system:.* (\\\")?volume \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf>\\w+)\\] was\") as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "One or more volumes was found to be degraded. This typically indicates that a disk has failed and needs to be replaced. Immediate action should be taken to prevent data loss.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1359254880000 & timestamp <= 1407889877640 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000) & text=~\"system system: bad sector at \\S+ (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000>\\S+) sector\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "WARNING: Multiple bad sectors detected",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407889879642 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000) & text=~\"system system: bad sector at \\S+ (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000>\\S+) sector\") as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Multiple bad sectors have been detected. This typically indicates a disk that is about to fail. Ensure you have a spare drive and consider replacing this drive soon.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1359254880000 & timestamp <= 1407894699487 & text:\"System SYSTEM: Failed to send email\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "WARNING: Failed to send email",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407894699487 & text:\"System SYSTEM: Failed to send email\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp DESC",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}",
+                      "info": "Email is configured, but email could not be sent because the configured SMTP server could not be reached.<br>"
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "System",
+          "constraints": [
+            {
+              "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "fieldTable",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1359254880000 & timestamp <= 1407897111349 & text:\"system system\" & ((text:\"failed\" | text:\"error\") & !text:\"log in\") as item0 ORDER BY item0.timestamp DESC",
+                  "name": "Problem events over time",
+                  "columns": [
+                    {
+                      "internalName": "__li_timestamp_col"
+                    },
+                    {
+                      "internalName": "__li_msg_col"
+                    }
+                  ],
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407897111349 & text:\"system system\" & ((text:\"failed\" | text:\"error\") & !text:\"log in\") as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp DESC",
+                  "info": "Recent events that are cause for concern and should be investigated."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "System events over time by operation",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & text:\"system system\" & ((FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3fozsw45a0) & text=~\"system \\S+:\\s+(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3fozsw45a0>(\\w+ )+?\\w+)( at \\w+ \\w+ sector|\\.)\") & !text:\"service was\") as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3fozsw45a0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "System operations (by the system user) that may not be caught by the other widgets on the dashboard. Most information in this widget indicates a potential problem on your devices.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Update available events over time by update",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389502800000 & timestamp <= 1407888452342 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3en53w43dpmfsa0000) & text=~\"system system:\\s+Download task for \\[(/\\S+)+/(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3en53w43dpmfsa0000>\\S+)\\]\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3en53w43dpmfsa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "If you see the same update more than once then you either have multiple devices or you did not immediately apply the update."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "System state events over time by state",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tpfzxizlnl5zxiylumu000000) & text=~\"System \\S+:\\s+System started.*to (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tpfzxizlnl5zxiylumu000000>.*)\\.\") as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tpfzxizlnl5zxiylumu000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget provides information about different device states and can be used to track when devices are powered down or rebooted."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Completed updates events over time by user",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1407283518237 & timestamp <= 1407888318236 & text:\"system\" & text:\"Update was complete\" & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") as item0 GROUP BY item0.timestamp/21600000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Use this query in conjunction with the update available events widget to determine when available updates are applied."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Events",
+          "constraints": [
+            {
+              "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Events by object and status",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & text:\"was\" & ((FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3ul5zxiyluovzq0000) & text=~\"System \\S+: .*? \\[.*?\\] was (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3ul5zxiyluovzq0000>.*?)( \\[|\\.)\")) & text=~\"System \\S+: (\\\")?(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3u>.*?)\\[.*?\\] was\" as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3u,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3ul5zxiyluovzq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget provides information and status about most parts of your Synology devices. Everything from services and packages to volumes and users is covered. Status information may be indicative of configuration changes as well as potential environments issues."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "Backup events over time by name",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371974984878 & timestamp <= 1387772575341 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5xgc3lf) & text=~\"NetworkBackup \\S+:\\s+Network Backup .*? task \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5xgc3lf>.*?)\\]\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5xgc3lf ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "Backup events over time by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371974984878 & timestamp <= 1387772492229 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5xgc3lf) & text=~\"NetworkBackup \\S+:\\s+Network Backup .*? task \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5xgc3lf>.*?)\\]\") & text=~\"NetworkBackup \\S+:\\s+Network Backup.*?(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5zxiyluovzq0000>\\w+) to backup (task \\[.*\\] )?to \\[\\S+\\].\" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5zxiyluovzq0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"doublegroupbymultiseries\":false}",
+                  "name": "Backup events over time by destination",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1371974984878 & timestamp <= 1387772604835 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5xgc3lf) & text=~\"NetworkBackup \\S+:\\s+Network Backup .*? task \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5xgc3lf>.*?)\\]\") & text=~\"NetworkBackup \\S+:\\s+Network Backup .*? to backup (task \\[.*\\] )?to \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5sgk43unfxgc5djn5xa0000>.*)\\].\" as item0 GROUP BY item0.timestamp/604800000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5sgk43unfxgc5djn5xa0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Successful system events by event",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & text:\"system successfully\" & ((FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") & (!text:\"started\" & !text:\"stopped\" & !text:\"service\")) & text=~\"system \\S+: system successfully (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tpfzxizlnl5zxky3dmvzxgx3fozsw45dt>.*?)( \\[|\\.)\" as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tpfzxizlnl5zxky3dmvzxgx3fozsw45dt ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Successful system events typically indicate configuration changes though the may also indicate the system attempting to heal itself. This widget is meant to be informative about changes and activity on your devices."
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & ((FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") & (text:\"LAN\" | text:\"Bond\" | text:\"netmask\" | text:\"default gateway\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Network events over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & ((FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") & (text:\"LAN\" | text:\"Bond\" | text:\"netmask\" | text:\"default gateway\")) as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp DESC",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}",
+                      "info": "This is an informative widget about any network changes.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpw4ylnmu000000) & text=~\"System \\S+:\\s+(\\[)?(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpw4ylnmu000000>.*?)(\\])? service was \\w+\\.\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Service events over time by name and status",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpw4ylnmu000000) & text=~\"System \\S+:\\s+(\\[)?(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpw4ylnmu000000>.*?)(\\])? service was \\w+\\.\") & text=~\"System \\S+:\\s+.*? service was (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpxg5dbor2xg000>\\w+)\\.\" as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpw4ylnmu000000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpxg5dbor2xg000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bubble\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "This is an informative widget about service state changes.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000) & text=~\"system \\S+:.* shared folder \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000>\\S+)\\]\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Shared folder events by name and status",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000) & text=~\"system \\S+:.* shared folder \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000>\\S+)\\]\") & text=~\"system \\S+:.* shared folder \\[\\S+\\](\\s)?(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvzf643umf2hk4y0>.*)\\.\" as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvzf643umf2hk4y0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bubble\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "This is an informative widget about shared folder changes.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpw4ylnmu000000) & text=~\"System \\S+:\\s+Package \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpw4ylnmu000000>.*)\\] has been successfully \\w+\\.\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Package events over time by status",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpw4ylnmu000000) & text=~\"System \\S+:\\s+Package \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpw4ylnmu000000>.*)\\] has been successfully \\w+\\.\") & text=~\"System \\S+:\\s+Package \\[.*\\] has been successfully (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpxg5dbor2xg000>\\w+)\\.\" as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpxg5dbor2xg000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"bar\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "This is an informative widget about package changes."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1082727822000 & timestamp <= 1466179722000 & text:\"DDNS\" & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "DDNS events over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1082727822000 & timestamp <= 1466179722000 & text:\"DDNS\" & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") as item0 GROUP BY item0.timestamp/15552000000 ORDER BY item0.timestamp DESC",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}",
+                      "info": ""
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Security",
+          "constraints": [
+            {
+              "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Authentication events by username and status",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1358830800000 & timestamp <= 1406865600000 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3torqxi5lt) & text=~\"system \\S+:\\s+user \\[\\S+\\] (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3torqxi5lt>.*? in)\") & text=~\"System \\S+:.* user \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3vonsxe3tbnvsq0000>\\w+)\\] \" as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3vonsxe3tbnvsq0000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3torqxi5lt ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Information about user authentication attempts is provided in this widget. An attempt is either successful or it fails. Multiple failures over a small window of time may indicate a security issue and should be investigated."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Successful authentication events by source",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389502800000 & timestamp <= 1407888452342 & ((FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3vonsxe3tbnvsq0000) & text=~\"System \\S+:.* user \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3vonsxe3tbnvsq0000>\\w+)\\] \") & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3tn52xey3f) & text=~\"System \\S+:\\s+User \\[\\w+\\] logged in from \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3tn52xey3f>\\S+)\\]\")) as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3tn52xey3f ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget provides information about which source(s) are the most frequently successful in authenticating. Unfortunately, unsuccessful authentication attempts do not contain source information and as such a widget for failed authentication events by source cannot be provided."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Host was blocked events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407894015539 & text:\"system system: host\" & text:\"was blocked\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp DESC",
+                  "info": "Access restrictions were put in place for security reasons and a host without access rights attempted to connect. This indicates a security issue that should be investigated."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "User account changes over time by change",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407889232518 & ((FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3vonsxe3tbnvsq0000) & text=~\"System \\S+:.* user \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3vonsxe3tbnvsq0000>\\w+)\\] \") & (!text:\"logged in\" & !text:\"log in\")) & text=~\"system \\S+:.* user \\[\\S+\\] was (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3dnbqw4z3fom000000>.*?)( to \\[| \\[|\\.)\" as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3dnbqw4z3fom000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "User account changes include adding a user, changing groups, and resetting passwords. These common administration tasks should be auditing for potential abuse.<br><br>Note that <span style=\"font-weight: bold;\">changed</span> events typically indicate a password change, but may also indicate a description change for a user."
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1389502800000 & timestamp <= 1407888452342 & text:\"Access right of the shared folder\" & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000) & text=~\"system \\S+:.* shared folder \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000>\\S+)\\]\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Access rights by folder",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389502800000 & timestamp <= 1407888452342 & text:\"Access right of the shared folder\" & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000) & text=~\"system \\S+:.* shared folder \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000>\\S+)\\]\") as item0 GROUP BY item0.timestamp/604800000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Changes to access rights may result in a &nbsp;potential security vulnerability."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1389502800000 & timestamp <= 1407888452342 & text:\"FileStation\" & text:\"Event:\" & text:\"property\" & text:\"set\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "FileStation property set events over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1389502800000 & timestamp <= 1407888452342 & text:\"FileStation\" & text:\"Event:\" & text:\"property\" & text:\"set\" as item0 GROUP BY item0.timestamp/604800000 ORDER BY item0.timestamp DESC",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}",
+                      "info": "Changes to a FileStation property set may result in a &nbsp;potential security vulnerability.<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1082727822000 & timestamp <= 1466179722000 & text:\"host\" & text:\"was blocked via\" & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Host block events by host",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1082727822000 & timestamp <= 1466179722000 & text:\"host\" & text:\"was blocked via\" & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000) & text=~\"^(\\S+ ){1,4}\\S+ system (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000>\\S+):\\s+\") & text=~\"System \\S+: .*? \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3ul53gc3dvmu000000>.*?)\\] was\" as item0 GROUP BY item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3ul53gc3dvmu000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":\"pie\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Access restrictions were put in place for security reasons and a host without access rights attempted to connect. This indicates a security issue that should be investigated.<br><br>This widget groups by the host so you can determine whether an attack is brute-force or distributed."
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1359254880000 & timestamp <= 1407889431145 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf) & text=~\"system system:.* (\\\")?volume \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf>\\w+)\\] was\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "*** CRITICAL *** Volume degraded",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407889431145 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf) & text=~\"system system:.* (\\\")?volume \\[(?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf>\\w+)\\] was\") as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "One or more volumes was found to be degraded. This typically indicates that a disk has failed and needs to be replaced. Immediate action should be taken to prevent data loss."
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 10.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1359254880000 & timestamp <= 1407889877640 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000) & text=~\"system system: bad sector at \\S+ (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000>\\S+) sector\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "WARNING: Multiple bad sectors detected",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407889879642 & (FIELD_EXISTS(ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000) & text=~\"system system: bad sector at \\S+ (?<ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000>\\S+) sector\") as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "Multiple bad sectors have been detected. This typically indicates a disk that is about to fail. Ensure you have a spare drive and consider replacing this drive soon."
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1359254880000 & timestamp <= 1407894699487 & text:\"System SYSTEM: Failed to send email\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "WARNING: Failed to send email",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1359254880000 & timestamp <= 1407894699487 & text:\"System SYSTEM: Failed to send email\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp DESC",
+      "info": "Email is configured, but email could not be sent because the configured SMTP server could not be reached."
+    }
+  ],
+  "name": "Synology DSM",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "\\].",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bmzyf6ztpnrsgk4q0",
+      "preContext": "System \\S+:\\s+Connection guest:\\s+AFP client \\[\\w+\\] from \\[\\S+\\] accessed the shared folder \\[",
+      "regexValue": ".*?",
+      "displayName": "synology_dsm_afp_folder"
+    },
+    {
+      "postContext": "\\] accessed the shared folder \\[.*?\\].",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bmzyf643povzggzi0",
+      "preContext": "System \\S+:\\s+Connection guest:\\s+AFP client \\[\\w+\\] from \\[",
+      "regexValue": "\\S+",
+      "displayName": "synology_dsm_afp_source"
+    },
+    {
+      "postContext": "\\] from \\[\\S+\\] accessed the shared folder \\[.*?\\].",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bmzyf65ltmvzg4ylnmu000000",
+      "preContext": "System \\S+:\\s+Connection guest:\\s+AFP client \\[",
+      "regexValue": "\\w+",
+      "displayName": "synology_dsm_afp_username"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3tn52xey3f",
+      "preContext": "System \\S+:\\s+User \\[\\w+\\] logged in from \\[",
+      "regexValue": "\\S+",
+      "displayName": "synology_dsm_auth_source"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3bov2gqx3torqxi5lt",
+      "preContext": "system \\S+:\\s+user \\[\\S+\\] ",
+      "regexValue": ".*? in",
+      "displayName": "synology_dsm_auth_status"
+    },
+    {
+      "postContext": "\\].",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5sgk43unfxgc5djn5xa0000",
+      "preContext": "NetworkBackup \\S+:\\s+Network Backup .*? to backup (task \\[.*\\] )?to \\[",
+      "regexValue": ".*",
+      "displayName": "synology_dsm_backup_destination"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5xgc3lf",
+      "preContext": "NetworkBackup \\S+:\\s+Network Backup .*? task \\[",
+      "regexValue": ".*?",
+      "displayName": "synology_dsm_backup_name"
+    },
+    {
+      "postContext": " to backup (task \\[.*\\] )?to \\[\\S+\\].",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3cmfrww5lql5zxiyluovzq0000",
+      "preContext": "NetworkBackup \\S+:\\s+Network Backup.*?",
+      "regexValue": "\\w+",
+      "displayName": "synology_dsm_backup_status"
+    },
+    {
+      "postContext": " sector",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzww000",
+      "preContext": "system system: bad sector at \\S+ ",
+      "regexValue": "\\S+",
+      "displayName": "synology_dsm_disk"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3enfzwwx3tmvrxi33sl5zxiyluovzq0000",
+      "preContext": "system system: bad sector at \\S+ \\S+ sector \\d+ ",
+      "regexValue": ".*",
+      "displayName": "synology_dsm_disk_sector_status"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3en53w43dpmfsa0000",
+      "preContext": "system system:\\s+Download task for \\[(/\\S+)+/",
+      "regexValue": "\\S+",
+      "displayName": "synology_dsm_download"
+    },
+    {
+      "postContext": "( at \\w+ \\w+ sector|\\.)",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3fozsw45a0",
+      "preContext": "system \\S+:\\s+",
+      "regexValue": "(\\w+ )+?\\w+",
+      "displayName": "synology_dsm_event"
+    },
+    {
+      "postContext": "\\[.*?\\] was",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3u",
+      "preContext": "System \\S+: (\")?",
+      "regexValue": ".*?",
+      "displayName": "synology_dsm_object"
+    },
+    {
+      "postContext": "( \\[|\\.)",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3ul5zxiyluovzq0000",
+      "preContext": "System \\S+: .*? \\[.*?\\] was ",
+      "regexValue": ".*?",
+      "displayName": "synology_dsm_object_status"
+    },
+    {
+      "postContext": "\\] was",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3pmjvgky3ul53gc3dvmu000000",
+      "preContext": "System \\S+: .*? \\[",
+      "regexValue": ".*?",
+      "displayName": "synology_dsm_object_value"
+    },
+    {
+      "postContext": "\\] has been successfully \\w+\\.",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpw4ylnmu000000",
+      "preContext": "System \\S+:\\s+Package \\[",
+      "regexValue": ".*",
+      "displayName": "synology_dsm_package_name"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3qmfrwwylhmvpxg5dbor2xg000",
+      "preContext": "System \\S+:\\s+Package \\[.*\\] has been successfully ",
+      "regexValue": "\\w+",
+      "displayName": "synology_dsm_package_status"
+    },
+    {
+      "postContext": "(\\])? service was \\w+\\.",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpw4ylnmu000000",
+      "preContext": "System \\S+:\\s+(\\[)?",
+      "regexValue": ".*?",
+      "displayName": "synology_dsm_service_name"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tmvzhm2ldmvpxg5dbor2xg000",
+      "preContext": "System \\S+:\\s+.*? service was ",
+      "regexValue": "\\w+",
+      "displayName": "synology_dsm_service_status"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvza0000",
+      "preContext": "system \\S+:.* shared folder \\[",
+      "regexValue": "\\S+",
+      "displayName": "synology_dsm_shared_folder"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tnbqxezlel5tg63demvzf643umf2hk4y0",
+      "preContext": "system \\S+:.* shared folder \\[\\S+\\](\\s)?",
+      "regexValue": ".*",
+      "displayName": "synology_dsm_shared_folder_status"
+    },
+    {
+      "postContext": "\\.",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tpfzxizlnl5zxiylumu000000",
+      "preContext": "System \\S+:\\s+System started.*to ",
+      "regexValue": ".*",
+      "displayName": "synology_dsm_system_state"
+    },
+    {
+      "postContext": "( \\[|\\.)",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3tpfzxizlnl5zxky3dmvzxgx3fozsw45dt",
+      "preContext": "system \\S+: system successfully ",
+      "regexValue": ".*?",
+      "displayName": "synology_dsm_system_success_events"
+    },
+    {
+      "postContext": ":\\s+",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxe000",
+      "preContext": "^(\\S+ ){1,4}\\S+ system ",
+      "regexValue": "\\S+",
+      "displayName": "synology_dsm_user"
+    },
+    {
+      "postContext": "( to \\[| \\[|\\.)",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3dnbqw4z3fom000000",
+      "preContext": "system \\S+:.* user \\[\\S+\\] was ",
+      "regexValue": ".*?",
+      "displayName": "synology_dsm_user_changes"
+    },
+    {
+      "postContext": "\\] ",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3vonsxex3vonsxe3tbnvsq0000",
+      "preContext": "System \\S+:.* user \\[",
+      "regexValue": "\\w+",
+      "displayName": "synology_dsm_user_username"
+    },
+    {
+      "postContext": "\\] was",
+      "internalName": "ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpnrxwo6k7mrzw2x3wn5whk3lf",
+      "preContext": "system system:.* (\")?volume \\[",
+      "regexValue": "\\w+",
+      "displayName": "synology_dsm_volume"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "2.0",
+  "namespace": "com.synology.dsm",
+  "icon": "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",
+  "author": "VMware, Inc.",
+  "contentVersion": "1.0",
+  "url": "http://www.vmware.com",
+  "info": "The Synology DSM content pack for Log Insight provides deep knowledge about events on your Synology devices including configuration changes as well as health and security information.<br>"
+}

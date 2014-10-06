@@ -1,0 +1,628 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Events by tier",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379542388358 & timestamp <= 1379545988357 & text:\"eh_event=*\" & text=~\"eh_event=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu>\\w+)\" as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu ORDER BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Watch for abnormalities in event activities across tiers, and identify and correlate how a workload propagates through your application delivery chain."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Observed errors by tier",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379541952255 & timestamp <= 1379545563734 & text:\"eh_event=*\" & text:\"error=\" & text=~\"eh_event=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu>\\w+)\" as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu ORDER BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Identify errors across tiers, and identify and correlate how a errors propagate through your application delivery chain. Use errors to inform further areas for drill down.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Web events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379549332257 & timestamp <= 1379552962045 & text:\"eh_event=web\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand what normal looks like for your web tier. Identify trends as well as possible risks to your environment by looking for uncharacteristic event patterns (time-of-day, day-of-week, etc)."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Database events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379549932274 & timestamp <= 1379553551788 & text:\"eh_event=database\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand what normal looks like for your database tier. Identify trends as well as possible risks to your environment by looking for uncharacteristic event patterns (time-of-day, day-of-week, etc).<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Web errors",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379549602380 & timestamp <= 1379553206627 & text:\"eh_event=web\" & text:\"&&\" & text:\"error\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Identify points of failure across your web tier and correlate with overall web tier performance. HTTP 400s and 500s can be thrown for a number of different reasons, and should be further investigated.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Database errors",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379549962342 & timestamp <= 1379553573674 & text:\"eh_event=database\" & text:\"&&\" & text:\"error\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Identify points of failure across your database tier and correlate with overall database performance. Database errors can be caused by a variety of factors including misconfigured application tiers, corrupted databases, or poorly scheduled replication. Further investigation should be performed.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379549662323 & timestamp <= 1379553287131 & text:\"eh_event=storage\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand what normal looks like for your storage tier. Identify trends as well as possible risks to your environment by looking for uncharacteristic event patterns (time-of-day, day-of-week, etc).<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379550202358 & timestamp <= 1379553804375 & text:\"eh_event=memcache\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand what normal looks like for your memcache tier. Identify trends as well as possible risks to your environment by looking for uncharacteristic event patterns (time-of-day, day-of-week, etc).<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage errors",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379549692247 & timestamp <= 1379553310545 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Identify points of failure across your storage tier and correlate with overall storage performance. Storage errors can be a result of mistimed backups, replication problems, or failed disks, and should be further investigated.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache errors",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379549962342 & timestamp <= 1379553573674 & text:\"eh_event=database\" & text:\"&&\" & text:\"error\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Identify points of failure across your storage tier and correlate with overall storage performance. Memcache errors can be caused by a number of factors including improperly-sized keys or malformed cache gets, and should be further investigated.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Web",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Web events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379555902226 & timestamp <= 1379559510234 & text:\"eh_event=web\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand what normal looks like for your web tier. Identify trends as well as possible risks to your environment.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Web errors",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379603768298 & timestamp <= 1379607368297 & text:\"eh_event=web\" & (ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000>399 & text=~\"eh_event.*status_code=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000>\\w+)\") as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000 ORDER BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Identify points of failure across your web tier and correlate with overall web tier performance. HTTP 400s and 500s can be thrown for a number of different reasons, and should be further investigated."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Web request throughput",
+                  "chartQuery": "SELECT SUM(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx2mgjrhs5dfom000000) FROM timestamp >= 1379556063652 & timestamp <= 1379559663651 & text:\"eh_event=web\" & text=~\"eh_event.*req_L2bytes=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx2mgjrhs5dfom000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand bits into the web tier and how request throughput affects performance across the application delivery chain. Identify any abnormal request volumes which may indicate denial-of-service (DoS or DDoS) attacks or other potential risks to your systems.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average network processing time",
+                  "chartQuery": "SELECT AVG(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nzyhe33dmvzxg000) FROM timestamp >= 1379556063652 & timestamp <= 1379559663651 & text:\"eh_event=web\" & text=~\"eh_event.*nprocess=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nzyhe33dmvzxg000>-?\\d*\\.?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Monitor the network's effect on web round trip time, which may indicate a need to optimize the underlying infrastructure supporting your web servers."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Web response throughput",
+                  "chartQuery": "SELECT SUM(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojzxax2mgjrhs5dfom000000) FROM timestamp >= 1379556063652 & timestamp <= 1379559663651 & text:\"eh_event=web\" & text=~\"eh_event.*rsp_L2bytes=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojzxax2mgjrhs5dfom000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand bits out of the web tier and how response throughput affects performance across the application delivery chain. Identify any abnormal response volumes which may indicate increased user demand or other potential risks to your systems.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average server processing time",
+                  "chartQuery": "SELECT AVG(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7oryhe33dmvzxg000) FROM timestamp >= 1379556063652 & timestamp <= 1379559663651 & text:\"eh_event=web\" & text=~\"eh_event.*tprocess=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7oryhe33dmvzxg000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Monitor the web server's effect on web round trip time, which may indicate a need to optimize your web application or the supporting application delivery chain.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Web top URI",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379556063652 & timestamp <= 1379559663651 & text:\"eh_event=web\" & text=~\"eh_event.*uri=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ovzgs000>\\S+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ovzgs000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Identify URIs commonly being accessed, understand how your web tier is being utilized, and whether there are applications or workflows that you can optimized.&nbsp;"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Web top status codes",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379556063652 & timestamp <= 1379559663651 & text:\"eh_event=web\" & text=~\"eh_event.*status_code=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000>\\w+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Monitor top HTTP status codes, which can give insight into general performance of your application. Status codes of 200 most likely represent a healthy application compared to 400s and 500s which represent various errors. More information can be found in&nbsp;<a href=\"http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html\">RFC 2616</a>."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Database",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Database events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379550862330 & timestamp <= 1379554469408 & text:\"eh_event=database\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand what normal looks like for your database tier. Identify trends as well as possible risks to your environment by looking for uncharacteristic event patterns (time-of-day, day-of-week, etc).<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Database errors",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379552902385 & timestamp <= 1379556521757 & text:\"eh_event=database\" & text:\"&&\" & text:\"error\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Identify points of failure across your database tier and correlate with overall database performance. Database errors can be caused by a variety of factors including misconfigured application tiers, corrupted databases, or poorly scheduled replication. Further investigation should be performed.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Database request throughput",
+                  "chartQuery": "SELECT SUM(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx2mgjrhs5dfom000000) FROM timestamp >= 1379551003030 & timestamp <= 1379554603029 & text:\"eh_event=database\" & text=~\"eh_event.*req_L2bytes=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx2mgjrhs5dfom000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand bits into the database tier and how request throughput affects performance across the application delivery chain. Identify any abnormal request volumes which may indicate security events or misconfigured applications.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average network response time",
+                  "chartQuery": "SELECT AVG(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nzyhe33dmvzxg000) FROM timestamp >= 1379553052313 & timestamp <= 1379556677561 & text:\"eh_event=database\" & text:\"&&\" & text:\"nprocess\" & text=~\"eh_event.*nprocess=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nzyhe33dmvzxg000>-?\\d*\\.?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Monitor the network's effect on database round trip time, which may indicate a need to optimize the underlying infrastructure supporting your database servers.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Database response throughput",
+                  "chartQuery": "SELECT SUM(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojzxax2mgjrhs5dfom000000) FROM timestamp >= 1379551003030 & timestamp <= 1379554603029 & text:\"eh_event=database\" & text=~\"eh_event.*rsp_L2bytes=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojzxax2mgjrhs5dfom000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand bits out of the database tier and how response throughput affects performance across the application delivery chain. Identify any abnormal response volumes which may indicate increased user demand, poorly formed queries, or other risks to your systems.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average server processing time",
+                  "chartQuery": "SELECT AVG(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7oryhe33dmvzxg000) FROM timestamp >= 1379552958286 & timestamp <= 1379556558285 & text:\"eh_event=database\" & text:\"&&\" & text:\"tprocess\" & text=~\"eh_event.*tprocess=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7oryhe33dmvzxg000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Monitor the database server's effect on database round trip time, which may indicate a need to optimize your database or the supporting application delivery chain.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Database top methods",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379553562376 & timestamp <= 1379557181869 & text:\"eh_event=database\" & text=~\"eh_event.*method=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvsxi2dpmq000000>\\S+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvsxi2dpmq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Understand how the database is being used based off of the method calls against it (more info about various methods available <a href=\"http://www.w3schools.com/sql/default.asp\">here</a>). Methods include SELECT, INSERT, UPDATE, DELETE, SHOW, ALTER, CREATE, DROP, CALL, and OTHER. E.g. reads against write configured databases or vice-versa can cause performance problems and poor user experience."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Database top users",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379553581870 & timestamp <= 1379557181869 & text:\"eh_event=database\" & text=~\"eh_event.*user=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ovzwk4q0>\\S+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ovzwk4q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Identify top database users to identify potential areas for optimization as well as tracking and auditing purposes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Storage",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379553742854 & timestamp <= 1379557342853 & text:\"eh_event=storage\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand what normal looks like for your storage tier. Identify trends as well as possible risks to your environment by looking for uncharacteristic event patterns (time-of-day, day-of-week, etc).<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage errors",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379607530189 & timestamp <= 1379611130188 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Identify points of failure across your storage tier and correlate with overall storage performance. Storage errors can be a result of mistimed backups, replication problems, or failed disks, and should be further investigated.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage top errors",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379607584819 & timestamp <= 1379611184818 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" & text=~\"eh_event.*error=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s>'.+?'|\\S+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Identify points of failure across your storage tier and correlate with overall storage performance. Storage errors can be a result of mistimed backups, replication problems, or failed disks, and should be further investigated.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage response throughput",
+                  "chartQuery": "SELECT SUM(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojzxax2mgjrhs5dfom000000) FROM timestamp >= 1379554047069 & timestamp <= 1379557647068 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" & text=~\"eh_event.*rsp_L2bytes=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojzxax2mgjrhs5dfom000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand bits into the storage tier and how request throughput affects performance across the application delivery chain. Identify any abnormal request volumes which may indicate security events or misconfigured applications.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage top methods",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379554047069 & timestamp <= 1379557647068 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" & text=~\"eh_event.*method=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvsxi2dpmq000000>\\S+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvsxi2dpmq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Understand how storage is being used based off of the method calls against it.&nbsp;Methods include OPEN, CLOSE, CREATE, DELETE, RENAME, READ, WRITE, COPY, MOVE, FIND, LOCKING_ANDX, WRITE_AND_UNLOCK, and more. Reads against write configured storage or vice-versa can cause performance problems and poor user experience.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage request throughput",
+                  "chartQuery": "SELECT SUM(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx2mgjrhs5dfom000000) FROM timestamp >= 1379554047069 & timestamp <= 1379557647068 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" & text=~\"eh_event.*req_L2bytes=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx2mgjrhs5dfom000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand bits out of the storage tier and how response throughput affects performance across the application delivery chain. Identify any abnormal response volumes which may indicate increased user demand, poorly configured applications, or other risks to your systems.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage top users",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379554047069 & timestamp <= 1379557647068 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" & text=~\"eh_event.*user=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ovzwk4q0>\\S+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ovzwk4q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Identify top database users to identify potential areas for optimization as well as tracking and auditing purposes.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Storage average access time",
+                  "chartQuery": "SELECT AVG(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mfrwgzltonpxi2lnmu000000) FROM timestamp >= 1379553952401 & timestamp <= 1379557553696 & text:\"eh_event=storage\" & text=~\"eh_event.*access_time=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mfrwgzltonpxi2lnmu000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Monitor the time it takes for servers to access files on the disk. Access times beyond normal operation could indicate disc failure, security events, or other potential issues."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Memcache",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379561002352 & timestamp <= 1379561312446 & text:\"eh_event=memcache\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp ASC",
+                  "info": "Understand what normal looks like for your memcache tier. Identify trends as well as possible risks to your environment by looking for uncharacteristic event patterns (time-of-day, day-of-week, etc).<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache errors",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379605112155 & timestamp <= 1379608712154 & text:\"eh_event=memcache\" & text:\"&&\" & text:\"error\" & text=~\"eh_event.*error=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s>'.+?'|\\S+)\" as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s ORDER BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Identify points of failure across your memcache tier and correlate with overall memcache performance. Memcache errors can be caused by a number of factors including improperly-sized keys or malformed cache gets, and should be further investigated.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache average request size",
+                  "chartQuery": "SELECT AVG(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx3tnf5gk000) FROM timestamp >= 1379605245487 & timestamp <= 1379608845486 & text:\"eh_event=memcache\" & text=~\"eh_event.*req_size=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx3tnf5gk000>\\w+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Size of values in request for methods like SET (unused in GET and DELETE). Monitor baseline size of cached resources and correlate any fluctuations from the norm to performance across the application delivery chain. Monitor potential caches for optimization or reconfiguration."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache average access time",
+                  "chartQuery": "SELECT AVG(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mfrwgzltonpxi2lnmu000000) FROM timestamp >= 1379604693867 & timestamp <= 1379608293866 & text:\"eh_event=memcache\" & text=~\"eh_event.*access_time=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mfrwgzltonpxi2lnmu000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Monitor the time it takes for servers to deliver content from the cache. Access times beyond normal operation could indicate misconfiguration, changes in usage patterns, or other potential issues.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache hits",
+                  "chartQuery": "SELECT SUM(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nbuxi4y0) FROM timestamp >= 1379606291158 & timestamp <= 1379609891157 & text:\"eh_event=memcache\" & text=~\"eh_event=.*hits=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nbuxi4y0>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "The number of values returned from the server to the client in response to \"get\" commands. Higher number of hits relative to misses indicates a well-configured memcache server, as memcache will be serving out heavily requested content."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache top status codes",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379605346607 & timestamp <= 1379608946606 & text:\"eh_event=memcache\" & text=~\"eh_event.*status_code=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000>\\w+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Monitor top memcache status codes, which can give insight into general performance of your application. Several status codes are not considered errors like DELETED or EXISTS, while CLIENT_ERROR, SERVER_ERROR, and others should be further examined. More information can be found <a href=\"http://php.net/manual/en/memcached.getresultcode.php\">here</a>.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache misses",
+                  "chartQuery": "SELECT SUM(item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvuxg43fom000000) FROM timestamp >= 1379606291158 & timestamp <= 1379609891157 & text:\"eh_event=memcache\" & text=~\"eh_event=.*misses=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvuxg43fom000000>-?\\d+)\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                  "info": "Specifies the number of \"get\" commands for which the specified key was not found. Misses are counted even if the server did not explicitly inform the client of the miss (for example, if the get was a \"quiet\" request). Relatively high number of misses compared to hits indicates that memcache needs tuning, as it is not serving highly requested content."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Memcache top methods",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379605709533 & timestamp <= 1379609309532 & text:\"eh_event=memcache\" & text=~\"eh_event.*method=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvsxi2dpmq000000>\\S+)\" as item0 GROUP BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvsxi2dpmq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Understand how memcache is being used based off of the method calls against it (more info about various methods available <a href=\"http://www.php.net/manual/en/class.memcache.php\">here</a>). \"Get\" represents the get and gets commands in the Memcache text protocol and the get, getq, getk, and getkq commands in the Memcache binary protocol.<br>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 900000,
+      "hitCount": 5,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1379926487486 & timestamp <= 1379930112522 & text:\"eh_event=database\" & text:\"&&\" & text:\"error\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 60000,
+      "name": "Database Error Alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379926487486 & timestamp <= 1379930112522 & text:\"eh_event=database\" & text:\"&&\" & text:\"error\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+      "info": "Alert when more database errors are thrown than configured below.<br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 5,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1379926337409 & timestamp <= 1379929964352 & text:\"eh_event=web\" & (ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000>399 & text=~\"eh_event.*status_code=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000>\\w+)\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 60000,
+      "name": "Web Error Alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379926337409 & timestamp <= 1379929964352 & text:\"eh_event=web\" & (ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000>399 & text=~\"eh_event.*status_code=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000>\\w+)\") as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000 ORDER BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000 DESC,item0.timestamp DESC LIMIT 1,2000",
+      "info": "Alert when more HTTP errors are thrown than configured below."
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 5,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1379926607445 & timestamp <= 1379930213530 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 60000,
+      "name": "Storage Error Alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379926607445 & timestamp <= 1379930213530 & text:\"eh_event=storage\" & text:\"&&\" & text:\"error\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+      "info": "Alert when more storage errors are thrown than configured below.<br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 5,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1379926637246 & timestamp <= 1379930263442 & text:\"eh_event=memcache\" & text:\"&&\" & text:\"error\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 60000,
+      "name": "Memcache Error Alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379926637246 & timestamp <= 1379930263442 & text:\"eh_event=memcache\" & text:\"&&\" & text:\"error\" & text=~\"eh_event.*error=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s>'.+?'|\\S+)\" as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s ORDER BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s DESC,item0.timestamp DESC LIMIT 1,2000",
+      "info": "Alert when more memcache errors are thrown than configured below.<br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1,
+      "hitOperator": "LESS_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1379926757267 & timestamp <= 1379930375759 & text:\"eh_event=*\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 60000,
+      "name": "Lost Connection to ExtraHop",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1379926757267 & timestamp <= 1379930375759 & text:\"eh_event=*\" & text=~\"eh_event=(?<ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu>\\w+)\" as item0 GROUP BY item0.timestamp/60000,item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu ORDER BY item0.ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu DESC,item0.timestamp DESC LIMIT 1,2000",
+      "info": "If no ExtraHop events are seen in the previous 5 minutes, likely the ExtraHop syslog is no longer reaching Log Insight."
+    }
+  ],
+  "name": "ExtraHop - Wire Data",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mv3gk3tu",
+      "preContext": "eh_event=",
+      "regexValue": "\\w+",
+      "displayName": "eh_event"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mfrwgzltonpxi2lnmu000000",
+      "preContext": "eh_event.*access_time=",
+      "regexValue": "-?\\d+",
+      "displayName": "eh_access_time"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvsxi2dpmq000000",
+      "preContext": "eh_event.*method=",
+      "regexValue": "\\S+",
+      "displayName": "eh_method"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7mvzhe33s",
+      "preContext": "eh_event.*error=",
+      "regexValue": "'.+?'|\\S+",
+      "displayName": "eh_error"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojzxax2mgjrhs5dfom000000",
+      "preContext": "eh_event.*rsp_L2bytes=",
+      "regexValue": "-?\\d+",
+      "displayName": "eh_rsp_L2bytes"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx2mgjrhs5dfom000000",
+      "preContext": "eh_event.*req_L2bytes=",
+      "regexValue": "-?\\d+",
+      "displayName": "eh_req_L2bytes"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ovzwk4q0",
+      "preContext": "eh_event.*user=",
+      "regexValue": "\\S+",
+      "displayName": "eh_user"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nzyhe33dmvzxg000",
+      "preContext": "eh_event.*nprocess=",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "eh_nprocess"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7on2gc5dvonpwg33emu000000",
+      "preContext": "eh_event.*status_code=",
+      "regexValue": "\\w+",
+      "displayName": "eh_status_code"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7oryhe33dmvzxg000",
+      "preContext": "eh_event.*tprocess=",
+      "regexValue": "-?\\d+",
+      "displayName": "eh_tprocess"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ovzgs000",
+      "preContext": "eh_event.*uri=",
+      "regexValue": "\\S+",
+      "displayName": "eh_uri"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nvuxg43fom000000",
+      "preContext": "eh_event=.*misses=",
+      "regexValue": "-?\\d+",
+      "displayName": "eh_misses"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojsxcx3tnf5gk000",
+      "preContext": "eh_event.*req_size=",
+      "regexValue": "\\w+",
+      "displayName": "eh_req_size"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nbuxi4y0",
+      "preContext": "eh_event=.*hits=",
+      "regexValue": "-?\\d+",
+      "displayName": "eh_hits"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7ojzxax3tnf5gk000",
+      "preContext": "eh_event.*rsp_size=",
+      "regexValue": "\\w+",
+      "displayName": "eh_rsp_size"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadems7mnxw2ltfpb2heylin5yc4ylqobwgsylomnswk2c7nnsxs4y0",
+      "preContext": "eh_event=.*keys=",
+      "regexValue": "\\S+",
+      "displayName": "eh_keys"
+    }
+  ],
+  "version": "1.0",
+  "namespace": "com.extrahop.appliance",
+  "icon": "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",
+  "author": "ExtraHop Networks",
+  "contentVersion": "1.0",
+  "url": "http://www.extrahop.com",
+  "info": "Import real-time network, web, database, storage, and memcache metrics into Log Insight that are otherwise difficult or impossible to log. To work, this app requires an ExtraHop appliance. You can download a free ExtraHop virtual appliance at <a href=\"http://www.extrahop.com/discovery\">http://www.extrahop.com/discovery</a><br>"
+}

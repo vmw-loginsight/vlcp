@@ -1,0 +1,882 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Count of all events in vCenter Operations Manager",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384671036255 & timestamp <= 1384757436254 & (text:\"AnalyticVM\" | text:\"UIVM\") as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>The count of all messages logged and redirected in vCenter Operations manager over time. Use this chart to refine the queries used and add constraints for further analysis.</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "All failed admin commands",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384427065627 & timestamp <= 1384820601447 & ((FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000) & text=~\"VMware\\.vcops-admin.*CMD \\\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000>.*)\\\" STATUS\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsf643umf2hk4y0=1 & text=~\"vcopsadmin-perl.*STATUS: (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsf643umf2hk4y0>-?\\d+)\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000 ORDER BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "<span>This widget shows all failed Admin commands</span>. Use this chart to refine the queries and define constraints if you find any abnormal behavior in the vCenter Operations Manager ecosystem.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Count of all admin commands executed",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382520667680 & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000) & text=~\"VMware\\.vcops-admin.*CMD \\\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000>.*)\\\" STATUS\") as item0 GROUP BY item0.timestamp/21600000,item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000 ORDER BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "This widget shows all admin commands executed in vCenter Operations Manager. Use this chart to refine the queries and define constraints if you find any abnormal behavior in the vCenter Operations Manager ecosystem."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382522531811 & text:\"error\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382522531811 & text:\"error\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All error messages logged in the vCenter Operation Manager"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381118814348 & timestamp <= 1381131318039 & text:\"exception\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Exceptions",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381118814348 & timestamp <= 1381131318039 & text:\"exception\" as item0 GROUP BY item0.timestamp/300000 ORDER BY item0.timestamp ASC",
+                      "info": "All Exceptions logged in vCenter Operations Manager"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381118814348 & timestamp <= 1381121440501 & (((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") | ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"UIVM\") & (text:\"INFO\" | text:\"INFORMATION\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Info messages per VM",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381118814348 & timestamp <= 1381121440501 & (((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") | ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"UIVM\") & (text:\"INFO\" | text:\"INFORMATION\")) as item0 GROUP BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "All information level logs in vCenter Operations Manager grouped by Analytical VM and UI VM"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381118814348 & timestamp <= 1381121587364 & (((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") | ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"UIVM\") & text:\"error\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Error messages per VM",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381118814348 & timestamp <= 1381121587364 & (((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") | ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"UIVM\") & text:\"error\") as item0 GROUP BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "All error messages logged in vCenter Operations Manager grouped by Analytical VM and UI VM"
+                    }
+                  ],
+                  "info": "Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot vCenter Operations Manger ecosystem."
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "All vCenter Related Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381118814348 & timestamp <= 1381144951865 & text=~\"vc\\-[0-9]+\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Messages with vCenter reference ",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381118814348 & timestamp <= 1381144951865 & text=~\"vc\\-[0-9]+\" as item0 GROUP BY item0.timestamp/600000 ORDER BY item0.timestamp ASC",
+                      "info": "All messages that refer to VC-[ciq_vc_version]"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382519787595 & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df:\"vim.fault.NotAuthenticated\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df>vim\\.fault\\.\\w+)\") & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df) & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Non-Authenticated faults",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382519787595 & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df:\"vim.fault.NotAuthenticated\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df>vim\\.fault\\.\\w+)\") & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df) & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "The count of non-authenticated sessions on vCenter logged by vCenter Operations Manager"
+                    }
+                  ],
+                  "info": "Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot vCenter Operations Manger ecosystem with respect to vCenter Connectivity"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Deployment",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "All Deployment Events on Analytics VM",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385365865189 & timestamp <= 1386238848111 & text:\"AnalyticVM::Upgrade::\" & ((FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000) & text=~\".*(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000>AnalyticVM)::\") & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000) & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows all the event logged in the Analytics VM during the deployment of vCenter Operations Manager&nbsp;. Use this chart to analyze and troubleshoot the issues that might have occurred during the deployment.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "All Deployment Events on UI VM",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385365865189 & timestamp <= 1386242491678 & text:\"UIVM::Upgrade::\" & ((FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000) & text=~\" \\[(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000>UIVM)::.*::\\S+\\]\") & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000) & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows all the event logged in the UI VM during the deployment of vCenter Operations Manager. Use this chart to analyze and troubleshoot the issues that might have occurred during the deployment.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "All DBCli messages",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384427065627 & timestamp <= 1384820047846 & text:\"dbcli\" as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows all the messages logged during dbcli operations. This messages are logged primarily during the import of dashboards into vCenter Operations Manager.&nbsp;Use this chart to analyze and troubleshoot the issues that might have occurred during the import of the dashboards into vCenter Operations Manager.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "All Upgrade Messages",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385365865189 & timestamp <= 1386239090290 & text:\"::Upgrade::updater\" & ((FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df) & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000) & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0) & text=~\"\\[(AnalyticVM|UIVM)::.*::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0>\\w+)\\]\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df ORDER BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "This widget shows all the messages logged during the upgrade of vCenter Operations Manager.&nbsp;Use this chart to analyze and troubleshoot the issues that might have occurred during the upgrade of vCenter Operations Manager.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Analytics",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "All events in Analytics VM  grouped by components",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385365865189 & timestamp <= 1386227221116 & text:\"analyticvm\" & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000) & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 GROUP BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "All events in Analytics VM &nbsp;grouped by components<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Mean free memory (in KB) in Analytics VM",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000) FROM timestamp >= 1385365865189 & timestamp <= 1386306711001 & text:\"memory\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000) & text=~\"\\[AnalyticVM::System Memory::usage\\]MemFree:         (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000>-?\\d+) kB\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This widget shows available memory (in KB) on Analytics VM over a period of time. If the free memory decreases rapidly, the performance of the Analytics VM might degrade.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Average free space in /data drive",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000) FROM timestamp >= 1381322034069 & timestamp <= 1383905187987 & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0:\"data\" & text=~\"com\\.integrien\\.alive.*Free space in drive (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0>.*) is \") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"analyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\")) & text=~\"com\\.integrien\\.alive.*printHddInfoFreeSpace.* is (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000>-?\\d+)\" as item0 GROUP BY item0.timestamp/43200000,item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0 ORDER BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "This widget shows the free space in /data drive of Analytics VM. If the free space decreases rapidly, consider increasing the disk space on /data drive."
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Average free space available in /",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000) FROM timestamp >= 1384761365189 & timestamp <= 1386236910344 & ((FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0) & text=~\"com\\.integrien\\.alive.*Free space in drive (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0>.*) is \") & !ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0:\"data\") & text=~\"com\\.integrien\\.alive.*printHddInfoFreeSpace.* is (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000>-?\\d+)\" as item0 GROUP BY item0.timestamp/43200000,item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0 ORDER BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "This widget shows the free space available in / drive of Analytics VM over a period of time.&nbsp;<span>If the free space decreases rapidly, consider increasing the disk space on / drive.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Mean free memory for DT calculation over time",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc) FROM timestamp >= 1385365865189 & timestamp <= 1386306574381 & text:\"dtprogress\" & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc) & text=~\"com.integrien.alive.common.dt.DTProgress.increment.*Free Mem\\(MB\\):(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc>-?\\d+) Total Mem\\(MB\\)\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This widget shows the available memory for Dynamic Threshold (DT) calculation over a period of time. If this memory decreases rapidly, dynamic threshold processing might slow down.</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Mean memory used for DT calculation over time",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc) FROM timestamp >= 1385365865189 & timestamp <= 1386306401320 & text:\"dtprogress\" & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc) & text=~\"AnalyticVM::Analytics::analytics.*Used Memory\\(MB\\):(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc>-?\\d+) Free\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This widget shows the memory used for Dynamic Threshold (DT) calculation over a period of time. If there is an uptrend in the consumption of this memory, the dynamic threshold processing might have performance issues</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "All Analytics VM Watchdog messages ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384346222117 & timestamp <= 1384346522423 & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0:\"watchdog\" & text=~\"\\[(AnalyticVM|UIVM)::.*::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0>\\w+)\\]\")) as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows all the messages from the watchdog service running on the Analytics VM. The watchdog service monitors the health of all the components. This chart can be used to analyze and troubleshoot issues with specific components if watchdog service reports an &nbsp;abnormal state for any component.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "All Data Exceptions in Analytics VM",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384427065627 & timestamp <= 1386242684018 & text:\"could not insert:\" & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000) & text=~\".*(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000>AnalyticVM)::\") as item0 GROUP BY item0.timestamp/43200000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This widget shows all&nbsp;</span><span>types of Data Exceptions logged in the Analytics VM. Use this chart to analyze and troubleshoot all the data exceptions in the Analytics VM</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "All Relevant Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382522778702 & text:\"error\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382522778702 & text:\"error\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All error messages logged on the Analytics VM"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1383913037961 & text:\"exception\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"analyticvm\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Exceptions",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1383913037961 & text:\"exception\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"analyticvm\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") as item0 GROUP BY item0.timestamp/43200000 ORDER BY item0.timestamp ASC",
+                      "info": "All exceptions logged on the Analytics VM"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1382510609787 & timestamp <= 1382511805807 & text:\"could\" & text:\"not\" & text:\"insert:\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Data Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1382510609787 & timestamp <= 1382511805807 & text:\"could\" & text:\"not\" & text:\"insert:\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+                      "info": "All data errors logged on the Analytics VM<br>"
+                    }
+                  ],
+                  "info": "Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot the Analytics VM behavior."
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Collection: All relevant Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1384427065627 & timestamp <= 1384518901837 & text:\"activemq\" & text:\"error\" & text:\"analyticvm\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All ActiveMQ Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384427065627 & timestamp <= 1384518901882 & text:\"activemq\" & text:\"error\" & text:\"analyticvm\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                      "info": "All error messages related to ActiveMQ service&nbsp;<br>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382522933819 & text:\"error\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Collector\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Collector Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382522933819 & text:\"error\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Collector\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All errors related to the collector service"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381042853092 & timestamp <= 1381129276813 & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f) & text=~\"com\\.integrien\\.alive\\.collector\\.CollectorMain\\.\\w+ \\- (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f>.*) has\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Collector Status Events",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381042853092 & timestamp <= 1381129276813 & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f) & text=~\"com\\.integrien\\.alive\\.collector\\.CollectorMain\\.\\w+ \\- (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f>.*) has\") as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                      "info": "All Collector Status modification events e.g. start, stop&nbsp;"
+                    }
+                  ],
+                  "info": "Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot collections in the Analytics VM.&nbsp;"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "UI",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "All Events in UI VM grouped by Components",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385365865189 & timestamp <= 1386237394540 & text:\"uivm\" & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000) & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 GROUP BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This widget shows component level classification of all events of the UI VM of vCenter Operations Manager.&nbsp;</span><span>To filter events by a specific component, click on the chart and add a constraint.</span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "All Data Exceptions in UI VM",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385365865189 & timestamp <= 1386242926756 & text:\"could not insert:\" & ((FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000) & text=~\" \\[(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000>UIVM)::.*::\\S+\\]\") & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000) & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This widget shows</span>&nbsp;all<span style=\"font-weight: bold;\">&nbsp;</span>types of Data Exceptions logged in the Analytics VM. Use this chart to analyze and troubleshoot all the data exceptions in theUI VM.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Mean Free Memory (in KB)",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000) FROM timestamp >= 1384341063847 & timestamp <= 1384341363846 & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000) & text=~\"UIVM::System Memory::usage.*MemFree:         (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000>-?\\d+) kB\") as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp ASC",
+                  "info": "<span>This widget shows available memory (in KB) in the UI VM over a period of time. If the free memory decreases rapidly, the performance of the UI VM might degrade.&nbsp;</span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "All Watchdog messages",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1383741485248 & timestamp <= 1384346285247 & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"UIVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0:\"watchdog\" & text=~\"\\[(AnalyticVM|UIVM)::.*::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0>\\w+)\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows all the messages from the watchdog service running in the UI VM. The watchdog service monitors the health of all the components. This chart can be used to analyze and troubleshoot the issues with specific components if watchdog service reports abnormal state for any component."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "All Relevant Queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382446264444 & text:\"exception\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"uivm\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All UI Exception",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382446264444 & text:\"exception\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"uivm\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All exceptions logged on the UI VM"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382522531811 & text:\"error\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382522531811 & text:\"error\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All Errors logged on the UI VM"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382603778708 & text:\"metricdatareceiver\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Metric Data Receiver Messages",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382603778708 & text:\"metricdatareceiver\" as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All messages related to Metric Data Receiver logged on the UI VM"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1384259495779 & timestamp <= 1384345897242 & (((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") | ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"UIVM\") & (text:\"INFO\" | text:\"INFORMATION\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Info Messages",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384259497243 & timestamp <= 1384345897242 & (((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") | ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"UIVM\") & (text:\"INFO\" | text:\"INFORMATION\")) as item0 GROUP BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "All information messages logged on the UI VM"
+                    }
+                  ],
+                  "info": "Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot UI VM behavior.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Capacity Planning",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Connectivity Error to MQ",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385362565189 & timestamp <= 1385550042856 & text:\"ciq\\]\" & (text:\"javax.jms.JMSException\" | text:\"Can not connect to the MQ Broker\") as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows all the errors logged during connection attempts to the ActiveMQ service. If this chart displays data, it is possible that the ActiveMQ service is down.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Average time (in ms) to fetch metric data grouped by object name",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27mzsxiy3il52gs3lf) FROM timestamp >= 1385365865189 & timestamp <= 1386306265301 & text:\"fetchmetricdata\" & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000) & text=~\" com\\.vmware\\.vcops\\.ciq\\.adapter\\.CIQMetricDataServiceImpl\\.fetchMetricData - Fetched.*for <(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000>.*)\\, \\d+>\") & text=~\"com\\.vmware\\.vcops\\.ciq\\.adapter\\.CIQMetricDataServiceImpl\\.fetchMetricData.* Took <(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27mzsxiy3il52gs3lf>-?\\d+)> ms!\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000 ORDER BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "<span>This widget shows the time taken while fetching the metric data for each object (grouped by object name). Use this chart to analyze and troubleshoot, time taken to fetch data for particular objects.</span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Mean time (in sec.) to perform a performance data roll up",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000) FROM timestamp >= 1381137600000 & timestamp <= 1381138199999 & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000) & text=~\"Time to persist rollup perf data for VC\\-[0-9]+ : [0-9]+ objects = (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000>-?\\d*\\.?\\d+) seconds\") as item0 GROUP BY item0.timestamp/1000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows the time taken to perform the roll up of performance data for any of the vCenters. Use this chart to analyze and troubleshoot performance issues if the time taken to roll up is high (i.e. in minutes)."
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Mean time (in sec.) for rolling sum init data",
+                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000) FROM timestamp >= 1385365865189 & timestamp <= 1386242262000 & text:\"Time for rolling sum init\" & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000) & text=~\"Time for rolling sum init data  = (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000>-?\\d*\\.?\\d+) seconds\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows all the messages logged for the time taken while rolling the sum init data. Use this chart if the time taken is too high (i.e. in minutes).<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "All Relevant Queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382522531811 & text:\"error\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382522531811 & text:\"error\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All error messages logged from CIQ Adapter"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382522469975 & text:\"exception\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Exceptions",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382522469975 & text:\"exception\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All exceptions logged from CIQ Adapter"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381218407673 & timestamp <= 1381218709697 & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") & (text:\"JMSException\" | text:\"java\\.net\\.ConnectException\" | text:\"Could not connect to broker\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All MQ Connection Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381218407673 & timestamp <= 1381218709697 & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"CIQ\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") & (text:\"JMSException\" | text:\"java\\.net\\.ConnectException\" | text:\"Could not connect to broker\")) as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp ASC",
+                      "info": "All errors related to the connection failure with MQ broker"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382521178666 & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000) & text=~\"SVMetric Runner completed task for taskId == (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000>-?\\d+)\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Completed Single Value Metrics tasks",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382521178666 & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000) & text=~\"SVMetric Runner completed task for taskId == (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000>-?\\d+)\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "List of all the completed Single Value Metrics calculation tasks"
+                    }
+                  ],
+                  "info": "Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot issues related to the capacity planning operations within vCenter Operations Manager. All these messages are logged by the CIQ adapter.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Adapters",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "All Adapter messages grouped by Adapter type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385365865189 & timestamp <= 1386237967602 & text:\"AnalyticVM::Adapter\" & (FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0) & text=~\"\\[(AnalyticVM|UIVM)::.*::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0>\\w+)\\]\") as item0 GROUP BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows all the messages logged by different adapters integrated with vCenter Operations Manager instance. Use this chart to analyze and troubleshoot various adapter related issues. &nbsp;<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "All messages from Capacity Planner Adapter ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382521785358 & text:\"com.vmware.vcops.ciq.adapter.CIQPushAdapter\" as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                  "info": "This widget shows all the messages logged by CIQ push adapter, which is responsible for pulling data from Analytics VM to UI VM. Most of the messages are related to data collection. If the number of messages is high in a short period of time, either frequent data collections are occurring or there might be an issue with the data being collected.&nbsp;<span>Use this chart to analyze and troubleshoot time taken for collections.</span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "All Relevant Queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382523240543 & text:\"error\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Adapter\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Errors",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382523240543 & text:\"error\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Adapter\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All Errors from all the integrated adapters on vCenter Operations Manager"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1382523310449 & text:\"exception\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Adapter\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Exceptions",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1382523310449 & text:\"exception\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Adapter\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+                      "info": "All exceptions logged by all the adapters integrated on vCenter Operations Manager"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1381118814348 & timestamp <= 1381215383626 & ((FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df) & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Adapter\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All Adapter messages",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381118814348 & timestamp <= 1381215383626 & ((FIELD_EXISTS(ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df) & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Adapter\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\")) & text=~\"\\[(AnalyticVM|UIVM)::.*::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0>\\w+)\\]\" as item0 GROUP BY item0.ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "All messages from all the adapters integrated on vCenter Operations Manager"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1385365865189 & timestamp <= 1385548138849 & text:\"analyticvm::adapter::VMware*\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "All VMWare Adapter Messages",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385365865189 & timestamp <= 1385548138849 & text:\"analyticvm::adapter::VMware*\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
+                      "info": "All VMWare Adapter Messages<br>"
+                    }
+                  ],
+                  "info": "This widget shows all the detailed queries which can be used to analyze and troubleshoot the issues related to the various adapters integrated with the vCenter Operations Manager."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1382510609787 & timestamp <= 1382511805807 & text:\"could\" & text:\"not\" & text:\"insert:\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Possible data error occurred",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1382510609787 & timestamp <= 1382511805807 & text:\"could\" & text:\"not\" & text:\"insert:\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+      "info": "This alert is raised when the DB schema receives invalid input or when a non-existent DB object is accessed."
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 5.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1382501262165 & timestamp <= 1382523035461 & text:\"error\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Collector\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") & text:\"Can not connect to the MQ Broker\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Collector: Could not connect to MQ Broker",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1382501262165 & timestamp <= 1382523035461 & text:\"error\" & ((ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df:\"AnalyticVM\" & text=~\"(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df>UIVM|AnalyticVM)\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000:\"Collector\" & text=~\"\\[(AnalyticVM|UIVM)::(?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000>\\S+)::\\S+\\]\") & text:\"Can not connect to the MQ Broker\") as item0 GROUP BY item0.timestamp/600000 ORDER BY item0.timestamp ASC",
+      "info": "This alert is raised when the collector service cannot connect with ActiveMQ Service.&nbsp;"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1381322034069 & timestamp <= 1384347020781 & text:\"data\" & text:\"files\" & text:\"missing\" & text:\"from\" & text:\"diskspace\" & text:\"folder\" & (text:\"analyticvm\" | text:\"uivm\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Data files missing from diskspace",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1381322034069 & timestamp <= 1384347020781 & text:\"data\" & text:\"files\" & text:\"missing\" & text:\"from\" & text:\"diskspace\" & text:\"folder\" & (text:\"analyticvm\" | text:\"uivm\") as item0 GROUP BY item0.timestamp/86400000 ORDER BY item0.timestamp ASC",
+      "info": "This alert is raised when some of the data files are missing. Contact support if the problem persists for more than 24 hours.&nbsp;"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 10.0,
+      "hitOperator": "LESS_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384427065627 & timestamp <= 1384931502082 & text:\"uivm\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "UI VM logging is down",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384427065627 & timestamp <= 1384931885960 & text:\"uivm\" as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+      "info": "<span>This alert is raised if Log Insight stops receiving logs from the UI VM.&nbsp;</span><br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 10.0,
+      "hitOperator": "LESS_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1385348865927 & timestamp <= 1385349165926 & text:\"analyticvm\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Analytics VM Logging down",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385348865927 & timestamp <= 1385349165926 & text:\"analyticvm\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp ASC",
+      "info": "This alert is raised if &nbsp;Log Insight stops receiving logs from the Analytics VM.&nbsp;<br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384427065627 & timestamp <= 1385350397311 & text:\"disk::usage\" & (text:\"analyticvm\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0:\"/data\" & text=~\"Disk\\:\\:usage\\].*% (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0>\\S+)$\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>=80 & text=~\"::Disk::usage].* (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>-?\\d+)% /\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Disk Usage at data partition exceeds 80 Percent in Analytical VM",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384427065627 & timestamp <= 1385350427799 & text:\"disk::usage\" & (text:\"analyticvm\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0:\"/data\" & text=~\"Disk\\:\\:usage\\].*% (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0>\\S+)$\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>=80 & text=~\"::Disk::usage].* (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>-?\\d+)% /\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+      "info": "<span>Disk Usage at /data exceeds 80% of total space. Consider cleaning up of the disk.</span><br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384427065627 & timestamp <= 1385350739276 & text:\"disk::usage\" & (text:\"analyticvm\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0=~\"/$\" & text=~\"Disk\\:\\:usage\\].*% (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0>\\S+)$\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>=80 & text=~\"::Disk::usage].* (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>-?\\d+)% /\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Disk usage at root partition exceeds 80 Percent in Analytics VM",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384427065627 & timestamp <= 1385350753257 & text:\"disk::usage\" & (text:\"analyticvm\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0=~\"/$\" & text=~\"Disk\\:\\:usage\\].*% (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0>\\S+)$\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>=80 & text=~\"::Disk::usage].* (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>-?\\d+)% /\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+      "info": "<span>The disk usage at \"/\" exceeds 80% in&nbsp;Analytics VM. Consider cleaning up of the disk.</span><br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1382445151294 & timestamp <= 1382445667241 & text:\"Could\" & text:\"not\" & text:\"connect\" & text:\"to\" & text:\"SMTP\" & text:\"host:\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "SMTP Blocked or Unavailable",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1382445151294 & timestamp <= 1382445667241 & text:\"Could\" & text:\"not\" & text:\"connect\" & text:\"to\" & text:\"SMTP\" & text:\"host:\" as item0 GROUP BY item0.timestamp/10000 ORDER BY item0.timestamp ASC",
+      "info": "<span><span><a href=\"http://kb.vmware.com/kb/2039445\">KB&nbsp;<span>2039445</span></a>: Unable to send emails from the vCenter Operations Manager (vCOPS) setup&nbsp;<br><br><span>Possible reasons for the issue are:</span><span>&nbsp;</span><br><span>The firewall blocks SMTP traffic from the Analytics VM</span><br><span>The SMTP server connection has timed out while attempting to connect.</span><br></span></span>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1385350581491 & timestamp <= 1385350882241 & text:\"disk::usage\" & (text:\"uivm\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0=~\"/$\" & text=~\"Disk\\:\\:usage\\].*% (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0>\\S+)$\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>=80 & text=~\"::Disk::usage].* (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>-?\\d+)% /\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Disk Usage at root partition exceeds 80 Percent in UI VM",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1385350581491 & timestamp <= 1385350882241 & text:\"disk::usage\" & (text:\"uivm\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0=~\"/$\" & text=~\"Disk\\:\\:usage\\].*% (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0>\\S+)$\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>=80 & text=~\"::Disk::usage].* (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>-?\\d+)% /\")) as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp ASC",
+      "info": "<span>The disk usage at \"/\" exceeds 80% in UI VM. Consider cleaning up of the disk.</span><br>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384427065627 & timestamp <= 1385350130695 & text:\"disk::usage\" & (text:\"uivm\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0:\"/data\" & text=~\"Disk\\:\\:usage\\].*% (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0>\\S+)$\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>=80 & text=~\"::Disk::usage].* (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>-?\\d+)% /\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Disk usage at data partition exceeds 80 Percent in UI VM",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384427065627 & timestamp <= 1385350173621 & text:\"disk::usage\" & (text:\"uivm\" & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0:\"/data\" & text=~\"Disk\\:\\:usage\\].*% (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0>\\S+)$\") & (ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>=80 & text=~\"::Disk::usage].* (?<ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000>-?\\d+)% /\")) as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
+      "info": "<span>Disk Usage at /data exceeds 80% of total space. Consider cleaning up of the disk.</span>"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1384927807518 & timestamp <= 1384931435582 & text:\"org\\.hibernate\\.exception\\.DataException:\" & text:\"could\" & text:\"not\" & text:\"insert:\" & text:\"[com\\.integrien\\.alive\\.common\\.hibernate\\.CredentialField]\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Username and Password guidelines violated",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1384927807518 & timestamp <= 1384931435582 & text:\"org\\.hibernate\\.exception\\.DataException:\" & text:\"could\" & text:\"not\" & text:\"insert:\" & text:\"[com\\.integrien\\.alive\\.common\\.hibernate\\.CredentialField]\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp ASC",
+      "info": "<span><a href=\"http://kb.vmware.com/kb/1037850\">KB&nbsp;1037850</a>:&nbsp;</span><span>This article provides information on username and password guidelines and restrictions for vCenter Operations Standard 1.0.x, vCenter Operations Enterprise 1.0.x VMware Adapter&nbsp;and vCenter Operations Manager vApp 5.x&nbsp;.</span><br>"
+    }
+  ],
+  "name": "VMware - vCenter Operations Manager",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "\" STATUS",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000",
+      "preContext": "VMware\\.vcops-admin.*CMD \"",
+      "regexValue": ".*",
+      "displayName": "vmw_vc_ops_admin_cmd"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsf643umf2hk4y0",
+      "preContext": "vcopsadmin-perl.*STATUS: ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_admin_cmd_status"
+    },
+    {
+      "postContext": " 'CIQ request' response from Alive",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylmnf3gky3jofpxezltobxw443fl5zgky3jmv3gkza0",
+      "preContext": "\\-  ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vc_ops_aliveciq_response_recieved"
+    },
+    {
+      "postContext": " kB",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000",
+      "preContext": "\\[AnalyticVM::System Memory::usage\\]MemFree:         ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_analytics_vm_free_memory"
+    },
+    {
+      "postContext": "::",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000",
+      "preContext": ".*",
+      "regexValue": "AnalyticVM",
+      "displayName": "vmw_vc_ops_analyticvm_type"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3bobqwg2lupfpxe427nvqw4ylhmvza0000",
+      "preContext": "com\\.vmware\\.cm\\.collector\\.perf\\.rollingsum\\.manager\\.impl\\.",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vc_ops_capacity_rs_manager"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpwi4tpobygkzc7mfsgc4dumvzf63ltm5pwg33vnz2a0000",
+      "preContext": "Number of dropped messages for adapterId\\--?\\d+ = ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_ciq_dropped_adapter_msg_count"
+    },
+    {
+      "postContext": "\\] INFO",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpw243hl5rwqylonzswy000",
+      "preContext": "ciq\\] \\[",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vc_ops_ciq_msg_channel"
+    },
+    {
+      "postContext": ": Could",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpw243hl5yxkzlvmvpwk6ddmvyhi2lpny000000",
+      "preContext": "ciq\\] ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vc_ops_ciq_msg_queue_exception"
+    },
+    {
+      "postContext": " seconds",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000",
+      "preContext": "Time to persist rollup perf data for VC\\-[0-9]+ : [0-9]+ objects = ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_vc_ops_ciq_perf_data_rollup_time"
+    },
+    {
+      "postContext": " seconds",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000",
+      "preContext": "Time for rolling sum init data  = ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_vc_ops_ciq_rollingsum_init_time"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000",
+      "preContext": "SVMetric Runner completed task for taskId == ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_ciq_svmetric_taskid"
+    },
+    {
+      "postContext": " \\(id",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofzgk4lvmvzxix3tovrwgzlemvsa0000",
+      "preContext": "'CIQ request' ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vc_ops_ciqrequest_succeded"
+    },
+    {
+      "postContext": " 'CIQ request' task to Alive",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jof2gc43ll5zgk4lvmvzxi000",
+      "preContext": "\\->  ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vc_ops_ciqtask_request"
+    },
+    {
+      "postContext": " has",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f",
+      "preContext": "com\\.integrien\\.alive\\.collector\\.CollectorMain\\.\\w+ \\- ",
+      "regexValue": ".*",
+      "displayName": "vmw_vc_ops_collector_service"
+    },
+    {
+      "postContext": " \\S+$",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643wmnpxg5dbor2xg000",
+      "preContext": "CollectorService has been ",
+      "regexValue": ".*",
+      "displayName": "vmw_vc_ops_collector_svc_status"
+    },
+    {
+      "postContext": "::\\S+\\]",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000",
+      "preContext": "\\[(AnalyticVM|UIVM)::",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vc_ops_component_type"
+    },
+    {
+      "postContext": ":",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdborqv6zlymnsxa5djn5xa0000",
+      "preContext": "org\\.hibernate\\.exception\\.",
+      "regexValue": "DataException",
+      "displayName": "vmw_vc_ops_data_exception"
+    },
+    {
+      "postContext": " is ",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0",
+      "preContext": "com\\.integrien\\.alive.*Free space in drive ",
+      "regexValue": ".*",
+      "displayName": "vmw_vc_ops_disk_drives"
+    },
+    {
+      "postContext": "% /",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000",
+      "preContext": "::Disk::usage].* ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_diskspace_usage_percent"
+    },
+    {
+      "postContext": " Total Mem\\(MB\\)",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc",
+      "preContext": "com.integrien.alive.common.dt.DTProgress.increment.*Free Mem\\(MB\\):",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_dt_memory_free_mb"
+    },
+    {
+      "postContext": " Free",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc",
+      "preContext": "AnalyticVM::Analytics::analytics.*Used Memory\\(MB\\):",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_dt_memory_used_mb"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000",
+      "preContext": "com\\.integrien\\.alive.*printHddInfoFreeSpace.* is ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_hdd_free_space"
+    },
+    {
+      "postContext": ".*",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62loon2wmztjmnuwk3tul5ygk4tnnfzxg2lpnzpwk6ddmvyhi2lpny000000",
+      "preContext": "com\\.integrien\\.alive\\.vm\\.manager\\.exception\\.",
+      "regexValue": "InsufficientPermissionException",
+      "displayName": "vmw_vc_ops_insufficient_permission_exception"
+    },
+    {
+      "postContext": "\\. License",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63djmnsw443fl53g2427nz2w2ytfoi000000",
+      "preContext": "\\[UIVM::License::Audit\\].*VMs = ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_license_vms_number"
+    },
+    {
+      "postContext": " metric =",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsyznn5rgusle",
+      "preContext": "com\\.vmware\\.cm\\.collector\\.perf\\.manager\\.impl\\.PerformanceCollectorImpl.*objectId = ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_metric-objId"
+    },
+    {
+      "postContext": "> ms!",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27mzsxiy3il52gs3lf",
+      "preContext": "com\\.vmware\\.vcops\\.ciq\\.adapter\\.CIQMetricDataServiceImpl\\.fetchMetricData.* Took <",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_metric_fetch_time"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27nzqw2zi0",
+      "preContext": "com\\.vmware\\.cm\\.collector\\.perf\\.manager\\.impl\\.PerformanceCollectorImpl.*metric = ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vc_ops_metric_name"
+    },
+    {
+      "postContext": ">\\. Took",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu2le",
+      "preContext": " com\\.vmware\\.vcops\\.ciq\\.adapter\\.CIQMetricDataServiceImpl\\.fetchMetricData - Fetched metric data for <.*\\, ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_metric_objid"
+    },
+    {
+      "postContext": "\\, \\d+>",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000",
+      "preContext": " com\\.vmware\\.vcops\\.ciq\\.adapter\\.CIQMetricDataServiceImpl\\.fetchMetricData - Fetched.*for <",
+      "regexValue": ".*",
+      "displayName": "vmw_vc_ops_metric_objname"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0",
+      "preContext": "\\[(AnalyticVM|UIVM)::.*::",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vc_ops_module_type"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0",
+      "preContext": "Disk\\:\\:usage\\].*% ",
+      "regexValue": "\\S+",
+      "displayName": "vmw_vc_ops_mount_point_name"
+    },
+    {
+      "postContext": " has been",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv643foj3gsy3fom000000",
+      "preContext": "com\\.integrien\\.alive.*\\- ",
+      "regexValue": "\\w+",
+      "displayName": "vmw_vc_ops_services"
+    },
+    {
+      "postContext": " seconds",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv643wl5ygk4tgmrqxiyk7onqxmzk7oruw2zi0",
+      "preContext": "com\\.vmware\\.cm\\.perf\\.singlevaluemetric\\.manager\\.impl\\.SingleValueMetricNamedSetTaskManagerImpl.*svMetricPerfDataSet ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "vmw_vc_ops_sv_perfdata_save_time"
+    },
+    {
+      "postContext": " kB",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000",
+      "preContext": "UIVM::System Memory::usage.*MemFree:         ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_ui_free_memory"
+    },
+    {
+      "postContext": " kB",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl52g65dbnrpw2zlnn5zhs000",
+      "preContext": "\\[UIVM::System Memory::usage\\]MemTotal:        ",
+      "regexValue": "-?\\d+",
+      "displayName": "vmw_vc_ops_ui_total_memory"
+    },
+    {
+      "postContext": "::.*::\\S+\\]",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000",
+      "preContext": " \\[",
+      "regexValue": "UIVM",
+      "displayName": "vmw_vc_ops_uivm_type"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df",
+      "preContext": "",
+      "regexValue": "UIVM|AnalyticVM",
+      "displayName": "vmw_vc_ops_vm_type"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df",
+      "preContext": "",
+      "regexValue": "vim\\.fault\\.\\w+",
+      "displayName": "vmw_vim_fault_type"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "1.0",
+  "namespace": "com.vmware.vc-ops",
+  "icon": "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",
+  "author": "VMware, Inc.",
+  "contentVersion": "1.0",
+  "url": "http://www.vmware.com",
+  "info": "Content pack to analyze all the logs redirected from the vCenter Operations Manager instance. This content pack contains various dashboards, queries and alerts to provide better diagnostics and troubleshooting capabilities to the vCenter Operations Manager administrator. The dashboards are grouped in the major components of vCenter Operations Manager like Analytics, UI, Adapters etc. to provide better manageability. There are various alerts which can be enabled to get the alerts in vCenter Operations Manager as well as for sending emails to the administrator(s)<br>"
+}

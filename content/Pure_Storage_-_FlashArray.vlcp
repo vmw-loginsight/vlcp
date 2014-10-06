@@ -1,0 +1,451 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [
+            {
+              "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0",
+              "operator": "EXISTS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{}",
+                  "name": "FlashArrays",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) FROM timestamp >= 1405360759429 & timestamp <= 1405965214515 & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "<span>This dashboard widget shows the number of FlashArrays currently sending syslog messages to this Log Insight instance. If the number is lower than expected it is possible that an array hasn't had anything to syslog let (we recommend always sending a test message when configuring syslog on the FlashArray the first time) or the syslog feature has not been accurately&nbsp;configured&nbsp;or not all. Drill down further by opening the dashboard widget in Interactive Analysis mode. Find the array that is not present in the Interactive Analysis and ensure proper configuration. Then try a test syslog message from the given array. If no messages appear check firewall settings between the FlashArray controllers and the Log Insight instance. NOTE: If the number is higher than expected, this means either an array was removed but Log Insight still has its messages or an existing array was renamed. A rename would cause the content pack to see this as a new array and would up this value.&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br></span><br><span></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1405360759429 & timestamp <= 1408310815653 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"audit\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purevol\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"create\" & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\")) as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{}",
+                  "name": "Volume Creations",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xgc3lf) FROM timestamp >= 1405360759429 & timestamp <= 1408310815653 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"audit\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purevol\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"create\" & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\")) & text=~\"purity\\.audit: \\[\\w+\\] purevol \\w+ (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xgc3lf>.*)( \\. | --size)\" as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "This widget reports the total number of volumes that have been created over time across all connected FlashArrays. Note that this number does not take into account volumes that have been deleted, so actual existing volume counts may be lower."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1405360759429 & timestamp <= 1408314767007 & (((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\") | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"warning\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"alert\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \")) as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Critical or Warning-level Array Alerts",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1405360759429 & timestamp <= 1408314767007 & (((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\") | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"warning\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"alert\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \")) & text=~\"purity\\.alert: (WARNING|CRITICAL) (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000>.*) \\[\\d+\" as item0 GROUP BY item0.timestamp/86400000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This widget shows every instance of an array alert (non-user initiated) such as failures or capacity thresholds. Ideally this widget should report little to no information. High-levels of alerts for an array or set of arrays may indicate an environmental issue that should be investigated immediately.</span><br><span></span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "FlashArray Message Types",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1405360759429 & timestamp <= 1409768843305 & (((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"alert\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \") | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"test\" | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"audit\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\")) as item0 GROUP BY item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This widget displays the mix of message types sent to Log Insight from the various FlashArrays. The most common event types are audit, alert and test. In normal situations the audit slide of the pie chart should most if not all of the pie. If alert takes up a noticeable portion, investigate immediately.</span><br><span></span>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1405360759429 & timestamp <= 1408313139749 & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te) & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+                  "name": "User Operations",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1405360759429 & timestamp <= 1408313139749 & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te) & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\" as item0 GROUP BY item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This widget shows the total counts of administrative operations for each FlashArray. If an array reports low activity, it may be under-utilized and is worth investigation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hardware",
+          "constraints": [
+            {
+              "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0",
+              "operator": "EXISTS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Hardware Alert Messages",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"alert\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \")) & text=~\"purity\\.alert: (WARNING|CRITICAL) (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000>.*) \\[\\d+\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This dashboard widget shows how the count of critical hardware events across all FlashArrays at a certain time.&nbsp;If any of these alerts appear for a given array&nbsp;</span><span style=\"font-weight: bold; text-decoration: underline;\">immediately</span><span style=\"font-weight: bold;\">&nbsp;</span><span>take action to resolve them.</span><span>Which exact component failed may not be known, but this dashboard widget can help diagnose it further. The results are sorted by the failure message and FlashArray name: &lt;failure message,&nbsp;array name&gt;. Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;</span><a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Capacity Threshold Alerts",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000>=80 & text=~\"purity\\.alert: INFO Storage consumption has reached (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000>-?\\d*\\.?\\d+)% of usable capacity\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This dashboard widget shows capacity threshold alerts from the FlashArray. If any of these alerts appear for a given array <span style=\"font-weight: bold; text-decoration: underline;\">immediately</span><span style=\"font-weight: bold;\">&nbsp;</span>take action to resolve them. No information here is a <span style=\"font-weight: bold; text-decoration: underline;\">good thing</span>. Possible remediation options are issuing UNMAP from supported hosts to reclaim dead space or adding physical capacity to the array by adding new SSDs or entire shelves. Refer to your Pure Storage support team for assistance.&nbsp;The results are sorted by FlashArray name.&nbsp;Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Component Failures",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1405360759429 & timestamp <= 1405973123035 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0) & text=~\"\\S+Output: name=(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0>\\S+)\\, (status|type)\\=\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This dashboard widget shows exact component hardware failures across all FlashArrays at a certain time.&nbsp;If any of these alerts appear for a given array&nbsp;<span style=\"font-weight: bold; text-decoration: underline;\">immediately</span><span style=\"font-weight: bold;\">&nbsp;</span>take action to resolve them.&nbsp;This dashboard widget indicates the general location (controller # or shelf #) and specific location (such as ib1 which is Infiniband Connection 1) Refer to the Pure Storage GUI for the physical location of the failure. The results are sorted by failed component and FlashArray name &lt;failed component,&nbsp;array name&gt;. Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Power Failures",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404198000000 & timestamp <= 1408284928809 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\") & (text:\"pwr1\" | text:\"pwr0\")) as item0 GROUP BY item0.timestamp/86400000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This dashboard widget shows power component hardware failures across all FlashArrays at a certain time. If any of these alerts appear for a given array&nbsp;<span style=\"font-weight: bold; text-decoration: underline;\">immediately</span><span style=\"font-weight: bold;\">&nbsp;</span>take action to resolve them.&nbsp;This dashboard widget indicates the general location (controller # or shelf #) and specific location (such as pwr1 which is Power Connection 1) Refer to the Pure Storage GUI for the physical location of the failure. Failures may be the result of a power supply, cord failure/removal or loss of general power. The results are sorted by failed power component and FlashArray name &lt;failed power component,&nbsp;array name&gt;. Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br></span><br><span></span>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Replication",
+          "constraints": [
+            {
+              "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0",
+              "operator": "EXISTS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Protection Group Events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1405360759429 & timestamp <= 1405966243843 & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purepgroup\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33oom000000) & text=~\"\\] purepgroup (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33oom000000>\\w+)\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\")) & text=~\"purepgroup\\s(setattr|enable|retain|schedule|create|destroy|eradicate|recover|snap) (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf>\\w+)\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This dashboard widget shows how many operations were executed on a given protection group at a certain time. Protection groups are groupings of FlashArray volumes that provide a local and remote replication schedule. Analyze this chart for changes to protection groups.&nbsp;<span>The results are sorted by protection group name.&nbsp;</span>Drill down further by opening the dashboard widget in Interactive Analysis mode. <a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a>&nbsp;"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Single Volume Snap or Copy Operations",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1405360759429 & timestamp <= 1405966686491 & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purevol\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"snap\" & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\") | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"copy\")) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This dashboard widget shows how (if any) single volume local clone or snap operations were executed across all FlashArrays at a certain time. Clone operations copy directly from volume to volume and snap operations simply create a Point-In-Time metadata snap of a source volume.&nbsp;<span>The results are sorted by purevol command (snap or copy) and the FlashArray name &lt;operation, array name&gt;.&nbsp;</span>Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Protection Group Operations",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purepgroup\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33oom000000) & text=~\"\\] purepgroup (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33oom000000>\\w+)\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33oom000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This dashboard widget shows what protection group operations were executed on cross all FlashArrays at a certain time. Protection groups are groupings of FlashArray volumes that provide a local and remote replication schedule. This is a simple chart to allow for analysis of specific protection group operations--it is a more granular view than the Protection Group Events widget.&nbsp;<span>The results are sorted by protection group command operation (enable, create, allow etc.)</span>&nbsp;Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Auditing",
+          "constraints": [
+            {
+              "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0",
+              "operator": "EXISTS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1404198000000 & timestamp <= 1408284928809 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000) & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\")) as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Volume Management Events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404198000000 & timestamp <= 1408284928809 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000) & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\")) as item0 GROUP BY item0.timestamp/86400000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This dashboard widget shows all instances of volume management. This includes but is not limited to, creation, destruction, expansion, shrinking (truncating), recovering and snapping.&nbsp;The results are sorted by purevol operation.&nbsp;Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;</span><a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1405360759429 & timestamp <= 1408308480340 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"audit\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000) & text=~\"purity\\.audit: \\[(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000>\\w+)\\]\")) as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "User Activity",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1405360759429 & timestamp <= 1408308480340 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"audit\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000) & text=~\"purity\\.audit: \\[(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000>\\w+)\\]\")) as item0 GROUP BY item0.timestamp/86400000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This dashboard widget shows user audit activity on the FlashArray. All non-read-only operations by a given user will be logged here and shown in quantity for that specific time.&nbsp;The results are sorted by the user account &nbsp;Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br></span><br><span></span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1404198000000 & timestamp <= 1408284928809 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purevol\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"destroy\" & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\") | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"eradicate\")) as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Volume Deletion and Eradication Operations",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404198000000 & timestamp <= 1408284928809 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purevol\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"destroy\" & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\") | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"eradicate\")) as item0 GROUP BY item0.timestamp/86400000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This dashboard widget shows the instances of volume deletion and/or eradication. By default when a FlashArray volume is deleted (referred to as destroyed) the data is not permanently lost. Volume data is only completely removed either 24 hours after the initial deletion or by a manual eradication. If a volume is no longer visible, check this dashboard widget and it will tell you if a volume has been destroyed and/or eradicated and when. When opened up, the source array containing the volume and the user who performed the operation will also be listed.&nbsp;The results are sorted by volume name and eradicate/destroy: &lt;volume name, operation&gt;. Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;</span><a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br>"
+                },
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1404198000000 & timestamp <= 1408284928809 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purehgroup\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purehost\")) as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Host and Host Group Operations",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404198000000 & timestamp <= 1408284928809 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purehgroup\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") | ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purehost\")) as item0 GROUP BY item0.timestamp/86400000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>This dashboard widget shows the instances of host group configuration changes. Host groups are the mechanism of logically grouping end hosts and allowing for cluster-based simple provisioning en masse. Operations like creation, deletion, host add, volume add/removal are reported here.&nbsp;The results are sorted by host group name and FlashArray name: &lt;hgroup name, array name&gt;.&nbsp;Drill down further by opening the dashboard widget in Interactive Analysis mode.&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a><br></span><br><span></span>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000>=80 & text=~\"purity\\.alert: INFO Storage consumption has reached (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000>-?\\d*\\.?\\d+)% of usable capacity\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Pure Storage FlashArray Capacity Utilization Warning",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000>=80 & text=~\"purity\\.alert: INFO Storage consumption has reached (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000>-?\\d*\\.?\\d+)% of usable capacity\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "Your FlashArray has reached high levels of capacity utilization. Consider adding additional capacity as soon as possible."
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\") & (text:\"pwr1\" | text:\"pwr0\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Pure Storage Power Failure Alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\") & (text:\"pwr1\" | text:\"pwr0\")) & text=~\"\\S+Output: name=(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0>\\S+)\\, (status|type)\\=\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "<span>A power component or cable has failed and could lead to data unavailability if not resolved as soon as possible. While all power components are redundant it is important to resolve any issue immediately. This failure could be due to power supply failure, an unplugged or damaged power cord or loss of general power. Contact your Pure Storage support team (if they have not already contacted you) to resolve the issue.</span><br>"
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0) & text=~\"\\S+Output: name=(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0>\\S+)\\, (status|type)\\=\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Pure Storage Component Failure Alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0) & text=~\"\\S+Output: name=(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0>\\S+)\\, (status|type)\\=\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "<span>A specific component or cable has failed and could lead to data unavailability if not resolved as soon as possible. While all parts are redundant and the array itself can handle multiple SSD failures it is important to resolve any issue immediately. Contact your Pure Storage support team (if they have not already contacted you) to replace or repair the part.</span><br>"
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"alert\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Pure Storage Critical Failure Alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000:\"critical\" & text=~\"purity\\.alert: (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000>\\w+)\") & (FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0:\"alert\" & text=~\".*ct(0|1) purity\\.(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0>\\w+): \")) & text=~\"purity\\.alert: (WARNING|CRITICAL) (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000>.*) \\[\\d+\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "A component or cable has failed and could lead to data unavailability if not resolved as soon as possible. While all parts are redundant and the array itself can handle multiple SSD failures it is important to resolve any issue immediately. Contact your Pure Storage support team (if they have not already contacted you) to replace or repair the part."
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purevol\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"destroy\" & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Pure Storage Volume Destruction Alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404889200000 & timestamp <= 1406012400000 & ((FIELD_EXISTS(ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0) & text=~\"(?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0>\\S+)-ct[0-1] purity\") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te:\"purevol\" & text=~\"purity\\.audit: \\[.*\\] (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te>\\w+) \") & (ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000:\"destroy\" & text=~\"purity\\.audit: \\[\\w+\\] purevol (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000>\\w+)\")) & text=~\"purity\\.audit: \\[\\w+\\] purevol \\w+ (?<ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xgc3lf>.*)( \\. | --size)\" as item0 GROUP BY item0.timestamp/21600000,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0,item0.ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xgc3lf ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "A volume has been destroyed (deleted) on a Pure Storage FlashArray. By default, volume data is preserved for 24 hours following a destroy operation. If this volume should not have been deleted, log into the Pure GUI or CLI and use the purevol recover operation to reclaim the volume. Otherwise this volume will be permanently destroyed in 24 hours (or sooner if a manual eradicate operation is executed)."
+    }
+  ],
+  "name": "Pure Storage - FlashArray",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmrwws3s7n5ygk4tboruw63tt",
+      "preContext": "\\] pureadmin ",
+      "regexValue": "\\w+",
+      "displayName": "pure_admin_operations"
+    },
+    {
+      "postContext": " \\[\\d+",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000",
+      "preContext": "purity\\.alert: (WARNING|CRITICAL) ",
+      "regexValue": ".*",
+      "displayName": "pure_alert_message"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000",
+      "preContext": "purity\\.alert: ",
+      "regexValue": "\\w+",
+      "displayName": "pure_alert_severity"
+    },
+    {
+      "postContext": "-ct[0-1] purity",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0",
+      "preContext": "",
+      "regexValue": "\\S+",
+      "displayName": "pure_array_name"
+    },
+    {
+      "postContext": " ",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te",
+      "preContext": "purity\\.audit: \\[.*\\] ",
+      "regexValue": "\\w+",
+      "displayName": "pure_cli_command"
+    },
+    {
+      "postContext": ": ",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0",
+      "preContext": ".*ct(0|1) purity\\.",
+      "regexValue": "\\w+",
+      "displayName": "pure_event_type"
+    },
+    {
+      "postContext": "\\, (status|type)\\=",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0",
+      "preContext": "\\S+Output: name=",
+      "regexValue": "\\S+",
+      "displayName": "pure_failed_hardware"
+    },
+    {
+      "postContext": " ",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3im5zg65lql5xgc3lf",
+      "preContext": "\\] purehgroup \\w+ ",
+      "regexValue": "\\w+",
+      "displayName": "pure_hgroup_name"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3im5zg65lql5xxazlsmf2gs33oom000000",
+      "preContext": "\\] purehgroup ",
+      "regexValue": "\\w+",
+      "displayName": "pure_hgroup_operations"
+    },
+    {
+      "postContext": " ",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3in5zxix3omfwwk000",
+      "preContext": "\\] purehost \\w+ ",
+      "regexValue": "\\w+",
+      "displayName": "pure_host_name"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3in5zxix3pobsxeylunfxw44y0",
+      "preContext": "\\] purehost ",
+      "regexValue": "\\w+",
+      "displayName": "pure_host_operations"
+    },
+    {
+      "postContext": " \\. ",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3in5zxi5tpnrpw4ylnmu000000",
+      "preContext": "purity\\.audit: \\[\\w+\\] (purehgroup|purehost) \\w+ \\w+ \\-\\-vol ",
+      "regexValue": ".*",
+      "displayName": "pure_hostvol_name"
+    },
+    {
+      "postContext": "% of usable capacity",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000",
+      "preContext": "purity\\.alert: INFO Storage consumption has reached ",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "pure_percent_full"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf",
+      "preContext": "purepgroup\\s(setattr|enable|retain|schedule|create|destroy|eradicate|recover|snap) ",
+      "regexValue": "\\w+",
+      "displayName": "pure_pgroup_name"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33oom000000",
+      "preContext": "\\] purepgroup ",
+      "regexValue": "\\w+",
+      "displayName": "pure_pgroup_operations"
+    },
+    {
+      "postContext": "#",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qovzgs5dzl53gk4ttnfxw4000",
+      "preContext": "\\S+Purity Version: ",
+      "regexValue": "\\S+",
+      "displayName": "pure_purity_version"
+    },
+    {
+      "postContext": " setattr",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3tmv2gc5duojpw64dfojqxi2lpnzzq0000",
+      "preContext": "purity\\.audit: \\[\\w+\\] ",
+      "regexValue": "\\w+",
+      "displayName": "pure_setattr_operations"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000",
+      "preContext": "purity\\.audit: \\[",
+      "regexValue": "\\w+",
+      "displayName": "pure_user_name"
+    },
+    {
+      "postContext": "( \\. | --size)",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xgc3lf",
+      "preContext": "purity\\.audit: \\[\\w+\\] purevol \\w+ ",
+      "regexValue": ".*",
+      "displayName": "pure_volume_name"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33oom000000",
+      "preContext": "purity\\.audit: \\[\\w+\\] purevol ",
+      "regexValue": "\\w+",
+      "displayName": "pure_volume_operations"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "2.0",
+  "namespace": "com.pure.flasharray",
+  "icon": "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",
+  "author": "Pure Storage",
+  "contentVersion": "1.0",
+  "url": "www.purestorage.com",
+  "info": "The Pure Storage FlashArray Content Pack for VMware vCenter Log Insight. For documentation and support for this content pack please visit <a href=\"http://www.purestorage.com/support\">http://www.purestorage.com/support</a>"
+}

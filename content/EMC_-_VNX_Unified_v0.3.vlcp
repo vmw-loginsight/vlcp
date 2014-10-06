@@ -1,0 +1,278 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Total events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 0 & timestamp <= 0 as item0 GROUP BY item0.timestamp/0 ",
+                  "info": "The total number of events received over time."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Total error events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373645273068 & (text:\"err*\" | text:\"fail*\") as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Total warning events",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373645318285 & text:\"warn*\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Total fault events",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373645823627 & text:\"fault\" & (text:\"sp\" | text:\"spa\" | text:\"spb\" | text:\"sts\" | text:\"bus\" | text:\"bucket\") as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Rebuild events by disk",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373647147377 & text:\"a\" & text:\"rebuild\" & text:\"has\" & (FIELD_EXISTS(ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000) & text=~\"a rebuild has (?<ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000>.*) for the database region of a\") & text=~\"(?<ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3mn5rwc5djn5xa0000>(Bus \\d+ )?Enclosure \\d+ Disk \\d+)\" as item0 GROUP BY item0.ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3mn5rwc5djn5xa0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Hot spare events",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373647249453 & text:\"hot\" & text:\"spare\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alerts/Faults",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Link down",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373397978213 & text:\"Link\" & text:\"Down\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Disk failure",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1364793635000 & text:\"Disk\" & text:\"Failure\" & text:\"enclosure\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Critical temperature faults",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1364793635000 & text:\"critical\" & text:\"temperature\" & text:\"fault\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Access denied",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1364793635000 & text:\"denied\" & (text:\"navi*\" | text:\"managementserver\" | text:\"setstats\" | text:\"arrayname\") as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Commands",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Commands run",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373648097208 & (FIELD_EXISTS(ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomq000000) & text=~\"\\(\\d+\\)'(?<ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomq000000>\\w+)' called by '.*' \\(\\S+\\) with result:\") as item0 GROUP BY item0.ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Commands by origin",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373648195763 & (FIELD_EXISTS(ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpw64tjm5uw4000) & text=~\"called by '.*' \\((?<ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpw64tjm5uw4000>\\S+)\\) with result:\") as item0 GROUP BY item0.ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpw64tjm5uw4000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Command status",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373648233610 & (FIELD_EXISTS(ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxg5dbor2xg000) & text=~\"with result: (?<ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxg5dbor2xg000>\\w+) \\(\") as item0 GROUP BY item0.ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxg5dbor2xg000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Commands by user",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373648290675 & (FIELD_EXISTS(ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxk43foi000000) & text=~\"called by '(?<ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxk43foi000000>.*)' \\(\\S+\\) with result:\") as item0 GROUP BY item0.ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxk43foi000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "System Notifications",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Disk notification events",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373646689073 & text:\"0x00\" & (FIELD_EXISTS(ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3on52gsztjmnqxi2lpny000000) & text=~\"Enclosure \\d+ Disk \\d+( )+\\(\\d+\\) (?<ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3on52gsztjmnqxi2lpny000000>.*?)( )+\\[0x00\\]\") as item0 GROUP BY item0.ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3on52gsztjmnqxi2lpny000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Rebuild event notifications",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373647025175 & text:\"a\" & text:\"rebuild\" & text:\"has\" & (FIELD_EXISTS(ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000) & text=~\"a rebuild has (?<ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000>.*) for the database region of a\") as item0 GROUP BY item0.timestamp/5184000000,item0.ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000 ORDER BY item0.ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": ""
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Hot spare error events",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1373647304585 & text:\"hot\" & text:\"spare\" & (!text:\"a failed drive\" & !text:\"cli\") as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Background Processes",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Background verify",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1364793635000 & text:\"background\" & text:\"Bus\" & text:\"Enclosure\" & text:\"Disk\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "Rebuilds",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1364793635000 & text:\"rebuild\" & text:\"disk\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "Background zeroing",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1364793635000 & text:\"background\" & text:\"Bus\" & text:\"Enclosure\" & text:\"disk\" & text:\"zeroing\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "FAST VP relocations",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1179432315000 & timestamp <= 1364793635000 & text:\"relocations\" & text:\"auto-tiering\" as item0 GROUP BY item0.timestamp/5184000000 ORDER BY item0.timestamp ASC",
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "name": "EMC - VNX Unified v0.3",
+  "extractedFields": [
+    {
+      "internalName": "ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3mn5rwc5djn5xa0000",
+      "regexValue": "(Bus \\d+ )?Enclosure \\d+ Disk \\d+",
+      "displayName": "emc_vnx_disk_location"
+    },
+    {
+      "postContext": "( )+\\[0x00\\]",
+      "internalName": "ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3on52gsztjmnqxi2lpny000000",
+      "preContext": "Enclosure \\d+ Disk \\d+( )+\\(\\d+\\) ",
+      "regexValue": ".*?",
+      "displayName": "emc_vnx_disk_notification"
+    },
+    {
+      "postContext": " for the database region of a",
+      "internalName": "ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000",
+      "preContext": "a rebuild has ",
+      "regexValue": ".*",
+      "displayName": "emc_vnx_rebuild_status"
+    },
+    {
+      "postContext": "' called by '.*' \\(\\S+\\) with result:",
+      "internalName": "ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomq000000",
+      "preContext": "\\(\\d+\\)'",
+      "regexValue": "\\w+",
+      "displayName": "emc_vnx_command"
+    },
+    {
+      "postContext": "\\) with result:",
+      "internalName": "ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpw64tjm5uw4000",
+      "preContext": "called by '.*' \\(",
+      "regexValue": "\\S+",
+      "displayName": "emc_vnx_command_origin"
+    },
+    {
+      "postContext": "' \\(\\S+\\) with result:",
+      "internalName": "ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxk43foi000000",
+      "preContext": "called by '",
+      "regexValue": ".*",
+      "displayName": "emc_vnx_command_user"
+    },
+    {
+      "postContext": "'",
+      "internalName": "ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpwg3dj",
+      "preContext": "Navisphere (Secure )?CLI command: '",
+      "regexValue": ".*",
+      "displayName": "emc_vnx_command_cli"
+    },
+    {
+      "postContext": " \\(",
+      "internalName": "ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxg5dbor2xg000",
+      "preContext": "with result: ",
+      "regexValue": "\\w+",
+      "displayName": "emc_vnx_command_status"
+    }
+  ],
+  "namespace": "com.emc.vnx",
+  "version": "1.0"
+}

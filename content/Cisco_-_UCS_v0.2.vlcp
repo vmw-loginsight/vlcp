@@ -1,0 +1,749 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Central events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"svc_*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000) & text=~\"(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000>^svc_\\w+)\\[\\d+\\]\\:\") as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                  "info": "UCS Central is a management tool for multiple UCS Manager instances, also known as UCS Domains. An increase in the amount of UCS Central events indicates that configuration changes are being made to the environment."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS network events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3to5uxiy3il5sxmzloorzq0000) & text=~\"(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3to5uxiy3il5sxmzloorzq0000>UCSM\\-3\\-\\S+)\\:\") as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                  "info": "There are two primary components of a UCS Domain being compute and network. This chart represents network events. An increase in network events indicates either changes to an environment or possible faults."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1386983864606 & text:\"ucsm-*-*\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                  "info": "UCS Manager is the tool for managing a UCS Domain. An increase in the amount of UCS Manager events indicates that configuration changes are being made to the environment.<br class=\"yui-cursor\" id=\"yui_3_10_2_3_1389056760694_41\">"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS compute events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-4-*\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                  "info": "There are two primary components of a UCS Domain being compute and network. This chart represents compute events. An increase in compute events indicates either changes to an environment or possible faults.<br class=\"yui-cursor\" id=\"yui_3_10_2_3_1389056760694_53\">"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS equipment failures by component",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-equipment_inoperable\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+/(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw63lqn5xgk3tu>\\S+?)-\\d+.*?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw63lqn5xgk3tu ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "When UCS components fail they are listed as inoperable. This chart indicates which components have failed most frequently in the environment. In a healthy environment, this chart will return no results."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS service profile events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-5-*\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                  "info": "Service profiles contain configuration information for UCS components. An increase in service profile events indicates either changes to an environment or possible faults."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager session events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-6-audit\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                  "info": "UCS Manager keeps track of authentication requests. This chart represents all authentication requests over time. An increase in session events may indicate an increase in the number of users accessing the system or may indicate a malicious user trying to get access to the system."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Callhome events over time grouped by type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dmfwgy2dpnvsv65dzobsq0000) & text=~\"%CALLHOME\\-2\\-EVENT: (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dmfwgy2dpnvsv65dzobsq0000>\\w+)\") as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dmfwgy2dpnvsv65dzobsq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "A Callhome event is the method of communicating to the Administrators on duty (via pager / other communication media) and also alert TAC for support issues based on severity of the callhome event. Keep in mind that some are callhome able but would eventually be cleared after some time.<br><br>For more information on callhome alerts, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/TS_CallHomeFaults.html\">Call Home Faults in Cisco UCS Manager</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Security",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager session events over time by destination",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-6-audit\" & text=~\"UCSM-6-AUDIT: \\[session\\].*? (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpwizltoruw4ylunfxw4000>.*?): \" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpwizltoruw4ylunfxw4000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "User can authenticate to different UCS Manager components including:<br><br><span style=\"font-weight: bold;\" id=\"yui_3_10_2_3_1389056760694_71\">* Fabric </span>which indicates logging directly into one of the fabric interconnects<br><span style=\"font-weight: bold;\" id=\"yui_3_10_2_3_1389056760694_73\">* Web </span>which indicates logging into the UCS Manager VIP<br><span style=\"font-weight: bold;\" id=\"yui_3_10_2_3_1389056760694_75\">* End Point</span>&nbsp;which indicates logging directly into a specific UCS component such as an FEX"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager session events by username",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-6-audit\" & text=~\"UCSM-6-AUDIT: \\[session\\].*?: .*user (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxk43foi000000>\\S+) \" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxk43foi000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Usernames that have attempted authentication into the UCS instance. If multiple unknown usernames are listed this may indicate a malicious user."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager session events over time by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-6-audit\" & text=~\"UCSM-6-AUDIT: \\[session\\].*?: .*user \\S+ (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg5dbor2xg000>\\w+ \\w+)\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg5dbor2xg000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The status of UCS sessions. Typically this chart would represent session log in events and session termination events."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager session events by source",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-6-audit\" & text=~\"UCSM-6-AUDIT: \\[session\\].*?: .*user \\S+ .* from (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg33vojrwk000>\\S+)\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg33vojrwk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The sources where authentication requests are originating. If one or more sources are unknown then they may indicate potential malicious users."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Cisco logins by username",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1386989385257 & text:\"for\" & text:\"from\" & text:\"sshd\" & text:\"daemon-*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf) & text=~\"daemon-.* for (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf>\\S+) from .* sshd\") as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "In addition to UCS Manager session events, user can also log into Cisco components through the command line. This chart represents usernames attempting to authentication via the command line. If one or more usernames are unknown then this may indicate malicious users."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Cisco logins by source",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1386989385257 & text:\"for\" & text:\"from\" & text:\"sshd\" & text:\"daemon-*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf) & text=~\"daemon-.* for (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf>\\S+) from .* sshd\") & text=~\"daemon-.* for \\S+ from (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000>\\S+) .* sshd\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "In addition to UCS Manager session events, user can also log into Cisco components through the command line. This chart represents sources attempting to authentication via the command line. If one or more source are unknown then this may indicate malicious users.<br class=\"yui-cursor\" id=\"yui_3_10_2_3_1389056760694_87\">"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Cisco CLI commands by command",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1386990530680 & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dnruv6y3pnvwwc3te) & text=~\"authpriv-5-system_msg: .* COMMAND=(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dnruv6y3pnvwwc3te>.*) -\") as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dnruv6y3pnvwwc3te ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Frequently run CLI commands against a Cisco system."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "Cisco security events by type",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1386990286765 & text:\"AUTHPRIV-5-SYSTEM_MSG\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0) & text=~\"AUTHPRIV\\-5\\-SYSTEM_MSG: (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0>.*?) (with username )?\\S+ - securityd\") as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0 ORDER BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0 DESC,item0.timestamp DESC LIMIT 1,2000",
+                  "info": "Users can be created, deleted or modified from a Cisco system. This chart represents that different user activities that have transpired."
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant Queries",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"for\" & text:\"from\" & text:\"sshd\" & text:\"daemon-*\" & text:\"fail*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf) & text=~\"daemon-.* for (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf>\\S+) from .* sshd\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Cisco failed logins by username",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"for\" & text:\"from\" & text:\"sshd\" & text:\"daemon-*\" & text:\"fail*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf) & text=~\"daemon-.* for (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf>\\S+) from .* sshd\") as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "In addition to UCS Manager session events, user can also log into Cisco components through the command line. This chart represents usernames attempting, but failing to authentication via the command line. If multiple authentication failure events are seen then this may indicate malicious users.<br class=\"yui-cursor\" id=\"yui_3_10_2_4_1389056760694_42\">"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"for\" & text:\"from\" & text:\"sshd\" & text:\"daemon-*\" & text:\"fail*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf) & text=~\"daemon-.* for (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf>\\S+) from .* sshd\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Cisco failed logins by source",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"for\" & text:\"from\" & text:\"sshd\" & text:\"daemon-*\" & text:\"fail*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf) & text=~\"daemon-.* for (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf>\\S+) from .* sshd\") & text=~\"daemon-.* for \\S+ from (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000>\\S+) .* sshd\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "In addition to UCS Manager session events, user can also log into Cisco components through the command line. This chart represents sources attempting, but failing to authentication via the command line. If multiple authentication failure events are seen from a small number of sources then this may indicate malicious users.<br class=\"yui-cursor\" id=\"yui_3_10_2_4_1389056760694_46\">"
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Central / Manager",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Central events over time by fault status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"svc_*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000) & text=~\"(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000>^svc_\\w+)\\[\\d+\\]\\:\") & text=~\"svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7on2gc5dvom000000>\\w+)\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7on2gc5dvom000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager events by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-2-*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000>\\w+)\\]\\[\\S+?\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Central events by category",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1372538015503 & timestamp <= 1373079678507 & text:\"svc_*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000) & text=~\"(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000>^svc_\\w+)\\[\\d+\\]\\:\") & text=~\"svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000>\\S+?)\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager events by category",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-2-*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0>\\S+?)\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Central fault events by reason",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1372538015503 & timestamp <= 1373079678507 & text:\"svc_*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000) & text=~\"(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000>^svc_\\w+)\\[\\d+\\]\\:\") & text=~\"svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\] (.*Service profile \\S+ |UCS Domain \\S+ |UUID pool \\S+ |IP pool \\S+ |iqn pool \\S+ |MAC pool \\S+ |FC pool \\S+ \\S+ |Schedule  referenced by maintenance policy \\S+ )?(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7ojswc43pny000000>.*?)(due to |\\.|$)\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7ojswc43pny000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Certain fault events list a reason for the fault, which helps track down the issue. Most fault events are configuration related and often point to a service profile issue. In the case of UCS Central fault events, it is possible that duplicate entries exist across UCS domains."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS Manager fault events by reason",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1389047112022 & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3gmf2wy5c7ojswc43pny000000) & text=~\"ucsm-.*: \\[\\w+\\]\\[\\w+\\]\\[\\S+\\].* reason: (\\w+:)?(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3gmf2wy5c7ojswc43pny000000>.*)\") as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3gmf2wy5c7ojswc43pny000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Certain fault events list a reason for the fault, which helps track down the issue. UCS Manager fault events may be configuration related, but are often health and more specifically hardware related. Any non-configuration faults should be investigated immediately.<br><br>For more information on UCS faults and potential solutions, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant Queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-2-*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw6zdf) & text=~\"(ucsm-|local).*?\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw6zdf>\\w+)\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS Manager fault events by code",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-2-*\" & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw6zdf) & text=~\"(ucsm-|local).*?\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw6zdf>\\w+)\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]\") as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw6zdf ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "Every UCS event generates an event code. For fault events, Cisco has published a document outlining why the fault is raised and the recommended actions to resolve the fault.<br><br>For more information on UCS fault codes, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"svc_*\" & text:\"license*\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS Central license events by category",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"svc_*\" & text:\"license*\" & text=~\"svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000>\\S+?)\\]\" as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000 ORDER BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000 DESC,item0.timestamp DESC LIMIT 1,2000",
+                      "info": "UCS has a couple of license events including:<br><br><span id=\"yui_3_10_2_3_1389056760694_108\" style=\"font-weight: bold;\">* License Insufficient</span>&nbsp;meaning you do not have enough licenses for the quantity of components configured<br><span id=\"yui_3_10_2_3_1389056760694_111\" style=\"font-weight: bold;\">* Grace period&nbsp;</span>meaning you have a temporary license that will expire shortly<br><br>Both of these events should be addressed immediately to ensure UCS continues to function properly.<br class=\"yui-cursor\" id=\"yui_3_10_2_3_1389063472597_42\">"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-*\" & text:\"license*\" & (!ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0:\"in-maintenance\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0>\\S+?)\\]\\[\\S+?\\]\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS Manager license events by category",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-*\" & text:\"license*\" & (!ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0:\"in-maintenance\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0>\\S+?)\\]\\[\\S+?\\]\") as item0 GROUP BY item0.timestamp/2592000000,item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0 ORDER BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0 DESC,item0.timestamp DESC LIMIT 1,2000",
+                      "info": "UCS has a couple of license events including:<br><br><span id=\"yui_3_10_2_3_1389056760694_108\" style=\"font-weight: bold;\">* License Insufficient</span>&nbsp;meaning you do not have enough licenses for the quantity of components configured<br><span id=\"yui_3_10_2_3_1389056760694_111\" style=\"font-weight: bold;\">* Grace period&nbsp;</span>meaning you have a temporary license that will expire shortly<br><br>Both of these events should be addressed immediately to ensure UCS continues to function properly.<br><br>For more information on UCS license events, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "FIs / IOMs / FEXs",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS network events by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000>\\w+)\\]\\[\\S+?\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS network events by category",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0>\\S+?)\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "UCS interface down by reason",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & ((text:\"ethport-*\" | text:\"port-*\") & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000) & text=~\"%.*port-.*:.* Interface \\S+ is \\w+ \\((?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000>.*)\\)\")) as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "UCS supports multiple types of network interfaces including:<br><br>* ethport - Ethernet ports<br>* port - Fiber channel ports<br><br>Network interfaces may go down for a variety of reasons. The most common interface down event is seen when a port is in the error disabled state. Typically, when a port goes down, a reason is logged with the state. Common reasons why network ports would enter the error disabled state are:<br><br>* BPDU guard<br>* Security violations<br><br>For more information on reasons, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "name": "UCS loop guard events by port and status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1386992489146 & text:\"stp-*\" & text:\"loop\" & text:\"guard\" & text=~\"STP-2-LOOPGUARD_.* Loop guard \\w+ port (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf64dpoj2a0000>\\S+) on VLAN\\d+.\" & text=~\"STP-2-LOOPGUARD_.* Loop guard (?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf643umf2hk4y0>\\w+) port \\S+ on VLAN\\d+.\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf64dpoj2a0000,item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf643umf2hk4y0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "The Spanning Tree Protocol (STP) includes a mechanism to prevent loops called loop guard. When a loop is detecting by STP, the protocol chooses a port to shutdown to stop the loop. If/When the port shutdown can be brought back online without causing a loop then it is. Typically, this only happens in failure scenarios."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant alerts",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-ha_not_ready\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS HA is not ready",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-ha_not_ready\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                      "info": "UCS Manager has determined that HA is/was not ready. If HA is not ready then a failover would not be possible. This may lead to an outage situation if not addressed.<br><br id=\"yui_3_10_2_3_1389064031260_44\">Given the importance of this event, it is highly recommended to enable this alert on the Interactive Analytics page."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1386993054003 & text:\"FEX-2-FEX_OFFLINE\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS FEX offline",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1386993054003 & text:\"FEX-2-FEX_OFFLINE\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                      "info": "UCS Manager has determined that a FEX is offline. For redundancy reasons, each chassis should have two FEXs. If only one FEX is down, then the chassis can continue to function, but may experience degraded performance. The FEX should be brought back online immediately to prevent an outage scenario.<br><br>Given the importance of this event, it is highly recommended to enable this alert on the Interactive Analytics page.<br id=\"yui_3_10_2_3_1389064031260_50\">"
+                    }
+                  ],
+                  "info": ""
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-configuration_applying\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS configuration issue events over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-configuration_applying\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                      "info": ""
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-membership_down\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS membership down events over time",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-membership_down\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                      "info": "UCS Manager has determined that a port-channel is down. Port-channels go down typically due to configuration issues. This issue should be investigated immediately.<br><br>For more information on UCS membership down events, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1386993239793 & text:\"error disabled\" & (text:\"ucsm-*\" | text:\"ethport-*\" | text:\"port-*\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS port error disabled",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1386993239793 & text:\"error disabled\" & (text:\"ucsm-*\" | text:\"ethport-*\" | text:\"port-*\") as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+                      "info": "UCS Manager has determined that a port has become error disabled. Ports typically become error disabled because of a configuration issue. This issue should be investigated immediately.<br><br>For more information on error disabled ports, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Chassis / Blades / Profiles",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "UCS chassis events by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-4-*\" & text:\"chassis*\" & !text:\"blade*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000>\\w+)\\]\\[\\S+?\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "UCS chassis events by category",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-4-*\" & text:\"chassis*\" & !text:\"blade*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0>\\S+?)\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "UCS blade events by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-4-*\" & text:\"chassis*\" & text:\"blade*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000>\\w+)\\]\\[\\S+?\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "UCS blade events by category",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-4-*\" & text:\"chassis*\" & text:\"blade*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0>\\S+?)\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "name": "UCS service profile events by status",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-5-*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000>\\w+)\\]\\[\\S+?\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5zxiyluovzq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>"
+                },
+                {
+                  "widgetType": "chart",
+                  "name": "UCS service profile events by category",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-5-*\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0>\\S+?)\\]\\[\\S+?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rwc5dfm5xxe6i0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-discovery_failed\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS discovery failures by component",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-discovery_failed\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5wg6y3boruw63q0>\\S+?)\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5wg6y3boruw63q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "UCS Manager has detected that a component could not be discovered. This typically means a configuration issue. A good place to start investigating is with service profiles.<br><br>For more information on UCS discovery failures, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"thermal-problem\" & (text:\"ucsm-*\" | text:\"local*-*-* * svc_*\") as item0 ORDER BY item0.timestamp DESC",
+                      "name": "UCS thermal events by component",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"thermal-problem\" & (text:\"ucsm-*\" | text:\"local*-*-* * svc_*\") & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5wg6y3boruw63q0>\\S+?)\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5wg6y3boruw63q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "info": "UCS Manager has detected a thermal problem. This may indicate an overheating issue in the environment and may lead to component failure. If the event is listed a upper-non-recoverable then the issue should be addressed immediately.<br><br>For more information on UCS thermal problems, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+                    }
+                  ],
+                  "info": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"FEX-2-FEX_OFFLINE\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "UCS FEX offline",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"FEX-2-FEX_OFFLINE\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+      "info": "UCS Manager has determined that a FEX is offline. For redundancy reasons, each chassis should have two FEXs. If only one FEX is down, then the chassis can continue to function, but may experience degraded performance. The FEX should be brought back online immediately to prevent an outage scenario.<br class=\"yui-cursor\">"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-ha_not_ready\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "UCS HA is not ready",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-ha_not_ready\" as item0 GROUP BY item0.timestamp/2592000000 ORDER BY item0.timestamp ASC",
+      "info": "UCS Manager has determined that HA is/was not ready. If HA is not ready then a failover would not be possible. This may lead to an outage situation if not addressed.<br class=\"yui-cursor\" id=\"yui_3_10_2_2_1389066775381_42\">"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"thermal-problem\" & text:\"upper-non-recoverable\" & (text:\"ucsm-*\" | text:\"local*-*-* * svc_*\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "UCS upper-non-recoverable thermal problem",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"thermal-problem\" & text:\"upper-non-recoverable\" & (text:\"ucsm-*\" | text:\"local*-*-* * svc_*\") & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5wg6y3boruw63q0>\\S+?)\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5wg6y3boruw63q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "UCS Manager has detected a thermal problem. This may indicate an overheating issue in the environment and may lead to component failure.&nbsp;<br class=\"yui-cursor\" id=\"yui_3_10_2_2_1389066900249_42\">"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-equipment_inoperable\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "UCS equipment failure",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & text:\"ucsm-3-equipment_inoperable\" & text=~\"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+/(?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw63lqn5xgk3tu>\\S+?)-\\d+.*?\\]\" as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0l5rw63lqn5xgk3tu ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "UCS Manager has determined that a piece of equipment is inoperable. With proper redundancy this may mean a degradation in performance. In worst case this may indicate a partial or complete outage. This issue should be investigated immediately.<br class=\"yui-cursor\" id=\"yui_3_10_2_2_1389071745862_42\">"
+    },
+    {
+      "searchPeriod": 900000,
+      "hitCount": 1,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & ((text:\"ethport-*\" | text:\"port-*\") & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000) & text=~\"%.*port-.*:.* Interface \\S+ is \\w+ \\((?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000>.*)\\)\")) as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "UCS interface down",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1344560056000 & timestamp <= 1387008000000 & ((text:\"ethport-*\" | text:\"port-*\") & (FIELD_EXISTS(ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000) & text=~\"%.*port-.*:.* Interface \\S+ is \\w+ \\((?<ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000>.*)\\)\")) as item0 GROUP BY item0.ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+      "info": "UCS supports multiple types of network interfaces including:<br><br>* ethport - Ethernet ports<br>* port - Fiber channel ports<br><br>Network interfaces may go down for a variety of reasons. The most common interface down event is seen when a port is in the error disabled state. Typically, when a port goes down, a reason is logged with the state. Common reasons why network ports would enter the error disabled state are:<br><br>* BPDU guard<br>* Security violations<br><br>If proper redundancy is in place then an interface down event should only result in performance degradation. In worst case, a network outage is possible."
+    }
+  ],
+  "name": "Cisco - UCS",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": " crashed",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3envsv6y3smfzwq000",
+      "preContext": "svc_sam_dme",
+      "regexValue": ".*",
+      "displayName": "cisco_ucsm_dme_crash"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3cnrqwizk7mzqxk3duom000000",
+      "preContext": "",
+      "regexValue": "chassis\\-[0-9]+/slot\\-[1-8]",
+      "displayName": "cisco_ucsm_blade_faults"
+    },
+    {
+      "postContext": ".*svc_sam_pamProxy",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3bov2gqx3nmvzxgylhmvzq0000",
+      "preContext": "",
+      "regexValue": "AUTHPRIV-3-SYSTEM_MSG",
+      "displayName": "cisco_auth_messages"
+    },
+    {
+      "postContext": "\\[\\d+\\]\\:",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000",
+      "preContext": "",
+      "regexValue": "^svc_\\w+",
+      "displayName": "cisco_ucs_service_events"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000",
+      "preContext": "svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[\\w+\\]\\[",
+      "regexValue": "\\S+?",
+      "displayName": "cisco_ucsc_event_category"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7nvsxg43bm5sq0000",
+      "preContext": "(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]\\s+",
+      "regexValue": ".*",
+      "displayName": "cisco_ucsm_event_message"
+    },
+    {
+      "postContext": "(due to |\\.|$)",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7ojswc43pny000000",
+      "preContext": "svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\] (.*Service profile \\S+ |UCS Domain \\S+ |UUID pool \\S+ |IP pool \\S+ |iqn pool \\S+ |MAC pool \\S+ |FC pool \\S+ \\S+ |Schedule  referenced by maintenance policy \\S+ )?",
+      "regexValue": ".*?",
+      "displayName": "cisco_ucsc_event_reason"
+    },
+    {
+      "postContext": ": \\[\\w+\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0",
+      "preContext": ": %",
+      "regexValue": "ucsm-\\d-\\S+",
+      "displayName": "cisco_ucsm_event"
+    },
+    {
+      "postContext": "\\]\\[\\S+?\\]\\[\\S+?\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7on2gc5dvom000000",
+      "preContext": "(ucsm-|local).*?\\[\\w+\\]\\[",
+      "regexValue": "\\w+",
+      "displayName": "cisco_ucsm_event_status"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dmfwgy2dpnvsv65dzobsq0000",
+      "preContext": "%CALLHOME\\-2\\-EVENT: ",
+      "regexValue": "\\w+",
+      "displayName": "cisco_callhome_type"
+    },
+    {
+      "postContext": " on VLAN\\d+.",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf64dpoj2a0000",
+      "preContext": "STP-2-LOOPGUARD_.* Loop guard \\w+ port ",
+      "regexValue": "\\S+",
+      "displayName": "cisco_stp_loopguard_port"
+    },
+    {
+      "postContext": "\\]\\[\\S+?\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7mnqxizlhn5zhs000",
+      "preContext": "(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[",
+      "regexValue": "\\S+?",
+      "displayName": "cisco_ucsm_event_category"
+    },
+    {
+      "postContext": "\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7mnxwizi0",
+      "preContext": "(ucsm-|local).*?\\[",
+      "regexValue": "\\w+",
+      "displayName": "cisco_ucsm_event_code"
+    },
+    {
+      "postContext": " port \\S+ on VLAN\\d+.",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf643umf2hk4y0",
+      "preContext": "STP-2-LOOPGUARD_.* Loop guard ",
+      "regexValue": "\\w+",
+      "displayName": "cisco_stp_loopguard_status"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7nrxwgylunfxw4000",
+      "preContext": "(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[",
+      "regexValue": "\\S+?",
+      "displayName": "cisco_ucsm_event_location"
+    },
+    {
+      "postContext": "-\\d+.*?\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7mnxw24dpnzsw45a0",
+      "preContext": "(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+/",
+      "regexValue": "\\S+?",
+      "displayName": "cisco_ucsm_event_component"
+    },
+    {
+      "postContext": " s - ntpd",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv63tuobpwi4tjmz2a0000",
+      "preContext": "%DAEMON-5-SYSTEM_MSG: time reset \\+*",
+      "regexValue": "-?\\d*\\.?\\d+",
+      "displayName": "cisco_ucs_ntp_drift"
+    },
+    {
+      "postContext": " from .* sshd",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf",
+      "preContext": "daemon-.* for ",
+      "regexValue": "\\S+",
+      "displayName": "cisco_ucs_ssh_username"
+    },
+    {
+      "postContext": " .* sshd",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000",
+      "preContext": "daemon-.* for \\S+ from ",
+      "regexValue": "\\S+",
+      "displayName": "cisco_ucs_ssh_source"
+    },
+    {
+      "postContext": "(could send message|;|$)",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv6y3bnrwgq33nmvpwk4tsn5zf63lfonzwcz3f",
+      "preContext": "callhome-3-event_process_error: .* reason:(could send message; )?",
+      "regexValue": ".*?",
+      "displayName": "cisco_ucs_callhome_error_message"
+    },
+    {
+      "postContext": " (with username )?\\S+ - securityd",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0",
+      "preContext": "AUTHPRIV\\-5\\-SYSTEM_MSG: ",
+      "regexValue": ".*?",
+      "displayName": "cisco_securityd_event"
+    },
+    {
+      "postContext": " -",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dnruv6y3pnvwwc3te",
+      "preContext": "authpriv-5-system_msg: .* COMMAND=",
+      "regexValue": ".*",
+      "displayName": "cisco_cli_command"
+    },
+    {
+      "postContext": ": ",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpwizltoruw4ylunfxw4000",
+      "preContext": "UCSM-6-AUDIT: \\[session\\].*? ",
+      "regexValue": ".*?",
+      "displayName": "cisco_ucsm_session_destination"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3foruha33sorpws3tumvzgmyldmvpxg5dbor2xg000",
+      "preContext": "%ethport-.*: Interface \\S+ is ",
+      "regexValue": "\\w+",
+      "displayName": "cisco_ethport_interface_status"
+    },
+    {
+      "postContext": " is ",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3foruha33sorpws3tumvzgmyldmu000000",
+      "preContext": "%ethport-.*: Interface ",
+      "regexValue": "\\S+",
+      "displayName": "cisco_ethport_interface"
+    },
+    {
+      "postContext": " user ",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpwi33nmfuw4000",
+      "preContext": "UCSM-6-AUDIT: \\[session\\].*?: ",
+      "regexValue": ".*",
+      "displayName": "cisco_ucsm_session_domain"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg5dbor2xg000",
+      "preContext": "UCSM-6-AUDIT: \\[session\\].*?: .*user \\S+ ",
+      "regexValue": "\\w+ \\w+",
+      "displayName": "cisco_ucsm_session_status"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg33vojrwk000",
+      "preContext": "UCSM-6-AUDIT: \\[session\\].*?: .*user \\S+ .* from ",
+      "regexValue": "\\S+",
+      "displayName": "cisco_ucsm_session_source"
+    },
+    {
+      "postContext": " ",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxk43foi000000",
+      "preContext": "UCSM-6-AUDIT: \\[session\\].*?: .*user ",
+      "regexValue": "\\S+",
+      "displayName": "cisco_ucsm_session_user"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3gmf2wy5c7ojswc43pny000000",
+      "preContext": "ucsm-.*: \\[\\w+\\]\\[\\w+\\]\\[\\S+\\].* reason: (\\w+:)?",
+      "regexValue": ".*",
+      "displayName": "cisco_ucsm_fault_reason"
+    },
+    {
+      "postContext": "\\)",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000",
+      "preContext": "%.*port-.*:.* Interface \\S+ is \\w+ \\(",
+      "regexValue": ".*",
+      "displayName": "cisco_interface_status_reason"
+    },
+    {
+      "postContext": "\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnxwizi0",
+      "preContext": "svc_\\w+\\[\\d+\\]: \\[",
+      "regexValue": "F\\d+",
+      "displayName": "cisco_ucsc_event_code"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7on2gc5dvom000000",
+      "preContext": "svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[",
+      "regexValue": "\\w+",
+      "displayName": "cisco_ucsc_event_status"
+    },
+    {
+      "postContext": "\\:",
+      "internalName": "ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3to5uxiy3il5sxmzloorzq0000",
+      "preContext": "",
+      "regexValue": "UCSM\\-3\\-\\S+",
+      "displayName": "cisco_ucsm_switch_events"
+    }
+  ],
+  "version": "1.0",
+  "namespace": "com.cisco.ucs",
+  "icon": "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",
+  "author": "Cisco Systems, Inc.",
+  "contentVersion": "1.5",
+  "url": "http://www.cisco.com",
+  "info": "The UCS content pack contains critical information about everything within a UCS system from UCS Central and UCS Manager down to chassis, blades, and networking components. The content pack provides:<br><br><span style=\"font-weight: bold;\">Component Faults and Reasons</span><br>When hardware issues are detected, quickly investigate and resolve them.<br><br><span style=\"font-weight: bold;\">Configuration Changes and Faults</span><br>Quickly identify what configuration changes have occurred over time and get notification of configuration faults immediately.<br><br><span style=\"font-weight: bold;\">Authentication Requests</span><br>Track user sessions from both the GUI and the CLI including failed log in attempts and authentication sources.<br><br>The UCS content pack is a powerful monitoring tool for UCS environments, making you aware of any issues quickly and allowing you to maintain a healthy environment at all times."
+}
