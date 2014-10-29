@@ -274,5 +274,6 @@
     }
   ],
   "namespace": "com.emc.vnx",
+  "framework": "#3E8",
   "version": "1.0"
 }
