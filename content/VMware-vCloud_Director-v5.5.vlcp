@@ -18,7 +18,7 @@
                   "messageQuery": "",
                   "chartOptions": "{}",
                   "name": "vApps Deployed",
-                  "chartQuery": "SELECT UCOUNT(item0.ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpwizlqnrxxs3lfnz2a0000) FROM timestamp >= 1404244827588 & timestamp <= 1404331227587 & (FIELD_EXISTS(ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpwizlqnrxxs3lfnz2a0000) & text=~\"VAPP_DEPLOY\\(com\\.vmware\\.vcloud\\.entity\\.task:(?<ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpwizlqnrxxs3lfnz2a0000>\\S+)\\)\\. \\| vcd=\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wmfyhax3emvygy33znvsw45a0) FROM timestamp >= 1404244827588 & timestamp <= 1404331227587 & (FIELD_EXISTS(ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wmfyhax3emvygy33znvsw45a0) & text=~\"VAPP_DEPLOY\\(com\\.vmware\\.vcloud\\.entity\\.task:(?<ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wmfyhax3emvygy33znvsw45a0>\\S+)\\)\\. \\| vcd=\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
                   "info": "<span>This count is the number of vApps deployed by vCD. <b>The count is not the number of currently running vApps</b>, it is only the number of deployments and never decreases because a vApp is undeployed.</span><br>"
                 },
                 {
@@ -26,7 +26,7 @@
                   "messageQuery": "",
                   "chartOptions": "{}",
                   "name": "VMs deployed",
-                  "chartQuery": "SELECT UCOUNT(item0.ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu) FROM timestamp >= 1402835509872 & timestamp <= 1404330707611 & (FIELD_EXISTS(ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu) & text=~\"PlacementSolverImpl .*/VirtualMachine#(?<ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu>\\S+) with requirements:\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wnvpw233smvtf64dmmfrwk3lfnz2a0000) FROM timestamp >= 1402835509872 & timestamp <= 1404330707611 & (FIELD_EXISTS(ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wnvpw233smvtf64dmmfrwk3lfnz2a0000) & text=~\"PlacementSolverImpl .*/VirtualMachine#(?<ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wnvpw233smvtf64dmmfrwk3lfnz2a0000>\\S+) with requirements:\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
                   "info": "This count is the number of VMs deployed by vCD. <b>The count is not the number of currently running VMs</b>, it is only the number of deployments and never decreases because a vApp is undeployed.<br>"
                 },
                 {
@@ -34,7 +34,7 @@
                   "messageQuery": "",
                   "chartOptions": "{}",
                   "name": "vApps Undeployed",
-                  "chartQuery": "SELECT UCOUNT(item0.ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpxk3temvygy33z) FROM timestamp >= 1404245067693 & timestamp <= 1404331467692 & (FIELD_EXISTS(ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpxk3temvygy33z) & text=~\"VAPP_UNDEPLOY_POWER_OFF\\(com\\.vmware\\.vcloud\\.entity\\.task:(?<ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpxk3temvygy33z>\\S+)\\)\\. \\| vcd\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wmfyhax3vnzsgk4dmn54q0000) FROM timestamp >= 1404245067693 & timestamp <= 1404331467692 & (FIELD_EXISTS(ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wmfyhax3vnzsgk4dmn54q0000) & text=~\"VAPP_UNDEPLOY_POWER_OFF\\(com.vmware.vcloud.entity.task:(?<ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3wmfyhax3vnzsgk4dmn54q0000>\\S+)\\)\\. \\| vcd\") as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
                   "info": "This count is the number of vApps un-deployed by vCD.&nbsp;<br>"
                 }
               ]
@@ -64,7 +64,7 @@
                   "messageQuery": "",
                   "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Failed vCD tasks by vCD Server and Org",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404240837352 & timestamp <= 1404327237351 & text:\"Unable\" & text:\"to\" & text:\"execute\" & text:\"task\" & (!text:\"vdc_delete_vapp\" & !text:\"VAPP_INSERT_CD_FLOPPY\" & !text:\"VAPP_EJECT_CD_FLOPPY\") & text=~\"orgName=(?<ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th>\\S+)\\, cellInstanceId=[\\d]*, targetId=\" as item0 GROUP BY item0.hostname,item0.ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1404240837352 & timestamp <= 1404327237351 & text:\"Unable\" & text:\"to\" & text:\"execute\" & text:\"task\" & (!text:\"vdc_delete_vapp\" & !text:\"VAPP_INSERT_CD_FLOPPY\" & !text:\"VAPP_EJECT_CD_FLOPPY\") & text=~\"orgName=(?<ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3pojtq0000>\\S+)\\, cellInstanceId=[\\d]*, targetId=\" as item0 GROUP BY item0.hostname,item0.ibadgns7heztoyzzgnrwgllfguydeljugfqtcllcmi4weljvmeytizrumeztqytegr3g2527ozrwix3pojtq0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "This widget shows you the occurrences of when vCD is unable to complete a task and an error is thrown."
                 }
               ]
@@ -529,98 +529,98 @@
   "extractedFields": [
     {
       "postContext": "5\\, affinity type:",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpwiylumfzxi33smvpw233smvta0000",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3emf2gc43un5zgkx3nn5zgkzq0",
       "preContext": "moref://.*/Datastore#",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_datastore_moref"
     },
     {
       "postContext": "\\, cellInstanceId=[\\d]*, targetId=",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3pojtq0000",
       "preContext": "orgName=",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_org"
     },
     {
       "postContext": "\\], providerVdc=\\[id=",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64thl5xgc3lf",
+      "internalName": "ibadgns7gfsdembwgm2gmllemm2dkljug44diljyha4tiljsgfsgezlcgq3gcnldmf3g2527ozrwix3pojtv63tbnvsq0000",
       "preContext": "\\, displayName=",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_org_name"
     },
     {
       "postContext": "\\, enabled=.*org=\\[",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw65temnpw4ylnmu000000",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3pozsggx3omfwwk000",
       "preContext": "name=",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_ovdc_name"
     },
     {
       "postContext": "\\, highestSupportedHwVersion=[\\d]*,",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxa5temnpw4ylnmu000000",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3qozsggx3omfwwk000",
       "preContext": "providerVdc=\\[id=.*, name=",
       "regexValue": "\\w+",
       "displayName": "vmw_vcd_pvdc_name"
     },
     {
       "postContext": "\\(com\\.vmware\\.vcloud\\.",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxiyltnnpxi6lqmu000000",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3umfzwwx3upfygk000",
       "preContext": "task ",
       "regexValue": "\\w+",
       "displayName": "vmw_vcd_task_type"
     },
     {
       "postContext": "\\) \\| ",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxiyltnnpxk5ljmq000000",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3umfzwwx3vovuwi000",
       "preContext": "task:",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_task_uuid"
     },
     {
       "postContext": "\\,task",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxk5ljmq000000",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3vovuwi000",
       "preContext": "vcd=",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_uuid"
     },
     {
       "postContext": "\\)\\. \\| vcd=",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpwizlqnrxxs3lfnz2a0000",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3wmfyhax3emvygy33znvsw45a0",
       "preContext": "VAPP_DEPLOY\\(com\\.vmware\\.vcloud\\.entity\\.task:",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_vapp_deployment"
     },
     {
       "postContext": "\" \\(.* in VDC",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpw4ylnmu000000",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3wmfyhax3omfwwk000",
       "preContext": "vApp \"",
       "regexValue": ".*",
       "displayName": "vmw_vcd_vapp_name"
     },
     {
       "postContext": "\\)\\. \\| vcd",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpxk3temvygy33z",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3wmfyhax3vnzsgk4dmn54q0000",
       "preContext": "VAPP_UNDEPLOY_POWER_OFF\\(com\\.vmware\\.vcloud\\.entity\\.task:",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_vapp_undeploy"
     },
     {
       "postContext": "\\, moref=.*]",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmy27ov2wsza0",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3wmnpxk5ljmq000000",
       "preContext": "\\[vcId=",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_vc_uuid"
     },
     {
       "postContext": " with requirements:",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3wnvpw233smvtf64dmmfrwk3lfnz2a0000",
       "preContext": "PlacementSolverImpl .*/VirtualMachine#",
       "regexValue": "\\S+",
       "displayName": "vmw_vcd_vm_moref_placement"
     },
     {
       "postContext": "\\, fabricIds=\\[",
-      "internalName": "ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nzqw2zi0",
+      "internalName": "ibadgns7hbtdsyjumzsdsljrmnrdiljuhezgcllcgnrtgljzmu2dmmlbgmztam3fgb3g2527ozrwix3wnvpw4ylnmu000000",
       "preContext": "for virtual machine id=.* name=",
       "regexValue": "\\w+",
       "displayName": "vmw_vcd_vm_name"
