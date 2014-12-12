@@ -1,0 +1,690 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1418237434632 & timestamp <= 1418241034631 & (text=~\"\\s%\\w+\\-[\\d\\w-]+:\\s\" | text:\"arista\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "All Arista events",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418237434632 & timestamp <= 1418241034631 & (text=~\"\\s%\\w+\\-[\\d\\w-]+:\\s\" | text:\"arista\") as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+                  "info": "The total number of events received from Arista EOS devices over time. \nAn increase in events may point to a change in the environment. A large \nincrease in events may be an indication of an issue in the environment."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1418154581946 & timestamp <= 1418240981945 & (text=~\"\\s%[A-Z]*-[0-9]-[A-Z]*:\\s\" | text:\"arista\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Arista events by hostname",
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418154581946 & timestamp <= 1418240981945 & (text=~\"\\s%[A-Z]*-[0-9]-[A-Z]*:\\s\" | text:\"arista\") as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "<span>The total number of Arista EOS events received per host. A \nlarger number of events on a subset of hosts may point to a change \nwithin the environment or an issue on the subset of hosts.</span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1418154680573 & timestamp <= 1418241080572 & text=~\"\\s%AAA-4-LOGIN_FAILED:\\s.*\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "Number of failed logins over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418154680573 & timestamp <= 1418241080572 & text=~\"\\s%AAA-4-LOGIN_FAILED:\\s.*\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "This indicates the number of times users have unsuccessfully tried to \nlogin. &nbsp;If there is a large number of unexpected logins, it could \nindicate an attempt to gain unauthorized access to a switch."
+                },
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1418154721120 & timestamp <= 1418241121119 & text=~\"\\s%AAA-5-LOGIN.*\\s\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "Number of successful logins over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418154721120 & timestamp <= 1418241121119 & text=~\"\\s%AAA-5-LOGIN.*\\s\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "<span>This indicates the number of times a user has successfully logged \ninto a switch. &nbsp;This indicator is mostly informational. &nbsp;If there is a \nlarge number of unexpected logins, it could indicate unauthorized access\n into the switch.</span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Relevant queries",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1415800494274 & timestamp <= 1415822094601 & text=~\"%[A-Z]*-4.*\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Arista warning events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415800494274 & timestamp <= 1415822094601 & text=~\"%[A-Z]*-4.*\" as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Warning events received from Arista EOS devices over time per host.&nbsp;<br><span>An error event indicates the system has encountered an error. The message details help describe\nthe urgency.&nbsp;</span>An increase in events may point to a change in the \nenvironment. A large increase in events may be an indication of an issue\n in the environment."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1415800513666 & timestamp <= 1415822113918 & text=~\"%[A-Z]*-3.*\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Arista error events by hostname",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415800513666 & timestamp <= 1415822113918 & text=~\"%[A-Z]*-3.*\" as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "Error events received from Arista EOS devices over time per host.&nbsp;<br><span>An error event indicates the system has encountered an error. The message details help describe\nthe urgency.&nbsp;</span>An increase in events may point to a change in the \nenvironment. A large increase in events may be an indication of an issue\n in the environment."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1418153758892 & timestamp <= 1418240158891 & text=~\"\\s%[A-Z]*-0-[A-Z].*\\s\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Arista emergency events",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418153758892 & timestamp <= 1418240158891 & text=~\"\\s%[A-Z]*-0-[A-Z].*\\s\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                      "options": "{\"chartTypeName\":\"area\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":true}\"}",
+                      "info": "<span><span><span><span><span><span>The number of emergency events on \nall Arista switches. &nbsp;An emergency event indicates the system cannot be \nused. Immediate administrator attention is required.</span></span></span></span></span></span>"
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1418153817869 & timestamp <= 1418240217868 & text=~\"\\s%[A-Z]*-3.*\\s\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Arista error events",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418153817869 & timestamp <= 1418240217868 & text=~\"\\s%[A-Z]*-3.*\\s\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                      "options": "{\"chartTypeName\":\"area\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":true}\"}",
+                      "info": "The total number of error events received from Arista EOS devices over time.&nbsp;<br><span>An error event indicates the system has encountered an error. The message details help describe\nthe urgency.&nbsp;</span>An increase in events may point to a change in the \nenvironment. A large increase in events may be an indication of an issue\n in the environment."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1418153850082 & timestamp <= 1418240250081 & text=~\"\\s%[A-Z]*-4.*\\s\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Arista warning events",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418153850082 & timestamp <= 1418240250081 & text=~\"\\s%[A-Z]*-4.*\\s\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                      "options": "{\"chartTypeName\":\"area\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":true}\"}",
+                      "info": "The total number of warning events received from Arista EOS devices over time.&nbsp;<br>\n\t\t\n\t\n\t\n\t\t<span>Warning events indicate something may be wrong, or misconfigured. &nbsp;No immediate attention\nis required, although further investigation is required.&nbsp;</span><br>"
+                    }
+                  ],
+                  "info": "Detailed queries to diagnose issues on Arista hosts.<br><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Inventory",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "fieldTable",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1410395097982 & timestamp <= 1410395397981 & text:\"<arista>\" & text:\"version\" as item0 ORDER BY item0.timestamp DESC",
+                  "name": "Switch version, memory, and model information",
+                  "columns": [
+                    {
+                      "internalName": "hostname"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3wmvzhg2lpny000000"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3tpfzxizlnnvqwg000"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3tmvzgsylmnz2w2ytfoi000000"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3nn5sgk3domfwwk000"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3nmvwxi33umfwa0000"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3nmvwwm4tfmu000000"
+                    }
+                  ],
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1410395097982 & timestamp <= 1410395397981 & text:\"<arista>\" & text:\"version\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp DESC",
+                  "info": "This table gives an overview of the software versions and hardware models of the Arista switches.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "fieldTable",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1410274225575 & timestamp <= 1410277825574 & text:\"inventory_xcvr\" & text:\"<arista>\" as item0 ORDER BY item0.timestamp DESC",
+                  "name": "Transceiver inventory on all switches",
+                  "columns": [
+                    {
+                      "internalName": "hostname"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl54gg5tsl5zwk4tjmfwg45ln"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl54gg5tsl5ww6zdfnrxgc3lf"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl54gg5tsl5wwmz3omfwwk000"
+                    }
+                  ],
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1410274225575 & timestamp <= 1410277825574 & text:\"inventory_xcvr\" & text:\"<arista>\" as item0 GROUP BY item0.timestamp/9223372036828800000 ORDER BY item0.timestamp DESC",
+                  "info": "Listing of transceivers present on switches<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Interface Counters",
+          "constraints": [
+            {
+              "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1412146800000 & timestamp <= 1414617997403 & text:\"intf_counters\" & text:\"<arista>\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Average number of input bytes by hostname",
+                  "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw433dorsxi4y0) FROM timestamp >= 1412146800000 & timestamp <= 1414617997403 & text:\"intf_counters\" & text:\"<arista>\" & text=~\"<arista> intf_counters].* inOctets=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw433dorsxi4y0>\\S+)$\" as item0 GROUP BY item0.timestamp/43200000,item0.hostname ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw433dorsxi4y0) DESC LIMIT 1,100",
+                  "info": "Aggregate input traffic counters for each switch over time.&nbsp; Changes in these counters indicate a change in traffic flow across the network.&nbsp; Use the detailed queries to investigate individual interface counters when needed.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1412146800000 & timestamp <= 1414617997403 & text:\"intf_counters\" & text:\"<arista>\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Average number of output bytes by hostname",
+                  "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dpmn2gk5dt) FROM timestamp >= 1412146800000 & timestamp <= 1414617997403 & text:\"intf_counters\" & text:\"<arista>\" & text=~\"<arista> intf_counters].* outOctets=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dpmn2gk5dt>\\S+)\\,\" as item0 GROUP BY item0.timestamp/43200000,item0.hostname ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dpmn2gk5dt) DESC LIMIT 1,100",
+                  "info": "Aggregate output traffic counters for each switch over time.&nbsp; Changes in \nthese counters indicate a change in traffic flow across the network.&nbsp; \nUse the detailed queries to investigate individual interface counters \nwhen needed."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Interface counters per interface",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1412146800000 & timestamp <= 1414617997403 & text:\"intf_counters\" & text:\"<arista>\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Average number of input bytes by interface",
+                      "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw433dorsxi4y0) FROM timestamp >= 1412146800000 & timestamp <= 1414617997403 & text:\"intf_counters\" & text:\"<arista>\" & text=~\"<arista> intf_counters].* inOctets=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw433dorsxi4y0>\\S+)$\" & text=~\"<arista>.* intfName=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf>\\S+)\\,\" as item0 GROUP BY item0.timestamp/43200000,item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf,item0.hostname ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw433dorsxi4y0) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"spline\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\"}\"}",
+                      "info": "Detailed query of the number of input octets on an interface-by-interface basis."
+                    },
+                    {
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1412146800000 & timestamp <= 1414617997403 & text:\"intf_counters\" & text:\"<arista>\" as item0 ORDER BY item0.timestamp DESC",
+                      "name": "Average number of output bytes by hostname",
+                      "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dpmn2gk5dt) FROM timestamp >= 1412146800000 & timestamp <= 1414617997403 & text:\"intf_counters\" & text:\"<arista>\" & text=~\"<arista>.* intfName=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf>\\S+)\\,\" & text=~\"<arista> intf_counters].* outOctets=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dpmn2gk5dt>\\S+)\\,\" as item0 GROUP BY item0.timestamp/43200000,item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf,item0.hostname ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dpmn2gk5dt) DESC LIMIT 1,100",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"spline\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\"}\"}",
+                      "info": "Detailed query of the number of output octets on an interface-by-interface basis."
+                    }
+                  ],
+                  "info": "Detailed queries on the number of octets input and output by an individual interface.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Interface Errors",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Average number of output errors per switch interface",
+                  "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dfojzg64tt) FROM timestamp >= 1410274654279 & timestamp <= 1410278254278 & text:\"<arista>\" & text:\"intf_errors\" & text=~\"<arista>.* intfName=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf>\\S+)\\,\" & text=~\"[<arista> intf_errors].* outErrors=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dfojzg64tt>\\S+),\" as item0 GROUP BY item0.timestamp/60000,item0.hostname,item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dfojzg64tt) DESC LIMIT 1,100",
+                  "info": "The average number of output errors seen on switch interfaces over time. An increase in events may point to a problem with the configuration or physical interface. &nbsp;This number should be as low as possible.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Average number of input errors per switch interface",
+                  "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw4zlsojxxe4y0) FROM timestamp >= 1410274563369 & timestamp <= 1410278163368 & text:\"intf_errors\" & text:\"<arista>\" & text=~\"<arista> intf_errors.* inErrors=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw4zlsojxxe4y0>\\S+)$\" & text=~\"<arista>.* intfName=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf>\\S+)\\,\" as item0 GROUP BY item0.timestamp/60000,item0.hostname,item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw4zlsojxxe4y0) DESC LIMIT 1,100",
+                  "info": "The average number of input errors seen on switch interfaces over time. An increase in events may point to a problem with the configuration or physical interface. &nbsp;This number should be as low as possible.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "line",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1415988695747 & timestamp <= 1416593496203 & text:\"Ebra:\" & text:\"%LINEPROTO-5-UPDOWN:\" & text:\"down\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+                  "name": "Number of interface down events by switch",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415988696204 & timestamp <= 1416593496203 & text:\"Ebra:\" & text:\"%LINEPROTO-5-UPDOWN:\" & text:\"down\" as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This indicates the number of times a switch has an interface go down. &nbsp;This could indicate a physical or configuration error on the switch if not planned. &nbsp;A high number of events could also indicate interface flapping and can cause instability in the network."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Platform Information",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+                  "name": "Average of output power over time per switch power supply",
+                  "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpw65luob2xi000) FROM timestamp >= 1410274164079 & timestamp <= 1410277764078 & text:\"power\" & text:\"<arista>\" & text=~\"<arista> power.* outputPower=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpw65luob2xi000>\\S+),\" & text=~\"<arista> power.* ps=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpxa4y0>\\S+),\" as item0 GROUP BY item0.timestamp/60000,item0.hostname,item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpxa4y0 ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpw65luob2xi000) DESC LIMIT 1,100",
+                  "info": "Average output power for each power supply on a switch. &nbsp;A large change in power supply output can indicate something has changed in the environment, or a physical problem with the power supply on the switch.<br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"spline\":false}",
+                  "name": "Average of ambient temperature over time",
+                  "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5qw2ytjmvxhix3umvwxa000) FROM timestamp >= 1410390251993 & timestamp <= 1410390551992 & text:\"<arista>\" & text:\"cooling\" & text=~\"<arista> cooling.* ambientTemperature=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5qw2ytjmvxhix3umvwxa000>\\S+)\\,\" as item0 GROUP BY item0.timestamp/5000 ORDER BY item0.timestamp DESC",
+                  "info": "Average ambient temperature reported by the switch. &nbsp;An increase in temperature can indicate an issue with the cooling system of the switch, or the physical environment. &nbsp;<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Virtualization",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1408057941611 & timestamp <= 1408144344786 & text:\"vmwarevi-6-vmotion_started\" & event_type IN INVOKE EventTypes.expandPattern(\"^(.*)\\Q \\E(.*)\\Q \\E\\QVmTracer\\E\\Q:\\E\\Q \\E\\Q%\\E\\QVMWAREVI\\E\\Q-\\E\\Q6\\E\\Q-\\E\\QVMOTION\\E\\Q_\\E\\QSTARTED\\E\\Q:\\E\\Q \\E\\QVM\\E\\Q \\E\\Qvxlan\\E\\Q-\\E\\Qvm\\E(.*)\\Q \\E\\Qin\\E\\Q \\E\\Qvmotion\\E\\Q \\E\\Qfrom\\E\\Q \\E(.*)\\Q \\E\\Qto\\E\\Q \\E\\Q172.22\\E\\Q.\\E(.*)\\Q.\\E$\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Number of vMotion events per switch",
+                  "chartQuery": "SELECT UCOUNT(item0.event_type) FROM timestamp >= 1408057944787 & timestamp <= 1408144344786 & text:\"vmwarevi-6-vmotion_started\" & event_type IN INVOKE EventTypes.expandPattern(\"^(.*)\\Q \\E(.*)\\Q \\E\\QVmTracer\\E\\Q:\\E\\Q \\E\\Q%\\E\\QVMWAREVI\\E\\Q-\\E\\Q6\\E\\Q-\\E\\QVMOTION\\E\\Q_\\E\\QSTARTED\\E\\Q:\\E\\Q \\E\\QVM\\E\\Q \\E\\Qvxlan\\E\\Q-\\E\\Qvm\\E(.*)\\Q \\E\\Qin\\E\\Q \\E\\Qvmotion\\E\\Q \\E\\Qfrom\\E\\Q \\E(.*)\\Q \\E\\Qto\\E\\Q \\E\\Q172.22\\E\\Q.\\E(.*)\\Q.\\E$\") as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, UCOUNT(item0.event_type) DESC LIMIT 1,100",
+                  "info": "vMotion events seen on each switch as reported by VM Tracer. &nbsp;If a vMotion event happens on one switch, then a corresponding event should be seen on another switch as the VM moves, provided that both switches are being monitored.&nbsp; <br>"
+                },
+                {
+                  "widgetType": "fieldTable",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1408049437616 & timestamp <= 1408053045021 & text:\"%VMTRACERSESS-6-ADD_VMENTRY:\" as item0 ORDER BY item0.timestamp DESC",
+                  "name": "VM adds by switch",
+                  "columns": [
+                    {
+                      "internalName": "__li_timestamp_col"
+                    },
+                    {
+                      "internalName": "hostname"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53g25dsmfrwk4s7ozwq0000"
+                    }
+                  ],
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1408049437616 & timestamp <= 1408053045021 & text:\"%VMTRACERSESS-6-ADD_VMENTRY:\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "Listing of the VM adds seen on the switch from VM Tracer.&nbsp; A VM Add indicates that a new VM has appeared on an ESXi host that is connected to an Arista switch.<br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "fieldTable",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1410370920816 & timestamp <= 1410374520815 & text:\"<arista>\" & text:\"nsx_logical_switches\" as item0 ORDER BY item0.timestamp DESC",
+                  "name": "NSX logical switches on Arista VTEP",
+                  "columns": [
+                    {
+                      "internalName": "__li_timestamp_col"
+                    },
+                    {
+                      "internalName": "hostname"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5xhg6c7ozxgs000"
+                    },
+                    {
+                      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5xhg6c7nrxwo2ldmfwf643xnf2gg2djmq000000"
+                    }
+                  ],
+                  "gridWidth": "1",
+                  "chartQuery": "SELECT UCOUNT(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5xhg6c7nrxwo2ldmfwf643xnf2gg2djmq000000) FROM timestamp >= 1410370920816 & timestamp <= 1410374520815 & text:\"<arista>\" & text:\"nsx_logical_switches\" & text=~\"<arista> nsx_logical_switches.* nsxLogicalSwitchId=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5xhg6c7nrxwo2ldmfwf643xnf2gg2djmq000000>\\S+)\\,\" as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+                  "info": "Shows the current NSX logical switches that are present on an Arista VTEPs. &nbsp;These logical switches are configured by NSX and sent to the Arista switch using OVSDB. &nbsp;This list is can help verify that the correct layer 2 gateways are configured for a given logical switch.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer 3 Routing",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416857164006 & timestamp <= 1416943564088 & text:\"Rib\" & text:\"BGP-3-*\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "Nubmer of BGP errors",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416857164006 & timestamp <= 1416943564088 & text:\"Rib\" & text:\"BGP-3-*\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "A BGP error indicates errors in the BGP session, and can indicate that e<span><span><span><span><span>ither the malformed messages, or unexpected arrival time of messages. &nbsp;<br>\n\t\t\n\t\n\t\n\t\t<span>Some messages (such as ’cease’) require no action. Error messages (such as ’Message\nHeader Error’) can be symptomatic of some other BGP error. The data printed in the BGP-NOTIFICATION log entry\nmay help a technical support person determine the underlying error.</span> <br></span></span></span></span></span>"
+                },
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416857192577 & timestamp <= 1416943592576 & text:\"Rib\" & text:\"OSPF-3-*\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "Number of OSPF errors",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416857192577 & timestamp <= 1416943592576 & text:\"Rib\" & text:\"OSPF-3-*\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+                  "info": "OSPF error events are due to t<span>he\n number of LSAs in the OSPF routing system reaching the configured \nlimit. &nbsp;This will lead to a shutdown of the instance and should be \ninvestigated immediately. &nbsp;If left unchecked, the system will eventually\n shut down OSPF until manually cleared.</span><span><span><br></span></span>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1410387416583 & timestamp <= 1410391016582 & text:\"<arista>\" & text:\"cooling\" & (!ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5rw633mnfxgox3torqxi5lt:\"coolingok\" & text=~\"<arista> cooling.* systemStatus=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5rw633mnfxgox3torqxi5lt>\\S+),\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 600000,
+      "name": "Arista switch cooling failure",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1410387416583 & timestamp <= 1410391016582 & text:\"<arista>\" & text:\"cooling\" & (!ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5rw633mnfxgox3torqxi5lt:\"coolingok\" & text=~\"<arista> cooling.* systemStatus=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5rw633mnfxgox3torqxi5lt>\\S+),\") as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+      "info": "Arista switch cooling status is not 'ok', indicating a hardware issue with the cooling system. &nbsp;The device should be checked for hardware failure such as a fan failure, and replaced if necessary.<br>"
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1410385905446 & timestamp <= 1410389505445 & text:\"intf_errors\" & text:\"<arista>\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Arista output error alert",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dfojzg64tt) FROM timestamp >= 1410385905446 & timestamp <= 1410389505445 & text:\"intf_errors\" & text:\"<arista>\" & text=~\"[<arista> intf_errors].* outErrors=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dfojzg64tt>\\S+),\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dfojzg64tt) DESC LIMIT 1,100",
+      "info": "Output errors seen on a switch have increased, indicating there may be a \nproblem with the physical connection , interface, or configuration of \nthe interface."
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1410385966033 & timestamp <= 1410389566032 & text:\"intf_errors\" & text:\"<arista>\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Arista input error alert",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw4zlsojxxe4y0) FROM timestamp >= 1410385966033 & timestamp <= 1410389566032 & text:\"intf_errors\" & text:\"<arista>\" & text=~\"<arista> intf_errors.* inErrors=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw4zlsojxxe4y0>\\S+)$\" as item0 GROUP BY item0.timestamp/60000,item0.hostname ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw4zlsojxxe4y0) DESC LIMIT 1,100",
+      "info": "Input errors seen on a switch have increased, indicating there may be a problem with the physical connection , interface, or configuration of the interface.<br>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416507962990 & timestamp <= 1416594363158 & text=~\"%[A-Z]*-0-[A-Z].*\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Arista emergency events",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416507962990 & timestamp <= 1416594363158 & text=~\"%[A-Z]*-0-[A-Z].*\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "<span><span><span><span><span><span>An emergency event indicates the system cannot be used. Immediate administrator attention is required&nbsp;</span></span></span><br></span><br></span><br></span><br>"
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 0.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416539089526 & timestamp <= 1416625489651 & text:\"Ebra:\" & text:\"%LINEPROTO-5-UPDOWN:\" & text:\"down\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 300000,
+      "name": "Arista interface down alert",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416539089526 & timestamp <= 1416625489651 & text:\"Ebra:\" & text:\"%LINEPROTO-5-UPDOWN:\" & text:\"down\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "info": "An interface on a switch has gone from the up state to down.&nbsp; If this is not intentional, then an operator should investigate the cause for the port to lose connectivity.&nbsp; Traffic is not being forwarded across a down port.<br>"
+    },
+    {
+      "searchPeriod": 21600000,
+      "hitCount": 1.0,
+      "hitOperator": "LESS_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1410386222062 & timestamp <= 1410389822061 & text:\"power\" & text:\"<arista>\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Arista power supply failure",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "SELECT AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpw65luob2xi000) FROM timestamp >= 1410386222062 & timestamp <= 1410389822061 & text:\"power\" & text:\"<arista>\" & text=~\"<arista> power.* outputPower=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpw65luob2xi000>\\S+),\" & text=~\"<arista> power.* ps=(?<ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpxa4y0>\\S+),\" as item0 GROUP BY item0.timestamp/60000,item0.hostname,item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpxa4y0 ORDER BY item0.timestamp DESC, AVG(item0.ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpw65luob2xi000) DESC LIMIT 1,100",
+      "info": "Output power from a power supply is zero, indicating that the power supply is no longer functioning. &nbsp;This could be due to removal of a power cable, hardware failure, or general power failure. &nbsp;<br>"
+    }
+  ],
+  "name": "Arista - EOS",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5qw2ytjmvxhix3umvwxa000",
+      "preContext": "<arista> cooling.* ambientTemperature=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_ambient_temp"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5rw633mnfxgox3bnfzgm3dpo4000000",
+      "preContext": "<arista> cooling].* airflowDirection=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_cooling_airflow"
+    },
+    {
+      "postContext": ",",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5rw633mnfxgox3torqxi5lt",
+      "preContext": "<arista> cooling.* systemStatus=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_cooling_status"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw4zlsojxxe4y0",
+      "preContext": "<arista> intf_errors.* inErrors=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_intf_inerrors"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5uw433dorsxi4y0",
+      "preContext": "<arista> intf_counters].* inOctets=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_intf_inoctets"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xgc3lf",
+      "preContext": "<arista>.* intfName=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_intf_name"
+    },
+    {
+      "postContext": ",",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dfojzg64tt",
+      "preContext": "[<arista> intf_errors].* outErrors=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_intf_outerrors"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5uw45dgl5xxk5dpmn2gk5dt",
+      "preContext": "<arista> intf_counters].* outOctets=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_intf_outoctets"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5xhg6c7nrxwo2ldmfwf643xnf2gg2djmq000000",
+      "preContext": "<arista> nsx_logical_switches.* nsxLogicalSwitchId=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_nsx_logical_switchid"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5xhg6c7ozxgs000",
+      "preContext": "<arista> nsx_logical_switches.* vni=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_nsx_vni"
+    },
+    {
+      "postContext": ",",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpwg5lsojsw45a0",
+      "preContext": "<arista> power].* outputCurrent=",
+      "regexValue": ".*",
+      "displayName": "arista_eos_power_current"
+    },
+    {
+      "postContext": ",",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpw65luob2xi000",
+      "preContext": "<arista> power.* outputPower=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_power_output"
+    },
+    {
+      "postContext": ",",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpxa4y0",
+      "preContext": "<arista> power.* ps=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_power_ps"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl5yg653fojpxg5dborsq0000",
+      "preContext": "<arista> power].* state=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_power_state"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3cn5xxi5lqon2gs3lfon2gc3lq",
+      "preContext": "<arista> version\\].* bootupTimestamp=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_version_bootupstimestamp"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3jnz2gk4twmfwhmzlsonuw63q0",
+      "preContext": "<arista> version\\].* internalVersion=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_version_intervalversion"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3nmvwwm4tfmu000000",
+      "preContext": "<arista> version\\].* memFree=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_version_memfree"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3nmvwxi33umfwa0000",
+      "preContext": "<arista> version\\].* memTotal=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_version_memtotal"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3nn5sgk3domfwwk000",
+      "preContext": "<arista> version\\] modelName=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_version_modelname"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3tmvzgsylmnz2w2ytfoi000000",
+      "preContext": "<arista> version\\].* serialNumber=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_version_serialnumber"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3tpfzxizlnnvqwg000",
+      "preContext": "<arista> version\\].* systemMacAddress=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_version_systemmac"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53gk4ttnfxw4x3wmvzhg2lpny000000",
+      "preContext": "<arista> version\\].* version=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_version_version"
+    },
+    {
+      "postContext": " nic",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl53g25dsmfrwk4s7ozwq0000",
+      "preContext": "VMTRACERSESS\\-6\\-ADD_VMENTRY: VM ",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_vmtracer_vm"
+    },
+    {
+      "postContext": "$",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl54gg5tsl5wwmz3omfwwk000",
+      "preContext": "<arista> inventory_xcvr.* mfgName=",
+      "regexValue": ".*",
+      "displayName": "arista_eos_xcvr_mfgname"
+    },
+    {
+      "postContext": "\\,",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl54gg5tsl5ww6zdfnrxgc3lf",
+      "preContext": "<arista> inventory_xcvr.* modelName=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_xcvr_modelname"
+    },
+    {
+      "postContext": ",",
+      "internalName": "ibadcmc7mnxw2ltbojuxg5dbmfzgs43umfpwk33tl54gg5tsl5zwk4tjmfwg45ln",
+      "preContext": "<arista> inventory_xcvr.* serialNum=",
+      "regexValue": "\\S+",
+      "displayName": "arista_eos_xcvr_serialnum"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "2.0",
+  "namespace": "com.arista",
+  "icon": "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",
+  "author": "Arista Networks, Inc.",
+  "contentVersion": "1.0",
+  "url": "http://www.arista.com",
+  "info": "The Arista EOS content pack provides detailed monitoring and alerts for your Arista EOS devices. With the addition of the Arista Log Insight extension, additional switch monitoring beyond standard switch syslog output is available.<br><br><span style=\"font-weight: bold;\">NOTE</span>: To fully leverage the power of this content pack the Arista Log Insight extension needs to be installed on your switches.&nbsp; Only basic functionality is available with the standard syslog settings. Please contact your Arista representative for details.<br><br>This content pack includes the following dashboards:<br><br><span style=\"font-weight: bold;\">Overview</span>: A high level summary of events, warnings, and errors across your network. Alerts can be triggered on emergency events that need immediate attention.<br><br><span style=\"font-weight: bold;\">Inventory</span>: Track the switches and transceivers currently deployed in your network. <br><br><span style=\"font-weight: bold;\">Interface Counters / Errors</span>: Monitor traffic statistics and interface errors.&nbsp; Trigger alerts based on interface error events.<br><br><span style=\"font-weight: bold;\">Platform Information</span>: Track environmental data such as power and temperature. The alerts can notify an administrator of platform issues.<br><br><span style=\"font-weight: bold;\">Virtualization</span>: Gain visibility into VMware vMotion events and NSX logical switches on the network.<br><br><span style=\"font-weight: bold;\">Layer 3 Routing</span>: Monitor BGP and OSPF errors on the network.<br>"
+}
