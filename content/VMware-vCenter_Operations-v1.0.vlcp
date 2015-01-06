@@ -594,7 +594,7 @@
       "info": "<span><a href=\"http://kb.vmware.com/kb/1037850\">KB&nbsp;1037850</a>:&nbsp;</span><span>This article provides information on username and password guidelines and restrictions for vCenter Operations Standard 1.0.x, vCenter Operations Enterprise 1.0.x VMware Adapter&nbsp;and vCenter Operations Manager vApp 5.x&nbsp;.</span><br>"
     }
   ],
-  "name": "VMware - vCenter Operations Manager",
+  "name": "VMware - vC Ops 5.x",
   "queries": [],
   "extractedFields": [
     {
