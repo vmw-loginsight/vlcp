@@ -23,7 +23,13 @@ def load_json(file_path):
     f = open(file_path)
     text = f.read()
     f.close()
-    return json.loads(text)
+    try:
+        json_text = json.loads(text);
+    except ValueError as e:
+        print "JSON Syntax error found in", file_path
+        print "ValueError:", e
+        sys.exit(0);
+    return json_text
 
 
 def prep_path(file_path):
