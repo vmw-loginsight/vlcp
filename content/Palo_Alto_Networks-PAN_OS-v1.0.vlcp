@@ -42,11 +42,11 @@
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1415998268690 & timestamp <= 1415998655870 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"general\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0) & text=~\"([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1415998268690 & timestamp <= 1415998655870 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"general\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0) & text=~\"([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "System subtype general modules",
                   "gridWidth": "1/2",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415998268690 & timestamp <= 1415998655870 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"general\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0) & text=~\"([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415998268690 & timestamp <= 1415998655870 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"general\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0) & text=~\"([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>System events with subtype <b>general</b>, grouped by module.<span>&nbsp;</span>This provides additional information about the sub-system generating the\nlog.</span><br>"
                 }
               ]
@@ -56,21 +56,21 @@
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1416064845755 & timestamp <= 1416068515498 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"SYSTEM\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000) & text=~\"([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){9},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416064845755 & timestamp <= 1416068515498 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"SYSTEM\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000) & text=~\"([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){9},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "System severity",
                   "gridWidth": "1/2",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416064845755 & timestamp <= 1416068515498 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"SYSTEM\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000) & text=~\"([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){9},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416064845755 & timestamp <= 1416068515498 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"SYSTEM\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000) & text=~\"([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){9},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>System events grouped by severity.<span>&nbsp;</span>Events with severity <b>critical</b> and <b>high</b> may\nneed investigation.</span><br>"
                 },
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1420302579255 & timestamp <= 1420306195522 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"SYSTEM\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0) & text=~\"([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){10},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1420302579255 & timestamp <= 1420306195522 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"SYSTEM\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0) & text=~\"([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){10},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "System description",
                   "gridWidth": "1/2",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1420302579255 & timestamp <= 1420306195522 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"SYSTEM\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0) & text=~\"([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){10},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1420302579255 & timestamp <= 1420306195522 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"SYSTEM\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0) & text=~\"([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){10},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>System events grouped by description.</span><br>"
                 }
               ]
@@ -107,19 +107,19 @@
                 {
                   "chartType": "column",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1415989475555 & timestamp <= 1415993087756 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1415989475555 & timestamp <= 1415993087756 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
                   "name": "Config changes by command",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415989475555 & timestamp <= 1415993087756 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.timestamp/60000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415989475555 & timestamp <= 1415993087756 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.timestamp/60000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Configuration commands performed by firewall administrators\nover time.<span>&nbsp;</span>This provides insight into\nconfiguration change frequency and type of changes being performed.</span><br>"
                 },
                 {
                   "chartType": "column",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1415989399218 & timestamp <= 1415993008177 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){6},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1415989399218 & timestamp <= 1415993008177 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){6},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
                   "name": "Config changes by administrator",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415989399218 & timestamp <= 1415993008177 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){6},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.timestamp/60000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415989399218 & timestamp <= 1415993008177 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){6},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.timestamp/60000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Configuration changes by administrator over time.<span>&nbsp;</span>This provides insight into the number of changes\nperformed by each firewall administrator.</span><br>"
                 }
               ]
@@ -129,11 +129,11 @@
                 {
                   "chartType": "bubble",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1419192960445 & timestamp <= 1419196573861 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1419192960445 & timestamp <= 1419196573861 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Config changes by command, result",
                   "gridWidth": "1",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1419192960445 & timestamp <= 1419196573861 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1419192960445 & timestamp <= 1419196573861 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Configuration commands grouped by the result of the\nconfiguration change.<span>&nbsp;</span>Commands resulting\nin <b>Failed</b> and <b>Unauthorized</b> may need investigation.</span><br>"
                 }
               ]
@@ -143,11 +143,11 @@
                 {
                   "chartType": "bubble",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1420211334093 & timestamp <= 1420215001973 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){6},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1420211334093 & timestamp <= 1420215001973 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){6},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Config changes by administrator, result",
                   "gridWidth": "1",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1420211401974 & timestamp <= 1420215001973 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){6},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1420211401974 & timestamp <= 1420215001973 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){6},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Configuration changes grouped by administrator and the results\nof the configuration commands.</span><br>\n\n\n\n\n\n<br>\n\n<span>&nbsp;</span><br>"
                 }
               ]
@@ -157,11 +157,11 @@
                 {
                   "chartType": "bubble",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1415989295057 & timestamp <= 1415992903414 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000) & text=~\"([^,]*,){2}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000>[A-Z0-9]+),(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){7},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1415989295057 & timestamp <= 1415992903414 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000) & text=~\"([^,]*,){2}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000>[A-Z0-9]+),(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){7},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Config changes by client, device",
                   "gridWidth": "1",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415989295057 & timestamp <= 1415992903414 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000) & text=~\"([^,]*,){2}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000>[A-Z0-9]+),(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0) & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){7},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1415989295057 & timestamp <= 1415992903414 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"CONFIG\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000) & text=~\"([^,]*,){2}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000>[A-Z0-9]+),(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0) & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){7},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27onsxe2lbnq000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Configuration clients used grouped by device.<span>&nbsp;</span>The client is the configuration method and\ncan be <b>Panorama</b>, <b>Web</b>, and <b>CLI</b>.<span>&nbsp;</span>This can be useful to\ndetermine the devices undergoing the most configuration changes and by what\nmethods<span>&nbsp;</span>.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><u style=\"text-decoration: underline;\">Note:</u> client <b>Web</b>\nincludes changes made by the PAN-OS XML API.</span><br>"
                 }
               ]
@@ -210,10 +210,10 @@
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1416002373832 & timestamp <= 1416006032137 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){30},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416002373832 & timestamp <= 1416006032137 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){30},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Threat severity, direction",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416002373832 & timestamp <= 1416006032137 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){30},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416002373832 & timestamp <= 1416006032137 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){30},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Threat events grouped by severity and direction.<span>&nbsp;</span>This provides a view of the threats\nidentified and whether they are targeting inside or outside your organization.</span><br>"
                 }
               ]
@@ -223,19 +223,19 @@
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1416002542314 & timestamp <= 1416006150798 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){26},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416002542314 & timestamp <= 1416006150798 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){26},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Threat actions",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416002542314 & timestamp <= 1416006150798 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){26},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416002542314 & timestamp <= 1416006150798 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){26},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Threats identified grouped by action taken.</span><br>"
                 },
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1416002373832 & timestamp <= 1416006088963 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){10},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416002373832 & timestamp <= 1416006088963 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){10},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Threat applications",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416002373832 & timestamp <= 1416006088963 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){10},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416002373832 & timestamp <= 1416006088963 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){10},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Threats identified grouped by application for the session.</span><br>"
                 }
               ]
@@ -245,19 +245,19 @@
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1418838347615 & timestamp <= 1418842049645 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000:\"client-to-server\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){3},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1418838347615 & timestamp <= 1418842049645 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000:\"client-to-server\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){3},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Client to server threats by source IP",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418838347615 & timestamp <= 1418842049645 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000:\"client-to-server\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){3},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418838347615 & timestamp <= 1418842049645 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000:\"client-to-server\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){3},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Threats with direction <b>client-to-server</b>\ngrouped by source IP address (source of attack).</span><br>"
                 },
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1418832476171 & timestamp <= 1418836159586 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000:\"server-to-client\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){4},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1418832476171 & timestamp <= 1418836159586 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000:\"server-to-client\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){4},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Server to client threats by destination IP",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418832476171 & timestamp <= 1418836159586 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000:\"server-to-client\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>(("[^"]*")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){4},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1418832476171 & timestamp <= 1418836159586 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000:\"server-to-client\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){31},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000>((\"[^\"]*\")+|[^,])+),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){4},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Threats with direction <b>server-to-client</b>\ngrouped by destination IP address (source of attack).</span><br>"
                 }
               ]
@@ -270,16 +270,16 @@
                   "name": "Threat queries",
                   "listData": [
                     {
-                      "messageQuery": "SELECT item0 FROM timestamp >= 1416004094394 & timestamp <= 1416004569968 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"wildfire\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000:\"malicious\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){29},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1416004094394 & timestamp <= 1416004569968 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"wildfire\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000:\"malicious\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){29},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                       "name": "WildFire samples with malicious verdict",
-                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416004094394 & timestamp <= 1416004569968 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"wildfire\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000:\"malicious\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){29},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.timestamp/10000 ORDER BY item0.timestamp DESC",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416004094394 & timestamp <= 1416004569968 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"wildfire\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000:\"malicious\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){29},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.timestamp/10000 ORDER BY item0.timestamp DESC",
                       "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}",
                       "info": "<span>Samples submitted to WildFire that were previously unknown\nand which have been identified as malicious (malware).</span><br>"
                     },
                     {
-                      "messageQuery": "SELECT item0 FROM timestamp >= 1416003530232 & timestamp <= 1416007183080 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"spyware\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000:\"critical\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){30},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000>(("[^"]*")+|[^,])+),\") | ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000:\"high\")) as item0 ORDER BY item0.timestamp DESC",
+                      "messageQuery": "SELECT item0 FROM timestamp >= 1416003530232 & timestamp <= 1416007183080 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"spyware\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000:\"critical\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){30},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000>((\"[^\"]*\")+|[^,])+),\") | ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000:\"high\")) as item0 ORDER BY item0.timestamp DESC",
                       "name": "Spyware threats, severity critical and high",
-                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416003530232 & timestamp <= 1416007183080 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"spyware\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000:\"critical\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){30},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000>(("[^"]*")+|[^,])+),\") | ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000:\"high\")) as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+                      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416003530232 & timestamp <= 1416007183080 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"spyware\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000:\"critical\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){30},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000>((\"[^\"]*\")+|[^,])+),\") | ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000:\"high\")) as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
                       "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}",
                       "info": "<span>Spyware events<span>&nbsp;</span>with\nseverity critical and high.</span><br>"
                     }
@@ -289,10 +289,10 @@
                 {
                   "chartType": "pie",
                   "widgetType": "chart",
-                  "messageQuery": "SELECT item0 FROM timestamp >= 1416003061059 & timestamp <= 1416006735093 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416003061059 & timestamp <= 1416006735093 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
                   "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
                   "name": "Threat source usernames",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416003061059 & timestamp <= 1416006735093 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416003061059 & timestamp <= 1416006735093 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (FIELD_EXISTS(ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls) & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls ORDER BY COUNT(item0) DESC LIMIT 1,100",
                   "info": "<span>Threats identified grouped by username who initiated the\nsession.<span>&nbsp;</span>This requires the use of the\nUser Identification (User-ID) feature to allow reporting based on username.<span>&nbsp;</span>To configure user-id see the following\nsection in the PAN-OS Administrator’s Guide:</span><br>\n\n<span>&nbsp;</span><br>\n\n<a href=\"http:///\"><span></span></a><a href=\"https://www.paloaltonetworks.com/documentation/61/pan-os/pan-os/section_7.html\">https://www.paloaltonetworks.com/documentation/61/pan-os/pan-os/section_7.html</a>"
                 }
               ]
@@ -308,33 +308,33 @@
       "searchPeriod": 300000,
       "hitCount": 0.0,
       "hitOperator": "GREATER_THAN",
-      "messageQuery": "SELECT item0 FROM timestamp >= 1417701079767 & timestamp <= 1417704798284 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"wildfire\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000:\"malicious\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){29},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000>(("[^"]*")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1417701079767 & timestamp <= 1417704798284 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"wildfire\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000:\"malicious\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){29},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000>((\"[^\"]*\")+|[^,])+),\")) as item0 ORDER BY item0.timestamp DESC",
       "searchInterval": 300000,
       "name": "Sample submitted to WildFire has verdict malicious",
       "alertType": "RATE_BASED",
-      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1417701079767 & timestamp <= 1417704798284 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"wildfire\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000:\"malicious\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){29},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000>(("[^"]*")+|[^,])+),\")) as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1417701079767 & timestamp <= 1417704798284 & ((ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0:\"THREAT\" & text=~\"([^,]*,){3}(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27or4xazi0>(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH)),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000:\"wildfire\" & text=~\"([^,]*,){3}(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5wg6z27on2we5dzobsq0000>[^,]+),\") & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000:\"malicious\" & text=~\"([^,]*,){3}THREAT(,((\\\"[^\\\"]*\\\")+|[^,])*){29},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000>((\"[^\"]*\")+|[^,])+),\")) as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
       "info": "A sample submitted to WildFire, which was previously unknown to WildFire, was found to be malicious.&nbsp; You can view the analysis report on the WildFire portal or the PAN-OS WebUI.<br>"
     },
     {
       "searchPeriod": 900000,
       "hitCount": 5.0,
       "hitOperator": "GREATER_THAN",
-      "messageQuery": "SELECT item0 FROM timestamp >= 1412609376170 & timestamp <= 1412695829958 & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0:\"Unauthorized\" & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>(("[^"]*")+|[^,])+),\") as item0 ORDER BY item0.timestamp DESC",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1412609376170 & timestamp <= 1412695829958 & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0:\"Unauthorized\" & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>((\"[^\"]*\")+|[^,])+),\") as item0 ORDER BY item0.timestamp DESC",
       "searchInterval": 300000,
       "name": "Unauthorized config result",
       "alertType": "RATE_BASED",
-      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1412609376170 & timestamp <= 1412695829958 & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0:\"Unauthorized\" & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>(("[^"]*")+|[^,])+),\") & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>(("[^"]*")+|[^,])+),\" as item0 GROUP BY item0.timestamp/3600000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1412609376170 & timestamp <= 1412695829958 & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0:\"Unauthorized\" & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>((\"[^\"]*\")+|[^,])+),\") & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>((\"[^\"]*\")+|[^,])+),\" as item0 GROUP BY item0.timestamp/3600000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
       "info": "A configuration command has produced an 'Unauthorized' result which may indicate a potential break-in attempt."
     },
     {
       "searchPeriod": 900000,
       "hitCount": 1.0,
       "hitOperator": "GREATER_THAN",
-      "messageQuery": "SELECT item0 FROM timestamp >= 1416065795248 & timestamp <= 1416069445925 & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000:\"critical\" & text=~\"([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){9},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000>(("[^"]*")+|[^,])+),\") as item0 ORDER BY item0.timestamp DESC",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416065795248 & timestamp <= 1416069445925 & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000:\"critical\" & text=~\"([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){9},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000>((\"[^\"]*\")+|[^,])+),\") as item0 ORDER BY item0.timestamp DESC",
       "searchInterval": 300000,
       "name": "critical system event",
       "alertType": "RATE_BASED",
-      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416065795248 & timestamp <= 1416069445925 & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000:\"critical\" & text=~\"([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){9},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000>(("[^"]*")+|[^,])+),\") & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>(("[^"]*")+|[^,])+),\" & text=~\"([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>(("[^"]*")+|[^,])+),\" as item0 GROUP BY item0.timestamp/60000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416065795248 & timestamp <= 1416069445925 & (ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000:\"critical\" & text=~\"([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){9},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000>((\"[^\"]*\")+|[^,])+),\") & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){5},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000>((\"[^\"]*\")+|[^,])+),\" & text=~\"([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){8},(?<ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0>((\"[^\"]*\")+|[^,])+),\" as item0 GROUP BY item0.timestamp/60000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000,item0.ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
       "info": "A system event has occurred with severity 'critical'.<br>"
     }
   ],
@@ -344,63 +344,63 @@
     {
       "postContext": "",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6yldoruw63tgnrqwo4y0",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){11},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){11},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_config_actionflags"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6ylenvuw4000",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){6},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){6},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_config_admin"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3mnfsw45a0",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){7},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){7},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_config_client"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv6y3nmq000000",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){5},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){5},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_config_cmd"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv62dpon2a0000",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){3},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){3},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_config_host"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64dborua0000",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){9},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){9},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_config_path"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv64tfon2wy5a0",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){8},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){8},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_config_result"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv643fofxg6000",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){10},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){10},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_config_seqno"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5rw63tgnftv65ttpfzq0000",
-      "preContext": "([^,]*,){3}CONFIG(,(("[^"]*")+|[^,])*){4},",
+      "preContext": "([^,]*,){3}CONFIG(,((\"[^\"]*\")+|[^,])*){4},",
       "regexValue": "[^,]+",
       "displayName": "pan_config_vsys"
     },
@@ -442,92 +442,92 @@
     {
       "postContext": "",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6yldoruw63tgnrqwo4y0",
-      "preContext": "([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){12},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){12},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_system_actionflags"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zdfonrxe2lqoruw63q0",
-      "preContext": "([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){10},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){10},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_system_description"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv6zlwmvxhi2le",
-      "preContext": "([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){4},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){4},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_system_eventid"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv63lpmr2wyzi0",
-      "preContext": "([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){8},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){8},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_system_module"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv633cnjswg5a0",
-      "preContext": "([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){5},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){5},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_system_object"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fofxg6000",
-      "preContext": "([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){11},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){11},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_system_seqno"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv643fozsxe2lupe000000",
-      "preContext": "([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){9},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){9},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_system_severity"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol5zxs43umvwv65ttpfzq0000",
-      "preContext": "([^,]*,){3}SYSTEM(,(("[^"]*")+|[^,])*){3},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "preContext": "([^,]*,){3}SYSTEM(,((\"[^\"]*\")+|[^,])*){3},",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_system_vsys"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63q0",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){26},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_action"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6yldoruw63tgnrqwo4y0",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){33},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_actionflags"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ylqoa000000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){10},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_app"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3borswo33spe000000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){29},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_category"
     },
     {
       "postContext": "",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6y3mn52wi000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){39},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_cloud"
     },
     {
@@ -541,70 +541,70 @@
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdjojswg5djn5xa0000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){31},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_direction"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdqn5zhi000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){21},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_dport"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtoq000000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){4},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_dst"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtorwg6yy0",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){35},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_dstloc"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6zdtor2xgzls",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){9},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_dstuser"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ztjnrswi2lhmvzxi000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){38},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_filedigest"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ztmmftxg000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){24},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_flags"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f6ztsn5wq0000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){12},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_from"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f62lomjxxk3tel5uwm000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){14},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_inbound_if"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f63dpm5zwk5a0",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){16},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_logset"
     },
     {
@@ -618,133 +618,133 @@
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f63tborsha33soq000000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){23},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_natdport"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f63tborshg5a0",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){6},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_natdst"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f63tborzxa33soq000000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){22},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_natsport"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f63tborzxeyy0",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){5},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_natsrc"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f633vorrg65lomrpwszq0",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){15},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_outbound_if"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f64ddmfyf62le",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){37},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_pcap_id"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f64dsn52g6000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){25},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_proto"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f64tfobswc5ddnz2a0000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){19},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_repeatcnt"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f64tvnrsq0000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){7},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_rule"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fofxg6000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){32},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_seqno"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fonzws33onfsa0000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){18},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_sessionid"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643fozsxe2lupe000000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){30},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_severity"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643qn5zhi000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){20},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_sport"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smm000000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){3},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_src"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smnwg6yy0",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){34},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_srcloc"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f643smn2xgzls",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){8},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_srcuser"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f65diojswc5djmq000000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){28},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_threatid"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f65dp",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){13},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_to"
     },
     {
       "postContext": ",",
       "internalName": "ibaden27mnxw2ltqmfwg6ylmorxw4zluo5xxe23tfzygc3rnn5zxaylol52gq4tfmf2f65ttpfzq0000",
       "preContext": "([^,]*,){3}THREAT(,((\"[^\"]*\")+|[^,])*){11},",
-      "regexValue": "(("[^"]*")+|[^,])+",
+      "regexValue": "((\"[^\"]*\")+|[^,])+",
       "displayName": "pan_threat_vsys"
     }
   ],
@@ -755,5 +755,5 @@
   "author": "Palo Alto Networks, Inc.",
   "contentVersion": "1.0",
   "url": "Palo Alto Networks, Inc.",
-  "info": "<span>The Palo Alto Networks PAN-OS content pack provides you with\npowerful insight into your PAN-OS logs (currently SYSTEM, CONFIG and THREAT;\nTRAFFIC and HIP-MATCH will be added in a later version of the content pack).</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><u style=\"text-decoration: underline;\">Log Field Definitions</u></span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Each standard field for each of the log types is defined,\nallowing you to easily perform queries using any of the fields.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Field names are in the format:</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>pan_{log,system,config,threat}_fieldname</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>pan_log_fieldname is used for the fixed location fields that\nare common to all the log types, and includes: receive_time, serial, type,\nsubtype and time_generated.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>pan_{system,config,threat}_fieldname is used for a field\nspecific to the SYSTEM, CONFIG and THREAT logs.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Descriptions for each field can be found "Syslog Field\nDescriptions" section in the PAN-OS Administrator’s Guide:</span><br><br><a href=\"https://paloaltonetworks.com/documentation/61/pan-os/pan-os/section_6/chapter_38.html\">https://paloaltonetworks.com/documentation/61/pan-os/pan-os/section_6/chapter_38.html</a><br><span></span>\n\n<span>&nbsp;</span><br>\n\n<span><u style=\"text-decoration: underline;\">Configuring PAN-OS to Forward Logs to Log Insight</u></span><br>\n\n<span><u style=\"text-decoration: underline;\"><span></span></u></span><br>\n\n<span>You will need to configure each firewall to forward its logs\nto Log Insight for analysis, or alternatively forward logs to Panorama and then\nforward to Log Insight.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>To configure log forwarding to external hosts refer to the "<span>Forward\nLogs to External Services" section in the PAN-OS Administrator’s Guide:</span></span><br><br><a href=\"https://www.paloaltonetworks.com/documentation/61/pan-os/pan-os/section_6/chapter_20.html\">https://www.paloaltonetworks.com/documentation/61/pan-os/pan-os/section_6/chapter_20.html</a><span><u style=\"text-decoration: underline;\"><span></span></u></span><span></span><br>"
+  "info": "<span>The Palo Alto Networks PAN-OS content pack provides you with\npowerful insight into your PAN-OS logs (currently SYSTEM, CONFIG and THREAT;\nTRAFFIC and HIP-MATCH will be added in a later version of the content pack).</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><u style=\"text-decoration: underline;\">Log Field Definitions</u></span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Each standard field for each of the log types is defined,\nallowing you to easily perform queries using any of the fields.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Field names are in the format:</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>pan_{log,system,config,threat}_fieldname</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>pan_log_fieldname is used for the fixed location fields that\nare common to all the log types, and includes: receive_time, serial, type,\nsubtype and time_generated.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>pan_{system,config,threat}_fieldname is used for a field\nspecific to the SYSTEM, CONFIG and THREAT logs.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Descriptions for each field can be found \"Syslog Field\nDescriptions\" section in the PAN-OS Administrator’s Guide:</span><br><br><a href=\"https://paloaltonetworks.com/documentation/61/pan-os/pan-os/section_6/chapter_38.html\">https://paloaltonetworks.com/documentation/61/pan-os/pan-os/section_6/chapter_38.html</a><br><span></span>\n\n<span>&nbsp;</span><br>\n\n<span><u style=\"text-decoration: underline;\">Configuring PAN-OS to Forward Logs to Log Insight</u></span><br>\n\n<span><u style=\"text-decoration: underline;\"><span></span></u></span><br>\n\n<span>You will need to configure each firewall to forward its logs\nto Log Insight for analysis, or alternatively forward logs to Panorama and then\nforward to Log Insight.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>To configure log forwarding to external hosts refer to the \"<span>Forward\nLogs to External Services\" section in the PAN-OS Administrator’s Guide:</span></span><br><br><a href=\"https://www.paloaltonetworks.com/documentation/61/pan-os/pan-os/section_6/chapter_20.html\">https://www.paloaltonetworks.com/documentation/61/pan-os/pan-os/section_6/chapter_20.html</a><span><u style=\"text-decoration: underline;\"><span></span></u></span><span></span><br>"
 }
