@@ -1,0 +1,807 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "All Events by Category over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1407850252791 & timestamp <= 1408000017680 & text:\"switch os\" & text=~\"Switch OS <(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000>\\S+)>:\" as item0 GROUP BY item0.timestamp/3600000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of all events by Category over time. Please refer to Appendix A in the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416898128406 & timestamp <= 1416907303549 & text:\"switch os\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Events by Hostname",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416898128406 & timestamp <= 1416907303549 & text:\"switch os\" as item0 GROUP BY item0.hostname ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of events by Hostname. Please refer \nto Appendix A in the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Events by Category",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1407895795473 & timestamp <= 1408083530514 & text:\"switch os\" & text=~\"Switch OS <(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000>\\S+)>:\" as item0 GROUP BY item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of events by Category. Please refer to Appendix A in the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1416898128406 & timestamp <= 1416907393214 & text:\"switch os\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Events by Severity ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416898128406 & timestamp <= 1416907393214 & text:\"switch os\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of events by severity. Please \nrefer to Appendix A in the following document for more information on \nsyslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1415176151978 & text:\"switch\" & text:\"OS\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "All Events by Severity over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1415176151978 & text:\"switch\" & text:\"OS\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/21600000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of all events by severity over time. Please refer to Appendix A in the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1417496067243 & timestamp <= 1417496945837 & text:\"Switch OS\" & (text:\"PLATFORM THERMAL SHUTDOWN\" | text:\"ABOVE WARN THRESH\" | text:\"ABOVE FAIL THRESH\" | text:\"Fan Fault\" | text:\"Fan Failure Warning Cleared\" | text:\"Warning: Fan Failure\" | text:\"Power Fault\" | text:\"Power Supply Warning\" | text:\"Warning: Power Supply\" | text:\"rebooted\" | text:\"Not enough memory!\" | text:\"table full\" | text:\"table is full\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "All Alerts over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1417496067243 & timestamp <= 1417496945837 & text:\"Switch OS\" & (text:\"PLATFORM THERMAL SHUTDOWN\" | text:\"ABOVE WARN THRESH\" | text:\"ABOVE FAIL THRESH\" | text:\"Fan Fault\" | text:\"Fan Failure Warning Cleared\" | text:\"Warning: Fan Failure\" | text:\"Power Fault\" | text:\"Power Supply Warning\" | text:\"Warning: Power Supply\" | text:\"rebooted\" | text:\"Not enough memory!\" | text:\"table full\" | text:\"table is full\") as item0 GROUP BY item0.timestamp/60000 ORDER BY item0.timestamp DESC",
+                  "info": "This chart gives information on count of all alerts over time. Please \nrefer to Appendix A in the following document for more information on \nsyslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "System",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1417067230782 & timestamp <= 1417069361568 & text:\"<system>:\" & text:\"switch os <system>:\" & text:\"switch os\" & text:\"<system>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "System Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1417067230782 & timestamp <= 1417069361568 & text:\"<system>:\" & text:\"switch os <system>:\" & text:\"switch os\" & text:\"<system>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/60000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of System events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs :&nbsp; <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <tftp>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Trivial File Transfer Protocol (TFTP)  Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <tftp>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Trivial File Transfer Protocol&nbsp;\n (TFTP) events over time by Severity. Please refer to Appendix A in the \nfollowing document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"Switch OS\" & (text:\"Switch OS <mgt>:\" | text:\"Switch OS <mgmt>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Management Messages over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"Switch OS\" & (text:\"Switch OS <mgt>:\" | text:\"Switch OS <mgmt>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of management events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <scheduler>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Scheduler Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <scheduler>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Scheduler events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <slp>:\" & text:\"switch os\" & text:\"<slp>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Service Location Protocol (SLP) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <slp>:\" & text:\"switch os\" & text:\"<slp>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Service Location Protocol (SLP)\n events over time by Severity. Please refer to Appendix A in the \nfollowing document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <ptp>:\" | text:\"Switch OS <ntp>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Network Time Protocol (NTP) Events and  Precision Time Protocol (PTP) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <ptp>:\" | text:\"Switch OS <ntp>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Precision Time Protocol (PTP) \nevents and Network Time Protocol (NTP) events over time by Severity. Please refer to Appendix A in the \nfollowing document for more information on syslogs: <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Security",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <ssh>:\" & text:\"switch os\" & text:\"<ssh>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Secure Shell (SSH) Events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <ssh>:\" & text:\"switch os\" & text:\"<ssh>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of SSH events over time by Severity. <span>Please refer to Appendix A\nin the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <802.1x>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "802.1x Events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <802.1x>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of 802.1x events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <web>:\" & text:\"switch os\" & text:\"<web>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Web Page Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <web>:\" & text:\"switch os\" & text:\"<web>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Web events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <netconf>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "NETCONF Events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <netconf>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of NETCONF events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs: <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <console>:\" & text:\"switch os\" & text:\"<console>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Console Events over time ",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <console>:\" & text:\"switch os\" & text:\"<console>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Console events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Configuration",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <cfg>:\" & text:\"switch os\" & text:\"<cfg>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Configuration Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <cfg>:\" & text:\"switch os\" & text:\"<cfg>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Configuration events over time \nby Severity. Please refer to Appendix A in the following document for \nmore information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <cfgchg>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Configuration Change Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <cfgchg>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Configuration Change events over time by Severity.<br>Please refer to Appendix A in the following document for more information on syslogs: <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <script>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Script Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <script>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Script events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <cli>:\" & text:\"switch os\" & text:\"<cli>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Command Line Interface (CLI) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <cli>:\" & text:\"switch os\" & text:\"<cli>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Command Line Interface (CLI) \nevents over time by Severity. Please refer to Appendix A in the \nfollowing document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Interface",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <link>:\" | text:\"Switch OS <server>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Link Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <link>:\" | text:\"Switch OS <server>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Link events and Server events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <lacp>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "LACP Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <lacp>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of LACP events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <vlag>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Virtual Link Aggregation (VLAG) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <vlag>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Virtual Link Aggregation (VLAG)\n events over time by Severity. Please refer to Appendix A in the \nfollowing document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <hotlinks>:\" | text:\"Switch OS <failover>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Hotlink and Failover Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <hotlinks>:\" | text:\"Switch OS <failover>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Hotlink and Failover events \nover time by Severity. Please refer to Appendix A in the following \ndocument for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <teaming>:\" & text:\"switch os\" & text:\"<teaming>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Port Teaming Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <teaming>:\" & text:\"switch os\" & text:\"<teaming>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Teaming events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs: <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"<rmon>:\" & text:\"Switch OS <rmon>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "RMON Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"<rmon>:\" & text:\"Switch OS <rmon>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of RMON events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "L2 Protocols",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <stg>:\" | text:\"Switch OS <stp>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "STP Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <stg>:\" | text:\"Switch OS <stp>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of STP events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs: <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <vlan>:\" | text:\"Switch OS <private-vlan>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Virtual LAN (VLAN) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <vlan>:\" | text:\"Switch OS <private-vlan>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Virtual LAN (VLAN) and Private-VLAN events over\n time by Severity. Please refer to Appendix A in the following document \nfor more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <lldp>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Link Layer Discovery Protocol (LLDP) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <lldp>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Link Layer Discovery Protocol \n(LLDP) events over time by Severity. Please refer to Appendix A in the \nfollowing document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <vnic>:\" | text:\"Switch OS <ufp>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Unified Fabric Port (UFP) and Virtual NIC (VNIC) Events over time",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <vnic>:\" | text:\"Switch OS <ufp>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Unified Fabric Port (UFP) and \nVirtual NIC (VNIC) events over time by Severity. Please refer to \nAppendix A in the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <fcf>:\" | text:\"Switch OS <fcoe>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Fibre Channel over Ethernet (FCoE) and Fibre Channel Forwarder (FCF) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <fcf>:\" | text:\"Switch OS <fcoe>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of&nbsp; Fibre Channel over Ethernet \n(FCoE) and Fibre Channel Forwarder (FCF) Events over time by Severity.<span style=\"font-weight: bold;\"></span><span>FCoE is a computer network technology that encapsulates Fibre Channel frames over Ethernet networks.</span><span style=\"font-style: italic;\"><span style=\"font-weight: bold; font-style: italic;\"></span></span>Please refer to Appendix A in the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <ets>:\" | text:\"Switch OS <dcbx>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "DCBX and ETS Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <ets>:\" | text:\"Switch OS <dcbx>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "DCBX and ETS Events over time by Severity. Data Center Bridging Capabilities <span><span></span>(DCBX)\n is&nbsp; a discovery and capability exchange protocol that is used for \nconveying capabilities and configuration of the above features between \nneighbors to ensure consistent configuration across the network.<span></span></span>Please refer to Appendix A in the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "L3 Protocols",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <ipv6>:\" | text:\"Switch OS <ip6>:\" | text:\"Switch OS <ip>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "IPv4/IPv6 Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <ipv6>:\" | text:\"Switch OS <ip6>:\" | text:\"Switch OS <ip>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of IPv4 and IPv6 Events over time \nby Severity. Please refer to Appendix A in the following document for \nmore information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <vrrp>:\" & text:\"switch os\" & text:\"<vrrp>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Virtual Router Redundancy Protocol (VRRP) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <vrrp>:\" & text:\"switch os\" & text:\"<vrrp>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Virtual Router Redundancy \nProtocol (VRRP) events over time by Severity. Please refer to Appendix A\n in the following document for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <nat>:\" & text:\"switch os\" & text:\"<nat>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "NAT Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <nat>:\" & text:\"switch os\" & text:\"<nat>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of NAT events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <mld>:\" & text:\"switch os\" & text:\"<mld>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "MLD Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <mld>:\" & text:\"switch os\" & text:\"<mld>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of MLD events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"switch os <igmp-querier>:\" | text:\"switch os <igmp-group>:\" | text:\"switch os <igmp-mrouter>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "IGMP Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"switch os <igmp-querier>:\" | text:\"switch os <igmp-group>:\" | text:\"switch os <igmp-mrouter>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of IGMP events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <bgp>:\" | text:\"Switch OS <ospfv3>:\" | text:\"Switch OS <ospf>:\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "OSPF and Border Gateway Protocol (BGP) Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <bgp>:\" | text:\"Switch OS <ospfv3>:\" | text:\"Switch OS <ospf>:\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of OSPF/OSPFv3 events and Border Gateway Protocol (BGP) events over time by\n Severity. Please refer to Appendix A in the following document for more\n information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Virtualization",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <vm>:\" & text:\"switch os\" & text:\"<vm>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Virtual Machine Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <vm>:\" & text:\"switch os\" & text:\"<vm>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of VMready events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs: <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <nsx-gw>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "NSX Gateway Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <nsx-gw>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of NSX Gateway events over time by Severity."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <Openflow>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "OpenFlow Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <Openflow>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of OpenFlow events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs: <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <dove-gw>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "DOVE Gateway Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <dove-gw>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of DOVE Gateway events over time \nby Severity. Please refer to Appendix A in the following document for \nmore information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Stacking / Fabric",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <fabric>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": " Fabric Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os\" & text:\"Switch OS <fabric>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of&nbsp; Fabric events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <stacking>:\" & text:\"switch os\" & text:\"<stacking>:\" as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Stacking Events over time ",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & text:\"switch os <stacking>:\" & text:\"switch os\" & text:\"<stacking>:\" & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Stacking events over time by \nSeverity. Please refer to Appendix A in the following document for more \ninformation on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "SELECT item0 FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <fabric>: LEAVE_FABRIC\" | text:\"Switch OS <fabric>: BE_MEMBER\" | text:\"Switch OS <fabric>: TO_JOIN_FABRIC\" | text:\"Switch OS <fabric>: JOIN_FABRIC\") as item0 ORDER BY item0.timestamp DESC",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Stacking / Fabric Join Events over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1413873450233 & timestamp <= 1417067530781 & (text:\"Switch OS <fabric>: LEAVE_FABRIC\" | text:\"Switch OS <fabric>: BE_MEMBER\" | text:\"Switch OS <fabric>: TO_JOIN_FABRIC\" | text:\"Switch OS <fabric>: JOIN_FABRIC\") & text=~\"\\s(?<ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000>\\w+)\\s* Switch OS\" as item0 GROUP BY item0.timestamp/86400000,item0.ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000 ORDER BY item0.timestamp DESC, COUNT(item0) DESC LIMIT 1,100",
+                  "info": "This chart gives information on count of Stacking / Fabric Join events \nover time by Severity. Please refer to Appendix A in the following \ndocument for more information on syslogs : <a href=\"http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1\">http://www-01.ibm.com/support/docview.wss?uid=isg3T7000678&amp;aid=1</a>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416896962638 & timestamp <= 1416983362637 & text:\"Switch OS\" & text:\"Fan Fault\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo – Switch Fan Fault",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416896962638 & timestamp <= 1416983362637 & text:\"Switch OS\" & text:\"Fan Fault\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This alert indicates fan fault is cleared/detected.If this alert is generated, please check the text of this syslog and log into the switch and check that status of each of the fans."
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416896839084 & timestamp <= 1416983239083 & text:\"Switch OS\" & text:\"Fan Failure Warning Cleared\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo – Switch Fan Failure: Warning Cleared",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416896839084 & timestamp <= 1416983239083 & text:\"Switch OS\" & text:\"Fan Failure Warning Cleared\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This alert shows that warning due to fan failure is cleared.<span>If this alert is generated, please log into the switch\nand check the status of each of the fans.</span>"
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416896455417 & timestamp <= 1416982855416 & text:\"Switch OS\" & text:\"rebooted\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo – Switch Rebooted",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416896455417 & timestamp <= 1416982855416 & text:\"Switch OS\" & text:\"rebooted\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "<span>This indicates that the switch rebooted for one\nof the following reasons:</span><br><br>• Boot watchdog reset<br>• console PANIC command<br>• console RESET KEY<br>• hard reset by SNMP<br>• hard reset by WEB-UI<br>• hard reset from console<br>• hard reset from Telnet<br>• low memory<br>• MM Cycled Power Domain<br>• power cycle<br>• Reset Button was pushed<br>• reset by SNMP<br>• reset by WEB-UI<br>• reset from console<br>• reset from EM<br>• reset from Telnet/SSH<br>• scheduled reboot<br>• SMS-64 found an over-voltage<br>• SMS-64 found an under-voltage<br>• software ASSERT<br>• software PANIC<br>• software VERIFY<br>• Telnet PANIC command<br>• unknown reason<br>• watchdog timer"
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416897644482 & timestamp <= 1416984044481 & text:\"Switch OS\" & text:\"Not enough memory!\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo – Switch, not enough memory",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416897644482 & timestamp <= 1416984044481 & text:\"Switch OS\" & text:\"Not enough memory!\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This indicates that there is not enough memory left to perform operation."
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416897559159 & timestamp <= 1416983959158 & text:\"Switch OS\" & (text:\"table full\" | text:\"table is full\") as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo – Switch, a table has be filled to capacity",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416897559159 & timestamp <= 1416983959158 & text:\"Switch OS\" & (text:\"table full\" | text:\"table is full\") as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "<span>Possible tables types: Routing, ACL, FDB, OSPF,\nVM, ARP, IGMP, L3 GEA, L2 Multicast, L2</span>"
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416897510179 & timestamp <= 1416983910178 & text:\"Switch OS\" & text:\"ABOVE FAIL THRESH\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo – Switch Temperature Sensor: Above Fail Threshold",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416897510179 & timestamp <= 1416983910178 & text:\"Switch OS\" & text:\"ABOVE FAIL THRESH\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This alert is generated whenever temperature is above fail threshold.&nbsp; If this alert is generated, please check the text of this syslog and log into the switch and check the temperature of&nbsp; each of the sensors."
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416896557425 & timestamp <= 1416982957424 & text:\"Switch OS\" & text:\"ABOVE WARN THRESH\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo - Switch Temperature Sensor: Above Warning Threshold",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416896557425 & timestamp <= 1416982957424 & text:\"Switch OS\" & text:\"ABOVE WARN THRESH\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This alert is generated when temperature is above warning threshold.If this alert is generated, please check the text of this syslog and log into the switch and check the temperature of each of the sensors."
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416896627133 & timestamp <= 1416983027132 & text:\"Switch OS\" & text:\"PLATFORM THERMAL SHUTDOWN\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo - Switch Temperature Sensor: Platform Thermal Shutdown",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416896627133 & timestamp <= 1416983027132 & text:\"Switch OS\" & text:\"PLATFORM THERMAL SHUTDOWN\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This alert indicates that the switch has performed a thermal shutdown.If this alert is generated, the switch may have overheated and shut down to avoid damage to the switch."
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416897078783 & timestamp <= 1416983478782 & text:\"Switch OS\" & text:\"Power Fault\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo - Switch Power Fault",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416897078783 & timestamp <= 1416983478782 & text:\"Switch OS\" & text:\"Power Fault\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This alert indicates a power fault has been detected/cleared.If this alert is generated, please check the text of this syslog and log into the switch and check the status of the power supplies."
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416897334778 & timestamp <= 1416983734777 & text:\"Switch OS\" & text:\"Power Supply Warning\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo – Switch Power Supply: Warning Cleared",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416897334778 & timestamp <= 1416983734777 & text:\"Switch OS\" & text:\"Power Supply Warning\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "<span><span><span><span></span><span><span>This indicates that warning due to power supply has been cleared.</span><br></span></span></span></span>"
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416897229723 & timestamp <= 1416983629722 & text:\"Switch OS\" & text:\"Warning: Power Supply\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo - Switch Power Supply - Disconnected/failure",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416897229723 & timestamp <= 1416983629722 & text:\"Switch OS\" & text:\"Warning: Power Supply\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "This indicates power supply is either disconnected/failed. Please check the connection and try connecting to switch again.<br>"
+    },
+    {
+      "searchPeriod": 86400000,
+      "hitCount": 10000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "SELECT item0 FROM timestamp >= 1416896740492 & timestamp <= 1416983140491 & text:\"Switch OS\" & text:\"Warning: Fan Failure\" as item0 ORDER BY item0.timestamp DESC",
+      "searchInterval": 3600000,
+      "name": "Lenovo – Switch Fan Failure: Warning",
+      "alertType": "RATE_BASED",
+      "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1416896740492 & timestamp <= 1416983140491 & text:\"Switch OS\" & text:\"Warning: Fan Failure\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp DESC",
+      "info": "<span><span><span><span></span><span>This indicates that a fan in the switch has failed.&nbsp; If this alert is generated, please log into the switch and check that status of each of the fans.<br></span></span></span></span>"
+    }
+  ],
+  "name": "Lenovo - Networking",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": ">:",
+      "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3dmf2gkz3poj4q0000",
+      "preContext": "Switch OS <",
+      "regexValue": "\\S+",
+      "displayName": "lenovo_networking_category"
+    },
+    {
+      "postContext": "\\s* Switch OS",
+      "internalName": "ibademk7mnxw2ltomv2ho33snnuw4zzonrsw433wn5wgk3tpozxv63tfor3w64tlnfxgox3tmv3gk4tjor4q0000",
+      "preContext": "\\s",
+      "regexValue": "\\w+",
+      "displayName": "lenovo_networking_severity"
+    }
+  ],
+  "framework": "#5dc",
+  "version": "2.0",
+  "namespace": "com.networking.lenovo",
+  "icon": "/9j/4AAQSkZJRgABAQEAYABgAAD/4RD0RXhpZgAATU0AKgAAAAgABAE7AAIAAAAOAAAISodpAAQAAAABAAAIWJydAAEAAAAcAAAQ0OocAAcAAAgMAAAAPgAAAAAc6gAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFJvbmFsZCBLdW5rZWwAAAWQAwACAAAAFAAAEKaQBAACAAAAFAAAELqSkQACAAAAAzgzAACSkgACAAAAAzgzAADqHAAHAAAIDAAACJoAAAAAHOoAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyMDE0OjExOjI0IDEzOjA2OjQ4ADIwMTQ6MTE6MjQgMTM6MDY6NDgAAABSAG8AbgBhAGwAZAAgAEsAdQBuAGsAZQBsAAAA/+ELIGh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8APD94cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4NCjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iPjxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9InV1aWQ6ZmFmNWJkZDUtYmEzZC0xMWRhLWFkMzEtZDMzZDc1MTgyZjFiIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iLz48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+PHhtcDpDcmVhdGVEYXRlPjIwMTQtMTEtMjRUMTM6MDY6NDguODI1PC94bXA6Q3JlYXRlRGF0ZT48L3JkZjpEZXNjcmlwdGlvbj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+PGRjOmNyZWF0b3I+PHJkZjpTZXEgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48cmRmOmxpPlJvbmFsZCBLdW5rZWw8L3JkZjpsaT48L3JkZjpTZXE+DQoJCQk8L2RjOmNyZWF0b3I+PC9yZGY6RGVzY3JpcHRpb24+PC9yZGY6UkRGPjwveDp4bXBtZXRhPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8P3hwYWNrZXQgZW5kPSd3Jz8+/9sAQwAHBQUGBQQHBgUGCAcHCAoRCwoJCQoVDxAMERgVGhkYFRgXGx4nIRsdJR0XGCIuIiUoKSssKxogLzMvKjInKisq/9sAQwEHCAgKCQoUCwsUKhwYHCoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq/8AAEQgDTANKAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+baKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAp8UTzzLFCpd3OFUdSaZXZ/CnQT4g8f2FvglUkDmgCsvww8aPEki+Hb0o4yp2dRS/wDCr/Gv/QuXv/fFfesEQgt44hyEUKPwFPoA+B/+FX+Nf+hcvf8Avij/AIVf41/6Fy9/74r74ooA+B/+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UUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH//2Q==",
+  "author": "Lenovo",
+  "contentVersion": "1.0",
+  "url": "www.lenovo.com",
+  "info": "<span><span>The Lenovo – Networking\nContent Pack for Log Insight allows the network operator to track, analyze, and\nalert on syslogs from IBM and Lenovo data center RackSwitch and Flex switches.\nThe content pack has nine dashboards with a total of 46 dashboard widgets and\n12 alerts that allow one to get feature specific charts of the syslogs being\nsent by the switch.&nbsp; Syslogs can be charted by severity, feature, switch,\netc over time.<br>\n<br>\nRefer to the Lenovo – Networking Content Pack User Guide for more information\nand reference.</span></span>"
+}
