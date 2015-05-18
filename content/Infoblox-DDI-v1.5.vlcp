@@ -1,0 +1,659 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "General - Overview",
+          "constraints": [
+            {
+              "internalName": "__li_source_path",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "All IPAM Configuration Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"created network,modified network,deleted network,created networkcontainer,modified networkcontainer,deleted networkcontainer\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1429720912951,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1429807320413,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "Total number of of IPAM events received over time.&nbsp; This includes IPAM Network Container and Network Creation, Modification and Deletion events.<br><br><span><span>For more information on NIOS IPAM configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "All DNS Configuration Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"created authzone,created hostrecord,modified hostrecord,deleted hostrecord,created authzone,modified authzone,deleted authzone\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1429720912951,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1429807344199,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>The total number of DNS events received over time. These include DNS configuration and run time events.<br></span><br><span><span style=\"font-weight: bold;\">Note:</span><br>1. DNS configuration events include Zone Creation, Modification and Deletion events.<br>2. DNS run time events include Host Record Creation, Modification and Deletion events.<br><br></span><span><span>For more information on NIOS DNS configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><span></span>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "All DHCP Configuration Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"created dhcprange,modified dhcprange,deleted dhcprange,Created ReservedRange,Modified ReservedRange,Deleted ReservedRange\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1429720912951,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1429807364144,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "Total number of DHCP events received over time.&nbsp; This includes DHCP Range and Reserved Range Creation, Modification and Deletion \nevents.<br><br><span><span>For more information on NIOS DHCP configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "All Grid Service Restart Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"gridrestartservices\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1429720912951,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1429807384081,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "Grid service restarts are required for the NIOS to load the configured settings.<br><br>This chart displays all the Grid service restart events over time.<br><br><span><span>For more information on NIOS Grid events, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "General - Security",
+          "constraints": [
+            {
+              "internalName": "__li_source_path",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Failed Authentication Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"login_denied\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1429720912951,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1429807411966,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the failed log in Authentication events over time.<br><br><span><span>For more information on NIOS Authentication, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br><br><br>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Successful Athentication Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"login_allowed\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1429720912951,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1429807429037,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the successful log in Authentication events over time.<br><br><span><span>For more information on NIOS Authentication, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Logout Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"Logout - -\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1429720912951,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1429807446197,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the successful log out Authentication events over time.<br><br><span><span>For more information on NIOS Authentication, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br><br>"
+                },
+                {
+                  "widgetType": "fieldTable",
+                  "messageQuery": "",
+                  "name": "Failed Authentication Events With Details",
+                  "columns": [
+                    {
+                      "internalName": "__li_timestamp_col"
+                    },
+                    {
+                      "internalName": "__li_msg_col"
+                    },
+                    {
+                      "internalName": "__li_source_path"
+                    },
+                    {
+                      "internalName": "hostname"
+                    },
+                    {
+                      "internalName": "appname"
+                    }
+                  ],
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"FIELD_TABLE\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"login_denied\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1429721054565,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1429807465894,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>This chart displays th</span>e failed log in Authentication event along with details.<br><br><span><span>For more information on NIOS Authentication, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Failed and Successful Events by Source",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zwky3vojuxi6k7mfyhaylsmvxhi3dzl53gsyi0\",\"numericGroupByValue\":null,\"displayName\":\"nios_security_apparently_via\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zwky3vojuxi6k7mfyhaylsmvxhi3dzl53gsyi0\",\"value\":\"login_denied\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430601333100,\"extractedFields\":[{\"postContext\":\"\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zwky3vojuxi6k7mfyhaylsmvxhi3dzl53gsyi0\",\"preContext\":\"apparently_via=\",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_security_apparently_via\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1430613920014,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the Failed and Successful log in Authentication by source<br><br><span>For more information on NIOS Authentication, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Failed Events by Connector IP",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zwky3vojuxi6k7mnxw43tfmn2g64s7nfya0000\",\"numericGroupByValue\":null,\"displayName\":\"nios_security_connector_ip\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zwky3vojuxi6k7mnxw43tfmn2g64s7nfya0000\",\"value\":\"login_denied\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430601333100,\"extractedFields\":[{\"postContext\":\" info\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zwky3vojuxi6k7mnxw43tfmn2g64s7nfya0000\",\"preContext\":\"to=AdminConnector ip=\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_security_connector_ip\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1430613920014,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the Failed log in Authentication events grouping by Connector IP.<br><br><span>For more information on NIOS authentication, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "IPAM - Configuration",
+          "constraints": [
+            {
+              "internalName": "__li_source_path",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Network Container Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":\"appname\",\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxex3pobsxeylunfxw4000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" NetworkContainer \",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxex3pobsxeylunfxw4000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_network_container_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the <span>IPAM Network Container Creation, Modification and Deletion events over time.</span><br><br><span><span>For more information on NIOS Network container configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span>"
+                },
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Network Events Over Time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3pobsxeylunfxw4000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" Network\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3pobsxeylunfxw4000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_network_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>This chart displays the IPAM Network Creation, Modification and Deletion events over time.<br><br></span><span>For more information on NIOS Network configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Network Container Events By Operation",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxex3pobsxeylunfxw4000\",\"numericGroupByValue\":null,\"displayName\":\"nios_network_container_operation\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxex3pobsxeylunfxw4000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" NetworkContainer \",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxex3pobsxeylunfxw4000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_network_container_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the <span>IPAM Network Container events by operation type - Creation, Modification or Deletion.</span><br><br><span><span>For more information on NIOS Network Container configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+                },
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Network Events By Operation",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3pobsxeylunfxw4000\",\"numericGroupByValue\":null,\"displayName\":\"nios_network_operation\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3pobsxeylunfxw4000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" Network\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3pobsxeylunfxw4000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_network_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>This chart displays the IPAM Network events by operation - Creation, Modification or Deletion.<br><br></span><span>For more information on NIOS Network configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Network Container Events By Network Container Address",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxe000\",\"numericGroupByValue\":null,\"displayName\":\"nios_network_container\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxex3pobsxeylunfxw4000\",\"value\":\"Deleted\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\"\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxe000\",\"preContext\":\"NetworkContainer \",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\/\\\\d{1,2}\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_network_container\"},{\"postContext\":\" NetworkContainer \",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxex3pobsxeylunfxw4000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_network_container_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the <span>IPAM Network Container events by the Network Container address.</span><br><br><span><span>For more information on NIOS Network Container configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Network Events By Network Address",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgw000\",\"numericGroupByValue\":null,\"displayName\":\"nios_network\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3pobsxeylunfxw4000\",\"value\":\"Deleted\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" network_view\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgw000\",\"preContext\":\"Network \",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\/\\\\d{1,2}\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_network\"},{\"postContext\":\" Network\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3pobsxeylunfxw4000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_network_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>This chart displays the Network events by the network address.<br><br></span><span>For more information on NIOS Network configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DNS - Configuration",
+          "constraints": [
+            {
+              "internalName": "__li_source_path",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "DNS Zone Events Over Time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427pjxw4zk7n5ygk4tboruw63q0\",\"value\":\"created authzone\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" AuthZone\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427pjxw4zk7n5ygk4tboruw63q0\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_dns_zone_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433010600000,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>An authoritative zone is a zone for which the local (primary or \nsecondary) server references its own data when responding to queries. \nThe local server is authoritative for the data in this zone and responds\n to queries for this data without referencing another server.</span><br><span><span><br><span>This chart displays the DNS Zone Creation, Modification and Deletion events over time.</span><br><br></span></span><span>For more information on NIOS DNS Zone configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br><span><span><span><span><br></span></span></span></span>"
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "DNS Host Record Over Time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf633qmvzgc5djn5xa0000\",\"value\":\"Created,Modified,Deleted\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" HostRecord\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf633qmvzgc5djn5xa0000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":null,\"displayName\":\"nios_host_record_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433010600000,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>A host record defines \nattributes for a node, such as the name-to-address and address-to-name \nmapping. This alleviates having to specify an A record and a PTR record \nseparately for the same node. A host can also define aliases and DHCP \nfixed address nodes. The zone must be created first before adding a host\n record for the zone.<br></span><br>This graph displays the DNS Host Record Creation, Modification and Deletion events over time.<br><br><span>For more information on NIOS DNS Host Record configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "DNS Zone Events By Operation",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427pjxw4zk7n5ygk4tboruw63q0\",\"numericGroupByValue\":null,\"displayName\":\"nios_dns_zone_operation\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427pjxw4zk7n5ygk4tboruw63q0\",\"value\":\"created authzone\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430601333100,\"extractedFields\":[{\"postContext\":\" AuthZone\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427pjxw4zk7n5ygk4tboruw63q0\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_dns_zone_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1430613920014,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>An authoritative zone is a zone for which the local (primary or secondary) server references its own data when responding to queries. The local server is authoritative for the data in this zone and responds to queries for this data without referencing another server.</span><br><span><span><br><span>This chart displays the DNS Zone events by operation type - Creation, Modification or Deletion.</span><br><br></span></span><span>For more information on NIOS DNS Zone configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br><span><span><br></span></span>"
+                },
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "DNS Host Record Events By Operation",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf633qmvzgc5djn5xa0000\",\"numericGroupByValue\":null,\"displayName\":\"nios_host_record_operation\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf633qmvzgc5djn5xa0000\",\"value\":\"Created,Modified,Deleted\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430601333100,\"extractedFields\":[{\"postContext\":\" HostRecord\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf633qmvzgc5djn5xa0000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":null,\"displayName\":\"nios_host_record_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1430613920014,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>A host record defines attributes for a node, such as the name-to-address and address-to-name mapping. This alleviates having to specify an A record and a PTR record separately for the same node. A host can also define aliases and DHCP fixed address nodes. The zone must be created first before adding a host record for the zone.<br></span><br>This graph displays the DNS Host Record events by operation - Creation, Modification or Deletion.<br><span><br></span><span>For more information on NIOS Host Record configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "DNS Zone Events By FQDN",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5thczdo\",\"numericGroupByValue\":null,\"displayName\":\"nios_fqdn\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427pjxw4zk7n5ygk4tboruw63q0\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" AuthZone\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427pjxw4zk7n5ygk4tboruw63q0\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_dns_zone_operation\"},{\"postContext\":\"\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5thczdo\",\"preContext\":\"AuthZone \",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"searchTerms\\\":\\\"httpd\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_fqdn\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>An authoritative zone is a zone for which the local (primary or \nsecondary) server references its own data when responding to queries. \nThe local server is authoritative for the data in this zone and responds\n to queries for this data without referencing another server.</span><br><br><span><span><span>This chart displays the DNS Zone events by FQDN.</span><br><br></span></span><span>For more information on NIOS DNS Zone configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br><span><span><span><span><br></span></span></span></span>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "DNS Host Record Events by FQDN",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf6ztrmrxa0000\",\"numericGroupByValue\":null,\"displayName\":\"nios_host_record_fqdn\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf633qmvzgc5djn5xa0000\",\"value\":\"Modified\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" DnsView\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf6ztrmrxa0000\",\"preContext\":\"HostRecord \",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_host_record_fqdn\"},{\"postContext\":\" HostRecord\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf633qmvzgc5djn5xa0000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":null,\"displayName\":\"nios_host_record_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>An authoritative zone is a zone for which the local (primary or \nsecondary) server references its own data when responding to queries. \nThe local server is authoritative for the data in this zone and responds\n to queries for this data without referencing another server.</span><br><span><span><br><span>This chart displays the DNS Zone events by FQDN.</span><br><br></span></span><span>For more information on NIOS DNS Host Record configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br><span><span><br></span></span>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DHCP - Configuration",
+          "constraints": [
+            {
+              "internalName": "__li_source_path",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "DHCP Range Events Over Time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3ql5zgc3thmvpw64dfojqxi2lpny000000\",\"value\":\"created dhcprange\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" DhcpRange\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3ql5zgc3thmvpw64dfojqxi2lpny000000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_dhcp_range_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433010600000,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>This chart displays the NIOS DHCP Range Creation, Modification\nand Deletion events over time.</span><br>\n\n<span><br></span><span><br></span><span>For more information on NIOS DHCP Range configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                },
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "DHCP Reserved Range Events Over Time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzc7ojqw4z3fl5xxazlsmf2gs33o\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" ReservedRange\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzc7ojqw4z3fl5xxazlsmf2gs33o\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":null,\"displayName\":\"nios_reserved_range_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433010600000,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the <span>DHCP Reserved range Creation, Modification and Deletion events over time.<br></span><span></span><span><br></span><span>For more information on NIOS DHCP Reserved Range configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "DHCP Range Events By Operation",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3ql5zgc3thmvpw64dfojqxi2lpny000000\",\"numericGroupByValue\":null,\"displayName\":\"nios_dhcp_range_operation\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3ql5zgc3thmvpw64dfojqxi2lpny000000\",\"value\":\"created dhcprange\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" DhcpRange\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3ql5zgc3thmvpw64dfojqxi2lpny000000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_dhcp_range_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the <span>NIOS DHCP Range events by operation - Creation, Modification or Deletion.<br></span><span><br></span><span>For more information on NIOS DHCP Range configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                },
+                {
+                  "chartType": "bar",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "DHCP Reserved Range Events By Operation",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzc7ojqw4z3fl5xxazlsmf2gs33o\",\"numericGroupByValue\":null,\"displayName\":\"nios_reserved_range_operation\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzc7ojqw4z3fl5xxazlsmf2gs33o\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" ReservedRange\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzc7ojqw4z3fl5xxazlsmf2gs33o\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":null,\"displayName\":\"nios_reserved_range_operation\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the <span>DHCP Reserved Range events by operation - Creation, Modification or Deletion.<br><br></span><span>For more information on NIOS DHCP Reserved Range configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "DHCP Range Events By Range Address",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3qojqw4z3f\",\"numericGroupByValue\":null,\"displayName\":\"nios_dhcprange\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3ql5zgc3thmvpw64dfojqxi2lpny000000\",\"value\":\"Created\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" DhcpRange\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3ql5zgc3thmvpw64dfojqxi2lpny000000\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_dhcp_range_operation\"},{\"postContext\":\" network_view\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3qojqw4z3f\",\"preContext\":\"DhcpRange \",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}-\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_dhcprange\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the <span>DHCP Range events by Range Address.<br></span><span><br></span><span>For more information on NIOS DHCP Range configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "DHCP Reserved Range Events By Reserved Range Address",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzdsmfxgozi0\",\"numericGroupByValue\":null,\"displayName\":\"nios_reservedrange\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzc7ojqw4z3fl5xxazlsmf2gs33o\",\"value\":\"Deleted\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430418600000,\"extractedFields\":[{\"postContext\":\" ReservedRange\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzc7ojqw4z3fl5xxazlsmf2gs33o\",\"preContext\":\"\\\\]: \",\"regexValue\":\"\\\\w+\",\"constraints\":null,\"displayName\":\"nios_reserved_range_operation\"},{\"postContext\":\" network_view\",\"internalName\":\"ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzdsmfxgozi0\",\"preContext\":\"ReservedRange \",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}-\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"STARTS_WITH\\\",\\\"value\\\":\\\"httpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"nios_reservedrange\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432837800000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This chart displays the <span>DHCP Reserved Range events by Reserved Range Address.<br></span><span><br></span><span>For more information on NIOS DHCP Reserved Range configuration, please see the resources section on the page -</span><br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a><br>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "searchInterval": 600000,
+      "name": "NIOS - Authentication Failed Event",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"login_denied\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430604050306,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1431089781811,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "This alert is sent on Authentication failure.<br><br><span><span>For more information on NIOS Authentication, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "searchInterval": 600000,
+      "name": "NIOS Any DHCP Configuration Event",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"created dhcprange,modified dhcprange,deleted dhcprange,Created ReservedRange,Modified ReservedRange,Deleted ReservedRange\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430594810269,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1430598410268,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "This alert is sent on any DHCP Range or DHCP Reserved Range configuration event in NIOS.<br><br><span><span>For more information on NIOS DHCP configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><span style=\"font-weight: bold;\"></span>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "searchInterval": 600000,
+      "name": "NIOS Any IPAM Configuration Event",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"created network,modified network,deleted network,created networkcontainer,modified networkcontainer,deleted networkcontainer\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430594964925,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1430598564924,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "This alert is sent on any IPAM Network or Network configuration event.<br><br><span><span>For more information on NIOS IPAM configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 10.0,
+      "hitOperator": "LESS_THAN",
+      "searchInterval": 600000,
+      "name": "NIOS Any DNS Configuration Event",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"htpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"created authzone,created hostrecord,modified hostrecord,deleted hostrecord,created authzone,modified authzone,deleted authzone\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430594876179,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1430598476178,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "<span>This alert is sent on any DNS Zone or DNS Host Record configuration event.<br></span><span style=\"font-weight: bold;\"><br></span><span><span>For more information on NIOS DNS configuration, please see the resources section on the page -<br><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam</a></span></span><br>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 10.0,
+      "hitOperator": "LESS_THAN",
+      "searchInterval": 600000,
+      "name": "NIOS Any Authentication Event",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"httpd\",\"operator\":\"STARTS_WITH\"},{\"internalName\":\"text\",\"value\":\"login_denied,login_allowed,Logout - -\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1430594770092,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1430598370091,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "<span><span>This alert is sent on any Authentication event in NIOS.<br><br></span>For more information on NIOS Authentication, please see resources section on the page -</span><span style=\"font-weight: bold;\"><br></span><a href=\"https://www.infoblox.com/products/network-services-dns-dhcp-ipam/ddi\">https://www.infoblox.com/products/network-services-dns-dhcp-ipam/ddi</a><br>"
+    }
+  ],
+  "name": "Infoblox - DDI",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5rwszds",
+      "preContext": "cidr=",
+      "regexValue": "\\d{1,2}",
+      "constraints": "{\"searchTerms\":\"network_view\",\"filters\":[{\"hidden\":false,\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+      "displayName": "nios_cidr",
+      "info": "This field gives the CIDR for the Network Address.<br>"
+    },
+    {
+      "postContext": " DhcpRange",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3ql5zgc3thmvpw64dfojqxi2lpny000000",
+      "preContext": "\\]: ",
+      "regexValue": "\\w+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_dhcp_range_operation",
+      "info": "This field gives the NIOS DHCP Range operation type."
+    },
+    {
+      "postContext": " network_view",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sgqy3qojqw4z3f",
+      "preContext": "DhcpRange ",
+      "regexValue": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}-\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_dhcprange",
+      "info": "This field gives the DHCP Range which has been created.<br>"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427ozuwk5y0",
+      "preContext": "dnsView=",
+      "regexValue": "[^{:| }]*",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_dns_view",
+      "info": "This field gives the NIOS DNS view.<br>"
+    },
+    {
+      "postContext": " AuthZone",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5sg4427pjxw4zk7n5ygk4tboruw63q0",
+      "preContext": "\\]: ",
+      "regexValue": "\\w+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_dns_zone_operation",
+      "info": "This field gives the NIOS DNS Zone operation type."
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5thczdo",
+      "preContext": "AuthZone ",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"httpd\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_fqdn",
+      "info": "This field gives the Fully Qualified Domain Name which has been configured.<br>"
+    },
+    {
+      "postContext": "]],",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5txe2lel5wwk3lcmvza0000",
+      "preContext": "grid_member=Member:",
+      "regexValue": "[^,]*",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_grid_member",
+      "info": "This field gives the NIOS Grid member information.<br>"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf6ylemrza0000",
+      "preContext": "address=",
+      "regexValue": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_host_record_addr",
+      "info": "This field gives the Host Record which has been created.<br>"
+    },
+    {
+      "postContext": " DnsView",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf6ztrmrxa0000",
+      "preContext": "HostRecord ",
+      "regexValue": "\\S+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_host_record_fqdn",
+      "info": "This field gives the FQDN in the Host Record.<br>"
+    },
+    {
+      "postContext": " HostRecord",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5ug643ul5zgky3pojsf633qmvzgc5djn5xa0000",
+      "preContext": "\\]: ",
+      "regexValue": "\\w+",
+      "displayName": "nios_host_record_operation",
+      "info": "This field gives the Host Record operation type."
+    },
+    {
+      "postContext": " network_view",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgw000",
+      "preContext": "Network ",
+      "regexValue": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}/\\d{1,2}",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_network",
+      "info": "This field gives the Network which has been created.<br>"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxe000",
+      "preContext": "NetworkContainer ",
+      "regexValue": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}/\\d{1,2}",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_network_container",
+      "info": "This field gives the Network Container which has been created.<br>"
+    },
+    {
+      "postContext": " NetworkContainer ",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3dn5xhiyljnzsxex3pobsxeylunfxw4000",
+      "preContext": "\\]: ",
+      "regexValue": "\\w+",
+      "constraints": "{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_network_container_operation",
+      "info": "This field gives the Network Container Operation type."
+    },
+    {
+      "postContext": " Network",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3pobsxeylunfxw4000",
+      "preContext": "\\]: ",
+      "regexValue": "\\w+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_network_operation",
+      "info": "This field gives the Network Operation type."
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xgk5dxn5zgwx3wnfsxo000",
+      "preContext": "network_view=",
+      "regexValue": "\\w+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_network_view",
+      "info": "This field gives the network view.<br>"
+    },
+    {
+      "postContext": "\\,record_name_policy",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5xhgx3hojxxk4a0",
+      "preContext": "ns_group=",
+      "regexValue": "[^,]*",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_ns_group",
+      "info": "This field gives the NS group name.<br>"
+    },
+    {
+      "postContext": " ReservedRange",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzc7ojqw4z3fl5xxazlsmf2gs33o",
+      "preContext": "\\]: ",
+      "regexValue": "\\w+",
+      "displayName": "nios_reserved_range_operation",
+      "info": "This field gives the NIOS DHCP Reserved Range operation type."
+    },
+    {
+      "postContext": " network_view",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zgk43foj3gkzdsmfxgozi0",
+      "preContext": "ReservedRange ",
+      "regexValue": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}-\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_reservedrange",
+      "info": "This field gives the DHCP Reserved Range which has been created.<br>"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zwky3vojuxi6k7mfyhaylsmvxhi3dzl53gsyi0",
+      "preContext": "apparently_via=",
+      "regexValue": "\\w+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_security_apparently_via",
+      "info": "This field gives the source of the Authentication event."
+    },
+    {
+      "postContext": " info",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl5zwky3vojuxi6k7mnxw43tfmn2g64s7nfya0000",
+      "preContext": "to=AdminConnector ip=",
+      "regexValue": "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"httpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_security_connector_ip",
+      "info": "This field gives the Security connector IP address information."
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcns7mnxw2ltjnztg6ytmn54c4zdenfxgs33tl52he2lhm5sxex3fozsw45a0",
+      "preContext": "trigger_event=",
+      "regexValue": "\\S+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"httpd,serial_console\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "nios_trigger_event",
+      "info": "This field gives the NIOS trigger event type.<br>"
+    }
+  ],
+  "framework": "#9c4",
+  "contentPackId": "com.infoblox.ddi",
+  "version": "2.4",
+  "namespace": "com.infoblox.ddi",
+  "icon": "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",
+  "author": "Infoblox",
+  "contentVersion": "1.5",
+  "url": "www.infoblox.com",
+  "info": "The Trinzic Network Services and Management family of products enable companies to manage, control, and optimize DNS, DHCP, and other services.<br>The product family leverages existing investments, paves the way to the Cloud, and ensures network services uptime. <br><br>Infoblox DDI appliance provides comprehensive logs for DHCP, DNS and IPAM events and they are provided to Infoblox vRealize Log Insight Content Pack. <br>Infoblox vRealize Log Insight Content Pack provides powerful visualizations of DHCP, DNS and IPAM information for proactive monitoring and auditing.<br><br>Customers can monitor multiple DDI appliances from vRealize Log Insight appliance using Infoblox vRealize Log Insight Content Pack. It provides for –<br>1.&nbsp;&nbsp;&nbsp; Powerful Monitoring<br>Customers can monitor DHCP, DNS and IPAM Configuration for quick problem resolution. Additionally the content pack provides authentication and system status information.<br><br>2.&nbsp;&nbsp;&nbsp; Alerting<br>Customers can configure alerts for configuration changes in DHCP, DNS and IPAM as well as on authentication events.<br><br><br>"
+}
