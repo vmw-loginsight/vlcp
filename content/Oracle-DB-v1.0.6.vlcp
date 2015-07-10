@@ -1,0 +1,1107 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "Total number of alert events over time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433945501238,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434031901237,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The total number of alert events received over time. <span>An increase in events may point\n to a change in the environment whereas a large increase in events may \nbe an indication of an issue in the environment.</span><br><br>For more information see:<br><a href=\"https://docs.oracle.com/cd/E11882_01/server.112/e25494/monitoring.htm#ADMIN11242\">Monitoring Errors and Alerts</a><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most alert events by hostname, filepath",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1434026146048,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434029746047,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>The hostname and filepath with the highest number of alert events. An increase in events may point to a change on a hostname whereas a large increase in events may be an indication of an issue on a hostname.</span><br><br>For more information see:<br><a href=\"https://docs.oracle.com/cd/E11882_01/server.112/e25494/monitoring.htm#ADMIN11242\">Monitoring Errors and Alerts</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "Total number of listener events over time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"listener\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433945771782,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434032171781,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The total number of listener events received over time. <span>An increase in events may point\n to a change in the environment whereas a large increase in events may \nbe an indication of an issue in the environment.</span><br><br>For more information see:<br><a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#NETAG413\"><span>Listener Log Audit Trail Information</span></a><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most listener events by hostname, filepath",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"listener\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1434026292599,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434029892598,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "<span>The hostname and filepath with \nthe highest number of listener events. An increase in events may point to a\n change on a hostname whereas a large increase in events may be an \nindication of an issue on a hostname.</span><br><br>For more information see:<br><a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#NETAG413\"><span>Listener Log Audit Trail Information</span></a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+                  "name": "Number of start instance alert events over time by hostname",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\\\"starting oracle instance\\\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433871380215,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433957780214,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of database instance start events received over time by hostname.<br><br>For more information see:<br><a href=\"http://docs.oracle.com/cd/E11882_01/server.112/e25494/start.htm#ADMIN10063\">Starting Up a Database</a><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most LGWR switch alert events by hostname",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\\\"LGWR switch\\\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433736000000,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434032209498,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The hostnames with the highest number number of log writer switch events.<br><br>For more information see:<br><a href=\"http://docs.oracle.com/cd/E11882_01/server.112/e25494/onlineredo.htm#ADMIN007\">Managing the Redo Log</a><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alert - Errors",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of alert events by error ID 1",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4yq0000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_error_id_1\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4yq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433871610141,\"extractedFields\":[{\"postContext\":\":\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4yq0000\",\"preContext\":\".*\\\\nErrors.*:\\\\n\",\"regexValue\":\"[A-Za-z]{3}-\\\\d{5}\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"Errors in file\\\\\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_error_id_1\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958010140,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events with an error in the first position of an error stack, grouped by error ID.<br><br>For more information, see <a href=\"http://docs.oracle.com/cd/E11882_01/server.112/e25494/monitoring.htm#ADMIN11243\">Monitoring Errors with Trace Files and the Alert Log</a>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of alert events by error ID 2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4za0000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_error_id_2\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4za0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433871753980,\"extractedFields\":[{\"postContext\":\":\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4za0000\",\"preContext\":\".*\\\\nErrors.*:\\\\n.*\\\\n\",\"regexValue\":\"[A-Za-z]{3}-\\\\d{5}\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"Errors in file\\\\\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_error_id_2\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958153979,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events with an error in the second position of an error stack, grouped by error ID.<br><br>For more information, see <a href=\"http://docs.oracle.com/cd/E11882_01/server.112/e25494/monitoring.htm#ADMIN11243\">Monitoring Errors with Trace Files and the Alert Log</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of alert events by error ID 3",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4zq0000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_error_id_3\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4zq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433871793198,\"extractedFields\":[{\"postContext\":\":\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4zq0000\",\"preContext\":\".*\\\\nErrors.*:\\\\n(.*\\\\n){2}\",\"regexValue\":\"[A-Za-z]{3}-\\\\d{5}\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"Errors in file\\\\\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_error_id_3\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958193197,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events with an error in the third position of an error stack, grouped by error ID<span><span></span></span>.<br><br>For more information, see <a href=\"http://docs.oracle.com/cd/E11882_01/server.112/e25494/monitoring.htm#ADMIN11243\">Monitoring Errors with Trace Files and the Alert Log</a>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of alert events by error ID 4",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel42a0000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_error_id_4\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel42a0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433871832707,\"extractedFields\":[{\"postContext\":\":\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel42a0000\",\"preContext\":\".*\\\\nErrors.*:\\\\n(.*\\\\n){3}\",\"regexValue\":\"[A-Za-z]{3}-\\\\d{5}\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"Errors in file\\\\\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_error_id_4\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958232842,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events with an error in the fourth position of an error stack, grouped by error ID.<br><br>For more information, see <a href=\"http://docs.oracle.com/cd/E11882_01/server.112/e25494/monitoring.htm#ADMIN11243\">Monitoring Errors with Trace Files and the Alert Log</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+                  "name": "Number of incident alert events by error ID 1",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4yq0000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_error_id_1\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpws3tdnfsgk3tul5xhk3lcmvza0000\",\"value\":\"41196\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4yq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433871879812,\"extractedFields\":[{\"postContext\":\":\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4yq0000\",\"preContext\":\".*\\\\nErrors.*:\\\\n\",\"regexValue\":\"[A-Za-z]{3}-\\\\d{5}\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"Errors in file\\\\\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_error_id_1\"},{\"postContext\":\"\\\\):\\\\n[A-Za-z]{3}\\\\-\\\\d{5}:\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpws3tdnfsgk3tul5xhk3lcmvza0000\",\"preContext\":\"\\\\(incident=\",\"regexValue\":\"-?\\\\d+\",\"constraints\":\"{\\\"searchTerms\\\":\\\"incident\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_incident_number\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958279811,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events with an incident ID, grouped by error ID.<br><br>For more information, see <a href=\"http://docs.oracle.com/cd/E11882_01/server.112/e25494/diag.htm#ADMIN11259\">About Incidents and Problems</a>"
+                },
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Additional errors queries list",
+                  "listData": [
+                    {
+                      "messageQuery": "",
+                      "name": "Number of internal error events by hostname, filepath",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"ORA-00600\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433871937832,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958337831,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "The number of internal error events received grouped by hostname and alert log filepath.<br><br>For more information see <a href=\"http://www.oracle.com/technetwork/issue-archive/2011/11-sep/o51support-453463.html\"><span>Troubleshooting  Internal Errors</span></a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of exception events by hostname, filepath",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"ORA-07445\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433872189914,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958589913,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "The number of exception events received grouped by hostname and alert log filepath.<br><br>For more information see <a href=\"http://www.oracle.com/technetwork/issue-archive/2011/11-sep/o51support-453463.html\"><span>Troubleshooting  Internal Errors</span></a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of block corruption error events by hostname, filepath",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"ORA-01578\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433872441699,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958841729,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "The number of internal error events received grouped by hostname and alert log filepath.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/backup.112/e10642/rcmblock.htm#BRADV118\">Basic Concepts of Block Media Recovery</a><br>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of deadlock error events by hostname, filepath",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"ORA-00060\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433872587474,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433958987473,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}",
+                      "info": "The number of deadlock error events received grouped by hostname and alert log filepath.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E28271_01/server.1111/e25789/consist.htm#i5704\">Overview of the Oracle Database Locking Mechanism</a>"
+                    }
+                  ],
+                  "info": "Additional queries for serious errors and common pattern detection.<br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alert - Checkpoints",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Number of alert events over time by checkpoint action",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_checkpoint_action\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"value\":\"incremental\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433955449632,\"extractedFields\":[{\"postContext\":\"(\\\\scheckpoint up to RBA)\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"preContext\":\"\",\"regexValue\":\".*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"checkpoint up to RBA\\\\\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_checkpoint_action\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959049631,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events received over time by checkpoint action.<br><br>For more information see <a href=\"https://docs.oracle.com/cd/E36909_01/server.1111/e25789/startup.htm#BABGDACG\">Overview of Checkpoints</a>"
+                },
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of alert events by checkpoint action, hostname",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_checkpoint_action\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"value\":\"incremental\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433955532214,\"extractedFields\":[{\"postContext\":\"(\\\\scheckpoint up to RBA)\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"preContext\":\"\",\"regexValue\":\".*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"checkpoint up to RBA\\\\\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_checkpoint_action\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959132213,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events received by checkpoint action, hostname.<br><br>For more information see <a href=\"https://docs.oracle.com/cd/E36909_01/server.1111/e25789/startup.htm#BABGDACG\">Overview of Checkpoints</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Number of alert events over time by checkpoint status",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643umf2hk4y0\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_checkpoint_status\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643umf2hk4y0\",\"value\":\"alert_*.log\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433872774689,\"extractedFields\":[{\"postContext\":\"\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643umf2hk4y0\",\"preContext\":\"Checkpoint (?=not complete)\",\"regexValue\":\".*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Checkpoint\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_checkpoint_status\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959174688,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events received over time by checkpoint status.<br><br>For more information see <a href=\"https://docs.oracle.com/cd/E36909_01/server.1111/e25789/startup.htm#BABGDACG\">Overview of Checkpoints</a>"
+                },
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of alert events by checkpoint status, hostname",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643umf2hk4y0\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_checkpoint_status\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643umf2hk4y0\",\"value\":\"alert_*.log\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433872874859,\"extractedFields\":[{\"postContext\":\"\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643umf2hk4y0\",\"preContext\":\"Checkpoint (?=not complete)\",\"regexValue\":\".*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Checkpoint\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_checkpoint_status\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959274858,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events received by checkpoint status, hostname.<br><br>For more information see <a href=\"https://docs.oracle.com/cd/E36909_01/server.1111/e25789/startup.htm#BABGDACG\">Overview of Checkpoints</a>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of alert events by checkpoint SCN, checkpoint action",
+                  "gridWidth": "1",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643dny000000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_checkpoint_scn\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_alert_checkpoint_action\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"value\":\"incremental\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643dny000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"},{\"internalName\":\"product_subtype\",\"value\":\"alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433872924789,\"extractedFields\":[{\"postContext\":\"(\\\\scheckpoint up to RBA)\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0\",\"preContext\":\"\",\"regexValue\":\".*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\\\\\"checkpoint up to RBA\\\\\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_checkpoint_action\"},{\"postContext\":\"\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643dny000000\",\"preContext\":\"checkpoint.*, SCN:\\\\s*\",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"searchTerms\\\":\\\"checkpoint SCN\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_alert_checkpoint_scn\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959324788,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of alert events received by checkpoint SCN, checkpoint action.<br><br>For more information see <a href=\"https://docs.oracle.com/cd/E36909_01/server.1111/e25789/startup.htm#BABGDACG\">Overview of Checkpoints</a>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Listener - Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "Total number of listener events over time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433951900311,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434038300310,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The total number of listener events received over time.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most listener events by hostname",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433952216222,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434038616221,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The hosts with the most listener events.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most listener events by client",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_protocol_host\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1434035285469,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"},{\"postContext\":\"\\\\)\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s.*\\\\*\\\\s(\\\\(ADDRESS=.*\\\\(HOST=)\",\"regexValue\":\"[^\\\\)]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"ADDRESS= HOST=\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_protocol_host\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434038885468,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The clients with the most listener events.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most listener events by SID",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_sid\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"listener*.log\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1434035451919,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"},{\"postContext\":\"\\\\s\\\\* -?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\\\\w+\\\\s\\\\*\\\\s\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_sid\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434039051918,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The SIDs with the most listener events.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "line",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+                  "name": "Number of listener events over time by event type",
+                  "gridWidth": "1",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_event\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"listener*.log\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433955912513,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959512528,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of listener events received over time by event type.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Listener - Errors",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "column",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+                  "name": "Number of listener events over time by return code",
+                  "gridWidth": "1",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7ojsxi5lsnzpwg33emu000000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_return_code\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"listener*.log\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7ojsxi5lsnzpwg33emu000000\",\"value\":\"0\",\"operator\":\"NOT_EQUAL\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433956251106,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"},{\"postContext\":\"\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7ojsxi5lsnzpwg33emu000000\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s.*\\\\*\\\\s\",\"regexValue\":\"-?\\\\d+\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_return_code\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959851105,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of listener events received over time by return code.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "bubble",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Number of listener events by return code, event type",
+                  "gridWidth": "1",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7ojsxi5lsnzpwg33emu000000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_return_code\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_event\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7ojsxi5lsnzpwg33emu000000\",\"value\":\"0\",\"operator\":\"NOT_EQUAL\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433956320864,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"},{\"postContext\":\"\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7ojsxi5lsnzpwg33emu000000\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s.*\\\\*\\\\s\",\"regexValue\":\"-?\\\\d+\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_return_code\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959920863,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The number of listener events received by return code, event type.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "list",
+                  "listType": "query",
+                  "name": "Common Oracle Net Services Errors",
+                  "gridWidth": "1/2",
+                  "listData": [
+                    {
+                      "messageQuery": "",
+                      "name": "Number of ORA-03113 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"ORA-03113\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433873569044,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433959969043,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message ORA-03113.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGEIEEI\">ORA-03113: TNS:end-of-file on communication channel</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of ORA-12154 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"ora-12154\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433873695585,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960095584,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message ORA-12154.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGJAGGH\">ORA-12154: TNS:could not resolve the connect identifier specified</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of ORA-12170 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"ora-12170\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433873738330,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960138329,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message ORA-12170.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGEDBIE\">ORA-12170: TNS:Connect timeout occurred</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of TNS/ORA-12500 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"(ora|tns)-12500\",\"operator\":\"MATCH\"},{\"internalName\":\"hostname\",\"value\":\"ora-12500\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433956742079,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960342078,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message TNS-12500 or ORA-12500.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGBDDCE\">TNS-12500/ORA-12500: TNS: listener failed to start a dedicated server process</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of ORA-12514 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"ora-12514\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433956807991,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960407990,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message ORA-12514.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#BCGEJFJJ\">ORA-12514: TNS:listener does not currently know of service requested in connect descriptor</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of ORA-12520 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"ora-12520\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433956850468,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960450467,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message ORA-12520.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGJGEEC\">ORA-12520: TNS:listener could not find available handler for requested type of server</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of ORA-12521 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"ora-12521\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433956890789,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960490788,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message ORA-12521.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGCIEJE\">ORA-12521: TNS:listener does not currently know of instance requested in connect descriptor</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of ORA-12525 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"ora-12525\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433956922039,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960522038,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message ORA-12525.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGGFEFC\">ORA-12525: TNS:listener has not received client's request in time allowed</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of ORA-12533 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"ora-12533\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433956959779,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960559778,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message ORA-12533.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGJACFI\">ORA-12533: TNS:illegal ADDRESS parameters</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of TNS/ORA-12540 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"(ora|tns)-12540\",\"operator\":\"MATCH\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433957008683,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960608682,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message TNS-12540 or ORA-12540.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGDGHBJ\">TNS-12540/ORA-12540: TNS:internal limit restriction exceeded and TNS-00510: Internal limit restriction exceeded</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of TNS/ORA-12541 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"(ora|tns)-12541\",\"operator\":\"MATCH\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433957067145,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960667144,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message TNS-12541 or ORA-12541.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGFJEJH\">TNS-12541/ORA-12541: TNS:no listener</a><a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGDGHBJ\"></a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of TNS/ORA-12549 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"(ora|tns)-12549\",\"operator\":\"MATCH\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433957104868,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960704867,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message TNS-12549 or ORA-12549.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGJGAFD\">TNS-12549/ORA-12549: TNS:operating system resource quota exceeded and TNS-00519: Operating system resource quota exceeded</a>"
+                    },
+                    {
+                      "messageQuery": "",
+                      "name": "Number of TNS/ORA-12560 events over time by hostname",
+                      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"(ora|tns)-12560\",\"operator\":\"MATCH\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1433939229981,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1433960829980,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                      "options": "{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}",
+                      "info": "Common network error message TNS-12560 or ORA-12560.<br><br>See <a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#CEGBDCJH\">TNS-12560/ORA-12560: TNS:protocol adapter error occurred</a>"
+                    }
+                  ],
+                  "info": "Queries for the most common network error messages.<br><span></span><br><span><span>For more information see&nbsp;</span></span><span><span><a href=\"https://docs.oracle.com/cd/E11882_01/network.112/e41945/trouble.htm#NETAG394\">Resolving the Most Common Error Messages for Oracle Net Services</a></span></span><span><span><br></span></span>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Listener - Connections",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "chartType": "area",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":true}",
+                  "name": "Total number of establish listener events over time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1434035880486,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434039480485,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "The total number of listener connection events received over time.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most establish listener events by hostname",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1434035795969,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434039395968,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "Hosts with the most listener connection events.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most establish listener events by client",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_protocol_host\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1434035965728,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"},{\"postContext\":\"\\\\)\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s.*\\\\*\\\\s(\\\\(ADDRESS=.*\\\\(HOST=)\",\"regexValue\":\"[^\\\\)]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"ADDRESS= HOST=\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_protocol_host\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434039565727,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "Clients with the most listener connection events.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                },
+                {
+                  "chartType": "pie",
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+                  "name": "Most establish listener events by SID",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_sid\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"value\":\"ora_db\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1434036109724,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"},{\"postContext\":\"\\\\s\\\\* -?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\\\\w+\\\\s\\\\*\\\\s\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_sid\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1434039709723,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "SIDs with the most listener connection events.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e10835/toc.htm\">Database Net Services Reference</a><br>"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 3.0,
+      "hitOperator": "GREATER_THAN",
+      "searchInterval": 600000,
+      "name": "Oracle DB: Deadlock error count exceeds threshold",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"ORA-00060\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1425493341001,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[{\"internalName\":\"filepath\",\"value\":\"alert_*.log\",\"operator\":\"CONTAINS\"}],\"endTimeMillis\":1425496941000,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "The number of Oracle Database deadlock errors is high.<br><br>For more information see <a href=\"https://docs.oracle.com/cd/E28271_01/server.1111/e25789/consist.htm\"><span>Data Concurrency and Consistency</span><span></span></a>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "searchInterval": 600000,
+      "name": "Oracle DB: Internal error occurred",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"ORA-00600\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1425493582294,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[{\"internalName\":\"filepath\",\"value\":\"alert_*.log\",\"operator\":\"CONTAINS\"}],\"endTimeMillis\":1425497182293,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "An Oracle Database internal error event occurred.<br><br>For more information see <a href=\"http://www.oracle.com/technetwork/issue-archive/2011/11-sep/o51support-453463.html\"><span>Troubleshooting  Internal Errors</span></a>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 2000.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "",
+      "searchInterval": 600000,
+      "name": "Oracle DB: Connection count by client exceeds threshold",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"numericGroupByValue\":null,\"displayName\":\"ora_db_listener_protocol_host\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"value\":\"establish\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1425493476791,\"extractedFields\":[{\"postContext\":\"\\\\s\\\\*\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s(?:\\\\([^\\\\*]*\\\\* )*\",\"regexValue\":\"[^\\\\*]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_event\"},{\"postContext\":\"\\\\)\",\"internalName\":\"ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000\",\"preContext\":\"^\\\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\\\d{4} \\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d \\\\*\\\\s.*\\\\*\\\\s(\\\\(ADDRESS=.*\\\\(HOST=)\",\"regexValue\":\"[^\\\\)]*\",\"constraints\":\"{\\\"searchTerms\\\":\\\"ADDRESS= HOST=\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"product\\\",\\\"displayName\\\":\\\"product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ora_db\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"ora_db_listener_protocol_host\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1425497076790,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "The number of client connections is high. This could indicate a denial of service or brute force attack.<br><br>For more information see <a href=\"http://docs.oracle.com/cd/E11882_01/network.112/e36292/guidelines.htm#DBSEG009\">Keeping Your Oracle Database Secure</a><span></span>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "searchInterval": 600000,
+      "name": "Oracle DB: Exception encountered",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"ora-07445\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1425493161411,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[{\"internalName\":\"filepath\",\"value\":\"alert_*.log\",\"operator\":\"CONTAINS\"}],\"endTimeMillis\":1425496761410,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "An Oracle Database exception event occurred.<br><br>For more information see <a href=\"http://www.oracle.com/technetwork/issue-archive/2011/11-sep/o51support-453463.html\"><span>Troubleshooting  Internal Errors</span></a>"
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "searchInterval": 600000,
+      "name": "Oracle DB: Data block corruption occurred",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"ORA-01578\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"},{\"internalName\":\"filepath\",\"numericGroupByValue\":null,\"displayName\":\"filepath\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1425493407625,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[{\"internalName\":\"filepath\",\"value\":\"alert_*.log\",\"operator\":\"CONTAINS\"}],\"endTimeMillis\":1425497007624,\"shouldGroupByTime\":false,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "An Oracle Database data block corruption event occurred.<br><br>For more information see: <br>- <a href=\"http://docs.oracle.com/cd/E11882_01/backup.112/e10642/rcmblock.htm#BRADV118\">Basic Concepts of Block Media Recovery</a><br>- <a href=\"http://docs.oracle.com/cd/E11882_01/backup.112/e10642/rcmblock.htm#BRADV89781\"><span>Performing Block Media Recovery</span></a><br>"
+    }
+  ],
+  "name": "Oracle - Database",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwc3dumvzf6yldoruw63q0",
+      "preContext": "ALTER\\s\\w+\\s*",
+      "regexValue": "\\w+",
+      "constraints": "{\"searchTerms\":\"alter\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_alter_action"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwc3dumvzf6yldoruw63s7obqxeylnmv2gk4tt",
+      "preContext": "ALTER\\s\\w+\\s*\\w+[^\\n]",
+      "regexValue": ".*",
+      "constraints": "{\"searchTerms\":\"alter\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_alter_action_parameters"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwc3dumvzf65dbojtwk5a0",
+      "preContext": "ALTER\\s",
+      "regexValue": "\\w+",
+      "constraints": "{\"searchTerms\":\"alter\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_alter_target"
+    },
+    {
+      "postContext": "(\\scheckpoint up to RBA)",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6yldoruw63q0",
+      "preContext": "",
+      "regexValue": ".*",
+      "constraints": "{\"searchTerms\":\"\\\"checkpoint up to RBA\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_checkpoint_action"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f6y3vojzgk3tul5wg6z27orqws3c7ojrgc000",
+      "preContext": "checkpoint.*, current log tail at RBA \\[",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"checkpoint \\\"current log tail at RBA\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_checkpoint_current_log_tail_rba"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643dny000000",
+      "preContext": "checkpoint.*, SCN:\\s*",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"checkpoint SCN\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_checkpoint_scn"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f643umf2hk4y0",
+      "preContext": "Checkpoint (?=not complete)",
+      "regexValue": ".*",
+      "constraints": "{\"searchTerms\":\"Checkpoint\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_checkpoint_status"
+    },
+    {
+      "postContext": "\\]\\, ",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwg2dfmnvxa33jnz2f65lql52g6x3smjqq0000",
+      "preContext": "checkpoint up to RBA \\[",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"\\\"checkpoint up to RBA\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_checkpoint_up_to_rba"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf6ylul5wgs3tf",
+      "preContext": "[A-Za-z]{3}-\\d{5}:\\s.*at line\\s",
+      "regexValue": "\\d*",
+      "constraints": "{\"searchTerms\":\"\\\"at line\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_at_line"
+    },
+    {
+      "postContext": ":",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4yq0000",
+      "preContext": ".*\\nErrors.*:\\n",
+      "regexValue": "[A-Za-z]{3}-\\d{5}",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_id_1"
+    },
+    {
+      "postContext": ":",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4za0000",
+      "preContext": ".*\\nErrors.*:\\n.*\\n",
+      "regexValue": "[A-Za-z]{3}-\\d{5}",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_id_2"
+    },
+    {
+      "postContext": ":",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel4zq0000",
+      "preContext": ".*\\nErrors.*:\\n(.*\\n){2}",
+      "regexValue": "[A-Za-z]{3}-\\d{5}",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_id_3"
+    },
+    {
+      "postContext": ":",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62lel42a0000",
+      "preContext": ".*\\nErrors.*:\\n(.*\\n){3}",
+      "regexValue": "[A-Za-z]{3}-\\d{5}",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_id_4"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf62tpmi000000",
+      "preContext": "[A-Za-z]{3}-\\d{5}:\\s.*error.*job\\s",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\" job\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_job"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf64dbmnvwcz3fl5rg6zdz",
+      "preContext": "[A-Za-z]{3}-\\d{5}:\\s.*package body\\s",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\" \\\"package body\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_package_body"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf64dmonywy000",
+      "preContext": "[A-Za-z]{3}-\\d{5}:\\s.*PL\\/SQL:\\s",
+      "regexValue": "[^\\n]*",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\" PL/SQL\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_plsql"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf65dfpb2f6mi0",
+      "preContext": ".*\\nErrors.*:\\n[A-Za-z]{3}-\\d{5}:\\s*",
+      "regexValue": ".*",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_text_1"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf65dfpb2f6mq0",
+      "preContext": ".*\\nErrors.*:\\n.*\\n[A-Za-z]{3}-\\d{5}:\\s*",
+      "regexValue": ".*",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_text_2"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf65dfpb2f6my0",
+      "preContext": "^.*\\nErrors.*:\\n(.*\\n){2}[A-Za-z]{3}-\\d{5}:\\s*",
+      "regexValue": ".*",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_text_3"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpwk4tsn5zf65dfpb2f6na0",
+      "preContext": ".*\\nErrors.*:\\n(.*\\n){3}[A-Za-z]{3}-\\d{5}:\\s*",
+      "regexValue": ".*",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_error_text_4"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpws3tdnfsgk3tul5tgs3df",
+      "preContext": "Incident details in: ",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"\\\"Incident details in\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_incident_file"
+    },
+    {
+      "postContext": "\\):\\n[A-Za-z]{3}\\-\\d{5}:",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpws3tdnfsgk3tul5xhk3lcmvza0000",
+      "preContext": "\\(incident=",
+      "regexValue": "-?\\d+",
+      "constraints": "{\"searchTerms\":\"incident\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_incident_number"
+    },
+    {
+      "postContext": "\\sbackground process\\s",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpxa4tpmnsxg427mfrxi2lpny000000",
+      "preContext": "",
+      "regexValue": "\\w+",
+      "constraints": "{\"searchTerms\":\"\\\"background process\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_process_action"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpxa4tpmnsxg427nzqw2zi0",
+      "preContext": "(Starting|Stopping) background process\\s",
+      "regexValue": "\\w+",
+      "constraints": "{\"searchTerms\":\"\\\"background process\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_process_name"
+    },
+    {
+      "postContext": ".*:\\n[A-Za-z]{3}\\-\\d{5}:",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qwyzlsorpxi4tbmnsv6ztjnrsq0000",
+      "preContext": "Errors in file\\s",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"\\\"Errors in file\\\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_alert_trace_file"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf6yldoruw63q0",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* ACTION:\\[-?\\d+\\] \"",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"Audit ACTION\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_action"
+    },
+    {
+      "postContext": "\" OS\\$USERID:",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf6y3pnvwwk3tul52gk6du",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* COMMENT\\$TEXT:\\[-?\\d+\\] \"",
+      "regexValue": ".*",
+      "constraints": "{\"searchTerms\":\"Audit COMMENT$TEXT\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_comment_text"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf6zdcnfsa0000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* DBID:\\[-?\\d+\\] \"",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"Audit DBID\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_dbid"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf6zloorzhs2le",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* ENTRYID:\\[-?\\d+\\] \"",
+      "regexValue": "-?\\d+",
+      "constraints": "{\"searchTerms\":\"Audit ENTRYID\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_entryid"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf633tl52xgzlsnfsa0000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* OS\\$USERID:\\[-?\\d+\\] \"",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"Audit OS$USERID\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_os_userid"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf64dsnf3f65ltmvsa0000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* PRIV\\$USED:\\[-?\\d+\\] \"",
+      "regexValue": "-?\\d+",
+      "constraints": "{\"searchTerms\":\"Audit PRIV$USED\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_priv_used"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf64tfor2xe3tdn5sgk000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* RETURNCODE:\\[-?\\d+\\] \"",
+      "regexValue": "-?\\d+",
+      "constraints": "{\"searchTerms\":\"Audit RETURNCODE\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_returncode"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf643fonzws33omnyhk000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* SESSIONCPU:\\[-?\\d+\\] \"",
+      "regexValue": "-?\\d+",
+      "constraints": "{\"searchTerms\":\"Audit SESSIONCPU\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_sessioncpu"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf643fonzws33onfsa0000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* SESSIONID:\\[-?\\d+\\] \"",
+      "regexValue": "-?\\d+",
+      "constraints": "{\"searchTerms\":\"Audit SESSIONID\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_sessionid"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf643umf2gk3lfnz2a0000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* STATEMENT:\\[-?\\d+\\] \"",
+      "regexValue": "-?\\d+",
+      "constraints": "{\"searchTerms\":\"Audit STATEMENT\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_statement"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf65dfojwws3tbnq000000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* TERMINAL:\\[-?\\d+\\] \"",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_terminal"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf65ltmvzgq33toq000000",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* USERHOST:\\[-?\\d+\\] \"",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"Audit USERHOST\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_userhost"
+    },
+    {
+      "postContext": "\"",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5qxkzdjorpxi4tbnfwf65ltmvzgsza0",
+      "preContext": "(|.* Oracle)Audit( trail: |\\[-?\\d+\\]:).* USERID:\\[-?\\d+\\] \"",
+      "regexValue": "\\S+",
+      "constraints": "{\"searchTerms\":\"Audit USERID\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_audit_trail_userid"
+    },
+    {
+      "postContext": "\\n",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5twk3tfojqwyx3unfwwk43umfwxa000",
+      "preContext": "^",
+      "regexValue": "(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \\d{1,2} \\d{1,2}:\\d\\d:\\d\\d \\d{4}",
+      "constraints": "{\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_general_timestamp"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mfzgo5lnmvxhi4y0",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(ARGUMENTS=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"ARGUMENTS\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_arguments"
+    },
+    {
+      "postContext": "(\\)\\)\\s\\*|\\)\\(COMMAND=)",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mnuwi000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(CID=)",
+      "regexValue": "\\(.*\\)",
+      "constraints": "{\"searchTerms\":\"CID=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_cid"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mnuwix3in5zxi000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(CID=\\(PROGRAM=.*?\\(HOST=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"CID= HOST=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_cid_host"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mnuwix3qojxwo4tbnu000000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(CID=\\(PROGRAM=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"CID= PROGRAM=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_cid_program"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mnuwix3vonsxe000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(CID=\\(PROGRAM=.*?\\(USER=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"CID= USER=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_cid_user"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mnxw23lbnzsa0000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(COMMAND=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"COMMAND=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_command"
+    },
+    {
+      "postContext": "(\\s\\*|\\(COMMAND=)",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mnxw43tfmn2f6zdborqq0000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s(?=\\(CONNECT_DATA=)",
+      "regexValue": "\\(.*?\\)",
+      "constraints": "{\"searchTerms\":\"CONNECT_DATA=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_connect_data"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mnxw43tfmn2f6zdborqv643jmq000000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(SID=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"SID=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_connect_data_sid"
+    },
+    {
+      "postContext": "\\s\\*",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7mv3gk3tu",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s(?:\\([^\\*]*\\* )*",
+      "regexValue": "[^\\*]*",
+      "constraints": "{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_event"
+    },
+    {
+      "postContext": "\\)",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3in5zxi000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*\\*\\s(\\(ADDRESS=.*\\(HOST=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"ADDRESS= HOST=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_protocol_host"
+    },
+    {
+      "postContext": "\\)\\s\\*",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3jnztg6000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*\\*\\s(\\(ADDRESS=)",
+      "regexValue": "[^\\*]*",
+      "constraints": "{\"searchTerms\":\"ADDRESS=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_protocol_info"
+    },
+    {
+      "postContext": "\\)",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3qn5zhi000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*\\*\\s(\\(ADDRESS=.*\\(PORT=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"ADDRESS= PORT=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_protocol_port"
+    },
+    {
+      "postContext": "\\)",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7obzg65dpmnxwyx3upfygk000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*\\*\\s(\\(ADDRESS=.*\\(PROTOCOL=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"ADDRESS= PROTOCOL=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_protocol_type"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7ojsxi5lsnzpwg33emu000000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*\\*\\s",
+      "regexValue": "-?\\d+",
+      "constraints": "{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_return_code"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onsxe5tfoi000000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(SERVER=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"SERVER=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_server"
+    },
+    {
+      "postContext": "(\\)\\s\\*|\\)\\(VERSION=)",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onsxe5tjmnsq0000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(SERVICE=)",
+      "regexValue": "\\(.*?\\)",
+      "constraints": "{\"searchTerms\":\"SERVICE= VERSION=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_service"
+    },
+    {
+      "postContext": "(\\)\\)\\s\\*|\\)\\)\\(VERSION=)",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onsxe5tjmnsv6ylemrzgk43t",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(SERVICE=.*?\\(ADDRESS=)",
+      "regexValue": ".*?",
+      "constraints": "{\"searchTerms\":\"SERVICE= ADDRESS= VERSION=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_service_address"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onsxe5tjmnsv62dpon2a0000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(SERVICE=.*?\\(ADDRESS=.*?\\(HOST=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"SERVICE= ADDRESS= HOST=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_service_host"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onsxe5tjmnsv64dpoj2a0000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(SERVICE=.*?\\(ADDRESS=.*?\\(PORT=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"SERVICE= ADDRESS= PORT=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_service_port"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onsxe5tjmnsv64dsn52g6y3pnq000000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(SERVICE=.*?\\(ADDRESS=.*?\\(PROTOCOL=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"SERVICE= ADDRESS= PROTOCOL=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_service_protocol"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onsxe5tjmnsv65tfojzws33o",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*(\\(SERVICE=.*?\\(VERSION=)",
+      "regexValue": "[^\\)]*",
+      "constraints": "{\"searchTerms\":\"SERVICE= VERSION=\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_service_version"
+    },
+    {
+      "postContext": "\\s\\* -?\\d+",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7onuwi000",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s(?:\\([^\\*]*\\* )*\\w+\\s\\*\\s",
+      "regexValue": "[^\\*]*",
+      "constraints": "{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_sid"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7orsxq5a0",
+      "preContext": "^\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d \\*\\s.*\\n",
+      "regexValue": ".*",
+      "constraints": "{\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_text"
+    },
+    {
+      "postContext": "\\s\\*",
+      "internalName": "ibadcok7mnxw2ltpojqwg3dffzsgc5dbmjqxgzlpojqv6zdcl5wgs43umvxgk4s7oruw2zltorqw24a0",
+      "preContext": "^",
+      "regexValue": "\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4} \\d\\d:\\d\\d:\\d\\d",
+      "constraints": "{\"filters\":[{\"internalName\":\"product\",\"displayName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"ora_db\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "ora_db_listener_timestamp"
+    }
+  ],
+  "framework": "#9c4",
+  "contentPackId": "com.oracle.database",
+  "version": "2.4",
+  "namespace": "com.oracle.database",
+  "icon": "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",
+  "author": "Blue Medora, LLC",
+  "contentVersion": "1.0.6",
+  "url": "http://bluemedora.com",
+  "info": "<span><b>Overview</b></span><br>\n\n<span>&nbsp;</span><br>\n\n<span>The Content Pack for Oracle® Databases tailors VMware vRealize\nLog Insight capabilities to monitor Oracle Database Alert and Listener\nLogs.&nbsp;VMware vRealize Log Insight delivers real-time log management for\nVMware environments, with machine learning-based Intelligent Grouping, high\nperformance search and better troubleshooting across physical, virtual, and\ncloud environments.&nbsp;</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>With the Content Pack for Oracle Databases, you can apply\npowerful analytic-based technology to identify and solve database specific\nproblems. The unstructured data collection capabilities of VMware vRealize Log\nInsight means reduced setup time and proactive management capabilities that\nadapt to your changing environment.&nbsp;</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Quickly expose internal database errors to your team and Oracle\nSupport Services through real time analysis of the Oracle Database Alert and\nListener Log files. The friendly interface is designed to eliminate time lost\nnavigating log files on the command line. By leveraging the VMware vRealize Log\nInsight platform, the Content Pack for Oracle Databases provides accessible log\nmanagement for every member of your team, and all teams in your\norganization.&nbsp;</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><b>Highlights</b></span><br>\n\n<span><span>&nbsp;</span>- Accurate monitoring of your Oracle Database installation</span><br>\n\n<span><span>&nbsp;</span>- Key Oracle Database log files are covered—Alert,\nListener</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><b>Description</b></span><br>\n\n<span>The content pack for Oracle Database provides you with\ninformation about key events of a database installation’s health using vRealize\nLog Insight’s ability to monitor Oracle Database Logs.<span>&nbsp;</span>The content pack enables:</span><br>\n\n<span><span>&nbsp;</span></span><br>\n\n<span><u style=\"text-decoration: underline;\">Accurate monitoring of your Oracle Database installation</u></span><br>\n\n<span>Focus on known problems through monitoring events written to\nlog files.</span><br>\n\n<span><span>&nbsp;</span></span><br>\n\n<span><u style=\"text-decoration: underline;\">Key Oracle Database log files are covered—Alert, Listener</u></span><br>\n\n<span>Six dashboards containing more than 20 widgets are included\nfrom alert and listener that go in depth to quantify your data in a multitude\nof manners to help diagnose problems in your Oracle database installation.</span><br>\n\n<span><span>&nbsp;</span></span><br>\n\n<span><b>Minimum requirements</b></span><br>\n\n<span>VMware vRealize Log Insight 2.5</span><br>\n\n<span>Oracle Database server running one of the following versions on\nLinux or Windows:</span><br>\n\n<span><span>&nbsp;</span>- Oracle Database 11g</span><br>\n\n<span><span>&nbsp;</span>- Oracle Database 12c</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><b>Setup\nand configuration</b></span><br>\n\n<span><b>&nbsp;</b></span><br>\n\n<span>1. Installation</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>To install the Oracle - Database\ncontent pack for VMWare vRealize Log Insight, follow these steps.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Navigate to the \"Content\nPack\" menu in Log Insight.<span>&nbsp;</span>Select\nthe \"Import Content Pack\" button.<span>&nbsp;</span>In the \"Import Content Pack\" menu, do the following:</span><br>\n\n<span><span>&nbsp;</span>- Select the \"Browse...\" button and\nselect the content pack you are trying to import</span><br>\n\n<span><span>&nbsp;</span>- Select the \"Install as content\npack\" radio button</span><br>\n\n<span><span>&nbsp;</span>- Select the \"Import\" button</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>2. Configuration</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>The content pack requires the Log\nInsight agent configured using the ingestion API. To configure a Log Insight\nagent to forward Oracle Database events to Log Insight, follow these steps.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>A. Listener log</span><br>\n\n<span>Append the following to the Log\nInsight agent's liagent.ini configuration file and change its directory value\nto the path to your listener.log:</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><span>[filelog|ordbms_listener]</span></span><br>\n\n<span><span>directory=/path/to/oracle/diag/tnslsnr/installation/listener/trace</span></span><br>\n\n<span><span>include=listener.log</span></span><br>\n\n<span><span>event_marker=^((?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\n(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \\d{1,2} \\d{1,2}:\\d\\d:\\d\\d\n\\d{4}|\\d{2}-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)-\\d{4}\n\\d\\d:\\d\\d:\\d\\d)</span></span><br>\n\n<span><span>tags={\"product\":\"ora_db\",\"product_subtype\":\"listener\"}</span></span><br>\n\n<span>&nbsp;</span><br>\n\n<span>B. Alert logs</span><br>\n\n<span>For each database instance you will\nmonitor on this server, append the following to the Log Insight agent's\nliagent.ini configuration file and change each section title's SID and\ndirectory value to that of each instance being monitored:</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><span>[filelog|ordbms_SID]</span></span><br>\n\n<span><span>directory=/path/to/oracle/diag/rdbms/database/SID/trace</span></span><br>\n\n<span><span>include=alert_*.log</span></span><br>\n\n<span><span>event_marker=^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\n(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \\d{1,2} \\d{1,2}:\\d\\d:\\d\\d\n\\d{4}</span></span><br>\n\n<span><span>tags={\"product\":\"ora_db\",\"product_subtype\":\"alert\"}</span></span><br>\n\n<span>&nbsp;</span><br>\n\n<span>C. Restart the VMware vRealize Log\nInsight Agent service to make it start using its updated configuration file.</span><br>\n\n<span>&nbsp;</span><br>"
+}
