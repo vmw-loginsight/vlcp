@@ -1,0 +1,314 @@
+{
+  "dashboardSections": [
+    {
+      "views": [
+        {
+          "name": "Overview",
+          "constraints": [
+            {
+              "internalName": "hostname",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "All array events",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1427634858508,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1428239748939,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This shows you all of your array traffic. &nbsp;This is done by a filter on the appname that the logger in DataGravity uses, which is DG."
+                },
+                {
+                  "widgetType": "chart",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Export events over time",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"exported mount point\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1428154168943,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1428240600965,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This will show any export type actions. &nbsp;This occurs when a mount point is made ready for access - it is exported."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "DiscoveryPoint Activity",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"DiscoveryPoint\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"Generate preview\",\"operator\":\"DOES_NOT_CONTAIN\"},{\"internalName\":\"text\",\"value\":\"Generate download\",\"operator\":\"DOES_NOT_CONTAIN\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1428236058508,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1428239777988,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This will show all of the DiscoveryPoint activity on your array, but not the download or preview events."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Unique count of source over time grouped by hostname",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":true,\"numericOnly\":false,\"value\":\"UCOUNT\",\"label\":\"Unique count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"hostname\",\"numericGroupByValue\":null,\"displayName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":\"__li_source_path\",\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1438186616990,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1438273016989,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This is the number of arrays you have - important to note that syslog traffic comes from the Controller 0 IP normally, and it is possible and even likely you will receive syslog messages from both sides!"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Array Errors",
+          "constraints": [
+            {
+              "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3torqxi5lt",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Count of Platform ERROR events over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"DG_ERROR\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"PRIMARY_POOL_DEGRADED_TWO_DISKS\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"DATASHARE_DELETE_FAILED\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"PRIMARY_POOL_WARNING1_THRESHOLD_EXCEEDED\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"SSDWearLevelWarning\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ANY\",\"startTimeMillis\":1437660940070,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1437664543408,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This shows the Status DG_ERROR events that can happen for a number of different reasons. &nbsp;Failing in a preview for example would cause this error. &nbsp;It will also show other important errors. &nbsp;Generally things in this chart should be reported to Support."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Count of System ERROR events over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000\",\"numericGroupByValue\":null,\"displayName\":\"dg_severity\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000\",\"value\":\"error,fatal,alert\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ANY\",\"startTimeMillis\":1439484801237,\"extractedFields\":[{\"postContext\":\" \\\\-\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_severity\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1439485101236,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This shows the events that have a category of Alert, Fatal and Error."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Count of DG Inteligence Service Errors events over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"VMFILTER_MINIFILTER_INVALID\",\"operator\":\"CONTAINS\"},{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1428245219035,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1428245663121,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This will show DGIS error messages from the point of view of the array, over time. &nbsp;Generally things in this chart should be shared with DataGravity Support."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "User Information",
+          "constraints": [
+            {
+              "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3torqxi5lt",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            },
+            {
+              "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Storage Admin Activities over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"numericGroupByValue\":null,\"displayName\":\"dg_user\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"value\":\"Storage Admin\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1438185817629,\"extractedFields\":[{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\\\\S+\\\\]:\\\\[\",\"regexValue\":\".*?\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_role\"},{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_user\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1438272217628,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This is a count over time of all of the Storage Admin activities. &nbsp;You see the account name for the users - member of the Storage Admin role - that did the change."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Root Activities over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"[root]:[super user]\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1428237100141,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1428240788031,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This is a count over time of all of the root account activities."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Count of Super User events over time by user",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"numericGroupByValue\":null,\"displayName\":\"dg_user\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"value\":\"super user\",\"operator\":\"CONTAINS\"},{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1438186373092,\"extractedFields\":[{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\\\\S+\\\\]:\\\\[\",\"regexValue\":\".*?\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_role\"},{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_user\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1438272773091,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This shows all account activity that is end users who are members of the Super User role."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Download events over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"Generate download\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"Status DG_SUCCESS\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1428236270187,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1428239917323,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This will show you any successful download events from the array. &nbsp;This can be caused by using the download button seen in a results list from a search, or when the download button is used in a preview."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Count of Audit User events over time by user",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"numericGroupByValue\":null,\"displayName\":\"dg_user\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"value\":\"Audit User\",\"operator\":\"CONTAINS\"},{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1438186407002,\"extractedFields\":[{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\\\\S+\\\\]:\\\\[\",\"regexValue\":\".*?\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_role\"},{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_user\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1438272807001,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This shows all account activity for users that are members of the Audit role."
+                },
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"spline\":false}",
+                  "name": "Preview events over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"SUMMARY\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"Generate Preview\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3torqxi5lt\",\"value\":\"DG_SUCCESS\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1432646804552,\"extractedFields\":[{\"postContext\":\"\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3torqxi5lt\",\"preContext\":\"Status \",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_status\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1432733204551,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This will show you any successful preview events from the array. &nbsp;This can be caused by using the preview button seen in a results list from a search."
+                }
+              ]
+            },
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "DiscoveryPoint Activity by user",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"numericGroupByValue\":null,\"displayName\":\"dg_user\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"DiscoveryPoint\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"Generate preview\",\"operator\":\"DOES_NOT_CONTAIN\"},{\"internalName\":\"text\",\"value\":\"Generate download\",\"operator\":\"DOES_NOT_CONTAIN\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1438186466333,\"extractedFields\":[{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_user\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1438272866332,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "This will show all of the DiscoveryPoint activity on your array, but not the download or preview events."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tags",
+          "constraints": [
+            {
+              "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000",
+              "operator": "CONTAINS"
+            }
+          ],
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "widgetType": "chart",
+                  "messageQuery": "",
+                  "chartOptions": "{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+                  "name": "Content Alerts found over time",
+                  "gridWidth": "1/2",
+                  "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000\",\"numericGroupByValue\":null,\"displayName\":\"dg_severity\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"ContentAlert\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1438186663002,\"extractedFields\":[{\"postContext\":\" \\\\-\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \",\"regexValue\":\"\\\\w+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_severity\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1438273063001,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+                  "info": "Events that come from Content Alerts. &nbsp; Meaning you need to create a search subscription, and then use it to create a content alert. &nbsp;The content alert will fire out via syslog and will be seen in this widget."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": ""
+    }
+  ],
+  "alerts": [
+    {
+      "searchPeriod": 300000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "",
+      "searchInterval": 60000,
+      "name": "DG:Alert on Super User activity on the array",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"numericGroupByValue\":null,\"displayName\":\"dg_user\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"SUMMARY\",\"fieldConstraints\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"value\":\"super user\",\"operator\":\"CONTAINS\"},{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1438804944058,\"extractedFields\":[{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\\\\S+\\\\]:\\\\[\",\"regexValue\":\".*?\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_role\"},{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_user\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1438805244057,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "This will alert via email - when fully configured - when a user with the role of Super User performs any activity."
+    },
+    {
+      "searchPeriod": 3600000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "messageQuery": "",
+      "searchInterval": 600000,
+      "name": "DG:Audit User Logged In",
+      "alertType": "RATE_BASED_WITH_GROUPS",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"numericGroupByValue\":null,\"displayName\":\"dg_user\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\"}],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"value\":\"Audit User\",\"operator\":\"CONTAINS\"},{\"internalName\":\"appname\",\"value\":\"DG\",\"operator\":\"CONTAINS\"},{\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"operator\":\"EXISTS\"}],\"constraintToggle\":\"ALL\",\"startTimeMillis\":1438801703497,\"extractedFields\":[{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\\\\S+\\\\]:\\\\[\",\"regexValue\":\".*?\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_role\"},{\"postContext\":\"\\\\]\",\"internalName\":\"ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000\",\"preContext\":\"dg \\\\d+ dg-logp \\\\- \\\\w+ \\\\- \\\\[\",\"regexValue\":\"\\\\S+\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"DG\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\",\"displayName\":\"dg_user\"}],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1438805303496,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "This alert - when properly enabled - will alert you that an audit has logged in to the array."
+    },
+    {
+      "searchPeriod": 300000,
+      "hitCount": 1.0,
+      "hitOperator": "GREATER_THAN",
+      "searchInterval": 60000,
+      "name": "DG:Platform Errors",
+      "alertType": "RATE_BASED",
+      "chartQuery": "{\"dateFilterPreset\":\"CUSTOM\",\"piqlFunction\":{\"requiresField\":false,\"numericOnly\":false,\"value\":\"COUNT\",\"label\":\"Count\"},\"query\":\"\",\"groupByFields\":[],\"summarySortOrder\":\"DESC\",\"compareQuerySortOrder\":\"DESC\",\"piqlFunctionField\":null,\"messageViewType\":\"EVENTS\",\"fieldConstraints\":[{\"internalName\":\"text\",\"value\":\"DG_ERROR\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"PRIMARY_POOL_DEGRADED_TWO_DISKS\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"DATASHARE_DELETE_FAILED\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"PRIMARY_POOL_WARNING1_THRESHOLD_EXCEEDED\",\"operator\":\"CONTAINS\"},{\"internalName\":\"text\",\"value\":\"SSDWearLevelWarning\",\"operator\":\"CONTAINS\"}],\"constraintToggle\":\"ANY\",\"startTimeMillis\":1437660940070,\"extractedFields\":[],\"eventSortOrder\":\"DESC\",\"supplementalConstraints\":[],\"endTimeMillis\":1437664543408,\"shouldGroupByTime\":true,\"compareQueryOrderBy\":\"SCORE\"}",
+      "info": "This alert - when enabled - will fire when any platform errors occur. &nbsp;This includes things like hardware issues or infrastructure issues - like pool or SSD issues."
+    }
+  ],
+  "name": "DataGravity - Discovery Array",
+  "queries": [],
+  "extractedFields": [
+    {
+      "postContext": ":",
+      "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3dn5wxa33omvxhi000",
+      "preContext": "dg \\d+ dg-logp \\- \\w+ \\- \\[\\S+\\]:\\[.*?\\]: ",
+      "regexValue": "\\w+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"DG\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "dg_component"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3sn5wgk000",
+      "preContext": "dg \\d+ dg-logp \\- \\w+ \\- \\[\\S+\\]:\\[",
+      "regexValue": ".*?",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"DG\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "dg_role"
+    },
+    {
+      "postContext": " \\-",
+      "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3tmv3gk4tjor4q0000",
+      "preContext": "dg \\d+ dg-logp \\- ",
+      "regexValue": "\\w+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"DG\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "dg_severity"
+    },
+    {
+      "postContext": "",
+      "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3torqxi5lt",
+      "preContext": "Status ",
+      "regexValue": "\\S+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"DG\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "dg_status"
+    },
+    {
+      "postContext": "\\]",
+      "internalName": "ibademk7mnxw2ltemf2gcz3smf3gs5dzfzqxe4tbpfsgox3vonsxe000",
+      "preContext": "dg \\d+ dg-logp \\- \\w+ \\- \\[",
+      "regexValue": "\\S+",
+      "constraints": "{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"DG\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+      "displayName": "dg_user"
+    }
+  ],
+  "framework": "#9c4",
+  "contentPackId": "com.datagravity.array",
+  "version": "2.4",
+  "namespace": "com.datagravity.array",
+  "icon": "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",
+  "author": "DG Labs",
+  "contentVersion": "1.0",
+  "url": "www.datagravity.com",
+  "info": "This Content Pack will help you find useful nuggets in DataGravity Storage Array Logs. &nbsp;You will need a DataGravity Discovery Series Storage Array with v2 firmware or later. &nbsp;You can find more about installing and using the Content Pack <a href=\"https://urldefense.proofpoint.com/v2/url?u=http-3A__notesfrommwhite.net_2015_08_17_introducing-2Dthe-2Ddatagravity-2Dcontent-2Dpack-2Dv1-2D0-2Dfor-2Dlog-2Dinsight_&d=BQIFAg&c=Sqcl0Ez6M0X8aeM67LKIiDJAXVeAw-YihVMNtXt-uEs&r=mTUYjxQO4oiDRU481iXE3wE_ZF1TGk_fFUtYHbJ1oKo&m=WDRlwdLdd-Xx51jEDlqxz1tp8uXHRR7BNgzW1s7MZIs&s=Ke12DTVYcQW0p-8898AtVDJzTme-y-kvcdjPySfGgJY&e= \">here</a>."
+}
