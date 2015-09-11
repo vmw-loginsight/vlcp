@@ -1,0 +1,1171 @@
+{
+  "name":"Linux",
+  "namespace":"com.linux",
+  "framework":"#9c4",
+  "version":"2.4",
+  "contentPackId":"com.linux",
+  "extractedFields":[ {
+    "displayName":"linux_cron_command",
+    "preContext":"\\(\\S+\\) CMD \\((\\s+)?",
+    "postContext":"\\)",
+    "regexValue":".*",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3dn5ww2ylomq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"cron\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_cron_info",
+    "preContext":"\\(\\S+\\) info \\(",
+    "postContext":"\\)",
+    "regexValue":".*",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3jnztg6000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"cron\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_cron_user",
+    "preContext":"\\(",
+    "postContext":"\\) CMD \\(.*\\)",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3vonsxe000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"cron\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_ntp_source",
+    "preContext":"synchronized to ",
+    "postContext":", stratum",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643povzggzi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"ntpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_ntp_stratum",
+    "preContext":"synchronized to \\S+, stratum ",
+    "postContext":"",
+    "regexValue":"\\d+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643uojqxi5ln",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"ntpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_ntp_time_reset",
+    "preContext":"time reset \\+",
+    "postContext":" s",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf65djnvsv64tfonsxi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"ntpd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_postfix_delay",
+    "preContext":"delay=",
+    "postContext":"\\,",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwizlmmf4q0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"postfix\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":"The delay is the time an email spends in the postfix queue and is the sum of the delays (see the delays field for more information)"
+  }, {
+    "displayName":"linux_postfix_from",
+    "preContext":"from=<",
+    "postContext":">\\, ",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwm4tpnu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"postfix\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_postfix_relay",
+    "preContext":"relay=(<)?",
+    "postContext":"(\\[|>|,)",
+    "regexValue":"\\S+?",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxezlmmf4q0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"postfix\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_postfix_status",
+    "preContext":"status=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxg5dbor2xg000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"postfix\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_postfix_to",
+    "preContext":"to=<",
+    "postContext":">",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxi3y0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"postfix\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_postfix_uuid",
+    "preContext":"postfix/\\w+\\[\\d+\\]: ",
+    "postContext":": ",
+    "regexValue":"[A-Fa-f0-9]+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxk5ljmq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"postfix\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_rsyslog_message",
+    "preContext":"\\] ",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pw2zltonqwozi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"rsyslogd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_rsyslog_version",
+    "preContext":"swVersion=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"rsyslogd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sendmail_mta_from",
+    "preContext":"from=(<)?",
+    "postContext":"(>)?,",
+    "regexValue":"\\S+?",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sendmail_mta_nrcpts",
+    "preContext":"nrcpts=",
+    "postContext":",",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpw44tdob2hg000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sendmail_mta_stat",
+    "preContext":"stat=",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sendmail_mta_to",
+    "preContext":" to=(<)?",
+    "postContext":"(>)?\\, ",
+    "regexValue":"\\S+?",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxi3y0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sendmail_relay",
+    "preContext":"relay=",
+    "postContext":",",
+    "regexValue":".*?",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf64tfnrqxs000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sendmail_stat",
+    "preContext":"stat=",
+    "postContext":"",
+    "regexValue":"(Sent|.*)",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sendmail_to",
+    "preContext":"to=",
+    "postContext":",",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf65dp",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_session_from",
+    "preContext":"session opened for user \\S+ by ",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpwm4tpnu000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"linux_session_state",
+    "preContext":"session ",
+    "postContext":" for user (\\S+$|\\S+ by \\S+$)",
+    "regexValue":"\\w+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxg5dborsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"linux_session_to",
+    "preContext":"session (opened|closed) for user ",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxi3y0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"linux_ssh_source",
+    "preContext":"from ",
+    "postContext":"",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf643povzggzi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sshd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_ssh_status",
+    "preContext":"sshd(\\[\\d+])?: ",
+    "postContext":"( '.*?'| for \\w+)?( \\S+)? from",
+    "regexValue":"\\w+ \\w+( \\w+)*?",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf643umf2hk4y0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sshd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_ssh_user",
+    "preContext":"for ",
+    "postContext":" from",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf65ltmvza0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sshd\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_su_failed",
+    "preContext":"su\\[\\d+\\]: FAILED ",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovpwmyljnrswi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"su\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sudo_user_command",
+    "preContext":"TTY=\\S+ ; PWD=\\S+ ; USER=\\S+ ; COMMAND=",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3dn5ww2ylomq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sudo\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sudo_user_from",
+    "preContext":"sudo:\\s+",
+    "postContext":" :.* TTY",
+    "regexValue":"\\w+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3gojxw2000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sudo\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_sudo_user_status",
+    "preContext":"sudo:\\s+\\w+ : ",
+    "postContext":" ; TTY",
+    "regexValue":".*",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3torqxi5lt",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"linux_sudo_user_to",
+    "preContext":"TTY=\\S+ ; PWD=\\S+ ; USER=",
+    "postContext":" ; COMMAND=.*",
+    "regexValue":"\\w+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3un4000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sudo\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_syslog_client_source",
+    "preContext":"client='",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rwy2lfnz2f643povzggzi0",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_syslog_config_message",
+    "preContext":"syslog-ng\\[\\d+\\]: ",
+    "postContext":"",
+    "regexValue":".*configuration.*",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tgnftv63lfonzwcz3f",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_syslog_connection_state",
+    "preContext":"Syslog connection ",
+    "postContext":"; fd",
+    "regexValue":"\\w+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_syslog_error_message",
+    "preContext":"error='",
+    "postContext":"'",
+    "regexValue":".*?",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5sxe4tpojpw2zltonqwozi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_syslog_failed_reason",
+    "preContext":"error='",
+    "postContext":"'",
+    "regexValue":".*?",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5tgc2lmmvsf64tfmfzw63q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_syslog_message",
+    "preContext":"syslog-ng(\\[\\d+\\])?: ",
+    "postContext":";",
+    "regexValue":".*?",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5wwk43tmftwk000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"linux_syslog_server_destination",
+    "preContext":"server='",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5zwk4twmvzf6zdfon2gs3tboruw63q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sendmail_from",
+    "preContext":"sendmail\\[\\d+\\]: \\w+:.* from=",
+    "postContext":",",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"sendmail_mta_relay",
+    "preContext":"sm-mta\\[\\d+\\]: \\w+:.* relay=",
+    "postContext":",",
+    "regexValue":".*?",
+    "internalName":"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw25dbl5zgk3dbpe000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"sendmail_nrcpts",
+    "preContext":"sendmail\\[\\d+\\]: \\w+:.* nrcpts=",
+    "postContext":",",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw44tdob2hg000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"syslog_state",
+    "preContext":"syslog\\-ng ",
+    "postContext":"; version",
+    "regexValue":".*",
+    "internalName":"ibadsx3dn5ws43djnz2xq43zonwg6z27on2gc5df",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"syslog_version",
+    "preContext":"syslog\\-ng .*; version='",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadsx3dn5ws43djnz2xq43zonwg6z27ozsxe43jn5xa0000",
+    "constraints":null,
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Security - Overview",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"SSH events over time",
+          "info":"All events with an appname that starts with sshd",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430452800000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sshd\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Su events over time",
+          "info":"<span>All events with an appname that starts with su</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430452800000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"su\"},{\"internalName\":\"appname\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"sudo\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Sudo events over time",
+          "info":"<span>All events with an appname that starts with sudo</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430452800000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sudo\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"User and Group operations over time",
+          "info":"<span>All events with an appname that starts with useradd, userdel, usermod, groupadd, groupdel or groupmod</span>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430452800000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"useradd,userdel,usermod,groupadd,groupdel,groupmod\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Security - SSH",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf65ltmvza0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"SSH events by source and destination",
+          "info":"This widget can be helpful in tracking down user activity especially during security related incidents such as DDoS attacks.",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430452800000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sshd\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf643povzggzi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_ssh_source\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf643povzggzi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_ssh_source\",\"preContext\":\"from \",\"postContext\":\"\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf643povzggzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sshd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"SSH events by user",
+          "info":"Most frequent users attempting SSH connections. This widget can be helpful for security related incidents.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410748279461,\"endTimeMillis\":1410834679486,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sshd\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf65ltmvza0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_ssh_user\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf65ltmvza0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_ssh_user\",\"preContext\":\"for \",\"postContext\":\" from\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf65ltmvza0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sshd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SSH events by status",
+          "info":"The status of the SSH operation. Note that multiple different types of failed messages exist though only a small number of successful messages exists.&nbsp;<span>This widget can be helpful for security related incidents.</span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410747325989,\"endTimeMillis\":1410833725988,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sshd\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf643umf2hk4y0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_ssh_status\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf643umf2hk4y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_ssh_status\",\"preContext\":\"sshd(\\\\[\\\\d+])?: \",\"postContext\":\"( '.*?'| for \\\\w+)?( \\\\S+)? from\",\"regexValue\":\"\\\\w+ \\\\w+( \\\\w+)*?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf643umf2hk4y0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sshd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"SSH events by user and destination",
+          "info":"User SSH attempts per destination.&nbsp;<span>This widget can be helpful for security related incidents.</span>",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430452800000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sshd\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf65ltmvza0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_ssh_user\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf65ltmvza0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_ssh_user\",\"preContext\":\"for \",\"postContext\":\" from\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tonuf65ltmvza0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sshd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Security - Su / Sudo",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpwm4tpnu000000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3gojxw2000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Su events from user to user",
+          "info":"<span>This widget can be helpful for security related incidents.</span>",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410743860194,\"endTimeMillis\":1410830260193,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"su\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxg5dborsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpwm4tpnu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_session_from\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpwm4tpnu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"linux_session_to\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxi3y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_session_state\",\"preContext\":\"session \",\"postContext\":\" for user (\\\\S+$|\\\\S+ by \\\\S+$)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxg5dborsq0000\",\"constraints\":null},{\"displayName\":\"linux_session_from\",\"preContext\":\"session opened for user \\\\S+ by \",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpwm4tpnu000000\",\"constraints\":null},{\"displayName\":\"linux_session_to\",\"preContext\":\"session (opened|closed) for user \",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxi3y0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Su events over time by state",
+          "info":"<span>This widget can be helpful for security related incidents.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1388460592165,\"endTimeMillis\":1388547028859,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"su\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxg5dborsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_session_state\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxg5dborsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_session_state\",\"preContext\":\"session \",\"postContext\":\" for user (\\\\S+$|\\\\S+ by \\\\S+$)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvzxg2lpnzpxg5dborsq0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Failed su events",
+          "info":"<span>This widget can be helpful for security related incidents.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"failed\",\"startTimeMillis\":1410744418774,\"endTimeMillis\":1410830818773,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"su\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_su_failed\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovpwmyljnrswi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_su_failed\",\"preContext\":\"su\\\\[\\\\d+\\\\]: FAILED \",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovpwmyljnrswi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"su\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Sudo events from user to user",
+          "info":"<span>This widget can be helpful for security related incidents.</span><br>",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410744858357,\"endTimeMillis\":1410831258356,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sudo\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3un4000000\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3gojxw2000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sudo_user_from\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3gojxw2000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"linux_sudo_user_to\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3un4000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sudo_user_to\",\"preContext\":\"TTY=\\\\S+ ; PWD=\\\\S+ ; USER=\",\"postContext\":\" ; COMMAND=.*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3un4000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sudo\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"linux_sudo_user_from\",\"preContext\":\"sudo:\\\\s+\",\"postContext\":\" :.* TTY\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3gojxw2000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sudo\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Sudo events by command",
+          "info":"<span>This widget can be helpful for security related incidents.</span><br>",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371974984878,\"endTimeMillis\":1388542543201,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sudo\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3un4000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sudo_user_command\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3dn5ww2ylomq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sudo_user_to\",\"preContext\":\"TTY=\\\\S+ ; PWD=\\\\S+ ; USER=\",\"postContext\":\" ; COMMAND=.*\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3un4000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sudo\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"linux_sudo_user_command\",\"preContext\":\"TTY=\\\\S+ ; PWD=\\\\S+ ; USER=\\\\S+ ; COMMAND=\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3dn5ww2ylomq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sudo\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events grouped by sudo_user_status",
+          "info":"<span>This widget can be helpful for security related incidents.</span><br>",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410744343923,\"endTimeMillis\":1410830743922,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sudo\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3torqxi5lt\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sudo_user_status\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3torqxi5lt\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sudo_user_status\",\"preContext\":\"sudo:\\\\s+\\\\w+ : \",\"postContext\":\" ; TTY\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tovsg6x3vonsxex3torqxi5lt\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"System - Cron",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Cron commands run",
+          "info":"<span>This widget is for information purposes only.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410745543911,\"endTimeMillis\":1410831945560,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"cron\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3dn5ww2ylomq000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_cron_command\",\"preContext\":\"\\\\(\\\\S+\\\\) CMD \\\\((\\\\s+)?\",\"postContext\":\"\\\\)\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3dn5ww2ylomq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cron\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Cron events by command",
+          "info":"The exact command or commands run by the cron operation. This widget is for information purposes only.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1429502400000,\"endTimeMillis\":1430366400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"cron\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3dn5ww2ylomq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_cron_command\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3dn5ww2ylomq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_cron_command\",\"preContext\":\"\\\\(\\\\S+\\\\) CMD \\\\((\\\\s+)?\",\"postContext\":\"\\\\)\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3dn5ww2ylomq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cron\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Cron events by information",
+          "info":"",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1429502400000,\"endTimeMillis\":1430366400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"cron\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3jnztg6000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_cron_info\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3jnztg6000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_cron_info\",\"preContext\":\"\\\\(\\\\S+\\\\) info \\\\(\",\"postContext\":\"\\\\)\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3jnztg6000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cron\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Cron events by user",
+          "info":"User or users running cron commands.&nbsp;<span>This widget is for information purposes only.</span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1429502400000,\"endTimeMillis\":1430366400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"cron\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3vonsxe000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_cron_user\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3vonsxe000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_cron_user\",\"preContext\":\"\\\\(\",\"postContext\":\"\\\\) CMD \\\\(.*\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3dojxw4x3vonsxe000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"cron\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"System - NTP",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"NTP events over time",
+          "info":"<span>NTP</span><span>&nbsp;is a protocol designed to synchronize the clocks of computers over a network. For more information, see <a href=\"http://www.ntp.org/\">ntp.org</a></span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"ntpd\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of devices running NTP",
+          "info":"This information is based on the ntpd appname syslog field.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1420088400000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"ntp\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643povzggzi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_ntp_source\",\"preContext\":\"synchronized to \",\"postContext\":\", stratum\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643povzggzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ntpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"NTP events by source",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371974984878,\"endTimeMillis\":1388547811144,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"ntp\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643povzggzi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_ntp_source\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643povzggzi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_ntp_source\",\"preContext\":\"synchronized to \",\"postContext\":\", stratum\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643povzggzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ntpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"NTP events by stratum",
+          "info":"<span>NTP uses a hierarchical, semi-layered system of time sources. Each level of this hierarchy is termed a \"stratum\" and is assigned a number starting with zero at the top. A server synchronized to a stratum n server will be running at stratum n + 1. The number represents the distance from the reference clock and is used to prevent cyclical dependencies in the hierarchy. Stratum is not always an indication of quality or reliability; it is common to find stratum 3 time sources that are higher quality than other stratum 2 time sources.&nbsp;<br></span><br><span><span style=\"font-weight: bold;\"><span>•&nbsp;</span>Stratum 0:&nbsp;</span><span>These are high-precision timekeeping devices such as atomic (cesium, rubidium) clocks, GPS clocks&nbsp;or other radio clocks. They generate a very accurate pulse per second&nbsp;signal that triggers an interrupt&nbsp;and timestamp on a connected computer. Stratum 0 devices are also known as reference clocks.<br></span><span style=\"font-weight: bold;\"><span>•&nbsp;</span>Stratum 1:&nbsp;</span><span>These are computers whose system clocks&nbsp;are synchronized to within a few microseconds of their attached stratum 0 devices. Stratum 1 servers may peer with other stratum 1 servers for sanity checking and backup.&nbsp;They are also referred to as primary time servers.<br></span><span style=\"font-weight: bold;\"><span>•&nbsp;</span>Stratum 2:&nbsp;</span><span>These are computers that are synchronized over a network to stratum 1 servers. Often a stratum 2 computer will query several stratum 1 servers. Stratum 2 computers may also peer with other stratum 2 computers to provide more stable and robust time for all devices in the peer group.<br></span><span style=\"font-weight: bold;\"><span>•&nbsp;</span>Stratum 3:&nbsp;</span><span>These are computers that are synchronized to stratum 2 servers. They employ exactly the same algorithms for peering and data sampling as stratum 2, and can themselves act as servers for stratum 4 computers, and so on.<br></span></span><span><br>The upper limit for stratum is 15; stratum 16 is used to indicate that a device is unsynchronized. The NTP algorithms on each computer interact to construct a Bellman-Ford&nbsp;shortest-path spanning tree, to minimize the accumulated round-trip delay to the stratum 1 servers for all the clients.</span><br>",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371974984878,\"endTimeMillis\":1388547857296,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"ntp\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643povzggzi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_ntp_stratum\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643uojqxi5ln\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_ntp_source\",\"preContext\":\"synchronized to \",\"postContext\":\", stratum\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643povzggzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ntpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"linux_ntp_stratum\",\"preContext\":\"synchronized to \\\\S+, stratum \",\"postContext\":\"\",\"regexValue\":\"\\\\d+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf643uojqxi5ln\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ntpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Maximum NTP drift by hostname",
+          "info":"<span>The units for the drift file are \"PPM\", or \"parts per million\". Your clock will drift due to fluctuations in the frequency oscillating the quartz crystal on your motherboard. A fluctuation of just 0.001% (0.00001, or 10 PPM) means losing or gaining about 1 second per day. Put another way:<br></span><br><span><span>1 PPM = 1 part per million = 1 microsecond per second = 3.6ms per hour = 86.4ms per day<br><br>Significant NTP drift multiple times a day may indicate an environmental issue that needs to be investigated.</span></span>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371974984878,\"endTimeMillis\":1388549664147,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf65djnvsv64tfonsxi000\",\"displayName\":\"linux_ntp_time_reset\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf65djnvsv64tfonsxi000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"ntp\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf65djnvsv64tfonsxi000\",\"operator\":\"GREATER_THAN\",\"value\":\"1\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_ntp_time_reset\",\"preContext\":\"time reset \\\\+\",\"postContext\":\" s\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3ooryf65djnvsv64tfonsxi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"ntpd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Email - Overview",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Email events by hostname",
+          "info":"<span>Which devices (i.e. hostnames) are running email services. You can easily select one or more results in this chart to add a dashboard filter, drilling down into a subset of devices to do analysis.</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"postfix,sendmail,sm-mta\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Devices running Postfix",
+          "info":"Informational widget to let you know how many devices are running Postfix. Note that devices running Postfix may not be relays and in many cases are responsible for handling mail local to the device only.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"postfix\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Devices running Sendmail",
+          "info":"<span>Informational widget to let you know how many devices are running Sendmail. Note that devices running Sendmail may not be relays and in many cases are responsible for handling mail local to the device only.</span>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Devices running Sendmail MTA",
+          "info":"<span>Informational widget to let you know how many devices are running Sendmail MTA. Note that devices running Sendmail MTA may not be relays and in many cases are responsible for handling mail local to the device only.</span>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Postfix messages over time by status",
+          "info":"<span>For every message processed by Postfix a status is generated. When the system is working properly, only \"Sent\" statuses should be seen. Any other status message may indicate a potential problem that should be investigated. For example, a status of \"Host Unknown\" may indicate a configuration or DNS issue.</span>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1385882398768,\"endTimeMillis\":1388461605886,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxk5ljmq000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_postfix_status\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxg5dbor2xg000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_postfix_uuid\",\"preContext\":\"postfix/\\\\w+\\\\[\\\\d+\\\\]: \",\"postContext\":\": \",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxk5ljmq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"},{\"displayName\":\"linux_postfix_status\",\"preContext\":\"status=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxg5dbor2xg000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sendmail events by status",
+          "info":"For every message processed by Sendmail a status is generated. When the system is working properly, only \"Sent\" statuses should be seen. Any other status message may indicate a potential problem that should be investigated. For example, a status of \"Host Unknown\" may indicate a configuration or DNS issue.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_stat\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_stat\",\"preContext\":\"stat=\",\"postContext\":\"\",\"regexValue\":\"(Sent|.*)\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sendmail\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sendmail MTA events by status",
+          "info":"For every message processed by Sendmail MTA a status is generated. When the system is working properly, only \"Sent\" statuses should be seen. Any other status message may indicate a potential problem that should be investigated. For example, a status of \"Host Unknown\" may indicate a configuration or DNS issue.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_mta_stat\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_mta_stat\",\"preContext\":\"stat=\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sm-mta\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Postfix events by from",
+          "info":"Where email is being sent from. Primarily for informational purposes though a large number of results from a small number of sources may indicate a configuration issue or DOS attack.<br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwm4tpnu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_postfix_from\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwm4tpnu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_postfix_from\",\"preContext\":\"from=<\",\"postContext\":\">\\\\, \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwm4tpnu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Maximum of sendmail recipients grouped by sender",
+          "info":"How many recipients receive an email can be important from a security / spam perspective. Sending email to a large number of recipients should typically happen very rarely in most environments.",
+          "chartType":"column",
+          "chartOptions":"{\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410745986268,\"endTimeMillis\":1410832386267,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw44tdob2hg000\",\"displayName\":\"sendmail_nrcpts\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw44tdob2hg000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sendmail_from\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"sendmail_nrcpts\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw44tdob2hg000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sendmail_from\",\"preContext\":\"sendmail\\\\[\\\\d+\\\\]: \\\\w+:.* from=\",\"postContext\":\",\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000\",\"constraints\":null},{\"displayName\":\"sendmail_nrcpts\",\"preContext\":\"sendmail\\\\[\\\\d+\\\\]: \\\\w+:.* nrcpts=\",\"postContext\":\",\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw44tdob2hg000\",\"constraints\":null}]}",
+          "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1410745984953,\"endTimeMillis\":1410832386267,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"sendmail_from\",\"preContext\":\"sendmail\\\\[\\\\d+\\\\]: \\\\w+:.* from=\",\"postContext\":\",\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000\",\"constraints\":null}]}"
+        }, {
+          "name":"Maximum number of recipients grouped by sender",
+          "info":"<span>How many recipients receive an email can be important from a security / spam perspective. Sending email to a large number of recipients should typically happen very rarely in most environments.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410746096525,\"endTimeMillis\":1410832496524,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpw44tdob2hg000\",\"displayName\":\"linux_sendmail_mta_nrcpts\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpw44tdob2hg000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_mta_from\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"linux_sendmail_mta_nrcpts\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpw44tdob2hg000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_mta_from\",\"preContext\":\"from=(<)?\",\"postContext\":\"(>)?,\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sm-mta\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"},{\"displayName\":\"linux_sendmail_mta_nrcpts\",\"preContext\":\"nrcpts=\",\"postContext\":\",\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpw44tdob2hg000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sm-mta\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1410746095472,\"endTimeMillis\":1410832496524,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_sendmail_mta_from\",\"preContext\":\"from=(<)?\",\"postContext\":\"(>)?,\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sm-mta\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}"
+        } ]
+      } ]
+    }, {
+      "name":"Email - Postfix",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Postfix emails sent",
+          "info":"<span>Information widget to let you know who many email messages are being sent over the defined time range.<br><br><span style=\"font-weight: bold;\">Note:</span></span><span>&nbsp;This value is computed rom the&nbsp;</span><span style=\"font-style: italic;\">Postfix events by&nbsp;</span><span style=\"font-style: italic;\">to</span><span>&nbsp;widget below.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1420088400000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3mnfxhk6c7obxxg5dgnf4f65dp\",\"displayName\":\"linux_postfix_to\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3mnfxhk6c7obxxg5dgnf4f65dp\",\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxi3y0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_postfix_to\",\"preContext\":\"to=<\",\"postContext\":\">\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxi3y0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Postfix messages by hostname",
+          "info":"Which devices (i.e. hostnames) are running Postfix. You can easily select one or more results in this chart to add a dashboard filter, drilling down into a subset of Postfix devices to do analysis.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1420088400000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxk5ljmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_postfix_uuid\",\"preContext\":\"postfix/\\\\w+\\\\[\\\\d+\\\\]: \",\"postContext\":\": \",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxk5ljmq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Postfix messages over time by status",
+          "info":"<span>For every message processed by Postfix a status is generated. When the system is working properly, only \"Sent\" statuses should be seen. Any other status message may indicate a potential problem that should be investigated. For example, a status of \"Host Unknown\" may indicate a configuration or DNS issue.</span>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1385882398768,\"endTimeMillis\":1388461605886,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxk5ljmq000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_postfix_status\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxg5dbor2xg000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_postfix_uuid\",\"preContext\":\"postfix/\\\\w+\\\\[\\\\d+\\\\]: \",\"postContext\":\": \",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxk5ljmq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"},{\"displayName\":\"linux_postfix_status\",\"preContext\":\"status=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxg5dbor2xg000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Postfix email delay rate over time",
+          "info":"How long messages were in the Postfix queue. In general, higher values are bad. If you notice a large increase in the average or max values then this may indicate a potential performance problem.<br><br><span style=\"font-weight: bold;\">Note:</span> This widget is based on all Postfix devices in the environment. When troubleshooting potential performance issue either dashboard filters should be used to restrict which Postfix devices these metrics are computed for or this query should be run on Interactive Analytics where filters can be used in addition to grouping by hostname (i.e. the Postfix device).",
+          "chartType":null,
+          "chartOptions":"{\"spline\":false,\"legend\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1420088400000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},{\"label\":\"Min\",\"value\":\"MIN\",\"requiresField\":true,\"numericOnly\":true},{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwizlmmf4q0000\",\"displayName\":\"linux_postfix_delay\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwizlmmf4q0000\",\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwizlmmf4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_postfix_delay\",\"preContext\":\"delay=\",\"postContext\":\"\\\\,\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwizlmmf4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Postfix message by to",
+          "info":"Where email is being sent to. Primarily for informational purposes though a large number of results to a small number of recipients&nbsp;may indicate a configuration issue or DOS attack.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1420088400000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxi3y0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_postfix_to\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxi3y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_postfix_to\",\"preContext\":\"to=<\",\"postContext\":\">\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxi3y0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Postfix events by from",
+          "info":"Where email is being sent from. Primarily for informational purposes though a large number of results from a small number of sources may indicate a configuration issue or DOS attack.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwm4tpnu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_postfix_from\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwm4tpnu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_postfix_from\",\"preContext\":\"from=<\",\"postContext\":\">\\\\, \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpwm4tpnu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Postfix sent messages by relay",
+          "info":"Where email is being relayed to. Mostly for informational purposes though an unknown relay may indicate a configuration issue or a compromised system.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxezlmmf4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_postfix_relay\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxezlmmf4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_postfix_relay\",\"preContext\":\"relay=(<)?\",\"postContext\":\"(\\\\[|>|,)\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3qn5zxiztjpbpxezlmmf4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"postfix\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Email - Sendmail",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Sendmail messages sent",
+          "info":"<span>Information widget to let you know who many email messages are being sent over the defined time range.<br><br><span style=\"font-weight: bold;\">Note:</span></span><span>&nbsp;This value is computed rom the&nbsp;</span><span style=\"font-style: italic;\">Sendmail events by&nbsp;</span><span style=\"font-style: italic;\">to</span><span>&nbsp;widget below.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1404846893858,\"endTimeMillis\":1404933294978,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000\",\"operator\":\"CONTAINS\",\"value\":\"sent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_sendmail_stat\",\"preContext\":\"stat=\",\"postContext\":\"\",\"regexValue\":\"(Sent|.*)\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sendmail\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sendmail events by hostname",
+          "info":"<span>Which devices (i.e. hostnames) are running Sendmail. You can easily select one or more results in this chart to add a dashboard filter, drilling down into a subset of Sendmail devices to do analysis.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Sendmail events by status",
+          "info":"For every message processed by Sendmail a status is generated. When the system is working properly, only \"Sent\" statuses should be seen. Any other status message may indicate a potential problem that should be investigated. For example, a status of \"Host Unknown\" may indicate a configuration or DNS issue.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_stat\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_stat\",\"preContext\":\"stat=\",\"postContext\":\"\",\"regexValue\":\"(Sent|.*)\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf643umf2a0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sendmail\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Sendmail events by to",
+          "info":"<span>Where email is being sent to. Primarily for informational purposes though a large number of results to a small number of recipients&nbsp;may indicate a configuration issue or DOS attack.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf65dp\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_to\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf65dp\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_to\",\"preContext\":\"to=\",\"postContext\":\",\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf65dp\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sendmail\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sendmail events by from",
+          "info":"<span>Where email is being sent from. Primarily for informational purposes though a large number of results from a small number of sources may indicate a configuration issue or DOS attack.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sendmail_from\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sendmail_from\",\"preContext\":\"sendmail\\\\[\\\\d+\\\\]: \\\\w+:.* from=\",\"postContext\":\",\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpwm4tpnu000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sendmail events by relay",
+          "info":"<span>Where email is being relayed to. Mostly for informational purposes though an unknown relay may indicate a configuration issue or a compromised system.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sendmail\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf64tfnrqxs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_relay\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf64tfnrqxs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_relay\",\"preContext\":\"relay=\",\"postContext\":\",\",\"regexValue\":\".*?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf64tfnrqxs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sendmail\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Email - Sendmail MTA",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Sendmail MTA messages sent",
+          "info":"<span>Information widget to let you know who many email messages are being sent over the defined time range.<br><br><span style=\"font-weight: bold;\">Note:</span></span><span>&nbsp;This value is computed rom the&nbsp;</span><span style=\"font-style: italic;\">Sendmail MTA events by&nbsp;</span><span style=\"font-style: italic;\">to</span><span>&nbsp;widget below.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1404847637237,\"endTimeMillis\":1404934038493,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000\",\"operator\":\"CONTAINS\",\"value\":\"sent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_sendmail_mta_stat\",\"preContext\":\"stat=\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sm-mta\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sendmail MTA events by hostname",
+          "info":"<span>Which devices (i.e. hostnames) are running Sendmail MTA. You can easily select one or more results in this chart to add a dashboard filter, drilling down into a subset of Sendmail MTA devices to do analysis.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Sendmail MTA events by status",
+          "info":"For every message processed by Sendmail MTA a status is generated. When the system is working properly, only \"Sent\" statuses should be seen. Any other status message may indicate a potential problem that should be investigated. For example, a status of \"Host Unknown\" may indicate a configuration or DNS issue.<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_mta_stat\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_mta_stat\",\"preContext\":\"stat=\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxg5dboq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sm-mta\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Sendmail MTA events by to",
+          "info":"<span>Where email is being sent to. Primarily for informational purposes though a large number of results to a small number of recipients&nbsp;may indicate a configuration issue or DOS attack.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxi3y0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_mta_to\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxi3y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_mta_to\",\"preContext\":\" to=(<)?\",\"postContext\":\"(>)?\\\\, \",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpxi3y0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sm-mta\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sendmail MTA events by from",
+          "info":"<span>Where email is being sent from. Primarily for informational purposes though a large number of results from a small number of sources may indicate a configuration issue or DOS attack.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_sendmail_mta_from\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_sendmail_mta_from\",\"preContext\":\"from=(<)?\",\"postContext\":\"(>)?,\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tmvxgi3lbnfwf63lumfpwm4tpnu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sm-mta\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sendmail MTA events by relay",
+          "info":"<span>Where email is being relayed to. Mostly for informational purposes though an unknown relay may indicate a configuration issue or a compromised system.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"sm-mta\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw25dbl5zgk3dbpe000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sendmail_mta_relay\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw25dbl5zgk3dbpe000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sendmail_mta_relay\",\"preContext\":\"sm-mta\\\\[\\\\d+\\\\]: \\\\w+:.* relay=\",\"postContext\":\",\",\"regexValue\":\".*?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43fnzsg2yljnrpw25dbl5zgk3dbpe000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Syslog - Overview",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Email events by hostname",
+          "info":"<span>Which devices (i.e. hostnames) are running email services. You can easily select one or more results in this chart to add a dashboard filter, drilling down into a subset of devices to do analysis.</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"liagentd,rsyslogd,syslog-ng\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Devices running liagent",
+          "info":"<span><span style=\"font-weight: bold;\">IMPORTANT:</span> This widget requires that the liagent be running version 2.6 or newer, use the cfapi protocol and add an appname tag of liagent to all liagent logs being collected.<br><br>Informational widget to let you know how many devices are running liagent.</span>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"liagentd\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Devices running rsyslog",
+          "info":"<span>Informational widget to let you know how many devices are running rsyslog.</span>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1420088400000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"rsyslogd\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_rsyslog_version\",\"preContext\":\"swVersion=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"rsyslogd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Devices running syslog-ng",
+          "info":"<span>Informational widget to let you know how many devices are running syslog-ng.</span>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"LIagent events over time",
+          "info":"<span style=\"font-weight: bold;\">IMPORTANT:</span><span>&nbsp;This widget requires that the liagent be running version 2.6 or newer, use the cfapi protocol and add an appname tag of liagent to all liagent logs being collected.<br></span><br><span>All events with an appname that starts with liagentd.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"liagentd\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Rsyslog events over time",
+          "info":"<span>All events with an appname that starts with rsyslogd.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371974984878,\"endTimeMillis\":1388545620766,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"rsyslogd\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Syslog-NG events over time",
+          "info":"<span>All events with an appname that starts with syslog-ng.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Syslog - Rsyslog",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Rsyslog events over time",
+          "info":"<span>All events with an appname that starts with rsyslogd.</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371974984878,\"endTimeMillis\":1388545620766,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"rsyslogd\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Devices running rsyslog",
+          "info":"<span>Informational widget to let you know how many devices are running rsyslog.</span>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1420088400000,\"endTimeMillis\":1431662400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"rsyslogd\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_rsyslog_version\",\"preContext\":\"swVersion=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"rsyslogd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Rsyslog events by message",
+          "info":"The message part of rsyslog events.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371974984878,\"endTimeMillis\":1388545999482,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"rsyslogd\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_rsyslog_message\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pw2zltonqwozi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_rsyslog_version\",\"preContext\":\"swVersion=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"rsyslogd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"},{\"displayName\":\"linux_rsyslog_message\",\"preContext\":\"\\\\] \",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pw2zltonqwozi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"rsyslogd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Rsyslog events by version",
+          "info":"The version of rsyslog from which events have been seen. Assuming you wish to standardize on a version, this is great from an auditing perspective.",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371974984878,\"endTimeMillis\":1388545914339,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"rsyslogd\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_rsyslog_version\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_rsyslog_version\",\"preContext\":\"swVersion=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3son4xg3dpm5pxmzlsonuw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"rsyslogd\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Syslog - Syslog-NG",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Syslog-NG events over time by connection state",
+          "info":"Connection state applies to both sources and destinations. States include:<br><br><span>•&nbsp;</span><b>Established</b><br>•&nbsp;<b>Accepted</b><br>•&nbsp;<b>Closed</b><br>•&nbsp;<b>Broken</b><br><span>•&nbsp;</span><b>Failed</b>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1387925700000,\"endTimeMillis\":1387925999999,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_syslog_connection_state\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_syslog_connection_state\",\"preContext\":\"Syslog connection \",\"postContext\":\"; fd\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Devices running syslog-ng",
+          "info":"<span>Informational widget to let you know how many devices are running syslog-ng.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Syslog-NG client connections (sources) over time",
+          "info":"The number of client connections over time. This number should be fairly stable unless clients are added or removed. If a large increase or decrease is seen unexpectedly then the clients should be investigated to ensure proper logging is in place.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3mnfxhk6c7on4xg3dpm5pwg3djmvxhix3tn52xey3f\",\"displayName\":\"linux_syslog_client_source\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3mnfxhk6c7on4xg3dpm5pwg3djmvxhix3tn52xey3f\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"accepted\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rwy2lfnz2f643povzggzi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_syslog_client_source\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rwy2lfnz2f643povzggzi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_syslog_client_source\",\"preContext\":\"client='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rwy2lfnz2f643povzggzi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"},{\"displayName\":\"linux_syslog_connection_state\",\"preContext\":\"Syslog connection \",\"postContext\":\"; fd\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Syslog-NG servers connections (destinations) over time",
+          "info":"The number of server connections over time. Syslog-NG can forward events to other syslog systems and this chart shows to how many syslog servers are being sent events. This number should be fairly stable unless servers are added or removed. If an increase or decrease is seen unexpectedly then the servers should be investigated to ensure logs are being forwarded properly.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1278321659000,\"endTimeMillis\":1448674601000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3mnfxhk6c7on4xg3dpm5pxgzlsozsxex3emvzxi2lomf2gs33o\",\"displayName\":\"linux_syslog_server_destination\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3mnfxhk6c7on4xg3dpm5pxgzlsozsxex3emvzxi2lomf2gs33o\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"established\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5zwk4twmvzf6zdfon2gs3tboruw63q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_syslog_server_destination\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5zwk4twmvzf6zdfon2gs3tboruw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_syslog_connection_state\",\"preContext\":\"Syslog connection \",\"postContext\":\"; fd\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"},{\"displayName\":\"linux_syslog_server_destination\",\"preContext\":\"server='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5zwk4twmvzf6zdfon2gs3tboruw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Syslog-NG error events by message",
+          "info":"Error events are issues preventing Syslog-NG from operating properly. One common issue is \"No space left on device\", which indicates that the drive Syslog-NG has been configured to use is full. Error events may indicate a loss of syslog collection and should be investigatedimmediately.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1410745683961,\"endTimeMillis\":1410832083960,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5sxe4tpojpw2zltonqwozi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_syslog_error_message\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5sxe4tpojpw2zltonqwozi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_syslog_error_message\",\"preContext\":\"error='\",\"postContext\":\"'\",\"regexValue\":\".*?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5sxe4tpojpw2zltonqwozi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1410745683961,\"endTimeMillis\":1410832083960,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5sxe4tpojpw2zltonqwozi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"linux_syslog_error_message\",\"preContext\":\"error='\",\"postContext\":\"'\",\"regexValue\":\".*?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5sxe4tpojpw2zltonqwozi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}"
+        }, {
+          "name":"Syslog-NG configuration events by state",
+          "info":"Syslog-NG process state. Any time a new or modified configuration is detected during process start or reload the event is logged. This chart indicates when a configuration change is detected during a Syslog-NG is start or reload.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"configuration\",\"startTimeMillis\":1387120815290,\"endTimeMillis\":1388873746537,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"internal error\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_syslog_config_message\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tgnftv63lfonzwcz3f\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_syslog_config_message\",\"preContext\":\"syslog-ng\\\\[\\\\d+\\\\]: \",\"postContext\":\"\",\"regexValue\":\".*configuration.*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tgnftv63lfonzwcz3f\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Syslog-NG connection failed events by reason",
+          "info":"The reason why a connection has failed. This information is critical to troubleshooting and resolving connection failures. Common issues include \"No route to host\", which may indicate a network issue or \"Connection refused\", which may indicate a destination that is misconfigured.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1387925700000,\"endTimeMillis\":1387925999999,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"failed\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_syslog_failed_reason\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5tgc2lmmvsf64tfmfzw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_syslog_connection_state\",\"preContext\":\"Syslog connection \",\"postContext\":\"; fd\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tomvrxi2lpnzpxg5dborsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"},{\"displayName\":\"linux_syslog_failed_reason\",\"preContext\":\"error='\",\"postContext\":\"'\",\"regexValue\":\".*?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5tgc2lmmvsf64tfmfzw63q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Syslog-NG configuration errors by message",
+          "info":"Configuration error messages that need to be investigated. Syslog-NG may not fully function properly until these configuration issues are addressed.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"configuration \\\"internal error\\\"\",\"startTimeMillis\":1387120815290,\"endTimeMillis\":1388873746537,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_syslog_config_message\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tgnftv63lfonzwcz3f\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_syslog_config_message\",\"preContext\":\"syslog-ng\\\\[\\\\d+\\\\]: \",\"postContext\":\"\",\"regexValue\":\".*configuration.*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5rw63tgnftv63lfonzwcz3f\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Relevant Queries",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Syslog-NG internal error",
+            "chartQuery":"{\"query\":\"Internal error\",\"startTimeMillis\":1432249767237,\"endTimeMillis\":1432250067236,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"An internal error has been found, which typically indicates a syntax error in the configuration. The impact of this issue is unknown, but may include events not being properly configured. This issue should be investigated immediately.",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Syslog-NG state over time",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1388718404058,\"endTimeMillis\":1388804862714,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27on2gc5df\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syslog_state\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27on2gc5df\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syslog_state\",\"preContext\":\"syslog\\\\-ng \",\"postContext\":\"; version\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27on2gc5df\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1388718404058,\"endTimeMillis\":1388804862714,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27on2gc5df\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"syslog_state\",\"preContext\":\"syslog\\\\-ng \",\"postContext\":\"; version\",\"regexValue\":\".*\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27on2gc5df\",\"constraints\":null}]}",
+            "info":""
+          }, {
+            "name":"Syslog-NG versions by hostname",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1388718406532,\"endTimeMillis\":1388804863900,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27ozsxe43jn5xa0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syslog_version\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27ozsxe43jn5xa0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syslog_version\",\"preContext\":\"syslog\\\\-ng .*; version='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27ozsxe43jn5xa0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1388718405060,\"endTimeMillis\":1388804863900,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27ozsxe43jn5xa0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"syslog_version\",\"preContext\":\"syslog\\\\-ng .*; version='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadsx3dn5ws43djnz2xq43zonwg6z27ozsxe43jn5xa0000\",\"constraints\":null}]}",
+            "info":""
+          }, {
+            "name":"Syslog-NG number of allowed concurrent connections exceeded",
+            "chartQuery":"{\"query\":\"Number of allowed concurrent connections exceeded\",\"startTimeMillis\":1432249522390,\"endTimeMillis\":1432249822389,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"This is a configuration<span>&nbsp;(or potential security)</span>&nbsp;issue indicating that the configured maximum number of connections allowed for the syslog source has been exceeded. This may indicate the number of syslog clients has increased or a DoS attack is being performed. Assuming this is just a configuration issue, the solution is to adjust the max-connections setting in syslog-ng for the impacted source(s). Note that until this is fixed, not all events being sent to the server are being properly collected. This issue should be investigated immediately.",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          } ]
+        }, {
+          "name":"Syslog-NG events by message",
+          "info":"These events indicate different events in the system, but can be helpful in tracking down potential issues including errors.",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1432250115613,\"endTimeMillis\":1432250415612,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"syslog-ng\"},{\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5wwk43tmftwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"linux_syslog_message\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5wwk43tmftwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"linux_syslog_message\",\"preContext\":\"syslog-ng(\\\\[\\\\d+\\\\])?: \",\"postContext\":\";\",\"regexValue\":\".*?\",\"internalName\":\"ibadsx3dn5ws43djnz2xq3djnz2xqx3tpfzwy33hl5wwk43tmftwk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"syslog-ng\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false,\\\"disableRemove\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "agentClasses":[ {
+    "name":"Linux",
+    "info":"Generic Linux agent group to collect events from standard log locations.",
+    "agentConfig":"[filelog|auth]\ndirectory=/var/log\ninclude=auth.log;auth.log.?\nparser=syslog_parser\n\n[filelog|messages]\ndirectory=/var/log\ninclude=messages;messages.?\nparser=syslog_parser\n\n[filelog|syslog]\ndirectory=/var/log\ninclude=syslog;syslog.?\nparser=syslog_parser\n\n[parser|syslog_parser]\nbase_parser=clf\nformat=%t %i %{appname}i: %M\nfield_decoder={\"appname\":\"syslog_appname_parser\"}\nexclude_fields=log_message\n\n[parser|syslog_appname_parser]\nbase_parser=clf\nformat=%{appname}i[%{thread_id}i]\n"
+  } ],
+  "author":"VMware, Inc.",
+  "url":"http://www.vmware.com",
+  "contentVersion":"1.0",
+  "info":"<span>The content pack for Linux provides you with information about key entities of any Linux</span><span>&nbsp;operating system installation’s health using Log Insight’s ability to monitor filesystem logs.<br><br>Log Insight offers very intuitive graphical representation, especially with regards to log events. Spikes in the number and types of messages received can be flagged as events with external notifications. System administrators can drill into these events for looking at where and why these are being generated.<br></span><br><span>There are 12 pre-defined Linux OS specific dashboards, with total of 45 extracted field for helping to visualize, analyze and take meaningful action on Linux OS log information. It provides:<br><br>•&nbsp;<span style=\"font-weight: bold;\">Security monitoring:</span>Including SSH, su and sudo for auditing and incident management.<br><br>• <span style=\"font-weight: bold;\">System application events:</span>&nbsp;Including Cron and NTP for daemon process monitoring.<br></span><br><span>• <span style=\"font-weight: bold;\">Email information</span></span><span style=\"font-weight: bold;\">:</span><span>&nbsp;For Postfix and Sendmail making it possible to troubleshoot and manage mail servers.<br></span><br><span>•&nbsp;<span style=\"font-weight: bold;\">Syslog information</span></span><span style=\"font-weight: bold;\">:</span><span>&nbsp;For Rsyslog and Syslog-NG making it possible to troubleshoot and manage third-party syslog agents.</span><br>",
+  "instructions":"<span>The&nbsp;<span style=\"font-style: italic;\">Linux</span>&nbsp;content pack requires the use of <span style=\"font-weight: bold;\">*either*</span> a third party syslog agent such as Rsyslog or Syslog-NG&nbsp;<span style=\"font-weight: bold;\">*or*</span> the Log Insight agent with the cfapi protocol (default) and the included agent group configuration. To apply the agent group configuration:<br><br>•&nbsp;Go to the&nbsp;<span style=\"font-style: italic;\"><a href=\"https://10.152.157.100/admin/agents\">Administration &gt; Agents</a>&nbsp;</span>page (requires Super Admin privileges)<br>•&nbsp;Select the<span style=\"font-weight: bold;\">&nbsp;</span><span style=\"font-style: italic;\">All Agents</span><b>&nbsp;</b>drop-down at the top of the window and select the&nbsp;<span style=\"font-style: italic;\">Copy Template</span><b>&nbsp;</b>button to the right of the<span style=\"font-style: italic;\">&nbsp;Linux</span>&nbsp;agent group<br>•&nbsp;Add the desired filters to restrict which agent receive the configuration (optional)<br>•&nbsp;Select the&nbsp;<span style=\"font-style: italic;\">Refresh</span>&nbsp;button at the top of the page<br>•&nbsp;Select the&nbsp;<span style=\"font-style: italic;\">Save Configuration</span>&nbsp;button at the bottom of the page</span><br>",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAEJGlDQ1BJQ0MgUHJvZmlsZQAAOBGFVd9v21QUPolvUqQWPyBYR4eKxa9VU1u5GxqtxgZJk6XtShal6dgqJOQ6N4mpGwfb6baqT3uBNwb8AUDZAw9IPCENBmJ72fbAtElThyqqSUh76MQPISbtBVXhu3ZiJ1PEXPX6yznfOec7517bRD1fabWaGVWIlquunc8klZOnFpSeTYrSs9RLA9Sr6U4tkcvNEi7BFffO6+EdigjL7ZHu/k72I796i9zRiSJPwG4VHX0Z+AxRzNRrtksUvwf7+Gm3BtzzHPDTNgQCqwKXfZwSeNHHJz1OIT8JjtAq6xWtCLwGPLzYZi+3YV8DGMiT4VVuG7oiZpGzrZJhcs/hL49xtzH/Dy6bdfTsXYNY+5yluWO4D4neK/ZUvok/17X0HPBLsF+vuUlhfwX4j/rSfAJ4H1H0qZJ9dN7nR19frRTeBt4Fe9FwpwtN+2p1MXscGLHR9SXrmMgjONd1ZxKzpBeA71b4tNhj6JGoyFNp4GHgwUp9qplfmnFW5oTdy7NamcwCI49kv6fN5IAHgD+0rbyoBc3SOjczohbyS1drbq6pQdqumllRC/0ymTtej8gpbbuVwpQfyw66dqEZyxZKxtHpJn+tZnpnEdrYBbueF9qQn93S7HQGGHnYP7w6L+YGHNtd1FJitqPAR+hERCNOFi1i1alKO6RQnjKUxL1GNjwlMsiEhcPLYTEiT9ISbN15OY/jx4SMshe9LaJRpTvHr3C/ybFYP1PZAfwfYrPsMBtnE6SwN9ib7AhLwTrBDgUKcm06FSrTfSj187xPdVQWOk5Q8vxAfSiIUc7Z7xr6zY/+hpqwSyv0I0/QMTRb7RMgBxNodTfSPqdraz/sDjzKBrv4zu2+a2t0/HHzjd2Lbcc2sG7GtsL42K+xLfxtUgI7YHqKlqHK8HbCCXgjHT1cAdMlDetv4FnQ2lLasaOl6vmB0CMmwT/IPszSueHQqv6i/qluqF+oF9TfO2qEGTumJH0qfSv9KH0nfS/9TIp0Wboi/SRdlb6RLgU5u++9nyXYe69fYRPdil1o1WufNSdTTsp75BfllPy8/LI8G7AUuV8ek6fkvfDsCfbNDP0dvRh0CrNqTbV7LfEEGDQPJQadBtfGVMWEq3QWWdufk6ZSNsjG2PQjp3ZcnOWWing6noonSInvi0/Ex+IzAreevPhe+CawpgP1/pMTMDo64G0sTCXIM+KdOnFWRfQKdJvQzV1+Bt8OokmrdtY2yhVX2a+qrykJfMq4Ml3VR4cVzTQVz+UoNne4vcKLoyS+gyKO6EHe+75Fdt0Mbe5bRIf/wjvrVmhbqBN97RD1vxrahvBOfOYzoosH9bq94uejSOQGkVM6sN/7HelL4t10t9F4gPdVzydEOx83Gv+uNxo7XyL/FtFl8z9ZAHF4bBsrEwAADuhJREFUeAHtnQ9UFVUex39tsduaZ5dO257NrAQ7bYWeemKbWkBWdhRSFOKsmVCnEtzVxLKg3dI0XTXzH4UnQ82AysyUkIA2/xRYiS6iuz4VauWxiezRimclauCeu/cCD2bem5l7583Fx3vzm3PueTN3fvd37+97P2/mzp2Z9y4C7SWMZk+gKZGmoTT1o6kvTbjYR4HTNNQmmqppKqapiKY2mrhLErU4ShPBhBooGGBMMDZ0l5/RPS/ThOCgBkYMMEYYKz4LwoPgGIGj3MdYUS3s0KQ0wHXUg8dA++nsIgoOGzDX0hRJEy6ogKgC9dTwRnYuY1dbCI+obGjnUYAxM4EBxC7VcUEF/FEgkQHE5nlwQQX8UWAoGwP9SBNOEvojH5Y5zQBio21cUAG/FGCnMFxQAb8VQID8lg4LMgUQIOTAkgIIkCX5sDAChAxYUgABsiQfFkaAkAFLCiBAluTDwggQMmBJAQTIknxYGAFCBiwpgABZkg8LI0DIgCUFECBL8mFhBAgZsKQAAmRJPiyMACEDlhRAgCzJh4URIGTAkgIIkCX5sDAChAxYUgABsiQfFkaAkAFLCiBAluTDwggQMmBJAQTIknxYGAFCBiwpgABZkg8LI0DIgCUFECBL8mFhBAgZsKQAAmRJPiyMACEDlhRAgCzJh4URIGTAkgIIkCX5sLBlgBxPFEKdqxacTic4D9aBq243ZDpQWLsocInVQPv+NgJuGPB7hRs3XIc/GqzQI7RXLR+B4JyvQBpZvkaYExIKWAdIpgzXpUD+tkNw8uTJrlS3ZwOkx8msxNtXNCws2gMnW1qghSb3N7WwcdEkbyOh7ay8HdDo7vDT4j4GlQWzTf8JSabKxwmo+WApDBGq3T+jKa+Wgcvtbo+9vc2FT5t2xPtbn/b9Q2JjNe1invuMqJdmsjBG66+jBpLYIRGaPmiLCfR7ktS1qj11bzWTjTMH65f1+6+Zosm79W3d1SjW6t6bZqq+3H2nFKW7V1sOryaRgu1btlvbB/n2YxIv6KNdS0HbZbu/6W6oYs29d4mZ2LU62ysvah5xswrcx8j2gr+R+Oju/VoALVcAFDkmg6z5cD9xMzjOf6ErhK54XYE1k9wHuus1I5SerWPWJ13efVdOkCyHWH2O6Vt9iytySrMHcTskYuImovv9ob5aDuRwfejFqZU/ZcNXihZ6rzYTZR9qlVfk8UVKeuWAdw2k8dA2sjz9DjLG5wh0gh6BriOTZ68lNfXt2KnKFqVfrSFEAqlsUZlpb5yvJqmC3y5FgBr1dcQ8p+Jb7Xo6c7e/MFy3rNJ/zHzvo7DabdWiUVw/PB/MY82qRK4fZbv01iM4wLO6RNrc6Z8H0EDdwzyryOzi3vuihghxZLsva5quW78SPyXoCejJ5wEkKqLvUVjddBE/MfP3qgtpbrWQNcm8/uLsv+pZ4tL0rcxsJUXpYkMG/iD65ikwNsLy1T7ts44l/LZHIGuAZ8v8Z9j1GVBe+Kj5gr28xK7KfXCG28Y+8PjGaqBHYT+XOCjduwgGcEsfhfK8g1wrZsAH6HA55BTshIaT/PB4NZ467oQP1q2BqgaepfH+GyavhqLMwcZGwbZ3258gp+oHfqsvjoZ1h1fz7TQssko2QHx/jR1eWYfWvQh5XnlGmxqnFO3DoGN0Bsl9dwdxNWtfuSgPgp51d+NBUrR2Nkl2GFyBgfgpzOOXkKOEHsmE204F8LHtTaewjvalkErBU7mzcKJPPFoxevJint/ZLZ3Bmh+DdV9hPZUafTqmlRs0g+36mtBbGoJB+gMQreJ4CaFzJIJ1+Nr1PoBoG4cvJo0cZTt2t5KC1P5isVOfJ0V8fv+p7lWyHgv8Uxgt6btEw5xZ9/pmq3KugZlzp6lypG/0ux8+2vmcdLcBdbj7WRj7RIlAE8IgdX0ZpHMtE2B7WTZcybWrh7lxd0EZ105t4BdAWSUlMF5gYD1g3IoeH6tcOXIBVC4apo4qyLf2546D1Pwj/CguHgy5X643nO1eWJEP94TzXLXBexnjYd4Bnp32frHDYOepQu/UVZe/gOQfPKNxoDxCMrljFT9PYV21nSDL431PUTRcw9h65SlM0Wa92e2usDtXXDqz5mNeFpkaIMS59kFDnTg6GousKqw3h/Dt1o6xCL0d4fKOjm3/5x3OWMUqQLSOs1+QZIX4qnbr5Pd2gAASBOfH6LxNpte8zajXOu4eaPWHIs/kbQst0EQBohOKxxQ1d63Sb7/i1oVjlvbgumbRMK3KO/MkAETbY/YKovcDRPtmsMjEH+uMo4ojfQqpEpnZp/fYYnW+XCJfwE4bUYCAOCatIHVeDdOaXp+z7XgXXmyltaGEpEYY1cMB6PjHZNn6wyqfehtmDsdBARDt4IhHje+TdWnR9Hb7FzJ339muLP0VOg0ifJVs1HemCYwjuRUNHe36cr3OneZuIGrem2Vw5PE0rNteM+Czn7afAvNrz2vuVme2CF/eBgtA7Jue9Lrv/Uh13B1bra1Gt2Q9JVrJRs17kp7+MPVpyrgLhvj0TJIcaVA2Jo1kpt3SZW98SOQD1PE4w1TiFJnDPP8vQi9vuXUHE0BMP/4TCx5AjD/NHKWN+61dY77QAk64nWXsgw9Q17k6cR3xOotqqtVKB+6RHIiCDSCgM/alQjOCmpK0Z0oYNKv62q95IApD4JbixyD11X9y6w+79kHYUdzDE5ncVsg2qICEW5+CBn/dflcCiX/I8re0ZrngA4iGsWXGrbC86nvNgJSZA8blQmn2CGVW8K83rYCISW8L3Ln3DrUesoeOg0rvbIvbQQkQi3nW8Idg1yl+9PGL34UXbuXbBZXFhsmQuvQfJprshsK0OFjSYKKIoGnQAgRQCrHxL8E33ECvgbnbPwY6hgqpZcsz82C/8BM29bC2sLFH4g9igKge9MZj8uxP+MJcMQqKP5vPtwsii2W73wZHH9EGR0Px3iWixqbsghsgGuquBXdD9of/5QYdfsfzULUikWsXDAaTVx+Gp4b92lRTw297Bujlu6kyIsZBDxALcsnYsfCBwBH69pnrgb7ZEdRLxPRN8EbGTX7FEPVYvvSnI0ICIIB9MOH2p+BLrqyXw7RCK88UcyvoWYOoebDr1QcgzO9awmD8ylKpFxUhAhBVlF7ejn7sfWjjiXup/88U81z37P4EqPxsDlxtuRJ6UVHxKdCZfSlL6ABE5XC9kQKPCjyIFXZTBjhXPQjnfmiVIuKFcJK7732I4T0Ydt4FZR8e5jfnV3Gw6UAO307AIqQAYvG+9cjNsMbJ/3mHqD+vhb+MvEpAosCbTFn/FUwbcim3IWXPj4OEsVGwqoYff59bZoBTwutRIQcQUzl98FSBOZI+EH4Zt08CbkCfr4K8R67ntqNh63RIeMnZbjc9Og32CMwRRUl4PSokAQLIhyHjVwN3orqNO2LidlyPGgxfDH9fOppfxdcb4J7EVQq7TTBMJH46HLc6qA5RgKiW9EW9Scs+V4iqsRrm//WMhjfJWSlQtV3kbYpayLhrEtR7187iX8CJv72MtUF16AJExSl/+k5YVPmdt7RBsD0Q8g4WwO3cmeY2eo9rFOS5tEMqny0Yv4VBdUgDxGT9a1wy7ODfMNPugQDlztiyE6YM4g+aD617GNI497hE42eD6jo/BtUhDxBABdw78kU4HiAYzFZLX0GGnAnXcoudOfI6DHp8A9fOTPz+/OaADQCiGh96QfBtT4H+6EmTUSth6/yR/BrO7Ya0m6fy7TwWLP6nP/JsGXx2DqpNPLpgD4CoZOxtz8yirw3EC/SuFPp7iJnAmysEcMOqpBGw2WRz9y8bA9mlIvHTQXWJ+Ey1bQBier+SdDcU1P3PpPQXxjyrJEfo8Yw9K/8I08v9a9OS+5Ngo+s8vzAdVK8onMi3oxa9BqCfCzXXqtFRePjG6XBIQEOrNZkrnwITR/NnxU99vgCGPbnNnGuV9T6YeGeWwE1ngBvGTRV6CK+XAHQamtwXqldXw6CH3/DjmWJVT6g2Tp/7UbVteqNff7iMvetgtHy3DR66c7aRhdg+0ZvO9Bst8nvxvQSgvvCbyy8xFEAkGEMHyp3viLzZcQaqK8W+7X3Dr1B6N7/edBaMn9E4BnOT7jP90yt6DRG96Xxaz4FXvuo9H7ovINtGvyRB5yd6pE0LvV7BVr1NdXwz5wchFDr1py88qgorN0R+nYS+NKj7OjL94YTsET0Q/0Bi9Aq0iZcPFUIECB4PtDPe9H1911U2n/uCoKe8P58z3tzj86JiC/ddfg3N7ltMnM1KcOj6mSNkefK1gp2fQkprvX8e5wQpmNkT8HjaH01fU1f/jgGLoI5qLqrlRZ2G9KOXLI4ESI+9Hn5Jm9N4YCtsrnD1fMMih0DyHVHA7hycaXbC5tL9fteZnJ4JA8N/AT+d+jeU5G3xvUfF8RybnAqOq+mA+lwT7Mp7C2o49jJ2R45Jg7GDfwfw00/QuCsHNpuotPcBJEMR9HHBFOglg+gLFi9WJFkBBEiyoHZzhwDZrcclx4sASRbUbu4QILv1uOR4ESDJgtrNHQJktx6XHC8CJFlQu7lDgOzW45LjRYAkC2o3dwiQ3XpccrwIkGRB7eYOAbJbj0uOFwGSLKjd3CFAdutxyfEiQJIFtZs7BMhuPS45XgRIsqB2c4cA2a3HJceLAEkW1G7uECC79bjkeBEgyYLazR0CZLcelxwvAiRZULu5Q4Ds1uOS40WAJAtqN3cIkN16XHK8CJBkQe3mDgGyW49LjhcBkiyo3dwhQHbrccnxIkCSBbWbOwTIbj0uOV4ESLKgdnOHANmtxyXHiwBJFtRu7hAgu/W45HgRIMmC2s0dAmS3HpccLwNI9C8RJFeN7kJAgdMMoKYQCARDCIwCTQyg6sDUjbWGgALVDKDiEAgEQwiMAsXsvzLCaKqlKTIwbcBag1SBetruG9kRqI2mZ4I0CGx24BRgzLRd3Fn/EfrJ/hRwROc2fqACRgospTtfYQYegNj6DpouowkhYmrgoqcAgyebJvandJpLEs09SpPwv9ahrS20YkwwNlQLG0RrLexfuMfTlEjTUJr60cROcbjYRwE2wczmCKtpYlfqRTSx8bJq+T9wvtLq8yb6RQAAAABJRU5ErkJggg=="
+}
