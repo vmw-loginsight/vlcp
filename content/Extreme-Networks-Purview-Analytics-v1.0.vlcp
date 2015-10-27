@@ -1,0 +1,388 @@
+{
+  "name":"Extreme Networks - Purview Analytics",
+  "namespace":"com.extremenetworks.purview",
+  "framework":"#9c4",
+  "version":"2.4",
+  "contentPackId":"com.extremenetworks.purview",
+  "extractedFields":[ {
+    "displayName":"pv_app_response_time",
+    "preContext":"AppRespTime=",
+    "postContext":" ",
+    "regexValue":"-?\\d+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_application",
+    "preContext":"app=\"",
+    "postContext":"\" app_int",
+    "regexValue":"[\\w|\\W]+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_authenticated_user",
+    "preContext":"AuthenticatedUser=",
+    "postContext":" ClientOS",
+    "regexValue":"\\S+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mf2xi2dfnz2gsy3borswix3vonsxe000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_carrier",
+    "preContext":"Carrier=",
+    "postContext":" ClientOS",
+    "regexValue":"\\S+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnqxe4tjmvza0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_client_ip",
+    "preContext":"DHCP_ClientIP=",
+    "postContext":" ServerIP",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_client_os",
+    "preContext":"ClientOS=\"",
+    "postContext":"\" ClientOSFamily",
+    "regexValue":".*",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpw64y0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_client_os_family",
+    "preContext":"ClientOSFamily=",
+    "postContext":" DHCP_ClientIP",
+    "regexValue":"\\w+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpw6427mzqw22lmpe000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_dest_port",
+    "preContext":"dest_port=",
+    "postContext":" app",
+    "regexValue":"-?\\d+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mrsxg5c7obxxe5a0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_destination_ip",
+    "preContext":"dest_ip=",
+    "postContext":" protocol",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mrsxg5djnzqxi2lpnzpws4a0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_domain_query",
+    "preContext":"DOMAIN\\-QUERY=",
+    "postContext":" ",
+    "regexValue":"\\S+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mrxw2yljnzpxc5lfoj4q0000",
+    "constraints":"{\"searchTerms\":\"app=\\\"DNS\\\"\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_metadata",
+    "preContext":"TCPRespTime=\\d+\\s",
+    "postContext":" ",
+    "regexValue":"uuid=.*",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nvsxiylemf2gc000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"vendor=\\\"Extreme Networks\\\"\"}",
+    "info":null
+  }, {
+    "displayName":"pv_network_resp_time",
+    "preContext":"TCPRespTime=",
+    "postContext":" ",
+    "regexValue":"-?\\d+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_protocol",
+    "preContext":"protocol=",
+    "postContext":" src_port",
+    "regexValue":"\\w+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7obzg65dpmnxwy000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_purview_hostname",
+    "preContext":"dv_host=",
+    "postContext":" src_ip",
+    "regexValue":"\\S+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7ob2xe5tjmv3v62dpon2g4ylnmu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_purview_ip",
+    "preContext":"dvc_ip=",
+    "postContext":" dv_host",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7ob2xe5tjmv3v62lq",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_server_ip",
+    "preContext":"ServerIP=",
+    "postContext":" ",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpws4a0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_server_os",
+    "preContext":"ServerOS=\"",
+    "postContext":"\" ServerOSFamily",
+    "regexValue":".*",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpw64y0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_server_os_family",
+    "preContext":"ServerOSFamily=",
+    "postContext":" SwitchType",
+    "regexValue":"\\w+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpw6427mzqw22lmpe000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_source_ip",
+    "preContext":"src_ip=",
+    "postContext":" dest_ip",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"pv_src_port",
+    "preContext":"src_port=",
+    "postContext":" dest_port",
+    "regexValue":"-?\\d+",
+    "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onzggx3qn5zhi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  } ],
+  "queries":[ {
+    "name":"PV: Default Search for a Specific Server IP Address",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444918411136,\"endTimeMillis\":1444918711135,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpws4a0\",\"operator\":\"CONTAINS\",\"value\":\"172.17.0.9\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pv_server_ip\",\"preContext\":\"ServerIP=\",\"postContext\":\" \",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "info":"Search to find all flow to of from a specific network server.<br>",
+    "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+  }, {
+    "name":"PV: Default search for a Specific Source IP Address",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444918262663,\"endTimeMillis\":1444918562696,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibadax3qozpxg33vojrwkx3joa000000\",\"operator\":\"CONTAINS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "info":"Search to find all flows from a specific source Ip address<br>",
+    "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+  }, {
+    "name":"PV: TCP Flows Containing Metadata",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444910899230,\"endTimeMillis\":1444914499229,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nvsxiylemf2gc000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7obzg65dpmnxwy000\",\"operator\":\"CONTAINS\",\"value\":\"TCP\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pv_metadata\",\"preContext\":\"TCPRespTime=\\\\d+\\\\s\",\"postContext\":\" \",\"regexValue\":\"uuid=.*\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nvsxiylemf2gc000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"vendor=\\\\\\\"Extreme Networks\\\\\\\"\\\"}\"},{\"displayName\":\"pv_protocol\",\"preContext\":\"protocol=\",\"postContext\":\" src_port\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7obzg65dpmnxwy000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "info":"Default search to view TCP flows that contain Metadata Information<br>",
+    "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+  } ],
+  "alerts":[ {
+    "name":"PV:Business Application Response Issue",
+    "info":"Rule can be adjusted to to alert when application response times reach a level above what is allowable<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438002395653,\"endTimeMillis\":1438002695846,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"displayName\":\"pv_app_response_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"ADP,Agile,Agoop,Aleph,Appetize,Aramark,ATT,Basecamp,BigMachines,Blackberry,BMC,Bomgar,Brainshark,Citrix,ClearCase,Concur,Coupa,Crestron,Deepfreeze,DHL,FedEx,GoToMyPC,JBoss Clustering,Microsoft Office,Oracle,Salesforce,SAP,Siemans,Splunk,Uber,UBM,VMware,ClearBenefits,Crittercism,CVS Source Code Control,DocAve Client,Ensighten,Fish Technologies,Geckoboard,Host Analytics,Infocaster,IBM GERS,IBM CICS Transaction Gateway,IBM Notes,IBM RSCT,Inside Sales,Introhive,Prezi,Proxyclick,Rearden Comerce\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_application\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_app_response_time\",\"preContext\":\"AppRespTime=\",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":500000.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"PV:Prohibited Applications",
+    "info":"Prohibited applications can be listed within this alert and then enabled to track users using such applications<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438001459766,\"endTimeMillis\":1438001760476,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"gnutella\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"PV:DNS Response Issue",
+    "info":"This alert can be adjusted to coincide with a rate that is above the acceptable DNS application response time for a given enterprise network.<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1437766505800,\"endTimeMillis\":1437766807162,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"displayName\":\"pv_app_response_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"DNS\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pv_app_response_time\",\"preContext\":\"AppRespTime=\",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":50000.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Client Information",
+      "constraints":[ {
+        "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpw6427mzqw22lmpe000000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpw6427mzqw22lmpe000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Client IP Count Over Time per Purview Domain",
+          "info":"Purview brakes out network traffic using a concept of \"Purview Domains\". For instance the Internet link, Data Center, DMZ, and Distribution areas can all be considered separate Purview Domains&nbsp; This search provides\n a view of the number of clients seen per Purview domain in a time series chart. In any given network these views should fall into a specific pattern over time. Deviation from this pattern should be investigated.",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1443817801292,\"endTimeMillis\":1443818101291,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"displayName\":\"pv_client_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_client_ip\",\"preContext\":\"DHCP_ClientIP=\",\"postContext\":\" ServerIP\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Unique Count of Client IPs Grouped by Carrier",
+          "info":"Purview retains carrier information from metadata transferred by mobile devices. This chart show the number of clients attributed to each carrier.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1443817831414,\"endTimeMillis\":1443818131452,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"displayName\":\"pv_client_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnqxe4tjmvza0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_carrier\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnqxe4tjmvza0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_carrier\",\"preContext\":\"Carrier=\",\"postContext\":\" ClientOS\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnqxe4tjmvza0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_client_ip\",\"preContext\":\"DHCP_ClientIP=\",\"postContext\":\" ServerIP\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Unique Count of Server IPs Grouped by OS Family",
+          "info":"Purview retains data from each flow which includes operating system \ndetails for each client and server on the network.&nbsp; This search provides\n a view of the number of severs on the network broken out by operating \nsystem family.",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1443818223249,\"endTimeMillis\":1443818523248,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpws4a0\",\"displayName\":\"pv_server_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpws4a0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpws4a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpw6427mzqw22lmpe000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_server_os_family\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpw6427mzqw22lmpe000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_server_ip\",\"preContext\":\"ServerIP=\",\"postContext\":\" \",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_server_os_family\",\"preContext\":\"ServerOSFamily=\",\"postContext\":\" SwitchType\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onsxe5tfojpw6427mzqw22lmpe000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Unique Count of Client IPs Grouped by OS Family",
+          "info":"Purview retains data from each flow which includes operating system details for each client and server on the network.&nbsp; This search provides a view of the number of clients on the network broken out by operating system family.<br>",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1443818298136,\"endTimeMillis\":1443818598135,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"displayName\":\"pv_client_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpw6427mzqw22lmpe000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_client_os_family\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpw6427mzqw22lmpe000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_client_ip\",\"preContext\":\"DHCP_ClientIP=\",\"postContext\":\" ServerIP\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_client_os_family\",\"preContext\":\"ClientOSFamily=\",\"postContext\":\" DHCP_ClientIP\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpw6427mzqw22lmpe000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Application Usage",
+      "constraints":[ {
+        "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Top Web Applications by Client Count",
+          "info":"This chart displays the top web applications sorted by client count.<br>",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1443818397606,\"endTimeMillis\":1443818697605,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"displayName\":\"pv_client_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mrsxg5c7obxxe5a0\",\"operator\":\"EQUAL\",\"value\":\"80,443\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_application\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_client_ip\",\"preContext\":\"DHCP_ClientIP=\",\"postContext\":\" ServerIP\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_dest_port\",\"preContext\":\"dest_port=\",\"postContext\":\" app\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mrsxg5c7obxxe5a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Cloud Storage Application Useage",
+          "info":"This chart provides a view of the number of end systems using popular cloud storage applications. Company policies may dictate what applications are allowed and moving large amounts of data to a personal cloud storage application may be a violation of policies within certain industries.<br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444134869674,\"endTimeMillis\":1444135170415,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0\",\"displayName\":\"pv_source_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"Adobe Creative Cloud,Google Checkin,iCloud,Backblaze,Box,Carbinite,Dropbox,Evernote,Google Drive,Microsoft Sharepoint Workspace,Microsoft Skydrive,Mircrosft Sharepoint,Google User Content,ADrive,ASUS Web Storage,Copy Cloud,EMC Cloud Storage,EVault,FileCloud,G Cloud,Google Media Upload,Grid Disk Pool Manager,Groove Server,Heroku,Hightail,Mozy,Pocket,Pogoplug,Quantum,SugarSync,Synology DSM,Tresorit,Wuala\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_application\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_source_ip\",\"preContext\":\"src_ip=\",\"postContext\":\" dest_ip\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Cloud Computing Application Useage",
+          "info":"This chart provides a view of the number of end systems using popular \ncloud computing applications. The fees incurred to run such applications require that usage be monitored so that resources can be put to the best use .",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444134981959,\"endTimeMillis\":1444135282602,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0\",\"displayName\":\"pv_source_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"Amazon Web Services,Atlas Grid Information System,ATT Cloud Solutions,Boomi,CloudMosa Puffin,Fiberlink,Force,Microsoft Failover Cluster,Microsoft Office365,Moab Cluster,New Relic,Nordic DataGrid Facility,Okta,RingCentral,Samsung Cloud,Smartsheet,Windows Azure,Wunderlist,Live Ops\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_application\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_source_ip\",\"preContext\":\"src_ip=\",\"postContext\":\" dest_ip\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7onxxk4tdmvpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Business Application Useage",
+          "info":"This chart provides a view of the number of end systems using popular business applications. <br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444135049477,\"endTimeMillis\":1444135350094,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"displayName\":\"pv_client_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"ADP,Agile,Agoop,Aleph,Appetize,Aramark,ATT,Basecamp,BigMachines,Blackberry,BMC,Bomgar,Brainshark,Citrix,ClearCase,Concur,Coupa,Crestron,Deepfreeze,DHL,FedEx,GoToMyPC,JBoss Clustering,Microsoft Office,Oracle,Salesforce,SAP,Siemans,Splunk,Uber,UBM,VMware,ClearBenefits,Crittercism,CVS Source Code Control,DocAve Client,Ensighten,Fish Technologies,Geckoboard,Host Analytics,Infocaster,IBM GERS,IBM CICS Transaction Gateway,IBM Notes,IBM RSCT,Inside Sales,Introhive,Prezi,Proxyclick,Rearden Comerce\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_application\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_client_ip\",\"preContext\":\"DHCP_ClientIP=\",\"postContext\":\" ServerIP\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Storage Application Useage",
+          "info":"This chart provides a view of the number of end systems using popular storage applications. <br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444135106741,\"endTimeMillis\":1444135406994,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"displayName\":\"pv_client_ip\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"Altiris,Apache Hadoop,Apple AFP,BitTorrent Sync,CIFS,CommVault,Drobo,EMC Networker,Fibre Channel,HDF5,iSCSI,Microsoft System Center Data Protection Manager,NetBackup,NFS,SanIQ,SMB,Synology NAS,Tar.gz file,Tar.z file,Tivoli Storage Manager,VLSI,Seagate Global Access\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_application\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_client_ip\",\"preContext\":\"DHCP_ClientIP=\",\"postContext\":\" ServerIP\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mnwgszloorpws4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Application Analytics",
+      "constraints":[ {
+        "internalName":"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Average Application Response (µs) Over Time",
+          "info":"This chart provides the overall average application response time for all applications on the network. Comparing application response and network or TCP response time can provide an indication of whether a network issue is being caused by a particular server, application, client or network segment.<br>",
+          "chartType":"area",
+          "chartOptions":"{\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1437764039659,\"endTimeMillis\":1437764341919,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"displayName\":\"pv_app_response_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pv_app_response_time\",\"preContext\":\"AppRespTime=\",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Average Network Response (µs) Over Time",
+          "info":"This chart provides the overall average network response time for \nall applications on the network. Comparing application response and \nnetwork or TCP response time can provide an indication of whether a \nnetwork issue is being caused by a particular server, application, \nclient or network segment",
+          "chartType":"area",
+          "chartOptions":"{\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1437764687526,\"endTimeMillis\":1437764987837,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000\",\"displayName\":\"pv_network_resp_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pv_network_resp_time\",\"preContext\":\"TCPRespTime=\",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average DNS Application Response (µs) Over Time",
+          "info":"This chart provides the overall average application response time for DNS. Often when help desk complaints arise due to poor Internet speeds, these issues can be traced to DNS issues.&nbsp; This chart keeps track of the average application response time for all DNS traffic. An increase in this parameter can indicate an issue with the enterprise DNS servers.",
+          "gridWidth":"1",
+          "chartType":"area",
+          "chartOptions":"{\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1437764921349,\"endTimeMillis\":1437765221348,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"displayName\":\"pv_app_response_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"DNS\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pv_app_response_time\",\"preContext\":\"AppRespTime=\",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average Application Response Time (µs) Business Application Group",
+          "info":"This chart provides the average application response time for \nall applications in the business application group. Comparing application response and \nnetwork or TCP response time can provide an indication of whether a \nnetwork issue is being caused by a particular server, application, \nclient or network segment.",
+          "gridWidth":"1/2",
+          "chartType":"area",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438002395653,\"endTimeMillis\":1438002695846,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"displayName\":\"pv_app_response_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"ADP,Agile,Agoop,Aleph,Appetize,Aramark,ATT,Basecamp,BigMachines,Blackberry,BMC,Bomgar,Brainshark,Citrix,ClearCase,Concur,Coupa,Crestron,Deepfreeze,DHL,FedEx,GoToMyPC,JBoss Clustering,Microsoft Office,Oracle,Salesforce,SAP,Siemans,Splunk,Uber,UBM,VMware,ClearBenefits,Crittercism,CVS Source Code Control,DocAve Client,Ensighten,Fish Technologies,Geckoboard,Host Analytics,Infocaster,IBM GERS,IBM CICS Transaction Gateway,IBM Notes,IBM RSCT,Inside Sales,Introhive,Prezi,Proxyclick,Rearden Comerce\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_application\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_app_response_time\",\"preContext\":\"AppRespTime=\",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyhax3smvzxa33oonsv65djnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Average Network Response Time (µs) Business Application Group",
+          "info":"This chart provides the average network response time for \nall applications in the business application group. Comparing application response and \nnetwork or TCP response time can provide an indication of whether a \nnetwork issue is being caused by a particular server, application, \nclient or network segment.",
+          "gridWidth":"1/2",
+          "chartType":"area",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1437766013609,\"endTimeMillis\":1437766314847,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000\",\"displayName\":\"pv_network_resp_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"operator\":\"CONTAINS\",\"value\":\"ADP,Agile,Agoop,Aleph,Appetize,Aramark,ATT,Basecamp,BigMachines,Blackberry,BMC,Bomgar,Brainshark,Citrix,ClearCase,Concur,Coupa,Crestron,Deepfreeze,DHL,FedEx,GoToMyPC,JBoss Clustering,Microsoft Office,Oracle,Salesforce,SAP,Siemans,Splunk,Uber,UBM,VMware,ClearBenefits,Crittercism,CVS Source Code Control,DocAve Client,Ensighten,Fish Technologies,Geckoboard,Host Analytics,Infocaster,IBM GERS,IBM CICS Transaction Gateway,IBM Notes,IBM RSCT,Inside Sales,Introhive,Prezi,Proxyclick,Rearden Comerce\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"appid\"},{\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pv_application\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pv_application\",\"preContext\":\"app=\\\"\",\"postContext\":\"\\\" app_int\",\"regexValue\":\"[\\\\w|\\\\W]+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7mfyha3djmnqxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pv_network_resp_time\",\"preContext\":\"TCPRespTime=\",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibaden27mnxw2ltfpb2hezlnmvxgk5dxn5zgw4zoob2xe5tjmv3xa5s7nzsxi53pojvv64tfonyf65djnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"appid\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"Extreme Networks",
+  "url":"http://www.extremenetworks.com",
+  "contentVersion":"1.0",
+  "info":"The content pack created for vRealize Log Insight accepts syslog events from the Purview engine and parses out unique fields including IP addresses, port information, as well as TCP and application response times. This content pack includes three separate dashboards (Client, Application Usage, and Application Analytics) as well as several sample queries and alerts.<br>",
+  "instructions":"To obtain instructions detailing how to configure Syslog forwarding in Purview please visit the Extreme Networks extranet site at&nbsp;<a href=\"https://extranet.extremenetworks.com/downloads/pages/purview.aspx\">https://extranet.extremenetworks.com/downloads/pages/purview.aspx</a> Login credentials are required.<a href=\"https://extranet.extremenetworks.com/downloads/pages/purview.aspx\"></a><br>",
+  "icon":"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"
+}
