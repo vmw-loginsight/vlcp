@@ -1,6 +1,6 @@
 {
   "name":"VMware - EVO SDDC Suite",
-  "namespace":"b86f615f-16ac-4435-8ec5-e7d2b55063e7",
+  "namespace":"com.vmware.evosddcsuite",
   "framework":"#9c4",
   "version":"2.4",
   "contentPackId":"b86f615f-16ac-4435-8ec5-e7d2b55063e7",
