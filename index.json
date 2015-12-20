@@ -270,11 +270,11 @@
   },
   {
     "info": "Juniper Network's SRX is a High-performance network security service gateway with advanced, integrated threat intelligence, delivered on the industry's most scalable and resilient platform.<br><br>It provides various security services like Anti Spam, Virus Detection and UTM.<br><br>This Log Insight content pack is used to view and analyze Syslogs that are generated as part of operations performed by the SRX on the network.<br>",
-    "name": "Juniper - SRX",
+    "name": "Juniper - Security",
     "author": "Juniper Networks, Inc",
     "contentVersion": "1.0",
     "namespace": "net.juniper.srx",
-    "fileName": "Juniper-SRX_v1.0.6.vlcp",
+    "fileName": "Juniper-Security_v1.0.vlcp",
     "framework": "#9c4",
     "contentPackId": "net.juniper.srx",
     "version": "2.4",

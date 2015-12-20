@@ -1,5 +1,5 @@
 {
-  "name":"Juniper - SRX",
+  "name":"Juniper - Security",
   "namespace":"net.juniper.srx",
   "framework":"#9c4",
   "version":"2.4",
