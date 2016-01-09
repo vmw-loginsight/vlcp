@@ -1,0 +1,1086 @@
+{
+  "name":"Brocade - SAN & IP Networks",
+  "namespace":"com.brocade.dcm",
+  "framework":"#9c4",
+  "version":"2.4",
+  "contentPackId":"com.brocade.dcm",
+  "extractedFields":[ {
+    "displayName":"dcm_audit_info",
+    "preContext":"Info: ",
+    "postContext":"\\,|\\].",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nfxgm3y0",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_audit_ipaddress",
+    "preContext":"IP Addr: ",
+    "postContext":"\\.",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nfygczdeojsxg4y0",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_audit_module",
+    "preContext":"AUDIT\\, [A-Z0-9\\:/\\-\\(\\)\\ ]+\\, \\[[a-zA-Z0-9\\-\\]]+\\, [a-zA-Z]+\\, ",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_audit_priority",
+    "preContext":"AUDIT\\, [A-Z0-9\\:/\\-\\(\\)\\ ]+\\, \\[[a-zA-Z0-9\\-\\]]+\\, ",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_audit_status",
+    "preContext":"Status: ",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7on2gc5dvom000000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_audit_type",
+    "preContext":"Event: ",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7or4xazi0",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_bottleneck_type",
+    "preContext":"\\| FID \\d+, \\w+, \\w+,",
+    "postContext":" bottleneck on",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3cn52hi3dfnzswg227or4xazi0",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_device_name",
+    "preContext":"\\| FID \\d+, \\S+, ",
+    "postContext":",",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3emv3gsy3fl5xgc3lf",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_device_port",
+    "preContext":"\\| FID \\d+, \\S+, \\S+, Port ",
+    "postContext":", ",
+    "regexValue":"[^,]+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3emv3gsy3fl5yg64tu",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_flash_usage",
+    "preContext":"Current Value:\\[FLASH_USAGE\\,",
+    "postContext":" %\\]\\,",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrqxg2c7ovzwcz3f",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_flow_currentvalue",
+    "preContext":"Current Value:\\[",
+    "postContext":",",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_log_level",
+    "preContext":"\\| FID \\d+, ",
+    "postContext":", ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_maps_category",
+    "preContext":"Category=",
+    "postContext":".",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000",
+    "constraints":"{\"searchTerms\":\"raslogd, MAPS*\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_maps_currentvalue",
+    "preContext":"Current Value:\\[",
+    "postContext":"\\],",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dovzhezloor3gc3dvmu000000",
+    "constraints":"{\"searchTerms\":\"raslogd, MAPS*\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_maps_object",
+    "preContext":"Obj:\\w+ \\[",
+    "postContext":"\\,",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3pmjvgky3u",
+    "constraints":"{\"searchTerms\":\"raslogd, MAPS*\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_maps_rulecondition",
+    "preContext":"Condition=",
+    "postContext":"\\,",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3sovwgky3pnzsgs5djn5xa0000",
+    "constraints":"{\"searchTerms\":\"raslogd, MAPS*\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_maps_rulename",
+    "preContext":"RuleName=",
+    "postContext":"\\,",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3sovwgk3tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"raslogd, MAPS*\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_audit_module",
+    "preContext":"class@1588 value=\"",
+    "postContext":"\"]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6ylvmruxix3nn5shk3df",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_current_state",
+    "preContext":"arg1@1588 value=\"",
+    "postContext":"\" desc=\"Current state\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6y3vojzgk3tul5zxiylumu000000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_device_name",
+    "preContext":"swname@1588 value=\"",
+    "postContext":"\"]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6zdfozuwgzk7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_event_type",
+    "preContext":"log@1588 value=\"",
+    "postContext":"\"]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6zlwmvxhix3upfygk000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_log_level",
+    "preContext":"severity@1588 value=\"",
+    "postContext":"\"]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_previous_state",
+    "preContext":"arg0@1588 value=\"",
+    "postContext":"\" desc=\"Previous state\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv64dsmv3gs33vonpxg5dborsq0000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_product",
+    "preContext":"Condition=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv64dsn5shky3u",
+    "constraints":"{\"searchTerms\":\"raslogd, MAPS*\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_syslog_message-id",
+    "preContext":"msgid@1588 value=\"",
+    "postContext":"\"]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_tunnel_name",
+    "preContext":"arg0@1588 value=\"Tunnel ",
+    "postContext":"\" desc",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv65dvnzxgk3c7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"raslogd, tunnel\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_wwn",
+    "preContext":"attr@1588 value=\" WWN ",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv653xny000000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_switch_status",
+    "preContext":", Switch status changed from ",
+    "postContext":"\\.",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3to5uxiy3il5zxiyluovzq0000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_syslog_message-id",
+    "preContext":"[A-Z]*[\\,]?[A-Z0-9\\:/\\-\\(\\)\\ ]+\\, \\[",
+    "postContext":"\\]\\,",
+    "regexValue":"[A-Z]+\\-\\d+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_vf_id",
+    "preContext":"\\| FID ",
+    "postContext":"\\,",
+    "regexValue":"\\d+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3wmzpwsza0",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_wwn_address",
+    "preContext":"WWN ",
+    "postContext":" \\| FID",
+    "regexValue":"([A-Fa-f0-9]{2}[:-]){7}([A-Fa-f0-9]{2})",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3xo5xf6ylemrzgk43t",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"Brocade: NOS MAPS Violation Alert",
+    "info":"<span>NOS MAPS violation alert. This alert will be generated if any MAPS rules are violated. This alert depends on MAPS-1001, MAPS-1002, MAPS-1003, MAPS-1004 &amp; MAPS-1021 syslog events. This alert supports only for Ethernet Switches.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1448271100546,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001,MAPS-1002,MAPS-1003,MAPS-1004,MAPS-1021\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: Tunnel Protocol Down Alert",
+    "info":"<span>Tunnel Protocol Down Alert. This alert will be generated when any Tunnel Protocol went Down. This alert supports only for Ethernet Switches.<br></span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd log@1588 tunnel\",\"startTimeMillis\":1448270654375,\"endTimeMillis\":1448271554374,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"nsm-1002\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: MAPS Violation Alert",
+    "info":"MAPS violation alert. This alert will be generated if any MAPS rules are violated. This alert depends on MAPS-1001, MAPS-1002 &amp; MAPS-1003 syslog events. This alert supports only for Fibre Channel Switches.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1448269361139,\"endTimeMillis\":1448269661138,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001, MAPS-1002, MAPS-1003\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001, MAPS-1002, MAPS-1003\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: Switch Status Degraded Alert",
+    "info":"Switch status degraded alert. This alert will be generated if switch status is degraded to marginal or down. This alert depends on FW-1424 Syslog message to generate the alert. This is related to both Fibre Channel and NOS switches.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd FW-1424\",\"startTimeMillis\":1441838802953,\"endTimeMillis\":1441839102952,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"FW-1424\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: Call Home Alert",
+    "info":"Call Home alert. Callhome alert will be generated upon receiving any critical events from the switch i.e. MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433 FW-1434, FW-1435, FW-1436, FW-1437, FW-1438 &amp; MAPS-1021. This is related to both Fibre Channel and NOS switches. Message ID MS-1009 &amp; MAPS-1021 are not supported for NOS.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1441838851730,\"endTimeMillis\":1441839151729,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438, MAPS-1021\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438, MAPS-1021\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: Bottleneck Alert",
+    "info":"Bottleneck alert. This alert will be generated if any bottleneck events are generated i.e. AN-1003, AN-1004, AN-1007, AN-1008 &amp;AN-1010. This alert supports only for Fibre Channel Switches.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1448268965498,\"endTimeMillis\":1448269865497,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"AN-1003, AN-1004, AN-1007, AN-1008, AN-1010\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"AN-1003, AN-1004, AN-1007, AN-1008, AN-1010\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: Switch Panic or Crash Alert",
+    "info":"Switch panic or crash alert. This alert will be generated when a switch was panicked or crashed. This is related to both Fibre Channel and NOS switches.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd FFDC \\\"Detected termination\\\"\",\"startTimeMillis\":1441838714397,\"endTimeMillis\":1441839014396,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"raslogd FFDC \\\"Detected termination\\\"\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"FOS - Syslog Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Events grouped by Message ID",
+          "info":"Displays Syslog events count from Brocade Fibre Channel switches grouped by Message ID to verify an event from different sources.<br><br>dcm_syslog_message-id gives the Syslog message id like FW-1435, MAPS-1003 etc.<br><br>dcm_wwn_address gives the WWN of the switch<br><br>dcm_device_name gives the switch name<br><br>dcm_device_port gives the switch port details<br><br>dcm_log_level gives the Syslog priority level like e.g. Info, Warning etc.",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1441832761357,\"endTimeMillis\":1441856797428,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Events over time grouped by Severity",
+          "info":"Displays Syslog events count from Brocade Fibre Channel switches over a period of time grouped by priority",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1441832786728,\"endTimeMillis\":1441856823914,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_log_level\",\"preContext\":\"\\\\| FID \\\\d+, \",\"postContext\":\", \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events by Severity",
+          "info":"Displays Syslog events received from Brocade Fibre Channel switches grouped by priority (Warning, Info, Error, Emerg etc)",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1441832808312,\"endTimeMillis\":1441856842421,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_log_level\",\"preContext\":\"\\\\| FID \\\\d+, \",\"postContext\":\", \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Events by Product",
+          "info":"Displays Syslog events received from Brocade Fibre Channel switches grouped by product to view the messages received from a specific switch",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1441832825749,\"endTimeMillis\":1441856862697,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"FOS - Fabric Watch Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Fabric Watch events grouped by Message ID",
+          "info":"Displays Fabric Watch events (starts with Message ID: FW-) count from Brocade Fibre Channel switches grouped by Message ID to verify a Fabric Watch event received from different sources",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd FW-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Fabric Watch events over time grouped by Severity",
+          "info":"Displays Fabric Watch events count (starts with Message ID: FW-) from Brocade Fibre Channel switches over a time period grouped by priority (Warning, Info, Error, Emerg etc.) to identify different priority events received in a particular time",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"FW-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_log_level\",\"preContext\":\"\\\\| FID \\\\d+, \",\"postContext\":\", \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Fabric Watch events by Severity",
+          "info":"Displays Fabric Watch events (Message ID starts with: FW-) received from Brocade Fibre Channel switches grouped by priority (Warning, Info, Error, Emerg etc.)",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"FW-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_log_level\",\"preContext\":\"\\\\| FID \\\\d+, \",\"postContext\":\", \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Fabric Watch Events by Product",
+          "info":"Displays Fabric Watch events (Message ID starts with: FW-) received from Brocade Fibre Channel switches grouped by product to view all the Syslog messages received from a switch",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd FW-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"FOS - Audit Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Audit Events over Time",
+          "info":"Displays Syslog Audit messages received from Brocade Fibre Channel switches over a period of time. <br><br>dcm_audit_module gives the audit event generated module name like Security, Fabric etc.<br><br>dcm_audit_priority gives the priority  of the audit events like Info, Warning etc.<br><br>dcm_audit_type gives the type of the audit events like login, logout etc.<br><br>dcm_audit_status gives the status of the event like login failed or success etc.<br><br>dcm_audit_info gives information about the event like Failed login attempt via HTTP etc.<br><br>dcm_audit_IPAddress gives the source IP address",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Audit Events by Product",
+          "info":"Displays Syslog Audit messages received from Brocade Fibre Channel switches grouped by product to view all the Syslog messages from a switch",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Audit Events by Module",
+          "info":"Displays Syslog Audit messages received from Brocade Fibre Channel switches grouped by module (Security, Fabric etc.)",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_audit_module\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_audit_module\",\"preContext\":\"AUDIT\\\\, [A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[[a-zA-Z0-9\\\\-\\\\]]+\\\\, [a-zA-Z]+\\\\, \",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Login events",
+          "info":"There are two queries available related to login events. One to view all the successful login audit events and another to view the failure audit events",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Failed Login",
+            "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SEC-3021, SEC-1193, SEC-1192\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"Gives all failed login attempts related to Brocade Fibre Channel switches over a period of time",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          }, {
+            "name":"Successful Login",
+            "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SEC-1203, SEC-3020\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"Gives all successful login attempts related to Brocade Fibre Channel switches over a period of time",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"FOS - Switch Status Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of Events over Time",
+          "info":"Displays all switch status events (FW-1424 & FW-1425) count received from Brocade Fibre Channel switches over a period of time.<br><br>dcm_switch_status Extracted Field gives the previous & current switch status like Healthy to Down",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"FW-1424, FW-1425\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Switch Status Events grouped by Severity",
+          "info":"Displays all switch status events (FW-1424 & FW-1425) received from Brocade Fibre Channel switches grouped by the event priority",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"FW-1424, FW-1425\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_log_level\",\"preContext\":\"\\\\| FID \\\\d+, \",\"postContext\":\", \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Switch Status Events by Product",
+          "info":"Displays all switch status events (FW-1424 & FW-1425) received from Brocade Fibre Channel switches grouped by product",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"FW-1424, FW-1425\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"FOS - MAPS Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of MAPS Violation Events over Time grouped by Category",
+          "info":"Displays MAPS violations (starts with Message ID: MAPS-) received from Brocade Fibre Channel switches over a period of time grouped by the violation category (Switch resource, Port health etc.). <br><br>dcm_flow_currentValue gives the current value of the violation count<br><br>dcm_maps_category gives the MAPS violation category e.g. Traffic Performance, Port Health etc.<br><br>dcm_maps_rulename gives the MAPS violation rule name<br><br>dcm_maps_rulecondition gives the MAPs violation rule condition e.g. ALL_PORTS(RX/min>=0)<br><br>dcm_maps_object gives the MAPs violation occurred object details e.g. Switch, Chassis <br><br>dcm_flash_usage gives the flash usage details<br><br>dcm_maps_currentValue gives the current value e.g. SEC_HTTP,1 Violations",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd maps-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_audit_priority\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_audit_priority\",\"preContext\":\"AUDIT\\\\, [A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[[a-zA-Z0-9\\\\-\\\\]]+\\\\, \",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"MAPS Violation Events grouped by Severity",
+          "info":"Displays all MAPS violations (Message ID starts with MAPS-) received from Brocade Fibre Channel switches grouped by the priority of events (Warning, Error etc.)",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"maps-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_log_level\",\"preContext\":\"\\\\| FID \\\\d+, \",\"postContext\":\", \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"MAPS Violation Events by Product",
+          "info":"Displays all MAPS violation events (starts with Message ID: MAPS-) received from Brocade Fibre Channel switches grouped by product",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd maps-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of MAPS Violation events by Category",
+          "info":"Displays aisplays the MAPS violations (starts with Message ID: MAPS-) count from Brocade Fibre Channel switches grouped by violation category (Port health, switch resources etc.)",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001, MAPS-1002, MAPS-1003\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_maps_category\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_maps_category\",\"preContext\":\"Category=\",\"postContext\":\".\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd, MAPS*\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of Flow Violation Events over Time grouped by Category",
+          "info":"Displays the count of flow related violations (MAPS-1001, MAPS-1002 & MAPS-1003) received from Brocade Fibre Channel switches over a Time period grouped by category (Port health, switch resources etc.)",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001, MAPS-1002, MAPS-1003\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Current Value:[TX_FCNT, Current Value:[RX_FCNT, Current Value:[TX_THPUT, Current Value:[RX_THPUT, Current Value:[IO_RD, Current Value:[IO_WR, Current Value:[IO_RD_BYTES, Current Value:[IO_WR_BYTES\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"FOS - Bottleneck Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3cn52hi3dfnzswg227or4xazi0",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Bottleneck Events over Time",
+          "info":"Displays all bottleneck events (AN-1003, AN-1004, AN-1007, AN-1008 & AN-1010) received from Brocade Fibre Channel switches over a period of time.<br><br>dcm_bottleneck_type Extracted Field gives the type of bottleneck event like e.g. Congestion  or Latency",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1438774348302,\"endTimeMillis\":1439812111299,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"AN-1003, AN-1004, AN-1007, AN-1008, AN-1010\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Bottleneck Events grouped by Product",
+          "info":"Displays all bottleneck events (AN-1003, AN-1004, AN-1007, AN-1008 & AN-1010) received from Brocade Fibre Channel switches grouped by product",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"AN-1003, AN-1004, AN-1007, AN-1008, AN-1010\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of Events grouped by Bottleneck Type",
+          "info":"Displays all bottleneck events (AN-1003, AN-1004, AN-1007, AN-1008 & AN-1010) received from Brocade Fibre Channel switches grouped by bottleneck type: Congestion or Latency",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"AN-1003, AN-1004, AN-1007, AN-1008, AN-1010\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3cn52hi3dfnzswg227or4xazi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_bottleneck_type\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3cn52hi3dfnzswg227or4xazi0\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_bottleneck_type\",\"preContext\":\"\\\\| FID \\\\d+, \\\\w+, \\\\w+,\",\"postContext\":\" bottleneck on\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3cn52hi3dfnzswg227or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"FOS - Callhome Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Switch Call Home Events over Time grouped by Message ID",
+          "info":"Displays all switch Callhome events (MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433 FW-1434, FW-1435, FW-1436, FW-1437, FW-1438 & MAPS-1021) received from Brocade Fibre Channel switches grouped by message ID over a period of time",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438, MAPS-1021\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Switch Call Home Events grouped by Product",
+          "info":"Displays all switch Call Home events (MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433 FW-1434, FW-1435, FW-1436, FW-1437, FW-1438 & MAPS-1021) received from Brocade Fibre Channel switches grouped by product",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438, MAPS-1021\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Switch Call Home Events grouped by Product Priority",
+          "info":"Displays all Call Home events (MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433 FW-1434, FW-1435, FW-1436, FW-1437, FW-1438 & MAPS-1021) received from Brocade Fibre Channel switches grouped by priority",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"@1588\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438, MAPS-1021\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_audit_priority\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_audit_priority\",\"preContext\":\"AUDIT\\\\, [A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[[a-zA-Z0-9\\\\-\\\\]]+\\\\, \",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"NOS - Syslog Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3mn5tv63dfozswy000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Events grouped by Message ID",
+          "info":"Displays Syslog events count from Brocade NOS switches grouped by Message ID to verify an event across different sources.<br><br>dcm_nos_syslog_message-id which gives the Syslog message id. e.g. FW-1435<br><br>dcm_nos_wwn which gives the WWN of the switch<br><br>dcm_NOS_device_name which gives the switch name<br><br>dcm_NOS_log_level which gives the Syslog priority level e.g. Info, Warning etc",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Events over time grouped by Severity",
+          "info":"Displays Syslog events count from Brocade NOS switches over a period of time grouped by priority",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_log_level\",\"preContext\":\"severity@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events by Severity",
+          "info":"Displays all the Syslog events received from Brocade NOS switches grouped by priority (Warning, Info, Error, Emerg etc)",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_log_level\",\"preContext\":\"severity@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Events by Product",
+          "info":"Displays all Syslog events received from Brocade NOS switches grouped by product to view all the Syslog messages received from a specific switch.",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"NOS - Fabric Watch Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Events grouped by Message ID",
+          "info":"Displays all Fabric Watch events (starts with Message ID: FW-) count from Brocade NOS switches grouped by Message ID to verify a Fabric Watch event received across different sources",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588 FW-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Events over time grouped by Severity",
+          "info":"Displays all Fabric Watch events (starts with Message ID: FW-) count from Brocade NOS switches over a time period grouped by priority (Warning, Info, Error, Emerg etc.) to identify different priority events received in a particular time",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588 FW-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_log_level\",\"preContext\":\"severity@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events by Severity",
+          "info":"Displays all Fabric Watch events (Message ID starts with: FW-) received from Brocade nos switches grouped by priority (Warning, Info, Error, Emerg etc.)",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588 FW-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_log_level\",\"preContext\":\"severity@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Events by Product",
+          "info":"Displays all Fabric Watch events (Message ID starts with: FW-) received from Brocade NOS switches grouped by product to view all the Syslog messages received from a switch",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588 FW-*\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"NOS - Audit Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Audit Events over Time",
+          "info":"Displays all Syslog Audit messages received from Brocade NOS switches over a period of time. <br><br>dcm_nos_audit_module Extracted Field gives the audit event generated module name e.g. Security, Fabric",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6zlwmvxhix3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"AUDIT\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"dcm_nos_event_type\",\"preContext\":\"log@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6zlwmvxhix3upfygk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Audit Events by Product",
+          "info":"Displays all Syslog Audit messages received from Brocade NOS switches grouped by product to view all the Syslog messages from a switch",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6zlwmvxhix3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"AUDIT\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_event_type\",\"preContext\":\"log@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6zlwmvxhix3upfygk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Audit Events by Module",
+          "info":"Displays all Syslog Audit messages received from Brocade NOS switches grouped by module like Security etc.",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6ylvmruxix3nn5shk3df\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_audit_module\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6ylvmruxix3nn5shk3df\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_audit_module\",\"preContext\":\"class@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv6ylvmruxix3nn5shk3df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Login events",
+          "info":"There are two types of events related to login; one to view all the successful login audit events and another to display the login failure audit events",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Failed Login",
+            "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SEC-3021, SEC-1193, SEC-1192\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"Displays all the Failure login attempts related to Brocade NOS switches over a period of time",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          }, {
+            "name":"Successful Login",
+            "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SEC-1203, SEC-3020\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"Displays all the successful login attempts related to Brocade NOS switches over a period of time",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"NOS - Switch Status Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of Events over Time",
+          "info":"Displays all switch status events count (FW-1424 & Fw-1425) received from Brocade NOS switches over a period of time<br><br>dcm_nos_previous_state Extracted Field gives the previous switch status and dcm_nos_current_state Extracted Field gives the current switch status",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"FW-1424, FW-1425\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Switch Status Events grouped by Severity",
+          "info":"Displays all switch status events (Fw-1424 & FW-1425) received from Brocade NOS switches grouped by the event priority",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441791030086,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"FW-1424, FW-1425\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_log_level\",\"preContext\":\"severity@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Switch Status Events by Product",
+          "info":"Displays all switch status events (FW-1424 & FW-1425) received from Brocade NOS switches grouped by product",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"FW-1424, FW-1425\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"NOS - Callhome Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7obzgs33snf2hs000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3bovsgs5c7nvxwi5lmmu000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Switch Call Home Events over Time grouped by Message ID",
+          "info":"Displays all switch Call Home events (FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433 FW-1434, FW-1435, FW-1436, FW-1437 & FW-1438) received from Brocade NOS switches grouped by message ID over a period of time.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Switch Call Home Events grouped by Product",
+          "info":"Displays all switch Call Home events (FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433 FW-1434, FW-1435, FW-1436, FW-1437 & FW-14381) received from Brocade NOS switches grouped by product.",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Switch Call Home Events grouped by Severity",
+          "info":"Displays all Call Home events (FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433 FW-1434, FW-1435, FW-1436, FW-1437 & FW-1438) received from Brocade NOS switches grouped by priority.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1421023325968,\"endTimeMillis\":1441833141752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_log_level\",\"preContext\":\"severity@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"NOS - MAPS Events",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"MAPS Events by Categories and Measures",
+          "info":"<span>Displays all MAPS events (starts with Message ID: MAPS-) received from Ethernet switches grouped by V</span><span>iolation categories and Measures</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"CONTAINS\",\"value\":\"sec_telnet,sec_lv,temp,curr,voltage,rxp,txp,memory_usage,sfp_state,eth_mgmt_port_state,crcaln,rx_sym_err,cpu,down_sfm,ha_sync,faulty_blade,ps_state,fan_state\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"dcm_maps_category\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_maps_category\",\"preContext\":\"Category=\",\"postContext\":\".\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd, MAPS*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"MAPS Events by Products and Measures",
+          "info":"<span>Displays all MAPS events (starts with Message ID: MAPS-) received from Ethernet switches grouped by Products and Measures.</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"CONTAINS\",\"value\":\"sec_telnet,sec_lv,temp,curr,voltage,rxp,txp,memory_usage,sfp_state,eth_mgmt_port_state,crcaln,rx_sym_err,cpu,down_sfm,ha_sync,faulty_blade,ps_state,fan_state\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv64dsn5shky3u\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_product\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv64dsn5shky3u\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"dcm_flow_currentvalue\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_nos_product\",\"preContext\":\"Condition=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv64dsn5shky3u\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd, MAPS*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Timeline of MAPS Events by Severity",
+          "info":"<span>Displays all MAPS events (Message ID starts with MAPS-) received from Ethernet switches over time grouped by Severity.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1446316200000,\"endTimeMillis\":1446575400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"CONTAINS\",\"value\":\"sec_telnet,sec_lv,temp,curr,voltage,rxp,txp,memory_usage,sfp_state,eth_mgmt_port_state,crcaln,rx_sym_err,cpu,down_sfm,ha_sync,faulty_blade,ps_state,fan_state\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_nos_log_level\",\"preContext\":\"severity@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Timeline of MAPS Events by Measures",
+          "info":"<span>Displays all MAPS events (Message ID starts with MAPS-) received from Ethernet switches over time grouped by Measures.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"CONTAINS\",\"value\":\"sec_telnet,sec_lv,temp,curr,voltage,rxp,txp,memory_usage,sfp_state,eth_mgmt_port_state,crcaln,rx_sym_err,cpu,down_sfm,ha_sync,faulty_blade,ps_state,fan_state\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"MAPS Events by Severity",
+          "info":"<span>Displays all MAPS events (Message ID starts with MAPS-) received from Ethernet switches grouped by Severity (warning, info, etc.).</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1446316200000,\"endTimeMillis\":1446575400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"CONTAINS\",\"value\":\"sec_telnet,sec_lv,temp,curr,voltage,rxp,txp,memory_usage,sfp_state,eth_mgmt_port_state,crcaln,rx_sym_err,cpu,down_sfm,ha_sync,faulty_blade,ps_state,fan_state\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_log_level\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_nos_log_level\",\"preContext\":\"severity@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"MAPS Events by Categories",
+          "info":"<span>Displays all MAPS events (starts with Message ID: MAPS-) received from Ethernet switches grouped by Violation Categories (security violations, port health, switch resource, etc.)</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1446316200000,\"endTimeMillis\":1446575400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"CONTAINS\",\"value\":\"sec_telnet,sec_lv,temp,curr,voltage,rxp,txp,memory_usage,sfp_state,eth_mgmt_port_state,crcaln,rx_sym_err,cpu,down_sfm,ha_sync,faulty_blade,ps_state,fan_state\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_maps_category\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_maps_category\",\"preContext\":\"Category=\",\"postContext\":\".\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3nmfyhgx3dmf2gkz3poj4q0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd, MAPS*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"MAPS Events by Measures",
+          "info":"<span>Displays all MAPS events (starts with Message ID: MAPS-) received from Ethernet switches grouped by Measures</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"CONTAINS\",\"value\":\"sec_telnet,sec_lv,temp,curr,voltage,rxp,txp,memory_usage,sfp_state,eth_mgmt_port_state,crcaln,rx_sym_err,cpu,down_sfm,ha_sync,faulty_blade,ps_state,fan_state\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"MAPS Events by Source",
+          "info":"<span>Displays all MAPS events (starts with Message ID: MAPS-) received from Ethernet switches grouped by Source.</span><br>",
+          "gridWidth":"1",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1446316200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"operator\":\"CONTAINS\",\"value\":\"sec_telnet,sec_lv,temp,curr,voltage,rxp,txp,memory_usage,sfp_state,eth_mgmt_port_state,crcaln,rx_sym_err,cpu,down_sfm,ha_sync,faulty_blade,ps_state,fan_state\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_flow_currentvalue\",\"preContext\":\"Current Value:\\\\[\",\"postContext\":\",\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"NOS - Tunnel Events",
+      "constraints":[ {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Tunnel states",
+          "info":"<span>Displays Tunnel-states for each Tunnel<br><br></span><span>NSM-1001 =&gt; Tunnel is online</span><br><span>NSM-1002 =&gt; Tunnel is protocol down</span><br><span>NSM-1004 =&gt; Tunnel is created</span><br><span>NSM-1009 =&gt; Tunnel is deleted</span><br>",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd log@1588\",\"startTimeMillis\":1443764229747,\"endTimeMillis\":1446442973261,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv65dvnzxgk3c7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"dcm_nos_tunnel_name\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv65dvnzxgk3c7nzqw2zi0\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_nos_tunnel_name\",\"preContext\":\"arg0@1588 value=\\\"Tunnel \",\"postContext\":\"\\\" desc\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv65dvnzxgk3c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd, tunnel\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Tunnel Failure Events",
+          "info":"<span>There are two types of failure events related to tunnel:</span><br><span>1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creation failure audit events&nbsp;</span><br><span>2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deletion failure audit events</span><br><span>Click on \"Run\" icon to check the results for each type.</span><br>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Creation Failure",
+            "chartQuery":"{\"query\":\"raslogd log@1588\",\"startTimeMillis\":1443764229747,\"endTimeMillis\":1446442973261,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"TNLD-1006\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>Displays all the Creation Failure attempts related to tunnel over a period of time</span><br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Deletion Failure",
+            "chartQuery":"{\"query\":\"raslogd log@1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"TNLD-1007\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>Displays all the Deletion Failure attempts related to tunnel over a period of time</span><br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          } ]
+        }, {
+          "name":"Tunnel Protocol Down Events by Source",
+          "info":"<span>Displays all Protocol down events grouped by Source</span><br>",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd log@1588 tunnel\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"nsm-1002\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Tunnels by Source",
+          "info":"<span>Displays all the tunnels grouped by Source</span><br>",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd log@1588 tunnel\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Displays all Tunnel events grouped by Source",
+          "info":"<span>Displaying the count of Tunnel events grouped by Source</span><br><br><span>NSM-1001 =&gt; Tunnel is online</span><br><span>NSM-1002 =&gt; Tunnel is protocol down</span><br><span>NSM-1004 =&gt; Tunnel is created</span><br><span>NSM-1009 =&gt; Tunnel is deleted<br></span><br><span>NSM-1010 =&gt; Tunnel InterfaceMode changes</span><br><span>NSM-1011 =&gt; Tunnel OperationalEndpointMode changes</span><br>",
+          "gridWidth":"1/2",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd log@1588 tunnel\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1446441489333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"Brocade",
+  "url":"www.brocade.com",
+  "contentVersion":"3.0",
+  "info":"<span>Brocade SAN IP content pack helps the user to better search, analyse and manage the log data generated by Brocade SAN, NOS (IP) devices. Content pack can be used in two ways:</span><br><span>- Configure BNA to forward Syslogs from all the switches of interest to Log Insight</span><br><span>- Configure switches to forward Syslog to Log Insight</span><br>",
+  "instructions":"<span><span>Registering the Log Insight IPAddress in the device for receiving syslog messeges, the following commands have to be executed in CLI,</span></span><br><span>1. Telnet the device&lt;IP Address&gt;</span><br><span>2. login through admin credentials.</span><br><span>3. Enter in to config mode</span><br><span>4. For SYSLOG , to register your vRealize Log Insight UI IP give the command as,</span><br><span>&nbsp;</span><br><span><b>NOS -# logging syslog-server &lt;vRealize Log Insight UI IPAddress&gt;</b></span><br><span><b>&nbsp;</b></span><br><span><b>SAN - # syslogadmin --set -ip &lt;vRealize Log Insight UI IPAddress&gt;</b></span><br>",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAIAAABoJHXvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTlEMTIzQjk1MTZEMTFFM0I4RTI5QjlCNERCMDQzM0MiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTlEMTIzQkE1MTZEMTFFM0I4RTI5QjlCNERCMDQzM0MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOUQxMjNCNzUxNkQxMUUzQjhFMjlCOUI0REIwNDMzQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxOUQxMjNCODUxNkQxMUUzQjhFMjlCOUI0REIwNDMzQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiaDNT0AABAdSURBVHja7F0LUFXFG19AQQFBQEETFEVAnTQrRnPyUWKK4GuMtNTQxEdOWuqYj7LBxxT5zgeKo/nAkSRLRUxRyVRGQdLEUjBM/yqkgKIoopLE/r9l/+z/eO693HPPOfdy7mV/c4ZZzt1zz7f72/32+759XDuMMeKwHtjzKuCEcXDCODhhnDAOThgHJ4wTxsEJ4+CEccI4OGEcnDBOGAcnjMMUNJDz0NWraMeOel1t7u7IzQ21b486dkTe3iY8eOMGSktDTk4oMhI1amQpwgICkL09ionh7Z0gMBCFhqIRI1CfPqRaakFREdqwAfn4oMaN0fLlaP58Oa/DshEbi+FxfrHLzw+vWoXLyw3W2M6dOCcHz56NZ87E332HHz2SUesKxrC5c1FsLO9g/0d+PpoxA/n7o+3bkd6FF76+KCcH9ehBelhhIflraaMDOFu2jDP1HO7cQePGob590a1b4o969yY8wf2mTVGXLkb0p/oqkWHzZmxvz1Wi+GreHJ84gdUGUudrdu/GDRtyksRXo0Z4zx5NEgY4cgQ3bsxJEl/Qjg8e1CRhgMxM3KwZJ0l8QTs+d06ThAHy8nD79pwk8dWuHX7wQJOEAYqLcffunCTxNWGCKrVrZ5al2o8fo1GjUHKyyQ86OKCJE0ksQMsoKUEXLqCsLFRRYdqDp08TJ0whsJlQWYnnzJHTEmEU3LcPax+lpTguDrdubULR+vTRpEoUIiEBOzrKoW38eFxWZgW0PX6MP/7YhHKlp2ubMMCpU9jbW+ZAffIktgps2SI1dDBmjOYJA9y8ibt1k8OZnR1pv1bR1ZYtk1QiZ2eFxUEWKs/Tp3jyZJn2lb8/TkvTOmFVVTgsTFJxUlKsgTCmOpycZNIWHY1LSjTNWW4uUQlGCzJ9uvUQBjh/HgcGyg+nbttG2rJmERFhvBS9e1sVYQBQ4qNHy/dAe/XCly5plLCtW43LDyaYlRHGyubiIpOzBg3wJ5/ge/c0R9jly5Lkf/bMCgmjgUd51iO9PD3xunVKCq8+QBgpkt+/b52E0RIuXEh6jGzaOnbEe/dqiDMpMhcUWC1hFFlZpN6VhFa7d8c//1z3BSkvlyTtw4dWThh11D77TFFXgys0FB8/XpelOHtWkpxWaXQYMvpfflnpRAaYkYcO1Y38y5cbF69tWxsijI5qK1ZgV1eltAHx27fjigqLCi+ltQ0ebFuEUeTn48hIFaYNfXzwggX41i1LyPzTT5JEAiPLBgmjSE3FHTqoQJuDA2nX+/eb0Qd49AgHBUkSJjPTdgmjGnL1auzhoc48vbc3njqVTEqpG9+CbxsxQmqP//dfmyaMoqQEz5ghP3Cse/n64ilT8IEDZAZSIWCYjIqS+t65c5W6ediKcOMGHjtWUkTcpDVo4AwsXkwmS2XsTsjOxq++aoJmvn69PhFGcekSHjlSZdpYhXbuTNrE11+TdSUXL5KFG4YcZDAxwCwySYzoaOWlN8+qKQsgJwctWoS+/x6ZW35nZ+TlhTw8yA4+BwfyuqIisqWxstLk77lyBb3wglZXTVkGf/6JJ05Uc2wz37VmjTqhSmwDuH2bhLW0vEp8wAC17FKrVYm6ePoUJSWhtWvRuXPaEiw4mCwh9fRU5ctsiDAGIGzTJpSYiMrK6l6YVq1Qejpq21at77NFwijKy9HeveS0g7Q0VFVVNzIEBKCjR1VkS+4pAlYBFxf03nvkTAY7O3T4cN3IMGyYumxZv5VoCHl5+NNPccuWdW9uTJ2qbhjMtgirqMCJiWTPgaZMRLBgOWFiFBaSaZQWLTRq1n/7LSesBrm5JOSj8S3xzs7Ex6/vhGVk4KFDzRJUNMfVrZvCiRVrdpwzM9GCBWa0/Zo1I6d+gVHu60su8Hk9PMiJXk2aoGfPUHExuniRvP34cdMimQkJ6P3365mVmJ2Nw8PVb/4eHnjIEPzll+Twirt3pQpz9SoeN86Et7Rujf/5p96oxGvXyG44FRVggwb4zTfJgp/z5xUpq8OHyRpkiS/dtaseEFZaimfNUs2scHTEw4eTw9QMzXXJwB9/SA09K9u6onnCKitxfDzZZaQKVVBZ27apyZMQ6elk/lPKntKiIhsl7PRp3KWLOod0zZlDYh/mxuzZkuTZutXmCINhf8IEFagCvrdswU+eWEjs+/exm5ukAxJsijBogF5eSql666262RsxaZJx2UJCbIWwGzfIzKxCqsCVVrZSUxFSUoxL6OJi/YRVVZGteU2aKKJq4ED82291XJD8fEmiKljxrwHCCgrIykCF21UUnzCjXjhdgsB37lgtYYmJuGlT+VQFBuLkZG2NwVLEvn3bCgkDf+jdd+VTBTSvXGnp3URGAV1HivCyDkCvU8LOnCFHScmjCnxPMMakR/wsiaNHjcvv5KTkDRb/7RVoIytWoJ490bVrch7v2hVlZKCNG8lqXA1CygRCUJD1ROvv3cODBsnsWGBDfvONtg55EAH0s4+P8YKMGKHkJRZcNXXhAho+XGbHCg9H8fHIz0/Ts3RxcWTZvVH07m0NPSwhQeYh6Z6eZKuy9pGXJ3VftrKopvkJAyU2bZpMNThsmBIL2HIoLsbBwVK3ymt6egUGLXlOsZsb6ZRWgdxcqbub4YJhWLuEXb5sQklEE1eKdypaAo8f4yVLTDjizMtL+emqZiMMPBIZIQxHR7x0qSqri8wFqHFoTPv3kyW9pm5w+uorFQIp5poi4b+dI7ratyfHM2mRsIULOT3iy94eHzumTqhSZYMwOprTo+eKiVEttqwaW+Xlkk68rYdXZCRZTaQtwkpLyaQU50bvYgVVpxTUIAzcxq5dOTf6w4ZqTwApJiw/X/6x5jZ8OTiQn002w4ntygi7coX8eDGnR3SBvjHbQiCkiK1WrTg94u0O8fFmnQNCnC11FODAgTgpyQLTdbL2hxUUoLAw8rfewtkZubujwEDUoQPq1YtMccG/FoHtntNho7DnVcAJ4+CEcXDCOGEcnDAOThgnjIMTxsEJ44RxcMI4OGGcMA5OGIcpkLOhr6Cg4K+//tK97+bm1qFDB2dnZ9H97Ozs0tJS3fyurq7BwcFNmjSp5V23bt06evTo33//7eTk1LFjx9DQUEjUkv/Ro0epqakgXlVVlb+/f//+/Zs1a2Yoc0VFRUZGBk17eXl17txZN8/1aohuenh4tGvXzpDkhsrL8MYbb8hnTMYs9apVqwx9m4uLy7x58/55/hjHPn36GMpvZ2fXt2/fX3/9VfctRUVFo0ePhgzC/E2bNl29enWVvtVIlZWVCxcubNy4sTB/o0aNYmJiKg2s4/zhhx9YzpYtW/6rbxMGPK5XckdHx4iICL2S11Je2XWuaE1HLYRRTJgwwaQCNGzYELqF8BFo1K1btzaUf8qUKSKRgEJg11D+Dz/8UG9BRo4cKcx28uRJ6YSxBrdo0SKrIWzWrFnnawCKKyoqismUm5urW4CVK1ey/FlZWRs3bvT19aUfgfpiDRw6RI8ePej9oKAg+OanT5/evXt3yZIlQC29n5SUJBRp27Zt7NWff/45qFDIv2bNGpYfvkRnc9dj0AfCepw6dWothA0ePJhKfu7cucTExFdeeYU9uH79er2ETZs2ba8+1BlhkBB91KtXL/rRpk2bdAugK2teXh5TelAR9OaOHTvoHXd3dxgvhfmXLVtGP4L+xxQdJBjxUEfC/FCV9P6AAQMM6cN33nmHJpo3b66rPBlhY8eOfX7jxzOgkH4EeriwsFC3vFuVHY2oFypbiS+99BJNwDAmJX9gYGCbNm2YfUET69ato4mJEye2atVKmP+jjz6CYQwSN2/ePHLkCL157NixguolXMD93LlzRcoZTCFIpKWllZeXCz/avXs3HYrgdTTPnTt3jh8/LtVaa9AA+HCvXiz15MmTtWvXWp9ZD82TFfi1116T8khZWVlxcTFNU6PrwYMHMJLTO2FhYaL80JZZ+2XvgrGHJsDMe+H53ywElThjxgwg/osvvhASBlV84MABSPTr18/b2zs8PFzIokSAYTlq1CiaTklJ0a5ZzwDWM6s1aOPbt2+/ePEipMeNGydU8YYAlgWYDzCWUPMyJCQEEvANVTW/HtWpUyfdp8C4T05OhsTvv//OxkuaAKdCN/+CBQt0bx48eJDyN3z4cPgbGRm5a9cuSOzZsycuLs7BwUFiDYCBvmHDBioMDLRglAo/vXz5sqjL+ldDEWPqWomgIkA5iOxj1idgkGhTA0gLHwR7hGbet2+fsB/ovn3FihX0027dutE74BjQO5MmTZJYBGofglorKSmhBghzH0F5ShnDKE6dOsWkzc/PN2olxije2afyGAYKDZQPsxpEgEHiRg0gzTiOj48HxUX/rRL8OJvelm5v/z+ZoVmwNmeSkEwfQs16Vv/SIWhapn5N0orCV1tmSa4ilQjcjB8/nqbBt09PT58/fz4kQCWCfh80aJAoP9wJCAig6TNnzmRmZlInafLkycKBgaXv378PA4xuLIMmPGt+VdLDw4PJIEVspg9BE7KbYCuCPjRVKxYI1qvrhlTAkR8yZIjwTosWLeqSMKgyoUbu2rUr3BkzZgykly5dqktYdHT0sGHDaBrYos4WuFCLFy9mDpNwHIIxUpcwFhVjOYNqzkdjg5kQYEwCx35+fmCS0DGG9aEp1dBVAzDwhIaGSqmBEydO0ERwcLAoyEJ9D6gTTQd/X3/9dZrIycmpPSeYkWA+QKKoqEhoYgFDUHjm7YqeAoX5yy+/0HTvmlO2evbsSRNgsIDLLHpk5syZb7/9Ngx41Bxl+rAWUAPEKMA337lzJ00zO9PKovVsEJaiUj744AOa2Lx5s/A+U7Mwtj18+FBUleCBUfuF+a39+/f38fGhowjzrFn3unTpEiSgh9FYF9OHoAlWPQ9QzvSpH3/8Efzi2oUHRxPMECoeqIfp06dbKFyvVmgKxiSwD6kHChg6dKjRSMft27cpr+DwXhecVQSWi1/NSXvwLFgoNLKQkJDAgkkwzAi/avny5axEoGDBvQOnEKx/Nq58VXMKDYsfAvE6h9yUMbv80KFDIisRuul/qgGKFyQRhvZjY2NNCk1Bi9FW8BdaHPAnJTTFxjmwVoT3wRdmQwKYhdA5WFOgzpMoYC8MP7JoOkvDgEQnEFj8sHv37nqLxsyQ8TW/31B78Bfwmc5PXBoN/gLrGiIM7ECRK1MLYaB82OzGs+e3L54+fZoNZsKmMG/ePL3TJffu3ROZZBRRUVGsRbP4IfTI2idcwPKkHBsiDHRDv379MjIyZEyvKCFMzoY+MCiysrJ07zs5OUEVg13EXCWK1NTUwsJCSICHK5o0gUpJTEykaahuz+d//x08LTDYwMqAx11dXTt16gRGpq7dKAQIBtoMTA+QAdxzGOdefPFF9unZs2dpLCYiIkLkuTMXLSkpiWl1oC27GqJiggwhISHuBnZdsvIaAvRjKI68IYzvwLQy8DUdnDAOThgHJ4wTxsEJ4+CEccI4OGEcnDBOGAcnjIMTxgnj4IRxmIT/CjAAqVgf7ZiUGsAAAAAASUVORK5CYII="
+}
