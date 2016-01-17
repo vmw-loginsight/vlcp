@@ -1,0 +1,475 @@
+{
+  "name":"BigSwitchNetworks - BCF",
+  "namespace":"sdn.bigswitchnetworks.bcf",
+  "framework":"#9c4",
+  "version":"2.4",
+  "contentPackId":"sdn.bigswitchnetworks.bcf",
+  "extractedFields":[ {
+    "displayName":"bcf_add_endpoint",
+    "preContext":"EPM1010: ",
+    "postContext":" \\[tenant",
+    "regexValue":".*",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3bmrsf6zlomryg62looq000000",
+    "constraints":"{\"searchTerms\":\"adding endpoint\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"This notifies the admin when new VM or host connected to BCF comes online and starts sending traffic."
+  }, {
+    "displayName":"bcf_bsn_origination",
+    "preContext":"origination=",
+    "postContext":"\\]",
+    "regexValue":"\\S+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3conxf633snftws3tboruw63q0",
+    "constraints":"{\"searchTerms\":\"INFO\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"This is used to identify the source of the configuration. This could be &nbsp;manual using CLI, or dynamically done using OpenStack Integration or vCenter integration.<br>"
+  }, {
+    "displayName":"bcf_bsn_tenant_name",
+    "preContext":"EPM1006: Creating Tenant \\[name=",
+    "postContext":" \\, origination",
+    "regexValue":"\\S+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3conxf65dfnzqw45c7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"endpointmanager\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify new tenant creation on BCF.<br>"
+  }, {
+    "displayName":"bcf_cli_cmds",
+    "preContext":"cmd_args=",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3dnruv6y3nmrzq0000",
+    "constraints":"{\"searchTerms\":\"cli.command\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify all cli commands executed on BCF.<br>"
+  }, {
+    "displayName":"bcf_disconnect_switch",
+    "preContext":"OFCH7009: ",
+    "postContext":" \\[00",
+    "regexValue":".*",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3enfzwg33onzswg5c7on3ws5ddna000000",
+    "constraints":"{\"searchTerms\":\"handshake\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF controller to switch disconnect issue.<br>"
+  }, {
+    "displayName":"bcf_endpoint_ipaddr",
+    "preContext":"ipAddr=",
+    "postContext":"\\, state",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0",
+    "constraints":"{\"searchTerms\":\"endpointmanager\"}",
+    "info":"&nbsp;Identify BCF Endpoint IP address info.<br>"
+  }, {
+    "displayName":"bcf_endpoint_name",
+    "preContext":"alias=",
+    "postContext":"\\, origination",
+    "regexValue":"\\S+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"endpointmanager\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF Endpoint name info.<br>"
+  }, {
+    "displayName":"bcf_log_severity",
+    "preContext":"floodlight: ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000",
+    "constraints":"{\"searchTerms\":\"floodlight\"}",
+    "info":"To identify and match on different Big Cloud Fabric logging severity level, like INFO, WARN, Error.<br>"
+  }, {
+    "displayName":"bcf_logical_router",
+    "preContext":"Logical Router ",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5twsy3bnrpxe33vorsxe000",
+    "constraints":"{\"searchTerms\":\"bvs\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF Tenant logical router creation.&nbsp;<br>"
+  }, {
+    "displayName":"bcf_mac_address",
+    "preContext":"MAC=",
+    "postContext":"\\, alias",
+    "regexValue":"[A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4}",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3nmfrv6ylemrzgk43t",
+    "constraints":"{\"searchTerms\":\"endpointmanager\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF Endpoint by MAC.<br>"
+  }, {
+    "displayName":"bcf_port_group_type",
+    "preContext":"pgType=",
+    "postContext":",",
+    "regexValue":"\\S+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3qn5zhix3hojxxk4c7or4xazi0",
+    "constraints":"{\"searchTerms\":\"bvs\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF port-group type combination of manual or dynamic and static or LACP.<br>"
+  }, {
+    "displayName":"bcf_rack_id",
+    "preContext":"rackId=",
+    "postContext":",",
+    "regexValue":"\\w+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3smfrwwx3jmq000000",
+    "constraints":"{\"searchTerms\":\"endpointmanager\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF physical Rack info.<br>"
+  }, {
+    "displayName":"bcf_remove_endpoint",
+    "preContext":"EPM1011: ",
+    "postContext":" \\[tenant",
+    "regexValue":".*",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3smvww65tfl5sw4zdqn5uw45a0",
+    "constraints":"{\"searchTerms\":\"Removing Endpoint\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF endpoint removal.<br>"
+  }, {
+    "displayName":"bcf_segment_by_tenant",
+    "preContext":"tenantName=",
+    "postContext":"\\, name",
+    "regexValue":"\\S+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpwe6k7orsw4ylooq000000",
+    "constraints":"{\"searchTerms\":\"bvs\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"Identify BCF segment creation for the tenant.<br>"
+  }, {
+    "displayName":"bcf_segment_interface",
+    "preContext":"Segment interface ",
+    "postContext":"has",
+    "regexValue":".*",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpws3tumvzgmyldmu000000",
+    "constraints":"{\"searchTerms\":\"bvs\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF logical router interface creation.<br>"
+  }, {
+    "displayName":"bcf_segment_name",
+    "preContext":"name=",
+    "postContext":"\\, origination",
+    "regexValue":"\\S+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"bvs\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF segment name.<br>"
+  }, {
+    "displayName":"bcf_switch_name",
+    "preContext":"swName=",
+    "postContext":",",
+    "regexValue":"\\S+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3to5uxiy3il5xgc3lf",
+    "constraints":"{\"searchTerms\":\"bvs\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF physical switch by name.<br>"
+  }, {
+    "displayName":"bcf_switch_type",
+    "preContext":"swType=",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3to5uxiy3il52hs4df",
+    "constraints":"{\"searchTerms\":\"bvs\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"Identify BCF switch type, leaf, spine or virtual.<br>"
+  }, {
+    "displayName":"bcf_userid_for_audit",
+    "preContext":"User=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3vonsxe2lel5tg64s7mf2wi2lu",
+    "constraints":"{\"searchTerms\":\"aaa\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify BCF user activity.<br>"
+  }, {
+    "displayName":"bcf_vcenter_tenant_name",
+    "preContext":"vCenter=\" ",
+    "postContext":"\"",
+    "regexValue":"\\w+",
+    "internalName":"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3wmnsw45dfojpxizlomfxhix3omfwwk000",
+    "constraints":"{\"searchTerms\":\"bvs\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"&nbsp;Identify addition of vCenter to the BCF Inegration.<br>"
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"BCF end-point move alert",
+    "info":"This alerts admin in case on endpoint moving from one interface to other within the fabric. This helps to identify and get details around vMotion. If it is rogue end-point then identify the end-point IP and MAC and add static end-point entry to avoid the move.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447378260131,\"endTimeMillis\":1447378560290,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving Endpoint\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"BCF controller cluster changes alert",
+    "info":"This is to notify admin on any event around the mutual BCF controller connectivity change events within the cluster.&nbsp;This can be resolved by checking the BCF controller cluster health status and physical connectivity between the BCF controllers.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447378260131,\"endTimeMillis\":1447378560290,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"cluster\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"BCF login attempt failure",
+    "info":"To detect possible attempt to unauthorized access to the BCF controller. This can be resolved by identifying the user and IP used for unauthorized access from the audit log.<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1452027219375,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authentication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":3.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"BCF switch Interface down alert",
+    "info":"To alert the admin in case of switch interface going down. This helps administrator to narrow down the network issues.&nbsp;This can be resolved checking the interface cabling and the neighbor interface status.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447373657453,\"endTimeMillis\":1447377257452,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Port Down\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"BCF switch disconnect events",
+    "info":"To alert admin about the switch disconnect events with BCF controller. This can be resolved checking the BCF controller and switch management network connectivity.<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1452022250617,\"endTimeMillis\":1452025850616,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Disconnected\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":1800000,
+    "searchInterval":300000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"BCF events over time",
+          "info":"<span>This provides all the BCF events from all the Big Cloud Fabric PODS in the data center</span><span><span>over time series</span>. This helps <span>to actively monitor and identify network events</span></span><span>on all of the Big Cloud Fabric PODS from this single pane.</span><b><span><br></span></b>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"BCF events grouped by controller",
+          "info":"<span>This provides all the BCF events per Big Cloud Fabric controller in the data center. In multi BCF POD environment, this helps to understand the network events distribution across different Big Cloud Fabric PODS, from single pane.</span><span></span><span></span><b><span><br></span></b>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"appname\",\"displayName\":\"appname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"appname\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"BCF errors & warnings",
+          "info":"<span>This provides all the BCF errors and warning over time series from all the Big Cloud Fabric PODS in the datacenter. This helps <span>to actively monitor and identify critical network events</span></span><span>&nbsp; on all of the Big Cloud Fabric PODS from this single pane.</span><b><span><br></span></b>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1450288373149,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"floodlight\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000\",\"operator\":\"CONTAINS\",\"value\":\"warn,error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"bcf_log_severity\",\"preContext\":\"floodlight: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"floodlight\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Tenant & Segment events over time",
+          "info":"<span>This provides all the BCF logical configuration events over time series from all the Big Cloud Fabric PODS \nin the data center. This helps <span>to actively monitor and identify changes to the logical configuration</span></span><span>, which could help in understand the isolate any network issues due to logical configuration.<br></span>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447367139260,\"endTimeMillis\":1447453539259,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"epm1017,epm1018\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"epm1006,epm1005\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"CLI configuration changes",
+          "info":"<span>This provides all the BCF configuration changes through CLI over time series from all the Big Cloud Fabric PODS \nin the data center. Given one of the common reason for network issues is fat fingering, user can do some configuration errors. This widget helps <span>to go back in time to relate/isolate any network events to the CLI configuration done during the time of network event.<br></span></span><span></span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"LOCLAUD1001:\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3dnruv6y3nmrzq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_cli_cmds\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3dnruv6y3nmrzq0000\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_cli_cmds\",\"preContext\":\"cmd_args=\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3dnruv6y3nmrzq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"cli.command\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"floodlight\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Endpoint Move",
+          "info":"<span>This provides Endpoint IP address's which are moved over time within the BCF PODS. This provides good understanding of the history of the endpoint's physical location on Big Cloud Fabric and the associated compute node. This information can be used for any application issue associated with this endpoints.</span><span></span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"EPM1014,Moving Endpoint\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_endpoint_ipaddr\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_endpoint_ipaddr\",\"preContext\":\"ipAddr=\",\"postContext\":\"\\\\, state\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"endpointmanager\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Tenant Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Tenant events over time",
+          "info":"<span>This provides all the BCF Tenant logical configuration events over time series from all the Big Cloud Fabric PODS \nin the data center. This helps <span>to actively monitor and identify changes to the tenant configuration</span></span><span>, which could help in understand the isolate any network issues due to tenant logical configuration.</span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1432366081562,\"endTimeMillis\":1432456885707,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"epm1005,epm1006\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Segment events over time",
+          "info":"<span>This provides all the BCF logical segment configuration events over time series from all the Big Cloud Fabric PODS \nin the data center. This helps <span>to actively monitor and identify changes to the segment configuration</span></span><span>, which could help in understand the isolate any network issues due to logical segment configuration.</span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447346752040,\"endTimeMillis\":1447433152039,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"epm1017,epm1018\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Tenant by name",
+          "info":"<span>This provides graphical representation of event distribution per BCF tenant. This helps <span>to&nbsp; understand the tenant configuration changes behavior,</span></span><span>which could help in understand and isolate any network issues for the given tenant.<br></span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"epm1005,epm1006\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3conxf65dfnzqw45c7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_bsn_tenant_name\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3conxf65dfnzqw45c7nzqw2zi0\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_bsn_tenant_name\",\"preContext\":\"EPM1006: Creating Tenant \\\\[name=\",\"postContext\":\" \\\\, origination\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3conxf65dfnzqw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"endpointmanager\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"floodlight\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Segment by name",
+          "info":"<span>This provides graphical representation of event distribution per BCF segment. This helps <span>to&nbsp; understand the segment configuration changes behavior,</span></span><span>which could help in understand and isolate any network issues for the given segment.<br></span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"epm1017,epm1018\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpw4ylnmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_segment_name\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpw4ylnmu000000\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_segment_name\",\"preContext\":\"name=\",\"postContext\":\"\\\\, origination\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpw4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"bvs\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"floodlight\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Tenant by origination",
+          "info":"<span>This provides graphical representation of tenant configuration distribution based on origination of the configuration.&nbsp; The origination is is specially useful when BCF is deployed with multiple orchestration platform, like vSphere, OpenStack, Cloud Stack</span><span>. This helps to identify the configuration done by each of the orchestration platform clusters, as the configuration here is done through the BCF integration with each of this Orchestration platform.<br></span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"epm1005,epm1006\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3conxf633snftws3tboruw63q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_bsn_origination\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3conxf633snftws3tboruw63q0\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_bsn_origination\",\"preContext\":\"origination=\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3conxf633snftws3tboruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"INFO\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"floodlight\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Segment breakdown by tenant",
+          "info":"<span>This provides graphical representation of segment distribution per BCF tenant. This helps <span>to&nbsp; understand the relative tenant configuration scale.</span></span><span></span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"epm1017,epm1018\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpwe6k7orsw4ylooq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_segment_by_tenant\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpwe6k7orsw4ylooq000000\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_segment_by_tenant\",\"preContext\":\"tenantName=\",\"postContext\":\"\\\\, name\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3tmvtw2zloorpwe6k7orsw4ylooq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"bvs\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"floodlight\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Endpoint Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Endpoint Changes",
+          "info":"<span>This provides all the BCF endpoint events over time series from all the Big Cloud Fabric PODS \nin the data center. This helps <span>to actively monitor and identify changes to the endpoints</span></span><span>, which could help in understand the new work loads and also to isolate any network issues due to endpoint configuration.</span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"EpmThread\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1450288373149,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"adding,removing,moving\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Endpoint Move",
+          "info":"<span>This provides Endpoint IP \naddress's which are moved over time within the BCF PODS. This provides \ngood understanding of the history of the endpoint's physical location on\n Big Cloud Fabric and the associated compute node. This information can \nbe used for any application issue associated with this endpoints.</span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"EPM1014,Moving Endpoint\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_endpoint_ipaddr\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_endpoint_ipaddr\",\"preContext\":\"ipAddr=\",\"postContext\":\"\\\\, state\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"endpointmanager\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Endpoint by MAC Address",
+          "info":"<span>This provides graphical representation of event distribution per BCF endpoint by MAC address. This helps <span>to&nbsp; understand the endpoint changes behavior per MAC,</span></span><span>which could help in understand and isolate any network issues for the given tenant.</span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Adding Endpoint,Removing Endpoint\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3nmfrv6ylemrzgk43t\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_mac_address\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3nmfrv6ylemrzgk43t\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_mac_address\",\"preContext\":\"MAC=\",\"postContext\":\"\\\\, alias\",\"regexValue\":\"[A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4}\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3nmfrv6ylemrzgk43t\",\"constraints\":\"{\\\"searchTerms\\\":\\\"endpointmanager\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"floodlight\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Endpoint by IP Address",
+          "info":"<span>This provides graphical representation of event distribution per BCF endpoint by IP address. This helps <span>to&nbsp; understand the endpoint changes behavior per IP,</span></span><span>which could help in understand and isolate any network issues for the given tenant.</span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Adding Endpoint,Removing Endpoint\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_endpoint_ipaddr\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_endpoint_ipaddr\",\"preContext\":\"ipAddr=\",\"postContext\":\"\\\\, state\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f62lqmfsgi4q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"endpointmanager\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Endpoint by name",
+          "info":"<span>This provides graphical representation of event distribution per BCF endpoint by name. This helps <span>to&nbsp; understand the endpoint changes behavior per name,</span></span><span>which could help in understand and isolate any network issues for the given tenant. This is useful with BCF integration with Orchestration platform, like vCenter &amp; Openstack, BCF gets the endpoint name orchestration platform.<br></span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Adding Endpoint,Removing Endpoint\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f63tbnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_endpoint_name\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f63tbnvsq0000\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_endpoint_name\",\"preContext\":\"alias=\",\"postContext\":\"\\\\, origination\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3fnzsha33jnz2f63tbnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"endpointmanager\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"floodlight\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Configuration Changes",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Config Changes",
+          "info":"<span>This provides all the BCF configuration changes over time \nseries from all the Big Cloud Fabric PODS \nin the data center. This helps to monitor configuration changes in the BCF. This widget helps\n <span>to go back in time to relate/isolate any network events to the configuration done during the time of network event.<br></span></span><span></span>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"LOCLAUD1001:\",\"startTimeMillis\":1439933164532,\"endTimeMillis\":1440019777810,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"REST API Calls",
+          "info":"<span>This provides all the BCF configuration done using REST changes over time \nseries from all the Big Cloud Fabric PODS \nin the data center. This includes configuration changes done through scripting,OpenStack Integration. This widget helps\n <span>to go back in time to relate/isolate any network events to the REST configuration done during the time of network event.<br></span></span><span></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"LOCLAUD1001:\",\"startTimeMillis\":1440018000000,\"endTimeMillis\":1440021599999,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"RestAuditFilter, restauditfilter\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"CLI configuration changes",
+          "info":"<span>This provides all the BCF \nconfiguration changes through CLI over time series from all the Big \nCloud Fabric PODS \nin the data center. Given one of the common reason for network issues is\n fat fingering, user can do some configuration errors. This widget helps\n <span>to go back in time to relate/isolate any network events to the CLI configuration done during the time of network event.<br></span></span><span></span><span></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"LOCLAUD1001:\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1449694197541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\"},{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3dnruv6y3nmrzq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"bcf_cli_cmds\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3dnruv6y3nmrzq0000\",\"displayNamespace\":\"BigSwitchNetworks - BCF\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_cli_cmds\",\"preContext\":\"cmd_args=\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3dnruv6y3nmrzq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"cli.command\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"floodlight\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Errors & Warnings",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"BCF errors & warnings by controller",
+          "info":"<span>This provides distribution of BCF errors &amp; warnings per BCF PODS in the data center. This helps <span>to identify the BCF pods which are having relatively higher number of critical network events.</span></span><span></span><b><span></span></b> This helps the admin to plan and position the new workloads in the data center.<br>",
+          "gridWidth":"1",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"floodlight\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1450288373149,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000\",\"operator\":\"CONTAINS\",\"value\":\"WARN,error\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"bcf_log_severity\",\"preContext\":\"floodlight: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"floodlight\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"BCF Warnings",
+          "info":"<span>This provides all the BCF warnings over time series from all the Big Cloud Fabric PODS in the data center. This helps <span>to actively monitor and identify critical network events</span></span><span>&nbsp; on all of the Big Cloud Fabric PODS from this single pane.</span><b><span></span></b><span></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1451937164654,\"endTimeMillis\":1452541965285,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000\",\"operator\":\"CONTAINS\",\"value\":\"WARN\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"bcf_log_severity\",\"preContext\":\"floodlight: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"floodlight\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"BCF Errors",
+          "info":"This provides all the BCF errors over time series from all the Big Cloud Fabric PODS in the data center. This helps to actively monitor and identify critical network events&nbsp; on all of the Big Cloud Fabric PODS from this single pane.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444773842616,\"endTimeMillis\":1450201973149,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000\",\"operator\":\"CONTAINS\",\"value\":\"ERROR\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"bcf_log_severity\",\"preContext\":\"floodlight: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadenk7onsg4ltcnftxg53jorrwq3tfor3w64tlomxgey3gmjrwmx3mn5tv643fozsxe2lupe000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"floodlight\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"Big Switch Networks",
+  "url":"www.bigswitch.com",
+  "contentVersion":"1.0",
+  "info":"<span><span><span>The Big Switch Networks content pack provides set of preconfigured dashboards for both physical and logical aspect of the Big Cloud Fabric. These dashboards filter and display information about physical devices on the network, such as the controller nodes and switches. The logical dashboards provide information about the logical components in the Big Cloud Fabric, such as tenants and segments.This also provides the dashboard around errors and warnings, which would help the administrator to monitor and troubleshoot the Big Cloud Fabric.</span></span><br><br><span><span>The Big Switch Networks Big Cloud Fabric content pack helps administrator with following:</span></span><br><span><span>- Proactive monitoring of the Big Cloud Fabric environment</span></span><br><span><span>&nbsp;&nbsp;The Big Switch Networks content pack provides set of preconfigured dashboards for both physical and logical aspect of the Big Cloud Fabric. This filter the critical information and displays for proactively monitor and act on any networking events.</span></span><br><br><span><span>- Change tracking and auditing</span></span><br><span><span>The Big Switch Networks content pack tracks all the configuration changes through CLI, REST calls. &nbsp;Keeps the audit trail for all the events.</span></span><br><br><span><span>- Helps to troubleshoot by providing the context and additional information</span></span><br><span><span>The Big Switch Networks content pack helps to troubleshoot any network issue by providing the additional information and the configured alerts to detect any abnormal condition in the fabric.</span></span><br><span><span><br></span></span><br></span>",
+  "instructions":"<span><span>Enable remote logging on Big Cloud Fabric controller with vRealize Log Insight Instance IP address as the remote logging server. The config on the BCF controller looks something like this “logging remote &lt;IP address of Log Insight &nbsp;Instance&gt;”.</span></span><br>",
+  "icon":"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"
+}
