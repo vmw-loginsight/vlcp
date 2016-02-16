@@ -16,6 +16,7 @@ def prep_json(file_path):
     js.pop('eventTypes', None)
     js.pop('agentClasses', None)
     js.pop('extractedFields', None)
+    js.pop('instructions', None)
     js['fileName'] = prep_path(file_path)
     return js
 
