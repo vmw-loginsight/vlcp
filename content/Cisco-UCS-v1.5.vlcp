@@ -1,0 +1,800 @@
+{
+  "name":"Cisco - UCS",
+  "namespace":"com.cisco.ucs",
+  "framework":"#5dc",
+  "version":"1.0",
+  "contentPackId":"com.cisco.ucs",
+  "extractedFields":[ {
+    "displayName":"cisco_auth_messages",
+    "preContext":"",
+    "postContext":".*svc_sam_pamProxy",
+    "regexValue":"AUTHPRIV-3-SYSTEM_MSG",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3bov2gqx3nmvzxgylhmvzq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_callhome_type",
+    "preContext":"%CALLHOME\\-2\\-EVENT: ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dmfwgy2dpnvsv65dzobsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_cli_command",
+    "preContext":"authpriv-5-system_msg: .* COMMAND=",
+    "postContext":" -",
+    "regexValue":".*",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dnruv6y3pnvwwc3te",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ethport_interface",
+    "preContext":"%ethport-.*: Interface ",
+    "postContext":" is ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3foruha33sorpws3tumvzgmyldmu000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ethport_interface_status",
+    "preContext":"%ethport-.*: Interface \\S+ is ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3foruha33sorpws3tumvzgmyldmvpxg5dbor2xg000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_interface_status_reason",
+    "preContext":"%.*port-.*:.* Interface \\S+ is \\w+ \\(",
+    "postContext":"\\)",
+    "regexValue":".*",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_securityd_event",
+    "preContext":"AUTHPRIV\\-5\\-SYSTEM_MSG: ",
+    "postContext":" (with username )?\\S+ - securityd",
+    "regexValue":".*?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_stp_loopguard_port",
+    "preContext":"STP-2-LOOPGUARD_.* Loop guard \\w+ port ",
+    "postContext":" on VLAN\\d+.",
+    "regexValue":"\\S+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf64dpoj2a0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_stp_loopguard_status",
+    "preContext":"STP-2-LOOPGUARD_.* Loop guard ",
+    "postContext":" port \\S+ on VLAN\\d+.",
+    "regexValue":"\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf643umf2hk4y0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucs_callhome_error_message",
+    "preContext":"callhome-3-event_process_error: .* reason:(could send message; )?",
+    "postContext":"(could send message|;|$)",
+    "regexValue":".*?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv6y3bnrwgq33nmvpwk4tsn5zf63lfonzwcz3f",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucs_ntp_drift",
+    "preContext":"%DAEMON-5-SYSTEM_MSG: time reset \\+*",
+    "postContext":" s - ntpd",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv63tuobpwi4tjmz2a0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucs_service_events",
+    "preContext":"",
+    "postContext":"\\[\\d+\\]\\:",
+    "regexValue":"^svc_\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucs_ssh_source",
+    "preContext":"daemon-.* for \\S+ from ",
+    "postContext":" .* sshd",
+    "regexValue":"\\S+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucs_ssh_username",
+    "preContext":"daemon-.* for ",
+    "postContext":" from .* sshd",
+    "regexValue":"\\S+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsc_event_category",
+    "preContext":"svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[\\w+\\]\\[",
+    "postContext":"\\]",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsc_event_code",
+    "preContext":"svc_\\w+\\[\\d+\\]: \\[",
+    "postContext":"\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]",
+    "regexValue":"F\\d+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnxwizi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsc_event_reason",
+    "preContext":"svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\] (.*Service profile \\S+ |UCS Domain \\S+ |UUID pool \\S+ |IP pool \\S+ |iqn pool \\S+ |MAC pool \\S+ |FC pool \\S+ \\S+ |Schedule  referenced by maintenance policy \\S+ )?",
+    "postContext":"(due to |\\.|$)",
+    "regexValue":".*?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7ojswc43pny000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsc_event_status",
+    "preContext":"svc_\\w+\\[\\d+\\]: \\[F\\d+\\]\\[",
+    "postContext":"\\]",
+    "regexValue":"\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7on2gc5dvom000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_blade_faults",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"chassis\\-[0-9]+/slot\\-[1-8]",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3cnrqwizk7mzqxk3duom000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_dme_crash",
+    "preContext":"svc_sam_dme",
+    "postContext":" crashed",
+    "regexValue":".*",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3envsv6y3smfzwq000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event",
+    "preContext":": %",
+    "postContext":": \\[\\w+\\]",
+    "regexValue":"ucsm-\\d-\\S+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45a0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event (2)",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[",
+    "postContext":"\\]",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazcs000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event (3)",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+/",
+    "postContext":"-\\d+.*?\\]",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazss000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event (4)",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[",
+    "postContext":"\\]\\[\\S+?\\]\\[\\S+?\\]",
+    "regexValue":"\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event (5)",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[",
+    "postContext":"\\]\\[\\S+?\\]",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event (6)",
+    "preContext":"(ucsm-|local).*?\\[",
+    "postContext":"\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]",
+    "regexValue":"\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa3cs000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event_category",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[",
+    "postContext":"\\]\\[\\S+?\\]",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7mnqxizlhn5zhs000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event_code",
+    "preContext":"(ucsm-|local).*?\\[",
+    "postContext":"\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]",
+    "regexValue":"\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7mnxwizi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event_component",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+/",
+    "postContext":"-\\d+.*?\\]",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7mnxw24dpnzsw45a0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event_location",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[",
+    "postContext":"\\]",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7nrxwgylunfxw4000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event_message",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[\\w+\\]\\[\\S+?\\]\\[\\S+?\\]\\s+",
+    "postContext":"$",
+    "regexValue":".*",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7nvsxg43bm5sq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_event_status",
+    "preContext":"(ucsm-|local).*?\\[\\w+\\]\\[",
+    "postContext":"\\]\\[\\S+?\\]\\[\\S+?\\]",
+    "regexValue":"\\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45c7on2gc5dvom000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_fault_reason",
+    "preContext":"ucsm-.*: \\[\\w+\\]\\[\\w+\\]\\[\\S+\\].* reason: (\\w+:)?",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3gmf2wy5c7ojswc43pny000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_session_destination",
+    "preContext":"UCSM-6-AUDIT: \\[session\\].*? ",
+    "postContext":": ",
+    "regexValue":".*?",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpwizltoruw4ylunfxw4000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_session_domain",
+    "preContext":"UCSM-6-AUDIT: \\[session\\].*?: ",
+    "postContext":" user ",
+    "regexValue":".*",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpwi33nmfuw4000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_session_source",
+    "preContext":"UCSM-6-AUDIT: \\[session\\].*?: .*user \\S+ .* from ",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg33vojrwk000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_session_status",
+    "preContext":"UCSM-6-AUDIT: \\[session\\].*?: .*user \\S+ ",
+    "postContext":"",
+    "regexValue":"\\w+ \\w+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg5dbor2xg000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_session_user",
+    "preContext":"UCSM-6-AUDIT: \\[session\\].*?: .*user ",
+    "postContext":" ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxk43foi000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"cisco_ucsm_switch_events",
+    "preContext":"",
+    "postContext":"\\:",
+    "regexValue":"UCSM\\-3\\-\\S+",
+    "internalName":"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3to5uxiy3il5sxmzloorzq0000",
+    "constraints":null,
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"UCS FEX offline",
+    "info":"UCS Manager has determined that a FEX is offline. For redundancy reasons, each chassis should have two FEXs. If only one FEX is down, then the chassis can continue to function, but may experience degraded performance. The FEX should be brought back online immediately to prevent an outage scenario.<br class=\"yui-cursor\">",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"FEX-2-FEX_OFFLINE\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"FEX-2-FEX_OFFLINE\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"UCS HA is not ready",
+    "info":"UCS Manager has determined that HA is/was not ready. If HA is not ready then a failover would not be possible. This may lead to an outage situation if not addressed.<br class=\"yui-cursor\" id=\"yui_3_10_2_2_1389066775381_42\">",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"ucsm-3-ha_not_ready\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"ucsm-3-ha_not_ready\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"UCS upper-non-recoverable thermal problem",
+    "info":"UCS Manager has detected a thermal problem. This may indicate an overheating issue in the environment and may lead to component failure.&nbsp;<br class=\"yui-cursor\" id=\"yui_3_10_2_2_1389066900249_42\">",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"thermal-problem upper-non-recoverable\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ucsm-*, local*-*-* * svc_*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (2)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazcs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (2)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+?\\\\]\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazcs000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"thermal-problem upper-non-recoverable\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ucsm-*, local*-*-* * svc_*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"UCS equipment failure",
+    "info":"UCS Manager has determined that a piece of equipment is inoperable. With proper redundancy this may mean a degradation in performance. In worst case this may indicate a partial or complete outage. This issue should be investigated immediately.<br class=\"yui-cursor\" id=\"yui_3_10_2_2_1389071745862_42\">",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"ucsm-3-equipment_inoperable\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (3)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazss000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (3)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+/\",\"postContext\":\"-\\\\d+.*?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazss000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"ucsm-3-equipment_inoperable\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"UCS interface down",
+    "info":"UCS supports multiple types of network interfaces including:<br><br>* ethport - Ethernet ports<br>* port - Fiber channel ports<br><br>Network interfaces may go down for a variety of reasons. The most common interface down event is seen when a port is in the error disabled state. Typically, when a port goes down, a reason is logged with the state. Common reasons why network ports would enter the error disabled state are:<br><br>* BPDU guard<br>* Security violations<br><br>If proper redundancy is in place then an interface down event should only result in performance degradation. In worst case, a network outage is possible.",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ethport-*, port-*\"},{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_interface_status_reason\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_interface_status_reason\",\"preContext\":\"%.*port-.*:.* Interface \\\\S+ is \\\\w+ \\\\(\",\"postContext\":\"\\\\)\",\"regexValue\":\".*\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ethport-*, port-*\"},{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"cisco_interface_status_reason\",\"preContext\":\"%.*port-.*:.* Interface \\\\S+ is \\\\w+ \\\\(\",\"postContext\":\"\\\\)\",\"regexValue\":\".*\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000\",\"constraints\":null}]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"UCS Central events over time",
+          "info":"UCS Central is a management tool for multiple UCS Manager instances, also known as UCS Domains. An increase in the amount of UCS Central events indicates that configuration changes are being made to the environment.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"svc_*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"cisco_ucs_service_events\",\"preContext\":\"\",\"postContext\":\"\\\\[\\\\d+\\\\]\\\\:\",\"regexValue\":\"^svc_\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS network events over time",
+          "info":"There are two primary components of a UCS Domain being compute and network. This chart represents network events. An increase in network events indicates either changes to an environment or possible faults.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-3-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3to5uxiy3il5sxmzloorzq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_switch_events\",\"preContext\":\"\",\"postContext\":\"\\\\:\",\"regexValue\":\"UCSM\\\\-3\\\\-\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3to5uxiy3il5sxmzloorzq0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS Manager events over time",
+          "info":"UCS Manager is the tool for managing a UCS Domain. An increase in the amount of UCS Manager events indicates that configuration changes are being made to the environment.<br class=\"yui-cursor\" id=\"yui_3_10_2_3_1389056760694_41\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-*-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386983864606,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS compute events over time",
+          "info":"There are two primary components of a UCS Domain being compute and network. This chart represents compute events. An increase in compute events indicates either changes to an environment or possible faults.<br class=\"yui-cursor\" id=\"yui_3_10_2_3_1389056760694_53\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-4-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS equipment failures by component",
+          "info":"When UCS components fail they are listed as inoperable. This chart indicates which components have failed most frequently in the environment. In a healthy environment, this chart will return no results.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-3-equipment_inoperable\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (3)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazss000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (3)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+/\",\"postContext\":\"-\\\\d+.*?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazss000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS service profile events over time",
+          "info":"Service profiles contain configuration information for UCS components. An increase in service profile events indicates either changes to an environment or possible faults.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-5-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS Manager session events over time",
+          "info":"UCS Manager keeps track of authentication requests. This chart represents all authentication requests over time. An increase in session events may indicate an increase in the number of users accessing the system or may indicate a malicious user trying to get access to the system.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-6-audit\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Callhome events over time grouped by type",
+          "info":"A Callhome event is the method of communicating to the Administrators on duty (via pager / other communication media) and also alert TAC for support issues based on severity of the callhome event. Keep in mind that some are callhome able but would eventually be cleared after some time.<br><br>For more information on callhome alerts, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/TS_CallHomeFaults.html\">Call Home Faults in Cisco UCS Manager</a>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dmfwgy2dpnvsv65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_callhome_type\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dmfwgy2dpnvsv65dzobsq0000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_callhome_type\",\"preContext\":\"%CALLHOME\\\\-2\\\\-EVENT: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dmfwgy2dpnvsv65dzobsq0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Security",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"UCS Manager session events over time by destination",
+          "info":"User can authenticate to different UCS Manager components including:<br><br><span style=\"font-weight: bold;\" id=\"yui_3_10_2_3_1389056760694_71\">* Fabric </span>which indicates logging directly into one of the fabric interconnects<br><span style=\"font-weight: bold;\" id=\"yui_3_10_2_3_1389056760694_73\">* Web </span>which indicates logging into the UCS Manager VIP<br><span style=\"font-weight: bold;\" id=\"yui_3_10_2_3_1389056760694_75\">* End Point</span>&nbsp;which indicates logging directly into a specific UCS component such as an FEX",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-6-audit\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_session_destination\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpwizltoruw4ylunfxw4000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_session_destination\",\"preContext\":\"UCSM-6-AUDIT: \\\\[session\\\\].*? \",\"postContext\":\": \",\"regexValue\":\".*?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpwizltoruw4ylunfxw4000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS Manager session events by username",
+          "info":"Usernames that have attempted authentication into the UCS instance. If multiple unknown usernames are listed this may indicate a malicious user.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-6-audit\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_session_user\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxk43foi000000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_session_user\",\"preContext\":\"UCSM-6-AUDIT: \\\\[session\\\\].*?: .*user \",\"postContext\":\" \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxk43foi000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS Manager session events over time by status",
+          "info":"The status of UCS sessions. Typically this chart would represent session log in events and session termination events.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-6-audit\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_session_status\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg5dbor2xg000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_session_status\",\"preContext\":\"UCSM-6-AUDIT: \\\\[session\\\\].*?: .*user \\\\S+ \",\"postContext\":\"\",\"regexValue\":\"\\\\w+ \\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg5dbor2xg000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS Manager session events by source",
+          "info":"The sources where authentication requests are originating. If one or more sources are unknown then they may indicate potential malicious users.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-6-audit\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_session_source\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg33vojrwk000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_session_source\",\"preContext\":\"UCSM-6-AUDIT: \\\\[session\\\\].*?: .*user \\\\S+ .* from \",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3tmvzxg2lpnzpxg33vojrwk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Cisco logins by username",
+          "info":"In addition to UCS Manager session events, user can also log into Cisco components through the command line. This chart represents usernames attempting to authentication via the command line. If one or more usernames are unknown then this may indicate malicious users.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"for from sshd daemon-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386989385257,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucs_ssh_username\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucs_ssh_username\",\"preContext\":\"daemon-.* for \",\"postContext\":\" from .* sshd\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Cisco logins by source",
+          "info":"In addition to UCS Manager session events, user can also log into Cisco components through the command line. This chart represents sources attempting to authentication via the command line. If one or more source are unknown then this may indicate malicious users.<br class=\"yui-cursor\" id=\"yui_3_10_2_3_1389056760694_87\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"for from sshd daemon-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386989385257,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucs_ssh_source\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucs_ssh_username\",\"preContext\":\"daemon-.* for \",\"postContext\":\" from .* sshd\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"constraints\":null},{\"displayName\":\"cisco_ucs_ssh_source\",\"preContext\":\"daemon-.* for \\\\S+ from \",\"postContext\":\" .* sshd\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Cisco CLI commands by command",
+          "info":"Frequently run CLI commands against a Cisco system.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386990530680,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dnruv6y3pnvwwc3te\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_cli_command\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dnruv6y3pnvwwc3te\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_cli_command\",\"preContext\":\"authpriv-5-system_msg: .* COMMAND=\",\"postContext\":\" -\",\"regexValue\":\".*\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3dnruv6y3pnvwwc3te\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Cisco security events by type",
+          "info":"Users can be created, deleted or modified from a Cisco system. This chart represents that different user activities that have transpired.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"AUTHPRIV-5-SYSTEM_MSG\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386990286765,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_securityd_event\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_securityd_event\",\"preContext\":\"AUTHPRIV\\\\-5\\\\-SYSTEM_MSG: \",\"postContext\":\" (with username )?\\\\S+ - securityd\",\"regexValue\":\".*?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3tmvrxk4tjor4wix3fozsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Relevant Queries",
+          "info":"",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Cisco failed logins by username",
+            "chartQuery":"{\"query\":\"for from sshd daemon-* fail*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucs_ssh_username\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucs_ssh_username\",\"preContext\":\"daemon-.* for \",\"postContext\":\" from .* sshd\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"for from sshd daemon-* fail*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"cisco_ucs_ssh_username\",\"preContext\":\"daemon-.* for \",\"postContext\":\" from .* sshd\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"constraints\":null}]}",
+            "info":"In addition to UCS Manager session events, user can also log into Cisco components through the command line. This chart represents usernames attempting, but failing to authentication via the command line. If multiple authentication failure events are seen then this may indicate malicious users.<br class=\"yui-cursor\" id=\"yui_3_10_2_4_1389056760694_42\">"
+          }, {
+            "name":"Cisco failed logins by source",
+            "chartQuery":"{\"query\":\"for from sshd daemon-* fail*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucs_ssh_source\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucs_ssh_username\",\"preContext\":\"daemon-.* for \",\"postContext\":\" from .* sshd\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"constraints\":null},{\"displayName\":\"cisco_ucs_ssh_source\",\"preContext\":\"daemon-.* for \\\\S+ from \",\"postContext\":\" .* sshd\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxg33vojrwk000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"for from sshd daemon-* fail*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"cisco_ucs_ssh_username\",\"preContext\":\"daemon-.* for \",\"postContext\":\" from .* sshd\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643tnbpxk43fojxgc3lf\",\"constraints\":null}]}",
+            "info":"In addition to UCS Manager session events, user can also log into Cisco components through the command line. This chart represents sources attempting, but failing to authentication via the command line. If multiple authentication failure events are seen from a small number of sources then this may indicate malicious users.<br class=\"yui-cursor\" id=\"yui_3_10_2_4_1389056760694_46\">"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Central / Manager",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"UCS Central events over time by fault status",
+          "info":"<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"svc_*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsc_event_status\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7on2gc5dvom000000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucs_service_events\",\"preContext\":\"\",\"postContext\":\"\\\\[\\\\d+\\\\]\\\\:\",\"regexValue\":\"^svc_\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000\",\"constraints\":null},{\"displayName\":\"cisco_ucsc_event_status\",\"preContext\":\"svc_\\\\w+\\\\[\\\\d+\\\\]: \\\\[F\\\\d+\\\\]\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7on2gc5dvom000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS Manager events by status",
+          "info":"<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-2-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS Central events by category",
+          "info":"UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"svc_*\",\"startTimeMillis\":1372538015503,\"endTimeMillis\":1373079678507,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsc_event_category\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucs_service_events\",\"preContext\":\"\",\"postContext\":\"\\\\[\\\\d+\\\\]\\\\:\",\"regexValue\":\"^svc_\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000\",\"constraints\":null},{\"displayName\":\"cisco_ucsc_event_category\",\"preContext\":\"svc_\\\\w+\\\\[\\\\d+\\\\]: \\\\[F\\\\d+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS Manager events by category",
+          "info":"UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-2-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS Central fault events by reason",
+          "info":"Certain fault events list a reason for the fault, which helps track down the issue. Most fault events are configuration related and often point to a service profile issue. In the case of UCS Central fault events, it is possible that duplicate entries exist across UCS domains.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"svc_*\",\"startTimeMillis\":1372538015503,\"endTimeMillis\":1373079678507,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsc_event_reason\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7ojswc43pny000000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucs_service_events\",\"preContext\":\"\",\"postContext\":\"\\\\[\\\\d+\\\\]\\\\:\",\"regexValue\":\"^svc_\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzv643foj3gsy3fl5sxmzloorzq0000\",\"constraints\":null},{\"displayName\":\"cisco_ucsc_event_reason\",\"preContext\":\"svc_\\\\w+\\\\[\\\\d+\\\\]: \\\\[F\\\\d+\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+?\\\\] (.*Service profile \\\\S+ |UCS Domain \\\\S+ |UUID pool \\\\S+ |IP pool \\\\S+ |iqn pool \\\\S+ |MAC pool \\\\S+ |FC pool \\\\S+ \\\\S+ |Schedule  referenced by maintenance policy \\\\S+ )?\",\"postContext\":\"(due to |\\\\.|$)\",\"regexValue\":\".*?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7ojswc43pny000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS Manager fault events by reason",
+          "info":"Certain fault events list a reason for the fault, which helps track down the issue. UCS Manager fault events may be configuration related, but are often health and more specifically hardware related. Any non-configuration faults should be investigated immediately.<br><br>For more information on UCS faults and potential solutions, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1389047112022,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3gmf2wy5c7ojswc43pny000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_fault_reason\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3gmf2wy5c7ojswc43pny000000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_fault_reason\",\"preContext\":\"ucsm-.*: \\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+\\\\].* reason: (\\\\w+:)?\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3gmf2wy5c7ojswc43pny000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Relevant Queries",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"UCS Manager fault events by code",
+            "chartQuery":"{\"query\":\"ucsm-2-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa3cs000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (6)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa3cs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (6)\",\"preContext\":\"(ucsm-|local).*?\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa3cs000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"ucsm-2-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa3cs000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (6)\",\"preContext\":\"(ucsm-|local).*?\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa3cs000\",\"constraints\":null}]}",
+            "info":"Every UCS event generates an event code. For fault events, Cisco has published a document outlining why the fault is raised and the recommended actions to resolve the fault.<br><br>For more information on UCS fault codes, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+          }, {
+            "name":"UCS Central license events by category",
+            "chartQuery":"{\"query\":\"svc_* license*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsc_event_category\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsc_event_category\",\"preContext\":\"svc_\\\\w+\\\\[\\\\d+\\\\]: \\\\[F\\\\d+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzwgx3fozsw45c7mnqxizlhn5zhs000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"svc_* license*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"UCS has a couple of license events including:<br><br><span id=\"yui_3_10_2_3_1389056760694_108\" style=\"font-weight: bold;\">* License Insufficient</span>&nbsp;meaning you do not have enough licenses for the quantity of components configured<br><span id=\"yui_3_10_2_3_1389056760694_111\" style=\"font-weight: bold;\">* Grace period&nbsp;</span>meaning you have a temporary license that will expire shortly<br><br>Both of these events should be addressed immediately to ensure UCS continues to function properly.<br class=\"yui-cursor\" id=\"yui_3_10_2_3_1389063472597_42\">"
+          }, {
+            "name":"UCS Manager license events by category",
+            "chartQuery":"{\"query\":\"ucsm-* license*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"in-maintenance\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"ucsm-* license*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"in-maintenance\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"constraints\":null}]}",
+            "info":"UCS has a couple of license events including:<br><br><span id=\"yui_3_10_2_3_1389056760694_108\" style=\"font-weight: bold;\">* License Insufficient</span>&nbsp;meaning you do not have enough licenses for the quantity of components configured<br><span id=\"yui_3_10_2_3_1389056760694_111\" style=\"font-weight: bold;\">* Grace period&nbsp;</span>meaning you have a temporary license that will expire shortly<br><br>Both of these events should be addressed immediately to ensure UCS continues to function properly.<br><br>For more information on UCS license events, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"FIs / IOMs / FEXs",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"UCS network events by status",
+          "info":"<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-3-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS network events by category",
+          "info":"UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-3-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS interface down by reason",
+          "info":"UCS supports multiple types of network interfaces including:<br><br>* ethport - Ethernet ports<br>* port - Fiber channel ports<br><br>Network interfaces may go down for a variety of reasons. The most common interface down event is seen when a port is in the error disabled state. Typically, when a port goes down, a reason is logged with the state. Common reasons why network ports would enter the error disabled state are:<br><br>* BPDU guard<br>* Security violations<br><br>For more information on reasons, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ethport-*, port-*\"},{\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_interface_status_reason\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_interface_status_reason\",\"preContext\":\"%.*port-.*:.* Interface \\\\S+ is \\\\w+ \\\\(\",\"postContext\":\"\\\\)\",\"regexValue\":\".*\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3jnz2gk4tgmfrwkx3torqxi5ltl5zgkyltn5xa0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS loop guard events by port and status",
+          "info":"The Spanning Tree Protocol (STP) includes a mechanism to prevent loops called loop guard. When a loop is detecting by STP, the protocol chooses a port to shutdown to stop the loop. If/When the port shutdown can be brought back online without causing a loop then it is. Typically, this only happens in failure scenarios.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"stp-* loop guard\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386992489146,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_stp_loopguard_port\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf64dpoj2a0000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"cisco_stp_loopguard_status\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf643umf2hk4y0\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_stp_loopguard_port\",\"preContext\":\"STP-2-LOOPGUARD_.* Loop guard \\\\w+ port \",\"postContext\":\" on VLAN\\\\d+.\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf64dpoj2a0000\",\"constraints\":null},{\"displayName\":\"cisco_stp_loopguard_status\",\"preContext\":\"STP-2-LOOPGUARD_.* Loop guard \",\"postContext\":\" port \\\\S+ on VLAN\\\\d+.\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3toryf63dpn5ygo5lbojsf643umf2hk4y0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Relevant alerts",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"UCS HA is not ready",
+            "chartQuery":"{\"query\":\"ucsm-3-ha_not_ready\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"ucsm-3-ha_not_ready\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"UCS Manager has determined that HA is/was not ready. If HA is not ready then a failover would not be possible. This may lead to an outage situation if not addressed.<br><br id=\"yui_3_10_2_3_1389064031260_44\">Given the importance of this event, it is highly recommended to enable this alert on the Interactive Analytics page."
+          }, {
+            "name":"UCS FEX offline",
+            "chartQuery":"{\"query\":\"FEX-2-FEX_OFFLINE\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386993054003,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"FEX-2-FEX_OFFLINE\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386993054003,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"UCS Manager has determined that a FEX is offline. For redundancy reasons, each chassis should have two FEXs. If only one FEX is down, then the chassis can continue to function, but may experience degraded performance. The FEX should be brought back online immediately to prevent an outage scenario.<br><br>Given the importance of this event, it is highly recommended to enable this alert on the Interactive Analytics page.<br id=\"yui_3_10_2_3_1389064031260_50\">"
+          } ]
+        }, {
+          "name":"Relevant queries",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"UCS configuration issue events over time",
+            "chartQuery":"{\"query\":\"ucsm-3-configuration_applying\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"ucsm-3-configuration_applying\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":""
+          }, {
+            "name":"UCS membership down events over time",
+            "chartQuery":"{\"query\":\"ucsm-3-membership_down\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"ucsm-3-membership_down\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"UCS Manager has determined that a port-channel is down. Port-channels go down typically due to configuration issues. This issue should be investigated immediately.<br><br>For more information on UCS membership down events, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+          }, {
+            "name":"UCS port error disabled",
+            "chartQuery":"{\"query\":\"\\\"error disabled\\\"\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386993239793,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ucsm-*, ethport-*, port-*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"\\\"error disabled\\\"\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1386993239793,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ucsm-*, ethport-*, port-*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"UCS Manager has determined that a port has become error disabled. Ports typically become error disabled because of a configuration issue. This issue should be investigated immediately.<br><br>For more information on error disabled ports, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Chassis / Blades / Profiles",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"UCS chassis events by status",
+          "info":"<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-4-* chassis*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"blade*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS chassis events by category",
+          "info":"UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-4-* chassis*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"blade*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS blade events by status",
+          "info":"<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-4-* chassis* blade*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS blade events by category",
+          "info":"UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-4-* chassis* blade*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"UCS service profile events by status",
+          "info":"<div id=\"yui_3_10_2_3_1389025447448_45\"><span id=\"yui_3_10_2_3_1389025447448_159\">Several UCS statuses exist and include:<br><br><span style=\"font-weight: bold;\">*&nbsp;</span></span><span id=\"yui_3_10_2_3_1389025447448_103\" style=\"font-weight: bold;\">Cleared</span>&nbsp;A notification that the condition that caused the fault has been&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">resolved, and the fault has been cleared.</span></div><div id=\"yui_3_10_2_3_1389025447448_52\"><span id=\"yui_3_10_2_3_1389025447448_153\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_100\" style=\"font-weight: bold;\">Condition</span>&nbsp;An informational message about a condition, possibly&nbsp;<span id=\"yui_3_10_2_3_1389042749148_43\" style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_58\"><span id=\"yui_3_10_2_3_1389025447448_145\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_97\" style=\"font-weight: bold;\">Critical</span>&nbsp;A service-affecting condition that requires immediate corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_176\" style=\"font-size: 8pt; line-height: 1.22;\">action. For example, this severity could indicate that the managed&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">object is out of service and its capability must be restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_67\"><span id=\"yui_3_10_2_3_1389025447448_137\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_94\" style=\"font-weight: bold;\">Info</span>&nbsp;A basic notification or informational message, possibly&nbsp;<span style=\"font-size: 8pt; line-height: 1.22;\">independently insignificant.</span></div><div id=\"yui_3_10_2_3_1389025447448_73\"><span id=\"yui_3_10_2_3_1389025447448_127\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_91\" style=\"font-weight: bold;\">Major</span>&nbsp;A service-affecting condition that requires urgent corrective action.&nbsp;<span id=\"yui_3_10_2_3_1389025447448_189\" style=\"font-size: 8pt; line-height: 1.22;\">For example, this severity could indicate a severe degradation in the&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_194\" style=\"font-size: 8pt; line-height: 1.22;\">capability of the managed object and that its full capability must be&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">restored.</span></div><div id=\"yui_3_10_2_3_1389025447448_85\"><span id=\"yui_3_10_2_3_1389025447448_117\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_88\" style=\"font-weight: bold;\">Minor</span>&nbsp;A non-service-affecting fault condition that requires corrective&nbsp;<span id=\"yui_3_10_2_3_1389025447448_205\" style=\"font-size: 8pt; line-height: 1.22;\">action to prevent a more serious fault from occurring. For example,&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_211\" style=\"font-size: 8pt; line-height: 1.22;\">this severity could indicate that the detected alarm condition is not&nbsp;</span><span style=\"font-size: 8pt; line-height: 1.22;\">currently degrading the capacity of the managed object.</span></div><div id=\"yui_3_10_2_3_1389025447448_105\"><span id=\"yui_3_10_2_3_1389025447448_112\" style=\"font-weight: bold;\">*&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_109\" style=\"font-weight: bold;\">Warning</span>&nbsp;A potential or impending service-affecting fault that currently has&nbsp;<span id=\"yui_3_10_2_3_1389025447448_222\" style=\"font-size: 8pt; line-height: 1.22;\">no significant effects in the system. Action should be taken to&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_224\" style=\"font-size: 8pt; line-height: 1.22;\">further diagnose, if necessary, and correct the problem to prevent it&nbsp;</span><span id=\"yui_3_10_2_3_1389025447448_239\" style=\"font-size: 8pt; line-height: 1.22;\">from becoming a more serious service-affecting fault.&nbsp;</span></div>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-5-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (4)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2cs000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"UCS service profile events by category",
+          "info":"UCS events list a general category for the event. The category makes it easier to determine where to look and how to address an issue.<br><br>For more information on UCS categories, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ucsm-5-*\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (5)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\",\"postContext\":\"\\\\]\\\\[\\\\S+?\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafa2ss000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Relevant queries",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"UCS discovery failures by component",
+            "chartQuery":"{\"query\":\"ucsm-3-discovery_failed\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (2)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazcs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (2)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+?\\\\]\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazcs000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"ucsm-3-discovery_failed\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"UCS Manager has detected that a component could not be discovered. This typically means a configuration issue. A good place to start investigating is with service profiles.<br><br>For more information on UCS discovery failures, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+          }, {
+            "name":"UCS thermal events by component",
+            "chartQuery":"{\"query\":\"thermal-problem\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ucsm-*, local*-*-* * svc_*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"cisco_ucsm_event (2)\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazcs000\",\"displayNamespace\":\"Cisco - UCS\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"cisco_ucsm_event (2)\",\"preContext\":\"(ucsm-|local).*?\\\\[\\\\w+\\\\]\\\\[\\\\w+\\\\]\\\\[\\\\S+?\\\\]\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcm27mnxw2ltdnfzwg3zoovrxgy3jonrw6x3vmnzw2x3fozsw45bafazcs000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"thermal-problem\",\"startTimeMillis\":1344560056000,\"endTimeMillis\":1387008000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ucsm-*, local*-*-* * svc_*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"UCS Manager has detected a thermal problem. This may indicate an overheating issue in the environment and may lead to component failure. If the event is listed a upper-non-recoverable then the issue should be addressed immediately.<br><br>For more information on UCS thermal problems, see: <a target=\"_blank\" href=\"http://www.cisco.com/en/US/docs/unified_computing/ucs/ts/faults/reference/ErrMess.html\">Cisco UCS Faults and Error Messages Reference</a>"
+          } ]
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"Cisco Systems, Inc.",
+  "url":"http://www.cisco.com",
+  "contentVersion":"1.5",
+  "info":"The UCS content pack contains critical information about everything within a UCS system from UCS Central and UCS Manager down to chassis, blades, and networking components. The content pack provides:<br><br><span style=\"font-weight: bold;\">Component Faults and Reasons</span><br>When hardware issues are detected, quickly investigate and resolve them.<br><br><span style=\"font-weight: bold;\">Configuration Changes and Faults</span><br>Quickly identify what configuration changes have occurred over time and get notification of configuration faults immediately.<br><br><span style=\"font-weight: bold;\">Authentication Requests</span><br>Track user sessions from both the GUI and the CLI including failed log in attempts and authentication sources.<br><br>The UCS content pack is a powerful monitoring tool for UCS environments, making you aware of any issues quickly and allowing you to maintain a healthy environment at all times.",
+  "instructions":"",
+  "icon":"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"
+}
