@@ -1,435 +1,473 @@
 {
-  "dashboardSections": [
-    {
-      "views": [
-        {
-          "name": "Overview",
-          "rows": [
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "All Master Events",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373325912274 & timestamp <= 1373412312273 & appname:\"puppet-master\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "Every log message produced by the Puppet Master portion of Puppet Enterprise"
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "All Agent events",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373325970675 & timestamp <= 1373412370674 & appname:\"puppet-agent\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "Every log message produced by the Puppet Agent application that is installed on each node in your infrastructure."
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Average of Catalog compilation time per Master",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) FROM timestamp >= 1373326087302 & timestamp <= 1373412487301 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) & text=~\"Compiled catalog for (.*) in environment (.*) in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "The average time it takes for each Puppet Master in your Puppet Enterprise infrastructure to compile an Agent catalog."
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Average of Agent run time per Agent hostname",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) FROM timestamp >= 1373326183306 & timestamp <= 1373412583305 & (appname:\"puppet-agent\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) & text=~\"Finished catalog run in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "The average time it takes an Agent to complete its run, this includes the time needed to download plugins, send facts, the master to compile your catalog, the time is takes to apply the catalog, and also the time needed to submit a report."
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Number of active nodes per Master",
-                  "gridWidth": "1",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000) FROM timestamp >= 1373899125326 & timestamp <= 1373920725325 & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000) & text=~\"You have (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000>-?\\d+) active and\") as item0 GROUP BY item0.timestamp/600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "<span style=\"color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\" id=\"yui_3_7_3_4_1373920610632_46\">The number of active nodes reported by that Puppet Master when I launches.</span><br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373920610632_43\">"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Master",
-          "rows": [
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "All Master Events",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373325912274 & timestamp <= 1373412312273 & appname:\"puppet-master\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "Every log message produced by the Puppet Master portion of Puppet Enterprise"
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Events per Master",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373327774962 & timestamp <= 1373414174961 & appname:\"puppet-master\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "All logged Puppet Master events separated by Master hostname."
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Average of Catalog compilation time per Master",
-                  "gridWidth": "1/2",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) FROM timestamp >= 1373326087302 & timestamp <= 1373412487301 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) & text=~\"Compiled catalog for (.*) in environment (.*) in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "The average time it takes for each Puppet Master in your Puppet Enterprise infrastructure to compile an Agent catalog."
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Average of Catalog compilation time",
-                  "gridWidth": "1/2",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) FROM timestamp >= 1373327884886 & timestamp <= 1373414284885 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) & text=~\"Compiled catalog for (.*) in environment (.*) in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "The average time is takes to compile a Puppet Agent catalog across all logging Puppet Masters."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "PuppetDB",
-          "rows": [
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "All PuppetDB Events",
-                  "gridWidth": "1",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373328152893 & timestamp <= 1373414552892 & appname:\"pe-puppetdb\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "Every log message produced by the PuppetDB component of Puppet Enterprise.<br>"
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Catalog events",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373895342511 & timestamp <= 1373916942510 & (appname:\"pe-puppetdb\" & (ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000:\"replace catalog\" & text=~\"\\[puppetdb.command\\] \\[.+\\] \\[(?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000>\\w+ \\w+).*\\] \")) as item0 GROUP BY item0.timestamp/600000 ORDER BY item0.timestamp ASC",
-                  "info": "The count of catalog events that PuppetDB has initiated as part of the storage of a catalog created by the Puppet Master when the Agents connects."
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Fact events",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373895793932 & timestamp <= 1373917398776 & (appname:\"pe-puppetdb\" & (ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000:\"replace facts\" & text=~\"\\[puppetdb.command\\] \\[.+\\] \\[(?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000>\\w+ \\w+).*\\] \")) as item0 GROUP BY item0.timestamp/600000 ORDER BY item0.timestamp ASC",
-                  "info": "The count of fact events that PuppetDB has initiated as part of the storage of a facts submitted to the Puppet Master when the Agents connects.<br class=\"yui-cursor\">"
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Reporting events",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373895861817 & timestamp <= 1373917461816 & (appname:\"pe-puppetdb\" & (ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000:\"store report*\" & text=~\"\\[puppetdb.command\\] \\[.+\\] \\[(?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000>\\w+ \\w+).*\\] \")) as item0 GROUP BY item0.timestamp/600000 ORDER BY item0.timestamp ASC",
-                  "info": "The count of report events that PuppetDB has initiated as part of the storage of a report by the Puppet Master when the Agents finishes its run.<br class=\"yui-cursor\" id=\"yui_3_7_3_3_1373920976119_46\">"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Agents",
-          "rows": [
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "All Agent events",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373325970675 & timestamp <= 1373412370674 & appname:\"puppet-agent\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "Every log message produced by the Puppet Agent application that is installed on each node in your infrastructure."
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Events per Agent",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373405523972 & timestamp <= 1373491923971 & appname:\"puppet-agent\" as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "All event produced by Puppet Agents separated by Agent certificate name."
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Standard Deviation of Catalog compilation time per Agent certname",
-                  "chartQuery": "SELECT STDDEV(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) FROM timestamp >= 1370026330107 & timestamp <= 1370761200000 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) & text=~\"Compiled catalog for (.*) in environment (.*) in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0>-?\\d*\\.?\\d+) seconds\") & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0) & text=~\"(Compiled catalog for |\\(//)(?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0>\\S+?)(/Puppet\\))? .* in \\d*\\.?\\d+ seconds$\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0 ORDER BY item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0 DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "The standard deviation of the time it takes for a catalog to be compiled by a master for an Agent. &nbsp;If you see spikes in this chart you'll want to look at if your Puppet Master is doing any external looks up of data for this Agent's catalog, i.e. a function taking a longer amount of time at certain times of the day."
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Average of Catalog compilation time per Agent certname",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) FROM timestamp >= 1370026330107 & timestamp <= 1370761200000 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) & text=~\"Compiled catalog for (.*) in environment (.*) in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0>-?\\d*\\.?\\d+) seconds\") & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0) & text=~\"(Compiled catalog for |\\(//)(?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0>\\S+?)(/Puppet\\))? .* in \\d*\\.?\\d+ seconds$\")) as item0 GROUP BY item0.timestamp/21600000,item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0 ORDER BY item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0 DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "The average of the time it takes for a catalog to be compiled by a master for an Agent. &nbsp;If you see spikes in this chart you'll want to look at if your Puppet Master has any regularly scheduled tasks on the Puppet Master that might be taking up CPU time.<br class=\"yui-cursor\">"
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Average of Agent run time",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) FROM timestamp >= 1373405931226 & timestamp <= 1373492331225 & (appname:\"puppet-agent\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) & text=~\"Finished catalog run in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "The average run time for all Puppet Agents across your infrastructure. &nbsp;Spikes in the chart will indicate an issue or planned event across a large number of your Puppet Agents, i.e. a package upgrade to roll out a new application feature."
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Average of Agent run time per Agent hostname",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) FROM timestamp >= 1373406034223 & timestamp <= 1373492434222 & (appname:\"puppet-agent\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) & text=~\"Finished catalog run in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "<span style=\"color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\" id=\"yui_3_7_3_4_1373492420158_47\">The average time it takes an Agent to complete its run, this includes the time needed to download plugins, send facts, the master to compile your catalog, the time is takes to apply the catalog, and also the time needed to submit a report. &nbsp;A spike in one of these lines could indicate an issue with the node its self, i.e. unordinary levels of I/O.</span><br>"
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Skipped resources",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373406366924 & timestamp <= 1373492766923 & text:\"Skipping\" & text:\"because\" & text:\"of\" & text:\"failed\" & text:\"dependencies\" & appname:\"puppet-agent\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "Number of resources that were skipped because of previous resource remediation failures."
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Resource remediation failures",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373406466841 & timestamp <= 1373492866840 & text:\"change\" & text:\"from\" & text:\"to\" & text:\"failed\" & appname:\"puppet-agent\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "Resource failures caused by any number of things, e.g. package names that doesn't exist or managing a file inside a directory that doesn't exist."
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Average of reported Agent run time",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) FROM timestamp >= 1373406916733 & timestamp <= 1373493316732 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) & text=~\"Finished catalog run in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "<div class=\"home-widget-info-text\" id=\"yui_3_7_3_1_1373493348339_4592\" style=\"margin: 0px; padding: 0px 0px 5px; color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\">The average Puppet Agent run time separated by certificate name that is reported to the Puppet Master as part of the log report processor. &nbsp;This report processor is optional and must be enabled. &nbsp;It is an alternative to sending Agent logs directly to syslog.</div>"
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Average of reported Agent run time per Agent certname",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) FROM timestamp >= 1370026330107 & timestamp <= 1371452400000 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000) & text=~\"Finished catalog run in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000>-?\\d*\\.?\\d+) seconds\")) & text=~\"(Compiled catalog for |\\(//)(?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0>\\S+?)(/Puppet\\))? .* in \\d*\\.?\\d+ seconds$\" as item0 GROUP BY item0.timestamp/43200000,item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0 ORDER BY item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0 DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "The average Puppet Agent run time separated by certificate name that is reported to the Puppet Master as part of the log report processor. &nbsp;This report processor is optional and must be enabled. &nbsp;It is an alternative to sending Agent logs directly to syslog.<br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373919388595_43\">"
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Number of compiled catalogs",
-                  "gridWidth": "1",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1370026330107 & timestamp <= 1371452400000 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) & text=~\"Compiled catalog for (.*) in environment (.*) in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/43200000 ORDER BY item0.timestamp ASC",
-                  "info": "The quantity of catalogs that have been compiled across all Puppet Masters.<br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373919613743_43\">"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Console",
-          "rows": [
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Console Events",
-                  "gridWidth": "1",
-                  "chartQuery": "SELECT COUNT(item0) FROM timestamp >= 1373407208570 & timestamp <= 1373493608569 & appname:\"pe-puppet-dashboard\" as item0 GROUP BY item0.timestamp/3600000 ORDER BY item0.timestamp ASC",
-                  "info": "This all events produced by the Puppet Enterprise Console component."
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Average time to complete Console action",
-                  "gridWidth": "1",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000) FROM timestamp >= 1373315732501 & timestamp <= 1373920532500 & ((FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000) & text=~\"in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000>-?\\d*\\.?\\d+)ms \\(Views\") & appname:\"pe-puppet-dashboard\") as item0 GROUP BY item0.timestamp/21600000 ORDER BY item0.timestamp ASC",
-                  "info": "When the Console completes an operation it will report the time it took to complete in milliseconds. &nbsp;This the average of that across all instance of the Puppet Enterprise Console.<br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373919742743_43\">"
-                }
-              ]
-            },
-            {
-              "widgets": [
-                {
-                  "widgetType": "chart",
-                  "name": "Number of active nodes per Master",
-                  "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000) FROM timestamp >= 1373899125326 & timestamp <= 1373920725325 & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000) & text=~\"You have (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000>-?\\d+) active and\") as item0 GROUP BY item0.timestamp/600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "<span style=\"color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\" id=\"yui_3_7_3_4_1373920610632_46\">The number of active nodes reported by that Puppet Master when I launches.</span><br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373920610632_43\">"
-                },
-                {
-                  "widgetType": "chart",
-                  "name": "Nodes over Licensed per Master",
-                  "chartQuery": "SELECT MAX(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000) FROM timestamp >= 1373477786439 & timestamp <= 1373499386438 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000) & text=~\"You have exceeded the node count in your license by (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000>-?\\d+) active nodes\\!\")) as item0 GROUP BY item0.timestamp/600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000",
-                  "info": "<span style=\"color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\" id=\"yui_3_7_3_4_1373499368049_46\">The number of Puppet Agent nodes that you have exceeded you license by per Puppet Master.</span><br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373499368049_43\">"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "header": ""
-    }
-  ],
-  "alerts": [
-    {
-      "searchPeriod": 86400000,
-      "hitCount": 1,
-      "hitOperator": "GREATER_THAN",
-      "messageQuery": "SELECT item0 FROM timestamp >= 1371580352990 & timestamp <= 1372185153121 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000) & text=~\"You have exceeded the node count in your license by (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000>-?\\d+) active nodes\\!\")) as item0 ORDER BY item0.timestamp DESC",
-      "searchInterval": 3600000,
-      "name": "Quantity of licensed Puppet Enterprise nodes breach",
-      "alertType": "RATE_BASED",
-      "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000) FROM timestamp >= 1371580353122 & timestamp <= 1372185153121 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000) & text=~\"You have exceeded the node count in your license by (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000>-?\\d+) active nodes\\!\")) as item0 GROUP BY item0.timestamp/21600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000"
-    },
-    {
-      "searchPeriod": 300000,
-      "hitCount": 30,
-      "hitOperator": "GREATER_THAN",
-      "messageQuery": "SELECT item0 FROM timestamp >= 1372098595375 & timestamp <= 1372184995374 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) & text=~\"Compiled catalog for (.*) in environment (.*) in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0>-?\\d*\\.?\\d+) seconds\")) as item0 ORDER BY item0.timestamp DESC",
-      "searchInterval": 60000,
-      "name": "High catalog compilation time of Puppet Enterprise agent",
-      "alertType": "RATE_BASED_WITH_GROUPS",
-      "chartQuery": "SELECT AVG(item0.ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) FROM timestamp >= 1372098595375 & timestamp <= 1372184995374 & (appname:\"puppet-master\" & (FIELD_EXISTS(ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0) & text=~\"Compiled catalog for (.*) in environment (.*) in (?<ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0>-?\\d*\\.?\\d+) seconds\")) as item0 GROUP BY item0.timestamp/3600000,item0.hostname ORDER BY item0.hostname DESC,item0.timestamp DESC LIMIT 1,2000"
-    }
-  ],
-  "name": "Puppet Enterprise",
-  "extractedFields": [
-    {
-      "postContext": " \\(Puppet",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforpw2yltorsxex3wmvzhg2lpny000000",
-      "preContext": "Puppet master version ",
-      "regexValue": "\\S+",
-      "displayName": "pe_puppet_master_version"
-    },
-    {
-      "postContext": "#012The end value",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxxe4tvob2f63djmnsw443f",
-      "preContext": "012",
-      "regexValue": ".*",
-      "displayName": "pe_corrupt_license"
-    },
-    {
-      "postContext": "!",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nruwgzloonsv6zlyobuxezk7mrqxizi0",
-      "preContext": "expired on ",
-      "regexValue": "\\S+",
-      "displayName": "pe_license_expire_date"
-    },
-    {
-      "postContext": " active nodes",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nruwgzloonsv6y3povxhi000",
-      "preContext": "licensed for ",
-      "regexValue": "-?\\d+",
-      "displayName": "pe_license_count"
-    },
-    {
-      "postContext": "\\]",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxw443pnrsv64lvmvzgszlel5xg6zdfl5xgc3lf",
-      "preContext": "nodes/",
-      "regexValue": "\\S+",
-      "displayName": "pe_console_queried_node_name"
-    },
-    {
-      "postContext": "!",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxw443pnrsv643fonzws33ol5zxiylsoq000000",
-      "preContext": "pe\\-console\\-auth: ",
-      "regexValue": ".*",
-      "displayName": "pe_console_session_start"
-    },
-    {
-      "postContext": "\"\\}",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxw443pnrsv6yldoruw63q0",
-      "preContext": "action\"=>\"",
-      "regexValue": "\\w+",
-      "displayName": "pe_console_action"
-    },
-    {
-      "postContext": " Puppet master version",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforpw2yltorsxex3torqxe5djnztq0000",
-      "preContext": "puppet-master\\[\\d+\\]: ",
-      "regexValue": "\\w+",
-      "displayName": "pe_puppet_master_starting"
-    },
-    {
-      "postContext": "failed: Could",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mvxhg5lsmvpwmyljnr2xezi0",
-      "preContext": "ensure\\) change",
-      "regexValue": ".*",
-      "displayName": "pe_ensure_failure"
-    },
-    {
-      "postContext": "\\, or visit",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforpwyylconpxa2dpnzsq0000",
-      "preContext": "email to .+ on ",
-      "regexValue": ".*",
-      "displayName": "pe_puppet_labs_phone"
-    },
-    {
-      "postContext": ".*\\] ",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000",
-      "preContext": "\\[puppetdb.command\\] \\[.+\\] \\[",
-      "regexValue": "\\w+ \\w+",
-      "displayName": "pe_puppetdb_command"
-    },
-    {
-      "postContext": "ms \\(Views",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000",
-      "preContext": "in ",
-      "regexValue": "-?\\d*\\.?\\d+",
-      "displayName": "pe_duration_of_console_action"
-    },
-    {
-      "postContext": "\\)",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7on2ws5dfl53gk4ttnfxw4000",
-      "preContext": "Puppet Enterprise ",
-      "regexValue": "\\S+",
-      "displayName": "pe_suite_version"
-    },
-    {
-      "postContext": " active and",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000",
-      "preContext": "You have ",
-      "regexValue": "-?\\d+",
-      "displayName": "pe_active_licensed_nodes"
-    },
-    {
-      "postContext": " OK",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxw443pnrsv64tfor2xe3s7mnxwizi0",
-      "preContext": "Completed in \\d+ms \\(View: \\d+, DB: \\d+\\) \\| ",
-      "regexValue": "-?\\d+",
-      "displayName": "pe_console_return_code"
-    },
-    {
-      "postContext": "(/Puppet\\))? .* in \\d*\\.?\\d+ seconds$",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0",
-      "preContext": "(Compiled catalog for |\\(//)",
-      "regexValue": "\\S+?",
-      "displayName": "pe_agent_certname"
-    },
-    {
-      "postContext": " seconds",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0",
-      "preContext": "Compiled catalog for (.*) in environment (.*) in ",
-      "regexValue": "-?\\d*\\.?\\d+",
-      "displayName": "pe_catalog_compilation_time"
-    },
-    {
-      "postContext": " seconds",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000",
-      "preContext": "Finished catalog run in ",
-      "regexValue": "-?\\d*\\.?\\d+",
-      "displayName": "pe_catalog_run_time"
-    },
-    {
-      "postContext": " active nodes\\!",
-      "internalName": "ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000",
-      "preContext": "You have exceeded the node count in your license by ",
-      "regexValue": "-?\\d+",
-      "displayName": "pe_nodes_excess_of_license"
-    }
-  ],
-  "namespace": "com.puppetlabs.pe",
-  "version": "1.0",
-  "framework": "#3E8",
-  "contentVersion": "0.0.1"
+  "name":"Puppet Enterprise",
+  "namespace":"com.puppetlabs.pe",
+  "contentPackId":"com.puppetlabs.pe",
+  "framework":"#3E8",
+  "version":"1.0",
+  "extractedFields":[ {
+    "displayName":"pe_active_licensed_nodes",
+    "preContext":"You have ",
+    "postContext":" active and",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_agent_certname",
+    "preContext":"(Compiled catalog for |\\(//)",
+    "postContext":"(/Puppet\\))? .* in \\d*\\.?\\d+ seconds$",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_catalog_compilation_time",
+    "preContext":"Compiled catalog for (.*) in environment (.*) in ",
+    "postContext":" seconds",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_catalog_run_time",
+    "preContext":"Finished catalog run in ",
+    "postContext":" seconds",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_console_action",
+    "preContext":"action\"=>\"",
+    "postContext":"\"\\}",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxw443pnrsv6yldoruw63q0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_console_queried_node_name",
+    "preContext":"nodes/",
+    "postContext":"\\]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxw443pnrsv64lvmvzgszlel5xg6zdfl5xgc3lf",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_console_return_code",
+    "preContext":"Completed in \\d+ms \\(View: \\d+, DB: \\d+\\) \\| ",
+    "postContext":" OK",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxw443pnrsv64tfor2xe3s7mnxwizi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_console_session_start",
+    "preContext":"pe\\-console\\-auth: ",
+    "postContext":"!",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxw443pnrsv643fonzws33ol5zxiylsoq000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_corrupt_license",
+    "preContext":"012",
+    "postContext":"#012The end value",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnxxe4tvob2f63djmnsw443f",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_duration_of_console_action",
+    "preContext":"in ",
+    "postContext":"ms \\(Views",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_ensure_failure",
+    "preContext":"ensure\\) change",
+    "postContext":"failed: Could",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mvxhg5lsmvpwmyljnr2xezi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_license_count",
+    "preContext":"licensed for ",
+    "postContext":" active nodes",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nruwgzloonsv6y3povxhi000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_license_expire_date",
+    "preContext":"expired on ",
+    "postContext":"!",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nruwgzloonsv6zlyobuxezk7mrqxizi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_nodes_excess_of_license",
+    "preContext":"You have exceeded the node count in your license by ",
+    "postContext":" active nodes\\!",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_puppet_labs_phone",
+    "preContext":"email to .+ on ",
+    "postContext":"\\, or visit",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforpwyylconpxa2dpnzsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_puppet_master_starting",
+    "preContext":"puppet-master\\[\\d+\\]: ",
+    "postContext":" Puppet master version",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforpw2yltorsxex3torqxe5djnztq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_puppet_master_version",
+    "preContext":"Puppet master version ",
+    "postContext":" \\(Puppet",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforpw2yltorsxex3wmvzhg2lpny000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_puppetdb_command",
+    "preContext":"\\[puppetdb.command\\] \\[.+\\] \\[",
+    "postContext":".*\\] ",
+    "regexValue":"\\w+ \\w+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"pe_suite_version",
+    "preContext":"Puppet Enterprise ",
+    "postContext":"\\)",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7on2ws5dfl53gk4ttnfxw4000",
+    "constraints":null,
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"Quantity of licensed Puppet Enterprise nodes breach",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1371580353122,\"endTimeMillis\":1372185153121,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"displayName\":\"pe_nodes_excess_of_license\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_nodes_excess_of_license\",\"preContext\":\"You have exceeded the node count in your license by \",\"postContext\":\" active nodes\\\\!\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1371580352990,\"endTimeMillis\":1372185153121,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_nodes_excess_of_license\",\"preContext\":\"You have exceeded the node count in your license by \",\"postContext\":\" active nodes\\\\!\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"constraints\":null}]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":86400000,
+    "searchInterval":3600000
+  }, {
+    "name":"High catalog compilation time of Puppet Enterprise agent",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1372098595375,\"endTimeMillis\":1372184995374,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"displayName\":\"pe_catalog_compilation_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_catalog_compilation_time\",\"preContext\":\"Compiled catalog for (.*) in environment (.*) in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1372098595375,\"endTimeMillis\":1372184995374,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_catalog_compilation_time\",\"preContext\":\"Compiled catalog for (.*) in environment (.*) in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"constraints\":null}]}",
+    "hitCount":30.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Master Events",
+          "info":"Every log message produced by the Puppet Master portion of Puppet Enterprise",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373325912274,\"endTimeMillis\":1373412312273,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"All Agent events",
+          "info":"Every log message produced by the Puppet Agent application that is installed on each node in your infrastructure.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373325970675,\"endTimeMillis\":1373412370674,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-agent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average of Catalog compilation time per Master",
+          "info":"The average time it takes for each Puppet Master in your Puppet Enterprise infrastructure to compile an Agent catalog.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373326087302,\"endTimeMillis\":1373412487301,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"displayName\":\"pe_catalog_compilation_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_catalog_compilation_time\",\"preContext\":\"Compiled catalog for (.*) in environment (.*) in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Average of Agent run time per Agent hostname",
+          "info":"The average time it takes an Agent to complete its run, this includes the time needed to download plugins, send facts, the master to compile your catalog, the time is takes to apply the catalog, and also the time needed to submit a report.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373326183306,\"endTimeMillis\":1373412583305,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"displayName\":\"pe_catalog_run_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-agent\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_catalog_run_time\",\"preContext\":\"Finished catalog run in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of active nodes per Master",
+          "info":"<span style=\"color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\" id=\"yui_3_7_3_4_1373920610632_46\">The number of active nodes reported by that Puppet Master when I launches.</span><br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373920610632_43\">",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373899125326,\"endTimeMillis\":1373920725325,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000\",\"displayName\":\"pe_active_licensed_nodes\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_active_licensed_nodes\",\"preContext\":\"You have \",\"postContext\":\" active and\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"Master",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Master Events",
+          "info":"Every log message produced by the Puppet Master portion of Puppet Enterprise",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373325912274,\"endTimeMillis\":1373412312273,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Events per Master",
+          "info":"All logged Puppet Master events separated by Master hostname.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373327774962,\"endTimeMillis\":1373414174961,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average of Catalog compilation time per Master",
+          "info":"The average time it takes for each Puppet Master in your Puppet Enterprise infrastructure to compile an Agent catalog.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373326087302,\"endTimeMillis\":1373412487301,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"displayName\":\"pe_catalog_compilation_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_catalog_compilation_time\",\"preContext\":\"Compiled catalog for (.*) in environment (.*) in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Average of Catalog compilation time",
+          "info":"The average time is takes to compile a Puppet Agent catalog across all logging Puppet Masters.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373327884886,\"endTimeMillis\":1373414284885,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"displayName\":\"pe_catalog_compilation_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_catalog_compilation_time\",\"preContext\":\"Compiled catalog for (.*) in environment (.*) in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"PuppetDB",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All PuppetDB Events",
+          "info":"Every log message produced by the PuppetDB component of Puppet Enterprise.<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373328152893,\"endTimeMillis\":1373414552892,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"pe-puppetdb\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Catalog events",
+          "info":"The count of catalog events that PuppetDB has initiated as part of the storage of a catalog created by the Puppet Master when the Agents connects.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373895342511,\"endTimeMillis\":1373916942510,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"pe-puppetdb\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000\",\"operator\":\"CONTAINS\",\"value\":\"replace catalog\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_puppetdb_command\",\"preContext\":\"\\\\[puppetdb.command\\\\] \\\\[.+\\\\] \\\\[\",\"postContext\":\".*\\\\] \",\"regexValue\":\"\\\\w+ \\\\w+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Fact events",
+          "info":"The count of fact events that PuppetDB has initiated as part of the storage of a facts submitted to the Puppet Master when the Agents connects.<br class=\"yui-cursor\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373895793932,\"endTimeMillis\":1373917398776,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"pe-puppetdb\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000\",\"operator\":\"CONTAINS\",\"value\":\"replace facts\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_puppetdb_command\",\"preContext\":\"\\\\[puppetdb.command\\\\] \\\\[.+\\\\] \\\\[\",\"postContext\":\".*\\\\] \",\"regexValue\":\"\\\\w+ \\\\w+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Reporting events",
+          "info":"The count of report events that PuppetDB has initiated as part of the storage of a report by the Puppet Master when the Agents finishes its run.<br class=\"yui-cursor\" id=\"yui_3_7_3_3_1373920976119_46\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373895861817,\"endTimeMillis\":1373917461816,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"pe-puppetdb\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000\",\"operator\":\"STARTS_WITH\",\"value\":\"store report\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_puppetdb_command\",\"preContext\":\"\\\\[puppetdb.command\\\\] \\\\[.+\\\\] \\\\[\",\"postContext\":\".*\\\\] \",\"regexValue\":\"\\\\w+ \\\\w+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7ob2xa4dforsgex3dn5ww2ylomq000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"Agents",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Agent events",
+          "info":"Every log message produced by the Puppet Agent application that is installed on each node in your infrastructure.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373325970675,\"endTimeMillis\":1373412370674,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-agent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Events per Agent",
+          "info":"All event produced by Puppet Agents separated by Agent certificate name.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373405523972,\"endTimeMillis\":1373491923971,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-agent\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Standard Deviation of Catalog compilation time per Agent certname",
+          "info":"The standard deviation of the time it takes for a catalog to be compiled by a master for an Agent. &nbsp;If you see spikes in this chart you'll want to look at if your Puppet Master is doing any external looks up of data for this Agent's catalog, i.e. a function taking a longer amount of time at certain times of the day.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1370026330107,\"endTimeMillis\":1370761200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Std dev\",\"value\":\"STDDEV\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"displayName\":\"pe_catalog_compilation_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Std dev\",\"value\":\"STDDEV\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pe_agent_certname\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_catalog_compilation_time\",\"preContext\":\"Compiled catalog for (.*) in environment (.*) in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"constraints\":null},{\"displayName\":\"pe_agent_certname\",\"preContext\":\"(Compiled catalog for |\\\\(//)\",\"postContext\":\"(/Puppet\\\\))? .* in \\\\d*\\\\.?\\\\d+ seconds$\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Average of Catalog compilation time per Agent certname",
+          "info":"The average of the time it takes for a catalog to be compiled by a master for an Agent. &nbsp;If you see spikes in this chart you'll want to look at if your Puppet Master has any regularly scheduled tasks on the Puppet Master that might be taking up CPU time.<br class=\"yui-cursor\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1370026330107,\"endTimeMillis\":1370761200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"displayName\":\"pe_catalog_compilation_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pe_agent_certname\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_catalog_compilation_time\",\"preContext\":\"Compiled catalog for (.*) in environment (.*) in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"constraints\":null},{\"displayName\":\"pe_agent_certname\",\"preContext\":\"(Compiled catalog for |\\\\(//)\",\"postContext\":\"(/Puppet\\\\))? .* in \\\\d*\\\\.?\\\\d+ seconds$\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average of Agent run time",
+          "info":"The average run time for all Puppet Agents across your infrastructure. &nbsp;Spikes in the chart will indicate an issue or planned event across a large number of your Puppet Agents, i.e. a package upgrade to roll out a new application feature.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373405931226,\"endTimeMillis\":1373492331225,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"displayName\":\"pe_catalog_run_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-agent\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_catalog_run_time\",\"preContext\":\"Finished catalog run in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Average of Agent run time per Agent hostname",
+          "info":"<span style=\"color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\" id=\"yui_3_7_3_4_1373492420158_47\">The average time it takes an Agent to complete its run, this includes the time needed to download plugins, send facts, the master to compile your catalog, the time is takes to apply the catalog, and also the time needed to submit a report. &nbsp;A spike in one of these lines could indicate an issue with the node its self, i.e. unordinary levels of I/O.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373406034223,\"endTimeMillis\":1373492434222,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"displayName\":\"pe_catalog_run_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-agent\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_catalog_run_time\",\"preContext\":\"Finished catalog run in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Skipped resources",
+          "info":"Number of resources that were skipped because of previous resource remediation failures.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Skipping because of failed dependencies\",\"startTimeMillis\":1373406366924,\"endTimeMillis\":1373492766923,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-agent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Resource remediation failures",
+          "info":"Resource failures caused by any number of things, e.g. package names that doesn't exist or managing a file inside a directory that doesn't exist.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"change from to failed\",\"startTimeMillis\":1373406466841,\"endTimeMillis\":1373492866840,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-agent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average of reported Agent run time",
+          "info":"<div class=\"home-widget-info-text\" id=\"yui_3_7_3_1_1373493348339_4592\" style=\"margin: 0px; padding: 0px 0px 5px; color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\">The average Puppet Agent run time separated by certificate name that is reported to the Puppet Master as part of the log report processor. &nbsp;This report processor is optional and must be enabled. &nbsp;It is an alternative to sending Agent logs directly to syslog.</div>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373406916733,\"endTimeMillis\":1373493316732,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"displayName\":\"pe_catalog_run_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_catalog_run_time\",\"preContext\":\"Finished catalog run in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Average of reported Agent run time per Agent certname",
+          "info":"The average Puppet Agent run time separated by certificate name that is reported to the Puppet Master as part of the log report processor. &nbsp;This report processor is optional and must be enabled. &nbsp;It is an alternative to sending Agent logs directly to syslog.<br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373919388595_43\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1370026330107,\"endTimeMillis\":1371452400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"displayName\":\"pe_catalog_run_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pe_agent_certname\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_catalog_run_time\",\"preContext\":\"Finished catalog run in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv64tvnzpxi2lnmu000000\",\"constraints\":null},{\"displayName\":\"pe_agent_certname\",\"preContext\":\"(Compiled catalog for |\\\\(//)\",\"postContext\":\"(/Puppet\\\\))? .* in \\\\d*\\\\.?\\\\d+ seconds$\",\"regexValue\":\"\\\\S+?\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mftwk3tul5rwk4tunzqw2zi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of compiled catalogs",
+          "info":"The quantity of catalogs that have been compiled across all Puppet Masters.<br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373919613743_43\">",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1370026330107,\"endTimeMillis\":1371452400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_catalog_compilation_time\",\"preContext\":\"Compiled catalog for (.*) in environment (.*) in \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mnqxiylmn5tv6y3pnvygs3dboruw63s7oruw2zi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"Console",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Console Events",
+          "info":"This all events produced by the Puppet Enterprise Console component.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373407208570,\"endTimeMillis\":1373493608569,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"pe-puppet-dashboard\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average time to complete Console action",
+          "info":"When the Console completes an operation it will report the time it took to complete in milliseconds. &nbsp;This the average of that across all instance of the Puppet Enterprise Console.<br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373919742743_43\">",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373315732501,\"endTimeMillis\":1373920532500,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000\",\"displayName\":\"pe_duration_of_console_action\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"pe-puppet-dashboard\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pe_duration_of_console_action\",\"preContext\":\"in \",\"postContext\":\"ms \\\\(Views\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mr2xeylunfxw4x3pmzpwg33oonxwyzk7mfrxi2lpny000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of active nodes per Master",
+          "info":"<span style=\"color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\" id=\"yui_3_7_3_4_1373920610632_46\">The number of active nodes reported by that Puppet Master when I launches.</span><br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373920610632_43\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373899125326,\"endTimeMillis\":1373920725325,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000\",\"displayName\":\"pe_active_licensed_nodes\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_active_licensed_nodes\",\"preContext\":\"You have \",\"postContext\":\" active and\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7mfrxi2lwmvpwy2ldmvxhgzlel5xg6zdfom000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Nodes over Licensed per Master",
+          "info":"<span style=\"color: rgb(85, 85, 85); font-size: 12px; line-height: normal; background-color: rgb(242, 242, 242);\" id=\"yui_3_7_3_4_1373499368049_46\">The number of Puppet Agent nodes that you have exceeded you license by per Puppet Master.</span><br class=\"yui-cursor\" id=\"yui_3_7_3_4_1373499368049_43\">",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1373477786439,\"endTimeMillis\":1373499386438,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"displayName\":\"pe_nodes_excess_of_license\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"puppet-master\"},{\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pe_nodes_excess_of_license\",\"preContext\":\"You have exceeded the node count in your license by \",\"postContext\":\" active nodes\\\\!\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltqovyhazlunrqwe4zoobsxazk7nzxwizltl5sxqy3fonzv633gl5wgsy3fnzzwk000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"",
+  "url":"",
+  "contentVersion":"0.0.1",
+  "info":"",
+  "instructions":"",
+  "icon":"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"
 }
