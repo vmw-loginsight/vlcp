@@ -1,0 +1,885 @@
+{
+  "name":"VMware - vC Ops 5.x",
+  "namespace":"com.vmware.vc-ops",
+  "contentPackId":"com.vmware.vc-ops",
+  "framework":"#5dc",
+  "version":"1.0",
+  "extractedFields":[ {
+    "displayName":"vmw_vc_ops_admin_cmd",
+    "preContext":"VMware\\.vcops-admin.*CMD \"",
+    "postContext":"\" STATUS",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_admin_cmd_status",
+    "preContext":"vcopsadmin-perl.*STATUS: ",
+    "postContext":"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsf643umf2hk4y0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_aliveciq_response_recieved",
+    "preContext":"\\-  ",
+    "postContext":" 'CIQ request' response from Alive",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylmnf3gky3jofpxezltobxw443fl5zgky3jmv3gkza0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_analytics_vm_free_memory",
+    "preContext":"\\[AnalyticVM::System Memory::usage\\]MemFree:         ",
+    "postContext":" kB",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_analyticvm_type",
+    "preContext":".*",
+    "postContext":"::",
+    "regexValue":"AnalyticVM",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_capacity_rs_manager",
+    "preContext":"com\\.vmware\\.cm\\.collector\\.perf\\.rollingsum\\.manager\\.impl\\.",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3bobqwg2lupfpxe427nvqw4ylhmvza0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ciq_dropped_adapter_msg_count",
+    "preContext":"Number of dropped messages for adapterId\\--?\\d+ = ",
+    "postContext":"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpwi4tpobygkzc7mfsgc4dumvzf63ltm5pwg33vnz2a0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ciq_msg_channel",
+    "preContext":"ciq\\] \\[",
+    "postContext":"\\] INFO",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpw243hl5rwqylonzswy000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ciq_msg_queue_exception",
+    "preContext":"ciq\\] ",
+    "postContext":": Could",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpw243hl5yxkzlvmvpwk6ddmvyhi2lpny000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ciq_perf_data_rollup_time",
+    "preContext":"Time to persist rollup perf data for VC\\-[0-9]+ : [0-9]+ objects = ",
+    "postContext":" seconds",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ciq_rollingsum_init_time",
+    "preContext":"Time for rolling sum init data  = ",
+    "postContext":" seconds",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ciq_svmetric_taskid",
+    "preContext":"SVMetric Runner completed task for taskId == ",
+    "postContext":"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ciqrequest_succeded",
+    "preContext":"'CIQ request' ",
+    "postContext":" \\(id",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofzgk4lvmvzxix3tovrwgzlemvsa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ciqtask_request",
+    "preContext":"\\->  ",
+    "postContext":" 'CIQ request' task to Alive",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jof2gc43ll5zgk4lvmvzxi000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_collector_service",
+    "preContext":"com\\.integrien\\.alive\\.collector\\.CollectorMain\\.\\w+ \\- ",
+    "postContext":" has",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_collector_svc_status",
+    "preContext":"CollectorService has been ",
+    "postContext":" \\S+$",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643wmnpxg5dbor2xg000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_component_type",
+    "preContext":"\\[(AnalyticVM|UIVM)::",
+    "postContext":"::\\S+\\]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_data_exception",
+    "preContext":"org\\.hibernate\\.exception\\.",
+    "postContext":":",
+    "regexValue":"DataException",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdborqv6zlymnsxa5djn5xa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_disk_drives",
+    "preContext":"com\\.integrien\\.alive.*Free space in drive ",
+    "postContext":" is ",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_diskspace_usage_percent",
+    "preContext":"::Disk::usage].* ",
+    "postContext":"% /",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_dt_memory_free_mb",
+    "preContext":"com.integrien.alive.common.dt.DTProgress.increment.*Free Mem\\(MB\\):",
+    "postContext":" Total Mem\\(MB\\)",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_dt_memory_used_mb",
+    "preContext":"AnalyticVM::Analytics::analytics.*Used Memory\\(MB\\):",
+    "postContext":" Free",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_hdd_free_space",
+    "preContext":"com\\.integrien\\.alive.*printHddInfoFreeSpace.* is ",
+    "postContext":"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_insufficient_permission_exception",
+    "preContext":"com\\.integrien\\.alive\\.vm\\.manager\\.exception\\.",
+    "postContext":".*",
+    "regexValue":"InsufficientPermissionException",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62loon2wmztjmnuwk3tul5ygk4tnnfzxg2lpnzpwk6ddmvyhi2lpny000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_license_vms_number",
+    "preContext":"\\[UIVM::License::Audit\\].*VMs = ",
+    "postContext":"\\. License",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63djmnsw443fl53g2427nz2w2ytfoi000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_metric-objId",
+    "preContext":"com\\.vmware\\.cm\\.collector\\.perf\\.manager\\.impl\\.PerformanceCollectorImpl.*objectId = ",
+    "postContext":" metric =",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsyznn5rgusle",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_metric_fetch_time",
+    "preContext":"com\\.vmware\\.vcops\\.ciq\\.adapter\\.CIQMetricDataServiceImpl\\.fetchMetricData.* Took <",
+    "postContext":"> ms!",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27mzsxiy3il52gs3lf",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_metric_name",
+    "preContext":"com\\.vmware\\.cm\\.collector\\.perf\\.manager\\.impl\\.PerformanceCollectorImpl.*metric = ",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27nzqw2zi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_metric_objid",
+    "preContext":" com\\.vmware\\.vcops\\.ciq\\.adapter\\.CIQMetricDataServiceImpl\\.fetchMetricData - Fetched metric data for <.*\\, ",
+    "postContext":">\\. Took",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu2le",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_metric_objname",
+    "preContext":" com\\.vmware\\.vcops\\.ciq\\.adapter\\.CIQMetricDataServiceImpl\\.fetchMetricData - Fetched.*for <",
+    "postContext":"\\, \\d+>",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_module_type",
+    "preContext":"\\[(AnalyticVM|UIVM)::.*::",
+    "postContext":"\\]",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_mount_point_name",
+    "preContext":"Disk\\:\\:usage\\].*% ",
+    "postContext":"$",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_services",
+    "preContext":"com\\.integrien\\.alive.*\\- ",
+    "postContext":" has been",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv643foj3gsy3fom000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_sv_perfdata_save_time",
+    "preContext":"com\\.vmware\\.cm\\.perf\\.singlevaluemetric\\.manager\\.impl\\.SingleValueMetricNamedSetTaskManagerImpl.*svMetricPerfDataSet ",
+    "postContext":" seconds",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv643wl5ygk4tgmrqxiyk7onqxmzk7oruw2zi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ui_free_memory",
+    "preContext":"UIVM::System Memory::usage.*MemFree:         ",
+    "postContext":" kB",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_ui_total_memory",
+    "preContext":"\\[UIVM::System Memory::usage\\]MemTotal:        ",
+    "postContext":" kB",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl52g65dbnrpw2zlnn5zhs000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_uivm_type",
+    "preContext":" \\[",
+    "postContext":"::.*::\\S+\\]",
+    "regexValue":"UIVM",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vc_ops_vm_type",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"UIVM|AnalyticVM",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vim_fault_type",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"vim\\.fault\\.\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df",
+    "constraints":null,
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"Possible data error occurred",
+    "info":"This alert is raised when the DB schema receives invalid input or when a non-existent DB object is accessed.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"could not insert:\",\"startTimeMillis\":1382510609787,\"endTimeMillis\":1382511805807,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"could not insert:\",\"startTimeMillis\":1382510609787,\"endTimeMillis\":1382511805807,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"Collector: Could not connect to MQ Broker",
+    "info":"This alert is raised when the collector service cannot connect with ActiveMQ Service.&nbsp;",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"error \\\"Can not connect to the MQ Broker\\\"\",\"startTimeMillis\":1382501262165,\"endTimeMillis\":1382523035461,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Collector\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"error \\\"Can not connect to the MQ Broker\\\"\",\"startTimeMillis\":1382501262165,\"endTimeMillis\":1382523035461,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Collector\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"Data files missing from diskspace",
+    "info":"This alert is raised when some of the data files are missing. Contact support if the problem persists for more than 24 hours.&nbsp;",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"data files missing from diskspace folder\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1384347020781,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"analyticvm, uivm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"data files missing from diskspace folder\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1384347020781,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"analyticvm, uivm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"UI VM logging is down",
+    "info":"<span>This alert is raised if Log Insight stops receiving logs from the UI VM.&nbsp;</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"uivm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1384931885960,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"uivm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1384931502082,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":10.0,
+    "hitOperator":"LESS_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"Analytics VM Logging down",
+    "info":"This alert is raised if &nbsp;Log Insight stops receiving logs from the Analytics VM.&nbsp;<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"analyticvm\",\"startTimeMillis\":1385348865927,\"endTimeMillis\":1385349165926,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"analyticvm\",\"startTimeMillis\":1385348865927,\"endTimeMillis\":1385349165926,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":10.0,
+    "hitOperator":"LESS_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"Disk Usage at data partition exceeds 80 Percent in Analytical VM",
+    "info":"<span>Disk Usage at /data exceeds 80% of total space. Consider cleaning up of the disk.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"disk::usage analyticvm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1385350427799,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"/data\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"80\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_mount_point_name\",\"preContext\":\"Disk\\\\:\\\\:usage\\\\].*% \",\"postContext\":\"$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_diskspace_usage_percent\",\"preContext\":\"::Disk::usage].* \",\"postContext\":\"% /\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"disk::usage analyticvm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1385350397311,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"/data\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"80\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_mount_point_name\",\"preContext\":\"Disk\\\\:\\\\:usage\\\\].*% \",\"postContext\":\"$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_diskspace_usage_percent\",\"preContext\":\"::Disk::usage].* \",\"postContext\":\"% /\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"constraints\":null}]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"Disk usage at root partition exceeds 80 Percent in Analytics VM",
+    "info":"<span>The disk usage at \"/\" exceeds 80% in&nbsp;Analytics VM. Consider cleaning up of the disk.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"disk::usage analyticvm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1385350753257,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"operator\":\"MATCH\",\"value\":\"/$\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"80\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_mount_point_name\",\"preContext\":\"Disk\\\\:\\\\:usage\\\\].*% \",\"postContext\":\"$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_diskspace_usage_percent\",\"preContext\":\"::Disk::usage].* \",\"postContext\":\"% /\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"disk::usage analyticvm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1385350739276,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"operator\":\"MATCH\",\"value\":\"/$\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"80\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_mount_point_name\",\"preContext\":\"Disk\\\\:\\\\:usage\\\\].*% \",\"postContext\":\"$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_diskspace_usage_percent\",\"preContext\":\"::Disk::usage].* \",\"postContext\":\"% /\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"constraints\":null}]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"SMTP Blocked or Unavailable",
+    "info":"<span><span><a href=\"http://kb.vmware.com/kb/2039445\">KB&nbsp;<span>2039445</span></a>: Unable to send emails from the vCenter Operations Manager (vCOPS) setup&nbsp;<br><br><span>Possible reasons for the issue are:</span><span>&nbsp;</span><br><span>The firewall blocks SMTP traffic from the Analytics VM</span><br><span>The SMTP server connection has timed out while attempting to connect.</span><br></span></span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Could not connect to SMTP host:\",\"startTimeMillis\":1382445151294,\"endTimeMillis\":1382445667241,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Could not connect to SMTP host:\",\"startTimeMillis\":1382445151294,\"endTimeMillis\":1382445667241,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"Disk Usage at root partition exceeds 80 Percent in UI VM",
+    "info":"<span>The disk usage at \"/\" exceeds 80% in UI VM. Consider cleaning up of the disk.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"disk::usage uivm\",\"startTimeMillis\":1385350581491,\"endTimeMillis\":1385350882241,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"operator\":\"MATCH\",\"value\":\"/$\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"80\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_mount_point_name\",\"preContext\":\"Disk\\\\:\\\\:usage\\\\].*% \",\"postContext\":\"$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_diskspace_usage_percent\",\"preContext\":\"::Disk::usage].* \",\"postContext\":\"% /\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"disk::usage uivm\",\"startTimeMillis\":1385350581491,\"endTimeMillis\":1385350882241,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"operator\":\"MATCH\",\"value\":\"/$\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"80\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_mount_point_name\",\"preContext\":\"Disk\\\\:\\\\:usage\\\\].*% \",\"postContext\":\"$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_diskspace_usage_percent\",\"preContext\":\"::Disk::usage].* \",\"postContext\":\"% /\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"constraints\":null}]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"Disk usage at data partition exceeds 80 Percent in UI VM",
+    "info":"<span>Disk Usage at /data exceeds 80% of total space. Consider cleaning up of the disk.</span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"disk::usage uivm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1385350173621,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"/data\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"80\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_mount_point_name\",\"preContext\":\"Disk\\\\:\\\\:usage\\\\].*% \",\"postContext\":\"$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_diskspace_usage_percent\",\"preContext\":\"::Disk::usage].* \",\"postContext\":\"% /\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"constraints\":null}]}",
+    "messageQuery":"{\"query\":\"disk::usage uivm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1385350130695,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"/data\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"80\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_mount_point_name\",\"preContext\":\"Disk\\\\:\\\\:usage\\\\].*% \",\"postContext\":\"$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpovxhix3qn5uw45c7nzqw2zi0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_diskspace_usage_percent\",\"preContext\":\"::Disk::usage].* \",\"postContext\":\"% /\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvxg4dbmnsv65ltmftwkx3qmvzggzlooq000000\",\"constraints\":null}]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"Username and Password guidelines violated",
+    "info":"<span><a href=\"http://kb.vmware.com/kb/1037850\">KB&nbsp;1037850</a>:&nbsp;</span><span>This article provides information on username and password guidelines and restrictions for vCenter Operations Standard 1.0.x, vCenter Operations Enterprise 1.0.x VMware Adapter&nbsp;and vCenter Operations Manager vApp 5.x&nbsp;.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"org\\\\.hibernate\\\\.exception\\\\.DataException: could not insert: [com\\\\.integrien\\\\.alive\\\\.common\\\\.hibernate\\\\.CredentialField]\",\"startTimeMillis\":1384927807518,\"endTimeMillis\":1384931435582,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"org\\\\.hibernate\\\\.exception\\\\.DataException: could not insert: [com\\\\.integrien\\\\.alive\\\\.common\\\\.hibernate\\\\.CredentialField]\",\"startTimeMillis\":1384927807518,\"endTimeMillis\":1384931435582,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of all events in vCenter Operations Manager",
+          "info":"<span>The count of all messages logged and redirected in vCenter Operations manager over time. Use this chart to refine the queries used and add constraints for further analysis.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1384671036255,\"endTimeMillis\":1384757436254,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM, UIVM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All failed admin commands",
+          "info":"<span>This widget shows all failed Admin commands</span>. Use this chart to refine the queries and define constraints if you find any abnormal behavior in the vCenter Operations Manager ecosystem.<br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1384820601447,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsf643umf2hk4y0\",\"operator\":\"EQUAL\",\"value\":\"1\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_admin_cmd\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_admin_cmd\",\"preContext\":\"VMware\\\\.vcops-admin.*CMD \\\"\",\"postContext\":\"\\\" STATUS\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_admin_cmd_status\",\"preContext\":\"vcopsadmin-perl.*STATUS: \",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsf643umf2hk4y0\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Count of all admin commands executed",
+          "info":"This widget shows all admin commands executed in vCenter Operations Manager. Use this chart to refine the queries and define constraints if you find any abnormal behavior in the vCenter Operations Manager ecosystem.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382520667680,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_admin_cmd\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_admin_cmd\",\"preContext\":\"VMware\\\\.vcops-admin.*CMD \\\"\",\"postContext\":\"\\\" STATUS\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylenvuw4x3dnvsa0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Relevant Queries",
+          "info":"Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot vCenter Operations Manger ecosystem.",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"All Errors",
+            "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522531811,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522531811,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All error messages logged in the vCenter Operation Manager"
+          }, {
+            "name":"All Exceptions",
+            "chartQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381131318039,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381131318039,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"All Exceptions logged in vCenter Operations Manager"
+          }, {
+            "name":"All Info messages per VM",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381121440501,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM, UIVM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO, INFORMATION\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381121440501,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM, UIVM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO, INFORMATION\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "info":"All information level logs in vCenter Operations Manager grouped by Analytical VM and UI VM"
+          }, {
+            "name":"All Error messages per VM",
+            "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381121587364,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM, UIVM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"error\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381121587364,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM, UIVM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "info":"All error messages logged in vCenter Operations Manager grouped by Analytical VM and UI VM"
+          } ]
+        }, {
+          "name":"All vCenter Related Queries",
+          "info":"Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot vCenter Operations Manger ecosystem with respect to vCenter Connectivity",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"All Messages with vCenter reference ",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381144951865,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"vc\\\\-[0-9]+\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381144951865,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"vc\\\\-[0-9]+\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"All messages that refer to VC-[ciq_vc_version]"
+          }, {
+            "name":"All Non-Authenticated faults",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382519787595,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"vim.fault.NotAuthenticated\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vim_fault_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"vim\\\\.fault\\\\.\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382519787595,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"vim.fault.NotAuthenticated\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vim_fault_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"vim\\\\.fault\\\\.\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53gs3k7mzqxk3dul52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "info":"The count of non-authenticated sessions on vCenter logged by vCenter Operations Manager"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Deployment",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Deployment Events on Analytics VM",
+          "info":"This widget shows all the event logged in the Analytics VM during the deployment of vCenter Operations Manager&nbsp;. Use this chart to analyze and troubleshoot the issues that might have occurred during the deployment.<br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"AnalyticVM::Upgrade::\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386238848111,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_analyticvm_type\",\"preContext\":\".*\",\"postContext\":\"::\",\"regexValue\":\"AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"All Deployment Events on UI VM",
+          "info":"This widget shows all the event logged in the UI VM during the deployment of vCenter Operations Manager. Use this chart to analyze and troubleshoot the issues that might have occurred during the deployment.<br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"UIVM::Upgrade::\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386242491678,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_uivm_type\",\"preContext\":\" \\\\[\",\"postContext\":\"::.*::\\\\S+\\\\]\",\"regexValue\":\"UIVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All DBCli messages",
+          "info":"This widget shows all the messages logged during dbcli operations. This messages are logged primarily during the import of dashboards into vCenter Operations Manager.&nbsp;Use this chart to analyze and troubleshoot the issues that might have occurred during the import of the dashboards into vCenter Operations Manager.<br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"dbcli\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1384820047846,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"All Upgrade Messages",
+          "info":"This widget shows all the messages logged during the upgrade of vCenter Operations Manager.&nbsp;Use this chart to analyze and troubleshoot the issues that might have occurred during the upgrade of vCenter Operations Manager.<br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"::Upgrade::updater\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386239090290,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_module_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::.*::\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"Analytics",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All events in Analytics VM  grouped by components",
+          "info":"All events in Analytics VM &nbsp;grouped by components<br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"analyticvm\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386227221116,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Mean free memory (in KB) in Analytics VM",
+          "info":"<span>This widget shows available memory (in KB) on Analytics VM over a period of time. If the free memory decreases rapidly, the performance of the Analytics VM might degrade.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"memory\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386306711001,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000\",\"displayName\":\"vmw_vc_ops_analytics_vm_free_memory\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_analytics_vm_free_memory\",\"preContext\":\"\\\\[AnalyticVM::System Memory::usage\\\\]MemFree:         \",\"postContext\":\" kB\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmnzv65tnl5thezlfl5wwk3lpoj4q0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average free space in /data drive",
+          "info":"This widget shows the free space in /data drive of Analytics VM. If the free space decreases rapidly, consider increasing the disk space on /data drive.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1383905187987,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000\",\"displayName\":\"vmw_vc_ops_hdd_free_space\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0\",\"operator\":\"CONTAINS\",\"value\":\"data\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"analyticVM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_disk_drives\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_disk_drives\",\"preContext\":\"com\\\\.integrien\\\\.alive.*Free space in drive \",\"postContext\":\" is \",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_hdd_free_space\",\"preContext\":\"com\\\\.integrien\\\\.alive.*printHddInfoFreeSpace.* is \",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Average free space available in /",
+          "info":"This widget shows the free space available in / drive of Analytics VM over a period of time.&nbsp;<span>If the free space decreases rapidly, consider increasing the disk space on / drive.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1384761365189,\"endTimeMillis\":1386236910344,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000\",\"displayName\":\"vmw_vc_ops_hdd_free_space\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"data\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_disk_drives\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_disk_drives\",\"preContext\":\"com\\\\.integrien\\\\.alive.*Free space in drive \",\"postContext\":\" is \",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdjonvv6zdsnf3gk4y0\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_hdd_free_space\",\"preContext\":\"com\\\\.integrien\\\\.alive.*printHddInfoFreeSpace.* is \",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv62demrpwm4tfmvpxg4dbmnsq0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Mean free memory for DT calculation over time",
+          "info":"<span>This widget shows the available memory for Dynamic Threshold (DT) calculation over a period of time. If this memory decreases rapidly, dynamic threshold processing might slow down.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"dtprogress\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386306574381,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc\",\"displayName\":\"vmw_vc_ops_dt_memory_free_mb\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_dt_memory_free_mb\",\"preContext\":\"com.integrien.alive.common.dt.DTProgress.increment.*Free Mem\\\\(MB\\\\):\",\"postContext\":\" Total Mem\\\\(MB\\\\)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v6ztsmvsv63lc\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Mean memory used for DT calculation over time",
+          "info":"<span>This widget shows the memory used for Dynamic Threshold (DT) calculation over a period of time. If there is an uptrend in the consumption of this memory, the dynamic threshold processing might have performance issues</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"dtprogress\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386306401320,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc\",\"displayName\":\"vmw_vc_ops_dt_memory_used_mb\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_dt_memory_used_mb\",\"preContext\":\"AnalyticVM::Analytics::analytics.*Used Memory\\\\(MB\\\\):\",\"postContext\":\" Free\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6zdul5wwk3lpoj4v65ltmvsf63lc\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Analytics VM Watchdog messages ",
+          "info":"This widget shows all the messages from the watchdog service running on the Analytics VM. The watchdog service monitors the health of all the components. This chart can be used to analyze and troubleshoot issues with specific components if watchdog service reports an &nbsp;abnormal state for any component.<br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1384346222117,\"endTimeMillis\":1384346522423,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"watchdog\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_module_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::.*::\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"All Data Exceptions in Analytics VM",
+          "info":"<span>This widget shows all&nbsp;</span><span>types of Data Exceptions logged in the Analytics VM. Use this chart to analyze and troubleshoot all the data exceptions in the Analytics VM</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"could not insert:\\\"\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1386242684018,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_analyticvm_type\",\"preContext\":\".*\",\"postContext\":\"::\",\"regexValue\":\"AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6ylomfwhs5djmn3g2x3upfygk000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Relevant Queries",
+          "info":"Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot the Analytics VM behavior.",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"All Errors",
+            "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522778702,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522778702,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "info":"All error messages logged on the Analytics VM"
+          }, {
+            "name":"All Exceptions",
+            "chartQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1383913037961,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"analyticvm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1383913037961,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"analyticvm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "info":"All exceptions logged on the Analytics VM"
+          }, {
+            "name":"All Data Errors",
+            "chartQuery":"{\"query\":\"could not insert:\",\"startTimeMillis\":1382510609787,\"endTimeMillis\":1382511805807,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"could not insert:\",\"startTimeMillis\":1382510609787,\"endTimeMillis\":1382511805807,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"All data errors logged on the Analytics VM<br>"
+          } ]
+        }, {
+          "name":"Collection: All relevant Queries",
+          "info":"Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot collections in the Analytics VM.&nbsp;",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"All ActiveMQ Errors",
+            "chartQuery":"{\"query\":\"activemq error analyticvm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1384518901882,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"activemq error analyticvm\",\"startTimeMillis\":1384427065627,\"endTimeMillis\":1384518901837,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"All error messages related to ActiveMQ service&nbsp;<br>"
+          }, {
+            "name":"All Collector Errors",
+            "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522933819,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Collector\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522933819,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Collector\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All errors related to the collector service"
+          }, {
+            "name":"All Collector Status Events",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381042853092,\"endTimeMillis\":1381129276813,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_collector_service\",\"preContext\":\"com\\\\.integrien\\\\.alive\\\\.collector\\\\.CollectorMain\\\\.\\\\w+ \\\\- \",\"postContext\":\" has\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1381042853092,\"endTimeMillis\":1381129276813,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_collector_service\",\"preContext\":\"com\\\\.integrien\\\\.alive\\\\.collector\\\\.CollectorMain\\\\.\\\\w+ \\\\- \",\"postContext\":\" has\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnrwgky3un5zf643foj3gsy3f\",\"constraints\":null}]}",
+            "info":"All Collector Status modification events e.g. start, stop&nbsp;"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"UI",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Events in UI VM grouped by Components",
+          "info":"<span>This widget shows component level classification of all events of the UI VM of vCenter Operations Manager.&nbsp;</span><span>To filter events by a specific component, click on the chart and add a constraint.</span><br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"uivm\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386237394540,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"All Data Exceptions in UI VM",
+          "info":"<span>This widget shows</span>&nbsp;all<span style=\"font-weight: bold;\">&nbsp;</span>types of Data Exceptions logged in the Analytics VM. Use this chart to analyze and troubleshoot all the data exceptions in theUI VM.<br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"could not insert:\\\"\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386242926756,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_uivm_type\",\"preContext\":\" \\\\[\",\"postContext\":\"::.*::\\\\S+\\\\]\",\"regexValue\":\"UIVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljozwv65dzobsq0000\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Mean Free Memory (in KB)",
+          "info":"<span>This widget shows available memory (in KB) in the UI VM over a period of time. If the free memory decreases rapidly, the performance of the UI VM might degrade.&nbsp;</span>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1384341063847,\"endTimeMillis\":1384341363846,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000\",\"displayName\":\"vmw_vc_ops_ui_free_memory\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_ui_free_memory\",\"preContext\":\"UIVM::System Memory::usage.*MemFree:         \",\"postContext\":\" kB\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65ljl5thezlfl5wwk3lpoj4q0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"All Watchdog messages",
+          "info":"This widget shows all the messages from the watchdog service running in the UI VM. The watchdog service monitors the health of all the components. This chart can be used to analyze and troubleshoot the issues with specific components if watchdog service reports abnormal state for any component.",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1383741485248,\"endTimeMillis\":1384346285247,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"UIVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"watchdog\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_module_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::.*::\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Relevant Queries",
+          "info":"Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot UI VM behavior.<br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"All UI Exception",
+            "chartQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382446264444,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"uivm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382446264444,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"uivm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "info":"All exceptions logged on the UI VM"
+          }, {
+            "name":"All Errors",
+            "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522531811,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522531811,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All Errors logged on the UI VM"
+          }, {
+            "name":"All Metric Data Receiver Messages",
+            "chartQuery":"{\"query\":\"metricdatareceiver\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382603778708,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"metricdatareceiver\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382603778708,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"All messages related to Metric Data Receiver logged on the UI VM"
+          }, {
+            "name":"All Info Messages",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1384259497243,\"endTimeMillis\":1384345897242,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM, UIVM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO, INFORMATION\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1384259495779,\"endTimeMillis\":1384345897242,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM, UIVM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO, INFORMATION\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null}]}",
+            "info":"All information messages logged on the UI VM"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Capacity Planning",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Connectivity Error to MQ",
+          "info":"This widget shows all the errors logged during connection attempts to the ActiveMQ service. If this chart displays data, it is possible that the ActiveMQ service is down.<br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ciq\\\\]\",\"startTimeMillis\":1385362565189,\"endTimeMillis\":1385550042856,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"javax.jms.JMSException, Can not connect to the MQ Broker\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Average time (in ms) to fetch metric data grouped by object name",
+          "info":"<span>This widget shows the time taken while fetching the metric data for each object (grouped by object name). Use this chart to analyze and troubleshoot, time taken to fetch data for particular objects.</span><br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"fetchmetricdata\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386306265301,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27mzsxiy3il52gs3lf\",\"displayName\":\"vmw_vc_ops_metric_fetch_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27mzsxiy3il52gs3lf\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_metric_objname\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_metric_objname\",\"preContext\":\" com\\\\.vmware\\\\.vcops\\\\.ciq\\\\.adapter\\\\.CIQMetricDataServiceImpl\\\\.fetchMetricData - Fetched.*for <\",\"postContext\":\"\\\\, \\\\d+>\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27n5rgu3tbnvsq0000\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_metric_fetch_time\",\"preContext\":\"com\\\\.vmware\\\\.vcops\\\\.ciq\\\\.adapter\\\\.CIQMetricDataServiceImpl\\\\.fetchMetricData.* Took <\",\"postContext\":\"> ms!\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lforzgsy27mzsxiy3il52gs3lf\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Mean time (in sec.) to perform a performance data roll up",
+          "info":"This widget shows the time taken to perform the roll up of performance data for any of the vCenters. Use this chart to analyze and troubleshoot performance issues if the time taken to roll up is high (i.e. in minutes).",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381137600000,\"endTimeMillis\":1381138199999,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000\",\"displayName\":\"vmw_vc_ops_ciq_perf_data_rollup_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_ciq_perf_data_rollup_time\",\"preContext\":\"Time to persist rollup perf data for VC\\\\-[0-9]+ : [0-9]+ objects = \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxazlsmzpwiylumfpxe33mnr2xax3unfwwk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Mean time (in sec.) for rolling sum init data",
+          "info":"This widget shows all the messages logged for the time taken while rolling the sum init data. Use this chart if the time taken is too high (i.e. in minutes).<br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"Time for rolling sum init\\\"\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386242262000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000\",\"displayName\":\"vmw_vc_ops_ciq_rollingsum_init_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_ciq_rollingsum_init_time\",\"preContext\":\"Time for rolling sum init data  = \",\"postContext\":\" seconds\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxe33mnruw4z3tovwv62lonf2f65djnvsq0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Relevant Queries",
+          "info":"Detailed queries for all the common errors, exceptions and messages to analyze and troubleshoot issues related to the capacity planning operations within vCenter Operations Manager. All these messages are logged by the CIQ adapter.<br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"All Errors",
+            "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522531811,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522531811,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All error messages logged from CIQ Adapter"
+          }, {
+            "name":"All Exceptions",
+            "chartQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522469975,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382522469975,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All exceptions logged from CIQ Adapter"
+          }, {
+            "name":"All MQ Connection Errors",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381218407673,\"endTimeMillis\":1381218709697,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"JMSException, java\\\\\\\\.net\\\\\\\\.ConnectException, Could not connect to broker\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1381218407673,\"endTimeMillis\":1381218709697,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"CIQ\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"JMSException, java\\\\\\\\.net\\\\\\\\.ConnectException, Could not connect to broker\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All errors related to the connection failure with MQ broker"
+          }, {
+            "name":"All Completed Single Value Metrics tasks",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382521178666,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_ciq_svmetric_taskid\",\"preContext\":\"SVMetric Runner completed task for taskId == \",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382521178666,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_ciq_svmetric_taskid\",\"preContext\":\"SVMetric Runner completed task for taskId == \",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3jofpxg5tnmv2he2ldl52gc43lnfsa0000\",\"constraints\":null}]}",
+            "info":"List of all the completed Single Value Metrics calculation tasks"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Adapters",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Adapter messages grouped by Adapter type",
+          "info":"This widget shows all the messages logged by different adapters integrated with vCenter Operations Manager instance. Use this chart to analyze and troubleshoot various adapter related issues. &nbsp;<br>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"AnalyticVM::Adapter\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1386237967602,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_module_type\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_module_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::.*::\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"All messages from Capacity Planner Adapter ",
+          "info":"This widget shows all the messages logged by CIQ push adapter, which is responsible for pulling data from Analytics VM to UI VM. Most of the messages are related to data collection. If the number of messages is high in a short period of time, either frequent data collections are occurring or there might be an issue with the data being collected.&nbsp;<span>Use this chart to analyze and troubleshoot time taken for collections.</span>",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"com.vmware.vcops.ciq.adapter.CIQPushAdapter\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382521785358,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Relevant Queries",
+          "info":"This widget shows all the detailed queries which can be used to analyze and troubleshoot the issues related to the various adapters integrated with the vCenter Operations Manager.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"All Errors",
+            "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382523240543,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Adapter\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"error\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382523240543,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Adapter\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All Errors from all the integrated adapters on vCenter Operations Manager"
+          }, {
+            "name":"All Exceptions",
+            "chartQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382523310449,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Adapter\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"exception\",\"startTimeMillis\":1381322034069,\"endTimeMillis\":1382523310449,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"AnalyticVM\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Adapter\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All exceptions logged by all the adapters integrated on vCenter Operations Manager"
+          }, {
+            "name":"All Adapter messages",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381215383626,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Adapter\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_ops_module_type\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_module_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::.*::\",\"postContext\":\"\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv63lpmr2wyzk7or4xazi0\",\"constraints\":null}]}",
+            "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1381118814348,\"endTimeMillis\":1381215383626,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"operator\":\"EXISTS\",\"value\":\"\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"operator\":\"CONTAINS\",\"value\":\"Adapter\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_ops_vm_type\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"UIVM|AnalyticVM\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv65tnl52hs4df\",\"constraints\":null},{\"displayName\":\"vmw_vc_ops_component_type\",\"preContext\":\"\\\\[(AnalyticVM|UIVM)::\",\"postContext\":\"::\\\\S+\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3ggllpobzxm3lxl53ggx3pobzv6y3pnvyg63tfnz2f65dzobsq0000\",\"constraints\":null}]}",
+            "info":"All messages from all the adapters integrated on vCenter Operations Manager"
+          }, {
+            "name":"All VMWare Adapter Messages",
+            "chartQuery":"{\"query\":\"analyticvm::adapter::VMware*\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1385548138849,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"{\"query\":\"analyticvm::adapter::VMware*\",\"startTimeMillis\":1385365865189,\"endTimeMillis\":1385548138849,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "info":"All VMWare Adapter Messages<br>"
+          } ]
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"VMware, Inc.",
+  "url":"http://www.vmware.com",
+  "contentVersion":"1.0",
+  "info":"Content pack to analyze all the logs redirected from the vCenter Operations Manager instance. This content pack contains various dashboards, queries and alerts to provide better diagnostics and troubleshooting capabilities to the vCenter Operations Manager administrator. The dashboards are grouped in the major components of vCenter Operations Manager like Analytics, UI, Adapters etc. to provide better manageability. There are various alerts which can be enabled to get the alerts in vCenter Operations Manager as well as for sending emails to the administrator(s)<br>",
+  "instructions":"",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAA51BMVEUAAAAdHR0dHR0dHR0eHh4dHR0eHh4eHh4bGxscHBwaGhoXFxceHh4eHh7///8hISH9/f3c3NwsLCzx8fG/v792dnZjY2Ofn58pKSlGRkb7+/vQ0NAmJiZubm5eXl7g4OBmZmY/Pz/19fXm5ub5+fnHx8ecnJwyMjIwMDDs7Oyzs7NKSko1NTX39/fz8/Pp6emvr6+MjIyHh4dPT0/U1NTDw8OmpqZHR0c6OjrY2NjLy8uWlpZ9fX1YWFhVVVVERESqqqqioqJUVFRNTU0uLi7r6+u7u7vu7u63t7eQkJCBgYF6enpzc3OicAbbAAAADXRSTlMA8+vZ2Me+gVQ/MSH6ktSa+QAABFFJREFUeNrs0kEOwyAQQ1ETCBCI73/dKlKLqmxmiRd+J/iyjGW0mhM3SLm2gbdeuFXp+DdPbndOLNdBAce1em5KuL9FU2KfxzHxEPjPzwkAnUI6gEIhBRiUMtAopaFSSkWmlIxEKQkU4yAHOejFQREHRRwUcVDEQREHRRwUcdCHfXrdThOIwjB8BfvDUyLhpICIeFY8m6hNtE2T3v/1tDVl2AhZU1z+C8/PgbXmZTMjUwTJFEEyRZBMESRTBMkUQTJFkEwRJPN1g9ROhSTUo18x6JKidjpsma/7R+PaoH1bb8wOIX1KCaevermx9tqWSjFj97M2azTWm+5kxzc/Wtvan9fLm/G7fU1Q08VfgUmf2L06+Efb/IqSKqbXQqTlmVGSPVlriASHl9xBYRUfhiFlMbYDcN7Ha/c6kubLc+ZkhASnXckXpIwR6SqUpnZx4YdJ5C9auORaRM8bpMxX533+N6jvIuKEGb0HpAzM3gwZgmezigz6Ks+E9kMI3yjlDRmqJ2Q6OchUU0nIMyG4qU95CHAL0zxniJ+Rt8uHC9yEu5IEcZYGQVcpYVnFbUxzBBkehFKTEraIaek4Z3QaIMNwFGhI8AxJEGeWIHxXiPEbEKrmsl4CV56Gtr3bBrjg3fVs21o4YE52jiBVh+C8EPNeStxA3wUz7tPZcoaErUpn9yM+3idZEPeIWJv/TFZa7RFVyojNxXHrBWAWYsZN/jvNPEE+28jtk2C1IHSVZFDLIqGOWGBTRJkjdicN4iaIPZIwZvs/UTJofSThvgRhrpAwvTpoNeI3P+vO1xQRlN546UBYUKx5dRC1IWjN7EURJAqFB1ZeJz65q4P2v9kz390EYSiKP8FNK1PHKvLH+YcgashYtpkgE5ZtJr7/8+yLk3uhWRc+cGPCeQD6o/T09JSvpvNjDznZ7hSIRsR2ffE82i/P0DEQlNu68509WsFW50Aiqiehq3Dmdg4E2Zw6XyDPezEDkHimzn9Ay/wEDEDgq8rkY5Lzu4ABiEbsN4QejlUWIBgh5wdTHKtMQCEabjlExwxgAaJZOFdV5zkwAdH+gUfmAaJpSmKVDyjXlLCFwwgE9w0eOQVOoHWj6aQWHxAKMBxrrEBwmFEeb8UMJD7/asD2m75R5ghoSUu6uQYZlG1INw0p7lA/E6Gn/8brbbXTFi2B4EgtRpXoLwFEhM+/lawUvVpboNWElFCqYKe/JnGv8/ouaCU2334YFeyvD7ehrull0T8+6aduEgOW8+vayG4PBB+ngZJyMxk50JS7mEl5F70AlTinc6l2xxio7GSgpPISw5WeSWHhj0sbtHLKsZsLaMgqfPdVtwQyP1sB3Py/jv+qBzKpBzKpBzKpBzKpB/pp5w5qAABgIIT5dz0JfJvsUICCVhuqNlRtqNpQtaFqQ9WGqg1VG6o2VD0Y4hAJjtngIBKOauEwG4778UAkjozyUC2OHfNgNo+u83A/iD88UfhV2pCLawMAAAAASUVORK5CYII="
+}
