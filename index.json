@@ -161,6 +161,19 @@
     "version": "1.0"
   },
   {
+    "info": "<span>Flash storage is an attractive method for boosting I/O performance in the data center.&nbsp;</span><br><span>XtremIO's ground-up all-flash array design was created from the start for maximum performance and consistent low latency response times, and with enterprise grade high availability features, real-time Inline Data Reduction that dramatically lowers costs, and advanced functions such as thin provisioning, tight integration to VMware, snapshots, volume clones, and superb data protection.</span><br><br><span>This content pack offers you the ability to troubleshoot your XtremIO Flash Arrays using Log Insight and monitor your XtremIO setup for top performance.</span><br>",
+    "name": "EMC-XtremIO",
+    "author": "VMware Inc.",
+    "contentVersion": "1.0",
+    "namespace": "com.emc.xio",
+    "fileName": "EMC-XtremIO-v1.0.vlcp",
+    "framework": "#9c4",
+    "contentPackId": "com.emc.xio",
+    "version": "2.4",
+    "url": "http://www.emc.com/storage/xtremio/overview.htm",
+    "icon": "iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAIAAABoJHXvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALESURBVHhe7d3dbqMwFABh0vd/5xQVF1k2Jja2E6ad72a74c+cgW6lvejj+Xwu4vgKfwrCYDAGgzEYjMFgDAZjMBiDwRgMxmAwBoMxGIzBYAwGYzAYg8EYDMZgMAaDMRiMwWAMBmMwGIPBGAzGYDAGgzEYjMFgDAZjMBiDwRgMxmAwBoMxGIzBYAwGYzAYg8EYDMZgMAaDMRiMwWAMBmMwGIPBGAzGYDAGgzEYjMFgDAZjMBiDwRgMxmAwDb/K4/F4hK+WJTkq3xR/cq5m/3yRL8+/H5LvmZ9td75zvLV0ksOFnVyxFeMNW6dwOIhrSqfqvMTPGotnLm1q1RCs9KzFXw98lFhqegxp1vbbjQ7b1AR7uU9ph+Qmmy66Sc6wy4863LO0mJpFbs63tmr7lpivsnQPo8w456H9RjqvmB8+9hb+10+Jb8t/InnhWjUHi+959us1VefgdjVDGDicu79hNeNY90mEDdUuHPIpV4Llgxv7em1D34SPxjlf6tgbmeFKsHyOMyYbW+c4Y5Szlz3DX/ihY8sZCxvqsLI1B4tvLx7NwNvehr4Kfx890/jMsdLnt3LrN2xes0lKixy4+LZg8YW3aeJmmuhfc+t72fke3/3fsEkPRD61zjnu8kWOfY4bgsUXjm9v0kzrrRfNhW1vkcQOK/gVPv3R/1jc/Q1bffyBqFFTor/WqjZYPKn8woiZJuI1DxnlepLSeU42tWr77xV9HOBbomIGgzEYjMFgDAZjMBiDwRgMxmAwBoMxGIzBYAwGYzAYg8EYDMZgMAaDMRiMwWAMBmMwGIPBGAzGYDAGgzEYjMFgDAZjMBiDwRgMxmAwBoMxGIzBYAwGYzAYg8EYDMZgMAaDMRiMwWAMBmMwGIPBGAzGYDAGgzEYjMFgDAZjMBiDwRgMxmAwBoMxGIzBYAwGYzAYg8EYDMZgMAZDWZZvkIbuLNQWLXIAAAAASUVORK5CYII="
+  },
+  {
     "info": "Import real-time network, web, database, storage, and memcache metrics into Log Insight that are otherwise difficult or impossible to log. To work, this app requires an ExtraHop appliance. You can download a free ExtraHop virtual appliance at <a href=\"http://www.extrahop.com/discovery\">http://www.extrahop.com/discovery</a><br>",
     "name": "ExtraHop - Wire Data",
     "author": "ExtraHop Networks",
