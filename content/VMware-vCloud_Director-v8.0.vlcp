@@ -1,0 +1,623 @@
+{
+  "name":"VMware - vCloud Director",
+  "namespace":"com.vmware.vcd",
+  "framework":"#9c4",
+  "version":"2.4",
+  "contentPackId":"com.vmware.vcd",
+  "extractedFields":[ {
+    "displayName":"vmw_vcd_datastore_moref",
+    "preContext":"moref://.*/Datastore#",
+    "postContext":"5\\, affinity type:",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpwiylumfzxi33smvpw233smvta0000",
+    "constraints":"{\"searchTerms\":\"DatastoreAffinity, mandatory\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_org",
+    "preContext":"orgName=",
+    "postContext":"\\, cellInstanceId=[\\d]*, targetId=",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th",
+    "constraints":"{\"searchTerms\":\"Activity Execution, TaskActivity\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_org_name",
+    "preContext":"\\, displayName=",
+    "postContext":"\\], providerVdc=\\[id=",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64thl5xgc3lf",
+    "constraints":"{\"searchTerms\":\"VAppVmImpl, name\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_ovdc_name",
+    "preContext":"name=",
+    "postContext":"\\, enabled=.*org=\\[",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw65temnpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"thinProvisioning, fastProvisioning\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_pvdc_name",
+    "preContext":"providerVdc=\\[id=.*, name=",
+    "postContext":"\\, highestSupportedHwVersion=[\\d]*,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxa5temnpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"VAppVmImpl, enabled, thinProvisioning\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_severity",
+    "preContext":"^\\d\\d\\d\\d-\\d\\d-\\d\\d\\s\\d\\d:\\d\\d:\\d\\d,[\\d]*\\s\\|\\s",
+    "postContext":"[\\s]*\\|\\s",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_task_type",
+    "preContext":"task ",
+    "postContext":"\\(com\\.vmware\\.vcloud\\.",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxiyltnnpxi6lqmu000000",
+    "constraints":"{\"searchTerms\":\"CalloutManagerImpl, backendbase\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_task_uuid",
+    "preContext":"task:",
+    "postContext":"\\) \\| ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxiyltnnpxk5ljmq000000",
+    "constraints":"{\"searchTerms\":\"requestId\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_uuid",
+    "preContext":"vcd=",
+    "postContext":"\\,task",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxk5ljmq000000",
+    "constraints":"{\"searchTerms\":\"activity, backendbase\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_vapp_name",
+    "preContext":"vApp \"",
+    "postContext":"\" \\(.* in VDC",
+    "regexValue":".*",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmylqobpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"VAppUploadManagerImpl, name\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_vc_uuid",
+    "preContext":"\\[vcId=",
+    "postContext":"\\, moref=.*]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxmy27ov2wsza0",
+    "constraints":"{\"searchTerms\":\"vcId\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_vm_moref_placement",
+    "preContext":"Placing Subject\\:\\smoref://",
+    "postContext":" with requirements:",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nvxxezlgl5ygyyldmvwwk3tu",
+    "constraints":"{\"searchTerms\":\"PlacementSolverImpl, mandatory\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vcd_vm_name",
+    "preContext":"for virtual machine id=.* name=",
+    "postContext":"\\, fabricIds=\\[",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxm3k7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"name, VAppVmImpl\"}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"vCD - file level datastore access problem",
+    "info":"vCD has attempted to access a file on a datastore and was unable to do so. This is typically not a datastore level issue but more a file level issue. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"com.vmware.vim.binding.vim.fault.CannotAccessFile\",\"startTimeMillis\":1455901471735,\"endTimeMillis\":1455901771734,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"Caused by:, current.png\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"com.vmware.vim.binding.vim.fault.CannotAccessFile\",\"startTimeMillis\":1383756704537,\"endTimeMillis\":1384361504536,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"Caused by:, current.png\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - network error, java broken pipe",
+    "info":"Java has experienced an error due to a broken pipe that likely indicates a network connectivity issue to vCenter. Check your vCenter and the networking in between. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"java.net.SocketException\",\"startTimeMillis\":1384273239212,\"endTimeMillis\":1384359639211,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"java.net.SocketException\",\"startTimeMillis\":1384273239212,\"endTimeMillis\":1384359639211,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":600000,
+    "searchInterval":60000
+  }, {
+    "name":"vCD - failed tasks",
+    "info":"A vCD Task has failed. This alert removes noise from failed media operations and deletes that failed (very commonly caused by VMs that are still powered on). This alert still mainly revolves around failed common (due to tenant misconfiguration) vApp operations and is not recommended for day to day operations.",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"Unable to execute task\",\"startTimeMillis\":1455901097370,\"endTimeMillis\":1455901697369,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"vdc_delete_vapp, VAPP_INSERT_CD_FLOPPY\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Unable to execute task\",\"startTimeMillis\":1384273705920,\"endTimeMillis\":1384360105919,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"vdc_delete_vapp, VAPP_INSERT_CD_FLOPPY\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":600000,
+    "searchInterval":600000
+  }, {
+    "name":"vCD - starting ActiveMQ",
+    "info":"The ActiveMQ Cell Discovery Agent was just started which should only happen when the other core services are starting. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Starting ActiveMQ Cell\",\"startTimeMillis\":1395268088720,\"endTimeMillis\":1395268388719,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Starting ActiveMQ Cell\",\"startTimeMillis\":1395268088720,\"endTimeMillis\":1395268388719,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - service shutdown requested",
+    "info":"The vCD server received a request to stop its core services and the shutdown process has begun. This is only bad if it is unplanned. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Application shutdown event: Beginning\",\"startTimeMillis\":1455901531560,\"endTimeMillis\":1455901831559,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Application shutdown event: Beginning\",\"startTimeMillis\":1395066885959,\"endTimeMillis\":1395671685958,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - Spring Framework bean creation failure",
+    "info":"The Spring Framework has experienced a failure creating a bean. Check the Java dump for more information. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"org.springframework.beans.factory.BeanCreationException\",\"startTimeMillis\":1384361473763,\"endTimeMillis\":1384447873762,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"org.springframework.beans.factory.BeanCreationException\",\"startTimeMillis\":1384361473763,\"endTimeMillis\":1384447873762,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - vCenter task failed",
+    "info":"This alert signals that vCD is reporting a task it has given to a vCenter Server has failed. More information on the root cause of the failure is available in surrounding logs. This alert can generate quite a bit of noise and is not recommended for day to day operations.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"failed in vCenter Server\",\"startTimeMillis\":1384272872383,\"endTimeMillis\":1384359272382,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"failed in vCenter Server\",\"startTimeMillis\":1384272872383,\"endTimeMillis\":1384359272382,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":600000,
+    "searchInterval":600000
+  }, {
+    "name":"vCD - failed to delete expired vApp",
+    "info":"vCD has attempted to delete an expired vApp and the operation failed for an unknown reason, probably because a VM is still powered on. This alert can generate quite a bit of noise and is not recommended for day to day operations.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Failed to delete expired configuration\",\"startTimeMillis\":1455901120731,\"endTimeMillis\":1455901720730,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Failed to delete expired configuration\",\"startTimeMillis\":1383756495309,\"endTimeMillis\":1384361295308,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":600000,
+    "searchInterval":600000
+  }, {
+    "name":"vCD - datastore Inaccessible",
+    "info":"vCD has attempted an operation and it has failed due to a datastore being inaccessible.<br><span><span style=\"font-weight: bold;\">Recommended to be enabled for day to day operations</span><br></span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Underlying system error: com.vmware.vim.binding.vim.fault.InaccessibleDatastore\",\"startTimeMillis\":1423845240951,\"endTimeMillis\":1423845904187,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - vApp failed to undeploy",
+    "info":"A vApp failed to undeploy for an unknown reason and an error has been displayed to the vCD tenant. More information on the root cause of the failure is available in surrounding logs. This alert can generate quite a bit of noise and is not recommended for day to day operations.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"com.vmware.ssdc.library.exceptions.UndeployException\",\"startTimeMillis\":1395242079104,\"endTimeMillis\":1395328479103,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"com.vmware.ssdc.library.exceptions.UndeployException\",\"startTimeMillis\":1395242079104,\"endTimeMillis\":1395328479103,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":600000,
+    "searchInterval":600000
+  }, {
+    "name":"vCD - vApp failed to start",
+    "info":"A start command was issued by vCD against a vApp and the attempt failed to start the vApp. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"com.vmware.ssdc.util.LMException: Unable to start vApp\",\"startTimeMillis\":1455901593623,\"endTimeMillis\":1455901893622,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"com.vmware.ssdc.util.LMException: Unable to start vApp\",\"startTimeMillis\":1395242543789,\"endTimeMillis\":1395328943788,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - core service startup",
+    "info":"vCD has received a command to start the vCD core services and has begun to initialize those services. This alert is very useful to detect vCD Cell outages. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"ServiceInitializationTracker \\\"Application startup begins\\\"\",\"startTimeMillis\":1455901337726,\"endTimeMillis\":1455901637725,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"ServiceInitializationTracker \\\"Application startup begins\\\"\",\"startTimeMillis\":1395586006613,\"endTimeMillis\":1395672406612,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - connection exception",
+    "info":"vCD has attempted to connect to another device (usually vCenter) and has failed with an exception. Check the logs for more information. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"org.apache.http.NoHttpResponseException\",\"startTimeMillis\":1395267517967,\"endTimeMillis\":1395267817966,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"org.apache.http.NoHttpResponseException\",\"startTimeMillis\":1395267517967,\"endTimeMillis\":1395267817966,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - console proxy errors",
+    "info":"vCD has attempted to process a mks websocket ticket and has failed for some reason (hint: check your time sync between vCD, vCenter and ESX). This normally results in remote consoles that show black and never connect to the VM.&nbsp;<br><span style=\"font-weight: bold;\">Recommended to be enabled for day to day operations.</span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Error processing websocket ticket\",\"startTimeMillis\":1455901292721,\"endTimeMillis\":1455901592720,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Error processing websocket ticket\",\"startTimeMillis\":1396868171200,\"endTimeMillis\":1396889771199,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - HTTP connection error talking to vCenter",
+    "info":"vCD's connection to a vCenter Server is experiencing connectivity issues along the way. Check your vCenter Server and networking in between. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"org.apache.http.conn.HttpHostConnectException:\",\"startTimeMillis\":1395268660764,\"endTimeMillis\":1395268960763,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"org.apache.http.conn.HttpHostConnectException:\",\"startTimeMillis\":1395268660764,\"endTimeMillis\":1395268960763,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - NTP sync issues",
+    "info":"There appears to be a time mismatch between vCD, vSphere and ESX that needs addressed. Accurate time sync between vCD, vCenter and ESX is absolutely critical. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"HTTP NFC Error\",\"startTimeMillis\":1384299294806,\"endTimeMillis\":1384385694805,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"HTTP NFC Error\",\"startTimeMillis\":1384299294806,\"endTimeMillis\":1384385694805,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - thread execution was rejected",
+    "info":"A vCD thread execution was rejected for some reason. This could be due to security policy or a misconfiguration but further investigation is highly recommended. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"rejected from com.vmware.vcloud.common.threading.ExtendedThreadPoolExecutor\",\"startTimeMillis\":1455901570837,\"endTimeMillis\":1455901870836,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"rejected from com.vmware.vcloud.common.threading.ExtendedThreadPoolExecutor\",\"startTimeMillis\":1384274197174,\"endTimeMillis\":1384360597173,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - contact administrator generic error",
+    "info":"This error is a very generic error but one that appears to a vCD tenant so an end user has seen a big red error in vCD, however it does not particularly signify any infrastructure issues. This alert can generate quite a bit of noise and is not recommended for day to day operations.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Contact the Administrator if the problem persists\",\"startTimeMillis\":1455051607074,\"endTimeMillis\":1455656614824,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Caused by: com.vmware.ssdc.library.exceptions.\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Contact the Administrator if the problem persists\",\"startTimeMillis\":1384277447470,\"endTimeMillis\":1384299047469,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":600000,
+    "searchInterval":600000
+  }, {
+    "name":"vCD - SQL exception thrown",
+    "info":"The vCD server has attempted a task and it failed due to an exception thrown when communicating to the vCD Database. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"java.sql.SQLException\",\"startTimeMillis\":1455901072401,\"endTimeMillis\":1455901372400,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"deadlock, deadlocked\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"java.sql.SQLException\",\"startTimeMillis\":1395585629911,\"endTimeMillis\":1395672029910,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"deadlock, deadlocked\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - connected to database",
+    "info":"The vCD Server has just connected to its database which is good if you were expecting it, bad if you did not. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Successfully connected to database: jdbc:jtds:sqlserver://\",\"startTimeMillis\":1395268034235,\"endTimeMillis\":1395268334234,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Successfully connected to database: jdbc:jtds:sqlserver://\",\"startTimeMillis\":1395268034235,\"endTimeMillis\":1395268334234,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - connecting to vCenter",
+    "info":"vCD is connecting to a vCenter Server. This means that a cell is coming online as planned or that an outage just happened and the cell is reconnecting. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Changing state to CONNECTING\",\"startTimeMillis\":1455901248531,\"endTimeMillis\":1455901548530,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Changing state to CONNECTING\",\"startTimeMillis\":1394660281434,\"endTimeMillis\":1395265081433,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - core services failed to start",
+    "info":"vCD has attempted to start its core services but failed to do so, obviously a very serious problem. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Application startup event: Unable to start service: com.vmware.vcloud.common.core\",\"startTimeMillis\":1455901359560,\"endTimeMillis\":1455901659559,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"Application startup event: Unable to start service: com.vmware.vcloud.common.core\",\"startTimeMillis\":1395585204500,\"endTimeMillis\":1395671604499,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - connection refused",
+    "info":"A device (usually vCD) attempted a task and received a connection refused error. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"java.net.ConnectException: Connection refused\",\"startTimeMillis\":1384361329516,\"endTimeMillis\":1384447729515,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"java.net.ConnectException: Connection refused\",\"startTimeMillis\":1384361329516,\"endTimeMillis\":1384447729515,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - SSL exception",
+    "info":"vCD has experienced a SSL Exception that needs investigated as connectivity might be compromised. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"com.vmware.vim.vmomi.client.exception.SslException\",\"startTimeMillis\":1455901181662,\"endTimeMillis\":1455901481661,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"com.vmware.vim.vmomi.client.exception.SslException\",\"startTimeMillis\":1384274240442,\"endTimeMillis\":1384360640441,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - failed vApp deployment",
+    "info":"A vApp failed to deploy and the root cause needs investigated. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455899946391,\"endTimeMillis\":1455901746390,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Error deploying vApp:\"},{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"ERROR.*\\\\soperation=VDC_INSTANTIATE_VAPP,\\\\s.*\"},{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"ERROR.*\\\\soperation=VAPP_DEPLOY,\\\\s.*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":3.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":1800000,
+    "searchInterval":300000
+  }, {
+    "name":"vCD - vSM/vSE publish error",
+    "info":"vCNS (vShield) has thrown an exception. This is can be caused by a timeout when attempting to publish a configuration to a vShield Edge device. <br><b>Recommended to be enabled for day to day operations.</b>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"com.vmware.vcloud.fabric.nsm.error.VsmException\",\"startTimeMillis\":1455901647403,\"endTimeMillis\":1455901947402,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"com.vmware.vcloud.fabric.nsm.error.VsmException\",\"startTimeMillis\":1384273991781,\"endTimeMillis\":1384360391780,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Workload Overview",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"vApps Created",
+          "info":"<span>This widget shows you the number of number of vAPPS that have been created from scratch or deployed from a catalog item.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455131340030,\"endTimeMillis\":1455131674451,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3wnv3v65tdmrpwg4tfmf2gkzc7ozqxa4a0\",\"displayName\":\"vmw_vcd_created_vapp\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3wnv3v65tdmrpwg4tfmf2gkzc7ozqxa4a0\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No active collaboration found for task VDC_COMPOSE_VAPP\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No active collaboration found for task VDC_INSTANTIATE_VAPP\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Created",
+          "info":"This widget shows the number of VMs that vCD has created from scratch or that it has created from a catalog item. Note: this number does contain the count of all VMs created via cloning.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425914327829,\"endTimeMillis\":1425936303826,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadgns7gy4danzzgqztgllbmjsdaljumiydqllbgyytglldhftgenrwmzswgy3chf3g2527ozrwix3wnvpwg4tfmf2gkza0\",\"displayName\":\"vmw_vcd_vm_created\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadgns7gy4danzzgqztgllbmjsdaljumiydqllbgyytglldhftgenrwmzswgy3chf3g2527ozrwix3wnvpwg4tfmf2gkza0\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"[Activity Execution] Creating VM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Current Phase: com.vmware.vcloud.val.internal.impl.CreateVmActivity$InitialPhase - Created VM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Cloned VM. valref = [vcId\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"vApps Powered On",
+          "info":"<span>This widget shows the number of vCD has executed a power on operation against a vAPP. Please note, if you power on a single VM in a vAPP this number will still increment...</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455294987692,\"endTimeMillis\":1455899856737,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3wnv3v65tdmrpxmylqobpxa33xmvzf633o\",\"displayName\":\"vmw_vcd_vapp_power_on\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3wnv3v65tdmrpxmylqobpxa33xmvzf633o\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No active collaboration found for task VAPP_DEPLOY\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Powered On",
+          "info":"This widget shows the number of VMs that vCD has powered on.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455294911494,\"endTimeMillis\":1455899778014,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"event_type\",\"displayName\":\"event_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"event_type\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ExtractOvfEnvironment ON VM\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"vApps Powered On over time by Cell Server",
+          "info":"This widget shows the number of vApps that have been powered on over time and groups the results by the vCD Cell Server that executed the operation.",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455295095119,\"endTimeMillis\":1455899956574,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No active collaboration found for task VAPP_DEPLOY\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Powered On over time by Cell Server",
+          "info":"This widget shows the number of VMs that vCD has powered on over time and grouped by the vCD Cell Server that executed the power on task.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455295227712,\"endTimeMillis\":1455900101312,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ExtractOvfEnvironment ON VM\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"vApps Powered Off",
+          "info":"<span>This widget shows the number of vApps that vCD has executed a power off operation against. Please note, if you power off a single VM in a vAPP this number will still increment...</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455295260038,\"endTimeMillis\":1455900143068,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No active collaboration found for task VAPP_UNDEPLOY_POWER_OFF\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Powered Off",
+          "info":"This widget shows the number of VMs that vCD has powered off.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455295320040,\"endTimeMillis\":1455900182890,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"Powering off vm \\\\[vcId=\\\\S+, moref=vm-[0-9]+\\\\]\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Detailed vApp Statistics",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"VMs Created over time by Cell Server",
+          "info":"<span>This widget shows the number of VMs and groups them by the creating vCD Cell Server.</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455295511495,\"endTimeMillis\":1455900396968,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"[Activity Execution] Creating VM,Current Phase: com.vmware.vcloud.val.internal.impl.CreateVmActivity$InitialPhase - Created VM,Cloned VM. valref = [vcId\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"Cloned VM. valref = [vcId\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VM Consoles Opened over time",
+          "info":"This widget shows the number of virtual consoles opened to VMs via the vCD UI.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455900087695,\"endTimeMillis\":1455900447544,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Invoking acquireCloneTicket for vm [vcId=\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Deleted over time by Cell Server",
+          "info":"<span>Thie widget shows the VMs deleted over time and groups by the initiating vCD Cell Server.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455295620026,\"endTimeMillis\":1455900491773,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Destroying VM (in VC) valref = [vcId\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"vApps Copied over time by Cell Server",
+          "info":"<span>This widget shows the vApps copied over time and grouped by the vCD Cell Server.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455295681856,\"endTimeMillis\":1455900550082,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No active collaboration found for task VDC_COPY_VAPP\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Cloned over time by Cell Server",
+          "info":"<span>This widget shows the number of VMs that were cloned by vCD.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455900231535,\"endTimeMillis\":1455900582163,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Cloned VM. valref = [vcId\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"vCD VMs Reconfigured",
+          "info":"<span>This widget shows the number of VMs that vCD has reconfigured. For example, this counter would increase if you add an additional hard drive.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455900240028,\"endTimeMillis\":1455900620858,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Invoking reconfigure for vm with valref [vcId=\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"vCD VM Reconfigure Tasks",
+          "info":"<span>This widget shows the number of VM Reconfigure Tasks. Unlike the widget for VMs Reconfigured this widget counts all the tasks and not just the number of VMs modified.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455900311494,\"endTimeMillis\":1455900674305,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3wnv3v65tdmrpxm3k7ojswg33omzuwo5lsmu000000\",\"displayName\":\"vmw_vcd_vm_reconfigure\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3wnv3v65tdmrpxm3k7ojswg33omzuwo5lsmu000000\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Invoking reconfigure for vm with valref [vcId=\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"vApps Deleted",
+          "info":"<span>This widget shows the number of vApps that vCD has deleted. No false incrementation if you delete a single VM in a vAPP.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455900420033,\"endTimeMillis\":1455900788506,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No active collaboration found for task VDC_DELETE_VAPP\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Deleted",
+          "info":"<span>This widget shows the number of VMs that vCD has deleted.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455900472652,\"endTimeMillis\":1455900829338,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Destroying VM (in VC) valref = [vcId=\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Troubleshooting",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"vApp failed deployments over time by vCD Server",
+          "info":"This widget will show all failed vApp deployments however it will filter out: \"Invalid vApp Properties: Invalid property value size.\" which is an indicator that a VM inside of that vApp needs a root password set under the Guest Properties.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455900485280,\"endTimeMillis\":1455900872775,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"Invalid vApp properties: Invalid property value size\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Error deploying vApp:\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"vCD vApp failed undeploy over time by vCD Server",
+          "info":"This widget will show all instances where vCD attempted to undeploy a vApp and the operation failed for some reason.<br><span style=\"font-weight: bold;\"><br>DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"com.vmware.ssdc.library.exceptions.UndeployException\",\"startTimeMillis\":1455900611494,\"endTimeMillis\":1455900977042,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"vApp failed starting over time by vCD Server",
+          "info":"This widget will show all vApps where a start command was issued against a vApp and the attempt by vCD to start the vApp failed for some reason.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"com.vmware.ssdc.util.LMException: Unable to start vApp\",\"startTimeMillis\":1455900712675,\"endTimeMillis\":1455901070417,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VM cloned due to chain length or lack of shadow VM",
+          "info":"This widget will show all VMs that were cloned due to the linked clone chain length or because a datastore where the VM was placed does not have a valid shadow VM already on it.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"MostFreeSpaceFilter\",\"startTimeMillis\":1455900720023,\"endTimeMillis\":1455901108442,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"vCNS (vShield) related errors over time",
+          "info":"This widget will show when there are vCNS (vShield Manager or vShield Edges) errors that are normally associated with problematic edge devices during day to day operations. Additional follow up in the vCNS logs may be required.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455900911494,\"endTimeMillis\":1455901266292,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Batch update returned unexpected row count from update [0]; actual row count: 0; expected: 1, com.vmware.vcloud.fabric.nsm.error.VsmException\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"SQL errors over time",
+          "info":"This widget will show when vCD has attempted to talk to its database and that operation has returned an error.<br><br><span style=\"font-weight: bold;\">DEBUG Logging in vCD is required for this widget to provide the best results.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"java.sql.SQLException\",\"startTimeMillis\":1455900992065,\"endTimeMillis\":1455901294631,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"deadlock, deadlocked\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"vCD Failures by Cell Server and Org",
+          "info":"This widget shows vCD Failures and Errors that usually directly impact a tenant's workload.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455661192241,\"endTimeMillis\":1455661527332,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"vdc_delete_vapp,VAPP_INSERT_CD_FLOPPY,VAPP_EJECT_CD_FLOPPY\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Unable to execute task\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"vmw_vcd_org\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th\",\"displayNamespace\":\"VMware - vCloud Director\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vcd_org\",\"preContext\":\"orgName=\",\"postContext\":\"\\\\, cellInstanceId=[\\\\d]*, targetId=\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpw64th\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Activity Execution, TaskActivity\\\"}\"},{\"displayName\":\"vmw_vcd_severity\",\"preContext\":\"^\\\\d\\\\d\\\\d\\\\d-\\\\d\\\\d-\\\\d\\\\d\\\\s\\\\d\\\\d:\\\\d\\\\d:\\\\d\\\\d,[\\\\d]*\\\\s\\\\|\\\\s\",\"postContext\":\"[\\\\s]*\\\\|\\\\s\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltwnv3wc4tffz3ggzdwnv3v65tdmrpxgzlwmvzgs5dz\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "agentClasses":[ {
+    "name":"vCloud Director Cell Servers",
+    "info":"This Agent Group contains the necessary log file configuration to collect from VMware vCloud Director Servers using the Log Insight Agent for Linux. Log Insight Agent use is highly recommended!<br>",
+    "agentConfig":"[filelog|vcd-essential]\ndirectory=/opt/vmware/vcloud-director/logs\ninclude=vcloud-container-info*;upgrade*;vmware-vcd-support*;watchdog*\n; -- Comment out the above include and use the below line INSTEAD to collect debug level logs --\n;                                ------- WARNING -------\n;        Enabling debug logs will cause an exponential growth in your log ingestion  that can\n;        cause your logs to roll faster than expected as well as other possible issues.\n;        Only enable this if you know what you are doing and are ready for the additional load!\n;include=vcloud-container-debug*;upgrade*;vmware-vcd-support*;watchdog*\nevent_marker=\\d{4}-\\d{2}-\\d{2}\nparser=vcd3col-clf-parser\n\n[parser|vcd3col-clf-parser]\n; This parser ensures that prefix fields are extracted\n; This parser works around the csv multiline support limitation\nbase_parser=clf\nformat=%t | %{severity}i | %{thread}i | %{class}i | %M\nexclude_fields=log_message\nfield_decoder={\"timestamp\":\"timestamp\"}\nnext_parser=vcd3col-csv-parser\ndebug=yes\n\n[parser|vcd3col-csv-parser]\n; This parser is required for a subset of events\n; No multiline messages are seen for events matching this\nbase_parser=csv\ndelimiter=|\nfields=timestamp,severity,log_message\nexclude_fields=log_message,log_details\nfield_decoder={\"timestamp\":\"timestamp\"}\nnext_parser=vcd5col-csv-parser\n\n[parser|vcd5col-csv-parser]\n; This parser works except for csv events that contain multiline\n; If multiline is detected then this parser will gracefully exit\nbase_parser=csv\ndelimiter=|\nfields=timestamp,severity,thread,class,log_message,log_details\nexclude_fields=log_message,log_details\nfield_decoder={\"timestamp\":\"timestamp\"}\n"
+  } ],
+  "author":"VMware",
+  "url":"http://www.vmware.com",
+  "contentVersion":"8.0",
+  "info":"This content pack for VMware vCloud Director (vCD) versions 5.5 and onward to include vCD 8.x SP provides you with information from vCD that will help you to have a more through understanding about the health and operational status of your private cloud. Using it you will provide you with: <br><br><b>Detailed vApp activity information:</b> This content pack will give you visibility into what vApp operations are happening and when to show you load as well as usage trends. <br><br><b>Consolidated operational overview:</b> Have a clear picture of the overall health of your vCD environment and find problematic areas that you did not know existed. <br><br><b>Robust alerting:</b> Capitalize on an collection of alerts built by an experienced cloud team to help you quickly detect and respond to issues in your environment when something goes wrong.",
+  "instructions":"<b>Use of the Log Insight Linux Agent on your vCD Cell Servers is highly encouraged and the associated Agent Groups will make the logging configuration easy to capture either the normal INFO logs or enabling DEBUG logging.</b><br>Use of the Log Insight Agent however is not required. <br><br>You can find the agent group under <b>Administration &gt; Management &gt; Agents &gt; All Agents</b> drop down.",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAACK1BMVEUAAAAVa5IVa5IAfbwVa5IVa5IVa5IVa5IVa5IVa5IRb5wVa5IVa5IAfbwAfbwAfbwAfbwAfbwVa5IVa5IVa5IAfbwAfbwLdKcAfbwAfbwAfbwAfbwXltNyscgVa5IWdqKDt+MAfbxEjq0Xi8Mdir8yntdlnMNWpMVboLtor99Mkbuhx9gXk89ilLcVc56cxdeKu9CQv9KOvtEljsIWhruextgsfaCXwtUnj8MjjcEbb5UsnNaWwdSSwNMundeaxNaaw9WUwNSMvNGHu89hpL44hacUbpZgqNyZwtZQlLxpq95Bodk5ntdtrd9lqt13seFyr+BUqt1Fo9qHuNQXjsdZmL0ohbUkhLRYpttUpdswndcuh7YrhrU/g6s6gaqLutUemNQ1f6kwfac+oNhUlbxDhqyawudvseBaqt1Po9lDotlJodk8n9ghcpd+teJztOF1sOBgq95Pp9xbpttMpttIpdt3ss9ysM54tMoVcJqXwOeQveWJuuSPvNWCt9OGrM9/qc16psxrncVWlr1XlLVJkrE/iqpkrd6Mr9F5s9Bvr811o8pwoMhmqMFdmcAOg74ndpwqm9aQstN0sc6At81tr8wyk8Q6lsMZg7YWfq4We6oLc6Wbv+F5suF9r9gdmNSUtNNioM1oostgqcdrrsZInsRDlcNxqcJEl7pAjbpVm7cFebJNh6onfqg0f6M8fqKVtdR0qtNlq85On8ogkspRm8dOocRhocAEerT8XY2/AAAAHHRSTlMAv4CAQO8wnxBgIM+v72DTMBDfj3C/n1BAr49wtZ66SgAABTJJREFUeNrt2vdbEnEAx/GDRKa2N3fcmZgaqZBkIQVKEWVF2dImLUdFy4a0h9p0tPfee48/r++hdpx9jxvfb3bx3PtHHvjcC+7hgeeeI6BlGXWSG2kh0mS2YVgy2ah3a/pb+7uVXKu4biYosyDHZI23dXWt4DrNtqWv+akVFxcnDAJLRt+jaDS6e/cS0CLQArbFoHlsLS0tdXV19fX1zc3N20ELb1JjhUDWrXcbGg6BDrMdAdE0vRN0717vAXrX+6aX3qayYSvZFPAs2VcL2gaqYdvMtgO0sD+n07kaNLvSWXN7hND5+gA89NL+9rLtA+1n653vG08u1zodNtiM/n00uveBXXKx5ZTAybedamjYb5dRuQEK2hpdBDwyorLgIN3HhiZZQ5MoAVCNHQ/o4aEYFtDu1bhAR+zqAl3ehQe0RAOlB63DBjqbqaBFszMW1Kgy0PFMBS3IXFBRZoLWYwOdyFTQ4swFnVEZ6KQGGiTQPGygPSoDXcAFqlQXaKMGEgO14AJdbNJAgwOqwwaqUxnoVKaC6lUG2oQPVK8yUAEmULMGGiSQtWs2HtB2PCBj+KsdE+iSrBkXAEE9y+1YQKN6ZILKKTQP1y0rbMlCvZIFciWMmDzLw3oCltm3xiXjYy4xmPB4JoWtBDyzgXLwu8W9zMGvhNJZRD0uh4QSlM5ECGQy63npHNw4ZdTzyibEPSUGvXhgSXJ6h8h3XMwj7VhKQf/eIw9kpBA8+EHAUy7iwQ769x4xEH5P7mgmbXdSQW/SPRGLZ9jQ7i/HjrJt6G8Z1zFQeyroxznQgWRXrlw5mOw86Nq1a5vweHKuV01J5vV6S3sLBALBYDASiVSA/P62VNALt9vtSVYNKusvFAp1YPEMz7nuFfEMACF5xJvQHUlqylpJwfJSQYUkvLl4PETOZ9bjBhwEEEbPOCbCekgSAYTTQwzJB55AKyII3cOBZgBQiEQEoXv4oFYEENQTBh4UEIkAgnp+EiggLwII6vG9ZFBAXgQQ3DNn8uCCRD0kIqgUAQT1IIJKEUBQDzrIKw8k4hl8kKgHP6iwYzqveCqo5/fDPQIeAFJyE+sokxCoI761q4DXDe6wqQ8/LtpTG+N5+CCTjtpULLFX78KGbDio48NJekD7OBA9oJ2VPA8PpOv5REuv+bbBAgN1xk/QdJMzZpdUbGET5xkAMsfvA3CR1BqXJoxJUIAPan9L0zV2OXEePsjWBt5ZTPpI7KaBBQUGgPKm0kUoHg6kK6AbZV7SEwDVInj4oBoloOAfICeChw9yKgAFg6WIINajKhD1msQKiiCDCnGCpkU0kBioQmWgCvWBAhooPcivMpAfHdReyO/lmyw2a0FjTBEoiAoSaj7wKABVIYLQ44OqNND/B6rQQOlBs1QGmqWB/j+QHxHkEOpbUaUSkBsVRM3N4zf3jp5thLJfe7fbr66/HxpIAyGDPOoCzfR4qjSQBkIEzVIZqFploOqMA7n+Mqh9neyZp3CQrU3m0q0RSVAZH9Tpe1wr7yr1exIOMk+/LwvkCutZUBkA8crzPZfl8XUKgAjbWzlLk0qsJg7EE1Fhh+So+BxSCGQaGU9IHiphbz2Fg8jO9jzJvSZJIRDIMkovuSyC6AO5ScwBkJI0kAbCBQqpDBTSQOlB+WoDlYdCHjWBxjJX8YOe5SgHDWeeXa1uxQzKH0Mob0w3edWD+4yNQwBZcq6TeD+hp8x4AqVc5gZWz5PyocMJRFH+d3ycGwzwIDZsNMPk46mbGZpLYMiSOwRPE4chSn4BJjKpq7/AwxwAAAAASUVORK5CYII="
+}
