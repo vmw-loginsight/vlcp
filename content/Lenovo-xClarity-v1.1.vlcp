@@ -1,0 +1,507 @@
+{
+  "name":"Lenovo – xClarity",
+  "namespace":"com.lenovo.xclarity",
+  "framework":"#9c4",
+  "version":"2.4",
+  "contentPackId":"com.lenovo.xclarity",
+  "extractedFields":[ {
+    "displayName":"lenovo_lxca_class",
+    "preContext":"class=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5rwyyltom000000",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_event_id",
+    "preContext":"EventID=",
+    "postContext":"]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_event_source",
+    "preContext":"src=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_managed_endpoint_name",
+    "preContext":"me=",
+    "postContext":" ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwc3tbm5swix3fnzsha33jnz2f63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_mgmt_server_address",
+    "preContext":"appladdr=",
+    "postContext":"",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwo3lul5zwk4twmvzf6ylemrzgk43t",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_serial_number",
+    "preContext":"sn=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4tjmfwf63tvnvrgk4q0",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_serviceable",
+    "preContext":"service=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_severity",
+    "preContext":"severity=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk5tfojuxi6i0",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_syslog_application",
+    "preContext":"appl=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_target_ipv4_address",
+    "preContext":"address ",
+    "postContext":"",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gc4thmv2f62lqoy2f6ylemrzgk43t",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_target_ipv6_address",
+    "preContext":"address ",
+    "postContext":"",
+    "regexValue":"[A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4}",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gc4thmv2f62lqoy3f6ylemrzgk43t",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_time",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"[0-9]{2}:[0-9]{2}:[0-9]{2}",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_user_context",
+    "preContext":"user ID ",
+    "postContext":" ",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5rw63tumv4hi000",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_user_id",
+    "preContext":"user=",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_uuid",
+    "preContext":"uuid=",
+    "postContext":"",
+    "regexValue":"[A-Fa-f0-9]+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xk2le",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  }, {
+    "displayName":"lenovo_lxca_weekday",
+    "preContext":"(<86>|<83>|<84>) ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl53wkzllmrqxs000",
+    "constraints":"{\"searchTerms\":\"LXCA\"}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"Lenovo XClarity: Alert for Predicted Failure Alerts",
+    "info":"<span>This alert means that resources managed by Lenovo XClarity Administrators have\nsurfaced predicted failure alerts.&nbsp; It is recommended that workload be\nevacuated from resources surfacing these events.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1427119582564,\"endTimeMillis\":1427141182563,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"806f050c2009ffff, 806f020d0403ffff, 810400ss, 806F0208, 806F0709, 806F020d, 816F020d, 800401ss, 810400ss, 800400ss, 810401ss\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_serviceable\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_serviceable\",\"preContext\":\"service=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":20.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Lenovo XClarity: Alert for temperature thresholds exceeded",
+    "info":"This alert will be received whenever Lenovo XClarity Administrator-managed resources report that a temperature threshold has been exceeded.<span style=\"font-style: italic;\"></span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1428349466719,\"endTimeMillis\":1428371066718,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"80010701-3701ffff, 80010901-3701ffff, 80010b01-3701ffff, 80010b01-3702ffff, 80070601-2c01ffff, 80070601-2c02ffff, 80070601-2c03ffff, 80070601-2c04ffff, 8007060f2201ffff, 800706142201ffff, 806f01070301ffff, 806f01070302ffff, 806f01072584ffff, 806f0a0c, 0821C001, 0821C002, 0821C003, 0821C004, 0821C005, 0821C006, 0821C081, 0821C082, 0821C083, 0821C084, 0821C085, 0821C086\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1399266000000,\"endTimeMillis\":1407474000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"80010701-3701ffff, 80010901-3701ffff, 80010b01-3701ffff, 80010b01-3702ffff, 80070601-2c01ffff, 80070601-2c02ffff, 80070601-2c03ffff, 80070601-2c04ffff, 8007060f2201ffff, 800706142201ffff, 806f01070301ffff, 806f01070302ffff, 806f01072584ffff, 806f0a0c, 0821C001, 0821C002, 0821C003, 0821C004, 0821C005, 0821C006, 0821C081, 0821C082, 0821C083, 0821C084, 0821C085, 0821C086\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":20.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Lenovo XClarity: Alert for power thresholds exceeded",
+    "info":"<span>This alert will be received whenever Lenovo XClarity\nAdministrator-managed resources report that a power threshold has been\nexceeded.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1429074000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"806f0a070301ffff, 4000007500000000, 4000007f00000000\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":20.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Lenovo XClarity: Serviceable events have been posted",
+    "info":"<span>Resources managed by Lenovo XClarity Administrator have surfaced serviceable\nevents.&nbsp; Actions may be required to resolve these issues, potentially by\nthe Service Center.</span><br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1427733088236,\"endTimeMillis\":1427733641945,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"NONE\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_serviceable\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_serviceable\",\"preContext\":\"service=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":20.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ {
+        "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk5tfojuxi6i0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of events grouped by Lenovo XClarity Administrator IP address",
+          "info":"This chart shows what percentage of events are being surfaced by each Lenovo XClarity Administrator. If there are a disproportionately \nlarge number of events surfaced by one Lenovo XClarity Administrator compared to the others, it may be a sign of \npotential problems.&nbsp; Reviewing the list of events surfaced by that Lenovo XClarity Administrator is \nrecommended.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425515135894,\"endTimeMillis\":1427140110952,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwo3lul5zwk4twmvzf6ylemrzgk43t\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_mgmt_server_address\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwo3lul5zwk4twmvzf6ylemrzgk43t\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_mgmt_server_address\",\"preContext\":\"appladdr=\",\"postContext\":\"\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwo3lul5zwk4twmvzf6ylemrzgk43t\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events over time grouped by severity",
+          "info":"This chart shows how many events are flowing through all Lenovo XClarity Administrator \ninstances, grouped by severity.&nbsp; This is helpful in knowing if more serious events are starting to occur, which could be a sign of an impending larger problem.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1456354591353,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwo3lul5zwk4twmvzf6ylemrzgk43t\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk5tfojuxi6i0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_severity\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk5tfojuxi6i0\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_mgmt_server_address\",\"preContext\":\"appladdr=\",\"postContext\":\"\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwo3lul5zwk4twmvzf6ylemrzgk43t\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_severity\",\"preContext\":\"severity=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk5tfojuxi6i0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of IMM events over time",
+          "info":"This graphs shows how many IMM events have been received over \ntime.&nbsp; Viewing trends in IMM events may provide insight into \nissues with the managed servers in general.&nbsp; Look for spikes in the \nnumber of IMM events, and drill down into what types of events are\n occurring during those spikes.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000\",\"operator\":\"CONTAINS\",\"value\":\"IMM\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_source\",\"preContext\":\"src=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of CMM events over time",
+          "info":"This graph shows how many CMM events have been received over \ntime.&nbsp; Viewing trends in CMM may provide insight into \nissues with the Flex chassis in the environment&nbsp; Look for spikes in \nthe \nnumber of CMM events, and drill down into what types of events are\n occurring during those spikes (Note that IO Module and IMM events from \nthe Flex chassis are not counted here.&nbsp; There are separate graphs for \nthese).",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000\",\"operator\":\"CONTAINS\",\"value\":\"CMM\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5rwyyltom000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"IOMODULE\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_class\",\"preContext\":\"class=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5rwyyltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_event_source\",\"preContext\":\"src=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of ThinkServer events over time",
+          "info":"This graphs shows how many ThinkServer events have been received over \ntime.&nbsp; Viewing trends in ThinkServer events may provide insight into \nissues with the managed servers in general.&nbsp; Look for spikes in the \nnumber of ThinkServer events, and drill down into what types of events are\n occurring during those spikes.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1448118189910,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000\",\"operator\":\"CONTAINS\",\"value\":\"thinkserver\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_source\",\"preContext\":\"src=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of IO Module events over time",
+          "info":"This graphs shows how many IO Module events have been received over \ntime.&nbsp; Viewing trends in networking events may provide insight into \nissues with the overall network environment.&nbsp; Look for spikes in the \nnumber of IO Module events, and drill down into what types of events are\n occurring during those spikes.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5rwyyltom000000\",\"operator\":\"CONTAINS\",\"value\":\"IOMODULE\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_class\",\"preContext\":\"class=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5rwyyltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Security - Logins",
+      "constraints":[ {
+        "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Unsuccessful authentications to Lenovo XClarity Administrator and managed resources, grouped by address of user",
+          "info":"<span><span><span>This graph shows\nthe IP addresses of unsuccessful attempts to log in to a Lenovo XClarity Administrator, or a \nresource\nmanaged by a Lenovo XClarity Administrator.&nbsp; This may help in tracking down where the unauthorized attempts were made from.<br></span></span></span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1448118189910,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMSE0202I,00200000,40000012-00000000,40000013-00000000,40000029-00000000,4000008d-00000000,00016102,00016106,00200000,FQXHMTS0009G,FQXTS421633,FQXTS421634,FQXTS421635,FQXTS421636,FQXTS421637\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gc4thmv2f62lqoy2f6ylemrzgk43t\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_target_ipv4_address\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gc4thmv2f62lqoy2f6ylemrzgk43t\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_target_ipv4_address\",\"preContext\":\"address \",\"postContext\":\"\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gc4thmv2f62lqoy2f6ylemrzgk43t\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of unsuccessful authentications to Lenovo XClarity Administrator and managed resources",
+          "info":"<span><span><span>This graph shows\nhow many unsuccessful attempts there were to log in to a Lenovo XClarity Administrator, or a \nresource\nmanaged by a Lenovo XClarity Administrator.&nbsp;&nbsp;A spike in the number of unsuccessful attempts to \naccess these systems may indicate that unauthorized users may be \nattempting to hack into the systems.</span></span></span><span style=\"font-style: italic;\"></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1448118189910,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMSE0202I,00200000,40000012-00000000,40000013-00000000,40000029-00000000,4000008d-00000000,00016102,00016106,00200000,FQXHMTS0009G,FQXTS421633,FQXTS421634,FQXTS421635,FQXTS421636,FQXTS421637\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Failed logins to Lenovo XClarity Administrator by attempted user ID",
+          "info":"This graph shows what user IDs attempted to authenticate to a Lenovo XClarity Administrator, but\n failed.&nbsp; Seeing which unauthorized user IDs were used to attempt access \nshould be useful in system audits, finding out who is trying to access \nthe systems.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1429074000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"fqxhmse0202i\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_user_id\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_user_id\",\"preContext\":\"user=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Pie chart of user ids that have successfully logged in to XClarity Administrator",
+          "info":"This graph shows the user IDs that logged into the Lenovo XClarity Administrator and when.&nbsp; This \nmay be helpful when auditing which users are accessing your environment \nover an extended period of time",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1426119635894,\"endTimeMillis\":1427140487506,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMSE0200I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_user_id\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_user_id\",\"preContext\":\"user=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All messages on nights and weekends",
+          "info":"This graph shows any messages that were surfaced to Lenovo XClarity Administrator outside of normal business hours.&nbsp; This may help identify <span><span><span>uncommon user account activity, such as someone changing system configuration in the middle of the night.<span style=\"font-style: italic;\"></span></span></span></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl53wkzllmrqxs000\",\"operator\":\"CONTAINS\",\"value\":\"Sat, Sun\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[0-0][0-6]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[1-1][8-8]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[1-1][9-9]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[2-2][0-0]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"CONTAINS\",\"value\":\"[2-2][1-1]:[0-9][0-9]:[0-9][0-9], [2-2][2-2]:[0-9][0-9]:[0-9][0-9], [2-2][3-3]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_time\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"[0-9]{2}:[0-9]{2}:[0-9]{2}\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_weekday\",\"preContext\":\"(<86>|<83>|<84>) \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl53wkzllmrqxs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of Lenovo XClarity Administrator login attempts on nights and weekends",
+          "info":"This graph shows how many login attempts occurred outside of normal business hours.&nbsp;&nbsp; This may help identify <span><span><span>uncommon user account activity, like a large number of login attempts in the middle of the night or on a weekend.</span></span></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"FQXHMSE020*I\",\"startTimeMillis\":1426119635894,\"endTimeMillis\":1427140633568,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl53wkzllmrqxs000\",\"operator\":\"CONTAINS\",\"value\":\"Sat, Sun\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[0-0][0-6]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[1-1][8-8]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[1-1][9-9]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[2-2][0-0]:[0-9][0-9]:[0-9][0-9]\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"operator\":\"MATCH\",\"value\":\"[2-2][1-1]:[0-9][0-9]:[0-9][0-9], [2-2][2-2]:[0-9][0-9]:[0-9][0-9], [2-2][3-3]:[0-9][0-9]:[0-9][0-9]\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_time\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"[0-9]{2}:[0-9]{2}:[0-9]{2}\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52gs3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_weekday\",\"preContext\":\"(<86>|<83>|<84>) \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl53wkzllmrqxs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Security - Changes",
+      "constraints":[ {
+        "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5uwi000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of user accounts created over time",
+          "info":"This graph shows how many user accounts were created on the Lenovo XClarity Administrator over \ntime.&nbsp; Spikes in the number of new accounts could help identify uncommon\n security activities for audit purposes.<span style=\"font-style: italic;\"></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMSE0203I, FQXHMSE0400I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Lenovo XClarity Administrator user accounts deleted over time",
+          "info":"This graph shows how many user accounts on the Lenovo XClarity Administrator have been deleted over time.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMSE0206I, FQXHMSE0402I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of changes to user accounts over time",
+          "info":"This graph shows how many changes to Lenovo XClarity Administrator user accounts have occurred \nover time.&nbsp; A spike in the number of changes to user accounts may be a \nsign of uncommon account activity<span style=\"font-style: italic;\"></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMSE0204I, FQXHMSE0401I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of changes to security policy over time",
+          "info":"This graph shows how many times a security policy on the Lenovo XClarity Administrator has changed over time",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1426119635894,\"endTimeMillis\":1427141025018,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"fqxhmse0300i\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of changes to account security settings over time",
+          "info":"This graph shows how many times the Lenovo XClarity Administrator security settings have changed for accounts, such as password policies",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMSE0303I, FQXHMSE0304I, FQXHMSE0305I, FQXHMSE0306I, FQXHMSE0307I, FQXHMSE0308I, FQXHMSE0309I, FQXHMSE0310I, FQXHMSE0311I, FQXHMSE0312I, FQXHMSE0313I, FQXHMSE0503I, FQXHMSE0504I, FQXHMSE0314I\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"User accounts with security settings changed",
+          "info":"This graph shows which Lenovo XClarity Administrator accounts have had their security settings&nbsp; changed.&nbsp; Lots of activity for an account could signal a security issue.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1429074000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMSE0303I, FQXHMSE0304I, FQXHMSE0305I, FQXHMSE0306I, FQXHMSE0307I, FQXHMSE0308I, FQXHMSE0309I, FQXHMSE0310I, FQXHMSE0311I, FQXHMSE0312I, FQXHMSE0313I, FQXHMSE0503I, FQXHMSE0504I, FQXHMSE0314I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5rw63tumv4hi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_user_context\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5rw63tumv4hi000\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_user_context\",\"preContext\":\"user ID \",\"postContext\":\" \",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl52xgzlsl5rw63tumv4hi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Provisioning",
+      "constraints":[ {
+        "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwc3tbm5swix3fnzsha33jnz2f63tbnvsq0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of successful Configuration Pattern deploys",
+          "info":"This graph shows the number of times that Configuration Patterns were \ndeployed to Lenovo XClarity Administrator managed servers over time.&nbsp; This can help identify how \nmuch change is occurring to the configuration of servers.<span style=\"font-style: italic;\"></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMCP1105I, FQXHMCP1205I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Configuration Patterns created",
+          "info":"This graph shows how many Configuration Patterns were created on the Lenovo XClarity Administrator, over time. This can help identify how much change is occurring to \nthe configuration of servers.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"FQXHMCP5100I\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMCP5100I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of successful firmware updates over time",
+          "info":"<span>This graph shows the number of successful firmware updates that have completed on Lenovo XClarity Administrator-managed servers<span style=\"font-style: italic;\"></span></span>.&nbsp; This can help identify how much change is occurring to the configuration of servers.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1429074000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"00015700,0001710E,000AB001,000AB002,000AB003,000AB004,000AB005,000AB006,000AB007,000AB008,000AB009,000AB00A,00015101,00015105,00015700,806f072b-2*01fff,806f072b2*01fff,40000024-00000000\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of sucessful OS deployments via Lenovo XClarity Administrator over time",
+          "info":"This graph shows the number of times a successful OS deployment was completed from&nbsp;an Lenovo XClarity Administrator to servers that it is managing.<span style=\"font-style: italic;\"></span> <br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1428342568045,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMFC8877I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of OS imports over time",
+          "info":"This graph shows how many OS imports have occurred over time.&nbsp; This information may be helpful in auditing when OS images are being imported, that may be deployed to your managed servers.<br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425276000000,\"endTimeMillis\":1429074000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"FQXHMFC8880I\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Power and Thermal",
+      "constraints":[ {
+        "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwo3lul5zwk4twmvzf6ylemrzgk43t",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of power threshold alerts over time",
+          "info":"This graph shows the number of times when a power threshold has been exceeded for any Lenovo XClarity Administrator-managed resources<span style=\"font-style: italic;\"></span>,\n over time.&nbsp; This can help identify environmental issues in the \ndatacenter.&nbsp; If the exceeding of power thresholds caused power capping, \nthis could also explain performance slow downs.<span style=\"font-style: italic;\"></span>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1448118189910,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"806f0a070301ffff,4000007500000000,4000007f00000000,FQXTS131330,FQXTS131331,FQXTS131332,FQXTS131333,FQXTS131336,FQXTS131337,FQXTS131338,FQXTS131339,FQXTS132866,FQXTS132869,FQXTS132870,FQXTS196866,FQXTS196867,FQXTS196868,FQXTS196869,FQXTS196872,FQXTS196873,FQXTS131841,FQXTS196874,FQXTS196875,FQXTS487169\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number or thermal thresholds that have been exceeded by any Lenovo XClarity Administrator-managed resources",
+          "info":"<span>This graph shows the number of Lenovo XClarity Administrator-managed resources that have \nposted a temperature alert, or have exceeded a temperature threshold.&nbsp; \nThis can help identify cooling issues in the datacenter, or in the \nracks. <br></span>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1448118189910,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"80010701-3701ffff,80010901-3701ffff,80010b01-3701ffff,80010b01-3702ffff,80070601-2c01ffff,80070601-2c02ffff,80070601-2c03ffff,80070601-2c04ffff,8007060f2201ffff,800706142201ffff,806f01070301ffff,806f01070302ffff,806f01072584ffff,806f0a0c,0821C001,0821C002,0821C003,0821C004,0821C005,0821C006,0821C081,0821C082,0821C083,0821C084,0821C085,0821C086,FQXTS65794,FQXTS65795,FQXTS65796,FQXTS65797,FQXTS65800,FQXTS65801,FQXTS65802,FQXTS65803,FQXTS65920,FQXTS67330\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of low or failed battery events over time",
+          "info":"<span>This chart shows the number of Lenovo XClarity Administrator-managed resources that have \nbatteries that are low or that have failed.&nbsp; This can cause issues for \nthese resources in the future, so it is recommended to replace these \nbatteries.</span>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1448118189910,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"80010202-2801ffff,800102022801ffff,0x800102022801ffff,00006012,00006011,FQXTS2715393\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_serviceable\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_serviceable\",\"preContext\":\"service=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Events recommending service",
+      "constraints":[ {
+        "internalName":"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5wwo3lul5zwk4twmvzf6ylemrzgk43t",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of PFAs received by Lenovo XClarity Administrator over time ",
+          "info":"<span><span><span>This graph shows\nhow many predicted failure alerts (PFAs) occurred over time. PFAs can be an\nindication that hardware is more likely to experience a failure, but has not\nactually failed.&nbsp; A spike&nbsp;in these over multiple&nbsp;pieces of\nhardware can be an indication of an environmental issue. Compare this graph\nwith the one above on serviceable events, to see how&nbsp;much delay there\ntends&nbsp;to be from a PFA event to a hard failure requiring service.&nbsp;<span></span></span></span></span>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1448118189910,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"operator\":\"CONTAINS\",\"value\":\"806f050c2009ffff,806f020d0403ffff,810400ss,806F0208,806F0709,806F020d,816F020d,800401ss,810400ss,800400ss,810401ss,FQXTS1704961,FQXTS1770497,FQXTS1836033\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_serviceable\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_id\",\"preContext\":\"EventID=\",\"postContext\":\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_serviceable\",\"preContext\":\"service=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Critical errors from managed hardware",
+          "info":"<span><span><span>This graph shows\nhow many critical errors were reported by Lenovo XClarity Administrator-managed endpoints over time. A spike&nbsp;in these over multiple&nbsp;pieces of\nhardware can be an indication of an environmental issue. You may want to consider setting alerts for these types of events.</span></span></span>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1455039967890,\"endTimeMillis\":1455126391544,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk5tfojuxi6i0\",\"operator\":\"CONTAINS\",\"value\":\"error,critical\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000\",\"operator\":\"CONTAINS\",\"value\":\"IMM,CMM,thinkserver\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_event_source\",\"preContext\":\"src=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5sxmzloorpxg33vojrwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_severity\",\"preContext\":\"severity=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk5tfojuxi6i0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of serviceable events, grouped by type of serviceability",
+          "info":"This graph shows the number of serviceable events received by Lenovo XClarity Administrator's, \ngrouped by whether the events are serviceable by the customer, or \nrequire the Support Center's assistance to service.&nbsp; This is useful in determining if \nthere are any trends that show times where more hardware failures tend \nto occur.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1447517692687,\"endTimeMillis\":1456354591353,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"NONE\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"LXCA\"},{\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"lenovo_lxca_serviceable\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"displayNamespace\":\"Lenovo – xClarity\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"lenovo_lxca_serviceable\",\"preContext\":\"service=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zwk4twnfrwkylcnrsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"},{\"displayName\":\"lenovo_lxca_syslog_application\",\"preContext\":\"appl=\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltmmvxg65tpfz4gg3dbojuxi6lmmvxg65tpl5whqy3bl5zxs43mn5tv6ylqobwgsy3boruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LXCA\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"Lenovo",
+  "url":"lenovoxclarity.com",
+  "contentVersion":"1.1",
+  "info":"<span>This content pack provides analysis of events\nfrom the Lenovo XClarity Administrator product, and the resources managed by\nLenovo XClarity Administrator.&nbsp;These insights can help systems\nadministrators find potential problems in their environment.</span>",
+  "instructions":"<span>The setup guide is a file named “Lenovo XClarity\nContent Pack for Vmware VRealize Log Insights Users Guide-1.1”, and can be\ndownloaded from Vmware Solution Exchange.</span>",
+  "icon":"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"
+}
