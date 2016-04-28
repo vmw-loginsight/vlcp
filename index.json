@@ -745,7 +745,7 @@
     "author": "VMware, Inc.",
     "contentVersion": "1.5",
     "namespace": "com.vmware.vrops",
-    "fileName": "VMware-vRops-6.x-v1.5.vlcp",
+    "fileName": "VMware-vRops 6.x-v1.5.vlcp",
     "framework": "#9c4",
     "contentPackId": "com.vmware.vrops",
     "version": "2.4",
