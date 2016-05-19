@@ -1,0 +1,345 @@
+{
+  "name":"SolarWinds - NPM",
+  "namespace":"com.solarwinds.npm",
+  "framework":"#9c4",
+  "version":"2.4",
+  "contentPackId":"com.solarwinds.npm",
+  "extractedFields":[ ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"SolarWinds: Alert parsing error",
+    "info":"The Alerting Engine has an error attempting to process an alert behavior.&nbsp; The alert needs to be corrected on the SolarWinds server to include the default value the error is requesting.&nbsp; This can be done by going to Settings-&gt;Manage Alerts and correct the specified alert.<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Default value is missing\",\"startTimeMillis\":1463151329862,\"endTimeMillis\":1463172929861,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"SolarWinds: License Expiration",
+    "info":"Your SolarWinds license has expired.&nbsp; Visit https://customerportal.solarwinds.com/ or call 866-530-8040 to renew your license.<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1463151301415,\"endTimeMillis\":1463172901414,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"expired,license\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"SolarWinds: Unhandled Exception Errors",
+    "info":"Unhandled exceptions, which are causing services to restart.&nbsp; Solutions are listed in the following URL or contact SolarWinds customer service: https://thwack.solarwinds.com/thread/19517<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Unhandled Exception caught\",\"startTimeMillis\":1463151509610,\"endTimeMillis\":1463173109609,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"Error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All SolarWinds Events",
+          "info":"Lists all SolarWinds events over time.<br>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461087919766,\"endTimeMillis\":1461091520558,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Error Event Count",
+          "info":"Counts error messages from all SolarWinds services.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461087939887,\"endTimeMillis\":1461091540563,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"Error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Warning Event Count",
+          "info":"Counts warning messages from all SolarWinds services.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461087954101,\"endTimeMillis\":1461091555338,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"Warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Information Event Count",
+          "info":"Counts information messages from all SolarWinds services.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461087973905,\"endTimeMillis\":1461091573904,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"information\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Event Count By Service",
+          "info":"The event count by each reporting service.<br>",
+          "gridWidth":"1",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461087987040,\"endTimeMillis\":1461091588527,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"providername\",\"internalName\":\"providername\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"AlertingEngine Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"providername",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Alerting Engine Events",
+          "info":"Alerting Engine service events over time.&nbsp; The Alerting Engine is responsible for reporting all alerts inside of SolarWinds.<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461780719765,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"alertingengine\"},{\"internalName\":\"level\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"alert engine,culture\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Alerting Engine Error Event Count",
+          "info":"Counts error messages for the Alerting Engine service.&nbsp; These errors occur when there are problems processing SolarWinds alerts.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1463167048411,\"endTimeMillis\":1463167348410,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"alertingengine\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"Error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Alerting Engine Warning Event Count",
+          "info":"Warning event count for Alerting Engine service.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461780960533,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"alertingengine\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"Warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Alerting Engine Information Event Count",
+          "info":"Information event count for Alerting Engine service.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461781019757,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"AlertingEngine\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"information\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"alert engine,culture\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SyslogService Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"providername",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Syslog Service Events",
+          "info":"All SysLog service related events over time. The Syslog service is in charge of handling syslog related components, such collecting and displaying such logs.<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461781291891,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"SysLogService\"},{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Syslog Service Error Event Count",
+          "info":"Counts error messages from Syslog services.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461781291891,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"Solarwinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"syslogservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Syslog Service Warning Event Count",
+          "info":"Counts warning messages from Syslog services.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461091923732,\"endTimeMillis\":1461092224491,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"syslogservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"Warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Syslog Service Information Event Count",
+          "info":"Counts error messages from Syslog services.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461091938108,\"endTimeMillis\":1461092238208,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"syslogservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"information\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SWService Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"providername",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"SWService Events",
+          "info":"All SWService events over time.&nbsp; SWService covers several of SolarWinds services, such as OrionImprovement, Interfaces, and Device Studio services.<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461091961574,\"endTimeMillis\":1461092263545,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"swservice\"},{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"SWService Error Event Count",
+          "info":"Error event count from SW services.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461092000408,\"endTimeMillis\":1461092301720,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"swservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"SWService Warning Event Count",
+          "info":"Warning event count from SW services.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461092018548,\"endTimeMillis\":1461092319235,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"swservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"SWService Information Event Count",
+          "info":"Error event count from SW services.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461781291891,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"swservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"information\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"TrapService Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"providername",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"TrapService Events",
+          "info":"Trap service events over time.&nbsp; The Trap service handles SNMP trap calls and other related SNMP services.<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461781291891,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"TrapService\"},{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Trap Service Error Event Count",
+          "info":"Error event count from the Trap service.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461092142432,\"endTimeMillis\":1461092443339,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"trapservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"Error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Trap Service Warning Event Count",
+          "info":"Warning event count from the Trap service.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461092154036,\"endTimeMillis\":1461092455221,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"solarwinds.net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"trapservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Trap Service Information Event Count",
+          "info":"Error event count from the Trap service.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461092167430,\"endTimeMillis\":1461092468268,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"Solarwinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"trapservice\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"information\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"BusinessLayer Events",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"providername",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Business Layer Events",
+          "info":"All Business Layer events over time.&nbsp; The Business Layer service covers processing for the Network Performance Monitor (NPM) and related services.<br>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461781291891,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"npm.businesslayer,wireless.heatmaps.businesslayer,seum.businesslayer,orion.core.businesslayer,collector.businesslayer\"},{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Business Layer Error Event Count",
+          "info":"Error event count from Business Layer services.<br><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461781291891,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"npm.businesslayer,wireless.heatmaps.businesslayer,collector.businesslayer,orion.core.businesslayer,seum.businesslayer\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"solarwinds.net\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Business Layer Warning Event Count",
+          "info":"Warning event count from Business Layer services.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1461092260798,\"endTimeMillis\":1461092561513,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"npm.businesslayer,wireless.heatmaps.businesslayer,collector.businesslayer,orion.core.businesslayer,seum.businesslayer\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Business Layer Information Event Count",
+          "info":"Information event count from Business Layer services.<br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1444139395575,\"endTimeMillis\":1461781291891,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"SolarWinds.Net\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"npm.businesslayer,wireless.heatmaps.businesslayer,collector.businesslayer,orion.core.businesslayer,seum.businesslayer\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"information\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "agentClasses":[ {
+    "name":"SolarWinds - NPM",
+    "info":"This is the agent group configuration for <span style=\"font-weight: bold;\">SolarWinds - NPM</span> content pack.<br>You can find this under <span style=\"font-weight: bold;\">Administration -&gt; Management -&gt;Agents -&gt; All Agents</span> drop down.<br>To apply,copy this template to active groups , add filters and save.",
+    "agentConfig":"[winlog|SolarWinds_Events]\nchannel=SolarWinds.Net\ntags={\"product\":\"SolarWinds.Net\"}\nenabled=yes\nwhitelist=ProviderName == \"SWService\" or ProviderName == \"AlertingEngine\" or ProviderName == \"SyslogService\" or ProviderName == \"TrapService\" or ProviderName == \"SolarWinds.NPM.BusinessLayer\" or ProviderName == \"SolarWinds.Wireless.Heatmaps.BusinessLayer\" or ProviderName == \"SolarWinds.NPM.BusinessLayer\" or ProviderName == \"SolarWinds.SEUM.BusinessLayer\" or ProviderName == \"SolarWinds.Orion.Core.BusinessLayer\" or ProviderName == \"SolarWinds.Collector.BusinessLayer\" or ProviderName == \"SolarWinds.NPM.BusinessLayer\"\n"
+  } ],
+  "author":"Blue Medora",
+  "url":"www.solarwinds.com",
+  "contentVersion":"1.0",
+  "info":"<span><span><span><b>Overview</b></span></span></span><br>\n<span><span><span>SolarWinds\nNetwork Performance Monitor (NPM) is a powerful and affordable\nnetwork monitoring software that enables you to quickly detect,\ndiagnose, and resolve network performance problems &amp; outages.\nSolarWinds Network monitoring software monitors fault, availability,\nand performance for devices connected to a network to aid in\ndetection, diagnosis, and resolution of network performance issues. \nSolarWinds can also monitor your databases, storage solutions, and\nserver performance. For more information about SolarWinds, visit\n<span><u style=\"text-decoration: underline;\"><a href=\"http://www.solarwinds.com/\">http://www.solarwinds.com/</a></u></span>\n.</span></span></span><br>\n<span><br></span><br>\n<span><span><span>SolarWinds\nNPM Content Pack creates a simplified view into the SolarWinds core\nservices to allow you to discover and diagnose issues as soon as they\noccur.  Items such as expired licensing, core services failing, or\nSolarWinds alert notifications errors can immediately be raised to\nthe proper personnel to ensure your monitoring solutions are fully\noperational.</span></span></span><br>\n<span><br></span><br>\n<span><span><span><b>Highlights</b></span></span></span><br>\n<span><span><span>SolarWinds\nevents are filtered into 5 convenient dashboards:</span></span></span><br>\n<span><span><span>-\nOverview</span></span></span><br>\n<span><span><span>-\nAlertingEngine Events</span></span></span><br>\n<span><span><span>-\nSyslogService Events</span></span></span><br>\n<span><span><span>-\nSWService Events</span></span></span><br>\n<span><span><span>-\nTrapService Events</span></span></span><br>\n<span><span><span>-\nBusinessLayer Events</span></span></span><br>\n<span></span><br>\n<span><span><span><b>Minimum\nrequirements</b></span></span></span><br>\n<span><span><span>VMware\nLog Insight 2.5</span></span></span><br>\n<span><span><span>SolarWinds\nNPM 10.7+</span></span></span><br>",
+  "instructions":"<span><span><span><b>Installation</b></span></span></span><br>\n<span><span><span>To\ninstall the SolarWinds content pack for VMWare Log Insight, follow\nthese steps.</span></span></span><br>\n<span><br></span><br>\n<span><span><span><b>Log\nInsight Windows Agent</b></span></span></span><br>\n<span><span><span>Log\ninto the Log Insight Server as an administrator.  In the upper-right,\nclick the Administration menu then navigate to Agents and at the\nbottom of the page, click the “Download Log Insight Agent” and\ndownload the Windows Agent.</span></span></span><br>\n<span><br></span><br>\n<span><span><span><span><span>Install\n\tthe Windows Agent on the SolarWinds server.  During the\n\tinstallation, it will ask for the Log Insight hostname/IP.  Enter it\n\tin and continue on with the installation.</span></span></span><br></span><span><span><span><span><span>Post\n\tinstallation, log into your Log Insight server and go to</span><span><b>Administration→Agents</b></span><span>in the upper-right.  From the “Agents” drop-down menu, select\n\tthe “</span><span><b>SolarWinds – NPM</b></span><span>”\n\tfrom the Available Template list.  Then, add a filter for the\n\thostname/IP address of your SolarWinds server.  You should see an\n\tAgent be filtered out for the SolarWinds server.  Towards the\n\tbottom, click the “Save Agent Group” to propagate the settings\n\tto the Windows Agent.</span></span></span></span><br></span><span><span><span><span>Any\n\tnew events coming from SolarWinds should populate in their\n\trespective dashboards.</span></span></span><br></span></span>",
+  "icon":"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"
+}
