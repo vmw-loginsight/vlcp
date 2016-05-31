@@ -1,0 +1,689 @@
+{
+  "name":"Hitachi - Storage",
+  "namespace":"com.hitachi.storage",
+  "framework":"#9c4",
+  "version":"2.4",
+  "contentPackId":"com.hitachi.storage",
+  "extractedFields":[ {
+    "displayName":"hitachi_hcp_node",
+    "preContext":"node ",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xg6zdf",
+    "constraints":"{\"searchTerms\":\"HCP_System_Event\"}",
+    "info":null
+  }, {
+    "displayName":"hitachi_hcp_org_ip",
+    "preContext":"originating ip: ",
+    "postContext":"\\,",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xxez27nfya0000",
+    "constraints":"{\"searchTerms\":\"HCP_System_Event\"}",
+    "info":null
+  }, {
+    "displayName":"hitachi_hnas_event_id",
+    "preContext":" ",
+    "postContext":"( Information| Warning| Severe)",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le",
+    "constraints":"{\"filters\":[{\"internalName\":\"hitachi_storage\",\"displayName\":\"hitachi_storage\",\"operator\":\"CONTAINS\",\"value\":\"hnas\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"hitachi_storage_serial",
+    "preContext":"(\\,R800:|\\,DF850:|\\,HM800:|\\(Serial:)",
+    "postContext":"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000",
+    "constraints":"{\"searchTerms\":\"Storage\"}",
+    "info":null
+  }, {
+    "displayName":"hitachi_storage_uid",
+    "preContext":"uid=",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000",
+    "constraints":"{\"searchTerms\":\"Storage\"}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"hitachi_storage: Storage array CCI events",
+    "info":"The alert get triggered when more than 5 matches are found in the last 15 minutes&nbsp;<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461751311158,\"endTimeMillis\":1461752211157,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"\\\\+Command\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"hitachi_storage: Provisioning task failure",
+    "info":"The alert get generated when provisioning task failure occur on storage array<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461751295740,\"endTimeMillis\":1461752195739,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"PROV\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"hitachi_storage: HNAS severe event alert",
+    "info":"Hitachi NAS severe alert<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Severe\",\"startTimeMillis\":1461751273775,\"endTimeMillis\":1461752173774,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"hitachi_storage: Configuration access failure",
+    "info":"The alert get generated when more that 5 matches are found in the last 15 minutes<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461751219541,\"endTimeMillis\":1461752119540,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ConfigurationAccess\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":900000,
+    "searchInterval":300000
+  }, {
+    "name":"hitachi_storage: Storage array error events",
+    "info":"The alert get triggered when more than 5 event occur in a single group in the last 30 minutes",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461750425562,\"endTimeMillis\":1461752225561,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed,error\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hitachi_storage_uid\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"},{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":1800000,
+    "searchInterval":300000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Events over time",
+          "info":"This widget displays all events for Hitachi array subsystems over the specified time period.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461576449002,\"endTimeMillis\":1461662857768,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Events over time grouped by Subystem Serial",
+          "info":"All Events group over time group by Subystem Serial<span></span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1462982061684,\"endTimeMillis\":1463154863348,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Error events",
+          "info":"<span>This widget displays all error events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461577343058,\"endTimeMillis\":1461663752578,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,failed\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Error events grouped by Subsystem Serial and User ID",
+          "info":"<span>This widget displays all error events for Hitachi array subsystems over the specified time period grouped by subsystem serial number and User ID.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1462982110583,\"endTimeMillis\":1463154911321,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed,error\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hitachi_storage_uid\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"},{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Warning events",
+          "info":"<span>This widget displays all warning events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461575989064,\"endTimeMillis\":1461662389732,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"warning\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Warning Events grouped by Subsystem Serial",
+          "info":"<span>This widget displays all warning events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461577420107,\"endTimeMillis\":1461663821770,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"warning\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All CCI events over time",
+          "info":"This widget displays all CCI events for Hitachi array subsystems over the specified time period.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461577877003,\"endTimeMillis\":1461664278033,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"\\\\+command\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All CCI Events grouped by Subystem Serial and User ID",
+          "info":"<span>This widget displays all CCI events for Hitachi array subsystems over the specified time period grouped by Storage Subsystem Serial and user ID.</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461577957171,\"endTimeMillis\":1461664357938,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"\\\\+command\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hitachi_storage_uid\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"},{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Configuration",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Account Management events over time",
+          "info":"<span>This widget displays all account management events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461579860106,\"endTimeMillis\":1461666260701,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Account,ACM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Account Management events grouped by Serial",
+          "info":"All Account Management events group by Serial<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461579894205,\"endTimeMillis\":1461666295079,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Account,ACM\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Configuration events over time",
+          "info":"<span>This widget displays all configuration events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461579980108,\"endTimeMillis\":1461666382466,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ConfigurationAccess\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Configuration events grouped by Serial",
+          "info":"<span>This widget displays all configuration events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461580014744,\"endTimeMillis\":1461666417086,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ConfigurationAccess\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Maintenance events over time",
+          "info":"<span>This widget displays all maintenance events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461580054002,\"endTimeMillis\":1461666460087,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Maintenance\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"uid=maintenance\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Maintenance events grouped by Serial",
+          "info":"All Maintenance events group by Serial<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461580350532,\"endTimeMillis\":1461666751113,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Maintenance\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"uid=maintenance\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Security",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Authentication events over time",
+          "info":"<span>This widget displays all authentication events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461580462159,\"endTimeMillis\":1461666864839,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Authentication events grouped by Subsystem Serial and User ID",
+          "info":"<span>This widget displays all authentication events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number and User ID.</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461580529120,\"endTimeMillis\":1461666930457,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hitachi_storage_uid\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"},{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Failed login events over time",
+          "info":"<span>This widget displays all failed login events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461580651669,\"endTimeMillis\":1461667052068,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Failed login events grouped by Subsystem Serial and User ID",
+          "info":"<span>This widget displays all failed login events for Hitachi array subsystems over the specified time period grouped by user ID and subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461580997782,\"endTimeMillis\":1461667398198,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hitachi_storage_uid\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"},{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Storage login events over time",
+          "info":"<span>This widget displays all storage login events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581040656,\"endTimeMillis\":1461667441550,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"maintenance({component-poller}:dvm_srv)\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Relevant queries",
+          "info":"<span>Relevant queries</span><br>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Count of authentication events over time",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581109068,\"endTimeMillis\":1461667511332,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"All Authentication events over time<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of authentication events grouped by subsystem serial and user ID",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1457542266201,\"endTimeMillis\":1461750313479,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authentication\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hitachi_storage_uid\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"},{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"All Authentication events grouped by Subsystem Serial and User ID<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of failed login events over time",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581257982,\"endTimeMillis\":1461667659981,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"All Failed login events over time<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of failed login events grouped by Subsystem Serial and User ID",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581306266,\"endTimeMillis\":1461667706666,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hitachi_storage_uid\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"},{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"All Failed login events grouped by Subsystem Serial and User ID<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of storage login events over time",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581351697,\"endTimeMillis\":1461667755774,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authentication\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"maintenance({component-poller}:dvm_srv)\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"All Storage login events over time<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Provisioning",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Provisioning events over time",
+          "info":"<span>This widget displays all provisioning events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581651936,\"endTimeMillis\":1461668056282,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"PROV\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Provisioning events grouped by Serial",
+          "info":"<span>This widget displays all provisioning events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581733069,\"endTimeMillis\":1461668134241,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"PROV\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Failed Provisioning events",
+          "info":"<span>This widget displays all failed provisioning events for Hitachi array subsystems over the specified time period grouped by provisioning's task.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581790576,\"endTimeMillis\":1461668191164,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"PROV\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Failed Provisioning events grouped by Serial",
+          "info":"<span>This widget displays all failed provisioning events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581838525,\"endTimeMillis\":1461668238892,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"PROV\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Delete Provisioning events",
+          "info":"<span>This widget displays all delete provisioning events for Hitachi array subsystems over the specified time period grouped by user ID.</span><br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581884242,\"endTimeMillis\":1461668285693,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"PROV,delete\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"configurationaccess\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Delete Provisioning events grouped by Subsystem Serial and User ID",
+          "info":"<span>This widget displays all delete task events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461581940110,\"endTimeMillis\":1461668346118,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"PROV\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"delete\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hitachi_storage_uid\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"},{\"displayName\":\"hitachi_storage_uid\",\"preContext\":\"uid=\",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7ovuwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Replication",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Local Replication events over time",
+          "info":"<span>This widget displays all local replication events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582061647,\"endTimeMillis\":1461668464942,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Local Replication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Local Replication events over time grouped by Serial",
+          "info":"<span>This widget displays all local replication events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582106846,\"endTimeMillis\":1461668508141,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Local replication\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Remote Replication events over time",
+          "info":"<span>This widget displays all remote replication events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582148479,\"endTimeMillis\":1461668551753,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Remote Replication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Remote Replication events over time grouped by Serial",
+          "info":"<span>This widget displays all remote replication events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582186275,\"endTimeMillis\":1461668590287,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Remote Replication\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Relevant queries",
+          "info":"Relevant queries",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Count of Local Replication events over time",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582226962,\"endTimeMillis\":1461668629162,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Local Replication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"All Local Replication events over time<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of Local Replication events over time grouped by Serial",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582276607,\"endTimeMillis\":1461668677756,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Local replication\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"All Local Replication events over time grouped by Serial<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of Remote Replication events over time",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582315775,\"endTimeMillis\":1461668718990,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Remote Replication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"All Remote Replication events over time<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of Remote Replication events over time grouped by Serial",
+            "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582365866,\"endTimeMillis\":1461668766585,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Remote Replication\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"All Remote Replication events over time grouped by Serial<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Volume",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Unviversal Volume Management events over time",
+          "info":"<span>This widget displays all universal volume management events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582655224,\"endTimeMillis\":1461669055787,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"UVM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Unviversal Volume Management events grouped by Serial",
+          "info":"<span>This widget displays all universal volume management events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582689279,\"endTimeMillis\":1461669089874,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"UVM\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Volume Migration events over time",
+          "info":"<span>This widget displays all volume shredding events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582723374,\"endTimeMillis\":1461669124167,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Volume Migration,VM\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Volume Migration events grouped by Serial",
+          "info":"All Volume Migration events group by Serial<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582796855,\"endTimeMillis\":1461669197963,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Volume Migration\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Volume Shredding events over time",
+          "info":"<span>This widget displays all volume shredding events for Hitachi array subsystems over the specified time period.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582861826,\"endTimeMillis\":1461669262100,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"VS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All Volume Shredding events grouped by Serial",
+          "info":"<span>This widget displays all volume shredding events for Hitachi array subsystems over the specified time period grouped by subsystem' serial number.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Storage\",\"startTimeMillis\":1461582914118,\"endTimeMillis\":1461669316251,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"VS\"},{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SVP,GUM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_storage_serial\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_storage_serial\",\"preContext\":\"(\\\\,R800:|\\\\,DF850:|\\\\,HM800:|\\\\(Serial:)\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpxg5dpojqwozk7onsxe2lbnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Storage\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"HNAS",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All HNAS Events over time",
+          "info":"This widget displays all events for Hitachi HNAS over the specified time period.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1459929424233,\"endTimeMillis\":1459933025224,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All HNAS Events over time grouped by IP",
+          "info":"All Events group over time group by Subsystem Serial<span></span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1459933471754,\"endTimeMillis\":1459937072463,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All HNAS Information Events over time",
+          "info":"This widget displays all events for Hitachi HNAS Information events over the specified time period.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Information\",\"startTimeMillis\":1461644753075,\"endTimeMillis\":1461731153647,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All HNAS Information Events over time grouped by IP",
+          "info":"This widget displays all events for Hitachi HNAS Information events group by IP<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Information\",\"startTimeMillis\":1461644780580,\"endTimeMillis\":1461731181376,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All HNAS Warning Events over time",
+          "info":"This widget displays all events for Hitachi HNAS Warning events over the specified time period.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Warning\",\"startTimeMillis\":1461644820140,\"endTimeMillis\":1461731223756,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All HNAS Warning Events over time grouped by IP",
+          "info":"This widget displays all events for Hitachi HNAS Warning events group by IP<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Warning\",\"startTimeMillis\":1461644871129,\"endTimeMillis\":1461731271721,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All HNAS Severe Events over time",
+          "info":"This widget displays all events for Hitachi HNAS Severe events over the specified time period.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Severe\",\"startTimeMillis\":1461644898477,\"endTimeMillis\":1461731299391,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All HNAS Severe Events over time grouped by IP",
+          "info":"This widget displays all events for Hitachi HNAS Severe events group by IP<br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Severe\",\"startTimeMillis\":1461644920132,\"endTimeMillis\":1461731322493,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"operator\":\"GREATER_OR_EQUAL\",\"value\":\"560\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_hnas_event_id\",\"preContext\":\" \",\"postContext\":\"( Information| Warning| Severe)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwq3tbonpwk5tfnz2f62le\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"hitachi_storage\\\",\\\"displayName\\\":\\\"hitachi_storage\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"hnas\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"HCP",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All HCP Events over time",
+          "info":"This widget displays all events for Hitachi HCP over the specified time period.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1459765349067,\"endTimeMillis\":1459851752300,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All HCP Events over time grouped by source IP",
+          "info":"All Events group over time group by Subysystem Serial<span></span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1459851509749,\"endTimeMillis\":1459851810923,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All HCP Authentication Events over time",
+          "info":"This widget displays all events for Hitachi HCP Authentication over the specified time period.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1461661857064,\"endTimeMillis\":1461748257215,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authentication\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All HCP Authentication Events over time grouped by originating IP",
+          "info":"This widget displays all events for Hitachi HCP Authentication group by originating IP.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1461662053559,\"endTimeMillis\":1461748456791,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xxez27nfya0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authentication\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_hcp_org_ip\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xxez27nfya0000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_hcp_org_ip\",\"preContext\":\"originating ip: \",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xxez27nfya0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HCP_System_Event\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All HCP Events over time grouped by node ID",
+          "info":"This widget displays all events for Hitachi HCP group by node ID<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1459932536227,\"endTimeMillis\":1459936136226,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xg6zdf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_hcp_node\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xg6zdf\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_hcp_node\",\"preContext\":\"node \",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xg6zdf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HCP_System_Event\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Relevant queries",
+          "info":"Relevant queries",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Count of HCP Events over time",
+            "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1447792140470,\"endTimeMillis\":1447878543117,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"All HCP Events over time<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of HCP Events over time grouped by source IP",
+            "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1459932244752,\"endTimeMillis\":1459935847914,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"All HCP Events over time grouped by source IP<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of HCP Authentication Events over time",
+            "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1461662134115,\"endTimeMillis\":1461748537944,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authentication\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"All HCP Authentication Events over time<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of HCP Authentication Events over time grouped by originating IP",
+            "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1461662161003,\"endTimeMillis\":1461748567125,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xxez27nfya0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"authentication\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_hcp_org_ip\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xxez27nfya0000\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_hcp_org_ip\",\"preContext\":\"originating ip: \",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xxez27nfya0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HCP_System_Event\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"All HCP Authentication Events grouped by originating IP<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of HCP Events over time grouped by node ID",
+            "chartQuery":"{\"query\":\"HCP_System_Event\",\"startTimeMillis\":1459932380133,\"endTimeMillis\":1459935982377,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xg6zdf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hitachi_hcp_node\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xg6zdf\",\"displayNamespace\":\"Hitachi - Storage\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"hitachi_hcp_node\",\"preContext\":\"node \",\"postContext\":\"\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltinf2gcy3inexhg5dpojqwozlinf2gcy3infpwqy3ql5xg6zdf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HCP_System_Event\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"All HCP Events over time grouped by node ID<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          } ]
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"Hitachi, Ltd.",
+  "url":"https://portal.hds.com",
+  "contentVersion":"1.0",
+  "info":"<span>Hitachi Storage Content pack for VMware vRealize Log Insight\nprovides log aggregation and indexing with near real-time search and analytics\ncapabilities. <span></span></span><br>\n\n<span>Hitachi Storage Content pack for VMware vRealize Log Insight\ncollects, imports, and analyzes logs to provide real-time answers to problems\nrelated to systems, services, and applications, and derive important insights. <span></span></span><br>\n\n<span><span>&nbsp;</span></span><br>\n\n<span><b>IMPORTANT:</b>&nbsp;To fully leverage the power of this\ncontent pack Hitachi Storage Subsystem&nbsp;is required. In addition, the&nbsp;<span><b>Hitachi Storage Device manager</b></span> must\nbe configured and enable syslog setting.<br>\n<br>\nThis content pack enables:<br>\n<br>\n<b><u>Proactive monitoring of your Hitachi Storage Subsystem Environment</u></b><br>\n<br>\n•&nbsp;<b>Quickly identify issues:</b>&nbsp;The&nbsp;<span><b>Overview</b></span><i>&nbsp;</i>dashboard\ngives you a single pane of glass to find problems in your Hitachi Storage\nenvironment while the <span><b><span>Provisioning</span></b></span>dashboard\ndoes the same to isolate provisioning task issues.<br>\n•&nbsp;<b>Drill down to determine the root cause:</b>&nbsp;Dashboard filters make\nit easy to see logs from specific parts of your Hitachi Storage Subsystem\nenvironment.<br>\n•&nbsp;<b>Easily consume data:</b>&nbsp;Powerful and dynamic visualizations\nmake it possible to detect anomalies, perform trending analysis, and pinpoint\nspecific issues through targeted queries.<br>\n•&nbsp;<b>Alerts:</b>&nbsp;Know what to monitor in your Hitachi Storage audit\nlogs and get notified when such events are detected.<br>\n<br>\n<b><u>Track changes and isolate security threats</u></b><br>\n<br>\n•&nbsp;<b>Configuration management:</b>&nbsp;Track user-initiated changes and\nautomated Hitachi Storage actions through the&nbsp;<span><b>Configuration&nbsp;</b></span>dashboard.<br>\n•&nbsp;<b>Environmental changes:</b>&nbsp;Get a complete picture from the&nbsp;<span><b>Configuration</b></span>&nbsp;dashboard or see\nmore specific information like what ldev replication are being performed\nthrough&nbsp;<span><b>Replication</b></span>.<br>\n•&nbsp;<b>Security:</b>&nbsp;The&nbsp;<i>Storage - Security</i>&nbsp;dashboard\nallows you to find who is logging into Hitachi Storage devices from which\nlocations and through what means.<br>\n<br>\n<b><u>Additional information and context</u></b><br>\n<br>\n•&nbsp;<b>Query notes:</b>&nbsp;Each dashboard widget includes information\nabout the widget and any other information making it possible to understand the\ndata presented.<br>\n•&nbsp;<b>Inventory:</b>&nbsp;The&nbsp;<span><b>Overview</b></span>&nbsp;dashboard\nquantifies results seen through Hitachi Storage Device manager audit logs\nmaking it simple to ensure complete environment monitoring.<span></span></span><br>",
+  "instructions":"<span>Hitachi Storage Content Pack for VMware vRealize log insight\nrequires syslog to be enabled on Hitachi Storage Device manager to forward\nsyslog into Log Insight. <span>Hitachi Storage Content Pack is compatible with\nVMware Log Insight 3.3 or later.</span><b><span><span></span></span></b></span><br>\n\n<span><span>&nbsp;</span></span><br>\n\n<span><u><span style=\"font-weight: bold;\">Step 1:</span><span></span></u></span><br>\n\n<span>Configure <span>Syslog on</span>Hitachi\nStorage Device manager<span>,</span><span></span></span><br>\n\n<span>1.Browse Hitachi Storage Device Manager &lt;IP&gt;<span></span></span><br>\n\n<span>2.Select the Settings menu, then select the Edit\nAlert Settings sub-menu. <span></span></span><br>\n\n<span>3.Select the Syslog tab in the dialog box. If the\nPrimary Server is not configured, click on Enable above its box. <span></span></span><br>\n\n<span>a.if\nthe Primary Server is already configured, update the Secondary Server settings.\n<span></span></span><br>\n\n<span>4.Enter the IP address of the vRealize Log Insight\nIP address. <span></span></span><br>\n\n<span>5.Enter 514 in Port Number field. <span></span></span><br>\n\n<span>6.Enter a name for the Location Identification\nName field, this string will be part of the syslog message that vRealize Log\nInsight uses<span></span></span><br>\n\n<span><span>&nbsp;</span></span><br>\n\n<span><u><span style=\"font-weight: bold;\">Step 2:</span><span></span></u></span><br>\n\n<span><span>Log into VMware Log Insight server as<span>&nbsp;</span><b>admin</b>.&nbsp; Go\nto&nbsp;Administration&nbsp;-&gt;&nbsp;Cluster&nbsp;to add a new Virtual IP\nAddress (VIP) with the tag&nbsp;<b><i>hitachi_storage=hnas<span></span></i></b></span></span><br>\n\n<span><span>Configure Syslog on NAS platform<span></span></span></span><br>\n\n<span><span>1.</span><span>Browse\nHitachi NAS platform <span></span></span></span><br>\n\n<span><span>2.</span><span>Select\nHome -&gt; Status &amp; Monitoring -&gt; Syslog Alerts Setup<span></span></span></span><br>\n\n<span><span>3.</span><span>Enter the IP address of\nthe vRealize Log Insight VIP address</span><span><span></span></span></span><br>",
+  "icon":"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"
+}
