@@ -2,7 +2,7 @@
   "name":"Brocade - SAN & IP Networks",
   "namespace":"com.brocade.dcm",
   "framework":"#9c4",
-  "version":"2.4",
+  "version":"3.1",
   "contentPackId":"com.brocade.dcm",
   "extractedFields":[ {
     "displayName":"dcm_audit_info",
@@ -173,11 +173,27 @@
     "constraints":"{\"searchTerms\":\"raslogd\"}",
     "info":null
   }, {
+    "displayName":"dcm_nos_interfacename",
+    "preContext":"@1588 value=\"",
+    "postContext":"\" desc=\"(Interface name|InterfaceName)\"]",
+    "regexValue":"\\S+\\s+\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv62loorsxeztbmnsw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
     "displayName":"dcm_nos_log_level",
     "preContext":"severity@1588 value=\"",
     "postContext":"\"]",
     "regexValue":"\\S+",
     "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63dpm5pwyzlwmvwa0000",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_modename",
+    "preContext":"@1588 value=\"",
+    "postContext":"\" desc=\"(ModeName|Mode name)\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv63lpmrsw4ylnmu000000",
     "constraints":"{\"searchTerms\":\"raslogd\"}",
     "info":null
   }, {
@@ -195,6 +211,14 @@
     "regexValue":"\\w+",
     "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv64dsn5shky3u",
     "constraints":"{\"searchTerms\":\"raslogd, MAPS*\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_nos_profilename",
+    "preContext":"@1588 value=\"",
+    "postContext":"\" desc=\"(Profile name|ProfileName)\"]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv64dsn5tgs3dfnzqw2zi0",
+    "constraints":"{\"searchTerms\":\"raslogd\"}",
     "info":null
   }, {
     "displayName":"dcm_nos_syslog_message-id",
@@ -255,20 +279,20 @@
   } ],
   "queries":[ ],
   "alerts":[ {
-    "name":"Brocade: NOS MAPS Violation Alert",
-    "info":"<span>NOS MAPS violation alert. This alert will be generated if any MAPS rules are violated. This alert depends on MAPS-1001, MAPS-1002, MAPS-1003, MAPS-1004 &amp; MAPS-1021 syslog events. This alert supports only for Ethernet Switches.</span><br>",
+    "name":"Brocade: Tunnel Protocol Down Alert",
+    "info":"<span>Tunnel Protocol Down Alert. This alert will be generated when any Tunnel Protocol went Down. This alert supports only for Ethernet Switches.<br></span>",
     "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1448271100546,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001,MAPS-1002,MAPS-1003,MAPS-1004,MAPS-1021\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "chartQuery":"{\"query\":\"raslogd log@1588 tunnel\",\"startTimeMillis\":1448270654375,\"endTimeMillis\":1448271554374,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"nsm-1002\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
     "messageQuery":"",
     "hitCount":1.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":3600000,
     "searchInterval":600000
   }, {
-    "name":"Brocade: Tunnel Protocol Down Alert",
-    "info":"<span>Tunnel Protocol Down Alert. This alert will be generated when any Tunnel Protocol went Down. This alert supports only for Ethernet Switches.<br></span>",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"raslogd log@1588 tunnel\",\"startTimeMillis\":1448270654375,\"endTimeMillis\":1448271554374,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"nsm-1002\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "name":"Brocade: AMPP Domain Events",
+    "info":"<span>AMPP Domain events will be generated upon receiving below domain related AMPP events from NOS switches. The events are NSM-2044,NSM-2045,NSM-2046,NSM-2047.</span><span><br></span><br><span>NSM-2044 -&gt; Domain creation is successful</span><br><span>NSM-2045 -&gt; Domain deletion is successful</span><br><span>NSM-2046 -&gt; Profile addition to domain is successful</span><br><span>NSM-2047 -&gt; Profile deletion from domain is successful</span><br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1463122094077,\"endTimeMillis\":1463122394076,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2044,NSM-2045,NSM-2046,NSM-2047\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
     "messageQuery":"",
     "hitCount":1.0,
     "hitOperator":"GREATER_THAN",
@@ -290,6 +314,26 @@
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"raslogd FW-1424\",\"startTimeMillis\":1441838802953,\"endTimeMillis\":1441839102952,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
     "messageQuery":"{\"query\":\"FW-1424\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: NOS MAPS Violation Alert",
+    "info":"<span>NOS MAPS violation alert. This alert will be generated if any MAPS rules are violated. This alert depends on MAPS-1001, MAPS-1002, MAPS-1003, MAPS-1004 &amp; MAPS-1021 syslog events. This alert supports only for Ethernet Switches.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1448271100546,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001,MAPS-1002,MAPS-1003,MAPS-1004,MAPS-1021\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: AMPP Failure Events",
+    "info":"<span>AMPP failure events will be generated upon receiving any failure related to AMPP events from NOS switches. The failure events are NSM-2001,NSM-2003,NSM-2005,NSM-2011,NSM-2036,NSM-2037,NSM-2049,NSM-2050,NSM-2051.</span><br><span>&nbsp;</span><br><span>NSM-2001 -&gt; Port-profile activation failed</span><br><span>NSM-2003 -&gt; Port-profile deactivation failed</span><br><span>NSM-2005 -&gt; Port-profile application failed</span><br><span>NSM-2011 -&gt; Port-profile removal failed</span><br><span>NSM-2036 -&gt; MAC Address association failed</span><br><span>NSM-2037 -&gt; MAC address de-association failed</span><br><span>NSM-2049 -&gt; DAD failed for IPv6 address on interface</span><br><span>NSM-2050 -&gt; Netdevice creation failed for interface</span><br><span>NSM-2051 -&gt; Port-profile application failed</span><br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1470394120782,\"endTimeMillis\":1470397720781,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2001,NSM-2003,NSM-2005,NSM-2011,NSM-2036,NSM-2037,NSM-2049,NSM-2050,NSM-2051\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"",
     "hitCount":1.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":3600000,
@@ -342,7 +386,6 @@
         "widgets":[ {
           "name":"Events grouped by Message ID",
           "info":"Displays Syslog events count from Brocade Fibre Channel switches grouped by Message ID to verify an event from different sources.<br><br>dcm_syslog_message-id gives the Syslog message id like FW-1435, MAPS-1003 etc.<br><br>dcm_wwn_address gives the WWN of the switch<br><br>dcm_device_name gives the switch name<br><br>dcm_device_port gives the switch port details<br><br>dcm_log_level gives the Syslog priority level like e.g. Info, Warning etc.",
-          "gridWidth":"1/2",
           "chartType":"bar",
           "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
           "widgetType":"chart",
@@ -351,7 +394,6 @@
         }, {
           "name":"Events over time grouped by Severity",
           "info":"Displays Syslog events count from Brocade Fibre Channel switches over a period of time grouped by priority",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
           "widgetType":"chart",
@@ -362,7 +404,6 @@
         "widgets":[ {
           "name":"Events by Severity",
           "info":"Displays Syslog events received from Brocade Fibre Channel switches grouped by priority (Warning, Info, Error, Emerg etc)",
-          "gridWidth":"1/2",
           "chartType":"pie",
           "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
           "widgetType":"chart",
@@ -371,7 +412,6 @@
         }, {
           "name":"Events by Product",
           "info":"Displays Syslog events received from Brocade Fibre Channel switches grouped by product to view the messages received from a specific switch",
-          "gridWidth":"1/2",
           "chartType":"bar",
           "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
           "widgetType":"chart",
@@ -1074,13 +1114,117 @@
           "messageQuery":""
         } ]
       } ]
+    }, {
+      "name":"NOS - AMPP Events",
+      "constraints":[ {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv64dsn5tgs3dfnzqw2zi0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Life of Port Profile",
+          "info":"<span>Port Profile State Count<br><br>NSM-2000<span></span> -&gt; <span></span>Port-profile activation is successful</span><br><span>NSM-2001<span></span> -&gt; <span></span>Port-profile activation failed</span><br><span>NSM-2002<span></span> -&gt; <span></span>Port-profile deactivation is successful</span><br><span>NSM-2003<span></span> -&gt; <span></span>Port-profile deactivation failed</span><br><span>NSM-2004<span></span> -&gt; <span></span>Port-profile application is successful</span><br><span>NSM-2005<span></span> -&gt; <span></span>Port-profile application failed</span><br><span>NSM-2006<span></span> -&gt; <span></span>Port-profile is removed successfully</span><br><span>NSM-2011<span></span> -&gt; <span></span>Port-profile removal failed</span><br><span>NSM-2012<span></span> -&gt; <span></span>MAC is associated to port-profile</span><br><span>NSM-2013<span></span> -&gt; <span></span>MAC is de-associated from port-profile</span><br><span>NSM-2031<span></span> -&gt; <span></span>Port-profile is created</span><br><span>NSM-2032<span></span> -&gt; <span></span>Port-profile is removed</span><br><span>NSM-2035<span></span> -&gt; <span></span>Non-profiled-MACs mapped to profiled ports</span><br><span>NSM-2036<span></span> -&gt; <span></span>MAC Address association failed</span><br><span>NSM-2037<span></span> -&gt; <span></span>MAC address de-association failed</span><br><span>NSM-2038<span></span> -&gt; <span></span>Bulk MAC association is successful</span><br><span>NSM-2039<span></span> -&gt; <span></span>Bulk MAC de-association is successful</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1457441359166,\"endTimeMillis\":1463164200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2031,NSM-2000,NSM-2001,NSM-2002,NSM-2003,NSM-2012,NSM-2013,NSM-2035,NSM-2036,NSM-2037,NSM-2038,NSM-2039,NSM-2004,NSM-2005,NSM-2006,NSM-2011,NSM-2032\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Port Profile Count (Active & Deactive)",
+          "info":"<span>Port Profile(Active &amp; Deactive) Count by Source<br><br>NSM-2000 -&gt; Port-profile Activation is successful</span><br><span>NSM-2002 -&gt; Port-profile Deactivation is successful</span><br>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1457441359166,\"endTimeMillis\":1463042031163,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2000,NSM-2002\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VLAN Events",
+          "info":"<span>VLAN Events<br><br>NSM-2014<span></span> -&gt; <span></span>VLAN sub-profile is created</span><br><span>NSM-2015<span></span> -&gt; <span></span>Access VLAN is configured</span><br><span>NSM-2016<span></span> -&gt; <span></span>Access VLAN is deleted</span><br><span>NSM-2017<span></span> -&gt; <span></span>Switching properties are configured</span><br><span>NSM-2018<span></span> -&gt; <span></span>Switching properties are removed</span><br><span>NSM-2019<span></span> -&gt; <span></span>Switchport mode is configured</span><br><span>NSM-2020<span></span> -&gt; <span></span>Switchport mode is de-configured</span><br><span>NSM-2021<span></span> -&gt; <span></span>Tagged VLAN[s] are configured</span><br><span>NSM-2022<span></span> -&gt; <span></span>Tagged VLAN[s] are removed</span><br><span>NSM-2023<span></span> -&gt; <span></span>Intended tagged VLAN[s] are configured&nbsp;</span><br><span>NSM-2024<span></span> -&gt; <span></span>All VLANs are configured as tagged VLANs</span><br><span>NSM-2025<span></span> -&gt; <span></span>All tagged VLANs are removed</span><br><span>NSM-2026<span></span> -&gt; <span></span>Native VLAN is configured</span><br><span>NSM-2027<span></span> -&gt; <span></span>Native VLAN is deleted</span><br><span>NSM-2033<span></span> -&gt; <span></span>VLAN sub-profile is deleted</span><br><span>NSM-2040<span></span> -&gt; <span></span>Ctag is associated with Virtual Fabric</span><br><span>NSM-2041<span></span> -&gt; <span></span>MAC is associated with Virtual Fabric</span><br><span>NSM-2042<span></span> -&gt; <span></span>Ctag is deassociated with Virtual Fabric</span><br><span>NSM-2043<span></span> -&gt; <span></span>MAC is deassociated with Virtual Fabric</span><br><span>NSM-2048<span></span> -&gt; <span></span>VLANclassifier MAC-group is created</span><br><span>NSM-2051<span></span> -&gt; <span></span>Port-profile application failed</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1462275503882,\"endTimeMillis\":1470364019166,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2014,NSM-2015,NSM-2016,NSM-2017,NSM-2018,NSM-2019,NSM-2020,NSM-2021,NSM-2022,NSM-2023,NSM-2024,NSM-2025,NSM-2026,NSM-2027,NSM-2033,NSM-2040,NSM-2041,NSM-2042,NSM-2043,NSM-2048,NSM-2051\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"FCoE Events",
+          "info":"<span><span>FCoE Events</span><br><br>NSM-2028 -&gt; FCoE sub-profile is created</span><br><span>NSM-2029 -&gt; FCoE port is configured successfully</span><br><span>NSM-2030 -&gt; FCoE port is removed successfully</span><br><span>NSM-2034 -&gt; FCoE sub-profile is deleted</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1462437590539,\"endTimeMillis\":1463042589781,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2028,NSM-2029,NSM-2030,NSM-2034\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Security Events",
+          "info":"<span><span>Security Events<br></span><br>SSMD-1900<span></span> -&gt; <span></span>Security sub-profile is created</span><br><span>SSMD-1901<span></span> -&gt; <span></span>ACL is configured successfully</span><br><span>SSMD-1902<span></span> -&gt; <span></span>ACL is removed successfully</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1462275503882,\"endTimeMillis\":1470364019166,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"SSMD-1900,SSMD-1901,SSMD-1902\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VLAN, FCoE, ACL & vLAG Associations",
+          "info":"Query widget to display VLAN, FCoE &amp; vLAG configuration information",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Access VLAN",
+            "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1457441359166,\"endTimeMillis\":1463042031163,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2015,NSM-2016\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>Access VLAN<br><br>NSM-2015 -&gt; Access VLAN is configured</span><br><span>NSM-2016 -&gt; Access VLAN is deleted</span><br>",
+            "options":"{\"chartTypeName\":\"area\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Switchport Mode Configuration",
+            "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1457441359166,\"endTimeMillis\":1463042031163,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2019,NSM-2020\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>Switchport Mode Configuration<br><br>NSM-2019 -&gt;&nbsp;</span><span><span><span><span>Switchport mode is configured<br></span></span></span></span><span>NSM-2020 -&gt;&nbsp;</span><span><span><span><span>Switchport mode is de-configured</span></span></span></span>",
+            "options":"{\"chartTypeName\":\"area\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Tagged Configurations",
+            "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1457441359166,\"endTimeMillis\":1463042031163,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2021,NSM-2022,NSM-2023,NSM-2024,NSM-2025,NSM-2017,NSM-2018,NSM-2026,NSM-2027\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>Tagged Configurations<br><br>NSM-2017 -&gt; Switching properties are configured</span><br><span>NSM-2018 -&gt; Switching properties are removed</span><br><span>NSM-2021 -&gt; Tagged VLAN[s] are configured</span><br><span>NSM-2022 -&gt; Tagged VLAN[s] are removed</span><br><span>NSM-2023 -&gt; Intended tagged VLAN[s] are configured&nbsp;</span><br><span>NSM-2024 -&gt; All VLANs are configured as tagged VLANs</span><br><span>NSM-2025 -&gt; All tagged VLANs are removed</span><br><span>NSM-2026 -&gt; Native VLAN is configured</span><br><span>NSM-2027 -&gt; Native VLAN is deleted</span><br>",
+            "options":"{\"chartTypeName\":\"area\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"FCoE Configuration",
+            "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1462275503882,\"endTimeMillis\":1470364019166,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2029,NSM-2030\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>FCoE Configuration<br><br>NSM-2029 &nbsp;-&gt;&nbsp;<span></span>FCoE port is configured successfully</span><br><span>NSM-2030 &nbsp;-&gt;&nbsp;FCoE port is removed successfully</span><br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"ACL Configuration",
+            "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1462275503882,\"endTimeMillis\":1470364019166,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"SSMD-1901,SSMD-1902\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>ACL Configuration<br><br>SSMD-1901 -&gt; Acl is configured successfully</span><br><span>SSMD-1902 -&gt; Acl is removed successfully</span>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Profile Port & vLAG",
+            "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1462275503882,\"endTimeMillis\":1470364019166,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2007,NSM-2008,NSM-2010\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv62loorsxeztbmnsw4ylnmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_interfacename\",\"preContext\":\"@1588 value=\\\"\",\"postContext\":\"\\\" desc=\\\"(Interface name|InterfaceName)\\\"]\",\"regexValue\":\"\\\\S+\\\\s+\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv62loorsxeztbmnsw4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"},{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>Profile Port &amp; vLAG<br><br>NSM-2007 -&gt; Interface became port-profile-port</span><br><span>NSM-2008 -&gt; Interface became non-Port-profile-port</span><br><span>NSM-2010 -&gt; Interface could not become non-Port-profile-port</span><br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          } ]
+        } ]
+      } ]
     } ],
     "header":""
   } ],
   "author":"Brocade",
   "url":"www.brocade.com",
-  "contentVersion":"3.0",
+  "contentVersion":"3.1",
   "info":"<span>Brocade SAN IP content pack helps the user to better search, analyse and manage the log data generated by Brocade SAN, NOS (IP) devices. Content pack can be used in two ways:</span><br><span>- Configure BNA to forward Syslogs from all the switches of interest to Log Insight</span><br><span>- Configure switches to forward Syslog to Log Insight</span><br>",
-  "instructions":"<span><span>Registering the Log Insight IPAddress in the device for receiving syslog messeges, the following commands have to be executed in CLI,</span></span><br><span>1. Telnet the device&lt;IP Address&gt;</span><br><span>2. login through admin credentials.</span><br><span>3. Enter in to config mode</span><br><span>4. For SYSLOG , to register your vRealize Log Insight UI IP give the command as,</span><br><span>&nbsp;</span><br><span><b>NOS -# logging syslog-server &lt;vRealize Log Insight UI IPAddress&gt;</b></span><br><span><b>&nbsp;</b></span><br><span><b>SAN - # syslogadmin --set -ip &lt;vRealize Log Insight UI IPAddress&gt;</b></span><br>",
+  "instructions":"<span><span>Registering the Log Insight IPAddress in the device for receiving syslog messeges, the following commands have to be executed in CLI,</span></span><br><span>1. Telnet the device&lt;IP Address&gt;</span><br><span>2. login through admin credentials.</span><br><span>3. Enter in to config mode</span><br><span>4. For SYSLOG , to register your vRealize Log Insight IP give the command as,</span><br><span>&nbsp;</span><br><span><b>NOS - # logging syslog-server &lt;vRealize Log Insight IP Address&gt;</b></span><br><span><b>&nbsp;</b></span><br><span><b>SAN - # syslogadmin --set -ip &lt;vRealize Log Insight IP Address&gt;</b></span><br>",
   "icon":"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"
 }
