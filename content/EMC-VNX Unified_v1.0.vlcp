@@ -1,0 +1,307 @@
+{
+  "name":"EMC - VNX Unified",
+  "namespace":"com.emc.vnx",
+  "framework":"#3E8",
+  "version":"1.0",
+  "contentPackId":"com.emc.vnx",
+  "extractedFields":[ {
+    "displayName":"emc_vnx_command",
+    "preContext":"\\(\\d+\\)'",
+    "postContext":"' called by '.*' \\(\\S+\\) with result:",
+    "regexValue":"\\w+",
+    "internalName":"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomq000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"emc_vnx_command_cli",
+    "preContext":"Navisphere (Secure )?CLI command: '",
+    "postContext":"'",
+    "regexValue":".*",
+    "internalName":"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpwg3dj",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"emc_vnx_command_origin",
+    "preContext":"called by '.*' \\(",
+    "postContext":"\\) with result:",
+    "regexValue":"\\S+",
+    "internalName":"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpw64tjm5uw4000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"emc_vnx_command_status",
+    "preContext":"with result: ",
+    "postContext":" \\(",
+    "regexValue":"\\w+",
+    "internalName":"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxg5dbor2xg000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"emc_vnx_command_user",
+    "preContext":"called by '",
+    "postContext":"' \\(\\S+\\) with result:",
+    "regexValue":".*",
+    "internalName":"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxk43foi000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"emc_vnx_disk_location",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"(Bus \\d+ )?Enclosure \\d+ Disk \\d+",
+    "internalName":"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3mn5rwc5djn5xa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"emc_vnx_disk_notification",
+    "preContext":"Enclosure \\d+ Disk \\d+( )+\\(\\d+\\) ",
+    "postContext":"( )+\\[0x00\\]",
+    "regexValue":".*?",
+    "internalName":"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3on52gsztjmnqxi2lpny000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"emc_vnx_rebuild_status",
+    "preContext":"a rebuild has ",
+    "postContext":" for the database region of a",
+    "regexValue":".*",
+    "internalName":"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000",
+    "constraints":null,
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Total events",
+          "info":"The total number of events received over time.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Total error events",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373645273068,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"err*, fail*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Total warning events",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"warn*\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373645318285,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Total fault events",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"fault\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373645823627,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"sp, spa, spb, sts, bus, bucket\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Rebuild events by disk",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"a rebuild has\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373647147377,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"emc_vnx_disk_location\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3mn5rwc5djn5xa0000\",\"displayNamespace\":\"EMC - VNX Unified\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"emc_vnx_rebuild_status\",\"preContext\":\"a rebuild has \",\"postContext\":\" for the database region of a\",\"regexValue\":\".*\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000\",\"constraints\":null},{\"displayName\":\"emc_vnx_disk_location\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"(Bus \\\\d+ )?Enclosure \\\\d+ Disk \\\\d+\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3mn5rwc5djn5xa0000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Hot spare events",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"hot spare\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373647249453,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"Alerts/Faults",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Link down",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Link Down\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373397978213,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Disk failure",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Disk Failure enclosure\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1364793635000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Critical temperature faults",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"critical temperature fault\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1364793635000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Access denied",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"denied\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1364793635000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"navi*, managementserver, setstats, arrayname\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"Commands",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Commands run",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373648097208,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomq000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"emc_vnx_command\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomq000000\",\"displayNamespace\":\"EMC - VNX Unified\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"emc_vnx_command\",\"preContext\":\"\\\\(\\\\d+\\\\)'\",\"postContext\":\"' called by '.*' \\\\(\\\\S+\\\\) with result:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomq000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Commands by origin",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373648195763,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpw64tjm5uw4000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"emc_vnx_command_origin\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpw64tjm5uw4000\",\"displayNamespace\":\"EMC - VNX Unified\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"emc_vnx_command_origin\",\"preContext\":\"called by '.*' \\\\(\",\"postContext\":\"\\\\) with result:\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpw64tjm5uw4000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Command status",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373648233610,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxg5dbor2xg000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"emc_vnx_command_status\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxg5dbor2xg000\",\"displayNamespace\":\"EMC - VNX Unified\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"emc_vnx_command_status\",\"preContext\":\"with result: \",\"postContext\":\" \\\\(\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxg5dbor2xg000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Commands by user",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373648290675,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxk43foi000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"emc_vnx_command_user\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxk43foi000000\",\"displayNamespace\":\"EMC - VNX Unified\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"emc_vnx_command_user\",\"preContext\":\"called by '\",\"postContext\":\"' \\\\(\\\\S+\\\\) with result:\",\"regexValue\":\".*\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3dn5ww2ylomrpxk43foi000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"System Notifications",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Disk notification events",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"0x00\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373646689073,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3on52gsztjmnqxi2lpny000000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"emc_vnx_disk_notification\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3on52gsztjmnqxi2lpny000000\",\"displayNamespace\":\"EMC - VNX Unified\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"emc_vnx_disk_notification\",\"preContext\":\"Enclosure \\\\d+ Disk \\\\d+( )+\\\\(\\\\d+\\\\) \",\"postContext\":\"( )+\\\\[0x00\\\\]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3enfzwwx3on52gsztjmnqxi2lpny000000\",\"constraints\":null}]}",
+          "messageQuery":null
+        }, {
+          "name":"Rebuild event notifications",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"a rebuild has\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373647025175,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"emc_vnx_rebuild_status\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000\",\"displayNamespace\":\"EMC - VNX Unified\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"emc_vnx_rebuild_status\",\"preContext\":\"a rebuild has \",\"postContext\":\" for the database region of a\",\"regexValue\":\".*\",\"internalName\":\"ibadcmk7mnxw2ltfnvrs45topbsw2y27ozxhqx3smvrhk2lmmrpxg5dbor2xg000\",\"constraints\":null}]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Hot spare error events",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"hot spare\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1373647304585,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"a failed drive, cli\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"Background Processes",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Background verify",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"background Bus Enclosure Disk\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1364793635000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Rebuilds",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"rebuild disk\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1364793635000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Background zeroing",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"background Bus Enclosure disk zeroing\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1364793635000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"FAST VP relocations",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"doublegroupbymultiseries\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"relocations auto-tiering\",\"startTimeMillis\":1179432315000,\"endTimeMillis\":1364793635000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "author":"VMware, Inc.",
+  "url":"",
+  "contentVersion":"1.0",
+  "info":"",
+  "instructions":"",
+  "icon":"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"
+}
