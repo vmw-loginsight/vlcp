@@ -1,0 +1,531 @@
+{
+  "name":"Synology - DSM",
+  "namespace":"com.synology.dsm",
+  "contentPackId":"com.synology.dsm",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"syno_afp_folder",
+    "preContext":"shared folder \\[",
+    "postContext":"\\\\\\].",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qwm4c7mzxwyzdfoi000000",
+    "constraints":"{\"searchTerms\":\"synolog AFP\"}",
+    "info":null
+  }, {
+    "displayName":"syno_afp_source",
+    "preContext":"from \\[",
+    "postContext":"\\\\\\] accessed",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qwm4c7onxxk4tdmu000000",
+    "constraints":"{\"searchTerms\":\"synolog afp\"}",
+    "info":null
+  }, {
+    "displayName":"syno_afp_username",
+    "preContext":"AFP client \\[",
+    "postContext":"\\\\\\]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qwm4c7ovzwk4tomfwwk000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_auth_source",
+    "preContext":"from \\[",
+    "postContext":"\\\\\\]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zw65lsmnsq0000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_auth_status",
+    "preContext":"User \\[\\S+\\\\\\] (from \\[\\S+\\\\\\] )?",
+    "postContext":"( from| successfully|\\.)",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_backup_destination",
+    "preContext":"event=\"\\[",
+    "postContext":"\\\\\\]",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf6zdfon2gs3tboruw63q0",
+    "constraints":"{\"searchTerms\":\"synolog backup task\"}",
+    "info":null
+  }, {
+    "displayName":"syno_backup_name",
+    "preContext":"\\\\\\]\\[",
+    "postContext":"\\\\\\] Backup task",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_backup_status",
+    "preContext":"Backup task ",
+    "postContext":"\\.",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf643umf2hk4y0",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_client",
+    "preContext":"event=\"",
+    "postContext":" client",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rwy2lfnz2a0000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_disk",
+    "preContext":"bad sector at \\S+ ",
+    "postContext":" sector",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sgs43l",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_disk_sector_status",
+    "preContext":"system system: bad sector at \\S+ \\S+ sector \\d+ ",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sgs43ll5zwky3un5zf643umf2hk4y0",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_download",
+    "preContext":"Download task for \\[((/\\S+)+/)?",
+    "postContext":"\\\\\\]",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sg653onrxwcza0",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_event",
+    "preContext":"event=\"",
+    "postContext":"\"\\]",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_luser",
+    "preContext":"luser=\"",
+    "postContext":"\" event",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_package_name",
+    "preContext":"Package \\[",
+    "postContext":"\\\\\\]",
+    "regexValue":".*",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_package_status",
+    "preContext":"has been successfully ",
+    "postContext":"\\.",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt",
+    "constraints":"{\"searchTerms\":\"synolog package\"}",
+    "info":null
+  }, {
+    "displayName":"syno_service_name",
+    "preContext":"event=\"\\[",
+    "postContext":"\\\\\\] service was \\w+\\.",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3omfwwk000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_service_status",
+    "preContext":"service was ",
+    "postContext":"\\.",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3torqxi5lt",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_shared_folder",
+    "preContext":"shared folder \\[",
+    "postContext":"\\\\\\]",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_shared_folder_status",
+    "preContext":"shared folder \\[.*?\\\\\\] ",
+    "postContext":"\\.",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4s7on2gc5dvom000000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_system_state",
+    "preContext":"System (started|starts|successfully) ",
+    "postContext":"\\.",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zxs43umvwv643umf2gk000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_type",
+    "preContext":"synotype=\"",
+    "postContext":"\" luser",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_user_changes",
+    "preContext":"user \\[\\S+\\\\\\] was ",
+    "postContext":"( \\[|\\.)",
+    "regexValue":".*?",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl5rwqylom5sxg000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  }, {
+    "displayName":"syno_user_username",
+    "preContext":"\\[",
+    "postContext":"\\\\\\]",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl52xgzlsnzqw2zi0",
+    "constraints":"{\"searchTerms\":\"synolog from\"}",
+    "info":null
+  }, {
+    "displayName":"syno_volume",
+    "preContext":"volume \\[",
+    "postContext":"\\] was",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl53g63dvnvsq0000",
+    "constraints":"{\"searchTerms\":\"synolog\"}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"WARNING: Failed to send email",
+    "info":"Email is configured, but email could not be sent because of some SMTP issue.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\\\"Failed to send email\\\"\",\"startTimeMillis\":1479192216329,\"endTimeMillis\":1479213816328,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"syno_type\",\"preContext\":\"synotype=\\\"\",\"postContext\":\"\\\" luser\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+    "messageQuery":"{\"query\":\"\\\"System SYSTEM: Failed to send email\\\"\",\"startTimeMillis\":1359254880000,\"endTimeMillis\":1407894699487,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"*** CRITICAL *** Volume degraded",
+    "info":"One or more volumes was found to be degraded. This typically indicates that a disk has failed and needs to be replaced. Immediate action should be taken to prevent data loss.",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1359254880000,\"endTimeMillis\":1407889431145,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl53g63dvnvsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_volume\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl53g63dvnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_volume\",\"preContext\":\"volume \\\\[\",\"postContext\":\"\\\\] was\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl53g63dvnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1359254880000,\"endTimeMillis\":1407889431145,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl53g63dvnvsq0000\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"syno_volume\",\"preContext\":\"volume \\\\[\",\"postContext\":\"\\\\] was\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl53g63dvnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"WARNING: Multiple bad sectors detected",
+    "info":"Multiple bad sectors have been detected. This typically indicates a disk that is about to fail. Ensure you have a spare drive and consider replacing this drive soon.",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1359254880000,\"endTimeMillis\":1407889879642,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sgs43l\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_disk\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sgs43l\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_disk\",\"preContext\":\"bad sector at \\\\S+ \",\"postContext\":\" sector\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sgs43l\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1359254880000,\"endTimeMillis\":1407889877640,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sgs43l\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"syno_disk\",\"preContext\":\"bad sector at \\\\S+ \",\"postContext\":\" sector\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sgs43l\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+    "hitCount":10.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Problem events by user and event",
+          "info":"Events that are cause for concern and should be investigated.<br>",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"synolog\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479735635676,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"displayName\":\"syno_event\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed,error,volume * was,bad sector\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"log in\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_luser\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"syno_event\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_event\",\"preContext\":\"event=\\\"\",\"postContext\":\"\\\"\\\\]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_luser\",\"preContext\":\"luser=\\\"\",\"postContext\":\"\\\" event\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Authentication events over time by type",
+          "info":"Log in / out events. For more detailed information, see the <span style=\"font-style: italic;\">Security</span> dashboard.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479735743761,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_auth_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_auth_status\",\"preContext\":\"User \\\\[\\\\S+\\\\\\\\\\\\] (from \\\\[\\\\S+\\\\\\\\\\\\] )?\",\"postContext\":\"( from| successfully|\\\\.)\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"User events by user",
+          "info":"Commands run by user. A spike in events for any user indicates more activity, which may mean configuration changes.<br><br>o The <span style=\"font-weight: bold;\">system</span> user is a special user account used by Synology. For more information on system events see the <span style=\"font-style: italic;\">System</span> dashboard. <br>o The <span style=\"font-weight: bold;\">admin</span> user is the default user account for Synology devices. For security purposes, it is recommended not to use this account.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479735800028,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_luser\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_luser\",\"preContext\":\"luser=\\\"\",\"postContext\":\"\\\" event\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Backup events over time by status",
+          "info":"For more detailed information, see the&nbsp;<span style=\"font-style: italic;\">Events</span>&nbsp;dashboard.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479735841988,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"backup\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf643umf2hk4y0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_backup_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf643umf2hk4y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_backup_status\",\"preContext\":\"Backup task \",\"postContext\":\"\\\\.\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf643umf2hk4y0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_type\",\"preContext\":\"synotype=\\\"\",\"postContext\":\"\\\" luser\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Package events over time by status",
+          "info":"For more detailed information, see the&nbsp;<span style=\"font-style: italic;\">Events</span>&nbsp;dashboard.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479735898736,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_package_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_package_name\",\"preContext\":\"Package \\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_package_status\",\"preContext\":\"has been successfully \",\"postContext\":\"\\\\.\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog package\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Shared folder events over time by client",
+          "info":"For more detailed information, see the&nbsp;<span style=\"font-style: italic;\">Events</span>&nbsp;dashboard.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479735948779,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rwy2lfnz2a0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_client\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rwy2lfnz2a0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_client\",\"preContext\":\"event=\\\"\",\"postContext\":\" client\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rwy2lfnz2a0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_shared_folder\",\"preContext\":\"shared folder \\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Security",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Authentication events by username and source",
+          "info":"Who is logging in from where.",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736034565,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zw65lsmnsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl52xgzlsnzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_auth_source\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zw65lsmnsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"syno_user_username\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl52xgzlsnzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_auth_source\",\"preContext\":\"from \\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zw65lsmnsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_auth_status\",\"preContext\":\"User \\\\[\\\\S+\\\\\\\\\\\\] (from \\\\[\\\\S+\\\\\\\\\\\\] )?\",\"postContext\":\"( from| successfully|\\\\.)\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_user_username\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl52xgzlsnzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog from\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Authentication events by status",
+          "info":"The authentication status is typically \"logged in\". Anything else likely needs to be investigated.<br>",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736115690,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_auth_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_auth_status\",\"preContext\":\"User \\\\[\\\\S+\\\\\\\\\\\\] (from \\\\[\\\\S+\\\\\\\\\\\\] )?\",\"postContext\":\"( from| successfully|\\\\.)\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5qxk5dil5zxiyluovzq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Host was blocked events over time",
+          "info":"Access restrictions were put in place for security reasons and a host without access rights attempted to connect. This indicates a security issue that should be investigated.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"was blocked\\\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736148478,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"syno_type\",\"preContext\":\"synotype=\\\"\",\"postContext\":\"\\\" luser\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"User account changes over time by change",
+          "info":"User account changes include adding a user, changing groups, and resetting passwords. This common administration tasks should be auditing for potential abuse.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736185819,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl52xgzlsnzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"logged in, log in\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl5rwqylom5sxg000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_user_changes\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl5rwqylom5sxg000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_user_changes\",\"preContext\":\"user \\\\[\\\\S+\\\\\\\\\\\\] was \",\"postContext\":\"( \\\\[|\\\\.)\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl5rwqylom5sxg000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_user_username\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52xgzlsl52xgzlsnzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog from\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Relevant queries",
+          "info":"",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Access rights by folder",
+            "chartQuery":"{\"query\":\"\\\"Access right of the shared folder\\\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736229644,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_shared_folder\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_shared_folder\",\"preContext\":\"shared folder \\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"Changes to access rights may result in a &nbsp;potential security vulnerability.",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"FileStation property set events over time",
+            "chartQuery":"{\"query\":\"FileStation property set\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736269101,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"syno_type\",\"preContext\":\"synotype=\\\"\",\"postContext\":\"\\\" luser\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"Changes to a FileStation property set may result in a &nbsp;potential security vulnerability.<br>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Auditing",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Events by user and type",
+          "info":"Synology events are tagged with user and type information. This widget represents the event breakdown per both.",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736299100,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_luser\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"syno_type\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_luser\",\"preContext\":\"luser=\\\"\",\"postContext\":\"\\\" event\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_type\",\"preContext\":\"synotype=\\\"\",\"postContext\":\"\\\" luser\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Change events over time by user and event",
+          "info":"Changes that have been made by a user.",
+          "gridWidth":"1/2",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736345014,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"displayName\":\"syno_event\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"changed,was set,was inserted,move setting path\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_luser\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"syno_event\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_event\",\"preContext\":\"event=\\\"\",\"postContext\":\"\\\"\\\\]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sxmzlooq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_luser\",\"preContext\":\"luser=\\\"\",\"postContext\":\"\\\" event\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_type\",\"preContext\":\"synotype=\\\"\",\"postContext\":\"\\\" luser\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Delete events over time by user",
+          "info":"Things that have been deleted.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"deleted\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736589308,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_luser\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_luser\",\"preContext\":\"luser=\\\"\",\"postContext\":\"\\\" event\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_type\",\"preContext\":\"synotype=\\\"\",\"postContext\":\"\\\" luser\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Events",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Backup events by name",
+          "info":"How many backups have been initiated over the time range by the name of the backup. This is an informational widget.",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736678867,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf63tbnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_backup_name\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_backup_name\",\"preContext\":\"\\\\\\\\\\\\]\\\\[\",\"postContext\":\"\\\\\\\\\\\\] Backup task\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf63tbnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Backup events by status",
+          "info":"The backup status is typically \"started\" or \"finished successfully\". Anything else likely needs to be investigated.",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736761278,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf643umf2hk4y0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_backup_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf643umf2hk4y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_backup_name\",\"preContext\":\"\\\\\\\\\\\\]\\\\[\",\"postContext\":\"\\\\\\\\\\\\] Backup task\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf63tbnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_backup_status\",\"preContext\":\"Backup task \",\"postContext\":\"\\\\.\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf643umf2hk4y0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Backup events by destination",
+          "info":"Where backups are being sent. This is an informational widget.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736814565,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf6zdfon2gs3tboruw63q0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_backup_destination\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf6zdfon2gs3tboruw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_backup_destination\",\"preContext\":\"event=\\\"\\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf6zdfon2gs3tboruw63q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog backup task\\\"}\"},{\"displayName\":\"syno_backup_name\",\"preContext\":\"\\\\\\\\\\\\]\\\\[\",\"postContext\":\"\\\\\\\\\\\\] Backup task\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5rgcy3lovyf63tbnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Package events by name and status",
+          "info":"The package status is typically \"updated\" or \"repaired\". Anything else likely needs to be investigated.<br>",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736880023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_package_name\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"syno_package_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_package_name\",\"preContext\":\"Package \\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_package_status\",\"preContext\":\"has been successfully \",\"postContext\":\"\\\\.\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog package\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Shared folder events by name and status",
+          "info":"The shared folder status is typically \"was set\" or \"was created\". Anything else likely needs to be investigated.<br>",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479736943793,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4s7on2gc5dvom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_shared_folder\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"syno_shared_folder_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4s7on2gc5dvom000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_shared_folder\",\"preContext\":\"shared folder \\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_shared_folder_status\",\"preContext\":\"shared folder \\\\[.*?\\\\\\\\\\\\] \",\"postContext\":\"\\\\.\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwqylsmvsf6ztpnrsgk4s7on2gc5dvom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"System",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3omfwwk000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zxs43umvwv643umf2gk000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"System state events over time by state",
+          "info":"The system state status is typically \"started\" or \"stopped\". Anything else likely needs to be investigated.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479737003795,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zxs43umvwv643umf2gk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_system_state\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zxs43umvwv643umf2gk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_system_state\",\"preContext\":\"System (started|starts|successfully) \",\"postContext\":\"\\\\.\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zxs43umvwv643umf2gk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Update available events over time by update",
+          "info":"If you see the same update more than once then you either have multiple devices or you did not immediately apply the update.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1389502800000,\"endTimeMillis\":1407888452342,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sg653onrxwcza0\",\"operator\":\"EXISTS\",\"value\":\"\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_download\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sg653onrxwcza0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_download\",\"preContext\":\"Download task for \\\\[((/\\\\S+)+/)?\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5sg653onrxwcza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Package events over time by status",
+          "info":"The package event status is typically \"updated\" or \"repaired\". Anything else likely needs to be investigated.<br>",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479737044082,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_package_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_package_name\",\"preContext\":\"Package \\\\[\",\"postContext\":\"\\\\\\\\\\\\]\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_package_status\",\"preContext\":\"has been successfully \",\"postContext\":\"\\\\.\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5ygcy3lmftwkx3torqxi5lt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog package\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Completed updates events over time by user",
+          "info":"Use this query in conjunction with the update available events widget to determine when available updates are applied.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"Update was complete\\\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479737135716,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_luser\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_luser\",\"preContext\":\"luser=\\\"\",\"postContext\":\"\\\" event\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5whk43foi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_type\",\"preContext\":\"synotype=\\\"\",\"postContext\":\"\\\" luser\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl52hs4df\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Service events over time by name and status",
+          "info":"The service status is typically \"stopped\" or \"started\". Anything else likely needs to be investigated.<br>",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1479737164080,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3torqxi5lt\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"syno_service_name\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"syno_service_status\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3torqxi5lt\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"syno_service_name\",\"preContext\":\"event=\\\"\\\\[\",\"postContext\":\"\\\\\\\\\\\\] service was \\\\w+\\\\.\",\"regexValue\":\".*?\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"},{\"displayName\":\"syno_service_status\",\"preContext\":\"service was \",\"postContext\":\"\\\\.\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2lttpfxg63dpm54s4zdtnvzxs3tpl5zwk4twnfrwkx3torqxi5lt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"synolog\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware, Inc.",
+  "url":"http://www.vmware.com",
+  "contentVersion":"2.0",
+  "info":"<span>The Synology DSM content pack for Log Insight provides deep knowledge about events on your Synology devices including configuration changes as well as health and security information.<br></span><br>Minimum requirements:<br><span>Log Insight 3.0+ and Synology DSM 6.0+.&nbsp;</span><br>",
+  "instructions":"<span>Go to&nbsp;<b>Log Center</b>&nbsp;&gt;&nbsp;<b>Log Sending</b>.</span><span>Tick the box&nbsp;<b>Send logs to a syslog server</b>.</span><span>Enter the syslog server's hostname or IP address in&nbsp;<b>Server</b>.</span><span>Specify port 514 for receiving syslog messages in&nbsp;<b>Port</b>.</span><span>Select&nbsp;<b>TCP</b>&nbsp;from&nbsp;<b>Transfer protocol</b>.</span><span>Select&nbsp;<b>IETF (RFC 5424)</b>&nbsp;from&nbsp;<b>Log format</b>&nbsp;to send logs using the selected format.</span><span>Click&nbsp;<b>Send test log</b>&nbsp;to confirm the syslog server can receive the log successfully. If the syslog server does not receive the test log, please check your settings are correct.</span><span>Click&nbsp;<b>Apply</b>&nbsp;to save settings.</span>",
+  "upgradeInstructions":"No special upgrade instructions necessary.",
+  "icon":"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"
+}
