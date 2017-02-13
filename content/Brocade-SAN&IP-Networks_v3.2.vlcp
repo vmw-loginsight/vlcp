@@ -1,9 +1,9 @@
 {
   "name":"Brocade - SAN & IP Networks",
   "namespace":"com.brocade.dcm",
-  "framework":"#9c4",
-  "version":"3.1",
   "contentPackId":"com.brocade.dcm",
+  "framework":"#9c4",
+  "version":"2.4",
   "extractedFields":[ {
     "displayName":"dcm_audit_info",
     "preContext":"Info: ",
@@ -91,6 +91,38 @@
     "regexValue":"\\w+",
     "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3gnrxxox3dovzhezloor3gc3dvmu000000",
     "constraints":"{\"searchTerms\":\"raslogd\"}",
+    "info":null
+  }, {
+    "displayName":"dcm_icx_module",
+    "preContext":"\\] BOM",
+    "postContext":"(:| )",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"device\",\"displayName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"dcm_icx_product",
+    "preContext":"\\S+ \\S+ ",
+    "postContext":" \\S+",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f64dsn5shky3u",
+    "constraints":"{\"filters\":[{\"internalName\":\"device\",\"displayName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"dcm_icx_productname",
+    "preContext":"\\S+ \\S+ ",
+    "postContext":"\\_\\w+ \\S+",
+    "regexValue":"[a-zA-Z0-9]+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f64dsn5shky3unzqw2zi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"device\",\"displayName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"dcm_icx_producttype",
+    "preContext":"\\S+ \\S+ [a-zA-Z0-9]+\\_",
+    "postContext":" \\S+",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f64dsn5shky3uor4xazi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"device\",\"displayName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
     "info":null
   }, {
     "displayName":"dcm_log_level",
@@ -279,22 +311,32 @@
   } ],
   "queries":[ ],
   "alerts":[ {
+    "name":"Brocade: NOS MAPS Violation Alert",
+    "info":"<span>NOS MAPS violation alert. This alert will be generated if any MAPS rules are violated. This alert depends on MAPS-1001, MAPS-1002, MAPS-1003, MAPS-1004 &amp; MAPS-1021 syslog events. This alert supports only for Ethernet Switches.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1448271100546,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001,MAPS-1002,MAPS-1003,MAPS-1004,MAPS-1021\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: ICX Alerts",
+    "info":"<span>ICX Alerts. This alert will be generated when most priority events such as Emergency, Alert, Critical and Error events identified in ICX devices.</span><br><br>FI most priority events. Emergency, Alert, Critical, Err events.<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1480905012879,\"endTimeMillis\":1480908612878,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"priority\",\"operator\":\"EXISTS\"},{\"internalName\":\"priority\",\"operator\":\"CONTAINS\",\"value\":\"emerg,alert,crit,err\"},{\"internalName\":\"device\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"priority\",\"internalName\":\"priority\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
     "name":"Brocade: Tunnel Protocol Down Alert",
     "info":"<span>Tunnel Protocol Down Alert. This alert will be generated when any Tunnel Protocol went Down. This alert supports only for Ethernet Switches.<br></span>",
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"raslogd log@1588 tunnel\",\"startTimeMillis\":1448270654375,\"endTimeMillis\":1448271554374,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"nsm-1002\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
     "messageQuery":"",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":3600000,
-    "searchInterval":600000
-  }, {
-    "name":"Brocade: AMPP Domain Events",
-    "info":"<span>AMPP Domain events will be generated upon receiving below domain related AMPP events from NOS switches. The events are NSM-2044,NSM-2045,NSM-2046,NSM-2047.</span><span><br></span><br><span>NSM-2044 -&gt; Domain creation is successful</span><br><span>NSM-2045 -&gt; Domain deletion is successful</span><br><span>NSM-2046 -&gt; Profile addition to domain is successful</span><br><span>NSM-2047 -&gt; Profile deletion from domain is successful</span><br>",
-    "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1463122094077,\"endTimeMillis\":1463122394076,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2044,NSM-2045,NSM-2046,NSM-2047\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
-    "messageQuery":"",
-    "hitCount":1.0,
+    "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":3600000,
     "searchInterval":600000
@@ -304,7 +346,7 @@
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1448269361139,\"endTimeMillis\":1448269661138,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001, MAPS-1002, MAPS-1003\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
     "messageQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001, MAPS-1002, MAPS-1003\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
+    "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":3600000,
     "searchInterval":600000
@@ -314,27 +356,7 @@
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"raslogd FW-1424\",\"startTimeMillis\":1441838802953,\"endTimeMillis\":1441839102952,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
     "messageQuery":"{\"query\":\"FW-1424\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":3600000,
-    "searchInterval":600000
-  }, {
-    "name":"Brocade: NOS MAPS Violation Alert",
-    "info":"<span>NOS MAPS violation alert. This alert will be generated if any MAPS rules are violated. This alert depends on MAPS-1001, MAPS-1002, MAPS-1003, MAPS-1004 &amp; MAPS-1021 syslog events. This alert supports only for Ethernet Switches.</span><br>",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"raslogd @1588\",\"startTimeMillis\":1438540200000,\"endTimeMillis\":1448271100546,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"MAPS-1001,MAPS-1002,MAPS-1003,MAPS-1004,MAPS-1021\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
-    "messageQuery":"",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":3600000,
-    "searchInterval":600000
-  }, {
-    "name":"Brocade: AMPP Failure Events",
-    "info":"<span>AMPP failure events will be generated upon receiving any failure related to AMPP events from NOS switches. The failure events are NSM-2001,NSM-2003,NSM-2005,NSM-2011,NSM-2036,NSM-2037,NSM-2049,NSM-2050,NSM-2051.</span><br><span>&nbsp;</span><br><span>NSM-2001 -&gt; Port-profile activation failed</span><br><span>NSM-2003 -&gt; Port-profile deactivation failed</span><br><span>NSM-2005 -&gt; Port-profile application failed</span><br><span>NSM-2011 -&gt; Port-profile removal failed</span><br><span>NSM-2036 -&gt; MAC Address association failed</span><br><span>NSM-2037 -&gt; MAC address de-association failed</span><br><span>NSM-2049 -&gt; DAD failed for IPv6 address on interface</span><br><span>NSM-2050 -&gt; Netdevice creation failed for interface</span><br><span>NSM-2051 -&gt; Port-profile application failed</span><br>",
-    "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1470394120782,\"endTimeMillis\":1470397720781,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2001,NSM-2003,NSM-2005,NSM-2011,NSM-2036,NSM-2037,NSM-2049,NSM-2050,NSM-2051\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
-    "messageQuery":"",
-    "hitCount":1.0,
+    "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":3600000,
     "searchInterval":600000
@@ -344,7 +366,7 @@
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1441838851730,\"endTimeMillis\":1441839151729,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438, MAPS-1021\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
     "messageQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"MS-1009, FW-1402, FW-1426, FW-1427, FW-1428, FW-1429, FW-1430, FW-1431, FW-1432, FW-1433, FW-1434, FW-1435, FW-1436, FW-1437, FW-1438, MAPS-1021\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
+    "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":3600000,
     "searchInterval":600000
@@ -354,7 +376,27 @@
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":1448268965498,\"endTimeMillis\":1448269865497,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"operator\":\"CONTAINS\",\"value\":\"AN-1003, AN-1004, AN-1007, AN-1008, AN-1010\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_syslog_message-id\",\"preContext\":\"[A-Z]*[\\\\,]?[A-Z0-9\\\\:/\\\\-\\\\(\\\\)\\\\ ]+\\\\, \\\\[\",\"postContext\":\"\\\\]\\\\,\",\"regexValue\":\"[A-Z]+\\\\-\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3tpfzwy33hl5wwk43tmftwklljmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
     "messageQuery":"{\"query\":\"raslogd\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"AN-1003, AN-1004, AN-1007, AN-1008, AN-1010\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: AMPP Failure Events",
+    "info":"<span>AMPP failure events will be generated upon receiving any failure related to AMPP events from NOS switches. The failure events are NSM-2001,NSM-2003,NSM-2005,NSM-2011,NSM-2036,NSM-2037,NSM-2049,NSM-2050,NSM-2051.</span><br><span>&nbsp;</span><br><span>NSM-2001 -&gt; Port-profile activation failed</span><br><span>NSM-2003 -&gt; Port-profile deactivation failed</span><br><span>NSM-2005 -&gt; Port-profile application failed</span><br><span>NSM-2011 -&gt; Port-profile removal failed</span><br><span>NSM-2036 -&gt; MAC Address association failed</span><br><span>NSM-2037 -&gt; MAC address de-association failed</span><br><span>NSM-2049 -&gt; DAD failed for IPv6 address on interface</span><br><span>NSM-2050 -&gt; Netdevice creation failed for interface</span><br><span>NSM-2051 -&gt; Port-profile application failed</span><br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1470394120782,\"endTimeMillis\":1470397720781,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2001,NSM-2003,NSM-2005,NSM-2011,NSM-2036,NSM-2037,NSM-2049,NSM-2050,NSM-2051\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Brocade: AMPP Domain Events",
+    "info":"<span>AMPP Domain events will be generated upon receiving below domain related AMPP events from NOS switches. The events are NSM-2044,NSM-2045,NSM-2046,NSM-2047.</span><span><br></span><br><span>NSM-2044 -&gt; Domain creation is successful</span><br><span>NSM-2045 -&gt; Domain deletion is successful</span><br><span>NSM-2046 -&gt; Profile addition to domain is successful</span><br><span>NSM-2047 -&gt; Profile deletion from domain is successful</span><br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"raslogd*\",\"startTimeMillis\":1463122094077,\"endTimeMillis\":1463122394076,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"CONTAINS\",\"value\":\"NSM-2044,NSM-2045,NSM-2046,NSM-2047\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_nos_syslog_message-id\",\"preContext\":\"msgid@1588 value=\\\"\",\"postContext\":\"\\\"]\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3on5zv643zonwg6z27nvsxg43bm5ss22le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"raslogd\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":3600000,
     "searchInterval":600000
@@ -364,7 +406,7 @@
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"raslogd FFDC \\\"Detected termination\\\"\",\"startTimeMillis\":1441838714397,\"endTimeMillis\":1441839014396,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
     "messageQuery":"{\"query\":\"raslogd FFDC \\\"Detected termination\\\"\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
+    "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":3600000,
     "searchInterval":600000
@@ -1218,13 +1260,96 @@
           } ]
         } ]
       } ]
+    }, {
+      "name":"ICX Events",
+      "constraints":[ {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"appname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Events by Product Model",
+          "info":"<span>Displays all events received from FastIron switches over time grouped by Product Model</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1480655546157,\"endTimeMillis\":1480658304631,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\"},{\"internalName\":\"appname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Classic Stack Events",
+          "info":"Displays number of events occurred in Classic Stack FastIron over time period",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1480314678031,\"endTimeMillis\":1480675852837,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"operator\":\"CONTAINS\",\"value\":\"stack\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"dcm_icx_module\",\"preContext\":\"\\\\] BOM\",\"postContext\":\"(:| )\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"device\\\",\\\"displayName\\\":\\\"device\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"icx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Campus Fabric Events",
+          "info":"Displays number of events occurred in Campus Fabric FastIron over time period",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1480314678031,\"endTimeMillis\":1480675852837,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"operator\":\"CONTAINS\",\"value\":\"spx\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"dcm_icx_module\",\"preContext\":\"\\\\] BOM\",\"postContext\":\"(:| )\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"device\\\",\\\"displayName\\\":\\\"device\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"icx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events grouped by Severity and Facility",
+          "info":"Displays all events received from FastIron switches grouped by Severity(Priority) and Facility<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1480655546157,\"endTimeMillis\":1480658429454,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\"},{\"internalName\":\"facility\",\"operator\":\"EXISTS\"},{\"internalName\":\"priority\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"facility\",\"internalName\":\"facility\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"priority\",\"internalName\":\"priority\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events by Source",
+          "info":"Displays all events received from FastIron switches grouped by Source<br>",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1480655546157,\"endTimeMillis\":1480658486885,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\"},{\"internalName\":\"__li_source_path\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Events by Module",
+          "info":"Displays all events received from FastIron switches grouped by Module<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1480655998499,\"endTimeMillis\":1480658555595,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_icx_module\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_icx_module\",\"preContext\":\"\\\\] BOM\",\"postContext\":\"(:| )\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"device\\\",\\\"displayName\\\":\\\"device\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"icx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events grouped by Product and Module",
+          "info":"Displays all events received from FastIron switches grouped by Product and Module<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":true,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1480655998499,\"endTimeMillis\":1480658666325,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"device\",\"operator\":\"CONTAINS\",\"value\":\"icx\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f64dsn5shky3u\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dcm_icx_product\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f64dsn5shky3u\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"dcm_icx_module\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"displayNamespace\":\"Brocade - SAN & IP Networks\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"dcm_icx_module\",\"preContext\":\"\\\\] BOM\",\"postContext\":\"(:| )\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f63lpmr2wyzi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"device\\\",\\\"displayName\\\":\\\"device\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"icx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"dcm_icx_product\",\"preContext\":\"\\\\S+ \\\\S+ \",\"postContext\":\" \\\\S+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltcojxwgylemuxgiy3nmrrw2x3jmn4f64dsn5shky3u\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"device\\\",\\\"displayName\\\":\\\"device\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"icx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
     } ],
     "header":""
   } ],
   "author":"Brocade",
   "url":"www.brocade.com",
-  "contentVersion":"3.1",
-  "info":"<span>Brocade SAN IP content pack helps the user to better search, analyse and manage the log data generated by Brocade SAN, NOS (IP) devices. Content pack can be used in two ways:</span><br><span>- Configure BNA to forward Syslogs from all the switches of interest to Log Insight</span><br><span>- Configure switches to forward Syslog to Log Insight</span><br>",
-  "instructions":"<span><span>Registering the Log Insight IPAddress in the device for receiving syslog messeges, the following commands have to be executed in CLI,</span></span><br><span>1. Telnet the device&lt;IP Address&gt;</span><br><span>2. login through admin credentials.</span><br><span>3. Enter in to config mode</span><br><span>4. For SYSLOG , to register your vRealize Log Insight IP give the command as,</span><br><span>&nbsp;</span><br><span><b>NOS - # logging syslog-server &lt;vRealize Log Insight IP Address&gt;</b></span><br><span><b>&nbsp;</b></span><br><span><b>SAN - # syslogadmin --set -ip &lt;vRealize Log Insight IP Address&gt;</b></span><br>",
+  "contentVersion":"3.2",
+  "info":"Brocade SAN IP content pack helps the user to better search, analyse and manage the log data generated by Brocade SAN, NOS (IP) devices. Content pack can be used in two ways:<br>- Configure BNA to forward Syslogs from all the switches of interest to Log Insight<br><span>- Configure switches to forward Syslog to Log Insight</span><br><span>- Minimum supported version for this content pack is vRLI 3.3+</span><br><span><br></span><span><span style=\"font-weight: bold;\">Please note,</span> if you are using <span style=\"font-weight: bold;\">vRLI with Less than 4.0</span>,</span><span>kindly configure to raise the Alert specific to your requirement based on number of Syslog Event Alerts expected</span><br>",
+  "instructions":"<span>Registering the Log Insight IPAddress in the device for receiving syslog messeges, the following commands have to be executed in CLI,</span><br>1. Telnet the device&lt;IP Address&gt;<br>2. login through admin credentials.<br>3. Enter in to config mode<br>4. For SYSLOG , to register your vRealize Log Insight IP give the command as,<br>&nbsp;<br><b>NOS - # logging syslog-server &lt;vRealize Log Insight IP Address&gt;</b><br><b>&nbsp;</b><br><b>SAN - # syslogadmin --set -ip &lt;vRealize Log Insight IP Address&gt;</b><br><b>&nbsp;</b><br><b>ICX &nbsp;- #&nbsp;<span style=\"font-weight: bold;\">logging\nhost</span>&nbsp;&lt;vRealize Log Insight IP Address&gt;</b><br>",
   "icon":"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"
 }
