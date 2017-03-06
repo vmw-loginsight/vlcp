@@ -1,5 +1,5 @@
 {
-  "name":"Dell EMC Networking",
+  "name":"Dell EMC OS10 Networking",
   "namespace":"com.dell.networkingos10",
   "contentPackId":"com.dell.networkingos10",
   "framework":"#9c4",
