@@ -1,0 +1,466 @@
+{
+  "name":"Kaminario-K2",
+  "namespace":"com.kaminario.k2",
+  "contentPackId":"com.kaminario.k2",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"kaminario_k2_event_name",
+    "preContext":"k2\\-[a-fA-F0-9]{4}-event.*?\\[\\w+\\] \\[",
+    "postContext":"\\] \\[",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the K2 event name."
+  }, {
+    "displayName":"kaminario_k2_event_type",
+    "preContext":"^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3} k2\\-[a-fA-F0-9]{4}\\-",
+    "postContext":": \\d{1,4}\\-\\d{1,2}\\-\\d{1,2}",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the Syslog message type (event or audit). &nbsp;&nbsp;"
+  }, {
+    "displayName":"kaminario_k2_host_group_name",
+    "preContext":"k2\\-[a-fA-F0-9]{4}\\-event.*Host group ",
+    "postContext":"(\\s|$)",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3in5zxix3hojxxk4c7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the K2 host group name."
+  }, {
+    "displayName":"kaminario_k2_hostname_msg",
+    "preContext":"k2\\-[a-fA-F0-9]{4}\\-event.*Host(\\'s)*\\s+(?!IQN)",
+    "postContext":"\\s+(with|gained|lost|paths|is defined|has|and|to|from)",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3in5zxi3tbnvsv63ltm4000000",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the name of the host connected to the K2 system."
+  }, {
+    "displayName":"kaminario_k2_ip_address",
+    "preContext":"^",
+    "postContext":" k2-[a-fA-F0-9]{4}\\S+",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3jobpwczdeojsxg4y0",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the K2 system IP address."
+  }, {
+    "displayName":"kaminario_k2_labels",
+    "preContext":"k2\\-[a-fA-F0-9]{4}\\-event.*\\[\\w+\\] \\[\\w+\\] \\[",
+    "postContext":"\\] ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the K2 label."
+  }, {
+    "displayName":"kaminario_k2_login_status",
+    "preContext":"^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3} k2\\-[a-fA-F0-9]{4}-audit.*login_status=",
+    "postContext":"$",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the K2 login status."
+  }, {
+    "displayName":"kaminario_k2_message",
+    "preContext":"k2\\-[a-fA-F0-9]{4}\\-.*\\[.*\\] \\[.*\\] \\[.*\\]",
+    "postContext":"$",
+    "regexValue":".*",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the event message."
+  }, {
+    "displayName":"kaminario_k2_severity",
+    "preContext":"k2\\-[a-fA-F0-9]{4}\\-.*?\\[",
+    "postContext":"\\] \\[",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the event severity."
+  }, {
+    "displayName":"kaminario_k2_snapshot_name",
+    "preContext":"k2\\-[a-fA-F0-9]{4}\\-event.*Snapshots ",
+    "postContext":" were",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tnzqxa43in52f63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the snapshot name."
+  }, {
+    "displayName":"kaminario_k2_system_name",
+    "preContext":"^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3} ",
+    "postContext":"-.*: [0-9]{4}\\-[0-9]{2}\\-[0-9]{2}",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the K2 system name."
+  }, {
+    "displayName":"kaminario_k2_user_name",
+    "preContext":"^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3} k2\\-[a-fA-F0-9]{4}\\-.*(login|logout)\\s+username=(?!\"\")",
+    "postContext":"\\s+",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3vonsxex3omfwwk000",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the user name being used to log into the system."
+  }, {
+    "displayName":"kaminario_k2_volume_group_name",
+    "preContext":"k2\\-[a-fA-F0-9]{4}\\-event.*[V|v]olume group:* \"*",
+    "postContext":"\"*\\s(was|were)",
+    "regexValue":"\\S+[^\"]",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3wn5whk3lfl5txe33vobpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the volume group name."
+  }, {
+    "displayName":"kaminario_k2_volume_group_name_from_snap",
+    "preContext":"^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\s+k2\\-[a-fA-F0-9]{4}\\-event.*(retention policy.*:\\s+|Snapshots\\s+)",
+    "postContext":"\\:\\S+($|)",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3wn5whk3lfl5txe33vobpw4ylnmvpwm4tpnvpxg3tboa000000",
+    "constraints":"{\"searchTerms\":\"k2-*\"}",
+    "info":"This extracted field locates and displays the volume group name."
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"Kaminario_K2: Failed Logins",
+    "info":"There have been too many failed attempts to log into the system within a relatively short amount of time.&nbsp;",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1489410218713,\"endTimeMillis\":1490015036256,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000\",\"operator\":\"CONTAINS\",\"value\":\"FAILED\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_login_status\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}-audit.*login_status=\",\"postContext\":\"$\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":5.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"Kaminario_K2: Capacity Alert",
+    "info":"A capacity issue was encountered in your K2 system. Please consult with the Kaminario Support team.&nbsp;",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497440609935,\"endTimeMillis\":1497440909934,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"SYSTEM_CAPACITY_CRITICAL,SYSTEM_CAPACITY_FULL,SYSTEM_CAPACITY_WARN\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Kaminario K2 - General Overview",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Monitored K2 Systems",
+          "info":"<span>This widget displays the number of unique&nbsp;&nbsp;K2 systems sending events to Log Insight. Unless a system was added to or removed from Log Insight, the unique number of K2 systems should be very consistent.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497190506226,\"endTimeMillis\":1497363350409,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"displayName\":\"kaminario_k2_system_name\",\"displayNamespace\":\"Kaminario-K2\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"kaminario_k2_system_name\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} \",\"postContext\":\"-.*: [0-9]{4}\\\\-[0-9]{2}\\\\-[0-9]{2}\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Events by K2 System",
+          "info":"This widget displays the number of events per monitored K2 system. If a monitored system does not appear in the chart, this may be due to the fact that the system has not produced any events during the monitoring time period. You can create a test event on this specific K2 system and verify that the chart was updated.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"event\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_system_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_system_name\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} \",\"postContext\":\"-.*: [0-9]{4}\\\\-[0-9]{2}\\\\-[0-9]{2}\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of Events over Time by K2 System",
+          "info":"This widget displays the number of events over time per K2 system. If there are many events at a specific time, you can select the collection of events, choose Interactive Analytics and analyze those events.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"event\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_system_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_system_name\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} \",\"postContext\":\"-.*: [0-9]{4}\\\\-[0-9]{2}\\\\-[0-9]{2}\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Events over Time by Event Name",
+          "info":"This widget displays the number of specific events over time, allowing you to detect cases where there is a specific event that occurs multiple times in a relatively short period of time. This may indicate that there is a problem.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"event\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Latest Critical/Error/Warning Events",
+          "info":"This widget displays the latest events that are not at the INFO level. This widget should usually be empty, and allows you to be aware of any potentially serious issue in one of your monitored K2 systems.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497099156009,\"endTimeMillis\":1497272010709,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"audit\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"operator\":\"CONTAINS\",\"value\":\"error,critical,warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_severity\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-.*?\\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+            "displayName":"kaminario_k2_system_name",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000",
+            "displayName":"kaminario_k2_severity",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt",
+            "displayName":"kaminario_k2_labels",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000",
+            "displayName":"kaminario_k2_message",
+            "displayNamespace":"Kaminario-K2"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Kaminario K2 -Events",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of Events over Time",
+          "info":"This widget allows you to detect unexpected behavior at specific times.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497182099950,\"endTimeMillis\":1497357966289,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"event\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Events over Time by Severity",
+          "info":"This widget displays the number of events over time by severity, allowing you to detect events at different severity levels and analyze them. &nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497183535389,\"endTimeMillis\":1497362790820,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"event\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"operator\":\"CONTAINS\",\"value\":\"info\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_severity\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_severity\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-.*?\\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of Events by Labels",
+          "info":"This widget displays the number of events per label.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"event\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_labels\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Hardware Events over Time by Severity and Event Name",
+          "info":"This widget displays hardware-related events over time. <br>In general, it should be empty. If an event occurs, it should be analyzed.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"CONTAINS\",\"value\":\"HARDWARE\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_severity\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_severity\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-.*?\\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Host/Host Group Events over Time",
+          "info":"This widget displays host/host group events over time. If you notice that a specific event reoccurs frequently in short time period, it should be analyzed.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"CONTAINS\",\"value\":\"HOST\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Host Connectivity Events over Time",
+          "info":"This widget displays host connectivity events over time and allows you to detect SAN disconnections.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"CONTAINS\",\"value\":\"IO_CONNECTIVITY,HOST\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3in5zxi3tbnvsv63ltm4000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_hostname_msg\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3in5zxi3tbnvsv63ltm4000000\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_hostname_msg\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*Host(\\\\'s)*\\\\s+(?!IQN)\",\"postContext\":\"\\\\s+(with|gained|lost|paths|is defined|has|and|to|from)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3in5zxi3tbnvsv63ltm4000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Kaminario K2 - Capacity",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Volume Group Events Per K2",
+          "info":"<span>This widget allows you to monitor all volume group activities per K2 system.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000\",\"operator\":\"CONTAINS\",\"value\":\"Volume group\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_system_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_message\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-.*\\\\[.*\\\\] \\\\[.*\\\\] \\\\[.*\\\\]\",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_system_name\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} \",\"postContext\":\"-.*: [0-9]{4}\\\\-[0-9]{2}\\\\-[0-9]{2}\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Volume Group Events over Time",
+          "info":"<span>This widget allows you to monitor all volume group activities over time.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000\",\"operator\":\"CONTAINS\",\"value\":\"Volume group\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_message\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-.*\\\\[.*\\\\] \\\\[.*\\\\] \\\\[.*\\\\]\",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"System Capacity Events over Time",
+          "info":"This widget allows you to monitor cases where a K2 system has capacity issues.<br>In general, this widget should be empty and if an event occurs, you should consult with the Kaminario Support team.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1493586000000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"*SYSTEM_CAPACITY*\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"CONTAINS\",\"value\":\"CAPACITY\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Volume Group Capacity Events over Time",
+          "info":"<span>This widget allows you to monitor scenarios where a specific volume group is about to be over provisioned.&nbsp;</span><br><span>In general, this widget should be empty. If an event occurs, you should consult with the Kaminario Support team.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1482330824533,\"endTimeMillis\":1497440106181,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"*VG_LOGICAL_CAPACITY*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Kaminario K2 - DataProtect",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Snapshot Events over Time",
+          "info":"<span>This widget allows you to monitor K2 snapshot-related events over time.</span>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1482330824533,\"endTimeMillis\":1497441006295,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"*SNAP*\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"CONTAINS\",\"value\":\"*SNAP*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Snapshot Events per Volume Group",
+          "info":"This widget allows you to monitor snapshot events on a per-specific volume group basis over time.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1482330824533,\"endTimeMillis\":1497440256529,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"*SNAP*\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"CONTAINS\",\"value\":\"*SNAP*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_volume_group_name_from_snap\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3wn5whk3lfl5txe33vobpw4ylnmvpwm4tpnvpxg3tboa000000\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_volume_group_name_from_snap\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\s+k2\\\\-[a-fA-F0-9]{4}\\\\-event.*(retention policy.*:\\\\s+|Snapshots\\\\s+)\",\"postContext\":\"\\\\:\\\\S+($|)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3wn5whk3lfl5txe33vobpw4ylnmvpwm4tpnvpxg3tboa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Replication Events over Time ",
+          "info":"This widget shows K2 native replication-related events over time.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1482330824533,\"endTimeMillis\":1497440706141,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"*REPLICATION*\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"CONTAINS\",\"value\":\"REPLICATION\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Latest Snapshot Events",
+          "info":"This widget displays the latest snapshot-related events from all monitored K2 systems.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1482330824533,\"endTimeMillis\":1497440706141,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"*SNAP*\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"operator\":\"CONTAINS\",\"value\":\"*SNAP*\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_name\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}-event.*?\\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \\\\[\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_labels\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-event.*\\\\[\\\\w+\\\\] \\\\[\\\\w+\\\\] \\\\[\",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000",
+            "displayName":"kaminario_k2_severity",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000",
+            "displayName":"kaminario_k2_message",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mmfrgk3dt",
+            "displayName":"kaminario_k2_labels",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+            "displayName":"kaminario_k2_system_name",
+            "displayNamespace":"Kaminario-K2"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Kaminario K2 - Auditing",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Login Events over Time by K2 Systems and Status",
+          "info":"<span>This widget allows you to monitor login attempts per K2 system and login statuses, enabling the user to detect repeated efforts to log in.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1496264400000,\"endTimeMillis\":1497441778186,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000\",\"operator\":\"CONTAINS\",\"value\":\"login_status=\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_system_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"kaminario_k2_login_status\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_login_status\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}-audit.*login_status=\",\"postContext\":\"$\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_message\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-.*\\\\[.*\\\\] \\\\[.*\\\\] \\\\[.*\\\\]\",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_system_name\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} \",\"postContext\":\"-.*: [0-9]{4}\\\\-[0-9]{2}\\\\-[0-9]{2}\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Login Events over Time by User Name",
+          "info":"This widget allows you to monitor login attempts per user and detect repeated efforts to log in.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1488319200000,\"endTimeMillis\":1489308731349,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000\",\"operator\":\"CONTAINS\",\"value\":\"login_status=\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"kaminario_k2_user_name\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3vonsxex3omfwwk000\",\"displayNamespace\":\"Kaminario-K2\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"kaminario_k2_event_type\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-\",\"postContext\":\": \\\\d{1,4}\\\\-\\\\d{1,2}\\\\-\\\\d{1,2}\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_message\",\"preContext\":\"k2\\\\-[a-fA-F0-9]{4}\\\\-.*\\\\[.*\\\\] \\\\[.*\\\\] \\\\[.*\\\\]\",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"},{\"displayName\":\"kaminario_k2_user_name\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}\\\\-.*(login|logout)\\\\s+username=(?!\\\"\\\")\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3vonsxex3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Latest Login Events ",
+          "info":"This widget allows you to monitor the latest login attempts to the K2 system.<br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1483221600000,\"endTimeMillis\":1489308731349,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"kaminario_k2_login_status\",\"preContext\":\"^\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3} k2\\\\-[a-fA-F0-9]{4}-audit.*login_status=\",\"postContext\":\"$\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"k2-*\\\"}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tpfzxizlnl5xgc3lf",
+            "displayName":"kaminario_k2_system_name",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3tmv3gk4tjor4q0000",
+            "displayName":"kaminario_k2_severity",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3nmvzxgylhmu000000",
+            "displayName":"kaminario_k2_message",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3vonsxex3omfwwk000",
+            "displayName":"kaminario_k2_user_name",
+            "displayNamespace":"Kaminario-K2"
+          }, {
+            "internalName":"ibadcns7mnxw2ltlmfwws3tbojuw6ltlgjvwc3ljnzqxe2lpl5vtex3mn5tws3s7on2gc5dvom000000",
+            "displayName":"kaminario_k2_login_status",
+            "displayNamespace":"Kaminario-K2"
+          } ]
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"Kaminario",
+  "url":"www.kaminario.com",
+  "contentVersion":"1.0",
+  "info":"<b><u><span style=\"font-weight: bold;\">Kaminario K2 Content Pack for VMware vRealize Log Insight<br></span></u></b><span><br>\n<br>\nThis content pack allows customers to monitor and analyze &nbsp;Kaminario K2\nall-flash arrays by converting the arrays’ syslog messages into organized,\npre-defined dashboard widgets.<br>\n&nbsp;<br>\nThe content pack contains five different dashboards with a total of 22 widgets\nthat cover different types of array activities.<br>\n&nbsp;<br>\n&nbsp;<br>\n<b><u>Compatibility:</u></b><br>\n&nbsp;<br>\nThe Kaminario K2 Content Pack is compatible with:<br>\nKaminario K2 versions 6.0.2 or later<br>\nvRealize Log Insight 4.0 or later&nbsp;<br>\n&nbsp;<br>\n&nbsp;<br>\nFollow the setup instructions to configure the Kaminario K2 with vRealize Log\nInsight.</span><br>",
+  "instructions":"<span><span style=\"font-weight: bold;\">Kaminario-K2 Setup Instructions</span><span></span></span><br>\n\n<span><span>&nbsp;</span></span><br>\n\n<span>1.&nbsp; &nbsp;Log into the Kaminario K2 GUI.<br>\n2. &nbsp; Go to System External Configuration.<br>\n3. &nbsp; Scroll down to the Syslog Servers panel, and then click Add.<br>\n4. &nbsp; Type the vRealize Log Insight server IP and port number (514\ndefault).<br>\n5. &nbsp; Optionally enable TCP protocol – UDP by default.&nbsp;<br>\n6. &nbsp; Optionally enable Report Audit in order to send audit syslog\nmessages. This is disabled by default.&nbsp;<br>\n7. &nbsp; Click OK.<br>\nThe added server should appear with green light displayed on the left-hand\nside.<br>\n&nbsp;<br>\nRepeat the procedure above for each K2 system that you want to monitor.<br>\n<br></span>",
+  "icon":"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"
+}
