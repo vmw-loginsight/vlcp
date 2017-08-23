@@ -1,0 +1,696 @@
+{
+  "name":"VMware Identity Manager",
+  "namespace":"com.vmware.vidm",
+  "contentPackId":"com.vmware.vidm",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"vmw_esxi_connectivity_component",
+    "preContext":"esx\\.problem\\.",
+    "postContext":"\\.connectivity\\.",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3fon4gsx3dn5xg4zldoruxm2lupfpwg33nobxw4zlooq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"hostd,vobd,vcenter-server\",\"fieldType\":\"NUMBER\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_esxi_problem",
+    "preContext":"esx\\.problem\\.",
+    "postContext":"",
+    "regexValue":"\\w+(\\.\\w+)*",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3fon4gsx3qojxwe3dfnu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server,vobd,hostd,vmkwarning,vmkernel\",\"fieldType\":\"NUMBER\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_esxi_vobd_filesystem_id",
+    "preContext":"Device or filesystem with identifier \\[",
+    "postContext":"\\] ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3fon4gsx3wn5rgix3gnfwgk43zon2gk3k7nfsa0000",
+    "constraints":"{\"searchTerms\":\"vobd\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_ha_slave",
+    "preContext":"slave (@ )?",
+    "postContext":"",
+    "regexValue":"hostd-\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3imfpxg3dbozsq0000",
+    "constraints":"{\"searchTerms\":\"cluster\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"fdm\",\"fieldType\":\"NUMBER\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_hatask",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"haTask-\\S+-(\\d)+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3imf2gc43l",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"hostd,vpxa,vpxd,vobd,vmkernel,vmkwarning,fdm\",\"fieldType\":\"NUMBER\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_user",
+    "preContext":"user=(vpxuser:)?",
+    "postContext":"( |\\])",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3vonsxe000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"hostd,vpxa,vpxd,vobd,vmkernel,vmkwarning\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false,\"disableRemove\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_android_model",
+    "preContext":"; ",
+    "postContext":" Build",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bnzshe33jmrpw233emvwa0000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"value\":\"greenbox*,nginx*,saas*\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_android_ver",
+    "preContext":"(Android |Android: )",
+    "postContext":"(\\;|\\)|\\:)",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bnzshe33jmrpxmzls",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"EXISTS\",\"value\":\"greenbox-elb,saas-elb\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_app_name",
+    "preContext":"appName:",
+    "postContext":"\\, appType",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bobyf63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"com.vmware.endusercatalog\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_catalog_item",
+    "preContext":"name\":\"",
+    "postContext":"\"\\,\"description",
+    "regexValue":".*?",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3dmf2gc3dpm5pws5dfnu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"filepath\",\"displayName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"greenbox_web.log\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_catalog_user",
+    "preContext":"> <",
+    "postContext":"-",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3dmf2gc3dpm5pxk43foi000000",
+    "constraints":"{\"searchTerms\":\"com.vmware.endusercatalog\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_chrome_ver",
+    "preContext":"Chrome/",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3dnbzg63lfl53gk4q0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_client_IP",
+    "preContext":"\\-;",
+    "postContext":"\\] com",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3dnruwk3tul5eva000",
+    "constraints":"{\"searchTerms\":\".com.vmware.horizon.connector.controller\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_client_ip_addr",
+    "preContext":"\\-;",
+    "postContext":"\\] com",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3dnruwk3tul5uxax3bmrshe000",
+    "constraints":"{\"searchTerms\":\"com.vmware.horizon\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_dir_sync_tag",
+    "preContext":"(BEGIN|END) ",
+    "postContext":" ==========",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzf643znzrv65dbm4000000",
+    "constraints":"{\"searchTerms\":\"com.vmware.horizon.dirsync\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_directory_grp_mem_count",
+    "preContext":"\\- ",
+    "postContext":" member",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63lfnvpwg33vnz2a0000",
+    "constraints":"{\"searchTerms\":\"GROUP com.vmware.horizon\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_directory_grp_name",
+    "preContext":"\\S+ \\(",
+    "postContext":"\\)\\s+\\-",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"GROUP com.vmware.horizon\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_email_pwd_auth",
+    "preContext":"authentication: ",
+    "postContext":" \\-",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000",
+    "constraints":"{\"searchTerms\":\"LdapDirectoryService\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_enduser_mem",
+    "preContext":"total=",
+    "postContext":"%\\, heap",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnzshk43fojpw2zln",
+    "constraints":"{\"searchTerms\":\"com.hazelcast.internal.diagnostics.HealthMonitor\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_enduser_sys_avg",
+    "preContext":"systemAverage=",
+    "postContext":"%\\,",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnzshk43fojpxg6ltl5qxmzy0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_firefox_ver",
+    "preContext":"Firefox/",
+    "postContext":"",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3gnfzgkztppbpxmzls",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_hosted_tenant_name",
+    "preContext":">\\s+<",
+    "postContext":">\\s+<\\S+>\\s+\\-",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3in5zxizlel52gk3tbnz2f63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"com.vmware\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_http_status",
+    "preContext":"code: ",
+    "postContext":"\\, error",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ior2hax3torqxi5lt",
+    "constraints":"{\"searchTerms\":\"com.vmware.endusercatalog\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_ios_model",
+    "preContext":"; ",
+    "postContext":"; iOS",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv63lpmrswy000",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_ios_ver",
+    "preContext":"iOS ",
+    "postContext":"(\\;|\\)|\\:|\\s+)",
+    "regexValue":"\\d+.\\d+.\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv65tfoi000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_krb_auth_status",
+    "preContext":"Authentication ",
+    "postContext":":",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3lojrf6ylvoruf643umf2hk4y0",
+    "constraints":"{\"searchTerms\":\"com.vmware.horizon.adapters.kerberosAdapter\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_krb_user",
+    "preContext":"SUCCESS: ",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3lojrf65ltmvza0000",
+    "constraints":"{\"searchTerms\":\"com.vmware.horizon.adapters.kerberosAdapter\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_login_time",
+    "preContext":"in ",
+    "postContext":"ms",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3mn5tws3s7oruw2zi0",
+    "constraints":"{\"searchTerms\":\"com.vmware.endusercatalog\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_os_ver",
+    "preContext":"\\d+.\\d+\\s+\\(",
+    "postContext":";[^;]",
+    "regexValue":".*?",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb,redcross,analytics-elb,gateway-nginx\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_password",
+    "preContext":"password\\.",
+    "postContext":" \\-",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000",
+    "constraints":"{\"searchTerms\":\"LdapDirectoryService\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_problem_code",
+    "preContext":"problem ",
+    "postContext":" ",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qojxwe3dfnvpwg33emu000000",
+    "constraints":"{\"searchTerms\":\"com.vmware.horizon\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_pwd_auth_status",
+    "preContext":"",
+    "postContext":"$",
+    "regexValue":"(SUCCESS|FAIL*)",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qo5sf6ylvoruf643umf2hk4y0",
+    "constraints":"{\"searchTerms\":\"com.vmware.horizon\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_request_id",
+    "preContext":"requestId ",
+    "postContext":" failed",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3smvyxkzltorpwsza0",
+    "constraints":"{\"searchTerms\":\"com.vmware.endusercatalog\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_safari_ver",
+    "preContext":"Safari/",
+    "postContext":"",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3tmftgc4tjl53gk4q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_service",
+    "preContext":"\\] ",
+    "postContext":" \\-",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3tmvzhm2ldmu000000",
+    "constraints":"{\"searchTerms\":\"com.vmware.horizon\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_tenant_code",
+    "preContext":"tenantCode:",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5rw6zdf",
+    "constraints":"{\"filters\":[{\"internalName\":\"filepath\",\"displayName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"greenbox_web.log\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_tenant_id",
+    "preContext":"\\d+\\@",
+    "postContext":"\\;",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000",
+    "constraints":"{\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_vidm_tenant_url",
+    "preContext":"https://",
+    "postContext":"(:|/)",
+    "regexValue":"\\S+?",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul52xe3a0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_vob_component",
+    "preContext":"vobd:  \\[",
+    "postContext":"\\] [0-9]+us:",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wn5rf6y3pnvyg63tfnz2a0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vobd\",\"fieldType\":\"NUMBER\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"vIDM - NTLM tokens cannot be used for authentication when disabled.",
+    "info":"Client IP is valuable for prem vIDM instance.<br>",
+    "recommendation":"Check vIDM configuration and browser settings. Need more information from vIDM team.<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1500327343911,\"endTimeMillis\":1500500145535,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"STARTS_WITH\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"NTLM tokens cannot be used for authentication when disabled.\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vDIM - Unable to find valid certification path to requested target",
+    "info":"Greenbox code is trying to reach your AirWatch console but the Java truststore on the node greenbox is running does not trust the certificate of that website.<br>",
+    "recommendation":"The \"Symantec Class 3 Secure Server CA - G4\" needs to be added to the java truststore.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"unable to find valid certification path to requested target\",\"startTimeMillis\":1500423055899,\"endTimeMillis\":1500595855898,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"greenbox_web.log\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Identity Manager Connector Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Directory Sync - Begin/End Status Tags",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1491205469596,\"endTimeMillis\":1498511019574,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzf643znzrv65dbm4000000\",\"operator\":\"CONTAINS\",\"value\":\"SYNC [LIVE RUN]\"},{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector.log,/opt/vmware/horizon/workspace/logs/connector.log.1\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_dir_sync_tag\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzf643znzrv65dbm4000000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_dir_sync_tag\",\"preContext\":\"(BEGIN|END) \",\"postContext\":\" ==========\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzf643znzrv65dbm4000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"com.vmware.horizon.dirsync\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Directory Sync - Deleted Groups",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1491205469596,\"endTimeMillis\":1498511019574,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"STARTS_WITH\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DELETE GROUP\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Directory Sync Aborted Errors",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1491205469596,\"endTimeMillis\":1498511019574,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"STARTS_WITH\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.horizon.dirsync.SyncController - Sync aborted,Sync aborted\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Exceptions",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"exception*\",\"startTimeMillis\":1491205469596,\"endTimeMillis\":1498511019574,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"STARTS_WITH\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"User Exceptions\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Exceptions - Grouped by Connectors",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1491205469596,\"endTimeMillis\":1498511019574,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"exception\"},{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector.log\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Password Authentications - Success",
+          "info":"Trend of successful Password-based Authentications",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1503098779885,\"endTimeMillis\":1503099082208,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"STARTS_WITH\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector*\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qo5sf6ylvoruf643umf2hk4y0\",\"operator\":\"CONTAINS\",\"value\":\"success\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_pwd_auth_status\",\"preContext\":\"\",\"postContext\":\"$\",\"regexValue\":\"(SUCCESS|FAIL*)\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qo5sf6ylvoruf643umf2hk4y0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"com.vmware.horizon\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Sync events over time grouped by hostname",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1500941352815,\"endTimeMillis\":1500941652814,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzf643znzrv65dbm4000000\",\"operator\":\"CONTAINS\",\"value\":\"SYNC [LIVE RUN]\"},{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector.log,/opt/vmware/horizon/workspace/logs/connector.log.1\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_dir_sync_tag\",\"preContext\":\"(BEGIN|END) \",\"postContext\":\" ==========\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzf643znzrv65dbm4000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"com.vmware.horizon.dirsync\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Kerberos Authentications - Success",
+          "info":"Trend of successful Kerberos Authentications",
+          "chartType":"area",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1491205469596,\"endTimeMillis\":1498511019574,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"STARTS_WITH\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3lojrf6ylvoruf643umf2hk4y0\",\"operator\":\"CONTAINS\",\"value\":\"SUCCESS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_krb_auth_status\",\"preContext\":\"Authentication \",\"postContext\":\":\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3lojrf6ylvoruf643umf2hk4y0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"com.vmware.horizon.adapters.kerberosAdapter\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Problem events grouped by common name and problem code",
+          "info":"LDAP Connector problem events by common name and problem code.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1501357789761,\"endTimeMillis\":1501530589760,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed,fail,problem\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"cn\",\"internalName\":\"cn\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"vmw_vidm_problem_code\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qojxwe3dfnvpwg33emu000000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_problem_code\",\"preContext\":\"problem \",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qojxwe3dfnvpwg33emu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"com.vmware.horizon\\\"}\"},{\"displayName\":\"vmw_vidm_tenant_id\",\"preContext\":\"\\\\d+\\\\@\",\"postContext\":\"\\\\;\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Identity Manager Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Total Number of Identity Manager Hosts",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501220108358,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000\",\"operator\":\"EXISTS\",\"value\":\"myvmware\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vidm_tenant_id\",\"preContext\":\"\\\\d+\\\\@\",\"postContext\":\"\\\\;\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Info events over time grouped by hostname",
+          "info":"Info events over time grouped by hostname<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501220200608,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"vidm,com.vmware.horizon,workspace\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Errors Over Time",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501220310502,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vidm_tenant_id\",\"preContext\":\"\\\\d+\\\\@\",\"postContext\":\"\\\\;\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Warning events over time grouped by hostname",
+          "info":"Warning events over time grouped by hostname<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1501355596460,\"endTimeMillis\":1501528396459,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"warn\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_tenant_id\",\"preContext\":\"\\\\d+\\\\@\",\"postContext\":\"\\\\;\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3umvxgc3tul5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Identity Manager User Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of Unique Successful User Logins",
+          "info":"Number of Unique Successful User Logins<br>",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501523934603,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"displayName\":\"vmw_vidm_email_pwd_auth\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SUCCESS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Unique Successful User Logins Over Time By Hour",
+          "info":"Number of Unique Successful User Logins Over Time By Hour<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501524014337,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"displayName\":\"vmw_vidm_email_pwd_auth\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SUCCESS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of Users per Active Directory Group",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1501524670204,\"endTimeMillis\":1501528271535,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63tbnvsq0000\",\"displayName\":\"vmw_vidm_directory_grp_name\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector.log,/opt/vmware/horizon/workspace/logs/connector.log.1\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63lfnvpwg33vnz2a0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_directory_grp_name\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63tbnvsq0000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"vmw_vidm_directory_grp_mem_count\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63lfnvpwg33vnz2a0000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_directory_grp_mem_count\",\"preContext\":\"\\\\- \",\"postContext\":\" member\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63lfnvpwg33vnz2a0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"GROUP com.vmware.horizon\\\"}\"},{\"displayName\":\"vmw_vidm_directory_grp_name\",\"preContext\":\"\\\\S+ \\\\(\",\"postContext\":\"\\\\)\\\\s+\\\\-\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3enfzgky3un5zhsx3hojyf63tbnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"GROUP com.vmware.horizon\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of Local Logins Over Time",
+          "info":"",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"local\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501528276435,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3tmvzhm2ldmu000000\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.horizon.adapters.local.localpasswordauthadapter\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vidm_service\",\"preContext\":\"\\\\] \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3tmvzhm2ldmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"com.vmware.horizon\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Identity Manager Login Troubleshooting",
+      "constraints":[ {
+        "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qo5sf6ylvoruf643umf2hk4y0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Percentage of Login Password Errors",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piepercentage\":true,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501253892504,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,error.password\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_password\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"IDM User Login Troubleshooting",
+          "info":"The queries in this list will contain issues about users vIDM password.<br>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Users with Account Locked",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501520271353,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"displayName\":\"vmw_vidm_password\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,error.password\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"operator\":\"CONTAINS\",\"value\":\"accountlocked\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"},{\"displayName\":\"vmw_vidm_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Users with Authentication Failed",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501520357204,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"displayName\":\"vmw_vidm_password\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,error.password\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"operator\":\"CONTAINS\",\"value\":\"authfailed\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"},{\"displayName\":\"vmw_vidm_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Users with Expired Password",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501523636544,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"displayName\":\"vmw_vidm_password\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,error.password\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"operator\":\"CONTAINS\",\"value\":\"expired\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"},{\"displayName\":\"vmw_vidm_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          } ]
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of Users with Account Locked",
+          "info":"Number of unique IDM users locked out.",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501523814728,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"displayName\":\"vmw_vidm_email_pwd_auth\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,error.password\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"operator\":\"CONTAINS\",\"value\":\"accountlocked\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"},{\"displayName\":\"vmw_vidm_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Users with Authentication Failed",
+          "info":"Number of Users with Authentication Failed<br>",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501523765713,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"displayName\":\"vmw_vidm_email_pwd_auth\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,error.password\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"operator\":\"CONTAINS\",\"value\":\"authfailed\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"},{\"displayName\":\"vmw_vidm_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Users with Expired Password",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501523691292,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"displayName\":\"vmw_vidm_email_pwd_auth\",\"displayNamespace\":\"VMware Identity Manager\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\",\"value\":\"cs-prod-app-1\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error,error.password\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"operator\":\"CONTAINS\",\"value\":\"expired\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vidm_email_pwd_auth\",\"preContext\":\"authentication: \",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3fnvqws3c7ob3wix3bov2gq000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"},{\"displayName\":\"vmw_vidm_password\",\"preContext\":\"password\\\\.\",\"postContext\":\" \\\\-\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qmfzxg53pojsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LdapDirectoryService\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Password Authentications - Success",
+          "info":"Trend of successful Password-based Authentications",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501523881214,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"STARTS_WITH\",\"value\":\"/opt/vmware/horizon/workspace/logs/connector*\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qo5sf6ylvoruf643umf2hk4zafazcs000\",\"operator\":\"CONTAINS\",\"value\":\"success\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_pwd_auth_status\",\"preContext\":\"Password-based authentication: \\\\w+ \\\\- \",\"postContext\":\".*\",\"regexValue\":\".*\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3qo5sf6ylvoruf643umf2hk4zafazcs000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Identity Manager Device Distribution",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Device OS Distribution",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501220595075,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"operator\":\"EXISTS\",\"value\":\"2\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_os_ver\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_os_ver\",\"preContext\":\"\\\\d+.\\\\d+\\\\s+\\\\(\",\"postContext\":\";[^;]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"greenbox-elb,redcross,analytics-elb,gateway-nginx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Device OS Usage Over Time",
+          "info":"",
+          "gridWidth":"1/2",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1474403709522,\"endTimeMillis\":1501220771696,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"operator\":\"EXISTS\",\"value\":\"2\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_os_ver\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_os_ver\",\"preContext\":\"\\\\d+.\\\\d+\\\\s+\\\\(\",\"postContext\":\";[^;]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"greenbox-elb,redcross,analytics-elb,gateway-nginx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Android Model Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1500574460269,\"endTimeMillis\":1500578060268,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"vidm-aws\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bnzshe33jmrpw233emvwa0000\",\"operator\":\"EXISTS\",\"value\":\"android,pixel,saml\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_android_model\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bnzshe33jmrpw233emvwa0000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_android_model\",\"preContext\":\"; \",\"postContext\":\" Build\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bnzshe33jmrpw233emvwa0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"value\\\":\\\"greenbox*,nginx*,saas*\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Android Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1434713418144,\"endTimeMillis\":1500593394050,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bnzshe33jmrpxmzls\",\"operator\":\"EXISTS\"},{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_android_ver\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bnzshe33jmrpxmzls\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_android_ver\",\"preContext\":\"(Android |Android: )\",\"postContext\":\"(\\\\;|\\\\)|\\\\:)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3bnzshe33jmrpxmzls\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"value\\\":\\\"greenbox-elb,saas-elb\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"iOS Model Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1500492852449,\"endTimeMillis\":1500579252448,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"vidm-aws\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv65tfoi000000\",\"operator\":\"EXISTS\",\"value\":\"android,pixel,saml\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_ios_model\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv63lpmrswy000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_ios_model\",\"preContext\":\"; \",\"postContext\":\"; iOS\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv63lpmrswy000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"greenbox-elb\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"vmw_vidm_ios_ver\",\"preContext\":\"iOS \",\"postContext\":\"(\\\\;|\\\\)|\\\\:|\\\\s+)\",\"regexValue\":\"\\\\d+.\\\\d+.\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv65tfoi000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"iOS Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1500574495989,\"endTimeMillis\":1500578095988,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"vidm-aws\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv65tfoi000000\",\"operator\":\"EXISTS\",\"value\":\"android,pixel,saml\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_ios_ver\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv65tfoi000000\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_ios_ver\",\"preContext\":\"iOS \",\"postContext\":\"(\\\\;|\\\\)|\\\\:|\\\\s+)\",\"regexValue\":\"\\\\d+.\\\\d+.\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3jn5zv65tfoi000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Chrome Browser Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1500573078583,\"endTimeMillis\":1500594678582,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"vidm-aws\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_chrome_ver\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3dnbzg63lfl53gk4q0\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_os_ver\",\"preContext\":\"\\\\d+.\\\\d+\\\\s+\\\\(\",\"postContext\":\";[^;]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"greenbox-elb,redcross,analytics-elb,gateway-nginx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"},{\"displayName\":\"vmw_vidm_chrome_ver\",\"preContext\":\"Chrome/\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3dnbzg63lfl53gk4q0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Firefox Browser Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"firefox\",\"startTimeMillis\":1500508137705,\"endTimeMillis\":1500594537704,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"operator\":\"EXISTS\",\"value\":\"2\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_firefox_ver\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3gnfzgkztppbpxmzls\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_os_ver\",\"preContext\":\"\\\\d+.\\\\d+\\\\s+\\\\(\",\"postContext\":\";[^;]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"greenbox-elb,redcross,analytics-elb,gateway-nginx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"},{\"displayName\":\"vmw_vidm_firefox_ver\",\"preContext\":\"Firefox/\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3gnfzgkztppbpxmzls\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"greenbox-elb\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Safari Browser Version Distribution",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1500508422461,\"endTimeMillis\":1500594822460,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"greenbox-elb\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"operator\":\"EXISTS\",\"value\":\"2\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vidm_safari_ver\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3tmftgc4tjl53gk4q0\",\"displayNamespace\":\"VMware Identity Manager\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_vidm_os_ver\",\"preContext\":\"\\\\d+.\\\\d+\\\\s+\\\\(\",\"postContext\":\";[^;]\",\"regexValue\":\".*?\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3ponpxmzls\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"greenbox-elb,redcross,analytics-elb,gateway-nginx\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"},{\"displayName\":\"vmw_vidm_safari_ver\",\"preContext\":\"Safari/\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3gszdnozwxox3wnfsg2x3tmftgc4tjl53gk4q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"component\\\",\\\"displayName\\\":\\\"component\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"greenbox-elb\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "agentClasses":[ {
+    "name":"Identity Manager (On-prem Installation)",
+    "info":"This is the agent group configuration for Identity Manager (On Prem Installation) content pack.<br>You can find this under Administration -&gt; Management -&gt; Agents -&gt; All Agents drop down.<br>To apply,copy this template to active groups , add filters and save.<br>",
+    "agentConfig":"[filelog|gb-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/eb-docker/containers/eb-current-app\ninclude=greenbox*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=gb-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"greenbox\"}\n\n[parser|gb-parser-onprem]\nbase_parser=clf\nformat=%t %{priority}i (%{thread}i) [%{java_class}i] - %M\n; Analytics Log InSight agent section\n\n[filelog|analytics-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/eb-docker/containers/eb-current-app\ninclude=analytics-*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=analytics-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"analytics\"}\n\n[parser|analytics-parser-onprem]\nbase_parser=clf\nformat=%t %{timezone}i %{priority}i %{instance}i:%{service}i (%{thread}i) [%{src_str}i] %{java_class}i - %M\n; Password vault Log InSight agent section\n\n[filelog|pwvault-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/eb-docker/containers/eb-current-app\ninclude=pwvault-*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=pwvault-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"pwvault\"}\n\n[parser|pwvault-parser-onprem]\nbase_parser=clf\nformat=%t %{timezone}i %{priority}i %{instance}i:%{service}i (%{thread}i) [%{src_str}i] %{java_class}i - %M\n\n[filelog|cert-proxy-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/eb-docker/containers/eb-current-app\ninclude=cert-proxy*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=cert-proxy-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"cert-proxy\"}\n\n[parser|cert-proxy-parser-onprem]\nbase_parser=clf\nformat=%t %{priority}i (%{thread}i) [%{src_str}i] %{java_class}i - %M\n; vIDM SaaS Log InSight agent section\n\n[filelog|vidm-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/eb-docker/containers/eb-current-app\ninclude=*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=vidm-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"vidm\"}\n\n[parser|vidm-parser-onprem]\nbase_parser=clf\nformat=%t %{priority}i (%{thread}i) [%{authentication}i] %{java_class}i - %M\nfield_decoder={\"authentication\":\"vidm-authentication-decoder\",\"log_message\":\"vidm-message-decoder\"}\nexclude_fields=log_message\n; vIDM SaaS Log InSight agent section for *.txt file\n\n[filelog|vidm-txt-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/eb-docker/containers/eb-current-app\ninclude=*.txt\nevent_marker=^\nparser=vidm-txt-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"vidm\"}\n\n[parser|vidm-txt-parser-onprem]\nbase_parser=clf\nformat=%h %l %u [%t] \"%{request}i\" %{status_code}i %b %{response_time}i\n;Nginx Log Insight agent section\n\n[filelog|nginx-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/nginx\ninclude=*.log\nevent_marker=^\nparser=nginx-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"nginx\"}\n\n[parser|nginx-parser-onprem]\nbase_parser=clf\nformat=%h %l %u [%t] \"%{request}i\" %{status_code}i %b \"%{referer}i\" \"%{user_agent}i\"\n;KDC PEN Load balancer Log InSight agent section\n\n[filelog|kdc-pen-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/pen\ninclude=*.log\ntags={\"product\":\"vidm-aws\",\"component\":\"kdc-pen\"}\n\n[filelog|kdc-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/eb-docker/containers/eb-current-app\ninclude=kdc*.log\ntags={\"product\":\"vidm-aws\",\"component\":\"kdc\"}\n\n[filelog|kdc-mtkadmin-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/eb-docker/containers/eb-current-app\ninclude=mtkadmin.log\ntags={\"product\":\"vidm-aws\",\"component\":\"kdc\"}\n;cfn-init Log InSight agent section\n\n[filelog|cfn-init-onprem]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/opt/vmware/horizon/workspace/logs/\ninclude=cfn.*.log\nevent_marker=^\nparser=cfn-init-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"cfn-init\"}\n\n[parser|cfn-init-parser-onprem]\nbase_parser=clf\n\n[parser|vidm-authentication-decoder-onprem]\nbase_parser=csv\ndelimiter=\";\"\nfields=tenant, user_uuid, remote_host\n\n[parser|vidm-message-decoder-onprem]\nbase_parser=clf\nformat=%{status}i %{operation}i (%{referer}i)\nfield_decoder={\"referer\":\"vidm-referer-decoder\"}\n\n[parser|vidm-referer-decoder-onprem]\nbase_parser=csv\nfields=url, , mime_type, method, ,\n"
+  }, {
+    "name":"Identity Manager (hosted service)",
+    "info":"This is the agent group configuration for Identity Manager ( hosted service ) content pack.<br>You can find this under Administration -&gt; Management -&gt; Agents -&gt; All Agents drop down.<br>To apply,copy this template to active groups , add filters and save.",
+    "agentConfig":"[filelog|gb]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/eb-docker/containers/eb-current-app\ninclude=greenbox*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=gb-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"greenbox\"}\n\n[parser|gb-parser]\nbase_parser=clf\nformat=%t %{priority}i (%{thread}i) [%{java_class}i] - %M\n; Analytics Log InSight agent section\n\n[filelog|analytics]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/eb-docker/containers/eb-current-app\ninclude=analytics-*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=analytics-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"analytics\"}\n\n[parser|analytics-parser]\nbase_parser=clf\nformat=%t %{timezone}i %{priority}i %{instance}i:%{service}i (%{thread}i) [%{src_str}i] %{java_class}i - %M\n; Password vault Log InSight agent section\n\n[filelog|pwvault]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/eb-docker/containers/eb-current-app\ninclude=pwvault-*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=pwvault-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"pwvault\"}\n\n[parser|pwvault-parser]\nbase_parser=clf\nformat=%t %{timezone}i %{priority}i %{instance}i:%{service}i (%{thread}i) [%{src_str}i] %{java_class}i - %M\n\n[filelog|cert-proxy]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/eb-docker/containers/eb-current-app\ninclude=cert-proxy*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=cert-proxy-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"cert-proxy\"}\n\n[parser|cert-proxy-parser]\nbase_parser=clf\nformat=%t %{priority}i (%{thread}i) [%{src_str}i] %{java_class}i - %M\n; vIDM SaaS Log InSight agent section\n\n[filelog|vidm]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/eb-docker/containers/eb-current-app\ninclude=*.log\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\nparser=vidm-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"vidm\"}\n\n[parser|vidm-parser]\nbase_parser=clf\nformat=%t %{priority}i (%{thread}i) [%{authentication}i] %{java_class}i - %M\nfield_decoder={\"authentication\":\"vidm-authentication-decoder\",\"log_message\":\"vidm-message-decoder\"}\nexclude_fields=log_message\n; vIDM SaaS Log InSight agent section for *.txt file\n\n[filelog|vidm-txt]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/eb-docker/containers/eb-current-app\ninclude=*.txt\nevent_marker=^\nparser=vidm-txt-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"vidm\"}\n\n[parser|vidm-txt-parser]\nbase_parser=clf\nformat=%h %l %u [%t] \"%{request}i\" %{status_code}i %b %{response_time}i\n;Nginx Log Insight agent section\n\n[filelog|nginx]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/nginx\ninclude=*.log\nevent_marker=^\nparser=nginx-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"nginx\"}\n\n[parser|nginx-parser]\nbase_parser=clf\nformat=%h %l %u [%t] \"%{request}i\" %{status_code}i %b \"%{referer}i\" \"%{user_agent}i\"\n;KDC PEN Load balancer Log InSight agent section\n\n[filelog|kdc-pen]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/pen\ninclude=*.log\ntags={\"product\":\"vidm-aws\",\"component\":\"kdc-pen\"}\n\n[filelog|kdc]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/eb-docker/containers/eb-current-app\ninclude=kdc*.log\ntags={\"product\":\"vidm-aws\",\"component\":\"kdc\"}\n\n[filelog|kdc-mtkadmin]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log/eb-docker/containers/eb-current-app\ninclude=mtkadmin.log\ntags={\"product\":\"vidm-aws\",\"component\":\"kdc\"}\n;cfn-init Log InSight agent section\n\n[filelog|cfn-init]\n; IMPORTANT: Change the directory as per the environment\ndirectory=/var/log\ninclude=cfn.*.log\nevent_marker=^\nparser=cfn-init-parser\ntags={\"product\":\"vidm-aws\",\"component\":\"cfn-init\"}\n\n[parser|cfn-init-parser]\nbase_parser=clf\n\n[parser|vidm-authentication-decoder]\nbase_parser=csv\ndelimiter=\";\"\nfields=tenant, user_uuid, remote_host\n\n[parser|vidm-message-decoder]\nbase_parser=clf\nformat=%{status}i %{operation}i (%{referer}i)\nfield_decoder={\"referer\":\"vidm-referer-decoder\"}\n\n[parser|vidm-referer-decoder]\nbase_parser=csv\nfields=url, , mime_type, method, ,\n"
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware Inc.",
+  "url":"https://www.vmware.com/products/identity-manager.html",
+  "contentVersion":"1.0",
+  "info":"The Identity Manager content pack for Log Insight provides powerful filter, logging visualization, and alerting of Identity Manager real-time operational activities. This enables users to effectively monitor all components of your Identity Manager environment using intuitive Log Insight UI dashboard widgets with just a couple clicks. The content pack enables:<br><br><b>Proactive monitoring of your Identity Manager environment</b><br><br>Quickly identify issues and drill down to determine the root cause with powerful visualizations of your data and targeted queries.<br><br><b>User and Device breakdown of Identity Manager events<br></b><br>Ability to analysis every user and device login to get a complete picture within an environment.<br><br><b>Troubleshooting and root-cause analysis<br></b><br>Specific queries to focus on the important events that indicate real login problems with additional information and context to resolve detected issues quickly.<br><br><br><b>Compatibility:<br>&nbsp; &nbsp;</b>VMware IDM 2.8.x+ or VMware Identity Manager Cloud<br>&nbsp; &nbsp;VMware Log Insight 3.0+<br>",
+  "instructions":"The VMware Identity Manager content pack requires the use of the Log Insight agent on the Identity Manager virtual appliance. The Log Insight agent does not come pre-installed on the and must be manually installed on all versions 2.9.1 and older. The preferred installation directory is (/opt/loginsight) using the Linux Agent RPM package.<br>The agent must be configured to send events to Log Insight, use the cfapi protocol (default), and leverage the included agent group configuration. To apply the agent group configuration:<br><br>• Go to the Administration &gt; Agents page (requires Super Admin privileges)<br>• Select the All Agents drop-down at the top of the window and select the Copy Template button to the right of the appropriate Identity Manager agent groups<br>• Add the desired filters to restrict which agent receive the configuration (i.e. Linux vs Windows hosts)<br>• Select the Refresh button at the top of the page<br>• Select the Save Configuration button at the bottom of the page.<br>",
+  "icon":"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"
+}
