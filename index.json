@@ -824,13 +824,14 @@
     "aliasRules": []
   },
   {
-    "info": "<span>The NSX-T Log Insight content pack provides health status dashboards for the logical switching and routing, distributed firewall, and DHCP components that make up the NSX infrastructure.  It also provides key audit logs for tracking create, add and delete changes to your NSX infrastructure.</span><br><br><span><span style=\"font-weight: bold;\">Minimum requirements</span><br>&nbsp;&nbsp;&nbsp; VMware Log Insight v3.0+<br>&nbsp;&nbsp;&nbsp; VMware NSX-T v1.0+<br></span>",
+    "info": "The NSX-T Log Insight content pack provides health status dashboards for the logical switching and routing, distributed firewall, and DHCP components that make up the NSX infrastructure. It also provides key audit logs for tracking create, add and delete changes to your NSX infrastructure.<br><br>Minimum requirements<br>&nbsp;&nbsp;&nbsp; VMware Log Insight v3.0+<br>&nbsp;&nbsp;&nbsp; VMware NSX-T v1.0+<br>",
+    "upgradeInstructions": "Changelog:<br><span>\t</span>v1.5:<br><ul><li>New Container dashboard.</li></ul>",
     "name": "VMware - NSX-T",
     "icon": "iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAAY1BMVEUAAAAzPEczPEczPEczPEczPEczPEczPEf19/hMVF5lbHQ/SFLEyMuOk5ro6+zq7O6UmqBwd3/b3uC0ub1YX2jO0tV0eoKtsbZ8gopaYWrd4OKkqa6aoKXR1de5vcGBh46IjpX9SVRJAAAAB3RSTlMA8MCgQCAwJ0+bUQAAA6BJREFUeNrs0rERwCAMQ1EZO3j/jXOQo0mjEhV6E/yTja0y+rLIwvGMljAebPP6OkfMvY9MT3esjUTu9RlAtZRCtpSE0ActgRbjIAc56MdBjIMYBzEOYhzEOIhxEOMgxkGMgxgHvezS246CMBSF4cu1SndbOTkcHPH9n3LQCoMYhg2JmRv+C2uakv2lsNYBWusArXWA1jpAax0gRZ8G2ZtQkdwsNrQflAZJFaNsJSGFuv2gSj8mDRWU7QeloYC6Qo/fC7LNphG3Bur2gSrBpqSCvj2g68YB1RX69oCCwaZMgL49IELR/gcO0FoHaK1/ABkyw1hCIlY73mudAVp6Mzlx/jSI7h104VAJ2Iw5nsW/HwaxnoMcmdePeyrv2vN4LY7efhrkPcsZyPrZPeTMBn4HFSjBb0Vi4tNJMWzYP0DZmXSvoHr+oRgfjwhzaECmoQwz04akFHENJ9g2xI0lEJHTmxH0XBK85EgDdPRGBbqRlKeHj8I3Y03z3CiWQcZTXkCGdHhNKLCeDipQxb5oD1zougyCI7spCCV9/Xaua1lCB0JD8mukxUuRU1zZtg+lXQZB6O0UVJO82PlLI40WdCIZLAC5y+xwI9+M0IR9yRIo/uZTEBJPMu8wKSMdtCAbSFZAwb4C7EsHpwGwBoIjz1MQ7IV9fkIoyYsWFEc3wBdJGebHXYEGhJKZjaCxTkiWdvrKajXIPEb+tHN2uw3CMBS+tCGkavnLEITt/Z9yWggNmrad4GlS1vq7aJWUSl9TcwBFsgmvIqGJeYlCiakL349J9NrkF/W2NuuHgCeREC3M9VEozcasbmIaYKG0RKGShEKm5Zamz0ImOozhDLM5wbizxiAkgdCeQXYfJdogZO5vXbZQzYEXsRDNzOM3K7SEkj9e9rEQNRzCSC5kLjx8UUPV8WLbBDMolJbojSgGoolTbv8/eyAUfn9MpcGOYaLbsmfgLh2+IKFktO4Pyv3a3LZ4apxJE0iIul2I71hKtRw/mv76jvEwuGwjY+dgM9hqm7XHKh+e66njZ1QIoUIIFUI8gJCv6RS1p3wkQrOjU7iZ8pEIVVwRQHq4TIhmbygb468kAgslnO8pk947EoKFEld2WdtTN8eC9REIUTVnbuD9rn7+8RbnOVQIoUIIFUKoEEKFECqEUCGECiFUCKFCCBVCqBBChRAqhFAhhAohVAihQognECquIVJxLaOKa6pVXNux8hqzFde6rrzmfmW1P3wHhJhI+9YoVCkAAAAASUVORK5CYII=",
     "author": "VMware, Inc.",
-    "contentVersion": "1.0",
+    "contentVersion": "1.5",
     "namespace": "com.vmware.nsxt",
-    "fileName": "VMware-NSX-T-v1.0.vlcp",
+    "fileName": "VMware-NSX-T-v1.5.vlcp",
     "framework": "#9c4",
     "contentPackId": "com.vmware.nsxt",
     "version": "2.4",

@@ -5,6 +5,14 @@
   "framework":"#9c4",
   "version":"2.4",
   "extractedFields":[ {
+    "displayName":"vmw_nsxt_audit_module_name",
+    "preContext":"ModuleName:'",
+    "postContext":"'",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3bovsgs5c7nvxwi5lmmvpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"comp subcomp\"}",
+    "info":null
+  }, {
     "displayName":"vmw_nsxt_audit_operation_status",
     "preContext":"status:'",
     "postContext":"'",
@@ -19,6 +27,14 @@
     "regexValue":"\\S+",
     "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000",
     "constraints":"{\"searchTerms\":\"subcomp\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_nsxt_container_severity_level",
+    "preContext":"level=\"",
+    "postContext":"\"\\] ",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000",
+    "constraints":null,
     "info":null
   }, {
     "displayName":"vmw_nsxt_display_name",
@@ -101,12 +117,68 @@
     "constraints":"{\"searchTerms\":\"INET\"}",
     "info":null
   }, {
+    "displayName":"vmw_nsxt_http_backup_operation_return_code",
+    "preContext":"1\\.1\" ",
+    "postContext":" \\d+",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3ior2hax3cmfrww5lql5xxazlsmf2gs33ol5zgk5dvojxf6y3pmrsq0000",
+    "constraints":"{\"searchTerms\":\"node-mgmt\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_nsxt_inventory_object",
+    "preContext":"file\\-store/",
+    "postContext":"\\?",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3jnz3gk3tun5zhsx3pmjvgky3u",
+    "constraints":"{\"searchTerms\":\"node-mgmt nsx-manager\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_nsxt_inventory_object_action",
+    "preContext":"action=",
+    "postContext":" ",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3jnz3gk3tun5zhsx3pmjvgky3ul5qwg5djn5xa0000",
+    "constraints":"{\"searchTerms\":\"node-mgmt nsx-manager\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_nsxt_manager_hostname",
+    "preContext":"\\d+ ",
+    "postContext":"  NSX",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3nmfxgcz3fojpwq33torxgc3lf",
+    "constraints":"{\"searchTerms\":\"node-mgmt\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_nsxt_node_backup_text",
+    "preContext":"INFO\"\\] ",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3on5sgkx3cmfrww5lql52gk6du",
+    "constraints":"{\"searchTerms\":\"node-mgmt\"}",
+    "info":null
+  }, {
     "displayName":"vmw_nsxt_operation",
     "preContext":"Operation:'",
     "postContext":"'",
     "regexValue":"\\w+",
     "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3pobsxeylunfxw4000",
     "constraints":"{\"searchTerms\":\"comp subcomp\"}",
+    "info":null
+  }, {
+    "displayName":"vmw_nsxt_project_name",
+    "preContext":"project ",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3qojxwuzldorpw4ylnmu000000",
+    "constraints":"{}",
+    "info":null
+  }, {
+    "displayName":"vmw_nsxt_severity_level",
+    "preContext":"level=\"",
+    "postContext":"\"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tmv3gk4tjor4v63dfozswy000",
+    "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"component\",\"displayName\":\"component\",\"operator\":\"CONTAINS\",\"value\":\"container,backup\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
     "displayName":"vmw_nsxt_subcomp",
@@ -189,6 +261,26 @@
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
           "chartQuery":"{\"query\":\"errorCode\",\"startTimeMillis\":1473400910772,\"endTimeMillis\":1473401233169,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3fojzg64s7mnxwizi0\",\"operator\":\"MATCH\",\"value\":\"ESX[0-9]+\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3fojzg64s7mnxwizi0\",\"operator\":\"MATCH\",\"value\":\"MPA13[4-8]|MPA12[2-9]|MPA130|MPA14[0-3]|MPA100[0-9]|MPA101[0-9]|MPA102[0-7]\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3fojzg64s7mnxwizi0\",\"operator\":\"CONTAINS\",\"value\":\"MP25431,MP25421,MP25415\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3fojzg64s7mnxwizi0\",\"operator\":\"MATCH\",\"value\":\"EDG07[0-9]{4}\"}],\"supplementalConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_error_code\",\"preContext\":\"errorCode=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3fojzg64s7mnxwizi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp subcomp\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Container  Error events over time",
+          "info":"All Container error events over time grouped by sub component.<br><br>Note: If you do not see any events in this widget then it might mean you have a healthy system.",
+          "gridWidth":"1/2",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497595082240,\"endTimeMillis\":1502749388507,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"operator\":\"CONTAINS\",\"value\":\"nsx-container-ncp,nsx-container-node\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_nsxt_subcomp\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"vmw_nsxt_container_severity_level\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_comp\",\"preContext\":\"comp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"subcomp\\\"}\"},{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"},{\"displayName\":\"vmw_nsxt_container_severity_level\",\"preContext\":\"level=\\\"\",\"postContext\":\"\\\"\\\\] \",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Hyperbus events over time",
+          "info":"<span>Hyperbus events over time<br></span><ul type=\"disc\">\n <li>nsx-esx/ hyperbus</li>\n <li>nsx-kvm/ hyperbus</li>\n</ul>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1502202249926,\"endTimeMillis\":1502887521480,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"operator\":\"CONTAINS\",\"value\":\"nsx-esx,nsx-kvm\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"operator\":\"CONTAINS\",\"value\":\"hyperbus\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_nsxt_comp\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"vmw_nsxt_subcomp\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"},{\"displayName\":\"vmw_nsxt_comp\",\"preContext\":\"comp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"subcomp\\\"}\"},{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadax3wnv3v63ttpb2f643vmjrw63lq\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"}]}",
           "messageQuery":""
         } ]
       } ]
@@ -638,6 +730,72 @@
           "messageQuery":""
         } ]
       } ]
+    }, {
+      "name":"NSX - Container",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All NSX Container events over time",
+          "info":"All NSX Container events over time<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497278240728,\"endTimeMillis\":1502478734174,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"operator\":\"CONTAINS\",\"value\":\"nsx-container-node,nsx-container-ncp\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_comp\",\"preContext\":\"comp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"subcomp\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All Container events over time grouped by sub component",
+          "info":"All Container events over time grouped by sub component<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1501782663709,\"endTimeMillis\":1502387463708,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"operator\":\"CONTAINS\",\"value\":\"nsx-container-ncp,nsx-container-node\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_nsxt_subcomp\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_comp\",\"preContext\":\"comp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"subcomp\\\"}\"},{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All NSX kube proxy events over time",
+          "info":"All NSX kube proxy events over time<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497278240728,\"endTimeMillis\":1502479111544,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"operator\":\"CONTAINS\",\"value\":\"nsx_kube_proxy\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All NSX CNI events over time",
+          "info":"All NSX CNI events over time<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1502144943274,\"endTimeMillis\":1502749743273,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"operator\":\"CONTAINS\",\"value\":\"nsx_cni\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All NSX node agent events over time",
+          "info":"All NSX node agent events over time<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497278240728,\"endTimeMillis\":1502478915343,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"operator\":\"CONTAINS\",\"value\":\"nsx_node_agent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Container events over time grouped by severity",
+          "info":"All Container events over time grouped by sub component<br>",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1501872777469,\"endTimeMillis\":1502477577468,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"operator\":\"CONTAINS\",\"value\":\"nsx-container-ncp,nsx-container-node\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_nsxt_subcomp\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"vmw_nsxt_container_severity_level\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_comp\",\"preContext\":\"comp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"subcomp\\\"}\"},{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"},{\"displayName\":\"vmw_nsxt_container_severity_level\",\"preContext\":\"level=\\\"\",\"postContext\":\"\\\"\\\\] \",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"All NSX NCP events over time",
+          "info":"All NSX NCP events over time<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497278240728,\"endTimeMillis\":1502478442637,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"operator\":\"CONTAINS\",\"value\":\"nsx-container-ncp\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"operator\":\"CONTAINS\",\"value\":\"ncp\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_comp\",\"preContext\":\"comp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"subcomp\\\"}\"},{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
     } ],
     "header":""
   } ],
@@ -645,8 +803,9 @@
   "aliasRules":[ ],
   "author":"VMware, Inc.",
   "url":"http://www.vmware.com",
-  "contentVersion":"1.0",
-  "info":"<span>The NSX-T Log Insight content pack provides health status dashboards for the logical switching and routing, distributed firewall, and DHCP components that make up the NSX infrastructure.  It also provides key audit logs for tracking create, add and delete changes to your NSX infrastructure.</span><br><br><span><span style=\"font-weight: bold;\">Minimum requirements</span><br>&nbsp;&nbsp;&nbsp; VMware Log Insight v3.0+<br>&nbsp;&nbsp;&nbsp; VMware NSX-T v1.0+<br></span>",
-  "instructions":"<span>&nbsp;Forward all logging components to the Log Insight server including:</span><br><span>&nbsp;&nbsp;1. NSX Manager</span><br><span>&nbsp;&nbsp;2. NSX Controller(s)</span><br><span>&nbsp;&nbsp;3. NSX Edge(s)</span><br><span>&nbsp;&nbsp;4. ESXi and KVM hosts</span><br><span>Using NSX Transformers Command-Line Interface (CLI) configure rsyslog server for each components to send log messages to Log Insight server.</span><br><br><span>Detailed setup instructions:</span><br><br><span style=\"font-weight: bold;\">NSX MP, CCP and Edge components:</span><br><br><span>Configure rsyslog server for each NSX MP, CCP and Edge components.</span><br>&nbsp;<code style=\"font-style: italic;\"># set logging-server &lt;Log Insight server[:port]&gt; proto &lt;tcp|udp|tls&gt; level &lt;alert|crit|debug|emerg|err|info|notice|warning&gt; [facility &lt;#&gt;] [messageid &lt;id&gt;] [certificate &lt;cert&gt;]</code><br><span>e.g.</span><br>&nbsp;<code style=\"font-style: italic;\"># set logging-server 10.111.222.33 proto udp level info facility syslog messageid SYSTEM,FABRIC</code><br><br><span style=\"font-weight: bold;\">ESXi and KVM hosts:</span><br><br><span>Similarly, configure rsyslog server for each ESXi and KVM hosts.</span><br><br><span style=\"font-weight: bold;\">ESX:</span><br>&nbsp;<code style=\"font-style: italic;\"># esxcli network firewall ruleset set -r syslog -e true</code><br>&nbsp;<code style=\"font-style: italic;\"># esxcli system syslog config set --loghost=udp://&lt;Log Insight server&gt;:514</code><br>&nbsp;<code style=\"font-style: italic;\"># esxcli system syslog reload</code><br><br><span style=\"font-weight: bold;\">KVM:</span><br>&nbsp;<span style=\"font-style: italic;\">Add line `*.* @&lt;Log Insight server&gt;:514;RFC5424fmt` into the file /etc/rsyslog.d/10-vmware-enable-rfc5424.conf</span><br>&nbsp;<code style=\"font-style: italic;\"># systemctl restart rsyslog</code><br><br>",
+  "contentVersion":"1.5",
+  "info":"The NSX-T Log Insight content pack provides health status dashboards for the logical switching and routing, distributed firewall, and DHCP components that make up the NSX infrastructure. It also provides key audit logs for tracking create, add and delete changes to your NSX infrastructure.<br><br>Minimum requirements<br>&nbsp;&nbsp;&nbsp; VMware Log Insight v3.0+<br>&nbsp;&nbsp;&nbsp; VMware NSX-T v1.0+<br>",
+  "instructions":"&nbsp;Forward all logging components to the Log Insight server including:<br>&nbsp;&nbsp;1. NSX Manager<br>&nbsp;&nbsp;2. NSX Controller(s)<br>&nbsp;&nbsp;3. NSX Edge(s)<br>&nbsp;&nbsp;4. ESXi and KVM hosts<br>&nbsp; 5. NSX Container Plugin and Node Agents.<br>Using NSX Transformers Command-Line Interface (CLI) configure rsyslog server for each components to send log messages to Log Insight server.<br><br>Detailed setup instructions:<br><br>NSX MP, CCP and Edge components:<br><br>Configure rsyslog server for each NSX MP, CCP and Edge components.<br>&nbsp;# set logging-server &lt;Log Insight server[:port]&gt; proto &lt;tcp|udp|tls&gt; level &lt;alert|crit|debug|emerg|err|info|notice|warning&gt; [facility &lt;#&gt;] [messageid &lt;id&gt;] [certificate &lt;cert&gt;]<br>e.g.<br>&nbsp;# set logging-server 10.111.222.33 proto udp level info facility syslog messageid SYSTEM,FABRIC<br><br>ESXi and KVM hosts:<br><br>Similarly, configure rsyslog server for each ESXi and KVM hosts.<br><br>ESX:<br>&nbsp;# esxcli network firewall ruleset set -r syslog -e true<br>&nbsp;# esxcli system syslog config set --loghost=udp://&lt;Log Insight server&gt;:514<br>&nbsp;# esxcli system syslog reload<br><br>KVM:<br>&nbsp;Add line `*.* @&lt;Log Insight server&gt;:514;RFC5424fmt` into the file /etc/rsyslog.d/10-vmware-enable-rfc5424.conf<br>&nbsp;# systemctl restart rsyslog<br><br>NSX Container Plugins and Node Agents:Please follow the instructions to enable syslog for NCP and NSX Node agent by reading the guidelines in the “NSX-T Container Plug-in Installation and Administration Guide – NSX-T 2.0”<br>",
+  "upgradeInstructions":"Changelog:<br><span>\t</span>v1.5:<br><ul><li>New Container dashboard.</li></ul>",
   "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAAY1BMVEUAAAAzPEczPEczPEczPEczPEczPEczPEf19/hMVF5lbHQ/SFLEyMuOk5ro6+zq7O6UmqBwd3/b3uC0ub1YX2jO0tV0eoKtsbZ8gopaYWrd4OKkqa6aoKXR1de5vcGBh46IjpX9SVRJAAAAB3RSTlMA8MCgQCAwJ0+bUQAAA6BJREFUeNrs0rERwCAMQ1EZO3j/jXOQo0mjEhV6E/yTja0y+rLIwvGMljAebPP6OkfMvY9MT3esjUTu9RlAtZRCtpSE0ActgRbjIAc56MdBjIMYBzEOYhzEOIhxEOMgxkGMgxgHvezS246CMBSF4cu1SndbOTkcHPH9n3LQCoMYhg2JmRv+C2uakv2lsNYBWusArXWA1jpAax0gRZ8G2ZtQkdwsNrQflAZJFaNsJSGFuv2gSj8mDRWU7QeloYC6Qo/fC7LNphG3Bur2gSrBpqSCvj2g68YB1RX69oCCwaZMgL49IELR/gcO0FoHaK1/ABkyw1hCIlY73mudAVp6Mzlx/jSI7h104VAJ2Iw5nsW/HwaxnoMcmdePeyrv2vN4LY7efhrkPcsZyPrZPeTMBn4HFSjBb0Vi4tNJMWzYP0DZmXSvoHr+oRgfjwhzaECmoQwz04akFHENJ9g2xI0lEJHTmxH0XBK85EgDdPRGBbqRlKeHj8I3Y03z3CiWQcZTXkCGdHhNKLCeDipQxb5oD1zougyCI7spCCV9/Xaua1lCB0JD8mukxUuRU1zZtg+lXQZB6O0UVJO82PlLI40WdCIZLAC5y+xwI9+M0IR9yRIo/uZTEBJPMu8wKSMdtCAbSFZAwb4C7EsHpwGwBoIjz1MQ7IV9fkIoyYsWFEc3wBdJGebHXYEGhJKZjaCxTkiWdvrKajXIPEb+tHN2uw3CMBS+tCGkavnLEITt/Z9yWggNmrad4GlS1vq7aJWUSl9TcwBFsgmvIqGJeYlCiakL349J9NrkF/W2NuuHgCeREC3M9VEozcasbmIaYKG0RKGShEKm5Zamz0ImOozhDLM5wbizxiAkgdCeQXYfJdogZO5vXbZQzYEXsRDNzOM3K7SEkj9e9rEQNRzCSC5kLjx8UUPV8WLbBDMolJbojSgGoolTbv8/eyAUfn9MpcGOYaLbsmfgLh2+IKFktO4Pyv3a3LZ4apxJE0iIul2I71hKtRw/mv76jvEwuGwjY+dgM9hqm7XHKh+e66njZ1QIoUIIFUI8gJCv6RS1p3wkQrOjU7iZ8pEIVVwRQHq4TIhmbygb468kAgslnO8pk947EoKFEld2WdtTN8eC9REIUTVnbuD9rn7+8RbnOVQIoUIIFUKoEEKFECqEUCGECiFUCKFCCBVCqBBChRAqhFAhhAohVAihQognECquIVJxLaOKa6pVXNux8hqzFde6rrzmfmW1P3wHhJhI+9YoVCkAAAAASUVORK5CYII="
 }
