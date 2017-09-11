@@ -21,6 +21,14 @@
     "constraints":"{\"searchTerms\":\"comp subcomp\"}",
     "info":null
   }, {
+    "displayName":"vmw_nsxt_backup_errorcode",
+    "preContext":"errorCode=\"",
+    "postContext":"\" subcomp",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3cmfrww5lql5sxe4tpojrw6zdf",
+    "constraints":"{\"searchTerms\":\"nsx-manager\"}",
+    "info":null
+  }, {
     "displayName":"vmw_nsxt_comp",
     "preContext":"comp=\"",
     "postContext":"\"",
@@ -207,7 +215,6 @@
         "widgets":[ {
           "name":"NSX Manager : Communication Errors",
           "info":"These are all communication log errors on nsx-manager.<br><br>They are grouped by hostname.",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -216,7 +223,6 @@
         }, {
           "name":"Transport Node - NSX Manager : Communication Errors",
           "info":"Communication errors between NSX transport nodes (vSphere hosts, KVM hosts and NSX Edges) and NSX Manager. It is recommended to analyze the hostnames with the highest returned values to look for potential issues.",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -227,7 +233,6 @@
         "widgets":[ {
           "name":"Transport Node - Controller : Communication Errors",
           "info":"Communication errors between NSX transport nodes (vSphere hosts, KVM hosts and NSX Edges) and NSX controllers. It is recommended to analyze the hostnames with the highest returned values to look for potential issues.",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -236,7 +241,6 @@
         }, {
           "name":"Controller : Communication Errors",
           "info":"Communication errors among controllers in a cluster. It is recommended to analyze the hostnames with the highest returned values to look for potential issues.",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -247,7 +251,6 @@
         "widgets":[ {
           "name":"Configuration Errors",
           "info":"This widget is based on known error patterns generated from various components that create the NSX infrastructure. It is recommended to analyze the hostnames with the highest returned values to look for potential issues.",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -256,7 +259,6 @@
         }, {
           "name":"Other Errors",
           "info":"Other errors from all NSX components. It is recommended to analyze the hostnames with the highest returned values to look for potential issues. Host agent failures, such as netcpa down or MPA down, may require immediate action.",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -267,16 +269,22 @@
         "widgets":[ {
           "name":"All Container  Error events over time",
           "info":"All Container error events over time grouped by sub component.<br><br>Note: If you do not see any events in this widget then it might mean you have a healthy system.",
-          "gridWidth":"1/2",
           "chartType":"line",
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
           "widgetType":"chart",
           "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1497595082240,\"endTimeMillis\":1502749388507,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"operator\":\"CONTAINS\",\"value\":\"nsx-container-ncp,nsx-container-node\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_nsxt_subcomp\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"vmw_nsxt_container_severity_level\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000\",\"displayNamespace\":\"VMware - NSX-T\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_comp\",\"preContext\":\"comp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5wxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"subcomp\\\"}\"},{\"displayName\":\"vmw_nsxt_subcomp\",\"preContext\":\"subcomp=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3tovrgg33noa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp\\\"}\"},{\"displayName\":\"vmw_nsxt_container_severity_level\",\"preContext\":\"level=\\\"\",\"postContext\":\"\\\"\\\\] \",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3dn5xhiyljnzsxex3tmv3gk4tjor4v63dfozswy000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
+          "name":"NSX Manager Backup Settings Updates",
+          "info":"<span>This widget will show\nthe number of updates that were made to NSX- Manager backup settings over time.&nbsp;</span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1500729723908,\"endTimeMillis\":1505155778984,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3bovsgs5c7nvxwi5lmmvpw4ylnmu000000\",\"operator\":\"CONTAINS\",\"value\":\"BackupConfiguration\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3pobsxeylunfxw4000\",\"operator\":\"CONTAINS\",\"value\":\"ConfigureBackupConfig\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_nsxt_audit_module_name\",\"preContext\":\"ModuleName:'\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3bovsgs5c7nvxwi5lmmvpw4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp subcomp\\\"}\"},{\"displayName\":\"vmw_nsxt_operation\",\"preContext\":\"Operation:'\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffzxhg6duozwxox3oon4hix3pobsxeylunfxw4000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"comp subcomp\\\"}\"}]}",
+          "messageQuery":""
+        }, {
           "name":"Hyperbus events over time",
           "info":"<span>Hyperbus events over time<br></span><ul type=\"disc\">\n <li>nsx-esx/ hyperbus</li>\n <li>nsx-kvm/ hyperbus</li>\n</ul>",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -803,9 +811,9 @@
   "aliasRules":[ ],
   "author":"VMware, Inc.",
   "url":"http://www.vmware.com",
-  "contentVersion":"1.5",
+  "contentVersion":"2.0",
   "info":"The NSX-T Log Insight content pack provides health status dashboards for the logical switching and routing, distributed firewall, and DHCP components that make up the NSX infrastructure. It also provides key audit logs for tracking create, add and delete changes to your NSX infrastructure.<br><br>Minimum requirements<br>&nbsp;&nbsp;&nbsp; VMware Log Insight v3.0+<br>&nbsp;&nbsp;&nbsp; VMware NSX-T v1.0+<br>",
   "instructions":"&nbsp;Forward all logging components to the Log Insight server including:<br>&nbsp;&nbsp;1. NSX Manager<br>&nbsp;&nbsp;2. NSX Controller(s)<br>&nbsp;&nbsp;3. NSX Edge(s)<br>&nbsp;&nbsp;4. ESXi and KVM hosts<br>&nbsp; 5. NSX Container Plugin and Node Agents.<br>Using NSX Transformers Command-Line Interface (CLI) configure rsyslog server for each components to send log messages to Log Insight server.<br><br>Detailed setup instructions:<br><br>NSX MP, CCP and Edge components:<br><br>Configure rsyslog server for each NSX MP, CCP and Edge components.<br>&nbsp;# set logging-server &lt;Log Insight server[:port]&gt; proto &lt;tcp|udp|tls&gt; level &lt;alert|crit|debug|emerg|err|info|notice|warning&gt; [facility &lt;#&gt;] [messageid &lt;id&gt;] [certificate &lt;cert&gt;]<br>e.g.<br>&nbsp;# set logging-server 10.111.222.33 proto udp level info facility syslog messageid SYSTEM,FABRIC<br><br>ESXi and KVM hosts:<br><br>Similarly, configure rsyslog server for each ESXi and KVM hosts.<br><br>ESX:<br>&nbsp;# esxcli network firewall ruleset set -r syslog -e true<br>&nbsp;# esxcli system syslog config set --loghost=udp://&lt;Log Insight server&gt;:514<br>&nbsp;# esxcli system syslog reload<br><br>KVM:<br>&nbsp;Add line `*.* @&lt;Log Insight server&gt;:514;RFC5424fmt` into the file /etc/rsyslog.d/10-vmware-enable-rfc5424.conf<br>&nbsp;# systemctl restart rsyslog<br><br>NSX Container Plugins and Node Agents:Please follow the instructions to enable syslog for NCP and NSX Node agent by reading the guidelines in the “NSX-T Container Plug-in Installation and Administration Guide – NSX-T 2.0”<br>",
-  "upgradeInstructions":"Changelog:<br><span>\t</span>v1.5:<br><ul><li>New Container dashboard.</li></ul>",
+  "upgradeInstructions":"Changelog:<br>v2.0:<br><ul><li>New Container dashboard.</li><li>New widgets on Infrastructure dashboard.</li></ul>",
   "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAAY1BMVEUAAAAzPEczPEczPEczPEczPEczPEczPEf19/hMVF5lbHQ/SFLEyMuOk5ro6+zq7O6UmqBwd3/b3uC0ub1YX2jO0tV0eoKtsbZ8gopaYWrd4OKkqa6aoKXR1de5vcGBh46IjpX9SVRJAAAAB3RSTlMA8MCgQCAwJ0+bUQAAA6BJREFUeNrs0rERwCAMQ1EZO3j/jXOQo0mjEhV6E/yTja0y+rLIwvGMljAebPP6OkfMvY9MT3esjUTu9RlAtZRCtpSE0ActgRbjIAc56MdBjIMYBzEOYhzEOIhxEOMgxkGMgxgHvezS246CMBSF4cu1SndbOTkcHPH9n3LQCoMYhg2JmRv+C2uakv2lsNYBWusArXWA1jpAax0gRZ8G2ZtQkdwsNrQflAZJFaNsJSGFuv2gSj8mDRWU7QeloYC6Qo/fC7LNphG3Bur2gSrBpqSCvj2g68YB1RX69oCCwaZMgL49IELR/gcO0FoHaK1/ABkyw1hCIlY73mudAVp6Mzlx/jSI7h104VAJ2Iw5nsW/HwaxnoMcmdePeyrv2vN4LY7efhrkPcsZyPrZPeTMBn4HFSjBb0Vi4tNJMWzYP0DZmXSvoHr+oRgfjwhzaECmoQwz04akFHENJ9g2xI0lEJHTmxH0XBK85EgDdPRGBbqRlKeHj8I3Y03z3CiWQcZTXkCGdHhNKLCeDipQxb5oD1zougyCI7spCCV9/Xaua1lCB0JD8mukxUuRU1zZtg+lXQZB6O0UVJO82PlLI40WdCIZLAC5y+xwI9+M0IR9yRIo/uZTEBJPMu8wKSMdtCAbSFZAwb4C7EsHpwGwBoIjz1MQ7IV9fkIoyYsWFEc3wBdJGebHXYEGhJKZjaCxTkiWdvrKajXIPEb+tHN2uw3CMBS+tCGkavnLEITt/Z9yWggNmrad4GlS1vq7aJWUSl9TcwBFsgmvIqGJeYlCiakL349J9NrkF/W2NuuHgCeREC3M9VEozcasbmIaYKG0RKGShEKm5Zamz0ImOozhDLM5wbizxiAkgdCeQXYfJdogZO5vXbZQzYEXsRDNzOM3K7SEkj9e9rEQNRzCSC5kLjx8UUPV8WLbBDMolJbojSgGoolTbv8/eyAUfn9MpcGOYaLbsmfgLh2+IKFktO4Pyv3a3LZ4apxJE0iIul2I71hKtRw/mv76jvEwuGwjY+dgM9hqm7XHKh+e66njZ1QIoUIIFUI8gJCv6RS1p3wkQrOjU7iZ8pEIVVwRQHq4TIhmbygb468kAgslnO8pk947EoKFEld2WdtTN8eC9REIUTVnbuD9rn7+8RbnOVQIoUIIFUKoEEKFECqEUCGECiFUCKFCCBVCqBBChRAqhFAhhAohVAihQognECquIVJxLaOKa6pVXNux8hqzFde6rrzmfmW1P3wHhJhI+9YoVCkAAAAASUVORK5CYII="
 }
