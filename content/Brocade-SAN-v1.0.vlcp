@@ -318,7 +318,7 @@
   "alerts": [
     {
       "searchPeriod": 600000,
-      "hitCount": 0,
+      "hitCount": 0.0,
       "hitOperator": "GREATER_THAN",
       "messageQuery": "SELECT item0 FROM (timestamp >= 0 & timestamp <= 0) & (text:\"FW-1424\") as item0 ORDER BY item0.timestamp DESC",
       "searchInterval": 600000,
@@ -329,7 +329,7 @@
     },
     {
       "searchPeriod": 600000,
-      "hitCount": 0,
+      "hitCount": 0.0,
       "hitOperator": "GREATER_THAN",
       "messageQuery": "SELECT item0 FROM (timestamp >= 0 & timestamp <= 0 & text:\"raslogd\") & (text:\"FFDC\") & (text:\"Detected termination\") as item0 ORDER BY item0.timestamp DESC",
       "searchInterval": 600000,
@@ -340,7 +340,7 @@
     },
     {
       "searchPeriod": 600000,
-      "hitCount": 0,
+      "hitCount": 0.0,
       "hitOperator": "GREATER_THAN",
       "messageQuery": "SELECT item0 FROM (timestamp >= 0 & timestamp <= 0 & text:\"raslogd\") & ((text:\"MS-1009\") | (text:\"FW-1402\") | (text:\"FW-1426\") | (text:\"FW-1427\") | (text:\"FW-1428\") | (text:\"FW-1429\") | (text:\"FW-1430\") | (text:\"FW-1431\") | (text:\"FW-1432\") | (text:\"FW-1433\") | (text:\"FW-1434\") | (text:\"FW-1435\") | (text:\"FW-1436\") | (text:\"FW-1437\") | (text:\"FW-1438\") | (text:\"MAPS-1021\") ) as item0 ORDER BY item0.timestamp DESC",
       "searchInterval": 600000,
@@ -351,7 +351,7 @@
     },
     {
       "searchPeriod": 600000,
-      "hitCount": 0,
+      "hitCount": 0.0,
       "hitOperator": "GREATER_THAN",
       "messageQuery": "SELECT item0 FROM (timestamp >= 0 & timestamp <= 0 & text:\"raslogd\") & ((text:\"MAPS-1001\") | (text:\"MAPS-1002\") | (text:\"MAPS-1003\")) as item0 ORDER BY item0.timestamp DESC",
       "searchInterval": 600000,
@@ -362,7 +362,7 @@
     },
     {
       "searchPeriod": 600000,
-      "hitCount": 0,
+      "hitCount": 0.0,
       "hitOperator": "GREATER_THAN",
       "messageQuery": "SELECT item0 FROM (timestamp >= 0 & timestamp <= 0 & text:\"raslogd\") & (text:\"AN-1003\"  | text:\"AN-1004\" | text:\"AN-1007\" | text:\"AN-1008\" | text:\"AN-1010\" ) as item0 ORDER BY item0.timestamp DESC",
       "searchInterval": 600000,
