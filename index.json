@@ -695,7 +695,7 @@
     "author": "Blue Medora",
     "contentVersion": "1.1.0",
     "namespace": "com.pivotal.cloudfoundry",
-    "fileName": "Pivotal-Cloud_Foundry-v1.0.vlcp",
+    "fileName": "Pivotal-Cloud_Foundry-v1.1.vlcp",
     "framework": "#9c4",
     "contentPackId": "com.pivotal.cloudfoundry",
     "version": "2.4",
