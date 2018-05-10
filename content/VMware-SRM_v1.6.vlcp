@@ -1,0 +1,637 @@
+{
+  "name":"VMware - SRM",
+  "namespace":"com.vmware.srm",
+  "contentPackId":"com.vmware.srm",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"sra_command",
+    "preContext":"^\\[\\d{2}\\/\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\s+\\d{5}\\s+\\d{4}\\s+\\w+::",
+    "postContext":"\\s*\\]",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3dn5ww2ylomq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sra_command_type",
+    "preContext":"^\\[\\d{2}\\/\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\s+\\d{5}\\s+\\d{4}\\s+ ",
+    "postContext":"::",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3dn5ww2ylomrpxi6lqmu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sra_discoverdevices_command",
+    "preContext":"DiscoverDevicesCommand::",
+    "postContext":"\\s+\\]",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3enfzwg33wmvzgizlwnfrwk427mnxw23lbnzsa0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sra_event_type",
+    "preContext":"^\\[\\d{2}\\/\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\s+\\d{5}\\s+                    ",
+    "postContext":"\\s+\\w+\\:\\:",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3fozsw45c7or4xazi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sra_grpname_for_symm_device",
+    "preContext":"\\[",
+    "postContext":"\\]$",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3hojyg4ylnmvpwm33sl5zxs3lnl5sgk5tjmnsq0000",
+    "constraints":"{\"searchTerms\":\"group name\",\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sra_rdf_mode",
+    "preContext":"RDF Mode \\[",
+    "postContext":"\\]",
+    "regexValue":".*",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3smrtf63lpmrsq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sra_replication_device",
+    "preContext":"\\[",
+    "postContext":"[\\,|\\]]",
+    "regexValue":"[A-Fa-f0-9]+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3smvygy2ldmf2gs33ol5sgk5tjmnsq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sra_severity",
+    "preContext":" \\] \\[",
+    "postContext":"\\]:",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"sra_symm_deviceid",
+    "preContext":"Symm Dev \\[",
+    "postContext":"\\]",
+    "regexValue":"[A-Fa-f0-9]+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_array_pair",
+    "preContext":"pair '",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3bojzgc6k7obqws4q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_command",
+    "preContext":"fault\\.",
+    "postContext":"\\) \\{",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5ww2ylomq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"storage\"}",
+    "info":null
+  }, {
+    "displayName":"srm_component",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_datastore_component",
+    "preContext":"\\d{5}\\s+\\w+\\s+'",
+    "postContext":"' ",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3dn5wxa33omvxhi000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"group\"}",
+    "info":null
+  }, {
+    "displayName":"srm_datastore_group",
+    "preContext":"group '",
+    "postContext":"'\\s*",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_datastore_name",
+    "preContext":"datastore '",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_datastore_service",
+    "preContext":"Storage::",
+    "postContext":"::",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3tmvzhm2ldmu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_severity",
+    "preContext":"(\\[|)\\d+\\s+",
+    "postContext":"(\\s+\\'|\\s+vmware-dr)",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_vm_name",
+    "preContext":"machine \\'",
+    "postContext":"\\'",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"SRM: SRA errors above normal",
+    "info":"This alert is triggered when SRA errors are too frequent and a reason for concern that needs administrative attention.",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469459237953,\"endTimeMillis\":1469468008618,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"operator\":\"CONTAINS\",\"value\":\"error,warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_severity\",\"preContext\":\" \\\\] \\\\[\",\"postContext\":\"\\\\]:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+    "messageQuery":"",
+    "hitCount":10.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":1800000,
+    "searchInterval":300000
+  }, {
+    "name":"SRA : Replication reversal errors",
+    "info":"This alert is generated when replication reversal errors are logged.<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469735160951,\"endTimeMillis\":1469821560950,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"reversing\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":2.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"SRM Overview",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"vmw_product",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Total Events",
+          "info":"The total number of events received over time.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469137855096,\"endTimeMillis\":1469138155095,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM component errors by severity",
+          "info":"Count of events grouped by srm_component, srm_severity<br>",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1469082028104,\"endTimeMillis\":1469168428103,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM events grouped by severity",
+          "info":"Count of events over time grouped by srm_severity<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469728025300,\"endTimeMillis\":1469814425299,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of errors by datastore group",
+          "info":"Unique count of srm_datastore_group over time grouped by srm_datastore_group, srm_severity<br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1469134071473,\"endTimeMillis\":1469142545926,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_group\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_group\",\"preContext\":\"group '\",\"postContext\":\"'\\\\s*\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events by datastore group and severity",
+          "info":"Unique count of srm_datastore_group over time grouped by srm_datastore_group, srm_severity<br>",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469728133109,\"endTimeMillis\":1469814533108,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"displayName\":\"srm_datastore_group\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_group\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_group\",\"preContext\":\"group '\",\"postContext\":\"'\\\\s*\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events by Component",
+          "info":"All SRM events by component -&nbsp;",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469081545638,\"endTimeMillis\":1469167945637,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All SRM Recovery events",
+          "info":"SRm RecoeCount of events grouped by event_type<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469728259278,\"endTimeMillis\":1469814659277,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"CONTAINS\",\"value\":\"recovery\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"event_type\",\"internalName\":\"event_type\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Role updates by SRM component",
+          "info":"Role updates by SRM component.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"role\",\"startTimeMillis\":1469728341059,\"endTimeMillis\":1469814741140,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"updating role\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM errors by component",
+          "info":"Count of events grouped by srm_component<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1469728434446,\"endTimeMillis\":1469814834445,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRM Virtual Machine Overview",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"vmw_product",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of VM's",
+          "info":"Unique count of VM's",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469721597863,\"endTimeMillis\":1469807997862,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_vm_name\",\"preContext\":\"machine \\\\'\",\"postContext\":\"\\\\'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of VM's added",
+          "info":"Unique count of VM's added to datastore group.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Adding\",\"startTimeMillis\":1469720470826,\"endTimeMillis\":1469806870825,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_vm_name\",\"preContext\":\"machine \\\\'\",\"postContext\":\"\\\\'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of VM's not in a Datastore",
+          "info":"Count of VM's that do not belong to a datastore group.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"Virtual machine\\\"\",\"startTimeMillis\":1469721305479,\"endTimeMillis\":1469807705478,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"doesn't belong to any existing datastore group\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_vm_name\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_vm_name\",\"preContext\":\"machine \\\\'\",\"postContext\":\"\\\\'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Unique count of VM's grouped by datastore group",
+          "info":"Unique count of srm_vm_name over time grouped by srm_datastore_group<br>",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"Virtual machine\\\"\",\"startTimeMillis\":1469720383542,\"endTimeMillis\":1469806783541,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_group\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_group\",\"preContext\":\"group '\",\"postContext\":\"'\\\\s*\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_vm_name\",\"preContext\":\"machine \\\\'\",\"postContext\":\"\\\\'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VM's by Datastore",
+          "info":"Unique count of srm_vm_name over time grouped by srm_datastore_name<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469720940431,\"endTimeMillis\":1469807340430,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_name\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_name\",\"preContext\":\"datastore '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_vm_name\",\"preContext\":\"machine \\\\'\",\"postContext\":\"\\\\'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VM's removed by Datastore",
+          "info":"Unique count of srm_vm_name over time grouped by srm_datastore_name<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"removal\",\"startTimeMillis\":1469720717434,\"endTimeMillis\":1469807117433,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_name\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_name\",\"preContext\":\"datastore '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_vm_name\",\"preContext\":\"machine \\\\'\",\"postContext\":\"\\\\'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3wnvpw4ylnmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Datastore Group Overview",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Datastore group errors",
+          "info":"Count of events grouped by srm_datastore_group, srm_severity<br>",
+          "gridWidth":"1/2",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1488206860048,\"endTimeMillis\":1488228460313,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_group\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_group\",\"preContext\":\"group '\",\"postContext\":\"'\\\\s*\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of datastore groups",
+          "info":"Unique count of datastore groups",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469134071473,\"endTimeMillis\":1469142545926,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"displayName\":\"srm_datastore_group\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_datastore_group\",\"preContext\":\"group '\",\"postContext\":\"'\\\\s*\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Datastore group commands by severity",
+          "info":"Count of events grouped by srm_command, srm_severity<br>",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1469698112733,\"endTimeMillis\":1469928371589,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5ww2ylomq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_command\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5ww2ylomq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_command\",\"preContext\":\"fault\\\\.\",\"postContext\":\"\\\\) \\\\{\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5ww2ylomq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"storage\\\"}\"},{\"displayName\":\"srm_datastore_group\",\"preContext\":\"group '\",\"postContext\":\"'\\\\s*\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Datastore group component events by severity",
+          "info":"&nbsp;Datastore group component by severity - Count of events grouped by srm_severity, srm_datastore_component<br>",
+          "gridWidth":"1/2",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469698112733,\"endTimeMillis\":1469928371589,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_datastore_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_component\",\"preContext\":\"\\\\d{5}\\\\s+\\\\w+\\\\s+'\",\"postContext\":\"' \",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"group\\\"}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRA Overview",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"SRA Errors & Warnings",
+          "info":"SRA errors and warning events.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469459237953,\"endTimeMillis\":1469468008618,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"operator\":\"CONTAINS\",\"value\":\"error,warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_severity\",\"preContext\":\" \\\\] \\\\[\",\"postContext\":\"\\\\]:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRA Failover errors",
+          "info":"Count of events over time grouped by sra_severity<br>",
+          "chartType":"area",
+          "chartOptions":"{\"logaxis\":false,\"legend\":false,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469459402973,\"endTimeMillis\":1469469428584,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failover\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_severity\",\"preContext\":\" \\\\] \\\\[\",\"postContext\":\"\\\\]:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"SRA - Replication errors",
+          "info":"Replication failures - Count of events over time grouped by sra_severity<br>",
+          "chartType":"area",
+          "chartOptions":"{\"logaxis\":false,\"legend\":false,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469459402973,\"endTimeMillis\":1469469428584,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_severity\",\"preContext\":\" \\\\] \\\\[\",\"postContext\":\"\\\\]:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRA - Group creation Failures",
+          "info":"Group creatin failures - Count of events over time grouped by sra_severity<br>",
+          "chartType":"area",
+          "chartOptions":"{\"logaxis\":false,\"legend\":false,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469459402973,\"endTimeMillis\":1469469428584,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed to create group\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_severity\",\"preContext\":\" \\\\] \\\\[\",\"postContext\":\"\\\\]:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"SRA events by type and severity",
+          "info":"SRA events by event type - Count of events grouped by sra_event_type, sra_severity<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469731338243,\"endTimeMillis\":1469817738242,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_event_type\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3fozsw45c7or4xazi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"sra_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_event_type\",\"preContext\":\"^\\\\[\\\\d{2}\\\\/\\\\d{2}\\\\s+\\\\d{2}:\\\\d{2}:\\\\d{2}\\\\s+\\\\d{5}\\\\s+                    \",\"postContext\":\"\\\\s+\\\\w+\\\\:\\\\:\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"sra_severity\",\"preContext\":\" \\\\] \\\\[\",\"postContext\":\"\\\\]:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRA commands by type",
+          "info":"SRA commands by type - Count of events over time grouped by sra_command_type, sra_command<br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469732790882,\"endTimeMillis\":1469819190881,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3dn5ww2ylomrpxi6lqmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3dn5ww2ylomq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_command_type\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3dn5ww2ylomrpxi6lqmu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"sra_command\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3dn5ww2ylomq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_command\",\"preContext\":\"^\\\\[\\\\d{2}\\\\/\\\\d{2}\\\\s+\\\\d{2}:\\\\d{2}:\\\\d{2}\\\\s+\\\\d{5}\\\\s+\\\\d{4}\\\\s+\\\\w+::\",\"postContext\":\"\\\\s*\\\\]\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3dn5ww2ylomq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"sra_command_type\",\"preContext\":\"^\\\\[\\\\d{2}\\\\/\\\\d{2}\\\\s+\\\\d{2}:\\\\d{2}:\\\\d{2}\\\\s+\\\\d{5}\\\\s+\\\\d{4}\\\\s+ \",\"postContext\":\"::\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3dn5ww2ylomrpxi6lqmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRA Device Overview",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"SRA - Skipped devices symm deviceid",
+          "info":"Events over time for skipped devices by device id",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469459237953,\"endTimeMillis\":1469468008618,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"operator\":\"EXISTS\",\"value\":\"error,warning\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"skipping\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_symm_deviceid\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_symm_deviceid\",\"preContext\":\"Symm Dev \\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Events for devices in a group",
+          "info":"Count of events grouped by sra_symm_deviceid, sra_grpname_for_symm_device<br>",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469459237953,\"endTimeMillis\":1469468008618,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"operator\":\"EXISTS\",\"value\":\"error,warning\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3hojyg4ylnmvpwm33sl5zxs3lnl5sgk5tjmnsq0000\",\"operator\":\"EXISTS\",\"value\":\"RDF mode\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_symm_deviceid\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"sra_grpname_for_symm_device\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3hojyg4ylnmvpwm33sl5zxs3lnl5sgk5tjmnsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_grpname_for_symm_device\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]$\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3hojyg4ylnmvpwm33sl5zxs3lnl5sgk5tjmnsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"group name\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"sra_symm_deviceid\",\"preContext\":\"Symm Dev \\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRA - Consistency disabled by Device ID",
+          "info":"Count of events over time grouped by sra_symm_deviceid<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1469459402973,\"endTimeMillis\":1469469428584,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"operator\":\"EXISTS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"consistency disabled\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_symm_deviceid\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_symm_deviceid\",\"preContext\":\"Symm Dev \\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3tpfww2x3emv3gsy3fnfsa0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"SRA Replication events by device",
+          "info":"SRA events by event type - Count of events grouped by sra_event_type, sra_severity<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469731984413,\"endTimeMillis\":1469818384412,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3fozsw45c7or4xazi0\",\"displayName\":\"sra_event_type\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3fozsw45c7or4xazi0\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3smvygy2ldmf2gs33ol5sgk5tjmnsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3fozsw45c7or4xazi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_replication_device\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3smvygy2ldmf2gs33ol5sgk5tjmnsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_event_type\",\"preContext\":\"^\\\\[\\\\d{2}\\\\/\\\\d{2}\\\\s+\\\\d{2}:\\\\d{2}:\\\\d{2}\\\\s+\\\\d{5}\\\\s+                    \",\"postContext\":\"\\\\s+\\\\w+\\\\:\\\\:\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"sra_replication_device\",\"preContext\":\"\\\\[\",\"postContext\":\"[\\\\,|\\\\]]\",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3smvygy2ldmf2gs33ol5sgk5tjmnsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Successful Replication Reversals by device",
+          "info":"&nbsp;Successful Replication Reversals by device - Count of events grouped by sra_replication_device<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469730319708,\"endTimeMillis\":1469816719707,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"sra\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"revers*,commence,complete\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"error\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3smvygy2ldmf2gs33ol5sgk5tjmnsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_replication_device\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3smvygy2ldmf2gs33ol5sgk5tjmnsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_replication_device\",\"preContext\":\"\\\\[\",\"postContext\":\"[\\\\,|\\\\]]\",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzgcx3smvygy2ldmf2gs33ol5sgk5tjmnsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"sra\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRM 6.1+ Overview",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"vmw_product",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Total Events",
+          "info":"The total number of events received over time.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469137855096,\"endTimeMillis\":1469138155095,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM component errors by severity",
+          "info":"Count of events grouped by srm_component, srm_severity<br>",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1469082028104,\"endTimeMillis\":1469168428103,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM events grouped by severity",
+          "info":"Count of events over time grouped by srm_severity<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469728025300,\"endTimeMillis\":1469814425299,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events by Component",
+          "info":"All SRM events by component -&nbsp;",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469081545638,\"endTimeMillis\":1469167945637,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All SRM Recovery events",
+          "info":"SRm RecoeCount of events grouped by event_type<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469728259278,\"endTimeMillis\":1469814659277,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"CONTAINS\",\"value\":\"recovery\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"event_type\",\"internalName\":\"event_type\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Role updates by SRM component",
+          "info":"Role updates by SRM component.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"role\",\"startTimeMillis\":1488221218512,\"endTimeMillis\":1488224818592,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM errors by component",
+          "info":"Count of events grouped by srm_component<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1469728434446,\"endTimeMillis\":1469814834445,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_component\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"App|Replication|Recovery|Storage|Vdb|StorageProvider|Persistence|SoapAdapter\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3dn5wxa33omvxhi000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Datastore 6.1+ Overview",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3hojxxk4a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All Datastore events",
+          "info":"Count of events grouped by srm_datastore_group, srm_severity<br>",
+          "gridWidth":"1/2",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1488206860048,\"endTimeMillis\":1488228460313,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_name\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_name\",\"preContext\":\"datastore '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events datastore",
+          "info":"Unique count of datastore groups",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1488208768849,\"endTimeMillis\":1488230368848,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_name\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_name\",\"preContext\":\"datastore '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Datastore events by severity",
+          "info":"Count of events grouped by srm_command, srm_severity<br>",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1488207161658,\"endTimeMillis\":1488228761657,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_name\",\"preContext\":\"datastore '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3omfwwk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Datastore service events by severity",
+          "info":"&nbsp;Datastore group component by severity - Count of events grouped by srm_severity, srm_datastore_component<br>",
+          "gridWidth":"1/2",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"datastore\",\"startTimeMillis\":1488208190195,\"endTimeMillis\":1488229790194,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_datastore_service\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3tmvzhm2ldmu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_service\",\"preContext\":\"Storage::\",\"postContext\":\"::\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3emf2gc43un5zgkx3tmvzhm2ldmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzzxe3jomrzgcztuonzg2x3tmv3gk4tjor4q0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "agentClasses":[ {
+    "name":"vSphere - SRM 6.0.0",
+    "info":"This agent config should be applied to the SRM Log Insight agent.<br><br><span style=\"font-weight: bold;\">IMPORTANT:</span><span><span>&nbsp;</span>Some of the directory paths specified in this agent configuration may need to be changed to match your exact environment. Please see the comments within each section for more information.</span><br><br><span>This is the agent group configuration for&nbsp;<span></span></span><span style=\"font-weight: bold;\">vSphere-SRM&nbsp;</span><span><span></span>content pack.</span><br><span>You can find this under<span>&nbsp;</span></span><span style=\"font-weight: bold;\">Administration -&gt; Management -&gt; Agents -&gt; All Agents</span><span><span>&nbsp;</span>drop down.</span><br><span>To apply,copy this template to active groups , add filters and save.</span><br>",
+    "agentConfig":"[filelog|SRM_logs]\n; IMPORTANT: Change the directory as per the environment\ndirectory=C:\\ProgramData\\VMware\\VMware vCenter Site Recovery Manager\\Logs\ninclude=*.log\ntags={\"vmw_product\" : \"SRM\"}\nevent_marker=^\\d{4}-\\d{2}-\\d{2}[A-Z]\\d{2}:\\d{2}:\\d{2}\\.\\d{3}[-\\+]\\d{2}:\\d{2}\n\n[filelog|SRA_logs]\n; IMPORTANT: Change the directory as per the environment\n; IMPORTANT: This filelog section is for SRA version 6.0.0\ndirectory=C:\\ProgramData\\VMware\\VMware vCenter Site Recovery Manager\\Logs\ninclude=*.log\ntags={\"vmw_product\" : \"SRA\"}\nevent_marker=^\\[\\d{2}/\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\s+\\d{5}\n"
+  }, {
+    "name":"vSphere - SRM 6.1.0",
+    "info":"<span>This agent config should be applied to the SRM Log Insight agent.</span><br><br><span style=\"font-weight: bold;\">IMPORTANT:</span><span>&nbsp;Some of the directory paths specified in this agent configuration may need to be changed to match your exact environment. Please see the comments within each section for more information.</span><br><br><span>This is the agent group configuration for&nbsp;</span><span style=\"font-weight: bold;\">vSphere-SRM&nbsp;</span><span>content pack.</span><br><span>You can find this under&nbsp;</span><span style=\"font-weight: bold;\">Administration -&gt; Management -&gt; Agents -&gt; All Agents</span><span>&nbsp;drop down.</span><br><span>To apply,copy this template to active groups , add filters and save.</span><br>",
+    "agentConfig":"[filelog|SRM_610_logs]\n; IMPORTANT: Change the directory as per the environment\ndirectory=C:\\ProgramData\\VMware\\VMware vCenter Site Recovery Manager\\Logs\ninclude=*.log\ntags={\"vmw_product\" : \"SRM\"}\nevent_marker=^\\d{4}-\\d{2}-\\d{2}[A-Z]\\d{2}:\\d{2}:\\d{2}\\.\\d{3}[-\\+]\\d{2}:\\d{2}\n\n[filelog|SRA_610_logs]\n; IMPORTANT: Change the directory as per the environment\n; IMPORTANT: This filelog section is for SRA version 6.1.0\ndirectory=C:\\ProgramData\\VMware\\VMware vCenter Site Recovery Manager\\Logs\ninclude=*.log\ntags={\"vmw_product\" : \"SRA\"}\nevent_marker=^\\d{4}-\\d{2}-\\d{2}\\s+\\d{2}:\\d{2}:\\d{2}\\,\\d{3}\n"
+  } ],
+  "author":"VMware Inc.",
+  "url":"http://www.vmware.com/products/site-recovery-manager.html",
+  "contentVersion":"1.6",
+  "info":"<span>VMware Site Recovery Manager is a business continuity and disaster recovery solution that helps you to plan, test, and run the recovery of virtual machines between a protected vCenter Server site and a recovery vCenter Server site.</span><br><br><span>Site Recovery Manager orchestrates the recovery process with the replication mechanisms, to minimize data loss and system down time.</span><br><ul><li>At the protected site, Site Recovery Manager shuts down virtual machines cleanly and synchronizes storage, if the protected site is still running.</li><li>Site Recovery Manager powers on the replicated virtual machines at the recovery site according to a recovery plan.</li></ul><br><span>A recovery plan specifies the order in which virtual machines start up on the recovery site. A recovery plan specifies network parameters, such as IP addresses, and can contain user-specified scripts that Site Recovery Manager can run to perform custom recovery actions on virtual machines.</span><br><br><span>This content pack a deeper look into SRM and SRA logs for analysis and troubleshooting.</span><br>",
+  "instructions":"<span style=\"font-weight: bold;\">Log Insight Setup</span><span>:</span><br><ol><li>To set up event forwarding from SRM to Log Insight, install the Log Insight agent where SRM is installed.<br></li><li>Configure a log Insight agent using the `SRM` agent configuration group (More instructions on the agent group itself).</li><li>Change the REPLACE_WITH_SRM_LOG_DIRECTORY in the Log_Files configuration to the directory of the log files on the monitored machine.</li><li>Input all of the IP addresses or hostnames from the SRM setup in the filter at the top of the Agent Configuration.</li></ol>",
+  "upgradeInstructions":"<span>No additional upgrade instructions necessary.</span><br><br><span style=\"text-decoration: underline;\"><span style=\"font-weight: bold;\">Changelog:</span><br></span><br><span style=\"font-weight: bold;\">v1.2 -&nbsp;</span><br><span>Updated the agent config to interpret time format in GMT time.<br></span><br><span><span style=\"font-weight: bold;\">v1.5 -&nbsp;</span><br>Added 2 new dashboards for SRM v6.1+</span>",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAACc1BMVEUAAABlm0aPx0KVy0CLszxnkSmTykGSyEOOxEKVy0GTy0GBq1iUyz+SyUSUy0GUy0GUykKTykGTvWeKlDqFukL47VP84jn081bu2zeSykCUy0H27VOq00WLwkGPwU2WzEypyEOTykGQyECTyT+Rx0GplDyiyj6vyzmTykGQx0CTykH7uxjxvyGcyz/081b8vBjEzTmTyUGVykGSx0P0uhjPwynK4EvM3kujz0SMxD+Px0DO1j3f0DDDyjaSyUCezEHzuRyAuD6TykL271Xf0C/IzjfJxCze5E+710jz61OXy0GfyTzC0zvH3Uuyz0GpyjvC20r161a70DvdwSP5uxrn2zz3uhujyT7A1ET57lWkzUPstR/p3U26yTWvxTPp5lTQzjKr0kWsxjfp41rotCHY0TPdrifGyTGTykDu5lnvth3W3FXeriTGojLduzv571V3rj/dzUmmjzfw0Svc5U/kzi3LzGeAuT7fwUTf2F7f6FHT0WXHyWq7xTCUy0L/0yn/4zn/vhj/4Df/0ij+5T376kv/2C6by0D95kH/1ivEzjb00iv/2jD/9VTv7FLq6lKrzDz/3TOlyjus0EKYzEGj0EXQzzT60imq0kX/zyXvwB7/6kbLzjT86UbT2Tzr0C3/xB367VD/xyH/wRr/zCObzULz3jj/3zTm0C6/wy7v0Szlvx/Q4k6ryDj0wBv/7Ur29Fav1Uf20ivP3Eb81Dbz3Un5vhn57lTv6ErT1Uan0kW0zDm+zTfYzzHg6FH/8E6+2knJ3EehzD/32kL82Dzc1znuvRzv5lbc2Uf9zCzm6VDy5EPpvx7u4D610j704TzY1WJp5NfTAAAAfnRSTlMAIZbyCwVzkYP8+hNmnfetiOouGClm/vz84k/+9TQfGBPIfO1dSPTv2ta4sQn489vY0L9TJv70693ESP3w7OXTwXs+Kf79/fj27+Df29LPxMO0/fz78vLq5ti7rv379urq5tzZ2dPMxaWdmJGOfWVKRzct7uHfj45JJ9jXuWpeTeMzAAAJJ0lEQVR42u3a91sScRzAcfIAu1PRCzLJQFNzlZWaDc2G7b333nvvdZYozlQMoWVmQ4myYbbUtDQ1239SH0g9gQPuju8pP/R+nn7oyR5fz3cyToQqiZ+fX5h6SE8KtZ+zen9ILZaIEBeu8g/qydfX18cnoDcfX2f1+RH4b1JpUJB/OKJBUSQHJVKeRSxciFOJyQq1GIFHHUhiMtxTEQF/yPgItacc8RD//UoKVWTi/ihPp0uaRCEtPjXME1BYciyOFkRgyZ6A/EdiFOIIqVrCe7tnBFLIwwOjeG+1jI0kJUDxvFdR6kIZJUBk0nCeB5AUo4RJyg8UFdg9QF4CEgeQ3VveW0C9W+w/6D8ILQjHEsrLGxoabjJ1g660rDW3X0DYxiXPmr+VlBTb9x76/v3779+/q6GQEJOhsT9ADfNPbyspDs3prcJanrVsS1dranRardZYZ/5YUEYxFeHHD4TLCIf5evypObTKouj59f8MPWVlZdXoirT5mdaMlU2tTKDBg/iBZEqHu6N8/jzwgMBJWboiwPSk0ZgKcoUF3ZxXXFWR50xTA2MDHjpN3dRlCxGCSPvLLGE+rJ5sF5xM+07tW4QO5Ljjd0wKrarIZuRk6bSZDBV+bBQQpIcVlMM8YYweyGhuEhL0rOQd84zVwFpmTGMsEBQU+q6CcfloM50mNCiP0ZM/ICBs8rx3VQwgHXgEBEnCLlyYBZ3YWG7XjuXb4FB03F8wXwKCxEPOXtq1awO0oMS+BUybHtaPcKATZw8dOLBrc2eOsyqysx23O2dQhJwdZ8ysQ386qyxXZ16fsvvGtL+4g6RidqBZKxaE0mPAKhgfPiAJK8+xFQtgbNhx6PkSDBR+bEUVXAtcqtHlZ7ICySIJ7qBjC+h7nGVwXbADKaeQXEGSoStCuY4PeFiCMFLGFTTmQCdnTyYd+jUUvgK2FysIfTwLCTp/eVsOgu2FDnT0T2cOAg860NDOnAounvxMoUGcthiMj+CgdxXZvOeLx+XqhxLk+PIQ/csPAOWxHiA4f7wKVKPtF1CVM1BwsOWjlX9VVwfDis4fUFBwdUi7YU76eCg9fY6hGm7UAQMBpj1t5eKly2LKyqLXrYuOjl63cw2AMgcKFLwmbWUrFjeFfulAJq4JvqodONDi6ThF4QRB9aZvH1DQeADZpk+rzhrIEVrkACoI4brrNUZ0oF+O7+1XtnMdIWNdk4AgfOmeYI6gOtNKFqCMKP8+RUVFHXp9z7EbjqBFi6s5gsxTS12DxGFhYeoAkt47BEYqlSTG8lmBX9X1nFaQxpQe7RrkPxKaRlB0hEwmI3AcPCwqbS/ktqRnl+EuQKlSaTzlUdGLpxo1HDxnxidQTkFiRSDlaWRSuqnQqNGw45hP7Vsmcw5KTcQ8BhFYQuldE7tBMlZuX7YIw52BxP6BBIUifWljwZ4zpkpzYXdms7mSzmyp0jR7qqGgKSaWHgJ7kEQdTyFLtmxp0xyD4aM1g8Fwt08G698LtsTQu8sRBB9YqZNHUghFMr0+11V6PfOupd91JMeTlNckFYn8IigvCkCpAZQXBaCkWMqLAhDlRWFxUd4Fipup8i5QkkrsXaD4cJELEI7rLT22LZcO/hGXEQg9kftdgiYvnf8J+mzpdU+f09LSDJDlTpgDV9LGheg8RIRC4hRU/urTpNPzmpvhyQlrPc9MlFgemvj582dICNyWJtPUPdubSnMpJCUGwYp2AtKXf2p+ed1ZLS0v7mTrtD1f5RoaUYgIZRBgnIEaPn8DD/zePPrLnixrOl1RkRbKp19r1ZnutlIep4wKcwqSTV9f8vJ6C2hA0R0orI58xvczMQn2y1Mp46TxjfBXi5yCsKUXr19/kUdrbB7bYBJtj6FsmxaHuWcAWxkXNxIKsKxm56DyZ8XgyeoTeFxlNDXZrwgCZwGacm5m1HEFvPsKB48LUAMs6Ds24+PmLaCm7i7DOEdufWLT3LlzU1L2Sf3pUlWKQXLa4gyEjSi+3pLNYr5okMbAAFqU8pTux4+Ojo7nb9+OHiNyl+OBuHyszQCBhzsIyl11zTE+oBGThrXQK1rH6rPn2Y5nUcLWp0wguYQz6NWzYS29G17H7oPDyrtldqs6MmbubSbQSTEf0IurXMYHKpxdareCEsfXP0AEGjFx2AuOHrhAGm3PoemT1jCCZoyS8weBh/1nB3NKb/Rp/frNbehAkwDEzQMiU/uH7r5Cm9+0oQNNXjLWCipi5aHv2MLCtrY33bV9qe968BApSAcejuXX13+xVF/f1dX14D540IHo45ljGk3XA3poEK4hbSavbj26/5DmoNv2d/iNjwY8DhyHk5oXSMvX4yBgfZehB8F8wfAIBCriMz4P7rv1rN7EF5TPlQMeGB937T4MIO6X60vuIPBcc9/qw6MkwoJoD2wv9609KhfxBaHb7nTjNp0Q8Qah2+50BweJ+wXE0rN27xGxhD8I2Xan5+vIKBHEF4TYs3rtwVHhIr4gLucQi+MH6th7fgL99pTzbc/+pNaAx+3Y7N508PBR+kDkDNqxZCzLu0yjedTreX7boXHWdu91WDvc37neYTdjtOdtx5My+6KvTPiXXOwZaPrysXkcPQCqpexSBmaI6IQEOc4XgH5sxew/a5mpQAQiRhSzAvU9Dm+v2hlHCAOCGkqy3Xtsr6+n6esiccomckoGMtC3YPfzZXtdrNqZQNmHDUcFKv9a7f78sT2eU3BKQFDrvRBuLzfePn1CCQlKWA/PKHB5ufF8bq2gICxpPP2IAtOrZ9v5ggECj5AggoxunF3oHATzZeNJqc0VFgTpGw0mc50Rxsn1fL19fvtpCoyP0CCodYvBVFnIUN1zuts/VqVsyaX6BaTPbS0rZay2u5iY2lq4Q8GDGMQzHJNRdAMFsv1K0wtAWOI07wLJpkVSLIsNUCEAISzwuNy7QAF+Eu8C+YCHV/GxlADJlBEinkmklACR546L+KYKEmCMYpPlvEFiVRJyT5yPQsS/8EAC9QoaLJd4AJKogtCKYmeqwONJKt+AeAyZJ0mqEIs8TZIxkoy0GyecwDlj8EiSTBahSKwaHhFr/4jaNO7bPSJVFS5Ck1ghDfINCPDpzXfmYB/W+foGWYqgZwuJSa5QDOKXHBXkL98oNQXW4R04AAAAAElFTkSuQmCC"
+}
