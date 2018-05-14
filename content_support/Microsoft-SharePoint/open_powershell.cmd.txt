@@ -1,0 +1,5 @@
+@echo OFF
+
+set COMMAND_DESTINATION=%~dp0%1
+PowerShell -Command ". '%COMMAND_DESTINATION%'"
+
