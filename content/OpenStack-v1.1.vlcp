@@ -1,0 +1,1086 @@
+{
+  "name":"OpenStack",
+  "namespace":"com.vmware.openstack",
+  "contentPackId":"com.vmware.openstack",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"openstack_2digit_response_ms",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\d{3}\\s\\d+ |HTTP PERF: )",
+    "postContext":"",
+    "regexValue":"-?\\d{2}\\.?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227gjsgsz3jorpxezltobxw443fl5wxg000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"openstack_api_request_type",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\"",
+    "postContext":" \\/",
+    "regexValue":"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000",
+    "constraints":"{\"searchTerms\":\"HTTP\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_api_response_ms",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\d{3}\\s\\d+ |HTTP PERF: )",
+    "postContext":"",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"openstack_cinder_allocated_disk_space",
+    "preContext":"of ",
+    "postContext":" ",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpwc3dmn5rwc5dfmrpwi2ltnnpxg4dbmnsq0000",
+    "constraints":"{\"searchTerms\":\"cinder*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_cinder_free_capacity_gb",
+    "preContext":"freeSpace = ",
+    "postContext":"(#|)",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpwm4tfmvpwgylqmfrws5dzl5twe000",
+    "constraints":"{\"searchTerms\":\"cinder*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_cinder_total_capacity_gb",
+    "preContext":"capacity = ",
+    "postContext":"(#|)",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpxi33umfwf6y3bobqwg2lupfpwoyq0",
+    "constraints":"{\"searchTerms\":\"cinder*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_cinder_volume_displayname",
+    "preContext":"'display_name': u'",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpxm33movwwkx3enfzxa3dbpfxgc3lf",
+    "constraints":"{\"searchTerms\":\"cinder*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_cloud_api_response_ms",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*time: ",
+    "postContext":"$",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnwg65lel5qxa2k7ojsxg4dpnzzwkx3nom000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"openstack_component",
+    "preContext":"\\s(info|debug|trace|error|audit|critical|warning) ",
+    "postContext":"(\\w+)?\\.\\w+",
+    "regexValue":"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"openstack_component_vmware",
+    "preContext":" ",
+    "postContext":"\\: ",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45c7ozwxoylsmu000000",
+    "constraints":"{\"searchTerms\":\"oms\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_database",
+    "preContext":"(nova*|neutron*|glance*|cinder*|swift*|heat*|keystone*|ceilometer*|).*db: '",
+    "postContext":"' user",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrqxiylcmfzwk000",
+    "constraints":"{\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_device_id",
+    "preContext":"device_id(\": \"|=)",
+    "postContext":"(\"\\,|\\s)",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrsxm2ldmvpwsza0",
+    "constraints":"{\"searchTerms\":\"neutron*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_free_ram",
+    "preContext":"(free ram \\(MB\\):|free_ram=)",
+    "postContext":"(\\s|MB)",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000",
+    "constraints":"{\"searchTerms\":\"nova*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_free_vcpus",
+    "preContext":"VCPUS: ",
+    "postContext":"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ozrxa5lt",
+    "constraints":"{\"searchTerms\":\"free nova\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_freedisk_gb",
+    "preContext":"(free disk \\(GB\\): |free_disk=)",
+    "postContext":"(\\s|GB)",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzlenfzwwx3hmi000000",
+    "constraints":"{\"searchTerms\":\"nova*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_image_id",
+    "preContext":"id\": \"",
+    "postContext":"\"\\,",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5uwi000",
+    "constraints":"{\"searchTerms\":\"glance*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_image_size",
+    "preContext":"size\":(\\s|)",
+    "postContext":"\\}",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5zws6tf",
+    "constraints":"{\"searchTerms\":\"glance*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_instance_id",
+    "preContext":"instance: ",
+    "postContext":"\\] ",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000",
+    "constraints":"{\"searchTerms\":\"nova*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_keystone_login_user",
+    "preContext":"",
+    "postContext":" \\- \\- default \\-\\] Authorization",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgkx3mn5tws3s7ovzwk4q0",
+    "constraints":"{\"searchTerms\":\"keystone\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_keystonelogin",
+    "preContext":"outcome': '",
+    "postContext":"'\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000",
+    "constraints":"{\"searchTerms\":\"keystone* authenticate\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_memory_allocated",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*: ",
+    "postContext":" ",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nvsw233spfpwc3dmn5rwc5dfmq000000",
+    "constraints":"{\"searchTerms\":\"Total memory\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_network_create",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*\\.",
+    "postContext":"\\.",
+    "regexValue":"create",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxi53pojvv6y3smvqxizi0",
+    "constraints":"{\"searchTerms\":\"network* end\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_neutron_network_id",
+    "preContext":"network_id(\": \"|=)",
+    "postContext":"(\"|=)",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf63tfor3w64tll5uwi000",
+    "constraints":"{\"searchTerms\":\"neutron*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_neutron_networktype",
+    "preContext":"network:",
+    "postContext":"\"",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf63tfor3w64tlor4xazi0",
+    "constraints":"{\"searchTerms\":\"neutron*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_neutron_tenant_id",
+    "preContext":"tenant_id(\": \"|=)",
+    "postContext":"(\"|&)",
+    "regexValue":"[A-Fa-f0-9]+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000",
+    "constraints":"{\"searchTerms\":\"neutron*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_nova_datastore_name",
+    "preContext":"",
+    "postContext":"",
+    "regexValue":"datastore(\\d+-|-)\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7mrqxiyltorxxezk7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"nova*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_nova_reconfigured_instance_name",
+    "preContext":"instance ",
+    "postContext":" ",
+    "regexValue":"instance-\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7ojswg33omzuwo5lsmvsf62loon2gc3tdmvpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"nova*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_ram_allocated",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*ram:(\\s|)",
+    "postContext":"( disk|MB disk)",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojqw2x3bnrwg6y3borswi000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"openstack_request_id",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).* \\[req-",
+    "postContext":"\\s",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le",
+    "constraints":"{\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_severity",
+    "preContext":"\\s",
+    "postContext":"\\s(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*)",
+    "regexValue":"INFO|DEBUG|TRACE|ERROR|AUDIT|CRITICAL|WARNING",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000",
+    "constraints":"{\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_statuscode",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*status: ",
+    "postContext":" len: ",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227on2gc5dvonrw6zdf",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"openstack_swift_response_ms",
+    "preContext":"HTTP PERF: ",
+    "postContext":" seconds",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227on3wsztul5zgk43qn5xhgzk7nvzq0000",
+    "constraints":"{\"searchTerms\":\"swift.*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_tenant_id",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*((\\[(req\\-)?([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})\\s))[A-Fa-f0-9]{32} ",
+    "postContext":" ",
+    "regexValue":"[A-Fa-f0-9]+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227orsw4yloorpwsza0",
+    "constraints":"{\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_used_disk_gb",
+    "preContext":"\\s(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*total disk: \\d+ GB, used: ",
+    "postContext":" GB",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ovzwkzc7mruxg227m5ra0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"openstack_user_id",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*((\\[(req\\-)?([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})\\s)|(\"user\": \\{\"domain\": \\{\"id\": \"\\w+\", \"name\": \"\\w+\"\\}, \"id\": \")|(u'user': u'))",
+    "postContext":"(( [A-Fa-f0-9]{32} - - -])|(\"\\, \"name\": \"\\w+\"\\}, \"audit_ids\")|('\\, u'tenant'))",
+    "regexValue":"[A-Fa-f0-9]{32}",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ovzwk4s7nfsa0000",
+    "constraints":"{\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_user_role",
+    "preContext":"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*\\'roles\\'\\: \\[u\\'",
+    "postContext":"'\\]\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ovzwk4s7ojxwyzi0",
+    "constraints":"{\"searchTerms\":\"role*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_vcpus_allocated",
+    "preContext":"vcpus\\s",
+    "postContext":"\\sCPU",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl5qwy3dpmnqxizle",
+    "constraints":"{\"searchTerms\":\"nova*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_vcpus_used",
+    "preContext":"used: ",
+    "postContext":" (VCPUs|VCPU)",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle",
+    "constraints":"{\"searchTerms\":\"used nova*\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_vio_apirequests",
+    "preContext":"(uri=|/)",
+    "postContext":"(\\?|\\s)",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3bobuxezlrovsxg5dt",
+    "constraints":"{\"searchTerms\":\"oms\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_vio_ip4address",
+    "preContext":"IPv4Address=",
+    "postContext":"\\, ",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3joa2gczdeojsxg4y0",
+    "constraints":"{\"searchTerms\":\"oms openstack\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_vio_ip6address",
+    "preContext":"IPv6Address=",
+    "postContext":"\\, ",
+    "regexValue":"[A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4}",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3joa3gczdeojsxg4y0",
+    "constraints":"{\"searchTerms\":\"oms openstack\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_vio_macaddress",
+    "preContext":"macAddress=",
+    "postContext":"\\, ",
+    "regexValue":"[A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4}",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3nmfrwczdeojsxg4y0",
+    "constraints":"{\"searchTerms\":\"oms openstack\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_vio_nodename",
+    "preContext":"nodeName=",
+    "postContext":"\\, ",
+    "regexValue":"\\S+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3on5sgk3tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"oms com\\\\.vmware\\\\.openstack\"}",
+    "info":null
+  }, {
+    "displayName":"openstack_vio_responsecode",
+    "preContext":"(response|\"\\s)",
+    "postContext":" ",
+    "regexValue":"-?\\d+",
+    "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3smvzxa33oonswg33emu000000",
+    "constraints":"{\"searchTerms\":\"oms\"}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"Nova - Free disk space less than 10 GB",
+    "info":"<span>This alert is generated when the free disk goes below 10 GB.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425352799736,\"endTimeMillis\":1425957600187,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzlenfzwwx3hmi000000\",\"operator\":\"LESS_OR_EQUAL\",\"value\":\"10\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_freedisk_gb\",\"preContext\":\"(free disk \\\\(GB\\\\): |free_disk=)\",\"postContext\":\"(\\\\s|GB)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzlenfzwwx3hmi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Nova - Less than 3 vCPUs available",
+    "info":"<span>This alert is generated when the vCPUs available are less than 3.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425957509462,\"endTimeMillis\":1425957810529,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ozrxa5lt\",\"operator\":\"LESS_THAN\",\"value\":\"3\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_free_vcpus\",\"preContext\":\"VCPUS: \",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ozrxa5lt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"free nova\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Nova - Free RAM less than 100 MB",
+    "info":"<span>This alert is generated when free RAM goes below 100 MB.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425352324916,\"endTimeMillis\":1425957128142,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000\",\"displayName\":\"openstack_free_ram\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000\",\"operator\":\"LESS_THAN\",\"value\":\"100\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_free_ram\",\"preContext\":\"(free ram \\\\(MB\\\\):|free_ram=)\",\"postContext\":\"(\\\\s|MB)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"Keystone - Excessive authentication failed events",
+    "info":"<span>This alert is generated when authentication failed more than 10 times in last 1 Hour.</span><br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425354052400,\"endTimeMillis\":1425958852768,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"operator\":\"CONTAINS\",\"value\":\"pending,failure\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_keystonelogin\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_keystonelogin\",\"preContext\":\"outcome': '\",\"postContext\":\"'\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"keystone* authenticate\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":10.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All events grouped by components, severity",
+          "info":"This chart displays all OpenStack component events grouped by component and severity.<br><br><span>For more information about Logging and monitoring click on below link:</span><br><a href=\"http://docs.openstack.org/openstack-ops/content/logging_monitoring.html\">http://docs.openstack.org/openstack-ops/content/logging_monitoring.html</a><br>",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1424937600000,\"endTimeMillis\":1425589142381,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"glance*,keystone*,neutron*,nova*,ceilometer*,swift*,cinder*,heat*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"openstack_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_severity\",\"preContext\":\"\\\\s\",\"postContext\":\"\\\\s(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*)\",\"regexValue\":\"INFO|DEBUG|TRACE|ERROR|AUDIT|CRITICAL|WARNING\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All events grouped by severity level over time",
+          "info":"<span>This chart displays all OpenStack component events grouped by severity.</span><br>",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426521926503,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"neutron*,nova*,glance*,heat*,swift*,ceilometer*,keystone*,cinder*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_severity\",\"preContext\":\"\\\\s\",\"postContext\":\"\\\\s(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*)\",\"regexValue\":\"INFO|DEBUG|TRACE|ERROR|AUDIT|CRITICAL|WARNING\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All events grouped by components over time",
+          "info":"<span>This chart displays all OpenStack component events grouped by component.</span><br>",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1424937600000,\"endTimeMillis\":1425589142381,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"neutron*,nova*,keystone*,cinder*,swift*,ceilometer*,heat*,glance*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All events grouped by severity",
+          "info":"This widget displays all events grouped by its severity level. Following are severity in increasing order:&nbsp;<span>DEBUG, INFO, AUDIT, WARNING, ERROR, CRITICAL, and TRACE<br><br><span>That is, messages only appear in the logs if they are more \"severe\" than the particular log level, with DEBUG allowing all log statements through. For example, TRACE is logged only if the software has a stack trace, while INFO is logged for every message including those that are only for information.<br></span><br>For more information about Logging and monitoring click on below link:<br><a href=\"http://docs.openstack.org/openstack-ops/content/logging_monitoring.html\">http://docs.openstack.org/openstack-ops/content/logging_monitoring.html</a><br></span>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1424937600000,\"endTimeMillis\":1425589142381,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*,neutron*,glance*,cinder*,heat*,ceilometer*,keystone*,swift*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_severity\",\"preContext\":\"\\\\s\",\"postContext\":\"\\\\s(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*)\",\"regexValue\":\"INFO|DEBUG|TRACE|ERROR|AUDIT|CRITICAL|WARNING\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All events grouped by components",
+          "info":"This widget displays all events grouped by OpenStack components.&nbsp;<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1424937600000,\"endTimeMillis\":1425589142381,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"heat*,nova*,neutron*,cinder*,ceilometer*,glance*,swift*,keystone*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Errors",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"text",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Cloud errors grouped by components",
+          "info":"This widget displays All OpenStack cloud errors grouped by components.<br><br>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ceilometer*,nova*,neutron*,glance*,heat*,swift*,cinder*,keystone*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Keystone Errors",
+          "info":"<span>This widget shows count of Keystone errors over time.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrqxiylcmfzwk000\",\"operator\":\"CONTAINS\",\"value\":\"keystone*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_database\",\"preContext\":\"(nova*|neutron*|glance*|cinder*|swift*|heat*|keystone*|ceilometer*|).*db: '\",\"postContext\":\"' user\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrqxiylcmfzwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Neutron Errors",
+          "info":"This widget shows count of Neutron errors over time.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"neutron*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Glance Errors",
+          "info":"<span>This widget shows count of Glance errors over time.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"glance*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Cinder Errors",
+          "info":"<span>This widget shows count of Cinder errors over time.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrqxiylcmfzwk000\",\"operator\":\"CONTAINS\",\"value\":\"cinder*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_database\",\"preContext\":\"(nova*|neutron*|glance*|cinder*|swift*|heat*|keystone*|ceilometer*|).*db: '\",\"postContext\":\"' user\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrqxiylcmfzwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Nova Errors",
+          "info":"<span>This widget shows count of Nova errors over time.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"nova*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Heat Errors",
+          "info":"<span>This widget shows count of Heat errors and warnings over time.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"heat*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"API Requests",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"All API requests grouped by user id",
+          "info":"All API requests grouped by user id.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"displayName\":\"openstack_request_id\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ovzwk4s7nfsa0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"get,put,delete,post\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_user_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ovzwk4s7nfsa0000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_request_id\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).* \\\\[req-\",\"postContext\":\"\\\\s\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"},{\"displayName\":\"openstack_user_id\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*((\\\\[(req\\\\-)?([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})\\\\s)|(\\\"user\\\": \\\\{\\\"domain\\\": \\\\{\\\"id\\\": \\\"\\\\w+\\\", \\\"name\\\": \\\"\\\\w+\\\"\\\\}, \\\"id\\\": \\\")|(u'user': u'))\",\"postContext\":\"(( [A-Fa-f0-9]{32} - - -])|(\\\"\\\\, \\\"name\\\": \\\"\\\\w+\\\"\\\\}, \\\"audit_ids\\\")|('\\\\, u'tenant'))\",\"regexValue\":\"[A-Fa-f0-9]{32}\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ovzwk4s7nfsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All API requests grouped by tenant ID",
+          "info":"<span>All API requests grouped by tenant id.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"displayName\":\"openstack_request_id\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227orsw4yloorpwsza0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"get,put,delete,post\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"swift*,nova*,neutron*,cinder*,keystone*,glance*,heat*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_tenant_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227orsw4yloorpwsza0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_request_id\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).* \\\\[req-\",\"postContext\":\"\\\\s\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"},{\"displayName\":\"openstack_tenant_id\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*((\\\\[(req\\\\-)?([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})\\\\s))[A-Fa-f0-9]{32} \",\"postContext\":\" \",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227orsw4yloorpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"All API requests grouped by hostname",
+          "info":"<span>All API requests grouped by hostname.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"displayName\":\"openstack_request_id\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"get,put,delete,post\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*,neutron*,keystone*,swift*,cinder*,heat*,glance*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_request_id\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).* \\\\[req-\",\"postContext\":\"\\\\s\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojsxc5lfon2f62le\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All API request grouped by status code",
+          "info":"<span>All API requests grouped by status code.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1425589142381,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227on2gc5dvonrw6zdf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"get,put,delete,post\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*,keystone*,swift*,glance*,neutron*,heat*,cinder*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_statuscode\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227on2gc5dvonrw6zdf\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_statuscode\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*status: \",\"postContext\":\" len: \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227on2gc5dvonrw6zdf\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"API requests grouped by type",
+          "info":"<span>All API requests grouped by HTTP reuest type.</span><br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*,swift*,neutron*,glance*,cinder*,heat*,keystone*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_api_request_type\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_api_request_type\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\\\\\"\",\"postContext\":\" \\\\/\",\"regexValue\":\"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HTTP\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average cloud API response of components over time",
+          "info":"The average response of OpenStack cloud components over time.",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"displayName\":\"openstack_api_response_ms\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"operator\":\"EXISTS\",\"value\":\"get,put,delete,post\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*,swift*,neutron*,keystone*,heat*,cinder*,glance*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_api_request_type\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\\\\\"\",\"postContext\":\" \\\\/\",\"regexValue\":\"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HTTP\\\"}\"},{\"displayName\":\"openstack_api_response_ms\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\\\d{3}\\\\s\\\\d+ |HTTP PERF: )\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"constraints\":null},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All API requests grouped by component",
+          "info":"<span>All API requests grouped by component.</span><br>",
+          "gridWidth":"1",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"displayName\":\"openstack_api_request_type\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"operator\":\"EXISTS\",\"value\":\"get,put,delete,post\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*,swift*,glance*,cinder*,neutron*,heat*,keystone*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_api_request_type\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\\\\\"\",\"postContext\":\" \\\\/\",\"regexValue\":\"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HTTP\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"All Slow API response times (>=10ms)",
+          "info":"This chart shows slow (slow = more than 2 digit ) OpenStack cloud responses over time",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227gjsgsz3jorpxezltobxw443fl5wxg000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\",\"value\":\"nova*,neutron*,cinder*,glance*,keystone*,heat*,swift*,ceilometer*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"operator\":\"EXISTS\",\"value\":\"get,put,delete,post\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*,cinder*,heat*,glance*,neutron*,keystone*,swift*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_2digit_response_ms\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\\\d{3}\\\\s\\\\d+ |HTTP PERF: )\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d{2}\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227gjsgsz3jorpxezltobxw443fl5wxg000\",\"constraints\":null},{\"displayName\":\"openstack_api_request_type\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\\\\\"\",\"postContext\":\" \\\\/\",\"regexValue\":\"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HTTP\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"API Response Time",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Average response time of Nova",
+          "info":"OpenStack Cloud component Nova - average response time",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"displayName\":\"openstack_api_response_ms\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"nova*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"operator\":\"EXISTS\",\"value\":\"get,put,delete,post,head,delete,trace,connect,options,patch\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_api_request_type\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\\\\\"\",\"postContext\":\" \\\\/\",\"regexValue\":\"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HTTP\\\"}\"},{\"displayName\":\"openstack_api_response_ms\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\\\d{3}\\\\s\\\\d+ |HTTP PERF: )\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"constraints\":null},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Average response time of Neutron",
+          "info":"<span>OpenStack Cloud component Neutron - average response time</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"displayName\":\"openstack_api_response_ms\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"neutron*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"operator\":\"EXISTS\",\"value\":\"get,put,delete,post\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_api_request_type\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\\\\\"\",\"postContext\":\" \\\\/\",\"regexValue\":\"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HTTP\\\"}\"},{\"displayName\":\"openstack_api_response_ms\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\\\d{3}\\\\s\\\\d+ |HTTP PERF: )\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"constraints\":null},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average response time of Cinder",
+          "info":"<span>OpenStack Cloud component Cinder - average response time</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"displayName\":\"openstack_api_response_ms\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"cinder*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_api_response_ms\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\\\d{3}\\\\s\\\\d+ |HTTP PERF: )\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Average response time of Glance",
+          "info":"<span>OpenStack Cloud component Glance - average response time</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"displayName\":\"openstack_api_response_ms\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"glance*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"operator\":\"EXISTS\",\"value\":\"get,put,delete,post\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_api_request_type\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\\\\\"\",\"postContext\":\" \\\\/\",\"regexValue\":\"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HTTP\\\"}\"},{\"displayName\":\"openstack_api_response_ms\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\\\d{3}\\\\s\\\\d+ |HTTP PERF: )\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"constraints\":null},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average response time of Keystone",
+          "info":"<span>OpenStack Cloud component Keystone - average response time</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnwg65lel5qxa2k7ojsxg4dpnzzwkx3nom000000\",\"displayName\":\"openstack_cloud_api_response_ms\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnwg65lel5qxa2k7ojsxg4dpnzzwkx3nom000000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnwg65lel5qxa2k7ojsxg4dpnzzwkx3nom000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"keystone*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"get,put,delete,post\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_cloud_api_response_ms\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*time: \",\"postContext\":\"$\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnwg65lel5qxa2k7ojsxg4dpnzzwkx3nom000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Average response time of Heat",
+          "info":"<span>OpenStack Cloud component Heat - average response time</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"displayName\":\"openstack_api_response_ms\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"heat*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"operator\":\"EXISTS\",\"value\":\"get,put,delete,post\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_api_request_type\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*|event*).*\\\\\\\"\",\"postContext\":\" \\\\/\",\"regexValue\":\"GET|PUT|POST|DELETE|CONNECT|TRACE|HEAD|OPTIONS|get|put|delete|post|connect|trace|head|options\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvyxkzltorpxi6lqmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"HTTP\\\"}\"},{\"displayName\":\"openstack_api_response_ms\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*(time: |\\\\d{3}\\\\s\\\\d+ |HTTP PERF: )\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mfygsx3smvzxa33oonsv63lt\",\"constraints\":null},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Keystone",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Successful login for each user over time",
+          "info":"<span>OpenStack Cloud component Keystone - successful user logins over time</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":false,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"'vary': 'x-auth-token',keystone.notifications [-] CADF Event:\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"'outcome': 'failure','outcome': 'pending'\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"keystone*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"operator\":\"CONTAINS\",\"value\":\"success\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_keystonelogin\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_keystonelogin\",\"preContext\":\"outcome': '\",\"postContext\":\"'\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"keystone* authenticate\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_keystonelogin\",\"preContext\":\"outcome': '\",\"postContext\":\"'\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadax3pobsw443umfrwwx3lmv4xg5dpnzswy33hnfxa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"keystone* authenticate\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Authorization failed events over time grouped by user (Requires PyCADF agent)",
+          "info":"<span>OpenStack Cloud component Keystone - Failed user logins over time</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":false,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"CADF Event:\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"'outcome': 'success','outcome': 'pending'\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"keystone*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"operator\":\"CONTAINS\",\"value\":\"failure\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_keystonelogin\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_keystonelogin\",\"preContext\":\"outcome': '\",\"postContext\":\"'\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"keystone* authenticate\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_keystonelogin\",\"preContext\":\"outcome': '\",\"postContext\":\"'\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadax3pobsw443umfrwwx3lmv4xg5dpnzswy33hnfxa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"keystone* authenticate\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Authorization failed events over time",
+          "info":"<span>OpenStack Cloud component Keystone - Failed user logins over time</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"'outcome': 'failure',authorization failed. invalid user,Authorization failed. Could not find user:\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"keystone*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"operator\":\"CONTAINS\",\"value\":\"failure\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_keystonelogin\",\"preContext\":\"outcome': '\",\"postContext\":\"'\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"keystone* authenticate\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Keystone (vio 3.0+)",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Successful login for each user over time",
+          "info":"<span>OpenStack Cloud component Keystone - successful user logins over time</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":false,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3pobsw443umfrwwx3lmv4xg5dpnzswy33hnfxa0000\",\"displayName\":\"openstack_keystonelogin\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3pobsw443umfrwwx3lmv4xg5dpnzswy33hnfxa0000\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"'vary': 'x-auth-token',keystone.notifications [-] CADF Event:\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"'outcome': 'failure','outcome': 'pending'\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"keystone*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"operator\":\"CONTAINS\",\"value\":\"success\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_keystonelogin\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_keystonelogin\",\"preContext\":\"outcome': '\",\"postContext\":\"'\\\\,\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgk3dpm5uw4000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"keystone* authenticate\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Authorization failed events over time grouped by user",
+          "info":"<span>OpenStack Cloud component Keystone - Failed user logins over time</span><br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":false,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authorization failed\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"keystone*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgkx3mn5tws3s7ovzwk4q0\",\"operator\":\"EXISTS\",\"value\":\"failure\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_keystone_login_user\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgkx3mn5tws3s7ovzwk4q0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_keystone_login_user\",\"preContext\":\"\",\"postContext\":\" \\\\- \\\\- default \\\\-\\\\] Authorization\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nnsxs43un5xgkx3mn5tws3s7ovzwk4q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"keystone\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Authorization failed events over time",
+          "info":"<span>OpenStack Cloud component Keystone - Failed user logins over time</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Authorization failed\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"keystone*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Nova",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Free VCPUs per HV",
+          "info":"<span>OpenStack Cloud component Nova - Free CPU's</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"free VCPUs:\\\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ozrxa5lt\",\"displayName\":\"openstack_free_vcpus\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ozrxa5lt\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_free_vcpus\",\"preContext\":\"VCPUS: \",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ozrxa5lt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"free nova\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Average of Free RAM in MB by hostname",
+          "info":"<span>OpenStack Cloud component Nova - An average of Free RAM by hostname</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523390400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000\",\"displayName\":\"openstack_free_ram\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_free_ram\",\"preContext\":\"(free ram \\\\(MB\\\\):|free_ram=)\",\"postContext\":\"(\\\\s|MB)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzk7ojqw2000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average of Free Disk in GB by Host",
+          "info":"<span>OpenStack Cloud component Nova - An average of Free disk by host.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523390400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzlenfzwwx3hmi000000\",\"displayName\":\"openstack_freedisk_gb\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzlenfzwwx3hmi000000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzlenfzwwx3hmi000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"nova*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_freedisk_gb\",\"preContext\":\"(free disk \\\\(GB\\\\): |free_disk=)\",\"postContext\":\"(\\\\s|GB)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mzzgkzlenfzwwx3hmi000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Total VCPUs used over time grouped by hostname",
+          "info":"<span>OpenStack Cloud component Nova - Total used CPU's over time grouped by hostname</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"spline\":true,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\\\"vcpu*\\\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523390400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle\",\"displayName\":\"openstack_vcpus_used\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"free\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_vcpus_used\",\"preContext\":\"used: \",\"postContext\":\" (VCPUs|VCPU)\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle\",\"constraints\":\"{\\\"searchTerms\\\":\\\"used nova*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Allocated virtual RAM over time by host",
+          "info":"<span>OpenStack Cloud component Nova - Allocated virtual RAM over time by host.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"spline\":true,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"ram*\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojqw2x3bnrwg6y3borswi000\",\"displayName\":\"openstack_ram_allocated\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojqw2x3bnrwg6y3borswi000\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"free\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojqw2x3bnrwg6y3borswi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_ram_allocated\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*ram:(\\\\s|)\",\"postContext\":\"( disk|MB disk)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ojqw2x3bnrwg6y3borswi000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Nova - CPU utilization (%) over time grouped by instance id",
+          "info":"<span>OpenStack Cloud component Nova - CPU utilization over time grouped by instance id.</span><br>",
+          "chartType":"column",
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle\",\"displayName\":\"openstack_vcpus_used\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"unlimited\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_instance_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_instance_id\",\"preContext\":\"instance: \",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"},{\"displayName\":\"openstack_vcpus_used\",\"preContext\":\"used: \",\"postContext\":\" (VCPUs|VCPU)\",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl52xgzle\",\"constraints\":\"{\\\"searchTerms\\\":\\\"used nova*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Nova - VCPUs allocated per instance",
+          "info":"<span>OpenStack Cloud component Nova - Allocated VCPU's per instance.</span><br>",
+          "chartType":"column",
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"vcpus*\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl5qwy3dpmnqxizle\",\"displayName\":\"openstack_vcpus_allocated\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl5qwy3dpmnqxizle\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"free\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_instance_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_instance_id\",\"preContext\":\"instance: \",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"},{\"displayName\":\"openstack_vcpus_allocated\",\"preContext\":\"vcpus\\\\s\",\"postContext\":\"\\\\sCPU\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozrxa5ltl5qwy3dpmnqxizle\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events grouped by instance_id, datastore name",
+          "info":"This chart displays events grouped by OpensSack instance_id and datastore name.",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"nova*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7mrqxiyltorxxezk7nzqw2zi0\",\"operator\":\"EXISTS\",\"value\":\"datastore14-1\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_instance_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"openstack_nova_datastore_name\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7mrqxiyltorxxezk7nzqw2zi0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_instance_id\",\"preContext\":\"instance: \",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"},{\"displayName\":\"openstack_nova_datastore_name\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"datastore(\\\\d+-|-)\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7mrqxiyltorxxezk7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Nova - Memory allocated per instance",
+          "info":"<span>OpenStack Cloud component Nova - Memory allocated per instance.</span><br>",
+          "chartType":"column",
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nvsw233spfpwc3dmn5rwc5dfmq000000\",\"displayName\":\"openstack_memory_allocated\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nvsw233spfpwc3dmn5rwc5dfmq000000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"nova*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nvsw233spfpwc3dmn5rwc5dfmq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_instance_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_instance_id\",\"preContext\":\"instance: \",\"postContext\":\"\\\\] \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfxhg5dbnzrwkx3jmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"},{\"displayName\":\"openstack_memory_allocated\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*: \",\"postContext\":\" \",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nvsw233spfpwc3dmn5rwc5dfmq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Total memory\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Nova events grouped by datastore name and reconfigured instance name",
+          "info":"Count of Nova events grouped by datastore name and reconfigured instance name<br>",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3pobsw443umfrwwx3xojuxizk7ojsxc5lfon2hgx3smf2gk000\",\"displayName\":\"openstack_write_requests_rate\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3pobsw443umfrwwx3xojuxizk7ojsxc5lfon2hgx3smf2gk000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"nova*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7ojswg33omzuwo5lsmvsf62loon2gc3tdmvpw4ylnmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7mrqxiyltorxxezk7nzqw2zi0\",\"operator\":\"EXISTS\",\"value\":\"datastore14-1\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_nova_datastore_name\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7mrqxiyltorxxezk7nzqw2zi0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"openstack_nova_reconfigured_instance_name\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7ojswg33omzuwo5lsmvsf62loon2gc3tdmvpw4ylnmu000000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_nova_datastore_name\",\"preContext\":\"\",\"postContext\":\"\",\"regexValue\":\"datastore(\\\\d+-|-)\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7mrqxiyltorxxezk7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"},{\"displayName\":\"openstack_nova_reconfigured_instance_name\",\"preContext\":\"instance \",\"postContext\":\" \",\"regexValue\":\"instance-\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzxxmyk7ojswg33omzuwo5lsmvsf62loon2gc3tdmvpw4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"nova*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Cinder",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Allocated disk space(GB) over time",
+          "info":"OpenStack cloud component&nbsp;Cinder allocated disk space <span style=\"font-style: italic;\"></span>over time.<br><br><br>",
+          "chartType":null,
+          "chartOptions":"{\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"volume*\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpwc3dmn5rwc5dfmrpwi2ltnnpxg4dbmnsq0000\",\"displayName\":\"openstack_cinder_allocated_disk_space\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpwc3dmn5rwc5dfmrpwi2ltnnpxg4dbmnsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"cinder*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_cinder_allocated_disk_space\",\"preContext\":\"of \",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpwc3dmn5rwc5dfmrpwi2ltnnpxg4dbmnsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"cinder*\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Free capacity(GB) over time",
+          "info":"OpenStack cloud component&nbsp;Cinder free capacity over time.<br><br>",
+          "chartType":null,
+          "chartOptions":"{\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"capacity\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpwm4tfmvpwgylqmfrws5dzl5twe000\",\"displayName\":\"openstack_cinder_free_capacity_gb\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpwm4tfmvpwgylqmfrws5dzl5twe000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"cinder*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_cinder_free_capacity_gb\",\"preContext\":\"freeSpace = \",\"postContext\":\"(#|)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpwm4tfmvpwgylqmfrws5dzl5twe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"cinder*\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Cinder - Events grouped by volume display name",
+          "info":"Count of cinder events grouped by volume display name<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3pobsw443umfrwwx3dnfxgizlsl5qwy3dpmnqxizlel5sgs43ll5zxayldmu000000\",\"displayName\":\"openstack_cinder_allocated_disk_space\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3pobsw443umfrwwx3dnfxgizlsl5qwy3dpmnqxizlel5sgs43ll5zxayldmu000000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"cinder*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpxm33movwwkx3enfzxa3dbpfxgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_cinder_volume_displayname\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpxm33movwwkx3enfzxa3dbpfxgc3lf\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_cinder_volume_displayname\",\"preContext\":\"'display_name': u'\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpxm33movwwkx3enfzxa3dbpfxgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"cinder*\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Total capacity(GB) over time",
+          "info":"OpenStack cloud component&nbsp;Cinder&nbsp;total<span style=\"font-style: italic;\"></span> capacity over time.<br><br><br>",
+          "chartType":null,
+          "chartOptions":"{\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpxi33umfwf6y3bobqwg2lupfpwoyq0\",\"displayName\":\"openstack_cinder_total_capacity_gb\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpxi33umfwf6y3bobqwg2lupfpwoyq0\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"cinder*\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"capacity\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_cinder_total_capacity_gb\",\"preContext\":\"capacity = \",\"postContext\":\"(#|)\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnuw4zdfojpxi33umfwf6y3bobqwg2lupfpwoyq0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"cinder*\\\"}\"},{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Neutron",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Neutron - Events over time by network id",
+          "info":"OpenStack cloud component Neutron events grouped by network id.<br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"network*\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3pobsw443umfrwwx3omv2ho33snnpw65lum5xws3thl5rhs5dfonpxeylumu000000\",\"displayName\":\"openstack_network_outgoing_bytes_rate\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3pobsw443umfrwwx3omv2ho33snnpw65lum5xws3thl5rhs5dfonpxeylumu000000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"neutron*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_neutron_network_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf63tfor3w64tll5uwi000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_neutron_network_id\",\"preContext\":\"network_id(\\\": \\\"|=)\",\"postContext\":\"(\\\"|=)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf63tfor3w64tll5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"neutron*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Neutron - Unique count of tenant id over time grouped by tenant id",
+          "info":"<br>OpenStack cloud component Neutron count of tenant id&nbsp;grouped by tenant id.<br>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"displayName\":\"openstack_neutron_tenant_id\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"neutron\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"operator\":\"EXISTS\",\"value\":\"0\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_neutron_tenant_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_neutron_tenant_id\",\"preContext\":\"tenant_id(\\\": \\\"|=)\",\"postContext\":\"(\\\"|&)\",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"neutron*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Neutron - Networks created over time",
+          "info":"<span>OpenStack cloud component Neutron networks created over time.</span><br>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425369600000,\"endTimeMillis\":1426489200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3pobsw443umfrwwx3omv2ho33snnpwg4tfmf2gk000\",\"displayName\":\"openstack_network_create\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3pobsw443umfrwwx3omv2ho33snnpwg4tfmf2gk000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"neutron*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxi53pojvv6y3smvqxizi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_network_create\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxi53pojvv6y3smvqxizi0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_network_create\",\"preContext\":\"(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*).*\\\\.\",\"postContext\":\"\\\\.\",\"regexValue\":\"create\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxi53pojvv6y3smvqxizi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"network* end\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Neutron - Unique count of tenant id over time grouped by network type",
+          "info":"Unique count of neutron tenant id's over time grouped by the network type.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"displayName\":\"openstack_neutron_tenant_id\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"neutron*\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"operator\":\"EXISTS\",\"value\":\"0\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf63tfor3w64tlor4xazi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_neutron_networktype\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf63tfor3w64tlor4xazi0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_neutron_networktype\",\"preContext\":\"network:\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf63tfor3w64tlor4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"neutron*\\\"}\"},{\"displayName\":\"openstack_neutron_tenant_id\",\"preContext\":\"tenant_id(\\\": \\\"|=)\",\"postContext\":\"(\\\"|&)\",\"regexValue\":\"[A-Fa-f0-9]+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nzsxk5dsn5xf65dfnzqw45c7nfsa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"neutron*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Neutron events",
+          "info":"<span>OpenStack cloud component Neutron events over time.</span><br>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"neutron*\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"neutron*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"__li_msg_col",
+            "displayName":"__li_msg_col",
+            "displayNamespace":null
+          } ]
+        }, {
+          "name":"Unique count of device id over time grouped by device id",
+          "info":"Unique count of neutron device id.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrsxm2ldmvpwsza0\",\"displayName\":\"openstack_device_id\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrsxm2ldmvpwsza0\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrsxm2ldmvpwsza0\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"neutron*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_device_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrsxm2ldmvpwsza0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_device_id\",\"preContext\":\"device_id(\\\": \\\"|=)\",\"postContext\":\"(\\\"\\\\,|\\\\s)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mrsxm2ldmvpwsza0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"neutron*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Glance",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Glance - Image size grouped by image id",
+          "info":"<br>OpenStack cloud component Glance image size grouped by image id.<span style=\"font-style: italic;\"></span>",
+          "gridWidth":"1/2",
+          "chartType":"column",
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5zws6tf\",\"displayName\":\"openstack_image_size\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5zws6tf\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5uwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5zws6tf\",\"operator\":\"NOT_EQUAL\",\"value\":\"0\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"glance*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_image_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5uwi000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_image_id\",\"preContext\":\"id\\\": \\\"\",\"postContext\":\"\\\"\\\\,\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"glance*\\\"}\"},{\"displayName\":\"openstack_image_size\",\"preContext\":\"size\\\":(\\\\s|)\",\"postContext\":\"\\\\}\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5zws6tf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"glance*\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Count of events grouped by image id",
+          "info":"<br>OpenStack cloud component Glance image size grouped by image id.<span style=\"font-style: italic;\"></span>",
+          "gridWidth":"1/2",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1425332201843,\"endTimeMillis\":1426176524023,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3pobsw443umfrwwx3jnvqwozk7onuxuzk7gi000000\",\"displayName\":\"openstack_image_size_2\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3pobsw443umfrwwx3jnvqwozk7onuxuzk7gi000000\",\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5uwi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5zws6tf\",\"operator\":\"NOT_EQUAL\",\"value\":\"0\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"glance*\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_image_id\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5uwi000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_image_id\",\"preContext\":\"id\\\": \\\"\",\"postContext\":\"\\\"\\\\,\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5uwi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"glance*\\\"}\"},{\"displayName\":\"openstack_image_size\",\"preContext\":\"size\\\":(\\\\s|)\",\"postContext\":\"\\\\}\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227nfwwcz3fl5zws6tf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"glance*\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Heat",
+      "constraints":[ {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Heat events over time grouped by severity",
+          "info":"All OpenStack heat component events grouped by severity over time",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1422864000000,\"endTimeMillis\":1424764800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"heat\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"operator\":\"EXISTS\",\"value\":\"warning\"}],\"groupByFields\":[{\"displayName\":\"openstack_component\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"openstack_severity\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null},{\"displayName\":\"openstack_severity\",\"preContext\":\"\\\\s\",\"postContext\":\"\\\\s(neutron*|cinder*|nova*|keystone*|glance*|heat*|swift*)\",\"regexValue\":\"INFO|DEBUG|TRACE|ERROR|AUDIT|CRITICAL|WARNING\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Heat events",
+          "info":"<span>All OpenStack heat component events <span style=\"font-style: italic;\"></span>over time</span><br><br>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"heat*\",\"startTimeMillis\":1420801824740,\"endTimeMillis\":1420802125065,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"operator\":\"CONTAINS\",\"value\":\"heat\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_component\",\"preContext\":\"\\\\s(info|debug|trace|error|audit|critical|warning) \",\"postContext\":\"(\\\\w+)?\\\\.\\\\w+\",\"regexValue\":\"(neutron|nova|cinder|keystone|heat|glance|swift|ceilometer)\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0\",\"constraints\":null}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"__li_msg_col",
+            "displayName":"__li_msg_col",
+            "displayNamespace":null
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"VMware - VIO",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227mnxw24dpnzsw45a0",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of API requests over time",
+          "info":"VIO (OMS) API requests over time<br><br>This widget shows data specific to VMware Integrated OpenStack.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"api\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3bobuxezlrovsxg5dt\",\"displayName\":\"openstack_vio_apirequests\",\"displayNamespace\":\"OpenStack\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3bobuxezlrovsxg5dt\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"oms\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"openstack_vio_apirequests\",\"preContext\":\"(uri=|/)\",\"postContext\":\"(\\\\?|\\\\s)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3bobuxezlrovsxg5dt\",\"constraints\":\"{\\\"searchTerms\\\":\\\"oms\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VIO events by response code",
+          "info":"VIO (OMS) an average response over time.<br><br><span>This widget shows data specific to VMware Integrated OpenStack.</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"oms\"},{\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3smvzxa33oonswg33emu000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"openstack_vio_responsecode\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3smvzxa33oonswg33emu000000\",\"displayNamespace\":\"OpenStack\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"openstack_vio_responsecode\",\"preContext\":\"(response|\\\"\\\\s)\",\"postContext\":\" \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibademc7mnxw2ltwnv3wc4tffzxxazloon2gcy3ln5ygk3ttorqwg227ozuw6x3smvzxa33oonswg33emu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"oms\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VIO Errors over time",
+          "info":"VIO (OMS) total errors over time.<br><br><span>This widget shows data specific to VMware Integrated OpenStack.</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1523304000000,\"endTimeMillis\":1523649600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"oms\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware, Inc.",
+  "url":"https://solutionexchange.vmware.com/store/loginsight",
+  "contentVersion":"1.1",
+  "info":"The content pack for OpenStack offers easy to understand, visual \nrepresentation on how well operationally, the OpenStack setup is \nworking. The content pack sorts the log messages collected by feature \nand technology type, for quick simple representation of messages by \nseverity level, and the impact of these operationally.<br><br>The \nOpenStack content pack collects and organizes the Log messages based \nupon the type and priority of the message and stores these into the \ndatabase for time of day analysis. The Log Insight system administrator \ncan then view the log messages by OpenStack components nova, neutron, \nglance, cinder, keystone &amp; heat.<br><b>Highlights</b><br>● &nbsp; &nbsp;&nbsp;More \nnotable features include reporting on security, networking, and \nperformance events that impact the operations of the&nbsp;OpenStack setup.&nbsp;<br>● &nbsp; &nbsp;&nbsp;The VMware –VIO dashboard&nbsp;shows data specific to VMware Integrated OpenStack.<br><br><b>Minimum requirements</b><br>VMware vRealize Log Insight 2.5 GA<br>",
+  "instructions":"To sent logs to the Log Insight syslog service need to be configured on OpenStack instance.&nbsp; Configures rsyslog (which is the syslog daemon) running on the Ubuntu host to forward logs using&nbsp;<a href=\"http://www.rsyslog.com/doc/omrelp.html\">RELP format</a> is not supported by Log Insight. If you want to get this working, you will need to disable RELP format by tweaking the rsyslog configuration in&nbsp;<b>/etc/rsyslog.d/90-stack-s.conf</b><br><br>You will need to replace&nbsp;<b>:omrelp:</b><br>*.*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :omrelp:192.168.1.104:514<br><br>to just&nbsp;<b>@@</b>:<br>*.*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @@192.168.1.104:514<br><br>Finally, you need to restart the rsyslog service for the changes to take effect by running the following command:<br>service rsyslog restart<br>",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAC9FBMVEUAAAD5Y0WFMAGJIxzQQDzmV0/COSeXLS3XPSfYPSfCOCjCOSjmVkiJIhzXPSOKJh3jTD/iSTvhSTuJIxwcFReKIxzXPSeJIxsUFBUaFxflV08ZGBnWPy0cGBjiSTvhSDscGRlzHRoaGBgZGBkaFhnIOSfQPzE0PD0aFBUaGBm/OSh2JiDCOSnMPCnJOijOOyjCOCcFExPlV08UERLCOCjcRjbkUkXDOSjCOScTFRUaGBkbFxi9Nyd/IhzCOCfDOSjSPCcAFhfaQCzeSjvXPSfmV0/DOSfBOit6IRqbKiHEOSfAOiozLS0OERLnUkcXFxgZGRnBOSnXPSbXPSbYPSbCOSeLIxzXPSaIIxvXPCaJIxyIIxy+NyflV0/WPCbCOSiJIxzXPSflVk+bKiGIIxwxKyvXPSbXPSfYPSboWE+OJRwbFRnIOCSJIxzlV0/DOSjXPSfkVk7lV0/mV1AbFxfmV0+MJB3XPSeAHRbjSTuJIxyJIxy9NifmV0/lV1CgKyLkVk5mFRDmUkmFIhqfLSXmV0/COSjXPSfCOSiKIxt5JyHUQjRpFw+rMSMrOzzXPSfXPSfXPSeyMibXPSfgSTtJNTOXJx6rLiSAIhw1KiqoLiQAMTOIIRvXPSflV0/COSiJIxzhSTuLJB3nWFCSJR7kSjzoWVGGIRrAOCjmSzzANiSBHxqQJR3bPieDIRrHOijZPSfNPCqzMiWWKCDjQCnBOCd/GxPIPjG9NyfPPSrFOSjyW1OwNCrkVk7LOymqLiCNJB1+Hhi5NSfuWlLUPCaAHhiCHRW3PzjhPyieLCLfUknsTT7dPyjQOyetMCTKQDPCOzC2NCWEIBnwTj/OQjW1NizJOiinLiSaKiL1XVTjQSmkLSPRRTiwOzOwMCXiVEzWTUPUST5KOzrFPCzdUEbnQSq8NibNSkLWRDe5Ny3aTUO/QzvlQSmjLCDcRjm/NSPqWVHaUUnHRz+/Oi+lNC2rMijjSTvSQDH4XlY4OzvoQip1Fw3rmrm/AAAAnXRSTlMAAgL7BPz8Bfr8/voQnBAaNP36/Urk0bFFQ9ERCzPRvysMQD05NhbxTjAd/rpeVCVvSfhpSC0c9O1VOzf8x4x/ZU5GPezi4sm6uKykl10mIhrOy7WpmpN7eW9QQS3Y19XRwq+koqGckIVIIQ7+7+7d28SgjHRuavLx7OnNwrZ7cmFdWPzw6ebm2NbTy35T++nn4ODd2cy4tq2qjIgvD59oSgAAC59JREFUeNrt3HlcFGUcBvDZZZcFLDuWyoJKy4joptBMK1O7S83KSjvNDu20zO77vu+7ZZe9YZflVloOVxFCQkFSQtSwTIRE09Ts+KfnfWeWd3dHZtiDZf/gKegTonx93vc3Oq/jckMZylDCikKJfxRKjYIbzBCCikTJHBolF+UAQRgalUJBGYwyPOOWDPxXxQ10UARdD6WClOH/TcPTzjzp3DPOuujCq0677M1Lz/v4i/cg4wYiSlIEQjdHgAJVnHTu6WddeMOVp1378Hlj493V35EUVRfoy1ffpYykiC6HRqWCJcCXmpbhW8WwgoLqIhiKqlsLCtz6pPhhJPHDJhQXQ6QKe1dQhUoZsCtUQhUXeasoKAKBItxuPRTxxIH3Sfre8CJNKPNB/lWRMvwR/K6YSKu4/dLz4tEEvx58E3ySksibniV0kVLYGP4dBe4KVCEo0AR6IEX0bRCLRvVbxCSK1OFsQEgVbu+uIIokYVdIIKREV/RXhOVJvcW7Ky49b2xSQRFCdwXfhVAGFGGkvN8irO1Zlw2z0wUp6t0VScK+8C8jCiJ4Mk5rLSqwdybRHkAQdRFNETzDn3Uvn5Ckt3fa9aJEX4T9/PXyyjWd5fj08lgQqbj5r66uLKYi+8CLOot//nyU1DUb2kUrV/60unjN8oETlZXl5eX9kYeUueO7u6+4HyKJFZvZ1iaI7BEUlUHBM8r0+i1LmtZu3PjL5t9/a2joaGg47ZC+RbgiHmw2l4QvYgiEKLZQxS9U0dFRlW1CrFb6fv2CNE4hBYoLRyQgWBVQAAFFFRS8AclmqVL/PUfBKSRAWmMwIrYrxFVAAQQUVoYQR51d8SKnlGrIIC8CglcE7gpWBeJV4CNSyVw/B19aCuQv6rQzBFX0WQUYvgvCM+Sjrrn1IBlQQEeCga+CKFgVvckOOQBdMoZTSoH8RPq8TvsS8a4QKQYYxETLt2xu6KAKRISIFoiJitd2WAUF25xRBzHR0iZoBjjqCvlNzYucbW3rqkyiWiIPOkYGxETmbVaRZzBBtrYG8YINJqh2b1VsgRZvkvFEH2TNFmeooZhuKOZAMbdk4YLUajX7H5MpBNBcP9D31hAVfAgCsfLB79ispqBBM0vijMGCGCOTMkzWXTU1FRXr11fU1OxSd+zevXvbn9u3f79p797tVaagQJySm/+MGaJ+g9ReBroAYj1JhVWd+dAlxyyY8+hjz7847/RX28xGW0vd4sWL6+r+2xRUQ4iKOwQiWRAEPMJKFbQL9UOX3LrgOSAef3neoVPHHKTiaKY/aXjFhh+LxGNzbbYGB+I0RKSVAamtFXRFdmWTKp5DFY+/OG9yFo9gwdl1KnfIEXzlfFq2WUU/t8waKRAy6gKPVhpUk3mMt4oxaakKLoChIlEg+PkB5ETjIlCV97efu2qsf9/KQKLTvG9nLVp0lMGglQCpaxZMVonOrr3xP7EVg0wEIkzeLkxdZuZDr81J7Rt0VInH7JFcMtxGjeFPJlReAimDRRpUA4ipqqNh9+Ztf/6J0btqKvYb++5ikDlOC48UqOJxTiMi9BNk+54gNu1d2Wb2GFrqMHhPvsQhEiC5CyPqnkzvEUIAIbgA1JELQEuLjZ89s/kmfOEwQGpr9qGcImQQYhTiIe8MOEqASBEGyKQOEcQ0KMrmctUuq611OGxaZ9sL2JChgky4IIcDAmOZw2UzeEraNuyrXLenGbfpue+ouP6CTILCZBViUme+lhUGqG1fZfee5qaNXV07c3JyLJbc3FzLj8f3H1SzCwZTdlXDbjKm27dfNu/QrDH8RSi0KVuSa8mlCoslR8jh/QfVbYKC/jLdVuIx0Pl4l35e6KCm3ByWYEEgkWsF0julzpKZvCfkhixhgBAbEL6JMziJKAxQmA15hCklY+pw1DpaXDbnTByaDhbI5oACDBvWCgfqleu6m5u61p45eCDnyg38mK7FmO7MsZAx/eGpqYMFMtauw+f/BYTPnB6eO4igZd25f+UE5LDcQW0IrYhAh2fFFsiSc+gQKOogRayBNLEF+uE4iduguZEFqbhRd4QEYscxQ6DogjSRBS2LRENvmSMIqgwXhM+c9aAnLoZAGNxZcWzRXM2DDIJI4yty7Mkd9CVDZj9t1AqgwW5IwWlmL7rpprc8sQLCLx1Pmz1mFBQqaG5JpEFHOMkZY2ggzMTsB51xEQZh6kMDMVGEG5IBHSYJ0kBk1kYBJNsQy/w7PNrIgeY/LbNkfx3246cSoPmzZ82aazRoQwWxJ87pcTXHvdCGEWOgPcKPSG86+RxmOX64xB++eAx0SIMEKWEgb3w4lvcqfyox+jb0g3DTuXNnV9faJc3N1748afJUMcdn7LXgyIGEL8mfUfPvA4Cp/HPvV00o/3mDj8jVvbFpyZ7uyn0/0YNhm8sheSzMXxi1RlmQRqXSiB85xxPnZ550Bn3C+Vk8WzxW31pd7Z6w3E9kNNpa6DmKw+UiR05aJ46FFVjasK7UAVWwh71fx8P3rT6Pvevjk8rK/URAIOxcmB0LhwrC4cMkLg0Pe5/hfe799bH66iIovoOCIJKGxSPeh73tTNRLoTAcOJGaXHGekhd4UUggxPIOFmTsMH0BEKSMVp+/AUARfoHIzkTYNXSxDDhwWrlj6eo1nXkPFBTe1teUKSVAFoQMSI4lZ3813wU6EBT+CClRyY6lxURRvWrVCl1hYT6S2H5kAEgp5AAN5fIK4trZtXFt05L9+/c3bQnykXO7vVdky8vX5dMUFuqEJNQzkNyS7dvZBURz9zphTF2OHXhyUA4gISKgwCSU8iBWz6gUPtNGjpz2pd89grPEbISiFnFgSm340Aa3Wx+ySB6kSZk+bdrIY48dP/r8E084Ojn57MudWoOPiL9Y0Bn18APi2hG8h4nkQKNQyimEMxqco0ckJ4+gIBYPdQhjSgYVb+GIDDKg+0cCdIpQEA8y+4HAgIH+8Q0OhjGnxWv+yHOHIXpAGqSczoNG8yDRkhnN3quF+wHM6Qo6IY2t9pBEmP7VP6/QSYIg4kFYMgI6e9zbPiCjawcUOl1hwKAWBCdhHZV3rtLJgDjNdLJi47176OILfEGOpY1AsIQAsgttut0F+NtdrB8xiIm8W4hfMrMfCJ6gQYwBRGtrdRFZbEaRAUE0zQ/klAeV2WWqaK2WUMiBlJxm5OjxAuhsLFmcHKjQXSyuAgqKkFbIg/jhP+V8OmTSIJYV5WvsElWED4LoRDr1MiCWVSJFZEFcyrEnBNEQVk308ciCIBp/dBANIQMMgmj0iNgCcSnnJycnp4+43KONERCXciIBvesyaGMEBFF6+sXj3ra9EisgLuXo9PRrPju1zhYrIG5aevo5J/8KUZRBM1IPCFJyypHp466moqiCtl7HASQjiiao50b2QJNYNI4XuaIGSqifQh+V6Ft0DS+KEighv/RmUlDfolO8ooEFJSYmkOhK6++j9/BSomsEUaRBiQh1JOp0uFeob9+6tafxkYnUIyk6VhAZIgBK7A25WWhsrC8Fo70+X5fw4W0zrrv+3tPT6ITJiEafc87dELUsCxFEekB4RD5BtJeWltbrEqa8cdud191z740Tz5icdWZaKv/10I+c6P5kXrR4dX7wuwKMQoIgVZQ2oooPHplx5/X33Hfz6ZMmZ6Wlaji/qEg98qKUdF4k25DPrtDRXdHT095eX0irwILcCMVJpArxK1KocGqLSDnEon/iVhRK7Aphb6KKf9vrG/MTpnxyJK2CLEjG8FTFAZ6y5l8+hgs6EI1buBCiyvrEhIBdIexN7Iue+vyEJ6Y8MqO3igyKYEERJArJKoLoaOFX7/86tqcRmt4B6SmlVXyECaF7cxKrgpXBtyGqIlwRbrJHLPzmpSufqN8qVMH2Zkaq+NVSiEEpetGWSIqEV9zImngfqqB7U+GvIKtBi1CQMgY07PpwgOXQwEEQXPSjBEqpUiihoAGHi4VgPYYylKEMZUDyPzlTc9tadTAbAAAAAElFTkSuQmCC"
+}
