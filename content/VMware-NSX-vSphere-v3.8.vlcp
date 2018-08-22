@@ -2088,7 +2088,7 @@
       "rows":[ {
         "widgets":[ {
           "name":"All Edges load balancer status",
-          "info":" For each Edge load balancer, this table shows the state, number of VIPs and number of active VIPs over time (every minute).<br><br>Note: Requires NSX v6.3+ <br>",
+          "info":" For each Edge load balancer, this table shows the state, number of VIPs and number of active VIPs over time (every minute).<br><br>Note: Requires NSX v6.3+ <br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "gridWidth":"1",
           "chartType":"number",
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
@@ -2099,7 +2099,7 @@
       }, {
         "widgets":[ {
           "name":"All Edges VIP status (1 = UP, 0 = DOWN)",
-          "info":" All load balancer instances' VIP status over time. 1 = UP, 0 = DOWN. If status is Down, investigate the connection to the backend application servers. Use the \"show service loadbalancer\" command to check for any error conditions.<br><br>Note: Requires NSX v6.3+<br>",
+          "info":" All load balancer instances' VIP status over time. 1 = UP, 0 = DOWN. If status is Down, investigate the connection to the backend application servers. Use the \"show service loadbalancer\" command to check for any error conditions.<br><br>Note: Requires NSX v6.3+<br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "gridWidth":"1",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
@@ -2110,7 +2110,7 @@
       }, {
         "widgets":[ {
           "name":"All Edges load balancer alerts",
-          "info":"List of load balancer alerts for following conditions:<br>- When pool is down<br>- When pool member is down<br>- When pool service is down<br><br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span><br>",
+          "info":"List of load balancer alerts for following conditions:<br>- When pool is down<br>- When pool member is down<br>- When pool service is down<br><br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span><br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "gridWidth":"1",
           "chartType":null,
           "chartOptions":null,
@@ -2145,7 +2145,7 @@
       "rows":[ {
         "widgets":[ {
           "name":"Edge load balancer throughput (bytes/sec)",
-          "info":"Load Balancer throughput (bytes/sec).<br>Data is collected every minute and represents the average of the last minute.<br><span>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.</span><br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span> <br>",
+          "info":"Load Balancer throughput (bytes/sec).<br>Data is collected every minute and represents the average of the last minute.<br><span>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.</span><br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span> <br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true}",
           "widgetType":"chart",
@@ -2153,7 +2153,7 @@
           "messageQuery":""
         }, {
           "name":"Edge load balancer RAM usage (%)",
-          "info":" Load balancer RAM usage (%). A snapshot is taken every minute. If usage is high, change the Edge to a larger form factor.&nbsp; If the Edge is already configured for X-Large, try distributing the load across multiple Edges.<br>\n  <br>\n  Note - the \"Average\" and \"Max\" values vary over wide time periods.&nbsp; Each data point combines multiple values.&nbsp;<br><br>Note: Requires NSX v6.3+ <br>",
+          "info":" Load balancer RAM usage (%). A snapshot is taken every minute. If usage is high, change the Edge to a larger form factor.&nbsp; If the Edge is already configured for X-Large, try distributing the load across multiple Edges.<br>\n  <br>\n  Note - the \"Average\" and \"Max\" values vary over wide time periods.&nbsp; Each data point combines multiple values.&nbsp;<br><br>Note: Requires NSX v6.3+ <br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true}",
           "widgetType":"chart",
@@ -2163,7 +2163,7 @@
       }, {
         "widgets":[ {
           "name":"Edge load balancer concurrent connections",
-          "info":"Load balancer concurrent connections. Snapshot is taken every minute. \n If number of concurrent connections remains consistently high, upgrade the Edge form factor.<br><br>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.<br><br>Note: Requires NSX v6.3+ <br>",
+          "info":"Load balancer concurrent connections. Snapshot is taken every minute. \n If number of concurrent connections remains consistently high, upgrade the Edge form factor.<br><br>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.<br><br>Note: Requires NSX v6.3+ <br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true}",
           "widgetType":"chart",
@@ -2181,7 +2181,7 @@
       }, {
         "widgets":[ {
           "name":"Edge load balancer VIP status (1 = UP, 0 = DOWN)",
-          "info":"Load balancer instance VIP status over time. 1 = UP, 0 = DOWN.<br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span>",
+          "info":"Load balancer instance VIP status over time. 1 = UP, 0 = DOWN.<br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "gridWidth":"1",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
@@ -2202,7 +2202,7 @@
       "rows":[ {
         "widgets":[ {
           "name":"VIP throughput (bytes/sec)",
-          "info":"<span>VIP throughput (bytes/sec).</span><br><span>Data is collected every minute and represents the average of the last minute.</span><br><span>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.</span><br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span><span>&nbsp;</span><br>",
+          "info":"<span>VIP throughput (bytes/sec).</span><br><span>Data is collected every minute and represents the average of the last minute.</span><br><span>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.</span><br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span><span>&nbsp;</span><br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true}",
           "widgetType":"chart",
@@ -2210,7 +2210,7 @@
           "messageQuery":""
         }, {
           "name":"VIP concurrent connections",
-          "info":"VIP concurrent connections. Snapshot is taken every minute.<br><br>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.<br><br>Note: Requires NSX v6.3+<br>",
+          "info":"VIP concurrent connections. Snapshot is taken every minute.<br><br>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.<br><br>Note: Requires NSX v6.3+<br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true}",
           "widgetType":"chart",
@@ -2220,7 +2220,7 @@
       }, {
         "widgets":[ {
           "name":"VIP new connections / second",
-          "info":"<span>VIP concurrent connections.</span><br><span>Snapshot is taken every minute.</span><br><span>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.</span><br><span style=\"font-weight: bold;\"><br>Note:&nbsp;</span><span>Requires NSX v6.3+</span><span>&nbsp;</span><br>",
+          "info":"<span>VIP concurrent connections.</span><br><span>Snapshot is taken every minute.</span><br><span>The \"Average\" and \"Max\" varies when time period is wide and each point in the graphic is a combination of multiple values.</span><br><span style=\"font-weight: bold;\"><br>Note:&nbsp;</span><span>Requires NSX v6.3+</span><span>&nbsp;</span><br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "gridWidth":"1/2",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true}",
@@ -2229,7 +2229,7 @@
           "messageQuery":""
         }, {
           "name":"VIP pool member status (1 = UP, 0 = DOWN)",
-          "info":"<span>VIP Pool members status over time. 1 = UP, 0 = DOWN.</span><br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span><br>",
+          "info":"<span>VIP Pool members status over time. 1 = UP, 0 = DOWN.</span><br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span><br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "gridWidth":"1/2",
           "chartType":"line",
           "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
@@ -2253,7 +2253,7 @@
       "rows":[ {
         "widgets":[ {
           "name":"VIP response time (average per VIP / URL / server)",
-          "info":"Average response times of a Load Balancer HTTP(S) queries.<br><br><span style=\"font-weight: bold;\">Note:</span> To find only slow queries you can filter based on vmx_nsx_lb_access_response_time.<br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span> <br>",
+          "info":"Average response times of a Load Balancer HTTP(S) queries.<br><br><span style=\"font-weight: bold;\">Note:</span> To find only slow queries you can filter based on vmx_nsx_lb_access_response_time.<br><br><span style=\"font-weight: bold;\">Note:&nbsp;</span><span>Requires NSX v6.3+</span> <br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "gridWidth":"1",
           "chartType":"number",
           "chartOptions":"{\"legend\":true}",
@@ -2264,7 +2264,7 @@
       }, {
         "widgets":[ {
           "name":"VIP response errors (4xx and 5xx)",
-          "info":"VIP HTTP(S) queries which returned 4xx or 5xx error.<br><br>\n If you receive a layer 7 response error, such as HTTP 5xx, investigate the connection to the application. See also the \"Load Balancing\" section in the NSX Troubleshooting Guide.<br><br>Note: For this widget to show data \"vmx_nsx_lb_access_response_time\" filter must be empty<br><br>Note: Requires NSX v6.3+ <br>",
+          "info":"VIP HTTP(S) queries which returned 4xx or 5xx error.<br><br>\n If you receive a layer 7 response error, such as HTTP 5xx, investigate the connection to the application. See also the \"Load Balancing\" section in the NSX Troubleshooting Guide.<br><br>Note: For this widget to show data \"vmx_nsx_lb_access_response_time\" filter must be empty<br><br>Note: Requires NSX v6.3+ <br>Enable LB logging and change EDGE log level form \"EMERGENCY\" to \"INFO\" to get the logs.<br>",
           "gridWidth":"1",
           "chartType":"number",
           "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
@@ -2598,9 +2598,9 @@
   "aliasRules":[ ],
   "author":"VMware Inc.",
   "url":"https://www.vmware.com/products/nsx",
-  "contentVersion":"3.7",
+  "contentVersion":"3.8",
   "info":"<span>NSX-vSphere Content Pack provides powerful filtering, logging visualization and alerting of NSX for vSphere real-time operational activities.&nbsp; This enables users to effectively monitor NSX-vSphere production installations using intuitive Log Insight UI dashboard widgets with just a couple clicks.</span><br><br><span style=\"font-weight: bold; text-decoration-line: underline;\">Highlights</span>:<br><br><span>Easy, at a glance, views of an entire NSX-vSphere environment and components.&nbsp; Users will know at a glance whether there is a problem with a NSX-vSphere environment by simply looking at the Overview dashboard.</span><br><br><span style=\"font-weight: bold;\">The Content Pack highlights many areas of a NSX-vSphere environment including</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"text-decoration-line: underline;\">Common Installation / Configuration issues</span>&nbsp;- exposes several targeted problem log patterns with actionable remediations&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"text-decoration-line: underline;\">Logical Switch</span>&nbsp;- exposes system logs, audit logs and several targeted problem log patterns with actionable remediations&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"text-decoration-line: underline;\">Logical Router</span>&nbsp;- exposes system logs, audit logs and several targeted problem log patterns with actionable remediations<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"text-decoration-line: underline;\">Distributed Firewall</span>&nbsp;- contains several different dashboards to exposes firewall traffic by total aggregate traffic, hypervisors and rule Ids<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"text-decoration-line: underline;\">Edge Services</span>&nbsp;- separates logs for Edge appliance, health check, communication agent, high availability, load balancer, firewall and Ipsec VPN services<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"text-decoration-line: underline;\">Edge Firewall</span>&nbsp;- contains several widgets for monitoring firewall traffic<br><br><span style=\"font-weight: bold;\">Where to begin</span>:<br>&nbsp;&nbsp;&nbsp; The NSX-vSphere - Overview is the main entry point.&nbsp; This dashboard displays all problems/alerts reflected in the entire Content Pack, therefore under normal operating circumstances the dashboard should not contain any data.&nbsp; Once a log appears on a widget, read the widget's information (\"<span style=\"font-style: italic;\">i\"</span>icon<span style=\"font-style: italic;\">)</span>&nbsp;in order to navigate to the appropriate dashboard for more detailed information associated with the problem.<br>&nbsp;&nbsp;&nbsp; Additionally the Firewall dashboards provide widgets that contain many different views of firewall data.&nbsp; These visualizations are aggregated to show various slices of a NSX-vSphere environment at the hypervisor, vm and application level.<br><br><span style=\"font-weight: bold;\">Compatibility</span>:<br>&nbsp;&nbsp;&nbsp; VMware NSX-vSphere 6.1+<br>&nbsp;&nbsp;&nbsp; VMware Log Insight 3.0+<br>",
   "instructions":"<span>Forward all logging components to the Log Insight server including:</span><br>&nbsp;&nbsp;&nbsp; 1. Use the Log Insight vSphere integration to forward logs for all ESXi servers<br>&nbsp;&nbsp;&nbsp; 2. NSX-vSphere Manager<br>&nbsp;&nbsp;&nbsp; 3. NSX-vSphere Controller(s)<br>&nbsp;&nbsp;&nbsp; 4. All NSX-vSphere edge devices<br><br>For detailed setup instructions refer to the following resources:&nbsp;<br><span>*&nbsp;<a href=\"https://communities.vmware.com/servlet/JiveServlet/previewBody/30079-102-2-40474/NSX-Operations-Guide-v6.1.pdf\">NSX Operations Guide</a><br>*&nbsp;<a href=\"http://pubs.vmware.com/NSX-6/index.jsp?topic=%2Fcom.vmware.nsx.admin.doc%2FGUID-ECEE0A32-88D5-4E82-A9B1-4847A91E1EBF.html\">About NSX Logs</a></span><br>",
-  "upgradeInstructions":"Changelog:<br><span>\t</span>v3.7<br><ul><li>Bug Fixes and performance enhancements.</li></ul>",
+  "upgradeInstructions":"Changelog:<br><span>\t</span>v3.8<br><ul><li>Updated info tips related to Load Balancer configuration.</li></ul><span>\t</span>v3.7<br><ul><li>Bug Fixes and performance enhancements.</li></ul><br>",
   "icon":"iVBORw0KGgoAAAANSUhEUgAAADQAAAAzCAMAAADvo9thAAAC8VBMVEUAAAD5hgDoAAoAjjz1egAAlt/tAAbeAAcAhTzYAAvkAAUAhDwAhdMAkNgAj9P2eQDSABD9fgAAlNzpAAoAjDwAeyfkAAIAgzviABDRABcAbrr1cAAAk9oAjc0AhNEAeTsAcr/xWwDudAAAgcnxZADncAAAcTvAAA8AntzxUAD8fAD/AA4eLgAAcDoAeDr2cQAAd8kAeMsAfzQAcDTWAAs1ADUAiMUxADEA/0AAcDsAejwAcL4AcsAAdMIAkdseDwAAW8LHAAqaAAiLAAboXgDqSAAAMBVWaAD/AB8AJAUA/7+jSwAAaDvzbwCFAAsAj9cAf84AgNEAfSRUKQA/IAD/ABAAaNEAWMYAABcAgjsAVS4Aay/OABQAVieLAAYASRYAbsP4fAAAjNkAhDoAfTrvaQAAp0oAjEvydwAAjt3/AAwAhToAjdIAhDxVUgBXVADxeAAA1WEfDwAATgkA/88AaTsAZTMAhj0AhDUAezUAaS8AizfyRwAAiTtnAAT1eAAALBMAnN35hwDyXgD6fQD+fwBobwAAkd1AIABAACf4ewDqaQAAl0IAgDcANHQAdzoAXi4AYS8ASSbIAAoAfDoAVyiRABH4ewD4hgCRAAEAl9wAUhb2hQAARgzybAAAjzr2ewD4hwAAjtUAjDQAmUkAqUsAnEsAe8n4AB3/ABUAgtEAdxTYAAu6AAYAdcYAWRXYAANXPwAAaTEAj9UAXbz2eQDAXgD/ABIAdzU1Dh/scAAAcuTQGgCkAAkAajUAeD8AaC4AhUH3aADvRwAAkDrkAAz6fQAAktQAc8DeAAGEAAvzZQAAlNYAQR/0bwAAldcAidcAe80AejYAlUEAhzfudQD6fADvawAAORgAi9PwdgAAesIAezgAlt4AkdEAhdQAhz4AfEDKABT2ZQAAcsAAezoA8GpVZwAAXLwAvDEAFwPbCQAeLQAeDwAARAQAWSgA9nS+DgDnbQAAkdJXKwAA/8EAuWP/ACAA/3wAAAAAeA8DvKkZAAAA+3RSTlMA5OT139rj4fbiOPjcbN1v4+Hd4/g5cPrlOPDg3zTf+97bNN3bGvvh3NuoSUL+/d7d23p5clE2VwT8+ern2qVEFuDUz21saWJJMAwM/eHPqKWjd2RhQTMLC/zp5OTczcfDw8G3qaeRjoyEe3duamJgX1lBGhX7+vTw8Obk2tbHxcC5uaWXjWVgYFRUUExDN/7q5OTe29nW1dTMysnEwL+4s6qpppKPj4l8fHpycG9ramJgWVBPREEsKykoJh0a7+zo5d3c29bS0dHR0NDPz8/Ozs7GxcPCwcG2tKajmpmXlYyIc29ubmVjW1hXVkRDPDk3NzYzLy0sKCMdEaw5NyoAAARXSURBVEjHndRVmFJRFAXgq6KMGBgoIiCCioHdidjd3d2tY3d3d3d3d3d3d3e3T66zzz3ncr2+6HqYy/DN/+1zFptR/jc1hscxpG3bnYm1WMSLDXtUs3lWmjRposskQFyuuHFzxNCSOGHCqDxHX5MJ6UwrIDJ6BMOT5GQZhobr5iihVufJxA5DCRNLYzZvYCgOzMDPbjXsinEawwBJAySNOTshzAkq+tyPDSQNkDAS4VAD3SLUzE2YZOMsWvbwh4Nlr0Bacei/cVxmkvFJFswRZ3OYkZhykjSuVcfjcpNCInkfBzMCCRNsjN6E4SihRTNAMHp0160Ew0wWIHRgkQYIRodahfByt9udk6X68hRZMo+EAZIGiJl4j2R7IOFZlyVzAd5eGdFbIBD4HkCqbZeTEvBJNAZZnrlA8pExtA7WmM0zZ9ZHihTpt5aQ2ts9t1JB3Acm+ciw3oDoaEjh1hyJHa3QOMwkzyUNtsCIYGTXoVUXucmfSzNAKik0WUUwZ4LBChUWVapUqSL2dV1DZvIBafsm5kwuJJHrj4Xd0jB/vqTjwvfN8RG9VSuJoD1CLiPKlzRprrB9Q9BbtfLly59S28N9LrCzVURu43gv2BwgZoBkB0UChQqlTl14JUfoQHYdenIiOQwhGLNDGD1qK4zoGoYjGCDV1K1bvmRqZNoKQkbDEYzYNwP6mV6m85vOnTu/LcizswrLuxEjRlRlWb268svKyPqxDFmjGBMfGRZNpne7aNHmzp09uwEyYL1ABqJHY5TF+GmzdY+IiKiz1IDmpKPAmDS0WFFq9oWxwcT6C7qmsIyCMZWQh6uJtxL16NGdmVh1mhvQUPZPN9UxEyLR/DaK0qXNkR5kJNJIKhq0wMSRDAbhPmTsvfRoCJFUihXCiFSjR+l8dJtGjXwARgTTsyeMfeKyMDQIc3yN0EAjHep7BV0TinW5J0wtFQFs9Q2JMshHTZusqVoSes5bUNrYCN0YEzlg6tR69c5mUxG7zMIoHX0U/MJYpm2JWHaguSaJErV78CMycmwnZMwHjhbyh08RATvn/KTINI1oR8/cFP7XM9iHMzQcjZ7ndMpJNZtiUla8W4rShRCV3THKHF86uotVGX3V6XSW6xANsTVRNvWOwJ3sl559rZfX4/FMWEIoPrU3A4OI3eqfCeZQSiDsW98m6I2hXgfu1IPJKFB8sPgL6HRb+/ffBVMuZUogsaOE8rIxHr+/dguB6FzpdqkbQcbbQRhCtZjJmNGfRyIISku+e82Y8baXxg5Exu/Pk0FFJi2ZWtKWn/YiQNw0QXNdsh30ZBwPI5FmnPN4415v2rTtxZwp7Pv0ns/p2nXSQwXpKAkauN6sWbPBgwd70wKJvbY3xWc1hc8pW3ZSG4bKTOcGhDeAwPTZKEytvGOVpnxO2W7dBnzjX25S0nDS5/BGaTz7n8LQnG77NkWqi9bRyvO4KKUY5UtWnmw8xSmvfin/ktIUvq6/AaNzYhEfCFg7AAAAAElFTkSuQmCC"
 }
