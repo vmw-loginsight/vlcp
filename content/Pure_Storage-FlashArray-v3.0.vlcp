@@ -1,0 +1,824 @@
+{
+  "name":"FlashArray Content Pack",
+  "namespace":"com.pure.flasharray",
+  "contentPackId":"com.pure.flasharray",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"pure_access_ip",
+    "preContext":"Location '",
+    "postContext":"' Sublocation",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5uxa000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"IP addresses from which FlashArrays have been accessed. This data may be used to determine which hosts connect to FlashArray for management purposes."
+  }, {
+    "displayName":"pure_access_mode",
+    "preContext":"Interface: '",
+    "postContext":"' Module",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5ww6zdf",
+    "constraints":"{\"searchTerms\":\"purity.audit\"}",
+    "info":"FlashArray access method (Command Line Interface (CLI), Graphical User Interface(GUI), RestAPI) used to manage array."
+  }, {
+    "displayName":"pure_admin_operation",
+    "preContext":"\\] pureadmin\\s\\w+\\s+",
+    "postContext":"\\. Message",
+    "regexValue":".*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmrwws3s7n5ygk4tboruw63q0",
+    "constraints":"{\"searchTerms\":\"purity.audit\"}",
+    "info":"Administrative commands executed against an array such as configuration changes which do not involve hosts or volumes."
+  }, {
+    "displayName":"pure_alert_action",
+    "preContext":"Suggested\\sAction: ",
+    "postContext":"Purity\\sVersion:",
+    "regexValue":".*(.*\\n){0,}",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mfrxi2lpny000000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"Suggested action to be taken based on reported condition."
+  }, {
+    "displayName":"pure_alert_code",
+    "preContext":"\\[",
+    "postContext":"\\]\\n",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0",
+    "constraints":null,
+    "info":"Numeric value associated with an alert. The alert codes maybe viewed at <a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>."
+  }, {
+    "displayName":"pure_alert_detail",
+    "preContext":"Output:",
+    "postContext":"",
+    "regexValue":".*(.*\\n){0,}.*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mrsxiyljnq000000",
+    "constraints":"{\"searchTerms\":\"\"}",
+    "info":"Additional alert details (when available)."
+  }, {
+    "displayName":"pure_alert_message",
+    "preContext":"purity\\.alert: (INFO|REMINDER|WARNING|CRITICAL) ",
+    "postContext":" \\[\\d+",
+    "regexValue":".*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000",
+    "constraints":"{\"searchTerms\":\"purity.alert\",\"filters\":[{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"operator\":\"EXISTS\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"Message describing the alert."
+  }, {
+    "displayName":"pure_alert_severity",
+    "preContext":"purity\\.alert: ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000",
+    "constraints":"{\"searchTerms\":\"purity.alert\"}",
+    "info":"Alert severity: Info, Reminder, Warning, Critical. Alerts with critical severity require immediate attention."
+  }, {
+    "displayName":"pure_array_name",
+    "preContext":"\\s+",
+    "postContext":"\\-ct[01]\\s+purity",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0",
+    "constraints":"{}",
+    "info":"FlashArray name."
+  }, {
+    "displayName":"pure_audit_user",
+    "preContext":"User: '",
+    "postContext":"' Location",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bovsgs5c7ovzwk4q0",
+    "constraints":"{\"searchTerms\":\"purity.audit\"}",
+    "info":"Name of the user accessing or name used to access FlashArray."
+  }, {
+    "displayName":"pure_cli_command",
+    "preContext":"\\] ",
+    "postContext":"\\. Message",
+    "regexValue":".*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te",
+    "constraints":null,
+    "info":"Command executed on FlashArray."
+  }, {
+    "displayName":"pure_controller_name",
+    "preContext":".*\\-",
+    "postContext":" purity",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dn5xhi4tpnrwgk4s7nzqw2zi0",
+    "constraints":null,
+    "info":"Name of the FlashArray controller: ct0 or ct1."
+  }, {
+    "displayName":"pure_controller_sn",
+    "preContext":"Serial: ",
+    "postContext":" None",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dn5xhi4tpnrwgk4s7onxa0000",
+    "constraints":null,
+    "info":"Serial number of the FlashArray controller."
+  }, {
+    "displayName":"pure_delayed_pgroup",
+    "preContext":"Protection group\\ \\(",
+    "postContext":"\\) was not able to replicate data",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3emvwgc6lfmrpxaz3sn52xa000",
+    "constraints":"{\"searchTerms\":\"replication delayed\"}",
+    "info":"<span>Protection group which experienced delayed replication.</span>"
+  }, {
+    "displayName":"pure_event_type",
+    "preContext":".*\\-ct(0|1) purity\\.",
+    "postContext":": ",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"<span>FlashArray event type. Possible event types are: audit, alert, test.</span>"
+  }, {
+    "displayName":"pure_failed_hardware",
+    "preContext":"Output:\\s+name=",
+    "postContext":"\\, (status|type)\\=",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3gmfuwyzlel5ugc4teo5qxezi0",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"<span>Failed hardware component such as controller, SSD, power supply.</span>"
+  }, {
+    "displayName":"pure_hgroup_name",
+    "preContext":"\\] purehgroup \\w+ {1,2}",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3im5zg65lql5xgc3lf",
+    "constraints":"{\"searchTerms\":\"purity\",\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"audit\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":"<span>FlashArray host group name.</span>"
+  }, {
+    "displayName":"pure_hgroup_operation",
+    "preContext":"\\] purehgroup ",
+    "postContext":" {1,2}",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3im5zg65lql5xxazlsmf2gs33o",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"<span>FlashArray operation executed against the indicated host group.</span>"
+  }, {
+    "displayName":"pure_host_name",
+    "preContext":"\\] purehost \\w+ ",
+    "postContext":" ",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3in5zxix3omfwwk000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"<span>Name of the host that has been altered in the indicated operation.</span>"
+  }, {
+    "displayName":"pure_host_operation",
+    "preContext":"\\] purehost ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3in5zxix3pobsxeylunfxw4000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"<span>Operation run against the indicated host such as create, connect, disconnect, delete, setattr, remove.</span>"
+  }, {
+    "displayName":"pure_hostvol_name",
+    "preContext":"((purehost\\s+|purehgroup\\s+)|(connect\\s+|disconnect\\s+))\\w+\\s+\\w+\\s+\\-\\-vol\\s+",
+    "postContext":"\\.\\s+Message",
+    "regexValue":".*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3in5zxi5tpnrpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"Volume or volume group that has been connected or disconnected from host."
+  }, {
+    "displayName":"pure_object_setattr",
+    "preContext":"\\]\\s+",
+    "postContext":"\\ssetattr",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3pmjvgky3ul5zwk5dbor2he000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"&nbsp;FlashArray or object on FlashArray which had its attribute modified."
+  }, {
+    "displayName":"pure_percent_full",
+    "preContext":"purity\\.alert: (INFO|WARNING|CRITICAL) Storage consumption has reached ",
+    "postContext":"% of usable capacity",
+    "regexValue":"\\d{1,3}\\.\\d{1,2}",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000",
+    "constraints":"{\"searchTerms\":\"capacity\"}",
+    "info":"Percentage of consumed FlashArray usable capacity. This value is reported when FlashArray exceeds 80% (Info), 90% (Warning), 100% (Critical) of storage consumption."
+  }, {
+    "displayName":"pure_pgroup_name",
+    "preContext":"purepgroup\\s+(setattr|enable|retain|schedule|create|destroy|eradicate|recover|snap|disable|rename)(\\s+)",
+    "postContext":"\\s+",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"FlashArray Protection group name."
+  }, {
+    "displayName":"pure_pgroup_objectchange",
+    "preContext":"purepgroup setattr \\w+ \\-\\-",
+    "postContext":" \\b",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xwe2tfmn2gg2dbnztwk000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"Object change occurring to Protection group such as removal or addition of one or more volumes, hosts, host groups or FlashArray targets."
+  }, {
+    "displayName":"pure_pgroup_objectname",
+    "preContext":"\\-\\-(add|rem)(host|hgroup|vol|target)list ",
+    "postContext":" \\. Message",
+    "regexValue":".*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xwe2tfmn2g4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"setattr\"}",
+    "info":"Protection Group object or list of objects managed such as volume,&nbsp; host,&nbsp; host group or a target FlashArray."
+  }, {
+    "displayName":"pure_pgroup_operation",
+    "preContext":"\\]\\s+purepgroup ",
+    "postContext":"\\s+",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33o",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"Protection Group operation such as create, destroy, enable, disable, destroy, eradicate, recover, rename, snap, schedule, setattr."
+  }, {
+    "displayName":"pure_pod_name",
+    "preContext":"",
+    "postContext":".\\s+Message",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qn5sf63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"purepod\"}",
+    "info":"FlashArray Pod (ActiveCluster) name."
+  }, {
+    "displayName":"pure_pod_operation",
+    "preContext":"\\] purepod\\s",
+    "postContext":"\\s+",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qn5sf633qmvzgc5djn5xa0000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"<span>FlashArray Pod (ActiveCluster) operation such as create, add, clone, destroy, eradicate, recover, remove, rename, setattr.</span>"
+  }, {
+    "displayName":"pure_purity_version",
+    "preContext":"Purity Version: ",
+    "postContext":"\\n",
+    "regexValue":"\\d{1,}\\.\\d{1,}\\.\\d{1,}",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qovzgs5dzl53gk4ttnfxw4000",
+    "constraints":null,
+    "info":"FlashArray Purity version."
+  }, {
+    "displayName":"pure_replicate_frequency",
+    "preContext":"\\-\\-replicate\\-frequency ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3smvygy2ldmf2gkx3gojsxc5lfnzrxs000",
+    "constraints":"{\"searchTerms\":\"schedule\"}",
+    "info":"Protection group replication frequency."
+  }, {
+    "displayName":"pure_snapshot_frequency",
+    "preContext":"\\-\\-snap\\-frequency ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3tnzqxa43in52f6ztsmvyxkzlomn4q0000",
+    "constraints":"{\"searchTerms\":\"schedule\"}",
+    "info":"<span>Protection group snapshot frequency.</span>"
+  }, {
+    "displayName":"pure_user_name",
+    "preContext":"purity\\.audit:\\s+\\[",
+    "postContext":"\\]",
+    "regexValue":".*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"User name executing operation on FlashArray."
+  }, {
+    "displayName":"pure_vgroup_operation",
+    "preContext":"\\]\\s+purevgroup\\s+",
+    "postContext":"\\s+",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wm5zg65lql5xxazlsmf2gs33o",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"Operation executed against volume group such create, destroy, eradicate, rename, recover."
+  }, {
+    "displayName":"pure_vmvvol_name",
+    "preContext":"vvol\\-",
+    "postContext":"\\-vg\\/",
+    "regexValue":".*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wnv3hm33ml5xgc3lf",
+    "constraints":null,
+    "info":"FlashArray name for VVol based virtual machine and corresponding volume group."
+  }, {
+    "displayName":"pure_volume_name",
+    "preContext":"purevol\\s+(destroy\\s+|move\\s+|eradicate\\s+|snap\\s+|recover\\s+|add\\s+|remove\\s+|(create\\s+\\-\\-size\\s+\\d+\\w\\s+))",
+    "postContext":"(\\.\\s+Message)|(\\-\\-.*)",
+    "regexValue":".*",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xgc3lf",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"FlashArray volume name or volume_group/volume_name."
+  }, {
+    "displayName":"pure_volume_operation",
+    "preContext":"\\] purevol ",
+    "postContext":"\\s+",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33o",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"Operation executed against volume such as create, copy, destroy, disconnect,destroy, eradicate, move, recover, remove, rename, setattr, snap."
+  }, {
+    "displayName":"pure_vvol_name",
+    "preContext":"vvol\\-.*\\-vg\\/",
+    "postContext":"\\. Message",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000",
+    "constraints":null,
+    "info":"FlashArray name for VVol-based virtual machine volume."
+  }, {
+    "displayName":"pure_vvol_operation",
+    "preContext":"((\\]\\s+purevol\\s+)|(\\]\\s+purehost\\s+))",
+    "postContext":".*vvol\\-.*\\.",
+    "regexValue":"\\w+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3pobsxeylunfxw4000",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"Operation executed against the VVol such connect, snap, destroy, eradicate."
+  }, {
+    "displayName":"pure_vvolvg_name",
+    "preContext":"((\\]\\s+purevol\\s+\\w+\\s+)|(\\]\\s+purehost\\s+\\w+\\s+))",
+    "postContext":"\\/\\S+",
+    "regexValue":"\\S+",
+    "internalName":"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwy5thl5xgc3lf",
+    "constraints":"{\"searchTerms\":\"purity\"}",
+    "info":"FlashArray volume group name for VVol based virtual machine."
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"FlashArray: Delayed Protection Group",
+    "info":"FlashArray Protection Group has been delayed in replication.",
+    "recommendation":"Check the replication network (congestion/bandwidth) and rate of change on replicated volumes.",
+    "alertType":"NEW_EVENT_TYPE",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1522479600000,\"endTimeMillis\":1523862000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3emvwgc6lfmrpxaz3sn52xa000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_delayed_pgroup\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3emvwgc6lfmrpxaz3sn52xa000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_delayed_pgroup\",\"preContext\":\"Protection group\\\\ \\\\(\",\"postContext\":\"\\\\) was not able to replicate data\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3emvwgc6lfmrpxaz3sn52xa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"replication delayed\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  }, {
+    "name":"FlashArray: ActiveCluster Remote Pod is offline",
+    "info":"ActiveCluster remote Pod has gone offline.",
+    "recommendation":"Check the status of remote FlashArray. Examine critical and warning FlashArray earlier alerts.",
+    "alertType":"NEW_EVENT_TYPE",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525581198247,\"endTimeMillis\":1525667598304,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"EQUAL\",\"value\":\"120\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"FlashArray:  Usable Capacity Limit",
+    "info":"FlashArray has reached or exceeded 80% of usable capacity.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525667301566,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000\",\"displayName\":\"pure_percent_full\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"capacity\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purity alert\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_alert_severity\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_severity\",\"preContext\":\"purity\\\\.alert: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_percent_full\",\"preContext\":\"purity\\\\.alert: (INFO|WARNING|CRITICAL) Storage consumption has reached \",\"postContext\":\"% of usable capacity\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,2}\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"capacity\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":43200000,
+    "searchInterval":3600000
+  }, {
+    "name":"FlashArray: Critical Alert",
+    "info":"FlashArray has generated a critical alert.",
+    "recommendation":"Examine Alerts dashboard for additional details.",
+    "alertType":"NEW_EVENT_TYPE",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525552136021,\"endTimeMillis\":1525724936782,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"critical\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"reminder\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_alert_message\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_message\",\"preContext\":\"purity\\\\.alert: (INFO|REMINDER|WARNING|CRITICAL) \",\"postContext\":\" \\\\[\\\\d+\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"hostname\\\",\\\"displayName\\\":\\\"hostname\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"FlashArray: ActiveCluster Local Pod is offline",
+    "info":"ActiveCluster local Pod has gone offline.",
+    "recommendation":"Verify volume status, examine critical and warning FlashArray alerts prior to Pod going offline.",
+    "alertType":"NEW_EVENT_TYPE",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525667508236,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"EQUAL\",\"value\":\"119\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":600000,
+    "searchInterval":60000
+  }, {
+    "name":"FlashArray: ActiveCluster Pods resynchronizing",
+    "info":"ActiveCluster Pod or Pods are resynchronizing.",
+    "recommendation":"Examine FlashArray logs for any potential issues which could lead to Pods becoming not synchronized.",
+    "alertType":"NEW_EVENT_TYPE",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525717360632,\"endTimeMillis\":1525717661800,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"EQUAL\",\"value\":\"121\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"FlashArray: ActiveCluster Alert",
+    "info":"Active Cluster Alert.",
+    "recommendation":"Examine additional widgets in ActiveCluster dashboard to determine the cause of alerts.",
+    "alertType":"NEW_EVENT_TYPE",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525551780635,\"endTimeMillis\":1525724583308,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"CONTAINS\",\"value\":\"98,119,120,121,122,123,127,140\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"alert\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_alert_severity\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_alert_severity\",\"preContext\":\"purity\\\\.alert: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of Arrays Sending Messages",
+          "info":"Number of FlashArrays sending messages to vRealize Log Insight&nbsp;<span>during selected time interval.</span><br>To test whether FlashArray is properly configured send a test message using <span style=\"font-weight: bold; font-style: italic;\">purelog test</span> command.<br>&nbsp;<a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a>",
+          "gridWidth":"1",
+          "chartType":"scalar-value",
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525658157344,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayName\":\"pure_array_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purity\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Hardware Alerts",
+          "info":"Count of critical hardware events during selected time interval to assist in hardware troubleshooting.&nbsp;Alerts should be investigated immediately.&nbsp;<br><a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1524182452715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"alert\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"hardware\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_alert_message\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_message\",\"preContext\":\"purity\\\\.alert: (INFO|REMINDER|WARNING|CRITICAL) \",\"postContext\":\" \\\\[\\\\d+\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"hostname\\\",\\\"displayName\\\":\\\"hostname\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_event_type\",\"preContext\":\".*\\\\-ct(0|1) purity\\\\.\",\"postContext\":\": \",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Power Failures",
+          "info":"Power component hardware failures. The alerts should &nbsp;be investigated immediately.&nbsp;This widget indicates the general location (controller # or shelf #) and specific location (such as pwr1 which is Power Connection 1) Refer to the Pure Storage GUI for the physical location of the failure. The results are sorted by failed power component and FlashArray name &lt;failed power component,&nbsp;array name&gt;. <a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1524179785133,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"pwr1,pwr0\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"operator\":\"CONTAINS\",\"value\":\"critical\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_alert_severity\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_severity\",\"preContext\":\"purity\\\\.alert: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Total Alerts",
+          "info":"Total number of alerts sent by FlashArray within the specified time interval. The alerts are classified as Info, Warning, Critical. Additional details are avilable in Alerts dashboard.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "gridWidth":"1",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525656241872,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"critical,warning,info\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_alert_severity\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_message\",\"preContext\":\"purity\\\\.alert: (INFO|REMINDER|WARNING|CRITICAL) \",\"postContext\":\" \\\\[\\\\d+\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"hostname\\\",\\\"displayName\\\":\\\"hostname\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pure_alert_severity\",\"preContext\":\"purity\\\\.alert: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Alerts",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Critical Alerts By Array",
+          "info":"Number of Critical events grouped by FlashArray within the specified time interval. See Critical Alerts widget fin Alerts dashboard for additional details.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525051769814,\"endTimeMillis\":1525656571016,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"critical\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Critical Alerts - Details",
+          "info":"Critical alerts within specified time interval grouped by array which need to be investigated immediately. Critical alert message may be seen by mousing over displayed columns.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525658397044,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"critical\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_alert_message\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_message\",\"preContext\":\"purity\\\\.alert: (INFO|REMINDER|WARNING|CRITICAL) \",\"postContext\":\" \\\\[\\\\d+\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"hostname\\\",\\\"displayName\\\":\\\"hostname\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Warning Alerts By Array",
+          "info":"Number of Warning events grouped by FlashArray within the specified \ntime interval. See Warning Alerts by widget in Alerts dashboard for additional \ndetails.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525658065710,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"warning\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Warning Alerts - Details",
+          "info":"Warning alerts within specified time interval grouped by array which \nneed to be investigated as soon as possible. Warning alert message may be seen by \nmousing over displayed columns.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525658528090,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"warning\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_alert_message\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_message\",\"preContext\":\"purity\\\\.alert: (INFO|REMINDER|WARNING|CRITICAL) \",\"postContext\":\" \\\\[\\\\d+\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"hostname\\\",\\\"displayName\\\":\\\"hostname\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Reminder Alerts",
+          "info":"Reminder Alerts within the specified time interval. Reminder alerts are periodically generated by array to alert about the unresolved issues after the initial alert had been already sent.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525053960249,\"endTimeMillis\":1525658761742,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"reminder\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_alert_message\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_message\",\"preContext\":\"purity\\\\.alert: (INFO|REMINDER|WARNING|CRITICAL) \",\"postContext\":\" \\\\[\\\\d+\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"hostname\\\",\\\"displayName\\\":\\\"hostname\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Information Alerts",
+          "info":"Information alerts within specified time interval grouped by array. Information alert&nbsp; message may be seen by \nmousing over displayed columns.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525658846376,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"info\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_alert_message\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_message\",\"preContext\":\"purity\\\\.alert: (INFO|REMINDER|WARNING|CRITICAL) \",\"postContext\":\" \\\\[\\\\d+\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7nvsxg43bm5sq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"hostname\\\",\\\"displayName\\\":\\\"hostname\\\",\\\"operator\\\":\\\"EXISTS\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Volumes",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Volume Operations",
+          "info":"Volume management events such as creation, destruction, expansion, shrinking (truncating), recovering, connecting, disconnecting and snapping. The results are grouped by array. For additional details examine widgets in this (Volumes) dashboard.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "gridWidth":"1",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525486351715,\"endTimeMillis\":1525659151752,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Volume Create",
+          "info":"Volume create management events grouped by array.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525054593971,\"endTimeMillis\":1525659393970,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"create\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Volume Resize",
+          "info":"Volume resize management events grouped by array.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525110757216,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3pmjvgky3ul5zwk5dbor2he000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_cli_command\",\"preContext\":\"\\\\] \",\"postContext\":\"\\\\. Message\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te\",\"constraints\":null},{\"displayName\":\"pure_event_type\",\"preContext\":\".*\\\\-ct(0|1) purity\\\\.\",\"postContext\":\": \",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3fozsw45c7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"},{\"displayName\":\"pure_object_setattr\",\"preContext\":\"\\\\]\\\\s+\",\"postContext\":\"\\\\ssetattr\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3pmjvgky3ul5zwk5dbor2he000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Volume Destroy",
+          "info":"Volume destroy management events grouped by array.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525621577296,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33o\",\"operator\":\"CONTAINS\",\"value\":\"destroy\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purity\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_cli_command\",\"preContext\":\"\\\\] \",\"postContext\":\"\\\\. Message\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te\",\"constraints\":null},{\"displayName\":\"pure_volume_operation\",\"preContext\":\"\\\\] purevol \",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33o\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Volume Eradicate",
+          "info":"Volume eradicate management events grouped by array. Once the volume is destroyed and may be manually restored or automatically eradicated after 24 hours from the deletion time.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525659643986,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"eradicate\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_volume_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_volume_name\",\"preContext\":\"purevol\\\\s+(destroy\\\\s+|move\\\\s+|eradicate\\\\s+|snap\\\\s+|recover\\\\s+|add\\\\s+|remove\\\\s+|(create\\\\s+\\\\-\\\\-size\\\\s+\\\\d+\\\\w\\\\s+))\",\"postContext\":\"(\\\\.\\\\s+Message)|(\\\\-\\\\-.*)\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Capacity Alerts",
+          "info":"Array Capacity Alert are generated when the following conditions are met:<br>Information: 80 % of capacity<br>Warning: 90% of capacity<br>Critical: 100% capacity<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525659915936,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000\",\"displayName\":\"pure_percent_full\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"capacity\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purity alert\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_alert_severity\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_severity\",\"preContext\":\"purity\\\\.alert: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_percent_full\",\"preContext\":\"purity\\\\.alert: (INFO|WARNING|CRITICAL) Storage consumption has reached \",\"postContext\":\"% of usable capacity\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,2}\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qmvzggzloorpwm5lmnq000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"capacity\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"VVols",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"VVol Create",
+          "info":"VVol create management events grouped by array. VVols are automatically created with virtual machine and when virtual machine is powered on. Adding new disks to the virtual machine may also result in creation of subsequent VVols.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525662035675,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"recover\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_vvol_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_vvol_name\",\"preContext\":\"vvol\\\\-.*\\\\-vg\\\\/\",\"postContext\":\"\\\\. Message\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VVol Disconnect",
+          "info":"VVol disconnect events grouped by array. VVold disconnect events may be&nbsp; associated with the virtual machine deletion, virtual disk removal and resizing as well as vMotion.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525662831522,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purehost\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"disconnect\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_vvol_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_vvol_name\",\"preContext\":\"vvol\\\\-.*\\\\-vg\\\\/\",\"postContext\":\"\\\\. Message\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VVol Destroy",
+          "info":"VVol Destroy management events may be associated with the virtual machine deletion, virtual disk removal, Storage vMotion.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525662961184,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"destroy\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_vvol_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_vvol_name\",\"preContext\":\"vvol\\\\-.*\\\\-vg\\\\/\",\"postContext\":\"\\\\. Message\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"VVol Eradicate",
+          "info":"<span style=\"font-weight: normal; text-decoration: none; font-style: normal;\">VVol eradicate management events grouped by array. Once the VVol (volume) is destroyed and may be manually restored or automatically eradicated after 24 hours from the deletion time.</span><br><a href=\"https://support.purestorage.com/\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525058386343,\"endTimeMillis\":1525663186342,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"eradicate\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_vvol_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_vvol_name\",\"preContext\":\"vvol\\\\-.*\\\\-vg\\\\/\",\"postContext\":\"\\\\. Message\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VVol-Based Virtual Machines",
+          "info":"The number of VVol-based virtual machines created within the specified time interval.<br><a href=\"http://support.purestorage.com\">https://support.purestorage.com</a>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1531181710365,\"endTimeMillis\":1531182010364,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"vvol*\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"operator\":\"MATCH\",\"value\":\"Config-.*\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3pobsxeylunfxw4000\",\"operator\":\"CONTAINS\",\"value\":\"recover\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_vvol_operation\",\"preContext\":\"((\\\\]\\\\s+purevol\\\\s+)|(\\\\]\\\\s+purehost\\\\s+))\",\"postContext\":\".*vvol\\\\-.*\\\\.\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3pobsxeylunfxw4000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_vvol_name\",\"preContext\":\"vvol\\\\-.*\\\\-vg\\\\/\",\"postContext\":\"\\\\. Message\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wozxwyx3omfwwk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Replication",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Protection Group Operations",
+          "info":"Protection Group management events such as creation, destruction, recovery, &nbsp;renaming, snapping. The results are grouped by array.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525663360662,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purepgroup\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_pgroup_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_pgroup_name\",\"preContext\":\"purepgroup\\\\s+(setattr|enable|retain|schedule|create|destroy|eradicate|recover|snap|disable|rename)(\\\\s+)\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Delayed Protection Groups",
+          "info":"This widget displays Protection Groups that did not meet remote replication schedule at the configured interval. Investigate replication network, replication schedule or lack of free capacity.<br><a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525663458778,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3emvwgc6lfmrpxaz3sn52xa000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_delayed_pgroup\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3emvwgc6lfmrpxaz3sn52xa000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_delayed_pgroup\",\"preContext\":\"Protection group\\\\ \\\\(\",\"postContext\":\"\\\\) was not able to replicate data\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3emvwgc6lfmrpxaz3sn52xa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"replication delayed\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Single Volume Snap And  Copy Operations",
+          "info":"Single volume local clone or snap operations during the defined time interval.<br><a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525490781268,\"endTimeMillis\":1525663581460,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purevol\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"snap,copy\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_volume_operation\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33o\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_volume_operation\",\"preContext\":\"\\\\] purevol \",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3wn5whk3lfl5xxazlsmf2gs33o\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Protection Group Snap And Copy Operations",
+          "info":"Protection group snap and copy operations during the defined time interval.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525663682668,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purepgroup\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"copy,snap\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_pgroup_operation\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33o\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_pgroup_operation\",\"preContext\":\"\\\\]\\\\s+purepgroup \",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xxazlsmf2gs33o\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Protection Group Queries",
+          "info":"<span>Suggested queries for snapshot or remote replication messages.&nbsp;</span><br><a href=\"http://support.purestorage.com/\">https://www.support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Protection Group Remote Replication Frequency Changes",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525626332724,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3smvygy2ldmf2gkx3gojsxc5lfnzrxs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_pgroup_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_pgroup_name\",\"preContext\":\"purepgroup\\\\s+(setattr|enable|retain|schedule|create|destroy|eradicate|recover|snap|disable|rename)(\\\\s+)\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"},{\"displayName\":\"pure_replicate_frequency\",\"preContext\":\"\\\\-\\\\-replicate\\\\-frequency \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3smvygy2ldmf2gkx3gojsxc5lfnzrxs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"schedule\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>Searches for remote replication internal changes. Enter a protection group name to look for specific protection groups (change pure_pgroup_name from \"exists\" to \"contains\" and enter a name). P</span><span>rotection group names are not guaranteed to be unique across FlashArrays so specify an array name if necessary.<br></span><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piepercentage\\\":false,\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          }, {
+            "name":"Protection Group Local Snapshot Frequency Changes",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1525647806641,\"endTimeMillis\":1525651406640,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3tnzqxa43in52f6ztsmvyxkzlomn4q0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_pgroup_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_pgroup_name\",\"preContext\":\"purepgroup\\\\s+(setattr|enable|retain|schedule|create|destroy|eradicate|recover|snap|disable|rename)(\\\\s+)\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"},{\"displayName\":\"pure_snapshot_frequency\",\"preContext\":\"\\\\-\\\\-snap\\\\-frequency \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3tnzqxa43in52f6ztsmvyxkzlomn4q0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"schedule\\\"}\"}]}",
+            "messageQuery":"",
+            "info":"<span>Searches for local snap interval changes. Enter a protection group name to look for specific protection groups (change pure_pgroup_name from \"exists\" to \"contains\" and enter a name). Protection group names are not guaranteed to be unique across FlashArrays, so specify an array name if necessary.</span><br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piepercentage\\\":false,\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          } ]
+        }, {
+          "name":"Recent Protection Group Membership Changes",
+          "info":"List of objects (volume,host, host,host group, target FlashArray) that have been added or removed from Protection Group. <br><a href=\"http://support.purestorage.com\">http://support.purestorage.com</a>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525663803078,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purepgroup\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xwe2tfmn2gg2dbnztwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"pure_pgroup_objectchange\",\"preContext\":\"purepgroup setattr \\\\w+ \\\\-\\\\-\",\"postContext\":\" \\\\b\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qm5zg65lql5xwe2tfmn2gg2dbnztwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"ActiveCluster",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Alerts",
+          "info":"Number of ActiveCluster alerts (Information, Warning, Critical) grouped by array within the defined time interval.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1531418417883,\"endTimeMillis\":1531504818175,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"CONTAINS\",\"value\":\"98,119,120,121,122,123,127,140\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"alert\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_alert_severity\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_alert_severity\",\"preContext\":\"purity\\\\.alert: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Mediator Offline",
+          "info":"Mediator is responsible for failover and split-brain prevention. Mediator offline need to be investigated immediately. The Mediator Offline alerts can be generated by FlashArray's inability to reach the Internet. Check your Internet connectivity.<br><a href=\"http://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520838000000,\"endTimeMillis\":1522393200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"CONTAINS\",\"value\":\"122\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"alert\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_alert_severity\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_alert_severity\",\"preContext\":\"purity\\\\.alert: \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.alert\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Local Pod Offline",
+          "info":"ActiveCluster Local Pod offline alert. The offline Pod is frozen and no longer writable. When remote array is reachable and a pod is synchronized, the&nbsp; pod will automatically unfreeze and its volumes will become writable.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525209012328,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"EQUAL\",\"value\":\"119\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Remote Pod Offline",
+          "info":"The Pod remains writable and configurable locally. Data and \nconfiguration re-synchronization when communication is restored \nwith the remote&nbsp;array.&nbsp;This alert indicates that this array lost contact\n with its replication peer.<br><span><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a></span>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525209277148,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"EQUAL\",\"value\":\"120\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Pod Operations",
+          "info":"ActiveCluster POD operations such as add, clone, create, destroy, recover,eradicate, rename.<br><span><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a></span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525664544824,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purepod\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qn5sf633qmvzgc5djn5xa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_pod_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qn5sf63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_pod_operation\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qn5sf633qmvzgc5djn5xa0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_pod_name\",\"preContext\":\"\",\"postContext\":\".\\\\s+Message\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qn5sf63tbnvsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purepod\\\"}\"},{\"displayName\":\"pure_pod_operation\",\"preContext\":\"\\\\] purepod\\\\s\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3qn5sf633qmvzgc5djn5xa0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Pod Resynchronizing",
+          "info":"ActiveCluster Pod resyncing alerts. During re-synchronization, the data inside the Pod is frozen on the\n remote FlashArray&nbsp;and is read-only.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525133533110,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"operator\":\"EQUAL\",\"value\":\"121\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_alert_code\",\"preContext\":\"\\\\[\",\"postContext\":\"\\\\]\\\\n\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bnrsxe5c7mnxwizi0\",\"constraints\":null},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Auditing",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"User Operations",
+          "info":"Number of user operations performed on FlashArray. Arrays with comparatively large number of user operations may indicate unauthorized access.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525666709820,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purity\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_user_name\",\"preContext\":\"purity\\\\.audit:\\\\s+\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Invalid Logins By FlashArray And Access Method",
+          "info":"Number of invalid logins from end-users or applications sorted by access method (REST, GUI or CLI). Large increases in this number may represent a pattern of unauthorized access attempts or more likely scripts/applications with outdated credentials. High numbers of REST failures indicates typically a script or application. <br><a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a>",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1524181589333,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bovsgs5c7ovzwk4q0\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed Description\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5ww6zdf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_access_mode\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5ww6zdf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_access_mode\",\"preContext\":\"Interface: '\",\"postContext\":\"' Module\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5ww6zdf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.audit\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_audit_user\",\"preContext\":\"User: '\",\"postContext\":\"' Location\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bovsgs5c7ovzwk4q0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.audit\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Login Access Method",
+          "info":"<span>Distribution of access methods (REST, GUI or CLI) by end user or application logins to the configured FlashArrays. Only initial logins are captured.</span><br><span><a href=\"https://support.purestorage.com\"></a><a>https://support.purestorage.com</a></span>",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"inline\",\"piepercentage\":false,\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525666763739,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5ww6zdf\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"user authentication,session start\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"Failed authentication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Module\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_access_mode\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5ww6zdf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_access_mode\",\"preContext\":\"Interface: '\",\"postContext\":\"' Module\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5ww6zdf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity.audit\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Host And Host Group Operations",
+          "info":"Host and host group configuration changes. Operations like creation, deletion, host add, volume add/removal are reported here.&nbsp;The results are sorted by host group name and FlashArray name.<br><a href=\"http://support.purestorage.com/\">https://support.purestorage.com</a>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1524207600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purehgroup,purehost\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purity,audit\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_hgroup_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3im5zg65lql5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"},{\"displayName\":\"pure_hgroup_name\",\"preContext\":\"\\\\] purehgroup \\\\w+ {1,2}\",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3im5zg65lql5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"audit\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"IPs Accessing Array",
+          "info":"IP addresses from which FlashArrays have been accessed. This data may be used to determine which hosts connect to FlashArray.<br><a href=\"https://support.purestorage.com\">https://support.purestorage.com</a>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525666119616,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5uxa000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"audit\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_access_ip\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5uxa000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"pure_array_name\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_access_ip\",\"preContext\":\"Location '\",\"postContext\":\"' Sublocation\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bmnrwk43tl5uxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"},{\"displayName\":\"pure_array_name\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\-ct[01]\\\\s+purity\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3bojzgc6k7nzqw2zi0\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"User Activity",
+          "info":"User audit activity on the FlashArray. All non-read-only operations are shown in quantity for that specific time. This data may be used to examine CLI commands executed on the array.<br><a href=\"http://support.purestorage.com/\">http://support.purestorage.com</a>",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1520983157217,\"endTimeMillis\":1525886055658,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"purity\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"pure_cli_command\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"pure_cli_command\",\"preContext\":\"\\\\] \",\"postContext\":\"\\\\. Message\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3dnruv6y3pnvwwc3te\",\"constraints\":null},{\"displayName\":\"pure_user_name\",\"preContext\":\"purity\\\\.audit:\\\\s+\\\\[\",\"postContext\":\"\\\\]\",\"regexValue\":\".*\",\"internalName\":\"ibadcok7mnxw2ltqovzgkltgnrqxg2dbojzgc6lqovzgkx3vonsxex3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"purity\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"Pure Storage",
+  "url":"https://www.purestorage.com",
+  "contentVersion":"3.0",
+  "info":"<span>Pure Storage vRealize Log Insight Content Pack version 3.0 includes:</span><br>\n<span><ul><li>Seven dashboard<br></li><li>Thirty nine widgetsSeven alerts<br></li><li>Forty extracted fields</li></ul>This content pack allows customers using the Pure Storage FlashArray to quickly and intelligently integrate and describe FlashArray syslog messages. Deployment of the content pack helps administrators, by way of the provided, pre-defined objects, in monitoring, troubleshooting and analyzing their FlashArray environment.<br></span>",
+  "instructions":"<span>Once Content Pack is successfully installed, you will need to configure FlashArray to send syslog messages to vRealize Log Insight.</span>From FlashArray GUI select Settings-&gt;Syslog Servers and provide the URI for the Log Insight using the following format:<span style=\"font-weight: bold;\">[protocol]://[host]:[port]</span>&nbsp;<br>where:&nbsp;<br>protocol = udp or tcp<br>host = ip address of syslog server (vRealize Log Insight)<br>port = udp or tcp port for syslog server (default 514)&nbsp;<br>for example:<span style=\"font-style: italic;\">udp://10.21.211.24:514&nbsp;<br></span>Select \"<span style=\"font-weight: bold;\">Test\"</span>&nbsp;button to send a test message from FlashArray to Log Insight.<br>Hint: search for keyword \"test\" on Log Insight&nbsp;<br>To configure syslog server on FlashArray using command line execute:<br><span style=\"font-weight: bold;\">purelog create --uri [protocol]://[host]:[port]</span><br>for example:&nbsp;purelog create --uri udp://10.21.211.24:514<br>To send the test message execute:<span style=\"font-style: italic;\">purelog test&nbsp;<br></span><span>Hint: search for keyword \"test\" on Log Insight</span>",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAACSVBMVEUAAADsYCgAAABFRUVZWl0AAADvXycAAADuYCkAAABaW14AAADtYClaWl1ZW11aW15aW15XW1xYWFojIyEAAAAAAAAAAABWV2IAAAAAAAAAAABaWl1ZWl5aW14AAABaW15aW15bXF9ZW11aW14AAABaWl3tYCpXVVvhXDDyYinuYChaW17uYChZWl5aWl4AAABaWl7wYSlaWl0AAABZW11aW15ZWV0AAAD0YykAAADwYShZWl1aW17uYCjuYShaWl9ZWV5aWl7zYinyYinuYShZWl3tYShaWl3tYChZWl1aWl1aWl8AAADtXynoZCb5aSQAAADxYinuYSgAAABZWl3tYCjtYChZW13tYShZWl0AAADvYCntYCgAAAAAAABaWl7sYicAAADtXypXV1oAAABZWl3tYCgAAABaW17sYCgAAADsXygAAADvYShaWl3uYChZWl3uYCjuYChYWV3tYCkAAADxXykAAADtZCrvYCjsYCftYCgAAADvYSjtYCgAAABZWV0AAAAAAADsYSjwYSlkZGTyYikAAAAAAAAAAAAAAAAAAAAAAAAAAADsYCjsYCjuYCgAAADtYCjvXyhcXF7uXynrYSYAAADtYiX0YyryYSgAAAAAAABZWl1hYmZYW1wAAABfX2IAAAAAAABZW14AAADvYiQAAADuYSkAAAD+Zyz/aCzvYin5ZStnaGxmZ2tjZGhgYWX6Ziv1YyplZmleX2L/aSzzYylcXWFbXF/xYilaW15iY2b8Ziv2ZCr+aCz3ZCpqa29sbXCEzftEAAAAqHRSTlMAt28FUHRgQ6cI88+UkXXley4UAxqggxL18dZIKqJ2+e7q4KtjJQ8JA/Lc18mYiSYZ6smYcF9ZTvz75L2zZS0hHQ349tXCvp6QhIFsUCMJBuvg0L64q6aNgGhUUUxJRjUzKR0W4tDCqKeck4WEcmJXTUdCQTcyEg0LubOvfHt2Wzw8NykYB+zl3trVy8W5ootsaVs8MTEhHhbAsbCFVFAwFPbIi35AGy0wfOuoAAAJC0lEQVR42sSZwUrrQBSGj5viwt19h9KWbrIrhXahUrrRYsEi6EK6EEop0iJiLXXT4lIviqI+wGWYmWwSSCDQJI92H8CeY3Jmgt++Qycz/zn/fwby03td7s53MjAfTG6gcCqtvp/IjCTR5zkUS/sz8bTITCS9ryEUyPRRaZELrU4uoTAuq57ITdJ8h4IoH0rBQF1VoBjGgeCg1V8ohPaBL1ikzhqKYKEEE7UHBXDhasEk3C9Aab2+J9jIOVhnogQf7Vqv2GsnFQZ4tTuwy0gJI9QSrHLTCIUR/qPVel3pSGFIMACLvHhaGBI1Xi02sZorjNnU7bW0MyXM0bIFljiq+sICbvMW7LCrhBWCZ7DCLI6EFfyDthXJ1zfCEmoBFmhJjStHbQFvwjq9AGM+8Cam/UV37xvdToq3tP4xmNINiMqyvWqduPihPRgHjf0Qrb3+DKnr+CHHzj8wY0fiu30ChCviRyMw4hz3rX71neENwoZR3r879FgOZ4RfPNkBAx4UzwMOnRiVpvcCbIaPxLrX9E402tJqZeDypPDETn/5YyKjqDNg8toI2Unrwo1wNayYTYxQb/BjFr1XAkOdAosSXt/S5tpgEhDFU2Bwi3cALTPMM54DXKH1Hse3Egv2e4YbKjGMfdMlPrmhb/HqFfawg38pK3WJilRfQl6eE9yJZpTtDC8bjKHaAt2eHGcurAm6RhfyMpeY5GuZXd/QwaS/Gdj7Q/FJ5ni1qoboH7J4ZCrz575H10jyH9k4wftYxnh17eFCbVmV/b3piCLSb/nNIrFctonhWBF55Q/DLRKt4zCD0Fb4iEJvri0PhdQEwMB/SOT1g38nY2f4Y14hHNr+G7DoEAZtZJJXxuzUyo9XZ/QNZLLHNvlHVZ5f5I/v9YaMV6eqmDA9kVS8YmUOt/kBfHq8eHWM32idlIDGIF4dAcIyweV5CibQl2GQ+0broFMGM1ZUvJohY2RM8mnwVQZTxirvY8E0DfUWQk85E2BCTwzpx4LbWuBuIT6oL+l+w0/UtITXrdI2pogEeDMHlpvlw5/KmD8W8OdWtJvlw5/s8d2sfR4Uy0uYQ/cmvpu1z7lLPhb8Ajukv/kF2rSb/QW6/7Ua72QB/cEMqwN4B/XpD2zxt2bpD/zxzAVvi2AYAFC0D39rlv4gDG9rlq6AcOdvexHDAIAIfBPU/gz0BxVBq/G2ZukP7Kz24l36Qn8wNXDbGlzpup9hIMC0WZv2bl8ziFqzwHG1mU77V+9dhQH2bkvzZxgYMHUCTygHFhDqyzAKRsEoALBLxyoIw0AAho9IkOJYFXVw6u7gIL6Dg+BWqCAIBffSRSh2qR07dZWKw72lycWmneKSCkK/KeQC+SHp9Xq9PxVxpnivEpSj2OKJq6dFDFCyjyJYgeImnDXovA1X1PZhClKIwtlppmMRidrs4IM0yFGj83ZwbNkyECYoLOiCJRWIoCG2XShohC0L+0FkYwzSeMdB23OeIakGpqAsvyPZPyiosyebR844mVPayRSUOHGgknZ1UOUpvms1qBSrJ0qBIUgOwUOJ1UET0GwGrfRNviGIflj6s6ApSrdvQT5KRR2UrwmzHPRmt/5ZGwTCMIA/NINIx9gjLp2yOzgEv0MGwU2IEAgIcqu4ZNGl4J+hU4dkCJTSr9n0tdW7IwSHu0w+06Ho+0Pfe9UBqgN1q3MPlABeQ6tKaepGLyjo0mhFN05xD9SmXdjXXyigTitojOtNm0MJFFBkBhRamAJ6W+MhoND3MAkUYQRF1m+SXHMPvWQZiz+AEVTbdFYGnfx+LL4Chre9A4oACumQL4Ms7F16ZwXMzyH1jyQrgB2VPxTCHPJpsR5A7WZL2RTmQMnf9/sUBf+jYATldKxZEkjM3hzIlisFuQhCR6tEBQUGQShdsdQTJNCub28VtNIFOt563uVY6/mKGBgxBkeFBe24Id/Qk/LMGD9eIMeOs7au6zbb2qB4nDPOyf11vYJ9lli+n9kQzi6YM2eOlJ9qyphFcSAMwx9oFVCjKSxiSGIIOQgJEoyNglqIqK0gVluIYCUL/gEb/8G2u8vB1ZkZyECCafZ+2c1Mst56d9vkrrlH0DiTZB7m/b556G/8YwcALmr1hqoA42m12ayeQGC/iPGnC9w4vzzAjfHR38gn8Vjl/UUvJXSmGkUkQ4k2hl7yFkWIkCiK3uiULWGJKaq1gCFHmE3E1F1BQUuKjDbkVBYSykiMgxMA7AyMIs73EkIH1Oirj8tG1Og5K1mWa1d9wX76FRh3I5dN+TqaMTuoxwEbXwwJ9iEnJCkdgEA5IN2vqsdZTENm2kh8WVAir8RoAmM3nzvAmVylYo1hNNsB42TECy4U5SJHmjRBsNZ9MgIGt22I9JTl1z4XSh0oSYiGcEfzKuUxqMQcg6CPzTYXqoEgQHloYz1om/pEhGeQAeTYIIQmpYXi/SdCWuRBTtsk1Q9CHpJzz0hm11tgDLCrQEF5oSIyulT+JHRxs0cosNDyg9A8qgMnoB1Q8QwYNTZ3L9SCsng4C+qd34V6RmJDwQJ5P4Uu3UwVN9IAwOkm/NlRvP1F6NThTEsIKUsTo3R2rPwiNNalHhT0kXUr6p6G9qJivyG+UZvoGy/vmO/mdD4ajawlE+omhJHhKpShFx7MGA9bnwtthRDe12q1UYO4r8D4sv/K55vErXChAe9UCROCAiE0sizrcHiFkuxWRqx9HtlSRJalSZKQzMjzPSdSjeHp9Mwj442njG07zIYisin8JQMi7e6EHJeoPw9PmQkhze7YajfLS9on14Syz5V4H4v6VAhN4C/pSWnnvu0t9L6I0+Vu9WiTd3hjKsZotdNsNjshZf/DW9ur/0rI1tPJnRBfuVWUEO5Ob12m7EU8ahZAjourLF8y+Ec7ZC9s4NTiQLkXcvbxWqR4NvEWbkJwxO6FH0Z9yFlEFvtCjTNwqngmhNpQks133apv62tMH0HwmurFyx5M1F0+h/MUaQoXeqsVAbKWahupDTlPVJqAs0ZXb/AYegYSO0StucYpcVLPTYxwjN3n+3NIXI4oynBsygpwofea6uMZPOM1vDPjG+j4ZowJxqbXFG1PCSeG/4QfWWJTNC5c6hUAAAAASUVORK5CYII="
+}
