@@ -9,7 +9,7 @@
     "preContext":"Additional Information:\\s+Volume:\\s+",
     "postContext":"\\s+GUID:",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5sgm427ojsxa3djmnqxi2lpnzpxm33movwwk000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrthgx3smvygy2ldmf2gs33ol53g63dvnvsq0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"dfs replication\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -17,7 +17,7 @@
     "preContext":"Additional Information:(\\S+\\s+){2}GUID:\\s+",
     "postContext":"",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5sgm427ojsxa3djmnqxi2lpnzpxm33movwwkx3hovuwi000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrthgx3smvygy2ldmf2gs33ol53g63dvnvsv6z3vnfsa0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"dfs replication\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -25,7 +25,7 @@
     "preContext":"Additional Data\\s+Error value:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3bmrsgs5djn5xgc3c7mrqxiyk7mvzhe33sl53gc3dvmu000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv6ylemruxi2lpnzqwyx3emf2gcx3fojzg64s7ozqwy5lf",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -33,7 +33,7 @@
     "preContext":"Alternate server name:\\s+",
     "postContext":"\\s+.*DNS host name:",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3bnr2gk4tomf2gkx3tmvzhmzlsl5xgc3lf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv6ylmorsxe3tborsv643foj3gk4s7nzqw2zi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -41,7 +41,7 @@
     "preContext":"Directory service:\\n",
     "postContext":" \\nPeriod of time \\(minutes\\):",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3enfzgky3un5zhsx3tmvzhm2ldmu000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv6zdjojswg5dpoj4v643foj3gsy3f",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -49,7 +49,7 @@
     "preContext":"Failing DNS host name:\\s+",
     "postContext":"",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3gmfuwy2lom5pwi3ttl5ug643ul5xgc3lf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv6ztbnfwgs3thl5sg4427nbxxg5c7nzqw2zi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -57,7 +57,7 @@
     "preContext":"The database engine (is |has begun |has successfully |\\(.*\\) )",
     "postContext":"\\.",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3oorshgx3jonqw2x3umfzww000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv63tumrzv62ltmfwv65dbonvq0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -65,7 +65,7 @@
     "preContext":"NTDS \\(",
     "postContext":"\\) NTDSA:",
     "regexValue":"-?\\d+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3oorshgx3jonqw2x3umfzwwx3jmq000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv63tumrzv62ltmfwv65dbonvv62le",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -73,7 +73,7 @@
     "preContext":"Directory service:(\\S+\\s+){2}Period of time \\(minutes\\):\\s+",
     "postContext":"",
     "regexValue":"-?\\d+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3qmvzgs33el5xwmx3unfwwkllnnfxhk5dfom000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv64dfojuw6zc7n5tf65djnvss23ljnz2xizlt",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -81,7 +81,7 @@
     "preContext":"attempts to replicate.*\\s+Attempts:\\s+",
     "postContext":"\\s+Directory service:",
     "regexValue":"-?\\d+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3smvygy2ldmf2gs33ol5qxi5dfnvyhi4y0",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv64tfobwgsy3boruw63s7mf2hizlnob2hg000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -89,7 +89,7 @@
     "preContext":"Active Directory Domain Services (was |)",
     "postContext":" (complete,|successfully\\.)",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3tmvzhm2ldmvpxi4tbnzzws5djn5xa0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv643foj3gsy3fl52heyloonuxi2lpny000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -97,7 +97,7 @@
     "preContext":"Source domain controller:\\s+",
     "postContext":"\\s+Failing DNS host name:",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3tn52xey3fl5sg63lbnfxf6y3pnz2he33mnrsxe000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7mrzv643povzggzk7mrxw2yljnzpwg33oorzg63dmmvza0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -105,7 +105,7 @@
     "preContext":"([\\s]+)",
     "postContext":"\\(\\d\\)",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0",
     "constraints":"{\"filters\":[{\"internalName\":\"ms_product\",\"displayName\":\"ms_product\",\"operator\":\"CONTAINS\",\"value\":\"activedirectory\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
     "info":null
   }, {
@@ -113,7 +113,7 @@
     "preContext":"]\\s+",
     "postContext":"",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0",
     "constraints":"{\"filters\":[{\"internalName\":\"ms_product\",\"displayName\":\"ms_product\",\"operator\":\"CONTAINS\",\"value\":\"activedirectory\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
     "info":null
   }, {
@@ -121,7 +121,7 @@
     "preContext":".*(AM|PM).*?",
     "postContext":"\\s+",
     "regexValue":"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq",
     "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"ms_product\",\"displayName\":\"ms_product\",\"operator\":\"CONTAINS\",\"value\":\"activedirectory\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
     "info":null
   }, {
@@ -129,7 +129,7 @@
     "preContext":"[A-Z]\\s+",
     "postContext":"\\]",
     "regexValue":"\\w+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezltobxw443fl5rw6zdf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk43qn5xhgzk7mnxwizi0",
     "constraints":"{\"filters\":[{\"internalName\":\"ms_product\",\"displayName\":\"ms_product\",\"operator\":\"CONTAINS\",\"value\":\"activedirectory\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
     "info":null
   }, {
@@ -137,7 +137,7 @@
     "preContext":"Alert Information:\\s+Computer:\\s+",
     "postContext":"\\s+Event ID:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5qwyzlsorpws3tgn5pwg33nob2xizls",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mfwgk4tul5uw4ztpl5rw63lqov2gk4q0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -145,7 +145,7 @@
     "preContext":"Alert Information:(\\S+\\s+){4}Duration:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5qwyzlsorpws3tgn5pwi5lsmf2gs33o",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mfwgk4tul5uw4ztpl5shk4tboruw63q0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -153,7 +153,7 @@
     "preContext":"Alert Information:(\\S+\\s+){2}Event ID:\\s+",
     "postContext":"\\s+Number of Events:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5qwyzlsorpws3tgn5pwk5tfnz2f62le",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mfwgk4tul5uw4ztpl5sxmzloorpwsza0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -161,7 +161,7 @@
     "preContext":"Alert Information:(\\S+\\s+){3}Number of Events:\\s+",
     "postContext":"\\s+Duration:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5qwyzlsorpws3tgn5pw45lnmjsxex3pmzpwk5tfnz2hg000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mfwgk4tul5uw4ztpl5xhk3lcmvzf633gl5sxmzloorzq0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -169,7 +169,7 @@
     "preContext":"Logon Process:\\s+",
     "postContext":"\\s+Authentication Package:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5qxk5dimvxhi2ldmf2gs33ol5wg6z3pnzpxa4tpmnsxg4y0",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mf2xi2dfnz2gsy3boruw63s7nrxwo33ol5yhe33dmvzxg000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -177,7 +177,7 @@
     "preContext":"Authentication Package:\\s+",
     "postContext":"\\s+Transited Services:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5qxk5dimvxhi2ldmf2gs33ol5ygcy3lmftwk000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mf2xi2dfnz2gsy3boruw63s7obqwg23bm5sq0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -185,7 +185,7 @@
     "preContext":"Additional Information:\\s+Caller workstation:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5rwc3dmmvzf653pojvxg5dboruw63q0",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mnqwy3dfojpxo33snnzxiylunfxw4000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -193,7 +193,7 @@
     "preContext":"Domain:\\s+Domain Name:.*\\s+Domain ID:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5sg63lbnfxf62le",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mrxw2yljnzpwsza0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -201,7 +201,7 @@
     "preContext":"Domain:\\s+Domain Name:\\s+",
     "postContext":"\\s+Domain ID:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5sg63lbnfxf63tbnvsq0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7mrxw2yljnzpw4ylnmu000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -209,7 +209,7 @@
     "preContext":"Group:(\\s+\\S+){3}Group Domain:\\s+",
     "postContext":"\\s+.*Attributes:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5txe33vobpwi33nmfuw4000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7m5zg65lql5sg63lbnfxa0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -217,7 +217,7 @@
     "preContext":"Group:(\\s+\\S+){2}Group Name:\\s+",
     "postContext":"\\s+Group Domain:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5txe33vobpw4ylnmu000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7m5zg65lql5xgc3lf",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -225,7 +225,7 @@
     "preContext":"Logon Type:(\\S+\\s+){2}Impersonation Level:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5uw24dfojzw63tboruw63s7nrsxmzlm",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nfwxazlsonxw4ylunfxw4x3mmv3gk3a0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -233,7 +233,7 @@
     "preContext":"Logon Type:(\\S+\\s+){4,5}Account Domain:\\t\\t",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5wg6z3pnzpwcy3dn52w45c7mrxw2yljny000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nrxwo33ol5qwgy3povxhix3en5wwc2lo",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -241,7 +241,7 @@
     "preContext":"Logon Type:\\s+\\d+\\s+(Impersonation Level:\\s+\\S+\\s+)*New Logon:\\s+Security ID:\\s+\\S+\\s+Account Name:\\s+",
     "postContext":"\\s+Account Domain:",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5wg6z3pnzpwcy3dn52w45c7nzqw2zi0",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nrxwo33ol5qwgy3povxhix3omfwwk000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}],\"searchTerms\":\"security ID\"}",
     "info":null
   }, {
@@ -249,7 +249,7 @@
     "preContext":"New Logon:(\\S+\\s+){4}Logon ID:\t\t",
     "postContext":"\\s+Logon GUID:",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5wg6z3pnzpwsza0",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nrxwo33ol5uwi000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -257,7 +257,7 @@
     "preContext":"Logon Type:(\\S+\\s+){2,3}Security ID:\\s+",
     "postContext":"\\s+Account Name:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5wg6z3pnzpxgzldovzgs5dzl5uwi000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nrxwo33ol5zwky3vojuxi6k7nfsa0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -265,7 +265,7 @@
     "preContext":"Subject:(\\S+\\s+){1,8}Logon Type:\\s*",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5wg6z3pnzpxi6lqmu000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nrxwo33ol52hs4df",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -273,7 +273,7 @@
     "preContext":"Source Network Address:\\s+",
     "postContext":"\\s+Source Port:",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5xgk5dxn5zgwx3tn52xey3fl5qwizdsmvzxg000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nzsxi53pojvv643povzggzk7mfsgi4tfonzq0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -281,7 +281,7 @@
     "preContext":"Source Port:\\s+",
     "postContext":"\\s+Detailed Authentication Information:",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5xgk5dxn5zgwx3tn52xey3fl5yg64tu",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nzsxi53pojvv643povzggzk7obxxe5a0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -289,7 +289,7 @@
     "preContext":"Workstation Name:\\s+",
     "postContext":"\\s+Source Network Address:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5xgk5dxn5zgwx3xn5zgw43umf2gs33ol5xgc3lf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nzsxi53pojvv653pojvxg5dboruw63s7nzqw2zi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -297,7 +297,7 @@
     "preContext":"Process Information:(\\S+\\s+){2}New Process Name:\\s+",
     "postContext":"\\s+Token Elevation Type:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5xgk527obzg6y3fonzv63tbnvsq0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7nzsxox3qojxwgzltonpw4ylnmu000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -305,7 +305,7 @@
     "preContext":"Object:(\\S+\\s+){4}Handle ID:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5xwe2tfmn2f62dbnzsgyzk7nfsa0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7n5rguzldorpwqylomrwgkx3jmq000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -313,7 +313,7 @@
     "preContext":"Object:(\\S+\\s+){3}Object Name:\\s+",
     "postContext":"\\s+Handle ID:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5xwe2tfmn2f63tbnvsq0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7n5rguzldorpw4ylnmu000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -321,7 +321,7 @@
     "preContext":"Object:.*\\s+Object Server:\\s+",
     "postContext":"\\s+Object Type:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5xwe2tfmn2f643foj3gk4q0",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7n5rguzldorpxgzlsozsxe000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -329,7 +329,7 @@
     "preContext":"Object:(\\S+\\s+){2}Object Type:\\s+",
     "postContext":"\\s+Object Name:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5xwe2tfmn2f65dzobsq0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7n5rguzldorpxi6lqmu000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -337,7 +337,7 @@
     "preContext":"Audit Policy Change:\\s+Category:\t\\s+",
     "postContext":"\\s+Subcategory:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5yg63djmn4v6y3imfxgozk7mnqxizlhn5zhs000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obxwy2ldpfpwg2dbnztwkx3dmf2gkz3poj4q0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -345,7 +345,7 @@
     "preContext":"Audit Policy Change:(\\s+\\S+){2}Subcategory:\\s+",
     "postContext":"\\s+Subcategory GUID:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5yg63djmn4v6y3imfxgozk7on2wey3borswo33spe000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obxwy2ldpfpwg2dbnztwkx3tovrggylumvtw64tz",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -353,7 +353,7 @@
     "preContext":"Audit Policy Change:(\\s+\\S+){4}Changes:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5yg63djmn4v6y3imfxgozlt",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obxwy2ldpfpwg2dbnztwk4y0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -361,7 +361,7 @@
     "preContext":"Additional Information:.*\\s+Privileges:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5yhe2lwnfwgkz3fom000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obzgs5tjnrswozlt",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -369,7 +369,7 @@
     "preContext":"Process Information:\\s+Process ID:\\s+",
     "postContext":"\\s+.*Name:",
     "regexValue":"\\S+",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5yhe33dmvzxgx3jmq000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obzg6y3fonzv62le",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -377,7 +377,7 @@
     "preContext":"Process Information:\\s+Process ID:.*\\s+.*Name:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5yhe33dmvzxgx3omfwwk000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obzg6y3fonzv63tbnvsq0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -385,7 +385,7 @@
     "preContext":"Attributes:\\s+SAM Account Name:\\s+",
     "postContext":"\\s+SID History:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5zwc3k7mfrwg33vnz2f63tbnvsq0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7onqw2x3bmnrw65loorpw4ylnmu000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -393,7 +393,7 @@
     "preContext":"Attributes:\\s+SAM Account Name:\\s+.*\\s+SID History:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5zwszc7nbuxg5dpoj4q0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7onuwix3infzxi33spe000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -401,15 +401,15 @@
     "preContext":"Subject:(\\s+\\S+){3}Account Domain:\\s+",
     "postContext":"\\s+Logon ID:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5zxkytkmvrxix3bmnrw65loorpwi33nmfuw4000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7on2we2tfmn2f6yldmnxxk3tul5sg63lbnfxa0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
     "displayName":"ms_ad_security_audit_subject_account_name",
-    "preContext":"Subject:(\\s+\\S+){2}Account Name:\\s+",
-    "postContext":"",
-    "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5zxkytkmvrxix3bmnrw65loorpw4ylnmu000000",
+    "preContext":"Subject:\\s+.*\\s+Account Name:\\s+",
+    "postContext":"\\$?\\s+Account Domain:",
+    "regexValue":".+?",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7on2we2tfmn2f6yldmnxxk3tul5xgc3lf",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -417,7 +417,7 @@
     "preContext":"Subject:(\\s+\\S+){3}Domain Name:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5zxkytkmvrxix3en5wwc2lol5xgc3lf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7on2we2tfmn2f6zdpnvqws3s7nzqw2zi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -425,7 +425,7 @@
     "preContext":"Subject:(\\s+\\S+){4}Logon ID:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5zxkytkmvrxix3mn5tw63s7nfsa0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7on2we2tfmn2f63dpm5xw4x3jmq000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -433,7 +433,7 @@
     "preContext":"Subject:\\s+Security ID:\\s+",
     "postContext":"\\s+Account Name:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul5zxkytkmvrxix3tmvrxk4tjor4v62le",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7on2we2tfmn2f643fmn2xe2lupfpwsza0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -441,7 +441,7 @@
     "preContext":"Target Account:(\\s+\\S+){3}Account Domain:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul52gc4thmv2f6yldmnxxk3tul5sg63lbnfxa0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7orqxez3forpwcy3dn52w45c7mrxw2yljny000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -449,7 +449,7 @@
     "preContext":"Target Account:(\\s+\\S+){2}Account Name:\\s+",
     "postContext":"\\s+Account Domain:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul52gc4thmv2f6yldmnxxk3tul5xgc3lf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7orqxez3forpwcy3dn52w45c7nzqw2zi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -457,7 +457,7 @@
     "preContext":"Target Account:\\s+Security ID:\\s+",
     "postContext":"\\s+Account Name:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lul52gc4thmv2f643fmn2xe2lupfpwsza0",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7orqxez3forpxgzldovzgs5dzl5uwi000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -465,7 +465,7 @@
     "preContext":"Auditing Settings:(\\S+\\s+){2}New Security Descriptor:\\s+",
     "postContext":"$",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lunfxgox3tmv2hi2lom5zv63tfo5pxgzldovzgs5dzl5sgk43dojuxa5dpoi000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5djnztv643for2gs3thonpw4zlxl5zwky3vojuxi6k7mrsxgy3snfyhi33s",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -473,7 +473,7 @@
     "preContext":"Auditing Settings:\\s+Original Security Descriptor:\\s+",
     "postContext":"\\s+New Security Descriptor:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7mf2wi2lunfxgox3tmv2hi2lom5zv633snftws3tbnrpxgzldovzgs5dzl5sgk43dojuxa5dpoi000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5djnztv643for2gs3thonpw64tjm5uw4ylml5zwky3vojuxi6k7mrsxgy3snfyhi33s",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -481,7 +481,7 @@
     "preContext":"Application Information:\\s+Process ID:.*\\s+Application Name:\\s+",
     "postContext":"(\\s+)+Network Information:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3bobygy2ldmf2gs33ol5xgc3lf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf6ylqobwgsy3boruw63s7nzqw2zi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -489,7 +489,7 @@
     "preContext":"Windows Filtering Platform(\\S+\\s+){10}Change Type:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3dnbqw4z3fl52hs4df",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf6y3imfxgozk7or4xazi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -497,7 +497,7 @@
     "preContext":"Filter Information:(\\S+\\s+){2}Layer Name:\\s+",
     "postContext":"\\s+Layer Run-Time ID:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3gnfwhizlsl5wgc6lfojpw4ylnmu000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf6ztjnr2gk4s7nrqxszlsl5xgc3lf",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -505,7 +505,7 @@
     "preContext":"Windows Filtering Platform(\\S+\\s+){11}Filter Information(\\S+\\s+){2}Name:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3gnfwhizlsl5xgc3lf",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf6ztjnr2gk4s7nzqw2zi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -513,7 +513,7 @@
     "preContext":"Windows Filtering Platform(\\S+\\s+){11}Filter Information(\\S+\\s+){3}Type:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3gnfwhizlsl52hs4df",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf6ztjnr2gk4s7or4xazi0",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -521,7 +521,7 @@
     "preContext":"Windows Filtering Platform(\\S+\\s+){16}Layer Information(\\S+\\s+){2}Name:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3mmf4wk4s7nzqw2zi0",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf63dbpfsxex3omfwwk000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -529,7 +529,7 @@
     "preContext":"Network Information:\\s+(\\S+\\s+){3}Destination Address:\\s+",
     "postContext":"\\s+Destination Port:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3omv2ho33snnpwizltoruw4ylunfxw4x3bmrshezltom000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf63tfor3w64tll5sgk43unfxgc5djn5xf6ylemrzgk43t",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -537,7 +537,7 @@
     "preContext":"Network Information:\\s+(\\S+\\s+){4}Destination Port:\\s+",
     "postContext":"\\s+Protocol:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3omv2ho33snnpwizltoruw4ylunfxw4x3qn5zhi000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf63tfor3w64tll5sgk43unfxgc5djn5xf64dpoj2a0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -545,7 +545,7 @@
     "preContext":"Network Information:\\s+Direction:\\s+",
     "postContext":"\\s+Source Address:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3omv2ho33snnpwi2lsmvrxi2lpny000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf63tfor3w64tll5sgs4tfmn2gs33o",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -553,7 +553,7 @@
     "preContext":"Network Information:\\s+(.*\\s+)Source Address:\\s+",
     "postContext":"\\s+Source Port:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3omv2ho33snnpxg33vojrwkx3bmrshezltom000000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf63tfor3w64tll5zw65lsmnsv6ylemrzgk43t",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -561,7 +561,7 @@
     "preContext":"Network Information:\\s+(\\S+\\s+){2}Source Port:\t\\s+",
     "postContext":"\\s+Destination Address:",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3omv2ho33snnpxg33vojrwkx3qn5zhi000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf63tfor3w64tll5zw65lsmnsv64dpoj2a0000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   }, {
@@ -569,77 +569,17 @@
     "preContext":"Windows Filtering Platform(\\S+\\s+){6}Provider Information(\\S+\\s+){2}Name:\\s+",
     "postContext":"",
     "regexValue":".*",
-    "internalName":"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5zwky3vojuxi6k7o5thax3qojxxm2lemvzf63tbnvsq0000",
+    "internalName":"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3xmzyf64dsn53gszdfojpw4ylnmu000000",
     "constraints":"{\"filters\":[{\"hidden\":false,\"internalName\":\"channel\",\"displayName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\",\"fieldType\":\"STRING\",\"isExtracted\":false}]}",
     "info":null
   } ],
   "queries":[ ],
   "alerts":[ {
-    "name":"Active Directory: Special groups have been assigned to a new logon",
-    "info":"<span><span><span>Special groups have been assigned to a new logon</span>.<br><br>Security auditing e</span>vent\n 4964 (Special groups have been assigned to a new logon) should be \nmonitored in your environment, according to the recommendations \nprovided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772635%28v=WS.10%29.aspx\"><span>Audit Special Logon</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
-    "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361497029,\"endTimeMillis\":1430383097028,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4964\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
-    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327341009,\"endTimeMillis\":1402413741609,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4964\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":21600000,
-    "searchInterval":3600000
-  }, {
-    "name":"Active Directory: A user account was locked out",
-    "info":"<span>If you configure the</span><span>&nbsp; Audit Account Lockout&nbsp;</span><span>policy setting, an audit event is generated \nwhen an account cannot log on to a computer because the account is \nlocked out. Success audits record successful attempts and failure audits\n record unsuccessful attempts.</span><br>\n        <span></span><br>\n        <span>Account lockout events are essential for understanding user activity and detecting potential attacks.</span><br><br>For more information see <a href=\"http://technet.microsoft.com/en-us/library/dd941583%28v=WS.10%29.aspx\"><span>Audit Account Lockout</span></a><br>",
-    "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361488188,\"endTimeMillis\":1430383088187,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"EQUAL\",\"value\":\"4740\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
-    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402332856986,\"endTimeMillis\":1402336456985,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"EQUAL\",\"value\":\"4740\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":21600000,
-    "searchInterval":3600000
-  }, {
-    "name":"Active Directory: System audit policy was changed",
-    "info":"<span><span>A s</span></span><span><span><span>ystem audit policy was changed</span>.<br><br>Security auditing e</span>vent 4719 (System audit policy was changed) should be monitored in your environment, according to the recommendations provided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772736%28v=WS.10%29.aspx\"><span>Audit Audit Policy Change</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
-    "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361533081,\"endTimeMillis\":1430383133080,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4719\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
-    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327110581,\"endTimeMillis\":1402413511202,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4719\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":21600000,
-    "searchInterval":3600000
-  }, {
-    "name":"Active Directory: A monitored security event pattern has occurred",
-    "info":"A monitored security event pattern has occurred.<br><br><span>Security auditing event 4618 should be monitored in your environment, according to the recommendations provided</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High means that one occurrence of the \nevent should be investigated. You should test these recommendations in \ntheir environments before enabling or creating alerts that require \nmandatory investigative responses. Every environment is different, and \nsome of the events ranked with a potential criticality of High may occur\n due to other harmless events.<br></span><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dn319081.aspx\"><span>Audit System Integrity</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>",
-    "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430379504200,\"endTimeMillis\":1430383104199,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4618\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
-    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402001282079,\"endTimeMillis\":1402087682807,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4618\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":3600000,
-    "searchInterval":600000
-  }, {
     "name":"Active Directory: SID History was added to an account",
     "info":"<span><span><span>SID History was added to an account</span>.<br><br>Security auditing e</span>vent\n 4765 (SID History was added to an account) should be monitored in your \nenvironment, according to the recommendations provided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span><br></span><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772693%28v=WS.10%29.aspx\"><span>Audit User Account Management</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
     "alertType":"RATE_BASED_WITH_GROUPS",
     "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361479958,\"endTimeMillis\":1430383079957,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4765\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
     "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327415064,\"endTimeMillis\":1402413815063,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4765\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":21600000,
-    "searchInterval":3600000
-  }, {
-    "name":"Active Directory: Role separation was enabled",
-    "info":"<span><span><span>Role separation was enabled</span>.<br><br>Security auditing e</span>vent 4897 (Role separation was enabled) should be monitored in your environment, according to the recommendations provided</span><span>&nbsp; in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br><span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772671%28v=WS.10%29.aspx\"><span>Audit Certification Services</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
-    "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361464320,\"endTimeMillis\":1430383064319,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4897\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
-    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327276620,\"endTimeMillis\":1402413677321,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4897\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
-    "hitCount":1.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":21600000,
-    "searchInterval":3600000
-  }, {
-    "name":"Active Directory: An attempt to add SID History to an account failed",
-    "info":"<span><span><span>An attempt to add SID History to an account failed</span>.<br><br>Security auditing e</span>vent\n 4766 (An attempt to add SID History to an account failed) should be \nmonitored in your environment, according to the recommendations \nprovided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><span><br></span><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772693%28v=WS.10%29.aspx\"><span>Audit User Account Management</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
-    "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361472748,\"endTimeMillis\":1430383072747,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4766\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
-    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327482721,\"endTimeMillis\":1402413882948,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4766\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
     "hitCount":1.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":21600000,
@@ -665,15 +605,15 @@
     "searchPeriod":21600000,
     "searchInterval":3600000
   }, {
-    "name":"Active Directory: A security setting was updated on the OCSP Responder Service",
-    "info":"<span><span><span>A security setting was updated on the OCSP Responder Service</span>.<br><br>Security auditing e</span>vent\n 5124 (A security setting was updated on the OCSP Responder Service) \nshould be monitored in your environment, according to the \nrecommendations provided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also:&nbsp; under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
+    "name":"Active Directory: A monitored security event pattern has occurred",
+    "info":"A monitored security event pattern has occurred.<br><br><span>Security auditing event 4618 should be monitored in your environment, according to the recommendations provided</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High means that one occurrence of the \nevent should be investigated. You should test these recommendations in \ntheir environments before enabling or creating alerts that require \nmandatory investigative responses. Every environment is different, and \nsome of the events ranked with a potential criticality of High may occur\n due to other harmless events.<br></span><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dn319081.aspx\"><span>Audit System Integrity</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>",
     "alertType":"RATE_BASED_WITH_GROUPS",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361511864,\"endTimeMillis\":1430383111863,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"5124\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
-    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327566114,\"endTimeMillis\":1402413966633,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"5124\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430379504200,\"endTimeMillis\":1430383104199,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4618\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402001282079,\"endTimeMillis\":1402087682807,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4618\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
     "hitCount":1.0,
     "hitOperator":"GREATER_THAN",
-    "searchPeriod":21600000,
-    "searchInterval":3600000
+    "searchPeriod":3600000,
+    "searchInterval":600000
   }, {
     "name":"test alert on source",
     "info":"For Luciano - test alert on source ...",
@@ -685,11 +625,80 @@
     "searchPeriod":300000,
     "searchInterval":60000
   }, {
+    "name":"INFINEON01",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"test\",\"startTimeMillis\":1536924134659,\"endTimeMillis\":1536924443014,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
     "name":"Active Directory: The audit log was cleared",
-    "info":"<span><span>The audit log was cleared.<br><br>Security auditing e</span>vent\n 1102 (The audit log was cleared) should be monitored in your \nenvironment, according to the recommendations provided</span><span>&nbsp; in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <a href=\"http://technet.microsoft.com/en-us/library/dd315545%28v=WS.10%29.aspx\"><span>Event ID 1102 — Security Channel Configuration</span></a><br>",
+    "info":"<span><span>The audit log was cleared.<br><br>Security auditing e</span>vent\n 1102 (The audit log was cleared) should be monitored in your \nenvironment, according to the recommendations provided</span><span>&nbsp; in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <a href=\"http://technet.microsoft.com/en-us/library/dd315545%28v=WS.10%29.aspx\"><span>Event ID 1102 ? Security Channel Configuration</span></a><br>",
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361525050,\"endTimeMillis\":1430383125049,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"1102\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-eventlog\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
     "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402391326255,\"endTimeMillis\":1402412927287,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-eventlog\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"1102\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Active Directory: Special groups have been assigned to a new logon",
+    "info":"<span><span><span>Special groups have been assigned to a new logon</span>.<br><br>Security auditing e</span>vent\n 4964 (Special groups have been assigned to a new logon) should be \nmonitored in your environment, according to the recommendations \nprovided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772635%28v=WS.10%29.aspx\"><span>Audit Special Logon</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361497029,\"endTimeMillis\":1430383097028,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4964\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327341009,\"endTimeMillis\":1402413741609,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4964\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Active Directory: An attempt to add SID History to an account failed",
+    "info":"<span><span><span>An attempt to add SID History to an account failed</span>.<br><br>Security auditing e</span>vent\n 4766 (An attempt to add SID History to an account failed) should be \nmonitored in your environment, according to the recommendations \nprovided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><span><br></span><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772693%28v=WS.10%29.aspx\"><span>Audit User Account Management</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361472748,\"endTimeMillis\":1430383072747,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4766\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327482721,\"endTimeMillis\":1402413882948,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4766\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Active Directory: System audit policy was changed",
+    "info":"<span><span>A s</span></span><span><span><span>ystem audit policy was changed</span>.<br><br>Security auditing e</span>vent 4719 (System audit policy was changed) should be monitored in your environment, according to the recommendations provided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772736%28v=WS.10%29.aspx\"><span>Audit Audit Policy Change</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361533081,\"endTimeMillis\":1430383133080,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4719\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327110581,\"endTimeMillis\":1402413511202,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4719\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Active Directory: A user account was locked out",
+    "info":"<span>If you configure the</span><span>&nbsp; Audit Account Lockout&nbsp;</span><span>policy setting, an audit event is generated \nwhen an account cannot log on to a computer because the account is \nlocked out. Success audits record successful attempts and failure audits\n record unsuccessful attempts.</span><br>\n        <span></span><br>\n        <span>Account lockout events are essential for understanding user activity and detecting potential attacks.</span><br><br>For more information see <a href=\"http://technet.microsoft.com/en-us/library/dd941583%28v=WS.10%29.aspx\"><span>Audit Account Lockout</span></a><br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361488188,\"endTimeMillis\":1430383088187,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"EQUAL\",\"value\":\"4740\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402332856986,\"endTimeMillis\":1402336456985,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"EQUAL\",\"value\":\"4740\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Active Directory: Role separation was enabled",
+    "info":"<span><span><span>Role separation was enabled</span>.<br><br>Security auditing e</span>vent 4897 (Role separation was enabled) should be monitored in your environment, according to the recommendations provided</span><span>&nbsp; in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br><span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <span style=\"font-weight: bold;\"><a href=\"http://technet.microsoft.com/en-us/library/dd772671%28v=WS.10%29.aspx\"><span>Audit Certification Services</span></a></span> under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361464320,\"endTimeMillis\":1430383064319,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4897\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327276620,\"endTimeMillis\":1402413677321,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"4897\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":21600000,
+    "searchInterval":3600000
+  }, {
+    "name":"Active Directory: A security setting was updated on the OCSP Responder Service",
+    "info":"<span><span><span>A security setting was updated on the OCSP Responder Service</span>.<br><br>Security auditing e</span>vent\n 5124 (A security setting was updated on the OCSP Responder Service) \nshould be monitored in your environment, according to the \nrecommendations provided&nbsp;</span><span>in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in their environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also:&nbsp; under <span><a href=\"http://technet.microsoft.com/en-us/library/dd772712%28v=ws.10%29.aspx\">Advanced Security Audit Policy Settings</a></span> <br>&nbsp;",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1430361511864,\"endTimeMillis\":1430383111863,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"5124\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"eventid\",\"internalName\":\"eventid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1402327566114,\"endTimeMillis\":1402413966633,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"security\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-security-auditing\"},{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"5124\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
     "hitCount":1.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":21600000,
@@ -778,7 +787,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"normal\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1069748410000,\"endTimeMillis\":1430379356276,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-activedirectory_domainservice\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3tmvzhm2ldmvpxi4tbnzzws5djn5xa0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_ds_service_transition\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3tmvzhm2ldmvpxi4tbnzzws5djn5xa0000\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_ds_service_transition\",\"preContext\":\"Active Directory Domain Services (was |)\",\"postContext\":\" (complete,|successfully\\\\.)\",\"regexValue\":\".*\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3tmvzhm2ldmvpxi4tbnzzws5djn5xa0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1069748410000,\"endTimeMillis\":1430379356276,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-activedirectory_domainservice\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv643foj3gsy3fl52heyloonuxi2lpny000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_ds_service_transition\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv643foj3gsy3fl52heyloonuxi2lpny000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_ds_service_transition\",\"preContext\":\"Active Directory Domain Services (was |)\",\"postContext\":\" (complete,|successfully\\\\.)\",\"regexValue\":\".*\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv643foj3gsy3fl52heyloonuxi2lpny000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
           "messageQuery":""
         }, {
           "name":"Count of database startup and recovery events grouped by hostname",
@@ -786,7 +795,7 @@
           "chartType":"column",
           "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"normal\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1069748410000,\"endTimeMillis\":1430379356276,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"ntds isam\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3oorshgx3jonqw2x3umfzww000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_ds_ntds_isam_task\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3oorshgx3jonqw2x3umfzww000\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_ds_ntds_isam_task\",\"preContext\":\"The database engine (is |has begun |has successfully |\\\\(.*\\\\) )\",\"postContext\":\"\\\\.\",\"regexValue\":\".*\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3oorshgx3jonqw2x3umfzww000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1069748410000,\"endTimeMillis\":1430379356276,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"ntds isam\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv63tumrzv62ltmfwv65dbonvq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_ds_ntds_isam_task\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv63tumrzv62ltmfwv65dbonvq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_ds_ntds_isam_task\",\"preContext\":\"The database engine (is |has begun |has successfully |\\\\(.*\\\\) )\",\"postContext\":\"\\\\.\",\"regexValue\":\".*\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv63tumrzv62ltmfwv65dbonvq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
           "messageQuery":""
         } ]
       } ]
@@ -803,7 +812,7 @@
           "chartType":null,
           "chartOptions":"{\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"normal\"}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1043150977544,\"endTimeMillis\":1423475170000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3smvygy2ldmf2gs33ol5qxi5dfnvyhi4y0\",\"displayName\":\"ms_ad_ds_replication_attempts\",\"displayNamespace\":\"Microsoft - Active Directory\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3smvygy2ldmf2gs33ol5qxi5dfnvyhi4y0\",\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"1308\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-activedirectory_domainservice\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3smvygy2ldmf2gs33ol5qxi5dfnvyhi4y0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3bmrsgs5djn5xgc3c7mrqxiyk7mvzhe33sl53gc3dvmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_ds_additional_data_error_value\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3bmrsgs5djn5xgc3c7mrqxiyk7mvzhe33sl53gc3dvmu000000\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_ds_additional_data_error_value\",\"preContext\":\"Additional Data\\\\s+Error value:\\\\s+\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3bmrsgs5djn5xgc3c7mrqxiyk7mvzhe33sl53gc3dvmu000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"},{\"displayName\":\"ms_ad_ds_replication_attempts\",\"preContext\":\"attempts to replicate.*\\\\s+Attempts:\\\\s+\",\"postContext\":\"\\\\s+Directory service:\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3smvygy2ldmf2gs33ol5qxi5dfnvyhi4y0\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1043150977544,\"endTimeMillis\":1423475170000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv64tfobwgsy3boruw63s7mf2hizlnob2hg000\",\"displayName\":\"ms_ad_ds_replication_attempts\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadkx3bfzrc4y3nonpwczc7mrzv64tfobwgsy3boruw63s7mf2hizlnob2hg000\",\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"1308\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-activedirectory_domainservice\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv64tfobwgsy3boruw63s7mf2hizlnob2hg000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv6ylemruxi2lpnzqwyx3emf2gcx3fojzg64s7ozqwy5lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_ds_additional_data_error_value\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv6ylemruxi2lpnzqwyx3emf2gcx3fojzg64s7ozqwy5lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_ds_additional_data_error_value\",\"preContext\":\"Additional Data\\\\s+Error value:\\\\s+\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv6ylemruxi2lpnzqwyx3emf2gcx3fojzg64s7ozqwy5lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"},{\"displayName\":\"ms_ad_ds_replication_attempts\",\"preContext\":\"attempts to replicate.*\\\\s+Attempts:\\\\s+\",\"postContext\":\"\\\\s+Directory service:\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv64tfobwgsy3boruw63s7mf2hizlnob2hg000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
           "messageQuery":""
         }, {
           "name":"Maximum number of minutes since replication has succeeded grouped by hostname",
@@ -811,13 +820,13 @@
           "chartType":null,
           "chartOptions":"{}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1423468864001,\"endTimeMillis\":1423472681621,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3qmvzgs33el5xwmx3unfwwkllnnfxhk5dfom000000\",\"displayName\":\"ms_ad_ds_period_of_time-minutes\",\"displayNamespace\":\"Microsoft - Active Directory\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3qmvzgs33el5xwmx3unfwwkllnnfxhk5dfom000000\",\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"1308\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-activedirectory_domainservice\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3qmvzgs33el5xwmx3unfwwkllnnfxhk5dfom000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_ds_period_of_time-minutes\",\"preContext\":\"Directory service:(\\\\S+\\\\s+){2}Period of time \\\\(minutes\\\\):\\\\s+\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5shgx3qmvzgs33el5xwmx3unfwwkllnnfxhk5dfom000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1423468864001,\"endTimeMillis\":1423472681621,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv64dfojuw6zc7n5tf65djnvss23ljnz2xizlt\",\"displayName\":\"ms_ad_ds_period_of_time-minutes\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadkx3bfzrc4y3nonpwczc7mrzv64dfojuw6zc7n5tf65djnvss23ljnz2xizlt\",\"fieldConstraints\":[{\"internalName\":\"eventid\",\"operator\":\"CONTAINS\",\"value\":\"1308\"},{\"internalName\":\"channel\",\"operator\":\"CONTAINS\",\"value\":\"directory service\"},{\"internalName\":\"providername\",\"operator\":\"CONTAINS\",\"value\":\"microsoft-windows-activedirectory_domainservice\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv64dfojuw6zc7n5tf65djnvss23ljnz2xizlt\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_ds_period_of_time-minutes\",\"preContext\":\"Directory service:(\\\\S+\\\\s+){2}Period of time \\\\(minutes\\\\):\\\\s+\",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7mrzv64dfojuw6zc7n5tf65djnvss23ljnz2xizlt\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"directory service\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
           "messageQuery":""
         } ]
       }, {
         "widgets":[ {
           "name":"Count of KCC Replication Path Computation errors over time grouped by hostname",
-          "info":"The replication configuration information in Active Directory Domain Services does not accurately reflect the physical topology of the network.&nbsp;<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/cc756493%28v=ws.10%29.aspx\"><span>Event ID 1311 — KCC Replication Path Computation</span></a><br><a href=\"http://msdn.microsoft.com/en-us/library/cc949129%28v=ws.10%29.aspx\">Fixing Replication Topology Problems (Event ID 1311)</a><br>",
+          "info":"The replication configuration information in Active Directory Domain Services does not accurately reflect the physical topology of the network.&nbsp;<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/cc756493%28v=ws.10%29.aspx\"><span>Event ID 1311 - KCC Replication Path Computation</span></a><br><a href=\"http://msdn.microsoft.com/en-us/library/cc949129%28v=ws.10%29.aspx\">Fixing Replication Topology Problems (Event ID 1311)</a><br>",
           "chartType":"column",
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -835,7 +844,7 @@
       }, {
         "widgets":[ {
           "name":"Count of Discovery of replication partners errors over time grouped by eventid",
-          "info":"<span>Replication DNS Lookup problems</span>:<br><br><span style=\"text-decoration: underline;\">NTDS KCC</span><br><span style=\"font-weight: bold;\">Event ID 1925</span><br>The attempt to establish a replication link for a writable directory partition failed. This event can have different causes depending on the error.<br><br><span style=\"text-decoration: underline;\">NTDS Replication</span><br><span style=\"font-weight: bold;\">Event ID 2087</span><br>Active Directory Domain Services could not resolve the DNS host name of the source domain controller to an IP address, but replication failed.<br><br><span style=\"font-weight: bold;\">Event ID 2088</span><br>Active Directory Domain Services could not resolve the DNS host name of the source domain controller to an IP address, but replication succeeded.<br><br>For more information, see:<br><a href=\"http://msdn.microsoft.com/en-us/library/cc949133%28v=ws.10%29.aspx\">Fixing Replication DNS Lookup Problems (Event IDs 1925, 2087, 2088)</a><br><a href=\"http://technet.microsoft.com/en-us/library/dd941839%28v=ws.10%29.aspx\">Event ID 1925 — Discovery of replication partners</a><br><a href=\"http://technet.microsoft.com/en-us/library/dd941845%28v=ws.10%29.aspx\">Event ID 2087 — Discovery of replication partners</a><br><a href=\"http://technet.microsoft.com/en-us/library/dd941865%28v=ws.10%29.aspx\">Event ID 2088 — Discovery of replication partners</a><br>",
+          "info":"<span>Replication DNS Lookup problems</span>:<br><br><span style=\"text-decoration: underline;\">NTDS KCC</span><br><span style=\"font-weight: bold;\">Event ID 1925</span><br>The attempt to establish a replication link for a writable directory partition failed. This event can have different causes depending on the error.<br><br><span style=\"text-decoration: underline;\">NTDS Replication</span><br><span style=\"font-weight: bold;\">Event ID 2087</span><br>Active Directory Domain Services could not resolve the DNS host name of the source domain controller to an IP address, but replication failed.<br><br><span style=\"font-weight: bold;\">Event ID 2088</span><br>Active Directory Domain Services could not resolve the DNS host name of the source domain controller to an IP address, but replication succeeded.<br><br>For more information, see:<br><a href=\"http://msdn.microsoft.com/en-us/library/cc949133%28v=ws.10%29.aspx\">Fixing Replication DNS Lookup Problems (Event IDs 1925, 2087, 2088)</a><br><a href=\"http://technet.microsoft.com/en-us/library/dd941839%28v=ws.10%29.aspx\">Event ID 1925 ? Discovery of replication partners</a><br><a href=\"http://technet.microsoft.com/en-us/library/dd941845%28v=ws.10%29.aspx\">Event ID 2087 ? Discovery of replication partners</a><br><a href=\"http://technet.microsoft.com/en-us/library/dd941865%28v=ws.10%29.aspx\">Event ID 2088 - Discovery of replication partners</a><br>",
           "chartType":"column",
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -889,7 +898,7 @@
       }, {
         "widgets":[ {
           "name":"Number of Backup needed events over time by eventid",
-          "info":"The number of events detecting that directory partitions have not been backed up within the backup latency interval.<br><span><br>You should back up the directory database on a domain controller \nroutinely so that if hardware fails or data becomes corrupt, you can \nquickly recover the information in the database.<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd941837%28v=ws.10%29.aspx\">Event ID 2089 — Backups</a></span>",
+          "info":"The number of events detecting that directory partitions have not been backed up within the backup latency interval.<br><span><br>You should back up the directory database on a domain controller \nroutinely so that if hardware fails or data becomes corrupt, you can \nquickly recover the information in the database.<br><br>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd941837%28v=ws.10%29.aspx\">Event ID 2089 - Backups</a></span>",
           "chartType":"column",
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -897,7 +906,7 @@
           "messageQuery":""
         }, {
           "name":"Number of events over time by eventid",
-          "info":"The number of disk write caching error events detected.<br><br>Domain controllers host highly sensitive data. Domain controllers \nattempt to protect this data from accidental loss or corruption. \nAlthough you can use disk write caching to increase application \nperformance, disk write caching is not recommended for use on a domain \ncontroller because it can increase the chance of data corruption and \nloss.<br><br><span>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd941847%28v=ws.10%29.aspx\">Event ID 1539 — Database integrity</a></span>",
+          "info":"The number of disk write caching error events detected.<br><br>Domain controllers host highly sensitive data. Domain controllers \nattempt to protect this data from accidental loss or corruption. \nAlthough you can use disk write caching to increase application \nperformance, disk write caching is not recommended for use on a domain \ncontroller because it can increase the chance of data corruption and \nloss.<br><br><span>For more information, see:<br><a href=\"http://technet.microsoft.com/en-us/library/dd941847%28v=ws.10%29.aspx\">Event ID 1539 - Database integrity</a></span>",
           "chartType":"column",
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
@@ -1014,7 +1023,7 @@
       "rows":[ {
         "widgets":[ {
           "name":"Number of times the audit log was cleared over time",
-          "info":"<span><span>Security auditing e</span>vent 1102 (The audit log was cleared) should be monitored in your environment, according to the recommendations provided</span><span>&nbsp; in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in your environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <a href=\"http://technet.microsoft.com/en-us/library/dd315545%28v=WS.10%29.aspx\"><span>Event ID 1102 — Security Channel Configuration</span></a><br>&nbsp;",
+          "info":"<span><span>Security auditing e</span>vent 1102 (The audit log was cleared) should be monitored in your environment, according to the recommendations provided</span><span>&nbsp; in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487458.aspx\"><span>Monitoring Active Directory for Signs of Compromise</span></a><span>. These events are listed in&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn535498.aspx\"><span><b>Appendix L: Events to Monitor</b></span></a><span>&nbsp;of&nbsp;</span><a href=\"http://technet.microsoft.com/en-us/library/dn487446.aspx\"><span>Best Practices for Securing Active Directory</span></a><span>.</span><br>\n<span></span><br>\n<span>A potential criticality of High \nmeans that one occurrence of the event should be investigated. You \nshould test these recommendations in your environments before enabling \nor creating alerts that require mandatory investigative responses. Every\n environment is different, and some of the events ranked with a \npotential criticality of High may occur due to other harmless events.</span><span></span><br><br>See also: <a href=\"http://technet.microsoft.com/en-us/library/dd315545%28v=WS.10%29.aspx\"><span>Event ID 1102 - Security Channel Configuration</span></a><br>&nbsp;",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"spline\":false}",
           "widgetType":"chart",
@@ -1216,6 +1225,14 @@
             "info":"A<span>llows to track system-level changes to a computer that are not included in other categories and that have potential security implications.</span>",
             "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}"
           } ]
+        }, {
+          "name":"Object Auditing - Process by account name",
+          "info":"The number of objects under auditing where user access a specific process.<br><br><span style=\"font-weight: bold;\">Important:</span>&nbsp;In order to receive results for this query, object auditing must be enabled. For more information, see&nbsp;<a href=\"http://technet.microsoft.com/en-us/library/cc784387%28v=ws.10%29.aspx\">Apply or modify auditing policy settings for a local file or folder</a>.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1536222583244,\"endTimeMillis\":1536827383243,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obzg6y3fonzv63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7on2we2tfmn2f6yldmnxxk3tul5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_security_audit_subject_account_name\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7on2we2tfmn2f6yldmnxxk3tul5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_security_audit_process_name\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obzg6y3fonzv63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_security_audit_process_name\",\"preContext\":\"Process Information:\\\\s+Process ID:.*\\\\s+.*Name:\\\\s+\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7obzg6y3fonzv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"security\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"},{\"displayName\":\"ms_ad_security_audit_subject_account_name\",\"preContext\":\"Subject:\\\\s+.*\\\\s+Account Name:\\\\s+\",\"postContext\":\"\\\\$?\\\\s+Account Domain:\",\"regexValue\":\".+?\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7onswg5lsnf2hsx3bovsgs5c7on2we2tfmn2f6yldmnxxk3tul5xgc3lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"hidden\\\":false,\\\"internalName\\\":\\\"channel\\\",\\\"displayName\\\":\\\"channel\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"security\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false}]}\"}]}",
+          "messageQuery":""
         } ]
       } ]
     }, {
@@ -1251,7 +1268,7 @@
           "messageQuery":""
         }, {
           "name":"Number of events over time",
-          "info":"The number events should be consistent over time. There are several reasons why the number of events would not be consistent over time:<br><br>• Increase in the number of events<br><br> - The number of devices sending events has increased. In this scenario then a one-time increase in events would be expected.<br> - The number of events generated by a device typically increases when there is a problem happening. Check the error and warning widgets for more information.<br><br>• Decrease in the number of events<br><br> - The number of devices sending events has decreased. If the decrease in the number of devices sending events was intentional then a one-time decrease in events would be expected. If the decrease in the number of devices sending events was unintentional then this would indicate a potential problem in the environment. Check the unique count widget and vSphere integration for more information.",
+          "info":"The number events should be consistent over time. There are several reasons why the number of events would not be consistent over time:<br><br>? Increase in the number of events<br><br> - The number of devices sending events has increased. In this scenario then a one-time increase in events would be expected.<br> - The number of events generated by a device typically increases when there is a problem happening. Check the error and warning widgets for more information.<br><br>? Decrease in the number of events<br><br> - The number of devices sending events has decreased. If the decrease in the number of devices sending events was intentional then a one-time decrease in events would be expected. If the decrease in the number of devices sending events was unintentional then this would indicate a potential problem in the environment. Check the unique count widget and vSphere integration for more information.",
           "chartType":"line",
           "chartOptions":"{\"logaxis\":false,\"spline\":false}",
           "widgetType":"chart",
@@ -1343,7 +1360,7 @@
           "chartType":"pie",
           "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433146710371,\"endTimeMillis\":1433233187410,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_remote_ip\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_remote_ip\",\"preContext\":\".*(AM|PM).*?\",\"postContext\":\"\\\\s+\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433146710371,\"endTimeMillis\":1433233187410,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_remote_ip\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_remote_ip\",\"preContext\":\".*(AM|PM).*?\",\"postContext\":\"\\\\s+\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
           "messageQuery":""
         }, {
           "name":"Total Windows DNS queries by type",
@@ -1351,7 +1368,7 @@
           "chartType":"pie",
           "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147058531,\"endTimeMillis\":1433233588905,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_question_type\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147058531,\"endTimeMillis\":1433233588905,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_question_type\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
           "messageQuery":""
         } ]
       }, {
@@ -1361,7 +1378,7 @@
           "chartType":"pie",
           "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"donut\"}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147201384,\"endTimeMillis\":1433233687129,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147201384,\"endTimeMillis\":1433233687129,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
           "messageQuery":""
         }, {
           "name":"Count of SRV queries by type",
@@ -1369,7 +1386,7 @@
           "chartType":"area",
           "chartOptions":"{\"logaxis\":false,\"legend\":false,\"stacking\":\"none\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147357037,\"endTimeMillis\":1433233853368,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"operator\":\"EXISTS\",\"value\":\"dns\"}],\"supplementalConstraints\":[{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"srv\"}],\"groupByFields\":[{\"displayName\":\"ms_ad_query_question_type\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_query_question_name\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147357037,\"endTimeMillis\":1433233853368,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"srv\"}],\"groupByFields\":[{\"displayName\":\"ms_ad_query_question_type\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_query_question_name\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
           "messageQuery":""
         } ]
       }, {
@@ -1379,7 +1396,7 @@
           "chartType":"bar",
           "chartOptions":"{\"logaxis\":true,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147524300,\"endTimeMillis\":1433233961599,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"operator\":\"CONTAINS\",\"value\":\"dc,pdc,gc\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"srv\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"127.0.0.1\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_remote_ip\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_remote_ip\",\"preContext\":\".*(AM|PM).*?\",\"postContext\":\"\\\\s+\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147524300,\"endTimeMillis\":1433233961599,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"dc,pdc,gc\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"srv\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"127.0.0.1\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_remote_ip\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_remote_ip\",\"preContext\":\".*(AM|PM).*?\",\"postContext\":\"\\\\s+\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
           "messageQuery":""
         }, {
           "name":"Miscellaneous",
@@ -1390,15 +1407,15 @@
           "listType":"query",
           "listData":[ {
             "name":"Count of Domain Controller requests",
-            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147666743,\"endTimeMillis\":1433234139693,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"operator\":\"CONTAINS\",\"value\":\"(5)_ldap(4)_tcp(2)dc(6)_msdcs\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"::1\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_question_type\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_query_remote_ip\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"displayNamespace\":\"Microsoft - Active Directory\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_remote_ip\",\"preContext\":\".*(AM|PM).*?\",\"postContext\":\"\\\\s+\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxezlnn52gkx3joa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147666743,\"endTimeMillis\":1433234139693,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"displayName\":\"ms_dns_query_question_type\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3nonpwi3ttl5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"fieldConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"(5)_ldap(4)_tcp(2)dc(6)_msdcs\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"::1\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"ms_ad_query_question_type\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"ms_ad_query_remote_ip\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_remote_ip\",\"preContext\":\".*(AM|PM).*?\",\"postContext\":\"\\\\s+\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5zgk3lporsv62lq\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
             "messageQuery":"",
-            "info":"<span>Characterized by &nbsp;DNS record &nbsp;\"<span>_ldap._tcp.dc._msdcs.&lt;DnsDomainName&gt;\"<br>This a</span>llows a client to locate a domain controller (dc) of the domain named by&nbsp;</span><i>DnsDomainName</i><span>&nbsp;. All Windows Server–based domain controllers register this SRV record.</span><br>",
+            "info":"<span>Characterized by &nbsp;DNS record &nbsp;\"<span>_ldap._tcp.dc._msdcs.&lt;DnsDomainName&gt;\"<br>This a</span>llows a client to locate a domain controller (dc) of the domain named by&nbsp;</span><i>DnsDomainName</i><span>&nbsp;. All Windows Server?based domain controllers register this SRV record.</span><br>",
             "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}"
           }, {
             "name":"Kerberos Master requests",
-            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147666743,\"endTimeMillis\":1433234187468,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"operator\":\"CONTAINS\",\"value\":\"_kerberos-master\"},{\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"operator\":\"CONTAINS\",\"value\":\"srv\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol5xgc3lf\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadgmc7mnxw2ltnnfrxe33tn5thiltbmn2gs5tffvsgs4tfmn2g64tznvzv6ylel5yxkzlspfpxc5lfon2gs33ol52hs4df\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1433147666743,\"endTimeMillis\":1433234187468,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"operator\":\"CONTAINS\",\"value\":\"_kerberos-master\"},{\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"operator\":\"CONTAINS\",\"value\":\"srv\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"ms_ad_query_question_name\",\"preContext\":\"([\\\\s]+)\",\"postContext\":\"\\\\(\\\\d\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7nzqw2zi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"ms_ad_query_question_type\",\"preContext\":\"]\\\\s+\",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadkx3bfzrc4y3nonpwczc7of2wk4tzl5yxkzltoruw63s7or4xazi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"ms_product\\\",\\\"displayName\\\":\\\"ms_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"activedirectory\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
             "messageQuery":"",
-            "info":"<span>_kerberos-master DNS entry - this entry should refer to those KDCs, if any, that will immediately see password changes to the Kerberos database. If a user is logging in and the password appears to be incorrect, the client will retry with the master KDC before failing with an “incorrect password” error given.</span><br>",
+            "info":"<span>_kerberos-master DNS entry - this entry should refer to those KDCs, if any, that will immediately see password changes to the Kerberos database. If a user is logging in and the password appears to be incorrect, the client will retry with the master KDC before failing with an 'incorrect password' error given.</span><br>",
             "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"spline\\\":false}\"}"
           } ]
         } ]
@@ -1516,9 +1533,9 @@
   "aliasRules":[ ],
   "author":"VMware, Inc.",
   "url":"http://www.vmware.com",
-  "contentVersion":"3.2",
+  "contentVersion":"3.3",
   "info":"<span><span>The content pack for Microsoft® Active Directory® provides you with information about key entities of any AD installation’s health using&nbsp; Log Insight’s ability to monitor Windows® Event Logs.<br></span></span><br><span>Log Insight offers very intuitive graphical representation, especially with regards to log events. Spikes in the number and types of messages received can be flagged as events with external notifications. System administrators can drill into these events for looking at where and why these are being generated.<br><br>The Active Directory content pack includes twelve dashboards with around 65 widgets and 11 alarms for viewing and quickly analyzing Active Directory log messages.It provides:<br><br><span style=\"font-weight: bold;\">•&nbsp;</span><b>Accurate monitoring of your AD infrastructure:</b>F<span>ocus on known problems through monitoring events raised in the Windows Event Log.</span><br><br><span style=\"font-weight: bold;\">•&nbsp;Key AD components are covered—AD security, AD DS, DFS, and DNS:&nbsp;</span>Eight dashboards containing 37 widgets are included from AD security, AD DS, DFS, and DNS that go in depth to quantify your data in a multitude of manners to help diagnose problems in your AD infrastructure.</span><br>",
   "instructions":"<span style=\"font-weight: bold;\"><span style=\"font-weight: bold; text-decoration: underline;\">Log Insight Agent Configuration:</span></span><br><br><span>The&nbsp;<i>Microsoft - Active Directory</i>&nbsp;content pack requires the use of the Log Insight agent with the cfapi protocol (default) and the included agent group configuration. To apply the agent group configuration:<br><br></span><span>•&nbsp;</span><span>Go to the&nbsp;</span><span style=\"font-style: italic;\"><a href=\"https://montools-prod-loginsight.vmware.com/admin/agents\">Administration &gt; Agents</a>&nbsp;</span><span>page (requires Super Admin privileges)</span><br><span>•&nbsp;Select the</span><span style=\"font-weight: bold;\">&nbsp;</span><span style=\"font-style: italic;\">All Agents</span><b>&nbsp;</b><span>drop-down at the top of the window and select the&nbsp;</span><span style=\"font-style: italic;\">Copy Template</span><b>&nbsp;</b><span>button to the right of the&nbsp;</span><span style=\"font-style: italic;\">Microsoft - Active Directory</span><span>&nbsp;agent group</span><br><span>•&nbsp;Add the desired filters to restrict which agent receive the configuration (optional)</span><br><span>•&nbsp;Select the&nbsp;</span><span style=\"font-style: italic;\">Refresh</span><span>&nbsp;button at the top of the page</span><br><span>•&nbsp;Select the&nbsp;</span><span style=\"font-style: italic;\">Save Configuration</span><span>&nbsp;button at the bottom of the page</span><br><br><b><u>Active Directory Configuration:<br></u></b><br><span><span style=\"font-weight: bold;\">Enable Audit Policy for AD Change Audit<br></span></span><br><span>To enable Audit Policy settings in every Domain Controller, we need to configure audit settings in Default Domain Controllers Policy</span><br><span>Follow the below steps to enable change auditing via Default Domain Controllers Policy.</span><br><br><span>• Go to Start --&gt; Administrative Tools --&gt; Group Policy Management.</span><br><span>• &nbsp;Right-click the Default Domain Controllers Policy, and click Edit.&nbsp;</span><br><span>• Navigate to the node Audit Policy (Computer Configuration --&gt; Policies --&gt; Windows Settings --&gt; Security Settings --&gt; Local Policies --&gt; Audit Policy).</span><br><span>• Now edit the policies under it by right clicking on the&nbsp; respective policy --&gt; Properties --&gt; Security Policy Setting --&gt; Check&nbsp;</span><span style=\"font-style: italic;\">Define these Policy Settings</span><span>&nbsp;--&gt; Success/Failure</span><br><span>• Run the command&nbsp;</span><span style=\"font-style: italic;\">gpupdate /force</span><span>&nbsp;from command prompt to update group policy settings.</span><br><br><span><span style=\"font-weight: bold;\">Audit Directory Service Changes<br></span></span><br><span>This step is required for all of the Directory Service dashboards to return results.&nbsp;Follow the below steps to configure Directory Service auditing.<br></span><br><span>• Go to the node DS Access (Computer Configuration --&gt; Policies --&gt; Windows Settings --&gt; Security Settings --&gt; Advanced Audit Policy Configuration --&gt; DS Access)</span><br><span>• Now edit Audit directory service changes&nbsp;</span><br><br><span>Note: Advanced Audit Policy comes under the subcategory of DS Access which will log extra fields like old and new values. Other categories under Advanced Audit Policy Configuration can be configured likewise as per the requirement</span><br><span><span style=\"font-weight: bold;\"><br>Enable Object Level Security Audit<br></span></span><br><span>This step is required for the Security dashboards to return results.&nbsp;</span><span>You can enable auditing on single object, or OU level, or Domain level.&nbsp;Follow the below steps to enable Domain level auditing.</span><br><br><span>• Start --&gt; Administrative Tools --&gt; Active Directory Users and Computers.</span><br><span>• Right-click the Domain object, and click the&nbsp;</span><span style=\"font-style: italic;\">Properties</span><br><span>• Click the&nbsp;</span><span style=\"font-style: italic;\">Security</span><span>&nbsp;tab.</span><br><span>• Click the button&nbsp;</span><span style=\"font-style: italic;\">Advanced</span><span>, and select the tab&nbsp;</span><span style=\"font-style: italic;\">Auditing</span><span>.</span><br><span>• Click the button&nbsp;</span><span style=\"font-style: italic;\">Add</span><span>, find the user&nbsp;</span><span style=\"font-style: italic;\">Everyone</span><span>, and click&nbsp;</span><span style=\"font-style: italic;\">OK</span><span>.</span><br><span>• Check the Successful and failed auditing you can configure these settings as per your requirement.</span><br><span>• Click the button&nbsp;</span><span style=\"font-style: italic;\">OK</span><span>, and click&nbsp;</span><span style=\"font-style: italic;\">Apply</span><span>.</span><br><br><span><span style=\"font-weight: bold;\">DNS Server Configuration<br></span></span><br><span>This step is required for all of the DNS dashboards to return results.&nbsp;</span><span>Follow the below steps to configure DNS logging.<br></span><br><span>• Log into the Windows Server running DNS.</span><br><span>• Open&nbsp;</span><span style=\"font-style: italic;\">DNS Manager</span><br><span>• Windows Server 2008+: Start --&gt; Administrative Tools --&gt; DNS</span><br><span>•&nbsp;</span><span>Windows Server 2012+: Server Manager --&gt; Tools --&gt; DNS</span><br><span>• Right-click the DNS server you wish to configure and click&nbsp;</span><span style=\"font-style: italic;\">Properties</span><span>.</span><br><span>• Click the&nbsp;</span><span style=\"font-style: italic;\">Debug Logging</span><span>&nbsp;tab.</span><br><span>• Click&nbsp;</span><span style=\"font-style: italic;\">Log packets for debugging</span><span>.</span><br><span>• Under&nbsp;</span><span style=\"font-style: italic;\">Packet Direction</span><span>, uncheck&nbsp;</span><span style=\"font-style: italic;\">Outgoing</span><span>.</span><br><span>• Under&nbsp;</span><span style=\"font-style: italic;\">Packet contents</span><span>, uncheck&nbsp;</span><span style=\"font-style: italic;\">Updates</span><span>&nbsp;and&nbsp;</span><span style=\"font-style: italic;\">Notifications</span><span>.</span><br><span>• Click&nbsp;</span><span style=\"font-style: italic;\">OK</span><span>&nbsp;to save the configuration.&nbsp;</span><br><br><span>Note: You can enable as many options as you desire for logging. However, the more options enabled, the more resources consumed by the DNS server and data sent to Log Insight. You can also change the file path for the \"dns.log\" file but ensure the correct file path is set in the \"[filelog|WindowsDNS]--&gt; directory\" section of the log insight agent configuration. Be sure to open&nbsp;</span><span style=\"font-style: italic;\">%Windir%\\System32\\DNS\\dns.log</span><span>&nbsp;and verify log entries are being generated.</span><br><br><span><span style=\"font-weight: bold;\">Track Logon Events<br></span></span><br><span>To track logon events you must enable both the \"Success\" and \"Failure\" Security Settings of the following policies in Group Policy:</span><br><br><b>•&nbsp;</b><span>Audit account logon events</span><br><b>•&nbsp;</b><span>Audit account management</span><br><b>•&nbsp;</b><span>Audit directory service access</span><br><b>•&nbsp;</b><span>Audit logon events</span><br><b>•&nbsp;</b><span>Audit object access</span><br><b>•&nbsp;</b><span>Audit policy change</span><br><b>•&nbsp;</b><span>Audit privilege use</span><br><b>•&nbsp;</b><span>Audit process tracking</span><br><b>•&nbsp;</b><span>Audit system events</span><br>",
-  "upgradeInstructions":"<span>Upgrade instructions:<br></span>Re-apply agent config to Log Insight agent on AD server to use the changed configuration.<br><br><span>Changes:</span><br><span><ul><li><span>Modifications to Agent group config :</span><br></li></ul><span></span><span><span></span><span></span>[filelog|win20**_WindowsDNS]</span><span><br></span><span><span><span><span></span><span></span><span></span>directory</span><span>=</span><span>c:</span><span style=\"font-weight: bold;\">\\</span><span>Windows</span><span style=\"font-weight: bold;\">\\</span><span>Sysnative</span><span style=\"font-weight: bold;\">\\</span><span>dns</span><span style=\"font-weight: bold;\">\\</span></span></span><br><span><span><span><span></span><span></span><span></span>include=<span>dns.log<br></span></span></span></span><span></span><span><span></span>tags={\"ms_product\":\"activedirectory\"}</span><span><br></span></span><br>",
+  "upgradeInstructions":"<span>Upgrade instructions:<br></span>Re-apply agent config to Log Insight agent on AD server to use the changed configuration.<br><br><span>Changes v3.3:</span><br><span><ul><li><span>Added new widget \"Security - Object Auditing\" ->  \"Object Auditing - Process by account name\"</span><br></li></ul><br><span>Changes:</span><br><span><ul><li><span>Modifications to Agent group config :</span><br></li></ul><span></span><span><span></span><span></span>[filelog|win20**_WindowsDNS]</span><span><br></span><span><span><span><span></span><span></span><span></span>directory</span><span>=</span><span>c:</span><span style=\"font-weight: bold;\">\\</span><span>Windows</span><span style=\"font-weight: bold;\">\\</span><span>Sysnative</span><span style=\"font-weight: bold;\">\\</span><span>dns</span><span style=\"font-weight: bold;\">\\</span></span></span><br><span><span><span><span></span><span></span><span></span>include=<span>dns.log<br></span></span></span></span><span></span><span><span></span>tags={\"ms_product\":\"activedirectory\"}</span><span><br></span></span><br>",
   "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAABqlBMVEUAAAAAVoYRj+kQkOgQkekRjugRjekPi+cQj+YSkOr///8SkO289//v3/Dr8v3///z///u82Pf6///O4vrI3/oSkPH1//8SkO6A3P4mkOrv///q//+e6v8SqPcSmPLHvexLkOo0kOpw1P3//fr/+fc1sff/9vYSofTq1e+OnuqIneqAmOp3lOrf///O/f9WxftMv/pBvfnv7fgmrvj/7/X67fUSnfMSlfHv2++hrey2sOqrrOpwk+pBkOpoj+ra///U/f/C+P+28/+p7f+V5v+O4//x9/6I3v75+P3e7vzG2vj/8vX65fOFvfJtuvL14/HfzO3Uw+zOw+zCtuu8teufp+uVn+tfkOrl///I+f+w8P+V4f/o+f6d4f542P5o0Pxfy/zS5vu23ftjx/s1tvnU4PhsxPjq6fd4xPf/6/T66fOwyvOwxvLOyfDq2+/l1O+Asu8mne/l0e7axe14re2LrO1WmOt4oOo1lepWkOqp5v541v2V3PyO1vy84vv/+Prq8PrI4vpWwfm21fiAyvhLuPj17PXv2/CVtO41ne6VqOuAoOpfleqVpekzsGl7AAAACXRSTlMABPPd2aWLVlJ2rHCaAAAEK0lEQVR42u2cZ1cTQRSGNwjCzKrBKMRIEVDsXRG70jtIEVFEuoJYQLD33v+zHDi7N2SyvMyE4By9z8cku3l2du6dmTvnjLNAKDsrM0P8RTIys7JDjk/OOmEB63KcRULrhSWsX2wka3zmjRbel7CIHMcJWdF//H4UcrKFVWQ7WcIqspxMYRWZToawigxHWAYLsRALJcBCCBZCsBCChRAshGAhBAshWAjBQggWQrAQgoUQLIRgIR934n3TcPM3YUI6hMoL5AIVv8Sy3L4pE4k0vhufmnu2ukKntnu3bykVwbj9MpDj956snpBbI306RTDH5LLcebxaQkUR6bOrRARSJwHHn66OUK2Mozu4Iask5L6GEOhBuBe5GySm4nnqQrfkEs4BIcDO/akKVR6SS2gFQojwmRSFhhJvuA8KNW7xGW7KV5TOpCQUPSwTOA2EEn/xvf1NRMaTewAKaSWX3INIaKPy1aclgXGy1FzIrfbuUu8/5hUspFD5QsbRaS50Qnr0FvqBcg0LqYwqjWwk5FtMxsakxw4TIfE5QkYPTIX2+DHSI6J+Jt59wURIHI0L1f2GQg3xY9gR6XEWCIG7URPpChX3eTeYFULk+SmyImYklHeJetFFI6FB//rzYp6X0uOqiRC1MTWynlDeZe/yvQnD7EYzoTzKsg8NhKgXhnsTYi58wEhIDILk6AuBOL6rZKVHZkJFEXokfaFy5YW71dQpgRDqBOF92kJuDeUdNZV0GQm5hQZCavN2JXnC3SUmQmIbpXttobpkr6dMevSstVBxAUVosk9PxtZYqCz5uFNHyTFNQjDNdwT0rI7UhLo1hY4ELDPcG9RyBkL9dLWeUPQ6JcWgKdtefaHoYdOwH6Nx+WPz5nhGJI242kI0v8qFmVp5MZhZbaFRSUEKhNSkiNlVoikUrVIGQyxE9QVMt6bQMbQid0B9AdFSCoSUSAErFwfUFyDntITKZECEkhCoL0BadYTKI5JmQ1pCQxKhZhMsVJ4PG0g4qL6wKTn1SuUBC32ISCWDASGKBbCKpwURLYqBUHRAEjTBAkLKPPUgGCPJGVQ/JgpkHJMxLSEarL7CIYDiN7g+NNM+kq/Uc3SECqngAebGC+xQhcLNWz22NFF/o4mUlhA9fEUMrEhoBZDOGmMDWO0q/96jV4X9KfSEKvuURwcTuFYdoS/adeo92+PrbniKS2O+W5OWSn5RPi1+lqVMmYTUpmWvo7gAZHflhx20rE3LbtA2JbuDJvrtd/SBtOyXua/kPG9/CIT7mqKYdhQVGjeNT02ntqM409Y2FxMroLi9bbpUrIh/flc6ABZCsBCChRAshGAhBAshWAjBQggWQrAQgoUQLIRgIQQLIVgIwUIIFkL8B0LWHWZj3XE/1h2IZN2RUdYdqmXdsWP2Hcxm39F11h3uZ9fxh38AAZQxo1/6gkMAAAAASUVORK5CYII="
 }
