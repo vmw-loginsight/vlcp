@@ -1,0 +1,1065 @@
+{
+  "name":"F5 - BIG-IP",
+  "namespace":"com.f5.bigip",
+  "contentPackId":"com.f5.bigip",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"f5_avr_client_ip",
+    "preContext":"ClientIP=\"",
+    "postContext":"\"\\,",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5uxa000",
+    "constraints":"{\"searchTerms\":\"Entity=\\\"ClientIP\\\"\"}",
+    "info":null
+  }, {
+    "displayName":"f5_avr_client_maxserver_latency",
+    "preContext":"ServerLatencyMax=\"",
+    "postContext":"\"\\,",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000",
+    "constraints":"{\"searchTerms\":\"Entity=\\\"ClientIP\\\"\"}",
+    "info":null
+  }, {
+    "displayName":"f5_avr_entity_name",
+    "preContext":"Entity=\"",
+    "postContext":"\"\\,(AVRProfileName|Module)",
+    "regexValue":"\\w+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf",
+    "constraints":"{\"searchTerms\":\"AVRProfileName\"}",
+    "info":null
+  }, {
+    "displayName":"f5_avr_method_name",
+    "preContext":"Method=\"",
+    "postContext":"\"",
+    "regexValue":".+?",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3nmv2gq33el5xgc3lf",
+    "constraints":"{\"searchTerms\":\"AVRProfileName\"}",
+    "info":null
+  }, {
+    "displayName":"f5_avr_profile_name",
+    "preContext":"AVRProfileName=\"",
+    "postContext":"\"\\,AggrInterval",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3qojxwm2lmmvpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"AVRProfileName\"}",
+    "info":null
+  }, {
+    "displayName":"f5_avr_vs_maxserver_latency",
+    "preContext":"ServerLatencyMax=\"",
+    "postContext":"\"\\,",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpw2ylyonsxe5tfojpwyylumvxgg6i0",
+    "constraints":"{\"searchTerms\":\"Entity=\\\"VS\\\"\"}",
+    "info":null
+  }, {
+    "displayName":"f5_avr_vs_name",
+    "preContext":"VSName=\"",
+    "postContext":"\",",
+    "regexValue":".+?",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpw4ylnmu000000",
+    "constraints":"{\"searchTerms\":\"AVRProfileName\"}",
+    "info":null
+  }, {
+    "displayName":"f5_avr_vs_vsname",
+    "preContext":"VSName=\"",
+    "postContext":"\",",
+    "regexValue":".+?",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpxm43omfwwk000",
+    "constraints":"{\"searchTerms\":\"Entity=\\\"VS\\\"\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_bigip_address",
+    "preContext":".*\\[.*\\]\\s+\\d+-\\d+-\\d+\\s+\\d+:\\d+:\\d+\\s+",
+    "postContext":" qid\\s+",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3cnftws4c7mfsgi4tfonzq0000",
+    "constraints":"{\"searchTerms\":\"tmm\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_domain_name",
+    "preContext":"view .*query: ",
+    "postContext":" ",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3en5wwc2lol5xgc3lf",
+    "constraints":"{\"searchTerms\":\"tmm\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_query_type",
+    "preContext":"query:\\s+\\S+\\s+\\S+\\s+",
+    "postContext":"(\\s+\\S+){2}$",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3rovsxe6k7or4xazi0",
+    "constraints":"{\"searchTerms\":\"tmm\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_data_center",
+    "preContext":"data_center=",
+    "postContext":"\\,gtm_server",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv6zdborqv6y3fnz2gk4q0",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_gtm_server",
+    "preContext":"gtm_server=",
+    "postContext":"\\,wideip",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv6z3unvpxgzlsozsxe000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_length",
+    "preContext":"dns_len=",
+    "postContext":"$",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv63dfnztxi2a0",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_ques_class",
+    "preContext":"question_class=",
+    "postContext":"\\,question_type",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv64lvmvzv6y3mmfzxg000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_ques_name",
+    "preContext":"question_name=",
+    "postContext":"\\,question_class",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv64lvmvzv63tbnvsq0000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_ques_type",
+    "preContext":"question_type=",
+    "postContext":"\\,data_center",
+    "regexValue":".*",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv64lvmvzv65dzobsq0000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_serverip",
+    "preContext":"dns_server_ip=",
+    "postContext":"\\,src_geo_info",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv643foj3gk4tjoa000000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_srcgeo_info",
+    "preContext":"src_geo_info=",
+    "postContext":"\\,question_name",
+    "regexValue":".*",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv643smntwk327nfxgm3y0",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_srcip",
+    "preContext":",src_ip=",
+    "postContext":"\\,dns_server_ip",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv643smnuxa000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_req_wideip_name",
+    "preContext":"wideip=",
+    "postContext":"\\,dns_len",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv653jmrsws4c7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_REQUEST\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_response_answer",
+    "preContext":"answer=\"",
+    "postContext":"(\\n){0,}\"",
+    "regexValue":".*",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv6yloon3wk4q0",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_RESPONSE\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_response_iswideip",
+    "preContext":"is_wideip=",
+    "postContext":"\\,answer",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv62lto5uwizljoa000000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_RESPONSE\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_response_serverip",
+    "preContext":"dns_server_ip=",
+    "postContext":"\\,question_name",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_RESPONSE\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_response_srcip",
+    "preContext":",src_ip=",
+    "postContext":"\\,dns_server_ip",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643smnuxa000",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_RESPONSE\"}",
+    "info":null
+  }, {
+    "displayName":"f5_dns_response_wideip_name",
+    "preContext":"question_name=",
+    "postContext":"\\,is_wideip",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0",
+    "constraints":"{\"searchTerms\":\"f5_irule=web_access_DNS_RESPONSE\"}",
+    "info":null
+  }, {
+    "displayName":"f5_ltm_address",
+    "preContext":"(address|member)\\s+",
+    "postContext":"\\s+",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000",
+    "constraints":"{\"searchTerms\":\"monitor mcpd\"}",
+    "info":null
+  }, {
+    "displayName":"f5_ltm_config_name_node",
+    "preContext":"\\s+",
+    "postContext":"\\s+(member|address)",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5xg6zdf",
+    "constraints":"{\"searchTerms\":\"node mcpd\"}",
+    "info":null
+  }, {
+    "displayName":"f5_ltm_config_name_pool",
+    "preContext":"\\s+",
+    "postContext":"\\s+(member|address)",
+    "regexValue":"\\S+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5yg633m",
+    "constraints":"{\"searchTerms\":\"pool mcpd\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_client_address",
+    "preContext":"\\|([^\\|]{0,}\\|){2}",
+    "postContext":"([^\\|]{0,}\\|){14}",
+    "regexValue":"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_client_latency",
+    "preContext":"\\|([^\\|]{0,}\\|){14}",
+    "postContext":"([^\\|]{0,}\\|){2}",
+    "regexValue":"[^\\|]{0,}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5wgc5dfnzrxs000",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_method",
+    "preContext":"\\|([^\\|]{0,}\\|){3}",
+    "postContext":"([^\\|]{0,}\\|){13}",
+    "regexValue":"[^\\|]{0,}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3nmv2gq33e",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_node_address",
+    "preContext":"\\|([^\\|]{0,}\\|){9}",
+    "postContext":"([^\\|]{0,}\\|){7}",
+    "regexValue":"[^\\|]{0,}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_req_elapsed_time",
+    "preContext":"\\|([^\\|]{0,}\\|){8}",
+    "postContext":"([^\\|]{0,}\\|){8}",
+    "regexValue":"[^\\|]{0,}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_response_length",
+    "preContext":"\\|([^\\|]{0,}\\|){12}",
+    "postContext":"([^\\|]{0,}\\|){4}",
+    "regexValue":"[^\\|]{0,}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_server_latency",
+    "preContext":"\\|([^\\|]{0,}\\|){15}",
+    "postContext":"([^\\|]{0,}\\|){1}",
+    "regexValue":"[^\\|]{0,}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3tmvzhmzlsl5wgc5dfnzrxs000",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_status",
+    "preContext":"\\|([^\\|]{0,}\\|){10}",
+    "postContext":"([^\\|]{0,}\\|){6}",
+    "regexValue":"[^\\|]{0,}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3torqxi5lt",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_virtual_server",
+    "preContext":"^f5_web_access_info\\|",
+    "postContext":"\\|",
+    "regexValue":"[^\\|]{0,}",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_virtual_server_name",
+    "preContext":"\\|",
+    "postContext":":\\d+\\|",
+    "regexValue":"(\\S+|)",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3omfwwk000",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  }, {
+    "displayName":"f5_web_virtual_server_port",
+    "preContext":"\\|(\\S|)+:",
+    "postContext":"\\|",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3qn5zhi000",
+    "constraints":"{\"searchTerms\":\"f5_web_access_info\"}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"f5 : Traffic Management Microkernel (TMM) Stop",
+    "info":"This alert shows that the tmm has stopped or is down.The BIG-IP system \nmay temporarily fail to process traffic.If the system is configured as \npart of a \nhigh-availability pair, the device may fail over.<br>The <span style=\"font-weight: bold;\">Traffic Management Microkernel (TMM)</span> controls all of the BIG-IP \nswitch ports (TMM interfaces), and the underlying Linux operating system\n controls the BIG-IP management interface. The management \ninterface&nbsp;processes only administrative traffic. The TMM interfaces \nprocess both application traffic and administrative traffic.<br><br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"01010019:\",\"startTimeMillis\":1452696706350,\"endTimeMillis\":1452697006349,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : DNS lookup failure",
+    "info":"This alert has been generated as the number of DNS lookup failures have exceeded the limit set.<br>These messages appear in var/log/gtm logs and can be identified with error code<span><span style=\"font-weight: bold;\">&nbsp;01150b20.</span></span>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"01150b20:\",\"startTimeMillis\":1452696664165,\"endTimeMillis\":1452696964164,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Access Denied",
+    "info":"This alert has been sent out to show an increased number of unauthorized access to a particular object in f5 system.<br>Characterized by error code <span><b><span>01070822</span></b></span><span style=\"font-weight: bold;\">,&nbsp;</span>these messages appear in var/log/ltm file when the user does not have permission to access a specific object.",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"01070822:\",\"startTimeMillis\":1452696613729,\"endTimeMillis\":1452696913728,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Max CPU usage",
+    "info":"This alert is sent out when the maximum CPU usage (%) exceeds a threshold value set by the administrator.<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"f5_SystemPerformance\",\"startTimeMillis\":1440731716094,\"endTimeMillis\":1440732016093,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"f5_sys_perform_max\",\"displayName\":\"f5_sys_perform_max\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"f5_sys_perform_max\",\"fieldConstraints\":[{\"internalName\":\"f5_sys_perform_entity\",\"operator\":\"CONTAINS\",\"value\":\"CPU_Utilization(%)\"},{\"internalName\":\"f5_sys_perform_max\",\"operator\":\"EXISTS\"},{\"internalName\":\"f5_sys_perform_f5address\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_sys_perform_f5address\",\"internalName\":\"f5_sys_perform_f5address\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":70.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Pool members down",
+    "info":"The health monitor has reported one or more &nbsp;pool members as down.<br><span>A failing or misconfigured health monitor may cause traffic management issues similar, but not limited, to the following:</span><span><span>Connections to the virtual server are interrupted or fail.</span><span>Web pages or applications fail to load or execute.</span><span>Certain pool members or nodes receive more connections than others.<br>Refer these links for more details :&nbsp;<br><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-concepts-11-2-0/ltm_pools.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-concepts-11-2-0/ltm_pools.html</a><br><a href=\"https://support.f5.com/kb/en-us/solutions/public/12000/500/sol12531.html\">https://support.f5.com/kb/en-us/solutions/public/12000/500/sol12531.html</a><br><br><br></span></span>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"01070638:5\",\"startTimeMillis\":1452696191214,\"endTimeMillis\":1452696491213,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5yg633m\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_ltm_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_ltm_config_name_pool\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5yg633m\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_ltm_address\",\"preContext\":\"(address|member)\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"monitor mcpd\\\"}\"},{\"displayName\":\"f5_ltm_config_name_pool\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\s+(member|address)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5yg633m\",\"constraints\":\"{\\\"searchTerms\\\":\\\"pool mcpd\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Average response time of a server",
+    "info":"This alert is being sent out to indicate that the average response time of a virtual server has increased more than the set average/standard.This might mean that it is performing slowly than expected.<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1440495735285,\"endTimeMillis\":1440496035284,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},{\"label\":\"Min\",\"value\":\"MIN\",\"requiresField\":true,\"numericOnly\":true},{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"displayName\":\"f5_web_req_elapsed_time\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_req_elapsed_time\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){8}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){8}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Write Access Denied",
+    "info":"This alert is shot out when the user has insufficient \nprivileges to write , create or modify an object in BIG-IP F5 system.<br>An increased number of such events could mean a program or user is making unauthorized attempt to modify , add or delete an object.<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"01070824:\",\"startTimeMillis\":1452696747729,\"endTimeMillis\":1452697047728,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Average response data size",
+    "info":"The alert is generated when the average amount of&nbsp; response data ( in bytes ) exceeds&nbsp; a set standard value being set by the administrator.<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1440495693717,\"endTimeMillis\":1440495993716,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0\",\"displayName\":\"f5_web_response_length\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_response_length\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){12}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){4}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Node members down",
+    "info":"<span>A&nbsp;</span><span style=\"font-weight: bold; font-style: italic;\">node</span><span>&nbsp;is a logical object on the BIG-IP</span><span>®</span><span>&nbsp;system that identifies the IP address of a physical resource on the network.N</span><span>odes can be associated with health monitors as a way to determine server status.A</span><span>&nbsp;health monitor associated with a node reports status of the device itself.<br></span>This alert reports one or more node member being down which also determines the server status.<br><span>More info at :&nbsp;</span><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_nodes.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_nodes.html</a><br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"01070640:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696732751,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"f5_ltm_address\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5xg6zdf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_ltm_address\",\"internalName\":\"f5_ltm_address\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_ltm_config_name_node\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5xg6zdf\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_ltm_config_name_node\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\s+(member|address)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5xg6zdf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"node mcpd\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Traffic from client",
+    "info":"This alert is generated when an abnormal amount of traffic is directed from a particular client.<br>Abnormally high requests made from client could mean slowing down the server or some junk traffic being sent.<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1440495673126,\"endTimeMillis\":1440495973125,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzls\",\"displayName\":\"f5_web_virtual_server\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzls\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_client_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_client_address\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){2}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){14}\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Web traffic on a node",
+    "info":"This alert signifies a high traffic being redirected&nbsp; or being served by a specific node.<br>High traffic on node could mean other nodes are down and can result in performance degradation.<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"f5_web_access_info\",\"startTimeMillis\":1440495716255,\"endTimeMillis\":1440496016254,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzls\",\"displayName\":\"f5_web_virtual_server\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzls\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_node_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_node_address\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){9}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){7}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+    "messageQuery":"",
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"f5 : Maximum active connections per server",
+    "info":"The number of maximum active connections per server has increased beyond a certain level set&nbsp; adn needs to be checked .This could mean abnormal amount of traffic coming to a server which can also slow down its performance.<br>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"f5_SystemPerformance\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1440489893476,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"f5_sys_perform_max\",\"displayName\":\"f5_sys_perform_max\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"f5_sys_perform_max\",\"fieldConstraints\":[{\"internalName\":\"f5_sys_perform_entity\",\"operator\":\"CONTAINS\",\"value\":\"Active_Connections\"},{\"internalName\":\"f5_sys_perform_max\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_sys_perform_f5address\",\"internalName\":\"f5_sys_perform_f5address\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":1.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Access denied",
+          "info":"Characterized by error code <span><b><span>01070822</span></b></span><span style=\"font-weight: bold;\">,&nbsp;</span>these messages appear in var/log/ltm file when the user does not have permission to access a specific object.<br>The widget here plots the total number of events per server where access was denied on various occasions.<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070822:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Access denied - Administrators only",
+          "info":"There are certain events which can be achieved only when the user has admin privileges. Any such action performed without having the desired admin level privilege would end up in an error characterized by error code&nbsp; <span style=\"font-weight: bold;\">01070825</span>&nbsp; in var/log/ltm file <br>The widget here plots the total number of such events over time per server.<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070825:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"User login disallowed",
+          "info":"These message appear in /var/log/ltm with error code <span style=\"font-weight: bold;\">01070827</span>. This would mean that the user id being used for&nbsp; login is not allowed.<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070827:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Read Access Denied",
+          "info":"Error code <b><span>01070823</span></b><span>in /var/log/ltm&nbsp; would mean that certain non - administrative users don't have permission to read/view the particular item in BIG-IP.<br>The graph here plots any such events over time per server.</span><span></span>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070823:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Write Access Denied",
+          "info":".Errors under this widget&nbsp; appear when the user has insufficient privileges to write , create or modify an object in BIG-IP F5 system. they appear in LTM logs with error code <span style=\"font-weight: bold;\">01070824.</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070824:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Idle connections closed / timed out",
+          "info":"The graph here plots the number of idle connection being closed. The widget relies on error code <span style=\"font-weight: bold;\"><span>011ae019</span></span>appearing in /var/log/gtm file.<br>",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"011ae019:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Traffic Management Microkernel (tmm) start",
+          "info":"The <span style=\"font-weight: bold;\">Traffic Management Microkernel (TMM)</span> controls all of the BIG-IP \nswitch ports (TMM interfaces), and the underlying Linux operating system\n controls the BIG-IP management interface. The management \ninterface&nbsp;processes only administrative traffic. The TMM interfaces \nprocess both application traffic and administrative traffic.<br>The graph&nbsp; here plots the tmm start events over time with code <span style=\"font-weight: bold;\">01010001</span>from /var/log/ltm.<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01010001:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Traffic Management Microkernel (tmm) stop",
+          "info":"The <span style=\"font-weight: bold;\">Traffic Management Microkernel (TMM)</span> controls all of the BIG-IP \nswitch ports (TMM interfaces), and the underlying Linux operating system\n controls the BIG-IP management interface. The management \ninterface&nbsp;processes only administrative traffic. The TMM interfaces \nprocess both application traffic and administrative traffic.<br>The graph&nbsp; here plots the tmm stop events over time with code <span style=\"font-weight: bold;\">01010019</span>from /var/log/ltm.<br>The BIG-IP system may temporarily fail to process traffic.If the system is configured as part of a \nhigh-availability pair, the device may fail over.<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01010019:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"BIG-IP service restart",
+          "info":"These events mark the eventual restart of services and traffic fail over in redundant BIG-IP systems. These message appear in /var/log/ltm with code <span style=\"font-weight: bold;\"><span>01140106.</span></span>",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01140106:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"LTM - Pool/Node Status Info",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Unique count of pool members down grouped by pool name over time",
+          "info":"A <span>pool&nbsp;</span><span>member</span>\n is a logical object that represents a physical node (server), on the \nnetwork. You then associate the pool with a virtual server on the BIG-IP\n system. Once you have assigned a pool to a virtual server, Local \nTraffic Manager directs traffic coming into the virtual server to a \nmember of that pool. An individual pool member can belong to one or \nmultiple pools, depending on how you want to manage your network \ntraffic.<br>A health monitor is designed to report the status of a pool, pool \nmember, or node on an ongoing basis, at a set interval. <br>When a health \nmonitor marks a pool, pool member, or node down, the BIG-IP system stops\n sending traffic to the device.<br>For more details click :<br><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-concepts-11-2-0/ltm_pools.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-concepts-11-2-0/ltm_pools.html</a><br><a href=\"https://support.f5.com/kb/en-us/solutions/public/12000/500/sol12531.html\">https://support.f5.com/kb/en-us/solutions/public/12000/500/sol12531.html</a><br><br>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070638:5\",\"startTimeMillis\":1452686502203,\"endTimeMillis\":1452686803156,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5yg633m\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_ltm_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_ltm_config_name_pool\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5yg633m\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_ltm_address\",\"preContext\":\"(address|member)\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"monitor mcpd\\\"}\"},{\"displayName\":\"f5_ltm_config_name_pool\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\s+(member|address)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5yg633m\",\"constraints\":\"{\\\"searchTerms\\\":\\\"pool mcpd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Unique count of pool members up",
+          "info":"<span>A pool member can pertain to the default route domain on the BIG-IP system or to a specific route domain that you choose. You then associate the pool with a virtual server on the BIG-IP system. Once you have assigned a pool to a virtual server, the BIG-IP system directs traffic coming into the virtual server to a member of that pool.<br>Foe more info visit :<a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_pools.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_pools.html</a><br>When a health monitor marks a pool, pool member, or node down, the BIG-IP system stops sending traffic to the device.<br></span><span>For more details click :</span><br><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-concepts-11-2-0/ltm_pools.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-concepts-11-2-0/ltm_pools.html</a><br><a href=\"https://support.f5.com/kb/en-us/solutions/public/12000/500/sol12531.html\">https://support.f5.com/kb/en-us/solutions/public/12000/500/sol12531.html</a><br><br><span>This graph shows the total &nbsp;number of pool members up.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070727:5\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452687219010,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"f5_ltm_address\",\"preContext\":\"(address|member)\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"monitor mcpd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Unique count of pool members  down",
+          "info":"<span><span>A pool member can pertain to the default route domain on the BIG-IP system or to a specific route domain that you choose. You then associate the pool with a virtual server on the BIG-IP system. Once you have assigned a pool to a virtual server, the BIG-IP system directs traffic coming into the virtual server to a member of that pool.<br><span>Foe more info visit :</span><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_pools.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_pools.html</a></span><br>When a health monitor marks a pool, pool member, or node down, the BIG-IP system stops sending traffic to the device.<br></span><span>For more details click :</span><br><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-concepts-11-2-0/ltm_pools.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm-concepts-11-2-0/ltm_pools.html</a><br><a href=\"https://support.f5.com/kb/en-us/solutions/public/12000/500/sol12531.html\">https://support.f5.com/kb/en-us/solutions/public/12000/500/sol12531.html</a><br><br><span>This graph shows the total &nbsp;number of pool members down.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070638:5\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452687111725,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"f5_ltm_address\",\"preContext\":\"(address|member)\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"monitor mcpd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Unique count of nodes up",
+          "info":"<span>A</span><span>&nbsp;health monitor associated with a node reports status of the device itself.<br>If the monitor reports the node as being in an&nbsp;<span style=\"font-weight: bold;\">up</span>&nbsp;state, then the monitor reports the pool member as being either&nbsp;<span style=\"font-weight: bold;\">up</span>&nbsp;or&nbsp;<span style=\"font-weight: bold;\">down</span>, depending on the status of the service running on it.<br>A node down would mean that the device is down itself and in turn the pool members associated with it are also down<br></span><span>The widget shows the total number of nodes up.</span><br><span>More info at :&nbsp;</span><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_nodes.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_nodes.html</a><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070728\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452687403432,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"f5_ltm_address\",\"preContext\":\"(address|member)\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"monitor mcpd\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Unique count of nodes  down",
+          "info":"<span>A</span><span>&nbsp;health monitor associated with a node reports status of the device itself.<br><span>If the monitor reports the node as being in an&nbsp;<span style=\"font-weight: bold;\">up</span>&nbsp;state, then the monitor reports the pool member as being either&nbsp;<span style=\"font-weight: bold;\">up</span>&nbsp;or&nbsp;<span style=\"font-weight: bold;\">down</span><span>, depending on the status of the service running on it.</span><br></span>A node down would mean that the device is down itself and in turn the pool members associated with it are also down<br></span><span>The widget shows the total number of nodes down.</span><br><span>More info at :&nbsp;</span><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_nodes.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_nodes.html</a><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070640\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452687344086,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"f5_ltm_address\",\"preContext\":\"(address|member)\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"monitor mcpd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Unique count of node members down grouped by node name over time",
+          "info":"<span>A&nbsp;</span><span style=\"font-weight: bold; font-style: italic;\">node</span><span>&nbsp;is a logical object on the BIG-IP</span><span>®</span><span>&nbsp;system that identifies the IP address of a physical resource on the network. N</span><span>odes can be associated with health monitors as a way to determine server status. A</span><span>&nbsp;health monitor associated with a node reports status of the device itself.<br></span>The widget plots the number of nodes down per server over time.<br>More info at :&nbsp;<a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_nodes.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/ltm_configuration_guide_10_0_0/ltm_nodes.html</a>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070640:5\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452686774407,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5xg6zdf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_ltm_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_ltm_config_name_node\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5xg6zdf\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_ltm_address\",\"preContext\":\"(address|member)\\\\s+\",\"postContext\":\"\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"monitor mcpd\\\"}\"},{\"displayName\":\"f5_ltm_config_name_node\",\"preContext\":\"\\\\s+\",\"postContext\":\"\\\\s+(member|address)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7nr2g2x3dn5xgm2lhl5xgc3lfl5xg6zdf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"node mcpd\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"LTM - Hardware Issues",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Power Supply - Low fan speed ",
+          "info":"<span><span>These message are identified with error code&nbsp;<span style=\"font-weight: bold;\">010d0010</span>, reporting low fan speed when a power supply unit is removed.</span></span><span><span><br><span>More info at :.</span></span></span><a href=\"https://support.f5.com/kb/en-us/solutions/public/14000/100/sol14112.html\">https://support.f5.com/kb/en-us/solutions/public/14000/100/sol14112.html</a><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"010d0010:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452689474856,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"CPU fan speed - too low",
+          "info":"<span>The fan speed on the BIG-IP &nbsp;platforms may be reported as being too low. This behavior is due to the fan speed threshold limit being set too high.<br></span><span>If your system is reporting&nbsp;a low&nbsp;fan speed, you can check the various fans on the system to ensure they are not below the 3000 RPM safe limit<br></span>More info at :&nbsp;<a href=\"https://support.f5.com/kb/en-us/solutions/public/11000/200/sol11228.html\">https://support.f5.com/kb/en-us/solutions/public/11000/200/sol11228.html</a>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"010d0002:\",\"startTimeMillis\":1452689103214,\"endTimeMillis\":1452689403874,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"CPU fan speed - Unknown ",
+          "info":"<span>Characterized with error code <span style=\"font-weight: bold;\">010d0003 -</span>when this issue occurs, the system reports log messages indicating that the CPU is too hot and the fan speed&nbsp;is&nbsp;either nonexistent or too low.<br></span>More info at :&nbsp;<a href=\"https://support.f5.com/kb/en-us/solutions/public/11000/100/sol11112\">https://support.f5.com/kb/en-us/solutions/public/11000/100/sol11112</a>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"010d0003:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Bad chassis fan tray status",
+          "info":"This widget shows that a&nbsp;<span>fan tray in a chassis is bad and might require replacing the fan tray.<br>They can be identified with error code&nbsp;<span style=\"font-weight: bold;\">01550003.</span></span>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01550003:\",\"startTimeMillis\":1452689202433,\"endTimeMillis\":1452689526178,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Fan tray removed",
+          "info":"<span>This widget shows that a&nbsp;</span><span>fan tray is being removed and might require replacing the fan tray.<br>They can be identified with error code&nbsp;<span style=\"font-weight: bold;\">012a0008.</span></span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"012a0008:\",\"startTimeMillis\":1452689232413,\"endTimeMillis\":1452689547890,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Power Supply - too high",
+          "info":"Characterized by error code&nbsp;<span style=\"font-weight: bold;\">010d0016</span>and&nbsp;<span style=\"font-weight: bold;\">010d0019,&nbsp;</span>these messages appear in var/log/ltm file when there are issues with power supply.<br>The widget here plots the high and low power supply issues over time per server.<br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1452689532423,\"endTimeMillis\":1452689839462,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"010d0016,010d0019\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Issues with chassis power supply",
+          "info":"<span>If two power supplies are installed, and one of the power supplies fails or is not plugged in (leaving only one available power supply), an error message is logged identified by error code&nbsp;<span style=\"font-weight: bold;\">010d0006</span><br></span><span>Any temporary power interruption (for example, a power cord that is briefly unplugged) may generate the error message even though the PSU may currently be on. The error message may also be generated if a PSU is slow to come up to full power at system startup.<br></span><span>More info at :&nbsp;<a href=\"https://support.f5.com/kb/en-us/solutions/public/8000/800/sol8801\">https://support.f5.com/kb/en-us/solutions/public/8000/800/sol8801</a></span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"010d0006:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"CPU temperature - too high",
+          "info":"<span>When the actual temperature of the CPU on the BIG-IP system rises above the configured threshold value for the&nbsp;</span><b>platform.cpu.temperature.threshold</b><span>&nbsp;db variable, the BIG-IP system logs a message with error code&nbsp;<span style=\"font-weight: bold;\">010d0001.<br></span></span>More info at :<br><a href=\"https://support.f5.com/kb/en-us/solutions/public/13000/600/sol13631.html\">https://support.f5.com/kb/en-us/solutions/public/13000/600/sol13631.html</a><br><a href=\"https://support.f5.com/kb/en-us/solutions/public/11000/100/sol11112\">https://support.f5.com/kb/en-us/solutions/public/11000/100/sol11112</a><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"010d0001:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Chassis Temperature - too high",
+          "info":"<span>The BIG-IP system may report CPU and chassis temperatures incorrectly when the operating temperature of the device is less than 0 degrees Celsius.<br></span><span>The impact of this being that the operating temperatures below 0 degrees Celsius are reported incorrectly.</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"010d0004:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"System temperature - too high",
+          "info":"<span>Characterized by error code&nbsp;</span><span style=\"font-weight: bold;\">010d0008,&nbsp;</span><span>these messages appear in var/log/ltm file when the temperature is too high</span><br><span>The widget here plots these issues over time per server.</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"010d0008:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Unknown slot state",
+          "info":"<span>Characterized by error code&nbsp;</span><span style=\"font-weight: bold;\">011b0804,&nbsp;</span><span>these messages appear in var/log/ltm file when the slot status is unknown ( i.e. neither primary, secondary or standalone )</span><br><span>The widget here plots this over time per server.</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"011b0804:\",\"startTimeMillis\":1452690072433,\"endTimeMillis\":1452690392423,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Required slot id missing",
+          "info":"<span>Characterized by error code&nbsp;</span><span style=\"font-weight: bold;\">01070940,&nbsp;</span><span>these messages appear in var/log/ltm file when the slot id is missing.</span><br><span>The widget here plots this over time per server.</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070940:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452689712415,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Invalid slot id",
+          "info":"<span>Characterized by error code&nbsp;</span><span style=\"font-weight: bold;\">01070941,&nbsp;</span><span>these messages appear in var/log/ltm file when there is an invalid slot id.</span><br><span>The widget here plots this over time per server.</span><br>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01070941:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452689712415,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"f5_ltm_address\",\"displayName\":\"f5_ltm_address\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"f5_ltm_address\",\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Global Traffic Manager",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"DNS lookup failures over time",
+          "info":"These messages appear in var/log/gtm logs and can be identified with error code<span><span style=\"font-weight: bold;\">&nbsp;01150b20.</span><br>The widget here plots the number of DNS lookup failure issues over time.</span>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"01150b20:\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1452696132715,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"DNS requests over time  grouped by DNS server",
+          "info":"<span>These events are triggered when the system receives a DNS request.</span><br><span>When using this event in a GTM iRule, a GTM license must be enabled for it to work.<br>The graph plots the number of DNS requests received over time &nbsp;grouped by DNS server.<br>More info about DNS_REQUEST iRule at : :<a href=\"https://devcentral.f5.com/wiki/iRules.DNS_REQUEST.ashx\">https://devcentral.f5.com/wiki/iRules.DNS_REQUEST.ashx</a></span>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1443506114282,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv643foj3gk4tjoa000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_dns_req_serverip\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv643foj3gk4tjoa000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_dns_req_serverip\",\"preContext\":\"dns_server_ip=\",\"postContext\":\"\\\\,src_geo_info\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvyv643foj3gk4tjoa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_irule=web_access_DNS_REQUEST\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"DNS responses over time grouped by DNS server",
+          "info":"The graph here plots the responses generated to DNS requests being made.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1443506114282,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_dns_response_serverip\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_dns_response_serverip\",\"preContext\":\"dns_server_ip=\",\"postContext\":\"\\\\,question_name\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_irule=web_access_DNS_RESPONSE\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of available wide IP and server IP",
+          "info":"<span>The graph plots the unique count of wide IP and server IP available.</span><br>",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1443519155001,\"endTimeMillis\":1443519506493,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"displayName\":\"f5_dns_response_wideip_name\",\"displayNamespace\":\"F5 - BIG-IP\"}},{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"displayName\":\"f5_dns_response_serverip\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv62lto5uwizljoa000000\",\"operator\":\"EQUAL\",\"value\":\"1\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"f5_dns_response_iswideip\",\"preContext\":\"is_wideip=\",\"postContext\":\"\\\\,answer\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv62lto5uwizljoa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_irule=web_access_DNS_RESPONSE\\\"}\"},{\"displayName\":\"f5_dns_response_serverip\",\"preContext\":\"dns_server_ip=\",\"postContext\":\"\\\\,question_name\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_irule=web_access_DNS_RESPONSE\\\"}\"},{\"displayName\":\"f5_dns_response_wideip_name\",\"preContext\":\"question_name=\",\"postContext\":\"\\\\,is_wideip\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_irule=web_access_DNS_RESPONSE\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"List of available wide IP and server IP",
+          "info":"The chart shows the list of available wide IP and server IP.<br>",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1443519219744,\"endTimeMillis\":1443519536184,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"displayName\":\"f5_dns_response_wideip_name\",\"displayNamespace\":\"F5 - BIG-IP\"}},{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"displayName\":\"f5_dns_response_serverip\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv62lto5uwizljoa000000\",\"operator\":\"EQUAL\",\"value\":\"1\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_dns_response_serverip\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_dns_response_wideip_name\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_dns_response_iswideip\",\"preContext\":\"is_wideip=\",\"postContext\":\"\\\\,answer\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv62lto5uwizljoa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_irule=web_access_DNS_RESPONSE\\\"}\"},{\"displayName\":\"f5_dns_response_serverip\",\"preContext\":\"dns_server_ip=\",\"postContext\":\"\\\\,question_name\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_irule=web_access_DNS_RESPONSE\\\"}\"},{\"displayName\":\"f5_dns_response_wideip_name\",\"preContext\":\"question_name=\",\"postContext\":\"\\\\,is_wideip\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_irule=web_access_DNS_RESPONSE\\\"}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv653jmrsws4c7nzqw2zi0",
+            "displayName":"f5_dns_response_wideip_name",
+            "displayNamespace":"F5 - BIG-IP"
+          }, {
+            "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3smvzxa33oonsv643foj3gk4tjoa000000",
+            "displayName":"f5_dns_response_serverip",
+            "displayNamespace":"F5 - BIG-IP"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Web Access - Traffic By Request",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of requests per virtual server over time",
+          "info":"The widget plots the number of requests received per web server IP over time.",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of reuqest per virtual server port grouped by virtual server name",
+          "info":"",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzlsl5yg64tu\",\"displayName\":\"f5_web_virtual_server_port\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzlsl5yg64tu\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3qn5zhi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server_name\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3omfwwk000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_web_virtual_server_port\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3qn5zhi000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_virtual_server_name\",\"preContext\":\"\\\\|\",\"postContext\":\":\\\\d+\\\\|\",\"regexValue\":\"(\\\\S+|)\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server_port\",\"preContext\":\"\\\\|(\\\\S|)+:\",\"postContext\":\"\\\\|\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3qn5zhi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of requests per port",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzlsl5yg64tu\",\"displayName\":\"f5_web_virtual_server_port\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzlsl5yg64tu\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3qn5zhi000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server_port\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3qn5zhi000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_virtual_server_name\",\"preContext\":\"\\\\|\",\"postContext\":\":\\\\d+\\\\|\",\"regexValue\":\"(\\\\S+|)\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server_port\",\"preContext\":\"\\\\|(\\\\S|)+:\",\"postContext\":\"\\\\|\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxex3qn5zhi000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of requests per client over time",
+          "info":"The graph here shows the number of requests being made from each client IP to web server.",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_client_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_client_address\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){2}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){14}\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of requests per node over time",
+          "info":"The graph shows the number of requests being made to a node over time. This indicates &nbsp;the amount of traffic being handled per node.",
+          "chartType":"area",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_node_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_node_address\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){9}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){7}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Top talker node list",
+          "info":"The graph depicts the number of requests being made per node.",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzls\",\"displayName\":\"f5_web_virtual_server\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzls\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_node_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_node_address\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){9}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){7}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3on5sgkx3bmrshezltom000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Top talker client list",
+          "info":"The graph plots maximum number of requests made by a client.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzls\",\"displayName\":\"f5_web_virtual_server\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzls\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_client_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_client_address\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){2}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){14}\",\"regexValue\":\"([A-Fa-f0-9]{0,4}:([A-Fa-f0-9]{0,4}:){1,6}[A-Fa-f0-9]{1,4})|(\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3})\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5qwizdsmvzxg000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Top talker virtual server list",
+          "info":"The graph plots various web servers on basis of the number of requests being made to them.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzlsge000000\",\"displayName\":\"f5_web_virtual_server1\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3ggvpxozlcl53gs4tuovqwyx3tmvzhmzlsge000000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Web Access - Traffic By Response Time",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Maximum ,Minimum and Average response time per virtual server",
+          "info":"This graph plots the minimum response time per virtual server.",
+          "gridWidth":"1",
+          "chartType":"bar",
+          "chartOptions":"{\"legend\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},{\"label\":\"Min\",\"value\":\"MIN\",\"requiresField\":true,\"numericOnly\":true},{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"displayName\":\"f5_web_req_elapsed_time\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_req_elapsed_time\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){8}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){8}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Maximum ,Minimum and Average response time per virtual server over time",
+          "info":"<span>This graph plots the maximum, minimum and average response time per virtual server over time.</span><br>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"spline\":false,\"legend\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},{\"label\":\"Min\",\"value\":\"MIN\",\"requiresField\":true,\"numericOnly\":true},{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"displayName\":\"f5_web_req_elapsed_time\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_req_elapsed_time\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){8}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){8}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Application Latency",
+          "info":"<span><span><span>The graph plots maximum and average</span></span></span><span><span><span><span><span><span>of the application latency</span></span></span> which is calculated as the time elapsed between HTTP_REQUEST and HTTP_RESPONSE<span style=\"font-weight: bold;\">.</span></span></span><span style=\"font-weight: bold;\"><span><br><br></span>HTTP_REQUEST</span>:</span><span>An <a href=\"https://devcentral.f5.com/wiki/iRules.Events.ashx\">iRule event</a>\n triggered when the system fully parses the complete client HTTP request\n headers (that is, the method, URI, version, and all headers, not \nincluding the HTTP request body).<br>More on HTTP_REQUEST at : <a href=\"https://devcentral.f5.com/wiki/iRules.HTTP_REQUEST.ashx\">https://devcentral.f5.com/wiki/iRules.HTTP_REQUEST.ashx</a><br><br><span style=\"font-weight: bold;\">HTTP_RESPONSE</span> :</span><span>An <a href=\"https://devcentral.f5.com/wiki/iRules.Events.ashx\">iRule event</a> triggered when the system parses all of the response status and header lines from the server response.<br>HTTP_RESPONSE is specific to a <span>server</span> response passing through the load balancer, and is not triggered for locally-generated responses.<br>More on HTTP_RESPONSE at : <a href=\"https://devcentral.f5.com/wiki/iRules.HTTP_RESPONSE.ashx\">https://devcentral.f5.com/wiki/iRules.HTTP_RESPONSE.ashx</a></span><br><br>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"legend\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"displayName\":\"f5_web_req_elapsed_time\",\"displayNamespace\":\"F5 - BIG-IP\"}},{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"displayName\":\"f5_web_req_elapsed_time\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_req_elapsed_time\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){8}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){8}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvyv6zlmmfyhgzlel52gs3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Client Latency",
+          "info":"<span><span><span>This widget plots the maximum and average of client latency calculated as&nbsp; time elapsed between CLIENT_ACCEPTED and HTTP_RESPONSE .<br><br></span></span></span><span><span><span style=\"font-weight: bold;\">CLIENT_ACCEPTED</span></span></span>:An <a href=\"https://devcentral.f5.com/wiki/iRules.Events.ashx\">iRule event</a> triggered when a client has established a connection.<br><span>More on HTTP_REQUEST_SEND at : <a href=\"https://devcentral.f5.com/wiki/iRules.CLIENT_ACCEPTED.ashx\">https://devcentral.f5.com/wiki/iRules.CLIENT_ACCEPTED.ashx</a></span><br><br><span><span style=\"font-weight: bold;\">HTTP_RESPONSE</span> :</span><span>An <a href=\"https://devcentral.f5.com/wiki/iRules.Events.ashx\">iRule event</a> triggered when the system parses all of the response status and header lines from the server response.<br>HTTP_RESPONSE is specific to a <span>server&nbsp;</span>response passing through the load balancer, and is not triggered for locally-generated responses.<br>More on HTTP_RESPONSE at : <a href=\"https://devcentral.f5.com/wiki/iRules.HTTP_RESPONSE.ashx\">https://devcentral.f5.com/wiki/iRules.HTTP_RESPONSE.ashx</a><br><span style=\"text-decoration: underline;\"></span></span><span></span>",
+          "gridWidth":"1",
+          "chartType":"bar",
+          "chartOptions":"{\"legend\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5wgc5dfnzrxs000\",\"displayName\":\"f5_web_client_latency\",\"displayNamespace\":\"F5 - BIG-IP\"}},{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5wgc5dfnzrxs000\",\"displayName\":\"f5_web_client_latency\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5wgc5dfnzrxs000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5wgc5dfnzrxs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_client_latency\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){14}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){2}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3dnruwk3tul5wgc5dfnzrxs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Server Latency",
+          "info":"<span><span><span>This\n widget plots the maximum and average of&nbsp; server latency calculated as&nbsp; \ntime elapsed between</span></span></span><span><span><span>SERVER_CONNECTED and HTTP_RESPONSE .</span></span></span><br><br><span style=\"font-weight: bold;\">SERVER_CONNECTED :</span>An <a href=\"https://devcentral.f5.com/wiki/iRules.Events.ashx\">iRule event</a> triggered when a connection has been established with the target node.<br>Read more on this at : <a href=\"https://devcentral.f5.com/wiki/iRules.SERVER_CONNECTED.ashx\">https://devcentral.f5.com/wiki/iRules.SERVER_CONNECTED.ashx</a><br><br><span><span style=\"font-weight: bold;\">HTTP_RESPONSE</span> :</span><span>An <a href=\"https://devcentral.f5.com/wiki/iRules.Events.ashx\">iRule event</a> triggered when the system parses all of the response status and header lines from the server response.<br>HTTP_RESPONSE is specific to a <span>server&nbsp;</span>response passing through the load balancer, and is not triggered for locally-generated responses.<br>More on HTTP_RESPONSE at : <a href=\"https://devcentral.f5.com/wiki/iRules.HTTP_RESPONSE.ashx\">https://devcentral.f5.com/wiki/iRules.HTTP_RESPONSE.ashx</a></span><span><a href=\"https://devcentral.f5.com/wiki/iRules.HTTP_REQUEST_SEND.ashx\"></a></span><br><span></span><span></span>",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"legend\":true}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3tmvzhmzlsl5wgc5dfnzrxs000\",\"displayName\":\"f5_web_server_latency\",\"displayNamespace\":\"F5 - BIG-IP\"}},{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3tmvzhmzlsl5wgc5dfnzrxs000\",\"displayName\":\"f5_web_server_latency\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3tmvzhmzlsl5wgc5dfnzrxs000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3tmvzhmzlsl5wgc5dfnzrxs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_server_latency\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){15}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){1}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3tmvzhmzlsl5wgc5dfnzrxs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Average response data size over time",
+          "info":"The widget plots the average data size or web response length over time grouped by virtual server address.",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1438085037030,\"endTimeMillis\":1450671896908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0\",\"displayName\":\"f5_web_response_length\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Average\",\"value\":\"AVG\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"hsl::send\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_web_virtual_server\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_web_response_length\",\"preContext\":\"\\\\|([^\\\\|]{0,}\\\\|){12}\",\"postContext\":\"([^\\\\|]{0,}\\\\|){4}\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3smvzxa33oonsv63dfnztxi2a0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"},{\"displayName\":\"f5_web_virtual_server\",\"preContext\":\"^f5_web_access_info\\\\|\",\"postContext\":\"\\\\|\",\"regexValue\":\"[^\\\\|]{0,}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7o5swex3wnfzhi5lbnrpxgzlsozsxe000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"f5_web_access_info\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"DNS Statistics",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Packets per domain name",
+          "info":"This pie chart displays details about query names that appeared in DNS packets and the number of DNS packets too.<br>",
+          "gridWidth":"1",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1440406541535,\"endTimeMillis\":1440410141534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadax3ggvpwc5tsl53hgx3bobyf63tbnvsq0000\",\"displayName\":\"f5_avr_vs_app_name\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"ibadax3ggvpwc5tsl53hgx3bobyf63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3en5wwc2lol5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_dns_domain_name\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3en5wwc2lol5xgc3lf\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_dns_domain_name\",\"preContext\":\"view .*query: \",\"postContext\":\" \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3en5wwc2lol5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"tmm\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Total packets",
+          "info":"The count here is the total of all the packets requested by query names that appeared in DNS packets.",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1440406593184,\"endTimeMillis\":1440410195468,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"procid\",\"displayName\":\"procid\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"procid\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3en5wwc2lol5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"f5_dns_domain_name\",\"preContext\":\"view .*query: \",\"postContext\":\" \",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3en5wwc2lol5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"tmm\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Packets per query type",
+          "info":"The chart shows the number of packets requested per query type that appeared in DNS packets.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1422446637030,\"endTimeMillis\":1440580862181,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"procid\",\"displayName\":\"procid\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"procid\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3rovsxe6k7or4xazi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_dns_query_type\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3rovsxe6k7or4xazi0\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_dns_query_type\",\"preContext\":\"query:\\\\s+\\\\S+\\\\s+\\\\S+\\\\s+\",\"postContext\":\"(\\\\s+\\\\S+){2}$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3rovsxe6k7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"tmm\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Packets per query type per server over time",
+          "info":"The graph shows the number of packets requested per query type that appeared in DNS packets over time per server.<br>",
+          "gridWidth":"1",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1422446637030,\"endTimeMillis\":1440580862181,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"procid\",\"displayName\":\"procid\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"procid\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3rovsxe6k7or4xazi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3cnftws4c7mfsgi4tfonzq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_dns_query_type\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3rovsxe6k7or4xazi0\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_dns_bigip_address\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3cnftws4c7mfsgi4tfonzq0000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_dns_bigip_address\",\"preContext\":\".*\\\\[.*\\\\]\\\\s+\\\\d+-\\\\d+-\\\\d+\\\\s+\\\\d+:\\\\d+:\\\\d+\\\\s+\",\"postContext\":\" qid\\\\s+\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3cnftws4c7mfsgi4tfonzq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"tmm\\\"}\"},{\"displayName\":\"f5_dns_query_type\",\"preContext\":\"query:\\\\s+\\\\S+\\\\s+\\\\S+\\\\s+\",\"postContext\":\"(\\\\s+\\\\S+){2}$\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mrxhgx3rovsxe6k7or4xazi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"tmm\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"AVR Statistics",
+      "constraints":[ {
+        "internalName":"hostname",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Method type grouped by virtual server name",
+          "info":"The chart displays the request type / method type grouped&nbsp; by virtual server.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1440409785358,\"endTimeMillis\":1440413386001,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"procid\",\"displayName\":\"procid\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"procid\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3nmv2gq33el5xgc3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpw4ylnmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf\",\"operator\":\"CONTAINS\",\"value\":\"Method\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_avr_method_name\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3nmv2gq33el5xgc3lf\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_avr_vs_name\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpw4ylnmu000000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_avr_entity_name\",\"preContext\":\"Entity=\\\"\",\"postContext\":\"\\\"\\\\,(AVRProfileName|Module)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"AVRProfileName\\\"}\"},{\"displayName\":\"f5_avr_method_name\",\"preContext\":\"Method=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\".+?\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3nmv2gq33el5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"AVRProfileName\\\"}\"},{\"displayName\":\"f5_avr_vs_name\",\"preContext\":\"VSName=\\\"\",\"postContext\":\"\\\",\",\"regexValue\":\".+?\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpw4ylnmu000000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"AVRProfileName\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Maximum server latency per virtual server",
+          "info":"The graph displays the maximum server&nbsp; latency over time per virtual server.<br>Server latency is the latency from a BIG-IP system to the server.It displays the period between the time (measured in milliseconds) when the\n request arrives at the virtual server and the time the response arrives\n at the virtual server.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"none\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1422446637030,\"endTimeMillis\":1440580862181,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":{\"internalName\":\"procid\",\"displayName\":\"procid\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":\"procid\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf\",\"operator\":\"CONTAINS\",\"value\":\"VS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpxm43omfwwk000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpw2ylyonsxe5tfojpwyylumvxgg6i0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_avr_vs_vsname\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpxm43omfwwk000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"f5_avr_vs_maxserver_latency\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpw2ylyonsxe5tfojpwyylumvxgg6i0\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_avr_entity_name\",\"preContext\":\"Entity=\\\"\",\"postContext\":\"\\\"\\\\,(AVRProfileName|Module)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"AVRProfileName\\\"}\"},{\"displayName\":\"f5_avr_vs_maxserver_latency\",\"preContext\":\"ServerLatencyMax=\\\"\",\"postContext\":\"\\\"\\\\,\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpw2ylyonsxe5tfojpwyylumvxgg6i0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Entity=\\\\\\\"VS\\\\\\\"\\\"}\"},{\"displayName\":\"f5_avr_vs_vsname\",\"preContext\":\"VSName=\\\"\",\"postContext\":\"\\\",\",\"regexValue\":\".+?\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3wonpxm43omfwwk000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Entity=\\\\\\\"VS\\\\\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Maximum server latency per client IP address",
+          "info":"The graph plots the maximum server latency grouped by&nbsp; client IP address from which the requests were sent.<br><br><span style=\"font-weight: bold;\">Note:</span> To have client IP address next to the \"ClientIP\" field the \"Client IP Addresses\" checkbox of \"Collected Entities\" section need to be enabled for created \"HTTP Analytics\" module.",
+          "chartType":"column",
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1422446637030,\"endTimeMillis\":1440580862181,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000\",\"displayName\":\"f5_avr_client_maxserver_latency\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf\",\"operator\":\"CONTAINS\",\"value\":\"ClientIP\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5uxa000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_avr_client_ip\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5uxa000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_avr_client_ip\",\"preContext\":\"ClientIP=\\\"\",\"postContext\":\"\\\"\\\\,\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5uxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Entity=\\\\\\\"ClientIP\\\\\\\"\\\"}\"},{\"displayName\":\"f5_avr_client_maxserver_latency\",\"preContext\":\"ServerLatencyMax=\\\"\",\"postContext\":\"\\\"\\\\,\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Entity=\\\\\\\"ClientIP\\\\\\\"\\\"}\"},{\"displayName\":\"f5_avr_entity_name\",\"preContext\":\"Entity=\\\"\",\"postContext\":\"\\\"\\\\,(AVRProfileName|Module)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"AVRProfileName\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Maximum server latency per client IP address over time",
+          "info":"The graph plots the maximum server latency grouped by&nbsp; client IP address from which the requests were sent over time.<br><br><span style=\"font-weight: bold;\">Note:</span>\n To have client IP address next to the \"ClientIP\" field the \"Client IP \nAddresses\" checkbox of \"Collected Entities\" section need to be enabled \nfor created \"HTTP Analytics\" module.",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1422446637030,\"endTimeMillis\":1440580862181,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000\",\"displayName\":\"f5_avr_client_maxserver_latency\",\"displayNamespace\":\"F5 - BIG-IP\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"ASC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000\",\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf\",\"operator\":\"CONTAINS\",\"value\":\"ClientIP\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5uxa000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"f5_avr_client_ip\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5uxa000\",\"displayNamespace\":\"F5 - BIG-IP\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"f5_avr_client_ip\",\"preContext\":\"ClientIP=\\\"\",\"postContext\":\"\\\"\\\\,\",\"regexValue\":\"\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\\\\.\\\\d{1,3}\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5uxa000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Entity=\\\\\\\"ClientIP\\\\\\\"\\\"}\"},{\"displayName\":\"f5_avr_client_maxserver_latency\",\"preContext\":\"ServerLatencyMax=\\\"\",\"postContext\":\"\\\"\\\\,\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3dnruwk3tul5wwc6dtmvzhmzlsl5wgc5dfnzrxs000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Entity=\\\\\\\"ClientIP\\\\\\\"\\\"}\"},{\"displayName\":\"f5_avr_entity_name\",\"preContext\":\"Entity=\\\"\",\"postContext\":\"\\\"\\\\,(AVRProfileName|Module)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcms7mnxw2ltgguxge2lhnfygmnk7mf3hex3fnz2gs5dzl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"AVRProfileName\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware, Inc.",
+  "url":"http://www.vmware.com",
+  "contentVersion":"1.2",
+  "info":"<span>The content pack for \nF5®&nbsp;&nbsp;BIG-IP®&nbsp;provides you with information about key entities of any F5 \ninstallation¿s health using &nbsp;Log Insight¿s ability to collect events \nfrom one or more log files.<br><br>Log Insight offers very intuitive \ngraphical representation, especially with regards to log events. Spikes \nin the number and types of messages received can be flagged as events \nwith external notifications. System administrators can drill into these \nevents for looking at where and why these are being generated.&nbsp;</span><br><span>&nbsp;</span><br><span>The&nbsp;F5®&nbsp;BIG-IP®&nbsp;Content\n pack&nbsp;includes 8 dashboards with a total of 53 widgets and 10 alarms. \nThe content pack enables the user to monitor the F5 server in an easily \nreadable graphical form. It provides:</span><br><span>&nbsp;</span><br><span><b>Events from LTM - Local Traffic Manager Logs (Pool/Node Status Info, Hardware Issues):</b>These\n 2 dashboards talk of various events derived from LTM logs identified by\n specific error codes. It covers incidents related to node and pool \nstatus and hardware related issues like temperature, fan speed, slot id \netc.</span><br><span><b><br>GTM - Global Traffic Manager and DNS Statistics:</b>This\n dashboard group covers DNS related events such as DNS lookup failure, \nvarious events related to DNS request and response, wide IP and virtual \nserver IP. The DNS Statistics dashboard also gives you DNS AVR and DNS \nglobal statistics of the BIG-IP system to help you manage and report on \nthe DNS traffic on your network.</span><br><span><b><br>Web Access Info</b>:\n Widgets in these dashboard groups provide details on the LTM traffic. \nThe widgets are logically clubbed into 2 dashboards under this based on \ntraffic being categorized on basis of request and response time.</span><br><span><b><br>AVR Statistics</b>:&nbsp;\n This group makes use of Application Visibility and Reporting (AVR) \nmodule to render various widgets using the analytics profile that is set\n up.</span>",
+  "instructions":"<b><b><u><span>Pre requisites:<br><br></span></u></b>Enable AVR (Application Visibility and Reporting) module</b><span>on the BIG-IP system. This should be configured to send the logs remotely to the LI instance.</span><br><span>Follow the link:<br>v11&nbsp;</span><a href=\"https://support.f5.com/kb/en-us/products/big-ip_analytics/manuals/product/avr-implementations-11-2-0/1.html\">https://support.f5.com/kb/en-us/products/big-ip_analytics/manuals/product/avr-implementations-11-2-0/1.html</a><br>v12&nbsp;<a href=\"https://support.f5.com/kb/en-us/products/big-ip_analytics/manuals/product/analytics-implementations-12-1-0/1.html\">https://support.f5.com/kb/en-us/products/big-ip_analytics/manuals/product/analytics-implementations-12-1-0/1.html</a><br>v13&nbsp;<a href=\"https://support.f5.com/kb/en-us/products/big-ip_analytics/manuals/product/analytics-implementations-13-1-0/1.html\">https://support.f5.com/kb/en-us/products/big-ip_analytics/manuals/product/analytics-implementations-13-1-0/1.html</a><br><span>&nbsp;</span><br><br><b>Set up and view DNS statistics:</b><span>To\n view DNS AVR and DNS global statistics you need to configure this. This\n will also have external logging enabled which will send the logs \nremotely to the&nbsp;</span><span>&nbsp;</span><span>LI server. Follow the link:</span><a href=\"https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-dns-services-implementations-11-3-0/11.html\">https://support.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-dns-services-implementations-11-3-0/11.html</a><span>&nbsp;</span><br><span>&nbsp;</span><br><b><u>Requirement:</u></b><br><br><span>This\n content pack uses syslog mechanism to send remote syslog data from an \nF5 device to Log Insight Server. Steps to configure it are mentioned in \nthe section ?</span><b>Configure F5 for syslog</b><span>? below.&nbsp;</span><br><br><b><u>Configuration:</u></b><br><b>&nbsp;</b><br><span>o&nbsp;&nbsp;</span><b><i><u>Configure F5 for syslog</u></i></b><br><span>Add\n the Log Insight server IP to the remote syslog server list in the F5 \nBIG-IP system to send remote syslog data from an F5 device to Log \nInsight Server. To do this follow the instructions at:</span><a href=\"https://support.f5.com/kb/en-us/solutions/public/13000/000/sol13080.html\">https://support.f5.com/kb/en-us/solutions/public/13000/000/sol13080.html</a><span>&nbsp;</span><br><span>&nbsp;</span><br><span>o&nbsp;&nbsp;</span><b><i><u>iRule for LTM</u></i></b><br><span>In\n order to collect additional data from F5 LTM, iRules need to be \nconfigured in F5 which will send traffic data as HSL through the F5 \ndevice to Log Insight server.</span><br><b><i><u>Pre-requisite:</u></i></b><br><span>Using the F5 BIG-IP User Interface (UI) /configuration utility, create a Pool for HSL with pool name</span><b>logInsight_pool_syslog</b><span>.\n Add this pool to the Local Traffic Pool List in the F5 BIG-IP system. \nAdd a pool member with IP address of your Log Insight server specifying \nNode Name as&nbsp;</span><b>logInsight_node</b><span>.</span><br><span>&nbsp;</span><br><b>Configure iRules for LTM:</b><br><span>Follow the steps mentioned below to add iRule for LTM:&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login to the F5 BIG-IP User Interface (UI) /configuration utility.</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on&nbsp;</span><b>Local Traffic -&gt;&nbsp;iRules -&gt;&nbsp;iRule List</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on&nbsp;</span><b>Create</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter Name as ?</span><b>logInsight_iRule_http</b><span>?, copy and paste the code below and click Finished.</span><br><b># =============================</b><br><b># iRule: logInsight_iRule_http START</b><br><b># ==============================</b><br><span>&nbsp;</span><br><span>when CLIENT_ACCEPTED {</span><br><span>&nbsp;&nbsp;&nbsp; set client [IP::client_addr]&nbsp;</span><br><span>&nbsp;&nbsp;&nbsp; set client_req_start_time [clock clicks -milliseconds]&nbsp;</span><br><span>}</span><br><span>&nbsp;</span><br><span>when SERVER_CONNECTED</span><br><span>{</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp; set server_req_start_time [clock clicks -milliseconds]&nbsp;&nbsp;&nbsp;&nbsp;</span><br><span>}</span><br><span>&nbsp;</span><br><span>when HTTP_REQUEST_SEND</span><br><span>{</span><br><span>&nbsp;&nbsp;&nbsp; set http_req_send_start_time [clock clicks -milliseconds]</span><br><span>&nbsp;&nbsp;&nbsp; set node_elapsed_time [expr {$http_req_send_start_time - $server_req_start_time}]</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><br><span>}</span><br><span>&nbsp;</span><br><span>when HTTP_REQUEST {</span><br><span>&nbsp;&nbsp;&nbsp;</span><br><span>&nbsp;&nbsp;&nbsp; set client_latency [expr {[clock clicks -milliseconds] -&nbsp; $client_req_start_time} ]</span><br><span>&nbsp;&nbsp;&nbsp; set vhost [HTTP::host]:[TCP::local_port]</span><br><span>&nbsp;&nbsp;&nbsp; set url [HTTP::uri]</span><br><span>&nbsp;&nbsp;&nbsp; set method [HTTP::method]</span><br><span>&nbsp;&nbsp;&nbsp; set http_version [HTTP::version]</span><br><span>&nbsp;&nbsp;&nbsp; set user_agent [HTTP::header \"User-Agent\"]</span><br><span>&nbsp;&nbsp;&nbsp; set tcp_start_time [clock clicks -milliseconds]</span><br><span>&nbsp;&nbsp;&nbsp; set req_start_time [clock format [clock seconds] -format \"%Y/%m/%d %H:%M:%S\"]</span><br><span>&nbsp;&nbsp;&nbsp; set req_elapsed_time 0</span><br><span>&nbsp;&nbsp;&nbsp; set virtual_server [LB::server]</span><br><span>&nbsp;</span><br><span>&nbsp;&nbsp;&nbsp; if { [HTTP::header Content-Length] &gt; 0 } then {</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set req_length [HTTP::header \"Content-Length\"]</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if {$req_length &gt; 4000000} then {</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set req_length 4000000</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTTP::collect $req_length</span><br><span>&nbsp;&nbsp;&nbsp; } else {</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set req_length 0</span><br><span>&nbsp;&nbsp;&nbsp; }</span><br><span>&nbsp;</span><br><span>&nbsp;&nbsp;&nbsp; if { [HTTP::header \"Referer\"] ne \"\" } then {</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set referer [HTTP::header \"Referer\"]</span><br><span>&nbsp;&nbsp;&nbsp; } else {</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set referer -</span><br><span>&nbsp;&nbsp;&nbsp; }</span><br><span>}</span><br><span>&nbsp;</span><br><span>&nbsp;</span><br><span>when HTTP_RESPONSE {</span><br><span>&nbsp;</span><br><span>&nbsp;&nbsp;&nbsp; set hsl [HSL::open -proto TCP -pool logInsight_pool_syslog]</span><br><span>&nbsp;&nbsp;&nbsp; set resp_start_time [clock format [clock seconds] -format \"%Y/%m/%d %H:%M:%S\"]</span><br><span>&nbsp;&nbsp;&nbsp; set node [IP::server_addr]:[TCP::server_port]</span><br><span>&nbsp;&nbsp;&nbsp; set status [HTTP::status]</span><br><span>&nbsp;&nbsp; set req_elapsed_time [expr {[clock clicks -milliseconds] - $tcp_start_time}]</span><br><span>&nbsp;&nbsp;&nbsp; set server_latency [expr {[clock clicks -milliseconds] -&nbsp; $server_req_start_time} ]</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br><span>&nbsp;&nbsp;&nbsp; if { [HTTP::header Content-Length] &gt; 0 } then {</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set response_length [HTTP::header \"Content-Length\"]</span><br><span>&nbsp;&nbsp;&nbsp; } else {</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set response_length 0</span><br><span>&nbsp;&nbsp;&nbsp; }</span><br><span>&nbsp;</span><br><span>&nbsp;&nbsp;\n HSL::send $hsl \n\"&lt;190&gt;f5_web_access_info|$vhost|$virtual_server|$client|$method|\\\"$url\\\"|HTTP/$http_version|$req_start_time|$req_length|$req_elapsed_time|$node|$status|$resp_start_time|$response_length|$user_agent|$client_latency|$server_latency|\\\"$referer\\\"\\r\\n\"</span><br><span>}</span><br><span>&nbsp;</span><br><b># =============================</b><br><b># iRule: logInsight_iRule_http END</b><br><b># ==============================</b><br><b>&nbsp;</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After this add the iRule under Resources tab of virtual server.&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;</span><b>Local Traffic</b><span>&nbsp;-&gt;&nbsp;</span><b>Virtual Servers</b><span>-&gt;&nbsp;</span><b>Virtual Server&nbsp; List</b><span>&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on the&nbsp;</span><b>desired virtual server name from the list</b><span>&nbsp;-&gt;&nbsp;</span><b>Click on Resources tab</b><span>&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Under&nbsp;</span><b>iRules</b><span>&nbsp;-&gt;&nbsp;</span><b>Click Manage</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the&nbsp;</span><b>Available</b><span>&nbsp;list on the right add the iRule created above to the&nbsp;</span><b>Enabled</b><span>&nbsp;List and click&nbsp;</span><b>Finished.</b><br><span>&nbsp;</span><br><span>o&nbsp;</span><b><i><u>iRules for GTM</u></i></b><br><span>&nbsp;</span><br><span>Global Traffic data can be directed to Log Insight server instance by creating an iRule. Check this link for more info:&nbsp;</span><a href=\"https://support.f5.com/kb/en-us/products/big-ip_gtm/manuals/product/gtm_config_guide_10_1.html\">https://support.f5.com/kb/en-us/products/big-ip_gtm/manuals/product/gtm_config_guide_10_1.html</a><span>.</span><br><span>&nbsp;</span><br><b>Configure iRules for GTM</b><br><b><i>For logInsight_dns_request</i></b><span>:</span><br><span>Follow the steps mentioned below to add iRule for GTM:&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login to the F5 BIG-IP User Interface (UI) /configuration utility.</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on&nbsp;</span><b>DNS -&gt;&nbsp;GSLB -&gt;&nbsp; iRules -&gt;&nbsp;Create</b><span>&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the name as ?</span><b>logInsight_dns_request</b><span>?, copy and paste the code below and click on Create.</span><br><b># ===============================</b><br><b># iRule: logInsight_dns_request START</b><br><b># ================================</b><br><span>when DNS_REQUEST {</span><br><span>&nbsp;&nbsp;&nbsp; set client_addr [IP::client_addr]</span><br><span>&nbsp;&nbsp;&nbsp; set dns_server_addr [IP::local_addr]</span><br><span>&nbsp;&nbsp;&nbsp; set question_name [DNS::question name]</span><br><span>&nbsp;&nbsp;&nbsp; set question_class [DNS::question class]</span><br><span>&nbsp;&nbsp;&nbsp; set question_type [DNS::question type]</span><br><span>&nbsp;&nbsp;&nbsp; set data_center [whereami]</span><br><span>&nbsp;&nbsp;&nbsp; set geo_information [join [whereis $client_addr] ;]</span><br><span>&nbsp;&nbsp;&nbsp; set gtm_server [whoami]</span><br><span>&nbsp;&nbsp;&nbsp; set wideip [wideip name]</span><br><span>&nbsp;&nbsp;&nbsp; set dns_len [DNS::len]</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br><span>&nbsp;&nbsp;&nbsp; set hsl [HSL::open -proto UDP -pool logInsight_pool_syslog]</span><br><span>&nbsp;&nbsp;&nbsp;\n HSL::send $hsl \n\"&lt;190&gt;f5_irule=web_access_DNS_REQUEST,src_ip=$client_addr,dns_server_ip=$dns_server_addr,src_geo_info=$geo_information,question_name=$question_name,question_class=$question_class,question_type=$question_type,data_center=$data_center,gtm_server=$gtm_server,wideip=$wideip,dns_len=$dns_len\\r\\n\"</span><br><span>}</span><br><b># ===============================</b><br><b># iRule: logInsight_dns_request END</b><br><b># ================================</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;</span><b>GSLB</b><span>&nbsp;-&gt;&nbsp;</span><b>Wide IPs</b><span>&nbsp;-&gt;&nbsp;</span><b>Wide IP List</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on the desired&nbsp;</span><b>Wide IP name&nbsp;</b><span>from the list -&gt;&nbsp;</span><b>Click on iRule tab</b><span>&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Under&nbsp;</span><b>iRules</b><span>&nbsp;-&gt;&nbsp;</span><b>Click Manage</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the&nbsp;</span><b>drop down</b><span>&nbsp;list select the iRule created above and click&nbsp;</span><b>Add</b><span>&nbsp;and then click&nbsp;</span><b>Finished.</b><br><b>&nbsp;</b><br><b><i>For logInsight_dns_response</i></b><span>:</span><br><span>Follow the steps mentioned below to add iRule for GTM:&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login to the F5 BIG-IP User Interface (UI) /configuration utility.</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on&nbsp;</span><b>DNS -&gt;&nbsp;Delivery -&gt;&nbsp;iRules -&gt;&nbsp;iRuleList -&gt;&nbsp;Create</b><span>&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter the name as ?</span><b>logInsight_dns_response</b><span>?, copy and paste the code below and click on Finished.</span><br><b>&nbsp;</b><br><b># ===============================</b><br><b># iRule: logInsight_dns_response START</b><br><b># ================================</b><br><span>when DNS_RESPONSE {</span><br><span>&nbsp;&nbsp;&nbsp; set client_addr [IP::client_addr]</span><br><span>&nbsp;&nbsp;&nbsp; set dns_server_addr [IP::local_addr]</span><br><span>&nbsp;&nbsp;&nbsp; set question_name [DNS::question name]</span><br><span>&nbsp;&nbsp;&nbsp; set is_wideip [DNS::is_wideip [DNS::question name]]</span><br><span>&nbsp;&nbsp;&nbsp; set answer [join [DNS::answer] ;]</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br><span>&nbsp;&nbsp;&nbsp; set hsl [HSL::open -proto UDP -pool logInsight_pool_syslog]</span><br><span>&nbsp;&nbsp;&nbsp;\n HSL::send $hsl \n\"&lt;190&gt;f5_irule=web_access_DNS_RESPONSE,src_ip=$client_addr,dns_server_ip=$dns_server_addr,question_name=$question_name,is_wideip=$is_wideip,answer=\\\"$answer\\\"\\r\\n\"</span><br><span>}</span><br><b># ===============================</b><br><b># iRule: logInsight_dns_response END</b><br><b># ================================</b><br><b>&nbsp;</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go to&nbsp;</span><b>DNS</b><span>&nbsp;-&gt;&nbsp;</span><b>Delivery</b><span>&nbsp;-&gt;&nbsp;</span><b>Listeners List</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on the desired</span><b>&nbsp;listener name&nbsp;</b><span>from&nbsp;the&nbsp;list -&gt;&nbsp;</span><b>Click on iRule tab</b><span>&nbsp;</span><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Under&nbsp;</span><b>iRules</b><span>&nbsp;-&gt;&nbsp;</span><b>Click Manage</b><br><span>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From the&nbsp;</span><b>Available</b><span>&nbsp;list on the right add the iRule created above to the&nbsp;</span><b>Enabled</b><span>&nbsp;List and click&nbsp;</span><b>Finished.</b>",
+  "upgradeInstructions":"<span style=\"font-weight: bold;\">v1.2</span><br>Updated to support F-BIT-IP <span>Application Visibility and Reporting (AVR) \nmodule </span>v13 for<span> \"AVR Statistics\" dashboard.</span>",
+
+  "icon":"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"
+}
