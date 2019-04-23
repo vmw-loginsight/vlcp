@@ -1,0 +1,682 @@
+{
+  "name":"VMware - SRM 8.1+",
+  "namespace":"com.vmware.srm81",
+  "contentPackId":"com.vmware.srm81",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"sra_device_id",
+    "preContext":"device = \"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpwsza0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"sra_device_name",
+    "preContext":"deviceName = \"",
+    "postContext":"\"\\,",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpw4ylnmu000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"sra_recovery_plan",
+    "preContext":"CreatePlan\\[('|)",
+    "postContext":"('|)\\]",
+    "regexValue":".+?",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7ojswg33wmvzhsx3qnrqw4000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"srm_array_manager_id",
+    "preContext":"Array Manager .* MoID '",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5wwc3tbm5sxex3jmq000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_array_manager_name",
+    "preContext":"Array Manager\\s+'",
+    "postContext":"(\\s+|)'",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5wwc3tbm5sxex3omfwwk000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_array_pair",
+    "preContext":"pair '",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5ygc2ls",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_datastore_group",
+    "preContext":"group\\s+'",
+    "postContext":"'",
+    "regexValue":"ds\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7m5zg65lq",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_datastore_name",
+    "preContext":"datastore '",
+    "postContext":"'",
+    "regexValue":"datastore-\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7nzqw2zi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_free_momory",
+    "preContext":"Available memory:\\s+",
+    "postContext":"\\s+Mb",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mzzgkzk7nvxw233spe000000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_host_cpu_usage",
+    "preContext":"CPU usage:\\s+",
+    "postContext":"\\s+%",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nbxxg5c7mnyhkx3vonqwozi0",
+    "constraints":"{\"searchTerms\":\"\",\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_host_free_disk",
+    "preContext":"disk space:\\s+",
+    "postContext":"\\s+Mb",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nbxxg5c7mzzgkzk7mruxg2y0",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_network",
+    "preContext":":",
+    "postContext":"'",
+    "regexValue":"network-\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nzsxi53pojvq0000",
+    "constraints":"{\"searchTerms\":\"Network\"}",
+    "info":null
+  }, {
+    "displayName":"srm_protected_vm_name",
+    "preContext":"(VM\\s+'protected\\-vm\\-\\d+:|protected-vm-\\d+,\\s+name=')",
+    "postContext":"'",
+    "regexValue":".+?",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gkzc7ozwv63tbnvsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"srm_protectiongroup_id",
+    "preContext":"(group\\s+'|CreateGroup.*|VmProtectionGroup:.*)",
+    "postContext":"'",
+    "regexValue":"vm-protection-group-\\d+(\\S+)",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"srm_protectiongroup_name",
+    "preContext":"(ProtectionGroup data object\\s+\\'|ProtectVm.*:\\s+group\\s+'vm-protection-group-\\d+:|ProtectVm.*vm-protection-group-\\d+\\s+and\\s+name=\\'|RemoveGroup:.*vm-protection-group-\\d+\\s+and\\s+name=\\'|RemoveGroupCommitPersist:\\s+'vm-protection-group-\\d+',\\s+'|CommitPersist:.*for group MoId=vm-protection-group-\\d+, name='|vm-protection-group-\\d+',\\s+')",
+    "postContext":"(\\'|$)",
+    "regexValue":".+?",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf",
+    "constraints":"{\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"srm_replicated_datastore_name",
+    "preContext":"Matched datastore 'datastore\\-\\d+:\\s+",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ojsxa3djmnqxizlel5sgc5dbon2g64tfl5xgc3lf",
+    "constraints":"{\"searchTerms\":\"Dr::Storage::FindReplicatedDatastores\"}",
+    "info":null
+  }, {
+    "displayName":"srm_severity",
+    "preContext":"(\\[|)\\d+\\s+",
+    "postContext":"(\\s+\\'|\\s+vmware-dr)",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_user",
+    "preContext":"Logging in SRM session\\s.*user = '",
+    "postContext":"'\\,",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ovzwk4q0",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"srm_vm_name",
+    "preContext":"(machine\\s+|VM\\s+|VirtualMachine:)(\\'|.*\"|)",
+    "postContext":"(\\'|\"|)",
+    "regexValue":"vm-\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"vmw_product\",\"displayName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"SRA : Replication reversal errors",
+    "info":"This alert is generated when replication reversal errors are logged.<br>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1545051411005,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"reversing\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":2.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":3600000,
+    "searchInterval":600000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"SRM Overview",
+      "constraints":[ {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"srm_env",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Total Events grouped by SRM sites",
+          "info":"All events received over time from all SRM sites.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Events grouped by severity",
+          "info":"SRM sites events over time grouped by event severity (error, warning, info, verbose, etc.).",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1469728025300,\"endTimeMillis\":1469814425299,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_severity\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM login session grouped by users",
+          "info":"SRM login sessions grouped by users<br><br><span style=\"font-weight: bold;\">Note:</span> sometime instead of the user name widget shows userID which is fully depends on the received logs.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1541166881100,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Logging in SRM session\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_user\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ovzwk4q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_user\",\"preContext\":\"Logging in SRM session\\\\s.*user = '\",\"postContext\":\"'\\\\,\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ovzwk4q0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Errors grouped by SRM sites",
+          "info":"Count of the error events grouped by SRM sites. It is visually shows which of the SRM sites generate more errors then other site.",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1540929600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"All SRM Recovery events",
+          "info":"SRM Recovery events grouped by event_type",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1550692800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"sub=Recovery\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"event_type\",\"internalName\":\"event_type\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Errors over time",
+          "info":"Error events over time will&nbsp; help to identify error-spikes which may point to any major issues. Using left widget will help to identify which of the sites is affected more.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1544040000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRM Health",
+      "constraints":[ {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"srm_env",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Free Disk space on SRM host (Mb)",
+          "info":"Free disk space (in Megabytes) available on the SRM host which is grouped by sites. ",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Min\",\"value\":\"MIN\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nbxxg5c7mzzgkzk7mruxg2y0\",\"displayName\":\"srm_host_free_disk\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Min\",\"value\":\"MIN\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nbxxg5c7mzzgkzk7mruxg2y0\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Free disk space:\"},{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_host_free_disk\",\"preContext\":\"disk space:\\\\s+\",\"postContext\":\"\\\\s+Mb\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nbxxg5c7mzzgkzk7mruxg2y0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"CPU usage on SRM host (%)",
+          "info":"CPU usage(%) per SRM hosts. Can be used to monitor CPU spikes for SRM hosts.",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nbxxg5c7mnyhkx3vonqwozi0\",\"displayName\":\"srm_host_cpu_usage\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nbxxg5c7mnyhkx3vonqwozi0\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"CPU usage:\"},{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_host_cpu_usage\",\"preContext\":\"CPU usage:\\\\s+\",\"postContext\":\"\\\\s+%\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nbxxg5c7mnyhkx3vonqwozi0\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\",\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Protected/Recovery sites inter connection ping status",
+          "info":"Inter connection ping status between SRM sites.<br>Drops on the graph may show temporary connection issues in between Recovery/Protected sites.",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Ping succeeded\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"RemoteDrServer\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Available Memory on SRM host (Mb)",
+          "info":"Available memory (in Megabytes) on the SRM host which is grouped by sites.",
+          "chartType":"line",
+          "chartOptions":"{\"spline\":false,\"legend\":true,\"stacking\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Min\",\"value\":\"MIN\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mzzgkzk7nvxw233spe000000\",\"displayName\":\"srm_free_momory\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Min\",\"value\":\"MIN\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mzzgkzk7nvxw233spe000000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Available memory:\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_free_momory\",\"preContext\":\"Available memory:\\\\s+\",\"postContext\":\"\\\\s+Mb\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mzzgkzk7nvxw233spe000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"SRM connections issues",
+          "info":"The widget represents connection issues between SRM hosts. It can also points that one of the hosts is down.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1541158655867,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"An existing connection was forcibly closed,Failed to send response to the client\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":" vSphere Replication connections issues",
+          "info":"The widget represents connection issues between  vSphere Replication hosts. It can also points that one of the hosts is down, not paired, etc.<br><br><span style=\"font-weight: bold;\">Note:</span> This widget only functional if vSphere Replication is configured in SRM",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1549221228553,\"endTimeMillis\":1549425984724,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"HMS connection status\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"connected = false\"},{\"internalName\":\"__li_source_path\",\"operator\":\"CONTAINS\",\"value\":\"10.192.103.94,10.192.224.205\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRM Configuration",
+      "constraints":[ {
+        "internalName":"srm_env",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of mapped Networks",
+          "info":"Widget shows number of mapped networks between SRM pairs.<br><br><span style=\"font-weight: bold;\">Note: </span><span>only new logs are being collected after</span> configuration of log delivery to the Log Insight ( see more in Content Pack instructions). If mapping happens prior to log configuration then the log is not being received anymore",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1543262400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nzsxi53pojvq0000\",\"displayName\":\"srm_network\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nzsxi53pojvq0000\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Added dr.InventoryMapperBase.NetworkMapping\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nzsxi53pojvq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_network\",\"preContext\":\":\",\"postContext\":\"'\",\"regexValue\":\"network-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7nzsxi53pojvq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Network\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM Array managers",
+          "info":"Show SRM Array managers configuration per sites.<br><br><span style=\"font-weight: bold;\">Note: </span><span>only new logs are being collected after</span>\n configuration of log delivery to the Log Insight ( see more in Content \nPack instructions).  If Array manager configuration happens prior to log configuration then \nthe log is not being received anymore",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1541166881100,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Created Array Manager\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_array_manager_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5wwc3tbm5sxex3omfwwk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_array_manager_id\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5wwc3tbm5sxex3jmq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_array_manager_id\",\"preContext\":\"Array Manager .* MoID '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5wwc3tbm5sxex3jmq000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_array_manager_name\",\"preContext\":\"Array Manager\\\\s+'\",\"postContext\":\"(\\\\s+|)'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5wwc3tbm5sxex3omfwwk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of mapped Folders",
+          "info":"Widget shows number of mapped Folders between SRM pairs.<br><br><span style=\"font-weight: bold;\">Note: </span><span>only new logs are being collected after</span> configuration of log delivery to the Log Insight ( see more in Content Pack instructions).  If mapping happens prior to log configuration then the log is not being received anymore",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1550643072476,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Adding folder mappings,add folder mappings\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"sub=InventoryMapper\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"SRM Array pair per sites",
+          "info":"Array pair lists created on SRM protected and recovery sites.<br><br><span style=\"font-weight: bold;\">Note: </span><span>only new logs are being collected after</span>\n configuration of log delivery to the Log Insight ( see more in Content \nPack instructions).  If Array pairing happens prior to log configuration then \nthe log is not being received anymore",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544040000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5ygc2ls\",\"displayName\":\"srm_array_pair\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5ygc2ls\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Received notification about new array pair\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_array_pair\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5ygc2ls\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_array_pair\",\"preContext\":\"pair '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mfzheylzl5ygc2ls\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of SRM instances",
+          "info":"Widget shows number of SRM pairing over time. <br><br><span style=\"font-weight: bold;\">Note</span>: Widget will be empty if SRM is not paired or logs sending to the Log Insight have been enabled after SRM configuration.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1550671995801,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Successfully paired with SRM\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Creating Placeholder Datastore",
+          "info":"Show placeholder datastore creation events over time.<br><br><span style=\"font-weight: bold;\">Note: </span><span>only new logs are being collected after</span>\n configuration of log delivery to the Log Insight ( see more in Content \nPack instructions).  If placeholder datastore creation happens prior to log configuration then \nthe log is not being received anymore",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1549547714278,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ProcessDatastoresForAddLocked\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"PlaceholderDatastoreManager\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRM Virtual Machine Overview",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"srm_env",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Count of VM's (SRA and vSphere Replication)",
+          "info":"Unique count of replicated VM's. Widget contains overall number of VM's replicated in Storage Replication Adapter and vSphere Replication",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Adding\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_vm_name\",\"preContext\":\"(machine\\\\s+|VM\\\\s+|VirtualMachine:)(\\\\'|.*\\\"|)\",\"postContext\":\"(\\\\'|\\\"|)\",\"regexValue\":\"vm-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VM's added to SRA Replicated Datatsore",
+          "info":"Unique count of VM's added to SRA Replicated datastore.<br><br>VM's deployment on the SRA Replicated datastore will get data on the widget.",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Adding\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1550504554584,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"sub=DatastoreGroupManager\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_vm_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_vm_name\",\"preContext\":\"(machine\\\\s+|VM\\\\s+|VirtualMachine:)(\\\\'|.*\\\"|)\",\"postContext\":\"(\\\\'|\\\"|)\",\"regexValue\":\"vm-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Count of VM's not in a Datastore",
+          "info":"Count of VM's that do not belong to a datastore group.",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Virtual machine\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1550759406617,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"doesn't belong to any existing datastore group\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_vm_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_vm_name\",\"preContext\":\"(machine\\\\s+|VM\\\\s+|VirtualMachine:)(\\\\'|.*\\\"|)\",\"postContext\":\"(\\\\'|\\\"|)\",\"regexValue\":\"vm-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VM's replicated in vSphere Replication",
+          "info":"Unique count of VM's relocated by vSphere Replication.<br><span style=\"font-weight: bold;\"><br>Note:</span> This widget only functional when vSphere Replication configured in SRM",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Adding\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1550520000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"sub=HbrProvider\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_vm_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_vm_name\",\"preContext\":\"(machine\\\\s+|VM\\\\s+|VirtualMachine:)(\\\\'|.*\\\"|)\",\"postContext\":\"(\\\\'|\\\"|)\",\"regexValue\":\"vm-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VM's removed by Datastore",
+          "info":"Show VM's that removed from the datastore.",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"removal\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1550692800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7nzqw2zi0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_vm_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_datastore_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7nzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_name\",\"preContext\":\"datastore '\",\"postContext\":\"'\",\"regexValue\":\"datastore-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7nzqw2zi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_datastore_name\",\"preContext\":\"datastore '\",\"postContext\":\"'\",\"regexValue\":\"datastore-\\\\d+\",\"internalName\":\"ibadax3tojwv6zdborqxg5dpojsv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_vm_name\",\"preContext\":\"(machine\\\\s+|VM\\\\s+|VirtualMachine:)(\\\\'|.*\\\"|)\",\"postContext\":\"(\\\\'|\\\"|)\",\"regexValue\":\"vm-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VM's protection/recovery issues",
+          "info":"Widget will show the issues happening during protection or recovery processes",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1549483200000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Unable to protect VM,Failed to recover VM,Cannot recover VM,Failed to create placeholder VM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRM Datastore Overview",
+      "constraints":[ {
+        "internalName":"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7m5zg65lq",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"srm_env",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Datastore events by severity",
+          "info":"Datastore events over time grouped by events severity (error, warning, info, verbose, etc.).",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7nzqw2zi0\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_severity\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_datastore_name\",\"preContext\":\"datastore '\",\"postContext\":\"'\",\"regexValue\":\"datastore-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7nzqw2zi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadax3tojwv643fozsxe2lupe000000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Datastore group errors",
+          "info":"Errors related to the SRM datastore.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7m5zg65lq\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_datastore_group\",\"preContext\":\"group\\\\s+'\",\"postContext\":\"'\",\"regexValue\":\"ds\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7m5zg65lq\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VM's adding to datastore group",
+          "info":"VM's adding to the Replicated datastore groups.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"Adding virtual machine\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1541188800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7m5zg65lq\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_datastore_group\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7m5zg65lq\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_vm_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_datastore_group\",\"preContext\":\"group\\\\s+'\",\"postContext\":\"'\",\"regexValue\":\"ds\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7mrqxiyltorxxezk7m5zg65lq\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"},{\"displayName\":\"srm_vm_name\",\"preContext\":\"(machine\\\\s+|VM\\\\s+|VirtualMachine:)(\\\\'|.*\\\"|)\",\"postContext\":\"(\\\\'|\\\"|)\",\"regexValue\":\"vm-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Replicated datastores status",
+          "info":"Show information about status of the replicated datastores.",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"No datastores found with missing replicated status tag",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No datastores found with missing replicated status tag\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Attaching PG tags to datastores failed",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1547729915733,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"AttachPGTagFailed\"},{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"No replicated datastores found for array pair",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1547730051306,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No replicated datastores found for array pair\"},{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+          } ]
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Replicated datastores",
+          "info":"Replicated datastore list with associated device ID.<br><br><span style=\"font-weight: bold;\">Note</span>: Widget will be empty if SRM logs sending to the Log Insight have been enabled after SRM configuration.",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1548057600000,\"endTimeMillis\":1548878400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ojsxa3djmnqxizlel5sgc5dbon2g64tfl5xgc3lf\",\"displayName\":\"srm_replicated_datastore_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ojsxa3djmnqxizlel5sgc5dbon2g64tfl5xgc3lf\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Dr::Storage::FindReplicatedDatastores: Matched datastore\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ojsxa3djmnqxizlel5sgc5dbon2g64tfl5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_replicated_datastore_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ojsxa3djmnqxizlel5sgc5dbon2g64tfl5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"sra_device_id\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpwsza0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_device_id\",\"preContext\":\"device = \\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpwsza0\",\"constraints\":null},{\"displayName\":\"srm_replicated_datastore_name\",\"preContext\":\"Matched datastore 'datastore\\\\-\\\\d+:\\\\s+\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ojsxa3djmnqxizlel5sgc5dbon2g64tfl5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"Dr::Storage::FindReplicatedDatastores\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRM Protection Group",
+      "constraints":[ {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"srm_env",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of Protected VM's",
+          "info":"Shows number of protected VM's on SRM protected site.<br><br><span style=\"font-weight: bold;\">Note:</span> Number also include VM's removed from the protection groups if any. ",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1549396800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"displayName\":\"srm_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Starting ProtectVmPrepareComplete for VM,ReplicatedVmAdded: Adding a replicated VM\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_vm_name\",\"preContext\":\"(machine\\\\s+|VM\\\\s+|VirtualMachine:)(\\\\'|.*\\\"|)\",\"postContext\":\"(\\\\'|\\\"|)\",\"regexValue\":\"vm-\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7ozwv63tbnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VM's by Protection Groups",
+          "info":"Shows VM's grouped by the protection groups.<br><br><span style=\"font-weight: bold;\">Note:</span> Number also include removed protection groups if any. ",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1548057600000,\"endTimeMillis\":1548360000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gkzc7ozwv63tbnvsq0000\",\"displayName\":\"srm_protected_vm_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gkzc7ozwv63tbnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gkzc7ozwv63tbnvsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_protected_vm_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gkzc7ozwv63tbnvsq0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_protectiongroup_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_protected_vm_name\",\"preContext\":\"(VM\\\\s+'protected\\\\-vm\\\\-\\\\d+:|protected-vm-\\\\d+,\\\\s+name=')\",\"postContext\":\"'\",\"regexValue\":\".+?\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gkzc7ozwv63tbnvsq0000\",\"constraints\":null},{\"displayName\":\"srm_protectiongroup_name\",\"preContext\":\"(ProtectionGroup data object\\\\s+\\\\'|ProtectVm.*:\\\\s+group\\\\s+'vm-protection-group-\\\\d+:|ProtectVm.*vm-protection-group-\\\\d+\\\\s+and\\\\s+name=\\\\'|RemoveGroup:.*vm-protection-group-\\\\d+\\\\s+and\\\\s+name=\\\\'|RemoveGroupCommitPersist:\\\\s+'vm-protection-group-\\\\d+',\\\\s+'|CommitPersist:.*for group MoId=vm-protection-group-\\\\d+, name='|vm-protection-group-\\\\d+',\\\\s+')\",\"postContext\":\"(\\\\'|$)\",\"regexValue\":\".+?\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of Protection Groups",
+          "info":"Shows total number of protection groups sending logs to vRLI.<br><br><span style=\"font-weight: bold;\">Note:</span> Number also include removed protection groups if any. ",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1550692800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"displayName\":\"srm_protectiongroup_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Created ProtectionGroup data object,Persisting reconfiguration for group,ReconfigureGroupCommitPersist:\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_protectiongroup_name\",\"preContext\":\"(ProtectionGroup data object\\\\s+\\\\'|ProtectVm.*:\\\\s+group\\\\s+'vm-protection-group-\\\\d+:|ProtectVm.*vm-protection-group-\\\\d+\\\\s+and\\\\s+name=\\\\'|RemoveGroup:.*vm-protection-group-\\\\d+\\\\s+and\\\\s+name=\\\\'|RemoveGroupCommitPersist:\\\\s+'vm-protection-group-\\\\d+',\\\\s+'|CommitPersist:.*for group MoId=vm-protection-group-\\\\d+, name='|vm-protection-group-\\\\d+',\\\\s+')\",\"postContext\":\"(\\\\'|$)\",\"regexValue\":\".+?\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Protection Groups",
+          "info":"Shows list of the protection groups.<br><br><span style=\"font-weight: bold;\">Note:</span> Number also include removed protection groups if any.",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1550692800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"displayName\":\"srm_protectiongroup_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Created ProtectionGroup data object,Persisting reconfiguration for group,ReconfigureGroupCommitPersist:\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_protectiongroup_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_protectiongroup_name\",\"preContext\":\"(ProtectionGroup data object\\\\s+\\\\'|ProtectVm.*:\\\\s+group\\\\s+'vm-protection-group-\\\\d+:|ProtectVm.*vm-protection-group-\\\\d+\\\\s+and\\\\s+name=\\\\'|RemoveGroup:.*vm-protection-group-\\\\d+\\\\s+and\\\\s+name=\\\\'|RemoveGroupCommitPersist:\\\\s+'vm-protection-group-\\\\d+',\\\\s+'|CommitPersist:.*for group MoId=vm-protection-group-\\\\d+, name='|vm-protection-group-\\\\d+',\\\\s+')\",\"postContext\":\"(\\\\'|$)\",\"regexValue\":\".+?\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Errors in Protection Groups",
+          "info":"Number of errors grouped by SRM sites.",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_protectiongroup_id\",\"preContext\":\"(group\\\\s+'|CreateGroup.*|VmProtectionGroup:.*)\",\"postContext\":\"'\",\"regexValue\":\"vm-protection-group-\\\\d+(\\\\S+)\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Removed Protection Groups",
+          "info":"Shows list of the removed protection groups.<br>Count value is usually reflecting the log received from both pair sites",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1550692800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"displayName\":\"srm_protectiongroup_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Committing removing protection group,RemoveGroupCommitPersist:\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_protectiongroup_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_protectiongroup_name\",\"preContext\":\"(ProtectionGroup data object\\\\s+\\\\'|ProtectVm.*:\\\\s+group\\\\s+'vm-protection-group-\\\\d+:|ProtectVm.*vm-protection-group-\\\\d+\\\\s+and\\\\s+name=\\\\'|RemoveGroup:.*vm-protection-group-\\\\d+\\\\s+and\\\\s+name=\\\\'|RemoveGroupCommitPersist:\\\\s+'vm-protection-group-\\\\d+',\\\\s+'|CommitPersist:.*for group MoId=vm-protection-group-\\\\d+, name='|vm-protection-group-\\\\d+',\\\\s+')\",\"postContext\":\"(\\\\'|$)\",\"regexValue\":\".+?\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5xgc3lf\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Detect changes in Protection Groups",
+          "info":"Detected changes in protection Groups if any.<br>For example widget gets value if some new VM appear in some protection group which inform user that protection group need to the reconfigured.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1540542084682,\"endTimeMillis\":1541479023301,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Detected changes in details of protection group\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"srm_protectiongroup_id\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"srm_protectiongroup_id\",\"preContext\":\"(group\\\\s+'|CreateGroup.*|VmProtectionGroup:.*)\",\"postContext\":\"'\",\"regexValue\":\"vm-protection-group-\\\\d+(\\\\S+)\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Protection Group creation failures",
+          "info":"Shows value if there is protection group creation failures.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1539547200000,\"endTimeMillis\":1544126400000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed to create group\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"SRA Devices",
+          "info":"List of SRA device name with associated device ID.",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1549224000000,\"endTimeMillis\":1550692800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpw4ylnmu000000\",\"displayName\":\"sra_device_name\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpw4ylnmu000000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpw4ylnmu000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_device_name\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpw4ylnmu000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"sra_device_id\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpwsza0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_protectiongroup_id\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_device_id\",\"preContext\":\"device = \\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpwsza0\",\"constraints\":null},{\"displayName\":\"sra_device_name\",\"preContext\":\"deviceName = \\\"\",\"postContext\":\"\\\"\\\\,\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7mrsxm2ldmvpw4ylnmu000000\",\"constraints\":null},{\"displayName\":\"srm_protectiongroup_id\",\"preContext\":\"(group\\\\s+'|CreateGroup.*|VmProtectionGroup:.*)\",\"postContext\":\"'\",\"regexValue\":\"vm-protection-group-\\\\d+(\\\\S+)\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"SRM Recovery Plan Overview",
+      "constraints":[ {
+        "internalName":"__li_source_path",
+        "operator":"CONTAINS"
+      }, {
+        "internalName":"srm_env",
+        "operator":"CONTAINS"
+      } ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of Recovery Plans",
+          "info":"Shows total numbers of Recovery Plans.<br><span style=\"font-weight: bold;\"><br>Note:</span> Number also include removed Recovery Plans if any. ",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1548057600000,\"endTimeMillis\":1548273600000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7ojswg33wmvzhsx3qnrqw4000\",\"displayName\":\"sra_recovery_plan\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7ojswg33wmvzhsx3qnrqw4000\",\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7ojswg33wmvzhsx3qnrqw4000\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"CreatePlan\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"from spec:\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"sra_recovery_plan\",\"preContext\":\"CreatePlan\\\\[('|)\",\"postContext\":\"('|)\\\\]\",\"regexValue\":\".+?\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7ojswg33wmvzhsx3qnrqw4000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Protection group by Recovery Plans",
+          "info":"Shows protection group mapped with recovery plans.",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1542916800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7ojswg33wmvzhsx3qnrqw4000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"sra_recovery_plan\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7ojswg33wmvzhsx3qnrqw4000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"srm_protectiongroup_id\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"extractedFields\":[{\"displayName\":\"sra_recovery_plan\",\"preContext\":\"CreatePlan\\\\[('|)\",\"postContext\":\"('|)\\\\]\",\"regexValue\":\".+?\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxeyk7ojswg33wmvzhsx3qnrqw4000\",\"constraints\":null},{\"displayName\":\"srm_protectiongroup_id\",\"preContext\":\"(group\\\\s+'|CreateGroup.*|VmProtectionGroup:.*)\",\"postContext\":\"'\",\"regexValue\":\"vm-protection-group-\\\\d+(\\\\S+)\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7obzg65dfmn2gs33om5zg65lql5uwi000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of renamed Recovery Plans",
+          "info":"Shows number of renamed Recovery plans.",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1541162243977,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Recovery plan name changed from\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Failover errors",
+          "info":"Show Recovery plans failover issues.<br><br><span style=\"font-weight: bold;\">Example:</span> VM tools is not installed on the protected VM.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1548057600000,\"endTimeMillis\":1548792000000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed operation 'Recover,Cannot recover VM,Failed to recover VM,errors during recovery,Failure while powering,Timed out while waiting for guest heartbeat from VM tools,Plan execution,Failed to initiate shutdown of VM,Powering off vms on the protection site failed,Recovery stopping due to failure,Powering off vm failed\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Replication errors",
+          "info":"Recovery plan replication failure events over time.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1548133634701,\"endTimeMillis\":1549039662967,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"operator\":\"CONTAINS\",\"value\":\"error\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"consistency disabled\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"replication,Replication reported failure\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[{\"displayName\":\"srm_severity\",\"preContext\":\"(\\\\[|)\\\\d+\\\\s+\",\"postContext\":\"(\\\\s+\\\\'|\\\\s+vmware-dr)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzzxe3jygfzxe3k7onsxmzlsnf2hs000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"vmw_product\\\",\\\"displayName\\\":\\\"vmw_product\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"srm\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"No protection group in Recovery Plans",
+          "info":"If Recovery plan does not contain any protection group it may indicate issues with recovery plan state.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1538901321360,\"endTimeMillis\":1544100180018,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"vmw_product\",\"operator\":\"CONTAINS\",\"value\":\"srm\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Plan state is noProtectionGroups\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "agentClasses":[ {
+    "name":"vSphere - SRM",
+    "info":"<span>This agent config should be applied to the SRM Log Insight agent.</span><br><br><span style=\"font-weight: bold;\">IMPORTANT:</span><span>&nbsp;Some of the directory paths specified in this agent configuration may need to be changed to match your exact environment. Please see the comments within each section for more information.</span><br><br><span>This is the agent group configuration for&nbsp;</span><span style=\"font-weight: bold;\">vSphere-SRM 8.1+ </span><span>content pack.</span><br><span>You can find this under&nbsp;</span><span style=\"font-weight: bold;\">Administration -&gt; Management -&gt; Agents -&gt; All Agents</span><span>&nbsp;drop down.</span><br><span>To apply, copy this template to active groups , add filters and save.</span>",
+    "agentConfig":"[filelog|SRM_logs]\n; IMPORTANT: Change the directory as per the environment if it necessary\ndirectory=C:\\ProgramData\\VMware\\VMware vCenter Site Recovery Manager\\Logs\ninclude=*.log\n; Replace the “SRM_environment_name_need_update” parameter located after srm_env with the name you’d like to reference the current SRM instance to be presented on Log Insight.\ntags={\"vmw_product\" : \"SRM\", \"srm_env\" : \"SRM_environment_name_need_update\"}\nevent_marker=^\\d{4}-\\d{2}-\\d{2}[A-Z]\\d{2}:\\d{2}:\\d{2}\\.\\d{3}\n"
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware Inc.",
+  "url":"http://www.vmware.com/products/site-recovery-manager.html",
+  "contentVersion":"1.0",
+  "info":"VMware Site Recovery Manager is a business continuity and disaster recovery solution that helps you to plan, test, and run the recovery of virtual machines between a protected vCenter Server site and a recovery vCenter Server site.<br><br>Site Recovery Manager orchestrates the recovery process with the replication mechanisms, to minimize data loss and system down time.<br><ul><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At the protected site, Site Recovery Manager shuts down virtual machines cleanly and synchronizes storage, if the protected site is still running.</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Site Recovery Manager powers on the replicated virtual machines at the recovery site according to a recovery plan.</li></ul>A recovery plan specifies the order in which virtual machines start up on the recovery site. A recovery plan specifies network parameters, such as IP addresses, and can contain user-specified scripts that Site Recovery Manager can run to perform custom recovery actions on virtual machines.<br><br>This content pack a deeper look into SRM SRA and SRM VR logs for analysis and troubleshooting.<br><br>Compatibility:<br>Site Recovery Manager &amp; SRM vSphere Replication 6.5.0, 8.1.1<br>vRealize Log Insight 4.0 and later",
+  "instructions":"Configuring the vRealize Log Insight Agent<br><br><ol><li>&nbsp;&nbsp;&nbsp; To set up event forwarding from SRM to vRalize Log Insight, install the Log Insight agent where SRM is installed. Configure Log Insight agent to connect to you log Insight instance by adding your vRLI next to the 'hostname' in Log Insight agent&nbsp; config file. When&nbsp; Log Insight agent connect to vRLI configure a log Insight agent using the `vSphere SRM` agent configuration group (More instructions on the agent group itself).</li><li>&nbsp;&nbsp;&nbsp; Change the directory as per the environment if it necessary in the agent config</li><li>&nbsp;&nbsp;&nbsp; Input all of the IP addresses or hostnames from the SRM instances in the filter at the top of the Agent Configuration.</li><li>&nbsp;&nbsp;&nbsp; Save configuration.</li></ol>",
+  "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAACc1BMVEUAAABlm0aPx0KVy0CLszxnkSmTykGSyEOOxEKVy0GTy0GBq1iUyz+SyUSUy0GUy0GUykKTykGTvWeKlDqFukL47VP84jn081bu2zeSykCUy0H27VOq00WLwkGPwU2WzEypyEOTykGQyECTyT+Rx0GplDyiyj6vyzmTykGQx0CTykH7uxjxvyGcyz/081b8vBjEzTmTyUGVykGSx0P0uhjPwynK4EvM3kujz0SMxD+Px0DO1j3f0DDDyjaSyUCezEHzuRyAuD6TykL271Xf0C/IzjfJxCze5E+710jz61OXy0GfyTzC0zvH3Uuyz0GpyjvC20r161a70DvdwSP5uxrn2zz3uhujyT7A1ET57lWkzUPstR/p3U26yTWvxTPp5lTQzjKr0kWsxjfp41rotCHY0TPdrifGyTGTykDu5lnvth3W3FXeriTGojLduzv571V3rj/dzUmmjzfw0Svc5U/kzi3LzGeAuT7fwUTf2F7f6FHT0WXHyWq7xTCUy0L/0yn/4zn/vhj/4Df/0ij+5T376kv/2C6by0D95kH/1ivEzjb00iv/2jD/9VTv7FLq6lKrzDz/3TOlyjus0EKYzEGj0EXQzzT60imq0kX/zyXvwB7/6kbLzjT86UbT2Tzr0C3/xB367VD/xyH/wRr/zCObzULz3jj/3zTm0C6/wy7v0Szlvx/Q4k6ryDj0wBv/7Ur29Fav1Uf20ivP3Eb81Dbz3Un5vhn57lTv6ErT1Uan0kW0zDm+zTfYzzHg6FH/8E6+2knJ3EehzD/32kL82Dzc1znuvRzv5lbc2Uf9zCzm6VDy5EPpvx7u4D610j704TzY1WJp5NfTAAAAfnRSTlMAIZbyCwVzkYP8+hNmnfetiOouGClm/vz84k/+9TQfGBPIfO1dSPTv2ta4sQn489vY0L9TJv70693ESP3w7OXTwXs+Kf79/fj27+Df29LPxMO0/fz78vLq5ti7rv379urq5tzZ2dPMxaWdmJGOfWVKRzct7uHfj45JJ9jXuWpeTeMzAAAJJ0lEQVR42u3a91sScRzAcfIAu1PRCzLJQFNzlZWaDc2G7b333nvvdZYozlQMoWVmQ4myYbbUtDQ1239SH0g9gQPuju8pP/R+nn7oyR5fz3cyToQqiZ+fX5h6SE8KtZ+zen9ILZaIEBeu8g/qydfX18cnoDcfX2f1+RH4b1JpUJB/OKJBUSQHJVKeRSxciFOJyQq1GIFHHUhiMtxTEQF/yPgItacc8RD//UoKVWTi/ihPp0uaRCEtPjXME1BYciyOFkRgyZ6A/EdiFOIIqVrCe7tnBFLIwwOjeG+1jI0kJUDxvFdR6kIZJUBk0nCeB5AUo4RJyg8UFdg9QF4CEgeQ3VveW0C9W+w/6D8ILQjHEsrLGxoabjJ1g660rDW3X0DYxiXPmr+VlBTb9x76/v3779+/q6GQEJOhsT9ADfNPbyspDs3prcJanrVsS1dranRardZYZ/5YUEYxFeHHD4TLCIf5evypObTKouj59f8MPWVlZdXoirT5mdaMlU2tTKDBg/iBZEqHu6N8/jzwgMBJWboiwPSk0ZgKcoUF3ZxXXFWR50xTA2MDHjpN3dRlCxGCSPvLLGE+rJ5sF5xM+07tW4QO5Ljjd0wKrarIZuRk6bSZDBV+bBQQpIcVlMM8YYweyGhuEhL0rOQd84zVwFpmTGMsEBQU+q6CcfloM50mNCiP0ZM/ICBs8rx3VQwgHXgEBEnCLlyYBZ3YWG7XjuXb4FB03F8wXwKCxEPOXtq1awO0oMS+BUybHtaPcKATZw8dOLBrc2eOsyqysx23O2dQhJwdZ8ysQ386qyxXZ16fsvvGtL+4g6RidqBZKxaE0mPAKhgfPiAJK8+xFQtgbNhx6PkSDBR+bEUVXAtcqtHlZ7ICySIJ7qBjC+h7nGVwXbADKaeQXEGSoStCuY4PeFiCMFLGFTTmQCdnTyYd+jUUvgK2FysIfTwLCTp/eVsOgu2FDnT0T2cOAg860NDOnAounvxMoUGcthiMj+CgdxXZvOeLx+XqhxLk+PIQ/csPAOWxHiA4f7wKVKPtF1CVM1BwsOWjlX9VVwfDis4fUFBwdUi7YU76eCg9fY6hGm7UAQMBpj1t5eKly2LKyqLXrYuOjl63cw2AMgcKFLwmbWUrFjeFfulAJq4JvqodONDi6ThF4QRB9aZvH1DQeADZpk+rzhrIEVrkACoI4brrNUZ0oF+O7+1XtnMdIWNdk4AgfOmeYI6gOtNKFqCMKP8+RUVFHXp9z7EbjqBFi6s5gsxTS12DxGFhYeoAkt47BEYqlSTG8lmBX9X1nFaQxpQe7RrkPxKaRlB0hEwmI3AcPCwqbS/ktqRnl+EuQKlSaTzlUdGLpxo1HDxnxidQTkFiRSDlaWRSuqnQqNGw45hP7Vsmcw5KTcQ8BhFYQuldE7tBMlZuX7YIw52BxP6BBIUifWljwZ4zpkpzYXdms7mSzmyp0jR7qqGgKSaWHgJ7kEQdTyFLtmxp0xyD4aM1g8Fwt08G698LtsTQu8sRBB9YqZNHUghFMr0+11V6PfOupd91JMeTlNckFYn8IigvCkCpAZQXBaCkWMqLAhDlRWFxUd4Fipup8i5QkkrsXaD4cJELEI7rLT22LZcO/hGXEQg9kftdgiYvnf8J+mzpdU+f09LSDJDlTpgDV9LGheg8RIRC4hRU/urTpNPzmpvhyQlrPc9MlFgemvj582dICNyWJtPUPdubSnMpJCUGwYp2AtKXf2p+ed1ZLS0v7mTrtD1f5RoaUYgIZRBgnIEaPn8DD/zePPrLnixrOl1RkRbKp19r1ZnutlIep4wKcwqSTV9f8vJ6C2hA0R0orI58xvczMQn2y1Mp46TxjfBXi5yCsKUXr19/kUdrbB7bYBJtj6FsmxaHuWcAWxkXNxIKsKxm56DyZ8XgyeoTeFxlNDXZrwgCZwGacm5m1HEFvPsKB48LUAMs6Ds24+PmLaCm7i7DOEdufWLT3LlzU1L2Sf3pUlWKQXLa4gyEjSi+3pLNYr5okMbAAFqU8pTux4+Ojo7nb9+OHiNyl+OBuHyszQCBhzsIyl11zTE+oBGThrXQK1rH6rPn2Y5nUcLWp0wguYQz6NWzYS29G17H7oPDyrtldqs6MmbubSbQSTEf0IurXMYHKpxdareCEsfXP0AEGjFx2AuOHrhAGm3PoemT1jCCZoyS8weBh/1nB3NKb/Rp/frNbehAkwDEzQMiU/uH7r5Cm9+0oQNNXjLWCipi5aHv2MLCtrY33bV9qe968BApSAcejuXX13+xVF/f1dX14D540IHo45ljGk3XA3poEK4hbSavbj26/5DmoNv2d/iNjwY8DhyHk5oXSMvX4yBgfZehB8F8wfAIBCriMz4P7rv1rN7EF5TPlQMeGB937T4MIO6X60vuIPBcc9/qw6MkwoJoD2wv9609KhfxBaHb7nTjNp0Q8Qah2+50BweJ+wXE0rN27xGxhD8I2Xan5+vIKBHEF4TYs3rtwVHhIr4gLucQi+MH6th7fgL99pTzbc/+pNaAx+3Y7N508PBR+kDkDNqxZCzLu0yjedTreX7boXHWdu91WDvc37neYTdjtOdtx5My+6KvTPiXXOwZaPrysXkcPQCqpexSBmaI6IQEOc4XgH5sxew/a5mpQAQiRhSzAvU9Dm+v2hlHCAOCGkqy3Xtsr6+n6esiccomckoGMtC3YPfzZXtdrNqZQNmHDUcFKv9a7f78sT2eU3BKQFDrvRBuLzfePn1CCQlKWA/PKHB5ufF8bq2gICxpPP2IAtOrZ9v5ggECj5AggoxunF3oHATzZeNJqc0VFgTpGw0mc50Rxsn1fL19fvtpCoyP0CCodYvBVFnIUN1zuts/VqVsyaX6BaTPbS0rZay2u5iY2lq4Q8GDGMQzHJNRdAMFsv1K0wtAWOI07wLJpkVSLIsNUCEAISzwuNy7QAF+Eu8C+YCHV/GxlADJlBEinkmklACR546L+KYKEmCMYpPlvEFiVRJyT5yPQsS/8EAC9QoaLJd4AJKogtCKYmeqwONJKt+AeAyZJ0mqEIs8TZIxkoy0GyecwDlj8EiSTBahSKwaHhFr/4jaNO7bPSJVFS5Ck1ghDfINCPDpzXfmYB/W+foGWYqgZwuJSa5QDOKXHBXkL98oNQXW4R04AAAAAElFTkSuQmCC"
+}
