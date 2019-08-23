@@ -5,7 +5,6 @@
 # that are not using as big number of extracted fields may have impact on 
 # the vRLI performance.
 
-
 # USAGE:
 #  ./check_extracted_fields_usage.sh <content pack vlcp file path>
 
