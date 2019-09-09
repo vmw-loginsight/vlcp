@@ -2,5 +2,21 @@
   {
     "name": "Cisco - ASA",
     "namespace": "com.cisco.asa"
+  },
+  {
+    "name":"HP - TippingPoint",
+    "namespace":"com.hp.tippingpoint"
+  },
+  {
+    "name":"Cisco - Nexus",
+    "namespace":"com.cisco.nexus"
+  },
+  {
+    "name":"Palo Alto Networks - PAN-OS",
+    "namespace":"com.paloaltonetworks.pan-os"
+  },
+  {
+    "name":"Puppet Enterprise",
+    "namespace":"com.puppetlabs.pe"
   }
 ]
