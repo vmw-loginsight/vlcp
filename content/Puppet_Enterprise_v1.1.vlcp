@@ -467,7 +467,7 @@
   "agentClasses":[ {
     "name":"Puppet Enterprise master",
     "info":"This config need to apply on the&nbsp;&nbsp;Puppet Enterprise master node.",
-    "agentConfig":"[filelog|puppetmaster]\ndirectory=/var/log/puppetlabs/puppetserver\ntags={\"appname\":\"puppet-server\"}\n;For the new versions of the Pupped Enterprise please uncomment the follwoing tags line an comment \"tags={\"appname\":\"puppet-master\"}\" config line\n;tags={appname, puppet-server)\ninclude=*\n"
+    "agentConfig":"[filelog|puppetmaster]\ndirectory=/var/log/puppetlabs/puppetserver\ntags={\"appname\":\"puppet-master\"}\n;For the new versions of the Pupped Enterprise please uncomment the following tags line an comment \"tags={\"appname\":\"puppet-master\"}\" config line\n;tags={appname, puppet-server)\ninclude=*\n"
   }, {
     "name":"Puppet Enterprise node(s)",
     "info":"This config need to apply on the&nbsp;&nbsp;Puppet Enterprise node(s).",
