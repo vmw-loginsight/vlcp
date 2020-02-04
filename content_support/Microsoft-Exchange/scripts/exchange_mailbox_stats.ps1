@@ -17,8 +17,8 @@ if ( Test-Path $logs_directory\\$outfile ){
   
 $mailboxs = Get-Mailbox -ResultSize unlimited
 $(Foreach ($mailbox in $mailboxs){ 
-$mailbox | Get-MailboxStatistics -ResultSize unlimited | 
-Add-Member -MemberType ScriptProperty -Name SizeInMB -Value {[int]($this.TotalItemSize.Value.ToMB())} -PassThru |
+$mailbox | Get-MailboxStatistics |
+Add-Member -MemberType ScriptProperty -Name SizeInMB -Value {[int]($mailbox.TotalItemSize.Value.ToMB())} -PassThru |
 Select @{Name="Type";Expression={"ExchangeMailboxStats"}},@{Name="Date";Expression={get-date}},DisplayName,SizeInMB,ServerName
 }) | Sort -Property {[int]($_.SizeInMB)} -Descending | Export-Csv -NoTypeInformation $logs_directory\\$outfile
 
