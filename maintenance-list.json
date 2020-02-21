@@ -18,5 +18,9 @@
   {
     "name":"Puppet Enterprise",
     "namespace":"com.puppetlabs.pe"
+  },
+  {
+    "name":"Microsoft - Exchange2013+",
+    "namespace":"com.microsoft.exchange2013up"
   }
 ]
