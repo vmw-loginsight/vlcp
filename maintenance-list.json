@@ -22,5 +22,13 @@
   {
     "name":"Microsoft - Exchange2013+",
     "namespace":"com.microsoft.exchange2013up"
+  },
+  {
+    "name":"Microsoft - .NET CLR",
+    "namespace":"com.microsoft.dotnet"
+  },
+  {
+    "name":"Microsoft - SharePoint",
+    "namespace":"com.microsoft.sp"
   }
 ]
