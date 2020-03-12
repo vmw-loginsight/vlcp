@@ -40,9 +40,7 @@
     "framework": "#9c4",
     "contentPackId": "org.apache.clf",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "The Arista EOS content pack provides detailed monitoring and alerts for your Arista EOS devices. With the addition of the Arista Log Insight extension, additional switch monitoring beyond standard switch syslog output is available.<br><br><span style=\"font-weight: bold;\">NOTE</span>: To fully leverage the power of this content pack the Arista Log Insight extension needs to be installed on your switches.&nbsp; Only basic functionality is available with the standard syslog settings. Please contact your Arista representative for details.<br><br>This content pack includes the following dashboards:<br><br><span style=\"font-weight: bold;\">Overview</span>: A high level summary of events, warnings, and errors across your network. Alerts can be triggered on emergency events that need immediate attention.<br><br><span style=\"font-weight: bold;\">Inventory</span>: Track the switches and transceivers currently deployed in your network. <br><br><span style=\"font-weight: bold;\">Interface Counters / Errors</span>: Monitor traffic statistics and interface errors.&nbsp; Trigger alerts based on interface error events.<br><br><span style=\"font-weight: bold;\">Platform Information</span>: Track environmental data such as power and temperature. The alerts can notify an administrator of platform issues.<br><br><span style=\"font-weight: bold;\">Virtualization</span>: Gain visibility into VMware vMotion events and NSX logical switches on the network.<br><br><span style=\"font-weight: bold;\">Layer 3 Routing</span>: Monitor BGP and OSPF errors on the network.<br>",
@@ -98,9 +96,7 @@
     "framework": "#9c4",
     "contentPackId": "com.cisco.asa",
     "version": "2.4",
-    "url": "https://solutionexchange.vmware.com/store/loginsight",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://solutionexchange.vmware.com/store/loginsight"
   },
   {
     "info": "<span>The content pack for Nexus switches offers easy to understand, visual representation on how well operationally, the Nexus switches are working. The content pack sorts the log messages collected by feature and technology type, for quick simple representation of messages by severity level, and the impact of these operationally.</span><br><span>&nbsp;</span><br><span>The Nexus Switching content pack collects and organizes the Log messages based upon the type and priority of the message and stores these into the database for time of day analysis. The Log Insight system administrator can then view the log messages by networking functions including routing, switching, security, access, authentication, as well as the more common device and interface type, for researching and remediating problems.</span><br><span>&nbsp;</span><br><span>The content pack has 12 dashboards, 68 widgets, 13 queries , and X alarms specific to Nexus switches. Both Nexus fixed and modular chassis are supported including the Nexus 2K, 3K, 5K, 6K and 7K.&nbsp;More notable features include reporting on security, device, topology, and performance events that impact the operations of the data center network.</span><br>",
@@ -115,9 +111,7 @@
     "framework": "#9c4",
     "contentPackId": "com.cisco.nexus",
     "version": "2.4",
-    "url": "https://solutionexchange.vmware.com/store/loginsight",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://solutionexchange.vmware.com/store/loginsight"
   },
   {
     "info": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<span>The\nCisco UCS content pack for VMware Log Insight provides insight into the syslogs\nof UCS Manager, allowing you to make informed and proactive decisions within\nyour UCS domains.<span></span></span><br>\n\n<span><br>\nFor information about configuring Log Insight as remote destination of syslogs\nin UCS Manager, check&nbsp;<a href=\"http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/sw/ucsm_syslog/b_Monitoring_Cisco_UCSM_Using_Syslog/b_Monitoring_Cisco_UCSM_Using_Syslog_chapter_010.html\">Configuring\nSyslog in Cisco UCS Manager</a><span>.</span><br>\n<br>\nFor information on monitoring syslog in UCS Manager, see&nbsp;<a href=\"http://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/sw/ucsm_syslog/b_Monitoring_Cisco_UCSM_Using_Syslog/b_Monitoring_Cisco_UCSM_Using_Syslog_chapter_011.html\">Monitoring\nSyslog Messages in Cisco UCS Manager</a><span>.</span><br>\n&nbsp;<u><span><span></span></span></u></span><br>\n\n<span>This\ncontent pack includes:<span></span></span><br>\n\n<span><br>\n&nbsp;<b>-&gt;</b>&nbsp;<b>General&nbsp;</b>-&nbsp;<b>Overview</b>&nbsp;dashboard\ngives an overview of the faults generated in UCS domains categorized by type of\nthe fault and the UCS domain.<br>\n<b>-&gt;&nbsp;</b>A dashboard,&nbsp;<b>General&nbsp;-&nbsp;Security</b>, that\nallows you to find the users who logged into the UCS domain from which\nlocations and through what means and also monitor the source and target of any\nmalicious requests posted to the UCS domains.<br>\n<b>-&gt;&nbsp;</b>A dashboard to actively monitor the informational logs that\nwould help you in a getting deeper view into changes in each UCS domain.<br>\n<b>-&gt;&nbsp;</b>Dashboards to facilitate easier identification or\ntroubleshooting of power and temperature problems.<br>\n<b>-&gt;&nbsp;</b>A dashboard for each equipment, (adapter, chassis, FEX, FI, IOM,\nmotherboard, server) in UCS domain which provides widgets to identify and\nanalyze the faults in them based on host, severity, cause and the component.<br>\n<b>-&gt;&nbsp;</b>A dashboard,&nbsp;<b>Compute&nbsp;-&nbsp;Pool</b>, which give\ndetails of faults related to pools (FC, IP, IQN, MAC, Server, UUID) in UCS\ndomain.<br>\n<b>-&gt;&nbsp;</b>A dashboard,&nbsp;<b>Compute - Service Profile</b>, dedicated\nto analyze faults associated with service profiles in UCS Manager based on domain,\nseverity, component and the cause.<br>\n<b>-&gt;&nbsp;</b>Alerts, to notify users on enabling, for faults those would\nrequire immediate attention of the user.<span></span></span><br>",
@@ -131,9 +125,7 @@
     "framework": "#9c4",
     "contentPackId": "com.cisco.loginsight",
     "version": "2.4",
-    "url": "http://www.cisco.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.cisco.com"
   },
   {
     "info": "<span>&nbsp; &nbsp; Citrix NetScaler is a load balancer that helps enable enterprise or cloud services. &nbsp;Although it is a load balancer at heart, it provides a multitude of other networking functions such as Firewall, VPN, Integrated Caching, Content Switching, Cache Redirection, DNS, SSL, and NAT (among many others).</span><br><span><br></span><br><span>&nbsp; &nbsp; Even a small Citrix NetScaler system can generate A LOT of syslog entries, which can make troubleshooting immensely difficult. &nbsp;This content pack substantially eases these pains by categorizing and tagging each log entry to make searching and understanding the overall health of the system a breeze.</span><br><span>&nbsp;&nbsp;</span><br><span>&nbsp; &nbsp; This content pack covers syslog entries forwarded from Citrix NetScaler Appliances at version 10.x and 11 and supports Log Insight v3.3+.</span><br>",
@@ -147,9 +139,7 @@
     "framework": "#9c4",
     "contentPackId": "com.citrix.netscaler",
     "version": "2.4",
-    "url": "http://wwww.bluemedora.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://wwww.bluemedora.com"
   },
   {
     "info": "<span>Dell EMC VMAX and PowerMax content pack provides you with important information about your VMAX and PowerMax array(s) from sources such as Solutions Enabler and Unisphere for VMAX/PowerMax. The content pack enables:<br></span><br><span style=\"font-weight: bold;\">Proactive monitoring of your VMAX and PowerMax array<br></span><span>Quickly identify issues using dashboards and pre-defined alerts.</span><br><span style=\"font-weight: bold;\"><br>Historical viewing of VMAX and PowerMax events<br></span><span>Using the custom date functionality view VMAX and PowerMax trends over extended periods of times to help identify potential problems before they impact production.<br></span><br><span style=\"font-weight: bold;\">Additional information and context<br></span><span>Each dashboard widget includes information about the widget with links to documentation or any other information that might be applicable.<br></span><span><br>The Dell EMC VMAX and PowerMax content pack will help bridge the gap between the VMware and system administrators, providing a common set of data by which the VMAX and PowerMax can be monitored and issues addressed.</span>",
@@ -164,9 +154,7 @@
     "framework": "#9c4",
     "contentPackId": "com.dellemc.vpmax",
     "version": "2.4",
-    "url": "https://www.dellemc.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.dellemc.com"
   },
   {
     "info": "An integrated Dell Remote Access Controller (iDRAC) with Lifecycle Controller is embedded in every Dell PowerEdge server. It provides functionality that helps you deploy, update, monitor and maintain Dell PowerEdge servers with or without a systems management software agent.<br><br>With powerful, easy-to-use, remote management and configuration options, iDRAC with Lifecycle Controller can alert you when an issue occurs, no matter where you are. It enables streamlined local and remote server management, and reduces or eliminates the need for administrators to physically visit the server \u2014 even if the server is not operational.&nbsp;<br><br>This content pack shows widgets that monitor audit, storage and configuration events, addition to System health events.&nbsp;",
@@ -181,9 +169,7 @@
     "framework": "#9c4",
     "contentPackId": "com.dell.idrac",
     "version": "2.4",
-    "url": "http://www.dell.com/learn/us/en/555/solutions/integrated-dell-remote-access-controller-idrac",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.dell.com/learn/us/en/555/solutions/integrated-dell-remote-access-controller-idrac"
   },
   {
     "info": "<span>The\nDell Networking Content Pack for vRealize Log Insight collects, filters and\nsorts syslog messages based on a set of pre-configured, ready to use rules for\nthe most common operational aspects of Dell switches: Inventory, Layer 2 and 3\nprotocols, Interfaces, SAN protocols, as well as views to categorize logs based\non the severity and resource type.<br><span></span></span><br>\n\n<span>The\nContent Pack consists of 11 dashboards, 63+ widgets, 65+ queries, 6+ alerts and\nmonitor more than 270+ syslog events.<br><span></span></span><br>\n\n<span>The\nContent Pack has several panels to group widgets logically:<br><span></span></span><br>\n\n<span><u>Inventory</u>:\nDisplay devices, cards, ports and LLDP-discovered peers<br><span></span></span><br>\n\n<span><u>Interface</u>:\nMonitor the operational and administrative status of physical and logical\ninterfaces, as well as error conditions<br><span></span></span><br>\n\n<span><u>Layer 2</u>: Track\nLayer 2 protocol conditions (STP, VLT, LACP, ARP, etc.)<br><span></span></span><br>\n\n<span><u>Layer 3</u>: Track\nLayer 3 protocol conditions (OSPF, BGP, ISIS, VRRP, etc.)<br><span></span></span><br>\n\n<span><u>SAN\nevents</u>: Track iSCSI and FCoE/FSB protocol conditions<br><span></span></span><br>\n\n<span><u>Hardware</u>:\nMonitor environmental and operating status of the device, fan modules and power\nsupplies, temperature and power consumption<br><span></span></span><br>\n\n<span><b>Notes</b>:<br><span></span></span><br>\n\n<span>Follow\nthe Setup instructions to configure VMware Log Insight and Dell switches<br><span></span></span><br>\n\n<span>The Dell Networking Content\nPack is compatible with Dell switches running OS9 and VMware Log Insight 3.3 or\nlater</span><br>",
@@ -226,9 +212,7 @@
     "framework": "#9c4",
     "contentPackId": "com.emc.xio",
     "version": "2.4",
-    "url": "http://www.emc.com/storage/xtremio/overview.htm",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.emc.com/storage/xtremio/overview.htm"
   },
   {
     "info": "Import real-time network, web, database, storage, and memcache metrics into Log Insight that are otherwise difficult or impossible to log. To work, this app requires an ExtraHop appliance. You can download a free ExtraHop virtual appliance at <a href=\"http://www.extrahop.com/discovery\">http://www.extrahop.com/discovery</a><br>",
@@ -271,9 +255,7 @@
     "framework": "#9c4",
     "contentPackId": "com.f5.bigip",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "<span>The Log Insight General Content Pack includes four dashboards:<br><br><span style=\"font-weight: bold;\"><span>\u2022&nbsp;</span>Overview</span>&nbsp;-&nbsp;<span>Provides generic information about any events being sent to your Log Insight instance including errors, warnings, and exceptions.</span><br><span style=\"font-weight: bold;\"><span>\u2022&nbsp;</span>Event Types</span>&nbsp;- Provides information discovered by Log Insight's machine learning including unique errors, warnings, and exceptions.<br><span style=\"font-weight: bold;\"><span>\u2022&nbsp;</span>Agents</span>&nbsp;- Provides information about configured Log Insight agents including configured filelog and winlog collection. For information about currently configured agents, visit the <a href=\"/admin/agents\">Agents</a> page.</span><br><span style=\"font-weight: bold;\"><span>\u2022&nbsp;</span>Security</span>&nbsp;-&nbsp;<span>Provides generic information about security related events including failed authentication requests and events containing user information.",
@@ -328,9 +310,7 @@
     "framework": "#9c4",
     "contentPackId": "com.hitachi.infrastructure",
     "version": "2.4",
-    "url": "www.hitachivantara.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "www.hitachivantara.com"
   },
   {
     "info": "<span><span>The HP Servers Content Pack by Blue Medora provides visualization and in-depth analysis of logs forwarded by HP iLO devices. Example uses include:<br><span><span>\u2022</span></span> Detect failed login attempts and quickly find the source<br><span><span>\u2022</span></span> Be alerted of physical problems such as power loss<br><span><span>\u2022</span></span> View event trends<br><br>The HP iLO subsystem is a standard component of HP ProLiant servers. Currently this content pack supports iLO 4+. <br></span></span>",
@@ -344,9 +324,7 @@
     "framework": "#9c4",
     "contentPackId": "com.hp.servers",
     "version": "2.4",
-    "url": "http://www8.hp.com/us/en/products/servers/ilo/",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www8.hp.com/us/en/products/servers/ilo/"
   },
   {
     "info": "<span>HP\nStoreFront Analytics for VMware vRealize Log Insight 1.0 content pack is\nprovided to present log data in a more meaningful way and to analyze all event\nlogs redirected from a HP 3PAR StoreServ Syslog. The content pack contains\nvarious dashboards, queries and alerts to provide better diagnostics and\ntroubleshooting capabilities to the HP 3PAR StoreServ administrator. The\ncontent pack provides:</span><br>\n\n<span>&nbsp;</span><br>\n\n<span><span style=\"font-weight: bold;\">Proactive monitoring and alert notifications of the HP\n3PAR StoreServ components</span></span><br>\n\n<span>Specific\nalerts focused on important events that indicate problems can be enabled to get\nthe alerts in vROps as well as for sending emails to the administrator.</span><br>\n\n<span>&nbsp;</span><br>\n\n<span>Copyright\n2015 Hewlett-Packard Development Company, L.P.</span><br>",
@@ -388,9 +366,7 @@
     "framework": "#9c4",
     "contentPackId": "com.hpe.storage",
     "version": "2.4",
-    "url": "www.hpe.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "www.hpe.com"
   },
   {
     "info": "<span style=\"font-weight: bold;\">Proactive monitoring of your eSight</span><br><span>Push events to the Log Insight platform to monitor eSight using management services. Quickly identify issues using dashboards and pre-defined alerts. Highly scalable, and designed to process big data.</span><br><br><span style=\"font-weight: bold;\">Historical viewing of Huawei array events</span><br><span>View Huawei eSight server trends over extended periods of time by using customized functions to help identify potential problems before they affect production.</span><br><br><span>The Huawei eSight content pack will help bridge the gap between VMware and system administrators, providing a common set of data by which the Huawei eSight server can be monitored and issues can be addressed.</span>",
@@ -404,9 +380,7 @@
     "framework": "#9c4",
     "contentPackId": "com.huawei.esight",
     "version": "2.4",
-    "url": "https://www.huawei.com/",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.huawei.com/"
   },
   {
     "info": "<span style=\"font-weight: bold;\">Proactive monitoring of your HMM</span><br><span>Push events to the Log Insight platform to monitor Huawei E9000 using management services. Quickly identify issues using dashboards and pre-defined alerts. Highly scalable, and designed to process big data.</span><br><br><span style=\"font-weight: bold;\">Historical viewing of Huawei array events</span><br><span>View E9000 server trends over extended periods of time by using customized functions to help identify potential problems before they affect production.</span><br><br><span>The Huawei HMM content pack will help bridge the gap between VMware and system administrators, providing a common set of data by which Huawei E9000 can be monitored and issues can be addressed.</span>",
@@ -420,9 +394,7 @@
     "framework": "#9c4",
     "contentPackId": "com.huawei.hmm",
     "version": "2.4",
-    "url": "https://www.huawei.com/",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.huawei.com/"
   },
   {
     "info": "<span style=\"font-weight: bold;\">Proactive monitoring of your iBMC</span><br><span>Push events to the Log Insight platform to monitor Huawei servers using management services. Quickly identify issues using dashboards and pre-defined alerts. Highly scalable, and designed to process big data.</span><br><br><span style=\"font-weight: bold;\">Historical viewing of Huawei array events</span><br><span>View Huawei server trends over extended periods of time by using customized functions to help identify potential problems before they affect production.</span><br><br><span>The Huawei iBMC content pack will help bridge the gap between VMware and system administrators, providing a common set of data by which the Huawei servers can be monitored and issues can be addressed.</span>",
@@ -436,9 +408,7 @@
     "framework": "#9c4",
     "contentPackId": "com.huawei.ibmc",
     "version": "2.4",
-    "url": "https://www.huawei.com/",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.huawei.com/"
   },
   {
     "info": "<span style=\"font-weight: bold;\">INFINIDAT - InfiniBox Content Pack</span><br><span><br></span><span>The InfiniBox Content Pack for vRealize Log Insight provides customers with the capability to easily monitor and analyze InfiniBox storage arrays by converting InfiniBox syslog messages into helpful insights.</span><br><br><span>The Content Pack aggregates valuable information and intelligently organizes it in 10 convenient dashboards.&nbsp;</span><span>Each dashboard serves a different purpose:</span><br><span><br></span><span>- Overview dashboard: provides a high-level visibility across multiple InfiniBox systems in a single pane.</span><br><span>- Three activities dashboards: centralized views for different system activities.</span><br><span>- Six troubleshooting dashboards: quickly discover and analyze problems, each dashboard focuses on different issues.</span><br><span><span></span></span><br><span style=\"font-weight: bold;\">Compatibility</span><br><br><span>The InfiniBox Content Pack is compatible with:</span><br><span>- InfiniBox versions 2.2 or later</span><br><span>- vRealize Log Insight 4.0 or later</span><br><span><span></span></span><br><span>Please follow the setup instructions in order to configure the InfiniBox storage array with vRealize Log Insight.</span><br><span><br></span><span style=\"font-weight: bold;\">About INFINIDAT</span><br><br><span>Driven by INFINIDAT\u2019s patented storage architecture, the InfiniBox unified storage array delivers ultra-high performance, throughput, and extremely low latency at a disruptive price point - all without compromising on high availability and with complete data protection. Automated provisioning, management, and application integration provide a system that is incredibly efficient and easy to deploy and manage.</span><br><br><span>For more information about INFINIDAT, please visit us at:</span><br><span>http://www.infinidat.com</span><br>",
@@ -494,9 +464,7 @@
     "framework": "#9c4",
     "contentPackId": "com.kaminario.k2",
     "version": "2.4",
-    "url": "www.kaminario.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "www.kaminario.com"
   },
   {
     "info": "This content pack allows the network operator to track, analyze, and alert on syslogs from Lenovo data center RackSwitch devices running on CNOS .The content pack has 9 dashboards that allows one to get feature&nbsp; specific charts of the syslogs being sent by the switch. Syslogs can be charted by severity, feature, switch, etc over time.<br><br>Minimum Requirements:<br><br>vRealize Log Insight v4.6+<br>Lenovo ThinkSystem and RackSwitch devices running 10.8 or greater",
@@ -510,9 +478,7 @@
     "framework": "#9c4",
     "contentPackId": "com.lenovo.cnos",
     "version": "2.4",
-    "url": "www.lenovo.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "www.lenovo.com"
   },
   {
     "info": "The Lenovo \u2013 Networking Content Pack for Log Insight allows the network operator to track, analyze, and alert on syslogs from IBM and Lenovo data center RackSwitch and Flex switches. The content pack has 18 dashboards with a total of 98 dashboard widgets and 22 alerts that allow one to get feature specific charts of the syslogs being sent by the switch.&nbsp; Syslogs can be charted by severity, feature, switch, etc over time.<br><br>Requirements:<br>Lenovo - Networking v 1.2<br>vRealize Log Insight v 3.6<br>",
@@ -526,9 +492,7 @@
     "framework": "#9c4",
     "contentPackId": "com.networking.lenovo",
     "version": "2.4",
-    "url": "www.lenovo.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "www.lenovo.com"
   },
   {
     "info": "<span>This content pack provides analysis of events\nfrom the Lenovo XClarity Administrator product, and the resources managed by\nLenovo XClarity Administrator.&nbsp;These insights can help systems\nadministrators find potential problems in their environment.</span>",
@@ -557,9 +521,7 @@
     "framework": "#9c4",
     "contentPackId": "com.linux",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "<span><span><span><span><span><span>The content pack for Microsoft\u00ae .NET CLR\u00ae\nprovides you with information about key entities of any .NET CLR installation\u2019s\nhealth using Log Insight\u2019s ability to collect events from one or more log files.<br>\n<br>\nLog Insight offers very intuitive graphical representation, especially with\nregards to log events. Spikes in the number and types of messages received can\nbe flagged as events with external notifications. System administrators can\ndrill into these events for looking at where and why these are being generated.\n<span></span></span></span><br>\n\n<span><span><span>&nbsp;</span></span></span><br>\n\n<span><span>The Microsoft<span>\u00ae</span>&nbsp;.NET CLR<span>\u00ae</span>&nbsp;Content\npack&nbsp;includes five dashboards with a total of 34 widgets and various alarms.&nbsp;The\ncontent pack enables the user to monitor the .NET server in an easily readable\ngraphical form. It provides:<br></span><span><span></span></span></span><br><b><span><span>\u2022&nbsp;</span>General overview:&nbsp;</span></b>The\n widgets in this dashboard&nbsp;describe event tracing for Windows (ETW) \nevents. Each event has an associated keyword and level, which are \ndescribed in the&nbsp;<a href=\"http://msdn.microsoft.com/en-us/library/ff357720%28v=vs.110%29.aspx\">CLR ETW Keywords and Levels</a><span>&nbsp;topic</span>.&nbsp;</span><span>It covers various events grouped by ETW keyword along with various exception, loader and security events.&nbsp;</span><span>The dashboard&nbsp;has an additional query widget which lists queries that provide more information about the CLR events.<br><br><b><span><span>\u2022&nbsp;</span>Detailed analysis of Garbage Collection, Runtime Information, Contention and Thread Pool Events:&nbsp;</span></b></span><span>The content pack has 4 dashboards with a total of 26 widgets which give you a detailed analysis of these various ETW events.</span><br><br><span><b><span><span>\u2022&nbsp;</span>Additional information:&nbsp;</span></b>Each\n dashboard widget includes information about the widget with links to \ndocumentation, knowledge base articles, and any other information making\n it possible to understand the data presented.</span></span></span><br></span>",
@@ -588,9 +550,7 @@
     "framework": "#9c4",
     "contentPackId": "com.microsoft.active-directory",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "<span>The content pack for Microsoft\u00ae Exchange\u00ae provides you with information about key entities of any Microsoft</span>\u00ae&nbsp;&nbsp;Exchange\u00ae&nbsp;installation\u2019s health using Log Insight\u2019s ability&nbsp; to&nbsp;collect events from one or more log files and&nbsp;&nbsp;monitor Windows\u00ae Event Logs.<br><br>Log Insight offers very intuitive graphical representation, especially with regards to log events. Spikes in the number and types of messages received can be flagged as events with external notifications. System administrators can drill into these events for looking at where and why these are being generated.<br><br><span>The Microsoft\u00ae Exchange\u00ae Server content pack includes 10 predefined Exchange dashboards, and around 39 widgets, several Mailbox and Transport queries and around 12 Alerts for offering a more customized user experience to Exchange administrators.&nbsp; These dashboards provide visibility into a multitude of Exchange operation functions including Mailbox, Transport, Client Access &amp; Unified Messaging, and Administrator Audit logs, SMTP, User and Database Information, mailbox size statistics.&nbsp;</span><span>Specific events offered within this Exchange content pack include the following:</span><span><ul><li>Database health checks<br></li><li>Insufficient data redundancy checks<br></li><li>Critical storage errors<br></li><li>Transport shutting down events<br></li><li>Critical service events<br></li><li>Administrative audit changes&nbsp;<br></li><li>Emails received<br></li><li>Mailbox size<br></li></ul></span><span>The top Exchange counter information closely monitored for detecting and alerting on Exchange problems include the following:</span><span><ul><li>SMTP bytes received per message<br></li><li>SMTP messages received per second<br></li><li>Store driver inbound local delivery calls per second<br></li><li>Store driver inbound message delivery attempts per second<br></li></ul></span>",
@@ -605,9 +565,7 @@
     "framework": "#9c4",
     "contentPackId": "com.microsoft.exchange2013up",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "<span>The content pack for Microsoft\u00ae IIS\u00ae provides you with information about key entities of any IIS installation\u2019s health using Log Insight\u2019s ability to&nbsp;</span>collect events from one or more log files.<br><br>Log Insight offers very intuitive graphical representation, especially with regards to log events. Spikes in the number and types of messages received can be flagged as events with external notifications. System administrators can drill into these events for looking at where and why these are being generated.<br><br>The Microsoft\u00ae&nbsp;IIS<span>\u00ae&nbsp;Content pack&nbsp;<span>includes 4 dashboards with a total of 27 widgets and 6 alarms</span>. The content pack enables the user to monitor the IIS server in an easily readable graphical form. It provides:<br><br>\u2022&nbsp;<span style=\"font-weight: bold;\">O</span><span style=\"font-weight: bold;\">verview of IIS server:&nbsp;</span>This includes monitoring the count of all events and error events over time. It also gives you information about the source (client IP) from where the request originates and the destination (server IP) which serves it along with average response time of the IIS server.<br><span style=\"font-weight: bold;\"><br>\u2022&nbsp;General Information:&nbsp;</span>User can view the number of requests successfully served by the server along with any URL redirection info. Also gives information about the number of hits from a user along with the number of anonymous hits to your IIS server.<br><br></span><span style=\"font-weight: bold;\">\u2022&nbsp;Error Monitoring:&nbsp;</span>This includes monitoring various client and server errors encountered on your IIS server.",
@@ -622,9 +580,7 @@
     "framework": "#9c4",
     "contentPackId": "com.microsoft.iis",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "<span>The content pack for Microsoft\u00ae SharePoint<span>\u00ae&nbsp;</span>(SP) provides you with information about key entities of any SharePoint\n server installation's health using Log Insight's ability to collect events from one or more log files.<br><br></span><span><span>Log Insight offers very intuitive graphical\nrepresentation, especially with regards to log events. Spikes in the number and\ntypes of messages received can be flagged as events with external\nnotifications. System administrators can drill into these events for looking at\nwhere and why these are being generated. <span></span></span></span><br><span><br><span><span>The Microsoft<span>\u00ae</span>&nbsp;Sharepoint<span>\u00ae</span>&nbsp;Content\npack&nbsp;includes six dashboards with a total of 29 widgets and 6 alarms. The\ncontent pack enables the user to monitor the Sharepoint server in an easily readable\ngraphical form. It provides:<br></span></span></span><br><span style=\"font-weight: bold;\">\u2022&nbsp;General Overview of SharePoint Server:&nbsp;</span><span>This\n includes monitoring the count of various events over time or to \ncategorize the usage of various processes/products and the various \ncategories under those areas. Also gives an idea of various events based\n on the severity levels as seen in the SharePoint ULS logs.</span><br><br><span style=\"font-weight: bold;\">\u2022&nbsp;General Exceptions:&nbsp;</span><span>The\n widgets under this dashboard enable the user to monitor various \nsecurity, authentication and SP foundation related exceptions.</span><br><br><span style=\"font-weight: bold;\">\u2022&nbsp;Error Analysis:&nbsp;</span><span>Errors in SharePoint logs are categorized under various severity levels such as critical, unexpected etc.</span><br><span>This\n dashboard along with 4 widgets groups the various errors based on the \narea, category, and process they fall under. It also includes a query \nwidget which discusses about correlation id and events requiring \nadministrative intervention.</span><br><br><span style=\"font-weight: bold;\">\u2022&nbsp;Usage Data information:&nbsp;</span><span>This\n is the data about usage on SharePoint Farm, like Page requests, feature\n use etc. The content pack gives you usage information about feature \nusage, site inventory usage and page request usage by querying the \nvarious views available in the SharePoint database.<br><br></span>\n\n<span><b>Note</b>: For\nSharePoint 2013 there would be no data seen for the dashboard <span style=\"font-style: italic;\">Site Inventory\nUsage</span> as the default view SiteInventory is not present in the database.</span><br>",
@@ -653,9 +609,7 @@
     "framework": "#9c4",
     "contentPackId": "com.microsoft.sql",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "The content pack for Microsoft\u00ae Windows\u00ae provides you with information about key entities of any Windows\u00ae&nbsp; operating system installation\u2019s health using Log Insight\u2019s ability to monitor Windows\u00ae Event Logs.<br><br>Log Insight offers very intuitive graphical representation, especially with regards to log events. Spikes in the number and types of messages received can be flagged as events with external notifications. System administrators can drill into these events for looking at where and why these are being generated.<br><br>There are eleven per-defined Windows OS specific dashboards, with total of 55 widgets, 5 query widgets and 6 alarms for helping to visualize, analyze and take meaningful action on Windows OS log information. It provides:<br><br>\u2022&nbsp;Accurate monitoring of your Windows infrastructure:&nbsp;Focus on known problems through monitoring events raised in the Windows Event Log.<br><br>\u2022&nbsp;Essential Windows categories are covered - Application, System, and Security:&nbsp;Eleven dashboards containing a total of 60 widgets are included from Application, System, and Security that go in depth to quantify your data in a multitude of manners to help diagnose problems in your infrastructure.",
@@ -670,9 +624,7 @@
     "framework": "#9c4",
     "contentPackId": "com.microsoft.windows",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "<span>By offering the best of traditional databases as well as the flexibility, scale, and performance required by today\u2019s applications, MongoDB lets innovators deploy apps as big as they can possibly dream. From startups to enterprises, for the modern and the mission-critical, MongoDB is the database for giant ideas. For more information about MongoDB, visit <a href=\"https://www.mongodb.com/\"><span>https://www.mongodb.com/</span></a>.</span><br><br>\n<span>The MongoDB Database Content Pack by Blue Medora provides an organized and useful location for all logging based activity across the Database Cluster.&nbsp;</span><span><br></span><br>\n<span>Dashboards, Fields, and Alerts provided by the MongoDB Database Content Pack put you one click away from in depth analytics and event analysis. Log events are analyzed and categorized to optimize usability and insight.<br></span><br>\n\n\n\n\n\n\n\n<span>Minimum Requirements:</span><br>\n<span><span>VMware Log Insight 3.0+</span></span><br>\n<span><span>MongoDB 3.2+</span></span><br>",
@@ -799,9 +751,7 @@
     "framework": "#9c4",
     "contentPackId": "com.pivotal.cloudfoundry",
     "version": "2.4",
-    "url": "https://pivotal.io/platform",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://pivotal.io/platform"
   },
   {
     "name": "Puppet Enterprise",
@@ -814,9 +764,7 @@
     "framework": "#9c4",
     "contentPackId": "com.puppetlabs.pe",
     "version": "2.4",
-    "url": "https://puppet.com/",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://puppet.com/"
   },
   {
     "info": "<span>Pure Storage vRealize Log Insight Content Pack version 3.0 includes:</span><br>\n<span><ul><li>Seven dashboard<br></li><li>Thirty nine widgetsSeven alerts<br></li><li>Forty extracted fields</li></ul>This content pack allows customers using the Pure Storage FlashArray to quickly and intelligently integrate and describe FlashArray syslog messages. Deployment of the content pack helps administrators, by way of the provided, pre-defined objects, in monitoring, troubleshooting and analyzing their FlashArray environment.<br></span>",
@@ -830,9 +778,7 @@
     "framework": "#9c4",
     "contentPackId": "com.pure.flasharray",
     "version": "2.4",
-    "url": "https://www.purestorage.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.purestorage.com"
   },
   {
     "info": "<span><span><span><b>Overview</b></span></span></span><br>\n<span><span><span>SolarWinds\nNetwork Performance Monitor (NPM) is a powerful and affordable\nnetwork monitoring software that enables you to quickly detect,\ndiagnose, and resolve network performance problems &amp; outages.\nSolarWinds Network monitoring software monitors fault, availability,\nand performance for devices connected to a network to aid in\ndetection, diagnosis, and resolution of network performance issues. \nSolarWinds can also monitor your databases, storage solutions, and\nserver performance. For more information about SolarWinds, visit\n<span><u style=\"text-decoration: underline;\"><a href=\"http://www.solarwinds.com/\">http://www.solarwinds.com/</a></u></span>\n.</span></span></span><br>\n<span><br></span><br>\n<span><span><span>SolarWinds\nNPM Content Pack creates a simplified view into the SolarWinds core\nservices to allow you to discover and diagnose issues as soon as they\noccur.  Items such as expired licensing, core services failing, or\nSolarWinds alert notifications errors can immediately be raised to\nthe proper personnel to ensure your monitoring solutions are fully\noperational.</span></span></span><br>\n<span><br></span><br>\n<span><span><span><b>Highlights</b></span></span></span><br>\n<span><span><span>SolarWinds\nevents are filtered into 5 convenient dashboards:</span></span></span><br>\n<span><span><span>-\nOverview</span></span></span><br>\n<span><span><span>-\nAlertingEngine Events</span></span></span><br>\n<span><span><span>-\nSyslogService Events</span></span></span><br>\n<span><span><span>-\nSWService Events</span></span></span><br>\n<span><span><span>-\nTrapService Events</span></span></span><br>\n<span><span><span>-\nBusinessLayer Events</span></span></span><br>\n<span></span><br>\n<span><span><span><b>Minimum\nrequirements</b></span></span></span><br>\n<span><span><span>VMware\nLog Insight 2.5</span></span></span><br>\n<span><span><span>SolarWinds\nNPM 10.7+</span></span></span><br>",
@@ -861,9 +807,7 @@
     "framework": "#9c4",
     "contentPackId": "com.synology.dsm",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "\n<span>Veeam\u2019s content pack for VMware vRealize Log Insight is a powerful monitoring tool for the Veeam Backup &amp; Replication\u2122 environment designed to provide users improved visibility, analysis and management of their data, including performing quick searches for critical data such as errors and successful operations. The intuitive dashboards and widgets help users efficiently organize and neatly structure Veeam\u2019s most important data into one consumable format, available at your fingertips. For deeper dives, specific widgets also feature additional data through Log Insight\u2019s built-in interactive analysis function. Users can easily monitor data related to Veeam jobs, restores, configuration changes \u2013 as well as monitor VMware, Microsoft Active Directory, SQL Server, and&nbsp;many other supported applications through Log Insight\u2019s single pane of glass, or subscribe to custom alerts triggered by selected application metrics or activities.</span><br><span><br></span><br><span>This content pack supports Log Insight 4.0 and later, as well as Veeam Backup &amp; Replication 9.0 and later.&nbsp;</span><br><br>For the Veeam Content Pack for VMware vRealize Log Insight 1.1 and newer,  support will be community driven and developments will be from the community over <a href=\"https://github.com/VeeamHub/veeam-content-pack-for-log-insight\">VeeamHub</a>.",
@@ -877,9 +821,7 @@
     "framework": "#9c4",
     "contentPackId": "com.veeam.vbr",
     "version": "2.4",
-    "url": "www.veeam.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "www.veeam.com"
   },
   {
     "info": "VMware Horizon View (formerly VMware View) is a virtual desktop infrastructure solution that simplifies desktop management. This Content Pack simplifies managing View servers with analytic dashboards for Server, Sessions, Users, Domain and more by inspecting the Horizon View logs.<br>This content pack enables:&nbsp;<br>Proactive monitoring of your View environment:<br><b>Quickly identify issues</b><br>The&nbsp;<i>error and warning&nbsp;</i>dashboard gives you a pane of glass to find problems in your View environment.<br><br><b></b><br><b>Drill down to determine the root cause</b><br>Dashboard filters make it easy to see logs from specific parts of your View environment.<br>&nbsp;<br><b>Easily consume data</b><br>Powerful and dynamic visualizations make it possible to detect anomalies, perform trending analysis, and pinpoint specific issues through targeted queries.<br><br><br><b>Alerts</b><br>Know what to monitor in your View logs and get notified when such events are detected.<br>",
@@ -894,9 +836,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.horizon.view",
     "version": "2.4",
-    "url": "https://www.vmware.com/products/horizon-view",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/products/horizon-view"
   },
   {
     "info": "The Identity Manager content pack for Log Insight provides powerful \nfilter, logging visualization, and alerting of Identity Manager \nreal-time operational activities. This enables users to effectively \nmonitor all components of your Identity Manager environment using \nintuitive Log Insight UI dashboard widgets with just a couple clicks. \n<br>The content pack enables:<br><br><b>Proactive monitoring of your Identity Manager environment</b><br><br>Quickly\n identify issues and drill down to determine the root cause with \npowerful visualizations of your data and targeted queries.<br><br><b>User and Device breakdown of Identity Manager events<br></b><br>Ability to analysis every user and device login to get a complete picture within an environment.<br><br><b>Troubleshooting and root-cause analysis<br></b><br>Specific\n queries to focus on the important events that indicate real login \nproblems with additional information and context to resolve detected \nissues quickly.",
@@ -911,9 +851,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vidm",
     "version": "2.4",
-    "url": "https://www.vmware.com/products/identity-manager.html",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/products/identity-manager.html"
   },
   {
     "info": "<span>The NSX-T Log Insight content pack provides health status dashboards for the logical switching and routing, distributed firewall, and DHCP components that make up the NSX infrastructure.  It also provides key audit logs for tracking create, add and delete changes to your NSX infrastructure.</span><br><br><span><span style=\"font-weight: bold;\">Minimum requirements</span><br>&nbsp;&nbsp;&nbsp; VMware Log Insight v3.0+<br>&nbsp;&nbsp;&nbsp; VMware NSX-T v1.0+<br></span>",
@@ -942,9 +880,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.nsx-v",
     "version": "2.4",
-    "url": "https://www.vmware.com/products/nsx",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/products/nsx"
   },
   {
     "info": "The content pack for OpenStack offers easy to understand, visual \nrepresentation on how well operationally, the OpenStack setup is \nworking. The content pack sorts the log messages collected by feature \nand technology type, for quick simple representation of messages by \nseverity level, and the impact of these operationally.<br><br>The \nOpenStack content pack collects and organizes the Log messages based \nupon the type and priority of the message and stores these into the \ndatabase for time of day analysis. The Log Insight system administrator \ncan then view the log messages by OpenStack components nova, neutron, \nglance, cinder, keystone &amp; heat.<br><b>Highlights</b><br>\u25cf &nbsp; &nbsp;&nbsp;More \nnotable features include reporting on security, networking, and \nperformance events that impact the operations of the&nbsp;OpenStack setup.&nbsp;<br>\u25cf &nbsp; &nbsp;&nbsp;The VMware \u2013VIO dashboard&nbsp;shows data specific to VMware Integrated OpenStack.<br><br><b>Minimum requirements</b><br>VMware vRealize Log Insight 4.0 GA<br>",
@@ -959,9 +895,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.openstack",
     "version": "2.4",
-    "url": "https://marketplace.vmware.com/vsx/solutions/openstack-content-pack?ref=search",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://marketplace.vmware.com/vsx/solutions/openstack-content-pack?ref=search"
   },
   {
     "info": "<span>The vRealize Orchestrator (vRO) content pack for Log Insight provides you with important information across all components of your vRO environment.The content pack enables:</span><br><br><span style=\"font-weight: bold;\">Proactive monitoring of your vRO environment</span><br><br><span>Quickly identify issues and drill down to determine the root cause with powerful visualizations of your data and targeted queries.</span><br><br><span style=\"font-weight: bold;\">Component-specific breakdown of vRO events</span><br><br><span>Ability to analysis every component and every event dependencies to get a complete picture within an environment.</span><br><br><span style=\"font-weight: bold;\">Troubleshooting and root-cause analysis</span><br><br><span>Specific queries to focus on the important events that indicate real problems with additional information and context to resolve detected issues quickly.</span><br><br><span style=\"font-weight: bold;\">Important:</span><span>&nbsp;This content pack requires vRO version 7.0.0.</span><br>",
@@ -990,9 +924,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.srm81",
     "version": "2.4",
-    "url": "http://www.vmware.com/products/site-recovery-manager.html",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com/products/site-recovery-manager.html"
   },
   {
     "info": "<span>VMware Site Recovery Manager is a business continuity and disaster recovery solution that helps you to plan, test, and run the recovery of virtual machines between a protected vCenter Server site and a recovery vCenter Server site.</span><br><br><span>Site Recovery Manager orchestrates the recovery process with the replication mechanisms, to minimize data loss and system down time.</span><br><ul><li>At the protected site, Site Recovery Manager shuts down virtual machines cleanly and synchronizes storage, if the protected site is still running.</li><li>Site Recovery Manager powers on the replicated virtual machines at the recovery site according to a recovery plan.</li></ul><br><span>A recovery plan specifies the order in which virtual machines start up on the recovery site. A recovery plan specifies network parameters, such as IP addresses, and can contain user-specified scripts that Site Recovery Manager can run to perform custom recovery actions on virtual machines.</span><br><br><span>This content pack a deeper look into SRM and SRA logs for analysis and troubleshooting.</span><br>",
@@ -1007,9 +939,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.srm",
     "version": "2.4",
-    "url": "http://www.vmware.com/products/site-recovery-manager.html",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com/products/site-recovery-manager.html"
   },
   {
     "info": "This content pack for VMware vCloud Director (vCD) versions 5.5 and onward to include vCD 8.x SP provides you with information from vCD that will help you to have a more complete picture about the health and operational status of your private cloud. The dashboards can be used with information level logs but for most alerts debug log collection is both required and highly recommended. Furthermore, debug level logging is set as the default in the included Agent Group. This Content Pack will provide you with: <br><br><b>Detailed vApp activity information:</b> This content pack will give you visibility into what vApp operations are happening and when to show you load as well as usage trends. <br><br><b>Consolidated operational overview:</b> Have a clear picture of the overall health of your vCD environment and find problematic areas that you did not know existed. <br><br><b>Robust alerting:</b> Capitalize on an collection of alerts built by an experienced cloud team to help you quickly detect and respond to issues in your environment when something goes wrong.",
@@ -1052,9 +982,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vra.73",
     "version": "2.4",
-    "url": "https://www.vmware.com/products/vrealize-automation",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/products/vrealize-automation"
   },
   {
     "info": "The vRealize Automation (vRA) 7.5+ content pack for Log Insight provides you with important information across all components of your vRA environment and key dependencies such as VMware Identity Manager (vIDM).&nbsp;<br><br>The content pack enables:<br><ul><li>Proactive monitoring of vRA 7.5+ environments.</li><li>Quickly identify issues and drill down to determine the root cause with powerful visualizations of your data and targeted queries.</li><li>Component-specific breakdown of vRA events</li><li>Ability to analyze every component and every event dependencies to get a complete picture within an environment.</li><li>Troubleshooting and root-cause analysis</li><li>Specific queries to focus on the important events that indicate real problems with additional information and context to resolve detected issues quickly.</li></ul><br><br>Important: This content pack requires vRA version 7.5+, and has been tested with vRLI version 4.7, 4.8 and vRLI Agent 4.7, 4.7.1, and 4.8",
@@ -1069,9 +997,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vra.75",
     "version": "2.4",
-    "url": "https://www.vmware.com/products/vrealize-automation",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/products/vrealize-automation"
   },
   {
     "info": "<span style=\"font-weight: 400; font-style: normal;\">The vRealize Business for Cloud (vRBC) 7.3+ content pack for Log Insight provides you important information across all components of your vRBC environment.&nbsp;It provides functionality that helps you&nbsp;in monitoring and maintenance of vRBC environments.</span><span style=\"font-weight: 400; font-style: normal;\">&nbsp;</span><br><span style=\"font-weight: 400; font-style: normal;\">The content pack enables:</span><ul><li>Proactive monitoring of vRA 7.3+ environments.</li><li>Quickly identify issues and drill down to determine the root cause with powerful visualizations of your data and targeted queries.<br></li><li>Ability to analysis main vRBC components and every event dependencies to get a complete picture within an environment..</li><li>Troubleshooting and root-cause analysis</li><li>Specific queries to focus on the important events that indicate real problems with additional information and context to resolve detected issues quickly.</li></ul><br><b>Compatibility:</b><br><span style=\"font-weight: 400; font-style: normal;\">vRealize Business for Cloud (vRBC) 7.3+</span><br><span style=\"font-weight: 400; font-style: normal;\">vRealize Log Insight agent 4.5 and later</span><br><span style=\"font-weight: 400; font-style: normal;\">vRealize Log Insight 4.0 and later</span>",
@@ -1086,9 +1012,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vrbc",
     "version": "2.4",
-    "url": "https://www.vmware.com/in/products/vrealize-business-for-cloud.html",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/in/products/vrealize-business-for-cloud.html"
   },
   {
     "info": "<span>This content pack is intended to be used by the VMware vRealize Network Insight software. It consumes VMware NSX Manager logs to determine changes to security groups and report them to VMware vRealize Network Insight. This allows VMware vRealize Network Insight to quickly show security updates happening in VMware NSX Manager.<br></span><br><span>It doesn't have any user consumable dashboards. Please make sure that the alerts of this content pack are enabled with correct webhook URL as instructed by VMware vRealize Network Insight.<br></span><br><span>Requirements -<br></span><span>VMware vRealize Log Insight v4.5 and onward<br></span><span>VMware vRealize Network Insight v3.8 and onward<br></span><span>VMware NSX Manager v6.2 and onward<br></span><br><span>More details -<br><br><a href=\"https://docs.vmware.com/en/VMware-vRealize-Network-Insight/3.8/com.vmware.vrni.using.doc/GUID-EE3EAE49-8702-40F0-AE0F-8CCA9E3274EB.html\">https://docs.vmware.com/en/VMware-vRealize-Network-Insight/3.8/com.vmware.vrni.using.doc/GUID-EE3EAE49-8702-40F0-AE0F-8CCA9E3274EB.html</a><br></span>",
@@ -1102,9 +1026,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vrni",
     "version": "2.4",
-    "url": "www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "www.vmware.com"
   },
   {
     "info": "<span>The vRealize Orchestrator (vRO) content pack for Log Insight provides you with important information across all components of your vRO environment.The content pack enables:</span><br><br><span style=\"font-weight: bold;\">Proactive monitoring of your vRO environment</span><br><br><span>Quickly identify issues and drill down to determine the root cause with powerful visualizations of your data and targeted queries.</span><br><br><span style=\"font-weight: bold;\">Component-specific breakdown of vRO events</span><br><br><span>Ability to analysis every component and every event dependencies to get a complete picture within an environment.</span><br><br><span style=\"font-weight: bold;\">Troubleshooting and root-cause analysis</span><br><br><span>Specific queries to focus on the important events that indicate real problems with additional information and context to resolve detected issues quickly.</span><br><br><span style=\"font-weight: bold;\">Important:</span><span>&nbsp;This content pack requires vRO version 7.0.1+.</span><br>",
@@ -1132,9 +1054,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vrops",
     "version": "2.4",
-    "url": "https://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com"
   },
   {
     "info": "<span>VMware vRealize Operations Manager content pack is provided to present log data in a more meaningful way and to analyze all the logs redirected from a vRealize Operations Manager instance(s). The content pack contains various dashboards, queries and alerts to provide better diagnostics and troubleshooting capabilities to the vRealize Operations Manager administrator. The content pack provides:&nbsp;</span><br><span>&nbsp;<span style=\"font-weight: bold;\">Proactive monitoring and alert notifications of the vRealize Operations clusters</span></span><span>Specific alerts focused on important events that indicate problems can be enabled to get the alerts in vROps as well as for sending emails to the administrator(s).</span><br><span>&nbsp;<span style=\"font-weight: bold;\">Cluster-role specific breakdown of vRealize Operations events</span></span><span>The dashboards can be filtered according to the cluster role of the vROps nodes/slices like Master, Data, Replica and Remote Collector to provide better manageability.</span><br><span>&nbsp;<span style=\"font-weight: bold;\">Highlights</span></span><span>The VMware vRealize Operations Manager (vROps) content pack provides a consolidated summary of log events across all vROps components of the environment including the vROps Telemetry, vROps casa Components, Gemfire, Analytics, Collectors. This version of the content pack is designed specifically for vROps 6.7 or above.</span><span>&nbsp; &nbsp; - Proactive monitoring of vROps environment</span><span>&nbsp; &nbsp; - Component-specific breakdown of vROps events</span><span>&nbsp; &nbsp; - Troubleshooting and root-cause analysis</span><br><span>&nbsp;<span style=\"font-weight: bold;\">Compatibility</span></span><span>The vRealize Operations Manager content pack designed for vRealize Log Insight version 4.6+ and vRealize Operations Manager version 6.7+, but majority of the components stays still compatible for old configured environments of versions: vRealize Log Insight version 3.0+ and vRealize Operations Manager version 6.x+.</span><br><span style=\"font-weight: bold;\">IMPORTANT: Starting from 6.7 version of vRealize Operations Manager, the only recommended way to configure log forwarding is through Administration &gt; Management &gt; Log Forwarding.</span><br><span>For older versions of vROps the manual Log Insight agent configuration is still expected to be done. For directions on proper agent configuration see the Setup Instructions of VMware - vROps 6.x Content Pack.</span><br><span>Changelog:<br><ul><li>v3.0:&nbsp;Added new \"User - Activity Audit v7.5+\" and \"User - Delete Activity Audit v7.5+\" dashboards. These dashboards designed for vRealize Operations Manager 7.5 and above versions</li><li>v2.1:&nbsp;Replaced \u201cCluster Security\u201d dashboard with \u201cSecurity - Authentication\u201d with more details on source of sent authentication requests</li></ul></span>",
@@ -1148,9 +1068,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vrops67",
     "version": "2.4",
-    "url": "https://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com"
   },
   {
     "info": "<span>The vRealize Suite\nLife Cycle Manager (vRSLCM) 1.3 content pack for vRealize Log Insight(vRLI)\nprovides you with valuable log information across all the components of your\nvRSLCM environment.&nbsp;</span><span>The content pack enables: Proactive\nmonitoring of vRSLCM 1.3 environment. Quickly identify issues and drill down to\ndetermine the root cause with powerful visualizations of your data and targeted\nqueries. Component-specific breakdown of vRSLCM events. Ability to analyze events\nof every component and dependencies to get a complete picture within an\nenvironment. Troubleshooting and root-cause analysis. Specific queries to focus\non the notable events that indicate real problems with additional information\nand context to resolve detected issues quickly.</span>",
@@ -1165,9 +1083,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vrslcm",
     "version": "2.4",
-    "url": "https://www.vmware.com/in/products/vrealize-suite.html",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/in/products/vrealize-suite.html"
   },
   {
     "info": "<span>This content pack is supported for vRSLCM version 8.0.1(Patch1) and above only.</span><ul type=\"disc\"><li>The vRealize Suite Life Cycle Manager (vRSLCM) 8.0.1 (PATCH 1) content pack for vRealize Log Insight(vRLI) provides you with valuable log information across all the components of your vRSLCM environment.&nbsp;</li><li>The content pack enables:&nbsp;</li><ol start=\"1\" type=\"1\"><li>Proactive monitoring of vRSLCM.&nbsp;</li><li>Quickly identify issues and drill down to determine the root cause with powerful visualizations of your data and targeted queries.</li><li>Component-specific breakdown of vRSLCM events.</li><li>Ability to analyse events of every component and dependencies to get a complete picture within an environment.</li></ol><li>For more information related to product refer to:&nbsp;<a href=\"https://docs.vmware.com/en/VMware-vRealize-Suite-Lifecycle-Manager/8.0.1/com.vmware.vrsuite.lcm.8.0.1.doc/GUID-5E1CB756-CE86-430D-89C0-DE3831C33738.html\">https://docs.vmware.com/en/VMware-vRealize-Suite-Lifecycle-Manager/8.0.1/com.vmware.vrsuite.lcm.8.0.1.doc/GUID-5E1CB756-CE86-430D-89C0-DE3831C33738.html</a></li></ul>",
@@ -1181,9 +1097,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vrslcm801",
     "version": "2.4",
-    "url": "https://www.vmware.com/in/products/vrealize-suite.html",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/in/products/vrealize-suite.html"
   },
   {
     "info": "<span>The vSAN content pack provides powerful insight into your vSAN logs, allowing you to make informed and proactive decisions within your environment.</span><br><span><br></span><span>This content pack enables:</span><br><span style=\"font-weight: bold;\">Proactive monitoring of your vSAN environment</span><br><span>- Quickly identify issues: The various dashboards help to find problems in your vSAN environment.</span><br><span>- Drill down to determine the root cause: Dashboard filters make it easy to see logs from specific parts of your vSAN environment.</span><br><span>- Easily consume data: Powerful and dynamic visualizations make it possible to detect anomalies, perform trending analysis, and pinpoint specific issues through targeted queries.</span><br><span>- Alerts: Know what to monitor in your vSAN logs and get notified when such events are detected.</span><br><br><span style=\"font-weight: bold;\">Additional information and context</span><br><span>- Query notes: Each dashboard widget includes information about the widget with links to documentation, knowledge base articles, and any other information making it possible to understand the data presented.</span><br><br><br>Changelog<br><ul><li>v2.2: Bug fixes; Overview dashboard; Storage Policy Events dashboard</li></ul>",
@@ -1198,9 +1112,7 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vsan",
     "version": "2.4",
-    "url": "http://www.vmware.com",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "http://www.vmware.com"
   },
   {
     "info": "<span>The vSphere content pack provides powerful insight into your vCenter Server and ESXi logs, allowing you to make informed and proactive decisions within your environment. This content pack enables:</span><br><br><span>Proactive monitoring of your vSphere environment</span><br><ul><li>Quickly identify issues:&nbsp;The&nbsp;<a href=\"https://10.126.59.40/home?contextId=com.vmware.vsphere&amp;amp;datePreset=LAST_24_HOURS&amp;amp;viewId=2&amp;viewId=2\">General - Problems</a>&nbsp;dashboard gives you a single pane of glass to find problems in your vSphere environment while the&nbsp;<a href=\"https://10.126.59.40/home?contextId=com.vmware.vsphere&amp;amp;datePreset=LAST_24_HOURS&amp;amp;viewId=28&amp;viewId=3\">General - Performance</a>&nbsp;dashboard does the same to isolate performance issues.</li><li>Drill down to determine the root cause:&nbsp;Dashboard filters make it easy to see logs from specific parts of your vSphere environment.</li><li>Easily consume data:&nbsp;Powerful and dynamic visualizations make it possible to detect anomalies, perform trending analysis, and pinpoint specific issues through targeted queries.</li><li>Alerts:&nbsp;Know what to monitor in your vSphere logs and get notified when such events are detected.</li></ul><br><span>Track changes and isolate security threats</span><br><ul><li>Configuration management:&nbsp;Track user-initiated changes and automated vSphere actions through the&nbsp;<a href=\"https://10.126.59.40/home?contextId=com.vmware.vsphere&amp;amp;datePreset=LAST_24_HOURS&amp;amp;viewId=28&amp;viewId=11\">vCenter Server - Tasks</a>&nbsp;dashboard.</li><li>Environmental changes:&nbsp;Get a complete picture from the&nbsp;<a href=\"https://10.126.59.40/home?contextId=com.vmware.vsphere&amp;amp;datePreset=LAST_24_HOURS&amp;amp;viewId=28&amp;viewId=5\">Security - Auditing</a>&nbsp;dashboard or see more specific information like what VMs are being moved through&nbsp;<a href=\"https://10.126.59.40/home?contextId=com.vmware.vsphere&amp;amp;datePreset=LAST_24_HOURS&amp;amp;viewId=28&amp;viewId=20\">DRS and HA actions</a>.</li><li>Security:&nbsp;The&nbsp;<a href=\"https://10.126.59.40/\">Security - Authentication</a>&nbsp;dashboard allows you to find who is logging into vSphere devices from which locations and through what means.</li></ul><br><span>Additional information and context</span><br><ul><li>Query notes:&nbsp;Each dashboard widget includes information about the widget with links to documentation, knowledge base articles, and any other information making it possible to understand the data presented.</li><li>Inventory:&nbsp;The&nbsp;<a href=\"https://10.126.59.40/home?contextId=com.vmware.vsphere&amp;amp;datePreset=LAST_24_HOURS&amp;amp;viewId=28&amp;viewId=7\">General - Inventory</a>&nbsp;dashboard quantifies results seen through vSphere logs making it simple to ensure complete environment monitoring.</li></ul><br><br><span>Changelog</span><br><ul><li>v8.0: Added new widget for monitoring accesses from DCUI, bug fixes</li><li>v4.8: Improving DRS dashboard, bug fixes</li><li>v4.7: Agent new configurations for vSphere 6.5 and 6.7 versions, new widgets regarding HA/FDM, bug fixes</li><li>v4.6: Bug fixes</li><li>v4.5: Enhanced security dashboards and, bug fixes</li><li>v4.4: Enhanced security dashboards, new security alerts, new vCenter Server Reconfigurations dashboard, bug fixes</li><li>v4.3: Support for vCenter Server 6.5, new dashboards for vSphere - Monitoring and Replication, bug fixes</li><li>v4.0: Bug fixes. IMPORTANT: This content pack&nbsp;does not support vCenter Server 6.5</li><li>v3.6: Bug fixes. IMPORTANT:&nbsp;Changes to agent groups included, recreating agent groups is recommended!</li></ul>",
@@ -1214,8 +1126,6 @@
     "framework": "#9c4",
     "contentPackId": "com.vmware.vsphere",
     "version": "2.4",
-    "url": "https://www.vmware.com/products/vsphere",
-    "aliasFields": [],
-    "aliasRules": []
+    "url": "https://www.vmware.com/products/vsphere"
   }
 ]

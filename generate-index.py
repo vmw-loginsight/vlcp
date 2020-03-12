@@ -18,6 +18,8 @@ def prep_json(file_path, support_mode):
     js.pop('eventTypes', None)
     js.pop('agentClasses', None)
     js.pop('extractedFields', None)
+    js.pop('aliasFields', None)
+    js.pop('aliasRules', None)
     js.pop('instructions', None)
     js['fileName'] = prep_path(file_path)
     js['supportMode'] = support_mode
