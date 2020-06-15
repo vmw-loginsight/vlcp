@@ -1,8 +1,14 @@
 
 function main()
 {
+	Write-Host "------------------------------- Executing 'ex_admin_auditlog' function ---------------------------------"
+	Write-Host ""
 	ex_admin_auditlog
+	Write-Host "------------------------------- Executing 'ex_perfcounter' function ------------------------------------"
+	Write-Host ""
 	ex_perfcounter	
+	Write-Host "------------------------------- Executing 'ex_serverconf' function -------------------------------------"
+	Write-Host ""
 	ex_serverconf
 }
 

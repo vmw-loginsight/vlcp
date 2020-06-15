@@ -1,9 +1,17 @@
 
 function main()
 {
+	Write-Host "------------------------------- Executing 'ex_dbinfo' function -----------------------------------------"
+	Write-Host ""
 	ex_dbinfo
-	exchange_email_stats	
+	Write-Host "------------------------------- Executing 'exchange_email_stats' function ------------------------------"
+	Write-Host ""
+	exchange_email_stats
+	Write-Host "------------------------------- Executing 'exchange_mailbox_stats' function ----------------------------"
+	Write-Host ""	
 	exchange_mailbox_stats
+	Write-Host "------------------------------- Executing 'exchange_environment_report' function ----------------------"
+	Write-Host ""
 	exchange_environment_report
 }
 
