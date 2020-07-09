@@ -1,0 +1,248 @@
+{
+  "name":"Dell - iDRAC",
+  "namespace":"com.dell.idrac",
+  "contentPackId":"com.dell.idrac",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"dell_idrac_audit_login_status",
+    "preContext":"(^)?Severity: \\w+\\, Category: \\w+(\\s+\\w+)?\\, MessageID: \\w+\\, Message: ",
+    "postContext":" (logged|to log in)",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000",
+    "constraints":"{}",
+    "info":null
+  }, {
+    "displayName":"dell_idrac_audit_source",
+    "preContext":"(^)?Severity: \\w+\\, Category: \\w+(\\s+\\w+)?\\, MessageID: \\w+\\, Message:.* from ",
+    "postContext":"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5zw65lsmnsq0000",
+    "constraints":"{}",
+    "info":null
+  }, {
+    "displayName":"dell_idrac_audit_type",
+    "preContext":"(^)?Severity: \\w+\\, Category: \\w+(\\s+\\w+)?\\, MessageID: \\w+\\, Message:.* (using|and) ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52hs4df",
+    "constraints":"{}",
+    "info":null
+  }, {
+    "displayName":"dell_idrac_audit_user",
+    "preContext":"(^)?Severity: \\w+\\, Category: \\w+(\\s+\\w+)?\\, MessageID: \\w+\\, Message:.*? (using|for) ",
+    "postContext":"",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52xgzls",
+    "constraints":"{}",
+    "info":null
+  }, {
+    "displayName":"dell_idrac_category",
+    "preContext":"(^)?Severity: \\w+\\, Category: ",
+    "postContext":"\\, MessageID: \\w+\\, Message:",
+    "regexValue":"\\w+(\\s+\\w+)?",
+    "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000",
+    "constraints":"{}",
+    "info":null
+  }, {
+    "displayName":"dell_idrac_message",
+    "preContext":"(^)?Severity: \\w+\\, Category: \\w+(\\s+\\w+)?\\, MessageID: \\w+\\, Message: ",
+    "postContext":"( in Slot|\\.$)",
+    "regexValue":".*?",
+    "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5sq0000",
+    "constraints":"{}",
+    "info":null
+  }, {
+    "displayName":"dell_idrac_messageid",
+    "preContext":"(^)?Severity: \\w+\\, Category: \\w+(\\s+\\w+)?\\, MessageID: ",
+    "postContext":"\\, Message:",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5swsza0",
+    "constraints":"{}",
+    "info":null
+  }, {
+    "displayName":"dell_idrac_severity",
+    "preContext":"(^)?Severity: ",
+    "postContext":"\\, Category: \\w+(\\s+\\w+)?\\, MessageID: \\w+\\, Message:",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000",
+    "constraints":"{}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"iDRAC events by hostname",
+          "info":"System health &nbsp;(<a href=\"http://www.dell.com/support/manuals/us/en/19/dell-opnmang-sw-v8.1/EEMI_13G_v1.2-v1/AMP-Event-Messages?guid=GUID-13A0DB1C-031D-4B42-9C8E-2D84B275F31F&amp;amp;lang=en-us\">Amperage</a>) events in detail.<br>System health (<a href=\"http://www.dell.com/support/manuals/us/en/19/dell-opnmang-sw-v8.1/EEMI_13G_v1.2-v1/CPU-Event-Messages?guid=GUID-B2C03CF9-7FBC-4BE6-A388-7608136CDC39&amp;amp;lang=en-us\">CPU</a>) events in details.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1471372498431,\"endTimeMillis\":1471545298963,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"iDRAC events over time by severity",
+          "info":"Audit (<a href=\"http://www.dell.com/support/manuals/us/en/19/dell-opnmang-sw-v8.1/EEMI_13G_v1.2-v1/POW-Event-Messages?guid=GUID-42F175EE-82F2-4FD0-89F5-DA276BEC75ED&amp;amp;lang=en-us\">Power usage</a>) events in detail.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1471372535623,\"endTimeMillis\":1471545335719,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_severity\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"iDRAC events by severity",
+          "info":"<a href=\"http://www.dell.com/support/manuals/us/en/19/dell-opnmang-sw-v8.1/EEMI_13G_v1.2-v1/BOOT-Event-Messages?guid=GUID-98320DD0-8BD9-4556-A2DF-9789DAA44CFB&amp;amp;lang=en-us\">Configuration events</a> in detail.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1418068164835,\"endTimeMillis\":1418672964834,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_severity\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"iDRAC events by category",
+          "info":"<a href=\"http://www.dell.com/support/manuals/us/en/19/dell-opnmang-sw-v8.1/EEMI_13G_v1.2-v1/CTL-Event-Messages?guid=GUID-80206E5B-ECAE-41CB-B445-BCB8A7BCBBD2&amp;amp;lang=en-us\">Storage events</a> in detail.<br>",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1571803067811,\"endTimeMillis\":1572506467595,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_category\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_category\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \",\"postContext\":\"\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+(\\\\s+\\\\w+)?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"iDRAC events by message ID",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1418068164835,\"endTimeMillis\":1418672964834,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5swsza0\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_messageid\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5swsza0\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_messageid\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \",\"postContext\":\"\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5swsza0\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"iDRAC devices",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1393346032479,\"endTimeMillis\":1418676517923,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"iDRAC messages by message",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"donut\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1418068164835,\"endTimeMillis\":1418672964834,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5sq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_message\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5sq0000\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_category\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \",\"postContext\":\"\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+(\\\\s+\\\\w+)?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_message\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message: \",\"postContext\":\"( in Slot|\\\\.$)\",\"regexValue\":\".*?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5sq0000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Relevant queries",
+          "info":"",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"iDRAC events over time by category",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1417410000000,\"endTimeMillis\":1418676047071,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_category\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_category\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \",\"postContext\":\"\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+(\\\\s+\\\\w+)?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"legend\\\":true,\\\"stacking\\\":\\\"normal\\\",\\\"spline\\\":false}\"}"
+          }, {
+            "name":"iDRAC events by hostname and severity",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1417410000000,\"endTimeMillis\":1418676047071,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"dell_idrac_severity\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          }, {
+            "name":"iDRAC events by hostname and category",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1417410000000,\"endTimeMillis\":1418676047071,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"operator\":\"EXISTS\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"dell_idrac_category\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_category\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \",\"postContext\":\"\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+(\\\\s+\\\\w+)?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_severity\",\"preContext\":\"(^)?Severity: \",\"postContext\":\"\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27onsxmzlsnf2hs000\",\"constraints\":\"{}\"}]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"doublegroupbymultiseries\\\":true,\\\"legend\\\":true,\\\"swapfields\\\":false,\\\"doublegroupbystacking\\\":\\\"none\\\",\\\"pielabelstyle\\\":\\\"legend\\\",\\\"piestyle\\\":\\\"normal\\\"}\"}"
+          } ]
+        } ]
+      } ]
+    }, {
+      "name":"Security",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"iDRAC authentication events",
+          "info":"System health (<a href=\"http://www.dell.com/support/manuals/us/en/19/dell-opnmang-sw-v8.1/EEMI_13G_v1.2-v1/SEC-Event-Messages?guid=GUID-692B14B3-5394-4C67-BFBF-BDE8865C9FFE&amp;amp;lang=en-us\">Security</a>) events in detail.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1418068164835,\"endTimeMillis\":1418672964834,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_audit_login_status\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message: \",\"postContext\":\" (logged|to log in)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_category\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \",\"postContext\":\"\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+(\\\\s+\\\\w+)?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"hostname",
+            "displayName":"hostname",
+            "displayNamespace":null
+          }, {
+            "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27nvsxg43bm5sq0000",
+            "displayName":"dell_idrac_message",
+            "displayNamespace":"Dell - iDRAC"
+          }, {
+            "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52xgzls",
+            "displayName":"dell_idrac_audit_user",
+            "displayNamespace":"Dell - iDRAC"
+          }, {
+            "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52hs4df",
+            "displayName":"dell_idrac_audit_type",
+            "displayNamespace":"Dell - iDRAC"
+          }, {
+            "internalName":"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5zw65lsmnsq0000",
+            "displayName":"dell_idrac_audit_source",
+            "displayNamespace":"Dell - iDRAC"
+          } ]
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Failed iDRAC logins by source and hostname",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":"bubble",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1418068164835,\"endTimeMillis\":1418672964834,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000\",\"operator\":\"CONTAINS\",\"value\":\"unable\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5zw65lsmnsq0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_audit_source\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5zw65lsmnsq0000\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_audit_login_status\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message: \",\"postContext\":\" (logged|to log in)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_audit_source\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:.* from \",\"postContext\":\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5zw65lsmnsq0000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_category\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \",\"postContext\":\"\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+(\\\\s+\\\\w+)?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"iDRAC logins by user",
+          "info":"Audit events (<a href=\"http://www.dell.com/support/manuals/us/en/19/dell-opnmang-sw-v8.1/EEMI_13G_v1.2-v1/USR-Event-Messages?guid=GUID-E8512B80-34B0-49C8-A8A5-F5F9FB73C6C2&amp;amp;lang=en-us\">User tracking</a>) in detail.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1417410000000,\"endTimeMillis\":1418676047071,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52xgzls\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_audit_user\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52xgzls\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_audit_login_status\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message: \",\"postContext\":\" (logged|to log in)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_audit_user\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:.*? (using|for) \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52xgzls\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_category\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \",\"postContext\":\"\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+(\\\\s+\\\\w+)?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"iDRAC logins by type",
+          "info":"",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1418068164835,\"endTimeMillis\":1418672964834,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"operator\":\"CONTAINS\",\"value\":\"audit\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52hs4df\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"dell_idrac_audit_type\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52hs4df\",\"displayNamespace\":\"Dell - iDRAC\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"dell_idrac_audit_login_status\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message: \",\"postContext\":\" (logged|to log in)\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul5wg6z3jnzpxg5dbor2xg000\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_audit_type\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \\\\w+(\\\\s+\\\\w+)?\\\\, MessageID: \\\\w+\\\\, Message:.* (using|and) \",\"postContext\":\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mf2wi2lul52hs4df\",\"constraints\":\"{}\"},{\"displayName\":\"dell_idrac_category\",\"preContext\":\"(^)?Severity: \\\\w+\\\\, Category: \",\"postContext\":\"\\\\, MessageID: \\\\w+\\\\, Message:\",\"regexValue\":\"\\\\w+(\\\\s+\\\\w+)?\",\"internalName\":\"ibadcnc7mnxw2ltemvwgyltjmrzgcy3emvwgyx3jmrzgcy27mnqxizlhn5zhs000\",\"constraints\":\"{}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware, Inc.",
+  "url":"integrated-dell-remote-access-controller-idrac",
+  "contentVersion":"1.5",
+  "info":"An integrated Dell Remote Access Controller (iDRAC) with Lifecycle \nController is embedded in every Dell PowerEdge server. It provides \nfunctionality that helps you deploy, update, monitor and maintain Dell \nPowerEdge servers with or without a systems management software agent.<br><br>With\n powerful, easy-to-use, remote management and configuration options, \niDRAC with Lifecycle Controller can alert you when an issue occurs, no \nmatter where you are. It enables streamlined local and remote server \nmanagement, and reduces or eliminates the need for administrators to \nphysically visit the server — even if the server is not operational.&nbsp;<br><br>This content pack shows widgets that monitor audit, storage and configuration events, addition to System health events.",
+  "instructions":"To configure syslog forwarding of iDRAC 9 logs follow steps outlined&nbsp;<a href=\"https://www.dell.com/support/manuals/us/en/04/idrac8-with-lc-v2.05.05.05/idrac_3.00.00.00_ug/configuring-remote-system-logging-using-web-interface?guid=guid-c13a5fa4-2533-4f8f-be8b-c0bd318d5c1f&amp;lang=en-us\">here</a><br><br>To configure syslog forwarding of iDRAC 8 logs follow steps outlined&nbsp;<a href=\"http://www.dell.com/support/manuals/uk/en/ukdhs1/idrac8-with-lc-v2.05.05.05/idrac8_2.05.05.05_ug-v1/configuring-remote-system-logging-using-web-interface?guid=guid-4550d811-135e-45bc-ab0c-49d8ddc7cc99&amp;lang=en-us\">here</a><br><br>To configure syslog forwarding of iDRAC 7 logs follow steps outlined&nbsp;<a href=\"http://www.dell.com/support/manuals/us/en/19/integrated-dell-remote-access-cntrllr-7-v1.50.50/iDRAC7UG1.50.50-v1/Configuring-Remote-System-Logging-Using-Web-Interface?guid=GUID-4550D811-135E-45BC-AB0C-49D8DDC7CC99&amp;amp;lang=en-us\">here</a><br><br>To configure syslog forwarding of iDRAC 6 logs follow the steps outlines&nbsp;<a href=\"http://manualmachine.com/dell/idrac6/1071801-user-manual/page:11/\">here</a>.<br><br>Note:&nbsp;<br><ul><li>In\n the iDRAC Server \\ Alerts Page - Please ensure that Remote System Log \nconfiguration is checked and ensure all pages are enabled and applied \none page at a time to send all types of logs.<br></li><li>In the iDRAC Server \\ Alerts Page -&nbsp;Also select Enabled option for Alerts and click apply if not already selected.</li></ul>",
+  "upgradeInstructions":"Changelog:<br><ul><li>v1.5<br></li></ul>Fix \"Category\" name extraction if multiple words contains in the name <br><ul><li>v1.4<br></li></ul>Some bug fixes.<br><ul><li>v1.3<br></li></ul>Added syslog configuration instruction link for iDRACv9.<ul><li>v1.2<br></li></ul>Fixing the dell_idrac_message extracted field to support iDRAC v8.<ul><li>v1.1<br></li></ul>Modified setup instructions to add details of remote syslog and alerts enabled settings to configure log forwarding.",
+  "icon":"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"
+}
