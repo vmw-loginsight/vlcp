@@ -14,10 +14,15 @@ function _GetDAG
 # Sub-Function to Get Database Information 
 function _GetDB 
 { 
-    param($Database,$ExchangeEnvironment,$Mailboxes,$ArchiveMailboxes,$E2010) 
+    param($Database,$ExchangeEnvironment,$Mailboxes,$ArchiveMailboxes) 
 	  
     # Circular Logging, Last Full Backup 
-    if ($Database.CircularLoggingEnabled) { $CircularLoggingEnabled="Yes" } else { $CircularLoggingEnabled = "No" } 
+    if ($Database.CircularLoggingEnabled) 
+	{ 
+		$CircularLoggingEnabled="Yes" 
+	} else { 
+		$CircularLoggingEnabled = "No"
+	} 
     $LastFullBackup = $Database.LastFullBackup
 	$LastIncrementalBackup = $Database.LastIncrementalBackup
 	
@@ -25,14 +30,14 @@ function _GetDB
 	$backupinprogress = $Database.backupinprogress
 	
 	#Determines the database type (Mailbox or Public Folder)
-		if ($Database.IsMailboxDatabase -eq $True) 
-		{
+	if ($Database.IsMailboxDatabase -eq $True) 
+	{
 		$IsMailboxDatabase = "Mailbox"
-		}
-		if ($Database.IsPublicFolderDatabase -eq $True) 
-		{
+	}
+	if ($Database.IsPublicFolderDatabase -eq $True) 
+	{
 		$IsPublicFolderDatabase = "Public Folder"
-		}
+	}
 	
      
     # Mailbox Average Sizes 
@@ -75,52 +80,51 @@ function _GetDB
         $FreeDatabaseDiskSpace=$null 
     } 
      
-    if ($Database.ExchangeVersion.ExchangeBuild.Major -ge 14 -and $E2010) 
+
+	# TODO: Need to validate as above comments realted Exchange 2010 is valid as code is functional for Exchange 2016 (v15)
+    # Exchange 2010 Database Only 
+    $CopyCount = [int]$Database.Servers.Count 
+    if ($Database.MasterServerOrAvailabilityGroup.Name -ne $Database.Server.Name) 
     { 
-        # Exchange 2010 Database Only 
-        $CopyCount = [int]$Database.Servers.Count 
-        if ($Database.MasterServerOrAvailabilityGroup.Name -ne $Database.Server.Name) 
-        { 
-            $Copies = [array]($Database.Servers | % { $_.Name }) 
-        } else { 
-            $Copies = @() 
-        } 
-        # Archive Info 
-        $ArchiveMailboxCount = [int]([array]($ArchiveMailboxes | Where {$_.ArchiveDatabase -eq $Database.Name})).Count 
-        $ArchiveStatistics = [array]($ArchiveMailboxes | Where {$_.ArchiveDatabase -eq $Database.Name} | Get-MailboxStatistics -Archive ) 
-        if ($ArchiveStatistics) 
-        { 
-            [long]$ArchiveItemSizeB = 0 
-            $ArchiveStatistics | %{ $ArchiveItemSizeB+=$_.TotalItemSize.Value.ToBytes() } 
-            [long]$ArchiveAverageSize = $ArchiveItemSizeB / $ArchiveStatistics.Count 
-        } else { 
-            $ArchiveAverageSize = 0 
-        } 
-        # DB Size / Whitespace Info 
-        [long]$Size = $Database.DatabaseSize.ToBytes() 
-        [long]$Whitespace = $Database.AvailableNewMailboxSpace.ToBytes() 
-        $StorageGroup = $null 
-         
+        $Copies = [array]($Database.Servers | % { $_.Name }) 
+    } else { 
+        $Copies = @() 
     } 
+    # Archive Info 
+    $ArchiveMailboxCount = [int]([array]($ArchiveMailboxes | Where {$_.ArchiveDatabase -eq $Database.Name})).Count 
+    $ArchiveStatistics = [array]($ArchiveMailboxes | Where {$_.ArchiveDatabase -eq $Database.Name} | Get-MailboxStatistics -Archive ) 
+    if ($ArchiveStatistics) 
+    { 
+        [long]$ArchiveItemSizeB = 0 
+        $ArchiveStatistics | %{ $ArchiveItemSizeB+=$_.TotalItemSize.Value.ToBytes() } 
+        [long]$ArchiveAverageSize = $ArchiveItemSizeB / $ArchiveStatistics.Count 
+    } else { 
+        $ArchiveAverageSize = 0 
+    } 
+    # DB Size / Whitespace Info 
+    [long]$Size = $Database.DatabaseSize.ToBytes() 
+    [long]$Whitespace = $Database.AvailableNewMailboxSpace.ToBytes() 
+    $StorageGroup = $null 
+
      
     @{Name                        = $Database.Name 
-      StorageGroup                = $StorageGroup 
+      StorageGroup                = $StorageGroup                            #  looks like have never value as explicit "$null" is assigned
       ActiveOwner                 = $Database.Server.Name.ToUpper() 
       MailboxCount                = [long]([array]($Mailboxes | Where {$_.Database -eq $Database.Identity})).Count 
       MailboxAverageSize          = $MailboxAverageSize 
-      ArchiveMailboxCount         = $ArchiveMailboxCount 
-      ArchiveAverageSize          = $ArchiveAverageSize 
+      ArchiveMailboxCount         = $ArchiveMailboxCount                     # have value 0 while testing localy. Look like archiving not enabled localy
+      ArchiveAverageSize          = $ArchiveAverageSize                      # have value 0 while testing localy. Look like archiving not enabled localy
       CircularLoggingEnabled      = $CircularLoggingEnabled 
-	  LastFullBackup			  = $LastFullBackup
-	  LastIncrementalBackup       = $LastIncrementalBackup	    
-      Size                        = $Size 
-      Whitespace                  = $Whitespace 
-      Copies                      = $Copies 
-      CopyCount                   = $CopyCount 
+	  LastFullBackup			  = $LastFullBackup                          # no value while testing localy. Look like backup not enabled localy
+	  LastIncrementalBackup       = $LastIncrementalBackup	                 # no value while testing localy. Look like backup not enabled localy
+      Size                        = $Size                                    
+      Whitespace                  = $Whitespace                               
+      Copies                      = $Copies                                  
+      CopyCount                   = $CopyCount                               
       FreeLogDiskSpace            = $FreeLogDiskSpace 
       FreeDatabaseDiskSpace       = $FreeDatabaseDiskSpace 
 	  IsMailboxDatabase			  = $IsMailboxDatabase
-	  IsPublicFolderDatabase      = $IsPublicFolderDatabase
+	  IsPublicFolderDatabase      = $IsPublicFolderDatabase                  # no value while testing localy
 	  backupinprogress			  = $backupinprogress
 	  
       } 
@@ -143,7 +147,7 @@ function _GetExSvrMailboxCount
 # Sub-Function to Get Exchange Server information 
 function _GetExSvr 
 { 
-    param($E2010,$ExchangeServer,$Mailboxes,$Databases) 
+    param($ExchangeServer,$Mailboxes,$Databases) 
      
     # Set Basic Variables 
     $MailboxCount = 0 
@@ -158,7 +162,8 @@ function _GetExSvr
     if ($tWMI) 
     { 
         $OSVersion = $tWMI.Caption.Replace("(R)","").Replace("Microsoft ","").Replace("Enterprise","Ent").Replace("Standard","Std").Replace(" Edition","") 
-       $OSServicePack = $tWMI.CSDVersion 
+		#valuse is emtpy need to handle pisble need to add N/A
+        $OSServicePack = $tWMI.CSDVersion 
         $RealName = $tWMI.CSName.ToUpper() 
     } else { 
         $OSVersion = "N/A" 
@@ -174,6 +179,7 @@ function _GetExSvr
     } 
      
     # Get Exchange Version 
+	# TODO: better to remove condigion as <6 does not supported
     if ($ExchangeServer.AdminDisplayVersion.Major -eq 6) 
     { 
         $ExchangeMajorVersion = "$($ExchangeServer.AdminDisplayVersion.Major).$($ExchangeServer.AdminDisplayVersion.Minor)" 
@@ -199,29 +205,31 @@ function _GetExSvr
             # Get Mailbox Statistics the normal way, return in a consitent format 
             $MailboxStatistics = Get-MailboxStatistics -Server $ExchangeServer | Select DisplayName,@{Name="TotalItemSizeB";Expression={$_.TotalItemSize.Value.ToBytes()}},@{Name="TotalDeletedItemSizeB";Expression={$_.TotalDeletedItemSize.Value.ToBytes()}},Database 
         } 
-        # Get HTTPS Names (Exchange 2010 only due to time taken to retrieve data) 
-        if ($Roles -contains "ClientAccess" -and $E2010) 
-        { 
-             
-            Get-OWAVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
-            Get-WebServicesVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
-            Get-OABVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
-            Get-ActiveSyncVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
-            $IntNames+=(Get-ClientAccessServer -Identity $ExchangeServer.Name).AutoDiscoverInternalURI.Host 
-            if ($ExchangeMajorVersion -ge 14) 
-            { 
-                Get-ECPVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
-            } 
-            $IntNames = $IntNames|Sort-Object -Unique 
-            $ExtNames = $ExtNames|Sort-Object -Unique 
-            $CASArray = Get-ClientAccessArray -Site $ExchangeServer.Site.Name 
-            if ($CASArray) 
-            { 
-                $CASArrayName = $CASArray.Fqdn 
-            } 
-        } 
+        # Get HTTPS Names (Exchange 2010 only due to time taken to retrieve data)
+		# TODO: Need to be review and remove
+		# if ($Roles -contains "ClientAccess") # -and $E2010) 
+        # { 
+        #     Get-OWAVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
+        #     Get-WebServicesVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
+        #     Get-OABVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
+        #     Get-ActiveSyncVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
+        #     $IntNames+=(Get-ClientAccessServer -Identity $ExchangeServer.Name).AutoDiscoverInternalURI.Host 
+        #     if ($ExchangeMajorVersion -ge 14) 
+        #     { 
+        #         Get-ECPVirtualDirectory -Server $ExchangeServer -ADPropertiesOnly | %{ $ExtNames+=$_.ExternalURL.Host; $IntNames+=$_.InternalURL.Host; } 
+        #     } 
+        #     $IntNames = $IntNames|Sort-Object -Unique 
+        #     $ExtNames = $ExtNames|Sort-Object -Unique 
+        #     $CASArray = Get-ClientAccessArray -Site $ExchangeServer.Site.Name 
+        #     if ($CASArray) 
+        #     { 
+        #         $CASArrayName = $CASArray.Fqdn 
+        #     } 
+        # } 
  
         # Rollup Level / Versions 
+		# -----------------------------------
+		# TODO: Need to be review and remove
         if ($ExchangeMajorVersion -ge 14) 
         { 
             $RegKey="SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Installer\\UserData\\S-1-5-18\\Products\\AE1D439464EB1B8488741FFA028E291C\\Patches" 
@@ -292,7 +300,6 @@ function _GetExSvr
  
 
 # Sub Function to populate data for Databases
-
 function _GetDBTable 
 { 
     param($Databases)
@@ -309,46 +316,46 @@ function _GetDBTable
 		if ( $Database.LastFullBackup -eq $null -and $Database.LastIncrementalBackup -eq $null)
 		
 		{
-		#No backup timestamp was present. This means either the database has
-		#never been backed up, or it was unreachable when this script ran
-		$lastbackup.time = "Never/Unknown"
-		$lastbackup.type = "Never/Unknown"
-		$lastbackup.fulltime = "Not Available"
-		$lastbackup.status = "Fail"
+			#No backup timestamp was present. This means either the database has
+			#never been backed up, or it was unreachable when this script ran
+			$lastbackup.time = "Never/Unknown"
+			$lastbackup.type = "Never/Unknown"
+			$lastbackup.fulltime = "Not Available"
+			$lastbackup.status = "Fail"
 		}		
 		elseif ( $Database.LastFullBackup -lt $Database.LastIncrementalBackup )
 		{
-		$lastbackup.time = $Database.LastIncrementalBackup
-		$lastbackup.type = "Incremental"			
+			$lastbackup.time = $Database.LastIncrementalBackup
+			$lastbackup.type = "Incremental"			
 				
-		#check last full backup
+			#check last full backup
 			if ($Database.LastFullBackup -eq $null)
 			{
-			$lastbackup.fulltime = "Not Available"
+				$lastbackup.fulltime = "Not Available"
 			}
 			else
 			{
-			$lastbackup.fulltime = $Database.LastFullBackup
+				$lastbackup.fulltime = $Database.LastFullBackup
 			}
 		}
 		elseif ( $Database.LastIncrementalBackup -lt $Database.LastFullBackup )
 		{
-		$lastbackup.time = $Database.LastFullBackup
-		$lastbackup.type = "Full"
-		$lastbackup.fulltime = $Database.LastFullBackup
-		$lastbackup.status = "Pass"
+			$lastbackup.time = $Database.LastFullBackup
+			$lastbackup.type = "Full"
+			$lastbackup.fulltime = $Database.LastFullBackup
+			$lastbackup.status = "Pass"
 			
 		} 
 				
 		#DB type 		
 		if ( $Database.IsMailboxDatabase -eq "Mailbox" )
 		{
-		$dbtype = $Database.IsMailboxDatabase
+			$dbtype = $Database.IsMailboxDatabase
 		
 		}
 		else
 		{
-		$dbtype = $Database.IsPublicFolderDatabase
+			$dbtype = $Database.IsPublicFolderDatabase
 		}
 		
 	
@@ -384,100 +391,47 @@ function _GetDBTable
     $Output 
 } 
 
+############################################## MAIN ##############################################
+ 
  
 # Check Exchange Management Shell Version 
- if ((Get-PSSnapin -Name Microsoft.Exchange.Management.PowerShell.Admin -ErrorAction SilentlyContinue)) 
+Write-Host "----------------- Check Exchange Management Shell Version"
+if (Get-ExchangeServer | Where {$_.AdminDisplayVersion.Major -ne 15}) 
 { 
-    $E2010 = $false; 
-    if (Get-ExchangeServer | Where {$_.AdminDisplayVersion.Major -gt 14}) 
-    { 
-        Write-Warning "Exchange 2010 or higher detected. You'll get better results if you run this script from an Exchange 2010/2013 management shell" 
-    } 
-}else{ 
-     
-    $E2010 = $true 
-    $localserver = get-exchangeserver $Env:computername 
-    $localversion = $localserver.admindisplayversion.major 
-    if ($localversion -eq 15) { $E2013 = $true } 
- 
+    Write-Error "The script is functional only for the Exchange 2013/2016. Version differnt then 15.X is detected." 
 } 
- 
 
-#  Hashtable to update with environment data 
-$ExchangeEnvironment = @{Sites                    = @{} 
-                         Pre2007                = @{} 
+# Hashtable to update with environment data 
+$ExchangeEnvironment = @{Sites                  = @{} 
                          Servers                = @{} 
-                         DAGs                    = @() 
+                         DAGs                   = @() 
                          NonDAGDatabases        = @() 
                         } 
-# Exchange Major Version String Mapping 
-$ExMajorVersionStrings = @{ "14"  = @{Long="Exchange 2010";Short="E2010"} 
-                           "15"  = @{Long="Exchange 2013";Short="E2013"} 
-                           "16"  = @{Long="Exchange 2013";Short="E2013"}} 
-# Exchange Service Pack String Mapping 
-$ExSPLevelStrings = @{"0" = "RTM" 
-                      "1" = "SP1" 
-                      "2" = "SP2" 
-                      "3" = "SP3" 
-                      "4" = "SP4" 
-                      "CU1" = "CU1" 
-                      "CU2" = "CU2" 
-                      "CU3" = "CU3" 
-                      "CU4" = "CU4" 
-                      "CU5" = "CU5" 
-                      "SP1" = "SP1" 
-                      "SP2" = "SP2"} 
-# Populate Full Mapping using above info 
-$ExVersionStrings = @{} 
-foreach ($Major in $ExMajorVersionStrings.GetEnumerator()) 
-{ 
-    foreach ($Minor in $ExSPLevelStrings.GetEnumerator()) 
-    { 
-        $ExVersionStrings.Add("$($Major.Key).$($Minor.Key)",@{Long="$($Major.Value.Long) $($Minor.Value)";Short="$($Major.Value.Short)$($Minor.Value)"}) 
-    } 
-} 
-# Exchange Role String Mapping 
-$ExRoleStrings = @{"ClusteredMailbox" = @{Short="ClusMBX";Long="CCR/SCC Clustered Mailbox"} 
-                   "Mailbox"          = @{Short="MBX";Long="Mailbox"} 
-                   "ClientAccess"      = @{Short="CAS";Long="Client Access"} 
-                   "HubTransport"      = @{Short="HUB";Long="Hub Transport"} 
-                   "UnifiedMessaging" = @{Short="UM";Long="Unified Messaging"} 
-                   "Edge"              = @{Short="EDGE";Long="Edge Transport"} 
-                   "FE"              = @{Short="FE";Long="Front End"} 
-                   "BE"              = @{Short="BE";Long="Back End"} 
-                   "Unknown"      = @{Short="Unknown";Long="Unknown"}} 
 
- 
-#  Get Server, Exchange and Mailbox Information 
-$ExchangeServers = [array](Get-ExchangeServer) 
- 
+# Get Mailboxes
 $Mailboxes = [array](Get-Mailbox -ResultSize Unlimited) 
-if ($E2010) 
-{  
-    $ArchiveMailboxes = [array](Get-Mailbox -Archive -ResultSize Unlimited) 
-    $RemoteMailboxes = [array](Get-RemoteMailbox  -ResultSize Unlimited) 
-    $ExchangeEnvironment.Add("RemoteMailboxes",$RemoteMailboxes.Count) 
-    if ($E2013)  
-    {     
-		$Databases = [array](Get-MailboxDatabase -IncludePreExchange2013 -Status) 
-		
-    } 
-    elseif ($E2010) 
-    {     
-        $Databases = [array](Get-MailboxDatabase -IncludePreExchange2010 -Status)  
-    } 
-    $DAGs = [array](Get-DatabaseAvailabilityGroup) 
-} 
+$ArchiveMailboxes = [array](Get-Mailbox -Archive -ResultSize Unlimited) #better to move where use it
+$RemoteMailboxes = [array](Get-RemoteMailbox  -ResultSize Unlimited) 
+$ExchangeEnvironment.Add("RemoteMailboxes",$RemoteMailboxes.Count) 
 
+# Get Database
+Write-Host "----------------- Get Database"
+$Databases = [array](Get-MailboxDatabase -IncludePreExchange2013 -Status) 
+$DAGs = [array](Get-DatabaseAvailabilityGroup) 
 
-# Populate Information we know 
+# Get Total number of Mailboxes
+Write-Host "----------------- Get Total number of Mailboxes"
 $ExchangeEnvironment.Add("TotalMailboxes",$Mailboxes.Count + $ExchangeEnvironment.RemoteMailboxes); 
 
+
+# Get Server, Exchange and Mailbox Information
+Write-Host "----------------- Get Exchange and Mailbox Information."
+$ExchangeServers = [array](Get-ExchangeServer)
 # Collect Exchange Server Information 
 for ($i=0; $i -lt $ExchangeServers.Count; $i++) 
 { 
     # Get Exchange Info 
-    $ExSvr = _GetExSvr -E2010 $E2010 -ExchangeServer $ExchangeServers[$i] -Mailboxes $Mailboxes -Databases $Databases 
+    $ExSvr = _GetExSvr -ExchangeServer $ExchangeServers[$i] -Mailboxes $Mailboxes -Databases $Databases 
     # Add to site or pre-Exchange 2007 list 
     if ($ExSvr.Site) 
     { 
@@ -492,56 +446,84 @@ for ($i=0; $i -lt $ExchangeServers.Count; $i++)
     # Add to Servers List 
     $ExchangeEnvironment.Servers.Add($ExSvr.Name,$ExSvr) 
 } 
- 
+echo "++++++++++++ DEBUG ++++++++++++ ExchangeEnvironment variable value"
+echo $ExchangeEnvironment
+
+
 # Populate Environment DAGs 
+Write-Host "----------------- Populate Environment DAGs"
 if ($DAGs) 
 { 
     foreach($DAG in $DAGs) 
     { 
-        $ExchangeEnvironment.DAGs+=(_GetDAG -DAG $DAG) 
+		# Uncomment if would like to debug whole $DAGs vaiable
+        #echo "++++++++++++ DEBUG ++++++++++++ $DAG variable value"
+		#echo $DAG
+		$ExchangeEnvironment.DAGs+=(_GetDAG -DAG $DAG) 
     } 
 } 
+echo "++++++++++++ DEBUG ++++++++++++ ExchangeEnvironment.DAGs variable value"
+echo $ExchangeEnvironment.DAGs
+echo "++++++++++++ DEBUG ++++++++++++ ExchangeEnvironment variable value"
+echo $ExchangeEnvironment
+
 
 # Get Database information 
+Write-Host "----------------- Get Database information"
 for ($i=0; $i -lt $Databases.Count; $i++) 
 { 
-    $Database = _GetDB -Database $Databases[$i] -ExchangeEnvironment $ExchangeEnvironment -Mailboxes $Mailboxes -ArchiveMailboxes $ArchiveMailboxes -E2010 $E2010 
+    $Database = _GetDB -Database $Databases[$i] -ExchangeEnvironment $ExchangeEnvironment -Mailboxes $Mailboxes -ArchiveMailboxes $ArchiveMailboxes
+	# Uncomment if would like to debug whole $Database vaiable
+    echo "++++++++++++ DEBUG ++++++++++++ $Database variable value"
+	echo $Database
+	
 	$DAGDB = $false 
     for ($j=0; $j -lt $ExchangeEnvironment.DAGs.Count; $j++) 
     { 
         if ($ExchangeEnvironment.DAGs[$j].Members -contains $Database.ActiveOwner) 
         { 
-            $DAGDB=$true 
+            $DAGDB=$true
             $ExchangeEnvironment.DAGs[$j].Databases += $Database 
+			Write-Host "----------------- Appended as DAGDatabases to $ExchangeEnvironment.DAGs"
         } 
     } 
     if (!$DAGDB) 
     { 
-	
-        $ExchangeEnvironment.NonDAGDatabases += $Database 
-    } 
-     
-     
+        $ExchangeEnvironment.NonDAGDatabases += $Database
+		Write-Host "----------------- Appending as NonDAGDatabases to $ExchangeEnvironment.NonDAGDatabases"		
+    }   
 } 
 
-
-# Verify the output directory exists.
-  $logs_directory = ".\\logs";
-  if (!(Test-Path $logs_directory)) {
-   $tempPath = New-Item -ItemType directory -Path $logs_directory;
-  }
-
-#deleting the file if it exists already 
-  if ( Test-Path $logs_directory\exchange_environment_report.csv ){
-	Remove-Item $logs_directory\exchange_environment_report.csv
-  }
- 
-if ($ExchangeEnvironment.NonDAGDatabases.Count) 
-{ 
-	$Output=_GetDBTable -Databases $ExchangeEnvironment.NonDAGDatabases 
-	$Output | ConvertFrom-Csv | Export-Csv -NoTypeInformation $logs_directory\exchange_environment_report.csv
-} 
-# End 
+# Verify the output directory existstancy.
+Write-Host "----------------- Verify the output directory existstancy."
+$logs_directory = ".\\logs";
+if (!(Test-Path $logs_directory)) {
+	Write-Host "----------------- Creating '.\logs' directory."
+	$tempPath = New-Item -ItemType directory -Path $logs_directory;
 }
+
+# Deleting old generated file if it already exists.
+Write-Host "----------------- Deleting old generated file if it already exists."
+if ( Test-Path $logs_directory\exchange_environment_report.csv ){
+	Remove-Item $logs_directory\exchange_environment_report.csv
+}
+
+# Calculating Databases tables.
+Write-Host "----------------- Calculating Databases tables."
+echo "++++++++++++ DEBUG ++++++++++++ NonDAGDatabases count for ExchangeEnvironment.NonDAGDatabases.Count"
+echo $ExchangeEnvironment.NonDAGDatabases.Count 
+echo "++++++++++++ DEBUG ++++++++++++ DAGs count for $ExchangeEnvironment.DAGs.Databases.Count"
+echo $ExchangeEnvironment.DAGs.Databases.Count
+
+# Create temporay list including all databases
+$total_DBs = $ExchangeEnvironment.DAGs.Databases + $ExchangeEnvironment.NonDAGDatabases
+
+$Output=_GetDBTable -Databases $total_DBs
+echo "++++++++++++ DEBUG ++++++++++++ Final result that are going to output file."
+echo $Output
+$Output | ConvertFrom-Csv | Export-Csv -NoTypeInformation $logs_directory\exchange_environment_report.csv
+
+
+} # main function end
 
 #exchange_environment_report
