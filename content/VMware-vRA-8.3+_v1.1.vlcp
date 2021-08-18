@@ -85,6 +85,30 @@
     "constraints":null,
     "info":null
   }, {
+    "displayName":"vra8_catalogRequest_Field1",
+    "preContext":"Deployment ",
+    "postContext":" requestedBy",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpum2lfnrsdc000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vra8_catalogRequest_field2",
+    "preContext":"projectId ",
+    "postContext":" was created",
+    "regexValue":"\\S+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpwm2lfnrsde000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vra8_catalog_day2_action_field",
+    "preContext":"Submitted action ",
+    "postContext":" for deployment",
+    "regexValue":"\\w+",
+    "internalName":"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z27mrqxsms7mfrxi2lpnzpwm2lfnrsa0000",
+    "constraints":null,
+    "info":null
+  }, {
     "displayName":"vra8_createAndReleased",
     "preContext":"/",
     "postContext":"\\?apiVersion",
@@ -266,57 +290,62 @@
     "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1604826034630,\"endTimeMillis\":1604912440227,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product_\",\"operator\":\"CONTAINS\",\"value\":\"vra 8\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Starting Application\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
     "messageQuery":null,
     "options":"{\"chartTypeName\":\"column\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+  }, {
+    "name":"Alert Queries",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1604826034630,\"endTimeMillis\":1604912440227,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product_\",\"operator\":\"CONTAINS\",\"value\":\"vra 8\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Starting Application\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "options":"{\"chartTypeName\":\"column\",\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
   } ],
   "alerts":[ {
-    "name":"*** CRITICAL *** ESXI Host Unreachable",
-    "info":"ESXI host could be down or vCenter could be down.",
+    "name":"*** CRITICAL *** Failed to established connection",
+    "info":"This error can occur when vRA service failed to establish connection with environment.",
+    "recommendation":"Connection",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1614003501220,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed to establish a new connection\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ERROR\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** JDBC Connection Issue",
+    "info":"High load or DB could be down leading to jdbc connection issues.",
+    "recommendation":"JDBC Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Handling generic exception: Unable to acquire JDBC Connection; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: RabbitMQ Unreachable",
+    "info":"RabbitMQ is unreachable",
     "recommendation":"Provisioning Issues",
     "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Provisioning operation failed. Error from vCenter: Unable to communicate with the remote host\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Error in 'compute.removal.post-EventBrokerConnectorService'. Cause: com.rabbitmq.client.ShutdownSignalException\"},{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"ebs-app\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
     "messageQuery":null,
     "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
     "searchPeriod":300000,
     "searchInterval":300000
   }, {
-    "name":"WARNING: EBS Subscribe Error",
-    "info":"Failure to subscribe to topics",
+    "name":"vRA 8 - License expired",
+    "info":"License has expired",
+    "recommendation":"Renew license",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1604911803403,\"endTimeMillis\":1604912109226,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product_\",\"operator\":\"CONTAINS\",\"value\":\"vra 8\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING:  EBS Publish Error",
+    "info":"Failure to publish events",
     "recommendation":"EBS Issues",
     "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SubscriptionID: .* failed with the following error: Action run timed out\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-    "messageQuery":null,
-    "hitCount":0.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":300000,
-    "searchInterval":300000
-  }, {
-    "name":"WARNING: DB Not Reachable",
-    "info":"Postgres db seems to be down.",
-    "recommendation":"DB Issues",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Connection to pgpool:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-    "messageQuery":null,
-    "hitCount":0.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":300000,
-    "searchInterval":300000
-  }, {
-    "name":"*** CRITICAL *** Blueprint Associated With Catalog Missing",
-    "info":"Blueprint associated with catalog is deleted and cant be found hence catalog request failed.",
-    "recommendation":"Provisioning Issues",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Blueprint with ID .* not found\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-    "messageQuery":null,
-    "hitCount":0.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":300000,
-    "searchInterval":300000
-  }, {
-    "name":"WARNING: EBS Callback Event TImeout",
-    "info":"EBS is not responsive and the callback has timed out.",
-    "recommendation":"EBS Issues",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Waiting for EBS eventTopic=.* callback [timeout=720 mins]\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed to publish event to topic\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SubscriptionID: * failed with the following error:\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
     "messageQuery":null,
     "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
@@ -345,11 +374,88 @@
     "searchPeriod":300000,
     "searchInterval":300000
   }, {
-    "name":"WARNING:  EBS Publish Error",
-    "info":"Failure to publish events",
+    "name":"*** CRITICAL *** Blueprint Associated With Catalog Missing",
+    "info":"Blueprint associated with catalog is deleted and cant be found hence catalog request failed.",
+    "recommendation":"Provisioning Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Blueprint with ID .* not found\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vRA 8 - License expired",
+    "info":"License has expired",
+    "recommendation":"Renew license",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1604911803403,\"endTimeMillis\":1604912109226,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product_\",\"operator\":\"CONTAINS\",\"value\":\"vra 8\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: Http Proxy Issue",
+    "info":"Gateway issues that result in 502, due to bad proxies.",
+    "recommendation":"Proxy Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ClientResponse has erroneous status code: 502 Bad Gateway\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** Network Route Problems",
+    "info":"Network issues.",
+    "recommendation":"Network issues.",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"java.net.NoRouteToHostException: No route to host\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** HTTP Connection Failure",
+    "info":"Network issues could be causing the connections to fail.",
+    "recommendation":"HTTP Connection issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed: Connection reset by peer\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** ESXI Host Unreachable",
+    "info":"ESXI host could be down or vCenter could be down.",
+    "recommendation":"Provisioning Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Provisioning operation failed. Error from vCenter: Unable to communicate with the remote host\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: EBS Subscribe Error",
+    "info":"Failure to subscribe to topics",
     "recommendation":"EBS Issues",
     "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed to publish event to topic\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SubscriptionID: * failed with the following error:\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SubscriptionID: .* failed with the following error: Action run timed out\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: DB Transaction Issues",
+    "info":"DB Could be running out of space or have other issues causing transactions to be aborted.",
+    "recommendation":"DB Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"postgres-0\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ERROR:  current transaction is aborted\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
     "messageQuery":null,
     "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
@@ -378,66 +484,11 @@
     "searchPeriod":300000,
     "searchInterval":300000
   }, {
-    "name":"WARNING: DB Transaction Issues",
-    "info":"DB Could be running out of space or have other issues causing transactions to be aborted.",
-    "recommendation":"DB Issues",
+    "name":"WARNING: Refresh Token Expired",
+    "info":"A long running process could have failed to due to token getting expired. Severity needs to be checked based on context.",
+    "recommendation":"Token Issues",
     "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"postgres-0\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ERROR:  current transaction is aborted\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-    "messageQuery":null,
-    "hitCount":0.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":300000,
-    "searchInterval":300000
-  }, {
-    "name":"vRA 8 - License expired",
-    "info":"License has expired",
-    "recommendation":"Renew license",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1604911803403,\"endTimeMillis\":1604912109226,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product_\",\"operator\":\"CONTAINS\",\"value\":\"vra 8\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-    "messageQuery":null,
-    "hitCount":0.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":300000,
-    "searchInterval":300000
-  }, {
-    "name":"*** CRITICAL *** Capacity Limit Exceeded",
-    "info":"Capacity limit exceed in the cloud zone that is trying to provision the deployment",
-    "recommendation":"Provisioning Issues",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"FAILED: Cannot find available cloud zones in the current project that satisfy the capacity requirements\"},{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"tango-blueprint-service-app\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-    "messageQuery":null,
-    "hitCount":0.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":300000,
-    "searchInterval":300000
-  }, {
-    "name":"*** CRITICAL *** Failed to established connection",
-    "info":"This error can occur when vRA service failed to establish connection with environment.",
-    "recommendation":"Connection",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1614003501220,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed to establish a new connection\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ERROR\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-    "messageQuery":null,
-    "hitCount":0.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":300000,
-    "searchInterval":300000
-  }, {
-    "name":"WARNING: Http Proxy Issue",
-    "info":"Gateway issues that result in 502, due to bad proxies.",
-    "recommendation":"Proxy Issues",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ClientResponse has erroneous status code: 502 Bad Gateway\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-    "messageQuery":null,
-    "hitCount":0.0,
-    "hitOperator":"GREATER_THAN",
-    "searchPeriod":300000,
-    "searchInterval":300000
-  }, {
-    "name":"*** CRITICAL *** JDBC Connection Issue",
-    "info":"High load or DB could be down leading to jdbc connection issues.",
-    "recommendation":"JDBC Issues",
-    "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Handling generic exception: Unable to acquire JDBC Connection; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Refresh token idle is expired:\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
     "messageQuery":null,
     "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
@@ -455,11 +506,187 @@
     "searchPeriod":300000,
     "searchInterval":300000
   }, {
+    "name":"*** CRITICAL *** Failed to established connection",
+    "info":"This error can occur when vRA service failed to establish connection with environment.",
+    "recommendation":"Connection",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1614003501220,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed to establish a new connection\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ERROR\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING:  EBS Publish Error",
+    "info":"Failure to publish events",
+    "recommendation":"EBS Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Failed to publish event to topic\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SubscriptionID: * failed with the following error:\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: EBS Subscribe Error",
+    "info":"Failure to subscribe to topics",
+    "recommendation":"EBS Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"SubscriptionID: .* failed with the following error: Action run timed out\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** JDBC Connection Issue",
+    "info":"High load or DB could be down leading to jdbc connection issues.",
+    "recommendation":"JDBC Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Handling generic exception: Unable to acquire JDBC Connection; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: DB Not Reachable",
+    "info":"Postgres db seems to be down.",
+    "recommendation":"DB Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Connection to pgpool:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** Capacity Limit Exceeded",
+    "info":"Capacity limit exceed in the cloud zone that is trying to provision the deployment",
+    "recommendation":"Provisioning Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"FAILED: Cannot find available cloud zones in the current project that satisfy the capacity requirements\"},{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"tango-blueprint-service-app\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
     "name":"WARNING: Refresh Token Expired",
     "info":"A long running process could have failed to due to token getting expired. Severity needs to be checked based on context.",
     "recommendation":"Token Issues",
     "alertType":"RATE_BASED",
     "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Refresh token idle is expired:\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: DB Transaction Issues",
+    "info":"DB Could be running out of space or have other issues causing transactions to be aborted.",
+    "recommendation":"DB Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"postgres-0\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ERROR:  current transaction is aborted\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: Http Proxy Issue",
+    "info":"Gateway issues that result in 502, due to bad proxies.",
+    "recommendation":"Proxy Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"ClientResponse has erroneous status code: 502 Bad Gateway\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** Capacity Limit Exceeded",
+    "info":"Capacity limit exceed in the cloud zone that is trying to provision the deployment",
+    "recommendation":"Provisioning Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"FAILED: Cannot find available cloud zones in the current project that satisfy the capacity requirements\"},{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"tango-blueprint-service-app\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** IaaS Services Stopped",
+    "info":"<span>A vRA IaaS service has become unavailable. This may happen because:</span><br><br><span><span>○&nbsp;</span><span style=\"font-weight: bolder;\">A service has failed</span>&nbsp;- if the service does not automatically restart this may impact vRA's ability to function</span><br><span><span>○&nbsp;</span><span style=\"font-weight: bolder;\">A service is blocked and cannot response at the moment</span>&nbsp;- this may indicate increased load within the environment</span><br><span><span>○&nbsp;</span><span style=\"font-weight: bolder;\">Management Agent</span>- in an HA deployment, only&nbsp;<span style=\"font-weight: bold; font-style: italic;\">ONE&nbsp;</span><span>Management Agent instance should be running.&nbsp; If more than one is running, this will cause issues with normal functioning of the system.</span></span>",
+    "recommendation":"IaaS Services",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1614005011366,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"stopped\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"dem,server,mm,agent,ma,deo\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** vCentre Unreachable",
+    "info":"Vcenter is not reachable or powered down.",
+    "recommendation":"Provisioning Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"No powered-on compute placement candidates found in cloud zones\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: DB Not Reachable",
+    "info":"Postgres db seems to be down.",
+    "recommendation":"DB Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Connection to pgpool:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: EBS Callback Event TImeout",
+    "info":"EBS is not responsive and the callback has timed out.",
+    "recommendation":"EBS Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Waiting for EBS eventTopic=.* callback [timeout=720 mins]\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** ESXI Host Unreachable",
+    "info":"ESXI host could be down or vCenter could be down.",
+    "recommendation":"Provisioning Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Provisioning operation failed. Error from vCenter: Unable to communicate with the remote host\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"WARNING: EBS Callback Event TImeout",
+    "info":"EBS is not responsive and the callback has timed out.",
+    "recommendation":"EBS Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Waiting for EBS eventTopic=.* callback [timeout=720 mins]\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"*** CRITICAL *** Blueprint Associated With Catalog Missing",
+    "info":"Blueprint associated with catalog is deleted and cant be found hence catalog request failed.",
+    "recommendation":"Provisioning Issues",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608114161029,\"endTimeMillis\":1612596646431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Blueprint with ID .* not found\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
     "messageQuery":null,
     "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
@@ -502,7 +729,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608072212228,\"endTimeMillis\":1611815525739,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving from STARTED(CREATED) to STARTED(CREATED)\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1626968812223,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"STARTED(RESOURCE_COUNTED) to STARTED(PROVISIONING)\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO provisioning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
           "name":"Provision Success Requests",
@@ -510,7 +737,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608072212228,\"endTimeMillis\":1611816946227,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving from STARTED(COMPLETED) to FINISHED(COMPLETED)\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1626968812223,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Successfully updated vROPS with provision status PROVISIONED\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO provisioning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
           "name":"Provision Failure Requests",
@@ -518,7 +745,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608072212228,\"endTimeMillis\":1611817035109,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving from .* to FAILED(ERROR).\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1626968812223,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving from STARTED(PROVISIONING_COMPUTE) to FAILED(ERROR)\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO provisioning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         } ]
       }, {
@@ -528,28 +755,28 @@
           "chartType":"column",
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608072212228,\"endTimeMillis\":1611817410928,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"deployment\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"was created\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1627988059932,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpum2lfnrsdc000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpwm2lfnrsde000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_catalogRequest_Field1\",\"preContext\":\"Deployment \",\"postContext\":\" requestedBy\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpum2lfnrsdc000\",\"constraints\":null},{\"displayName\":\"vra8_catalogRequest_field2\",\"preContext\":\"projectId \",\"postContext\":\" was created\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpwm2lfnrsde000\",\"constraints\":null},{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
-          "name":"Successful catalog requests",
+          "name":"Successful Catalog Requests",
           "info":"<div>Catalog Successful requests across all nodes over time</div><br><div><span style=\"font-weight: bold;\">Analysis</span>: General metrics around rate of successful catalog requests. eg: Deployments, Xaas, Custom Resources etc.</div>",
           "chartType":"column",
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608072212228,\"endTimeMillis\":1611817456199,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"create_successful and last request status to successful\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1626968812223,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"create_successful and last request status to successful\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
-          "name":"Failed catalog requests",
+          "name":"Failed Catalog Requests",
           "info":"<div>Catalog failed requests across all nodes over time</div><br><div><span style=\"font-weight: bold;\">Analysis</span>: General metrics around rate of failed catalog requests. eg: Deployments, Xaas, Custom Resources etc.</div>",
           "chartType":"column",
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608072212228,\"endTimeMillis\":1611817483596,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"CREATE_FAILED and last request status to FAILED\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1626968812223,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"CREATE_FAILED and last request status to FAILED\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         } ]
       }, {
         "widgets":[ {
-          "name":"ABX requests",
+          "name":"ABX Requests",
           "info":"<div>Number of ABX requests.</div><br><div><span style=\"font-weight: bold;\">Analysis</span>: General metrics around rate of ABX requests.</div>",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
@@ -557,7 +784,7 @@
           "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608072212228,\"endTimeMillis\":1611817722856,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"abx-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Start processing of action run\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
-          "name":"vRO workflow requests",
+          "name":"vRO Workflow Requests",
           "info":"<div>Number of vRO workflow requests.</div><br><div><span style=\"font-weight: bold;\">Analysis</span>: General metrics around rate of vRO workflow requests.</div>",
           "chartType":null,
           "chartOptions":"{\"logaxis\":true,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
@@ -571,7 +798,7 @@
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
-          "name":"Overall vRA errors",
+          "name":"Overall vRA Errors",
           "info":"<span>Error across all services excluding (ABX and vRO)</span><br><br><div><span style=\"font-weight: bold;\">Analysis</span>: Overall error logs across all services excluding (ABX, VRO). Spike in error rates should be visible over time if error exists.</div>",
           "gridWidth":"1",
           "chartType":"column",
@@ -619,7 +846,7 @@
         } ]
       }, {
         "widgets":[ {
-          "name":"Failed allocation requests",
+          "name":"Failed Allocation Requests",
           "info":"<span>Errors related to allocation failure.</span><br><br><div><span style=\"font-weight: bold;\">Analysis:</span>&nbsp;Allocation occurs prior to actual provisioning, Common causes for allocation failure includes: Failure to secure an IP address, Failure to find a reservation with sufficient resources to use for deployment etc.</div>",
           "chartType":"line",
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
@@ -792,7 +1019,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608075868117,\"endTimeMillis\":1611822352932,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving from STARTED(CREATED) to STARTED(CREATED)\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1626446570116,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"STARTED(RESOURCE_COUNTED) to STARTED(PROVISIONING)\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO provisioning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
           "name":"Provision Success Requests",
@@ -800,7 +1027,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608075868117,\"endTimeMillis\":1611822388738,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving from STARTED(COMPLETED) to FINISHED(COMPLETED)\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1626446866841,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Successfully updated vROPS with provision status PROVISIONED\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO provisioning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
           "name":"Provision Failure Requests",
@@ -808,7 +1035,7 @@
           "chartType":"column",
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608075868117,\"endTimeMillis\":1611822420012,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving from .* to FAILED(ERROR).\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1625742045419,\"endTimeMillis\":1626446876657,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"provisioning-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Moving from STARTED(PROVISIONING_COMPUTE) to FAILED(ERROR)\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"INFO provisioning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         } ]
       }, {
@@ -867,10 +1094,10 @@
           "chartType":"column",
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608082414680,\"endTimeMillis\":1611829415966,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"deployment\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"was created\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1626621189566,\"endTimeMillis\":1626793990908,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpum2lfnrsdc000\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpwm2lfnrsde000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_catalogRequest_Field1\",\"preContext\":\"Deployment \",\"postContext\":\" requestedBy\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpum2lfnrsdc000\",\"constraints\":null},{\"displayName\":\"vra8_catalogRequest_field2\",\"preContext\":\"projectId \",\"postContext\":\" was created\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z2smvyxkzltorpwm2lfnrsde000\",\"constraints\":null},{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
-          "name":"Successful catalog requests",
+          "name":"Successful Catalog Requests",
           "info":"<div>Catalog Successful requests across all nodes over time</div><br><div><span style=\"font-weight: bold;\">Analysis</span>: General metrics around rate of successful catalog requests. eg: Deployments, Xaas, Custom Resources etc.</div>",
           "chartType":"column",
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
@@ -878,7 +1105,7 @@
           "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608082414680,\"endTimeMillis\":1611829129033,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"create_successful and last request status to successful\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
-          "name":"Failed catalog requests",
+          "name":"Failed Catalog Requests",
           "info":"<div>Provisions failed requests across all nodes over time</div><br><div><span style=\"font-weight: bold;\">Analysis</span>: General metrics around rate of failed provisioning. eg: vSphere, AWS, Azure</div>",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
@@ -893,7 +1120,7 @@
           "chartType":"column",
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":true}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1608082414680,\"endTimeMillis\":1611829684072,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"/deployment/api/deployments/.*/actions/.* HTTP\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1626773971043,\"endTimeMillis\":1626795571813,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"app\",\"operator\":\"CONTAINS\",\"value\":\"catalog-service-app\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"prelude\"},{\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z27mrqxsms7mfrxi2lpnzpwm2lfnrsa0000\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vra8_host\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vra8_catalog_day2_action_field\",\"preContext\":\"Submitted action \",\"postContext\":\" for deployment\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwgylumfwg6z27mrqxsms7mfrxi2lpnzpwm2lfnrsa0000\",\"constraints\":null},{\"displayName\":\"vra8_host\",\"preContext\":\"host='\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcn27mnxw2ltwnv3wc4tffz3heyjohazxm4tbhbpwq33toq000000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
           "name":"Delete - Catalog Requests",
@@ -1521,8 +1748,8 @@
   "aliasRules":[ ],
   "author":"VMware, Inc",
   "url":"https://www.vmware.com/products/vrealize-automation",
-  "contentVersion":"1.0",
-  "info":"<div>The VMware vRealize Automation (vRA) content pack compliments the vSphere content pack and provides a consolidated summary of log events across all vRA components of the environment. The vRealize Automation 8.3+ (vRA 8.3+) content pack for Log Insight provides you with important information across all components of your vRealize Automation 8.3+ environment</div><br><div>This version of the content pack is designed specifically for vRA 8.3+ and above. It is not compatible with previous versions.</div><br><span style=\"font-weight: bold;\">The vRA 8.3+ content pack enables:</span><div><ul><li>Proactive monitoring of your vRA 8.3+ environment.</li><li>Service level dashboards.</li><li>Request-based tracing across vRA 8.3+ services using trace id.</li><li>Troubleshooting and assistance during root-cause analysis.</li><li>Alerts added to detect critical errors.</li></ul></div><br><div>You can forward logs from vRealize Automation to vRealize Log Insight to take advantage of more robust log analysis and report generation.</div><div>vRealize Automation is bundled with a fluentd-based logging agent. The agent collects and stores logs so that they can be included in a log bundle and examined later. Configure the logging agent to continuously forward vRealize Automation logs to vRealize Log Insight by using the supplied vracli command line utility.</div><div>Information about how to use the vracli command line utility is available by using the --help argument in the vracli command line.&nbsp;</div><div>For example: vracli vrli --help.</div>",
-  "instructions":"<span style=\"font-weight: bold;\">Configure or update integration of vRealize Log Insight</span><br><div><span style=\"text-decoration-line: underline;\"><span>Command</span>:</span> <span style=\"font-style: italic;\">vracli vrli set [options] IP_OR_URL</span></div><div>Note: After you run the command, it can take up to 2 minutes for the logging agent to apply your specified configuration.</div><div>Specifies the IP or URL address of the vRealize Log Insight server to use for posting logs. Port 9543 and https are used by default. If any of these settings must be changed, you can use a URL instead.</div><br><div>You can set a different host scheme (default is https) and port (default for https is 9543, default for http is 9000) to use for sending the logs, as shown in the following samples:</div><div>vracli vrli set https://IP:9543</div><div>vracli vrli set --insecure IP</div><div>vracli vrli set http://http://IP:9000</div><br><span>Command Options:</span><div>1. --agent-id SOME_ID : Sets the id of the logging agent for this appliance. The default is 0. Used to identify the agent when posting logs to vRealize Log Insight by using the vRealize Log Insight REST API.</div><div>2. --environment ENV : Sets an identifier for the current environment. It will be available in vRealize Log Insight logs as a tag for each log entry. The default is prod.</div><div>3. --ca-file /path/to/server-ca.crt : Specifies a file that contains the certificate of the certificate authority (CA) that was used to sign the certificate of the vRealize Log Insight server. This forces the logging agent to trust the specified CA and enable it to verify the certificate of the vRealize Log Insight server if it was signed by an untrusted authority. The file may contain a whole certificate chain to verify the certificate. In the case of a self-signed certificate, pass the certificate itself.</div><div>4. --ca-cert CA_CERT : Definition is identical to that of --ca-file as above, but instead passes the certificate (chain) inline as string.</div><div>5. --insecure : Deactivates SSL verification of the server certificate. This forces the logging agent to accept any SSL certificate when posting logs.</div><br><span>Advanced options</span><div><span>\t</span>For configuring more advanced options refer url below&nbsp;</div><div>https://docs.vmware.com/en/vRealize-Automation/8.3/Administering/GUID-8C7A4CC2-A10A-4ABA-A555-0266E003B77A.html</div><br><span>Exit codes</span><div>The following exit codes are possible:</div><div>0 - The configuration was updated.</div><div>1 - An exception occurred as part of the execution. Examine the error message for details.</div><br><span style=\"font-weight: bold;\">Clear integration of vRealize Log Insight<br><br></span><div><span style=\"text-decoration-line: underline;\">Command:</span> <span style=\"font-style: italic;\">vracli vrli unset</span></div><br><div>After you run the command, it can take up to 2 minutes for the logging agent to apply your specified configuration.</div><br><span>Exit codes</span><div>The following exit codes are available:</div><div>0 - The configuration was cleared or no configuration existed.</div><div>1 - An exception occurred as part of the execution. Examine the error message for details.</div>",
+  "contentVersion":"1.1",
+  "info":"<div>The VMware vRealize Automation (vRA) content pack compliments the vSphere content pack and provides a consolidated summary of log events across all vRA components of the environment. The vRealize Automation 8.3+ (vRA 8.3+) content pack for Log Insight provides you with important information across all components of your vRealize Automation 8.3+ environment</div><br><div>This version of the content pack is designed specifically for vRA 8.3+ and above. It is not compatible with previous versions.</div><br><div>The vRA 8.3+ content pack enables:</div><div>Proactive monitoring of your vRA 8.3+ environment.</div><div>Service level dashboards.</div><div>Request-based tracing across vRA 8.3+ services using trace id.</div><div>Troubleshooting and assistance during root-cause analysis.</div><div>Alerts added to detect critical errors.</div><br><div>You can forward logs from vRealize Automation to vRealize Log Insight to take advantage of more robust log analysis and report generation.</div><div>vRealize Automation is bundled with a fluentd-based logging agent. The agent collects and stores logs so that they can be included in a log bundle and examined later. Configure the logging agent to continuously forward vRealize Automation logs to vRealize Log Insight by using the supplied vracli command line utility.</div><div>Information about how to use the vracli command line utility is available by using the --help argument in the vracli command line.&nbsp;</div><div>For example: vracli vrli --help.</div>",
+  "instructions":"<div>Configure or update integration of vRealize Log Insight</div><br><div>Command: vracli vrli set [options] IP_OR_URL</div><div>Note: After you run the command, it can take up to 2 minutes for the logging agent to apply your specified configuration.</div><div>Specifies the IP or URL address of the vRealize Log Insight server to use for posting logs. Port 9543 and https are used by default. If any of these settings must be changed, you can use a URL instead.</div><br><div>You can set a different host scheme (default is https) and port (default for https is 9543, default for http is 9000) to use for sending the logs, as shown in the following samples:</div><div>vracli vrli set https://IP:9543</div><div>vracli vrli set --insecure IP</div><div>vracli vrli set http://http://IP:9000</div><br><div>Command Options:</div><div>1. --agent-id SOME_ID : Sets the id of the logging agent for this appliance. The default is 0. Used to identify the agent when posting logs to vRealize Log Insight by using the vRealize Log Insight REST API.</div><div>2. --environment ENV : Sets an identifier for the current environment. It will be available in vRealize Log Insight logs as a tag for each log entry. The default is prod.</div><div>3. --ca-file /path/to/server-ca.crt : Specifies a file that contains the certificate of the certificate authority (CA) that was used to sign the certificate of the vRealize Log Insight server. This forces the logging agent to trust the specified CA and enable it to verify the certificate of the vRealize Log Insight server if it was signed by an untrusted authority. The file may contain a whole certificate chain to verify the certificate. In the case of a self-signed certificate, pass the certificate itself.</div><div>4. --ca-cert CA_CERT : Definition is identical to that of --ca-file as above, but instead passes the certificate (chain) inline as string.</div><div>5. --insecure : Deactivates SSL verification of the server certificate. This forces the logging agent to accept any SSL certificate when posting logs.</div><br><div>Advanced options</div><div><span>\t</span>For configuring more advanced options refer url below&nbsp;</div><div>https://docs.vmware.com/en/vRealize-Automation/8.3/Administering/GUID-8C7A4CC2-A10A-4ABA-A555-0266E003B77A.html</div><br><div>Exit codes</div><div>The following exit codes are possible:</div><div>0 - The configuration was updated.</div><div>1 - An exception occurred as part of the execution. Examine the error message for details.</div><br><div>Clear integration of vRealize Log Insight</div><div>Command : vracli vrli unset</div><br><div>After you run the command, it can take up to 2 minutes for the logging agent to apply your specified configuration.</div><br><div>Exit codes</div><div>The following exit codes are available:</div><div>0 - The configuration was cleared or no configuration existed.</div><div>1 - An exception occurred as part of the execution. Examine the error message for details.</div>",
   "icon":"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"
 }
