@@ -846,7 +846,7 @@
     "info": "<span>The NSX-T Log Insight content pack provides health status dashboards for the logical switching and routing, distributed firewall, and DHCP components that make up the NSX infrastructure.  It also provides key audit logs for tracking create, add and delete changes to your NSX infrastructure.</span><br><br><span><span style=\"font-weight: bold;\">Minimum requirements</span><br>&nbsp;&nbsp;&nbsp; VMware Log Insight v3.0+<br>&nbsp;&nbsp;&nbsp; VMware NSX-T v1.0+<br></span>",
     "name": "VMware - NSX-T",
     "author": "VMware, Inc.",
-    "contentVersion": "4.0.5",
+    "contentVersion": "4.0.6",
     "supportMode": "supported",
     "namespace": "com.vmware.nsxt",
     "fileName": "VMware-NSX-T-v4.0.5.vlcp",
