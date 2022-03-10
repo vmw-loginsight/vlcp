@@ -687,6 +687,11 @@
   } ],
   "aliasFields":[ ],
   "aliasRules":[ ],
+   "agentClasses":[ {
+    "name":"vCloud Director Cell Servers",
+    "info":"This Agent Group contains the necessary log file configuration to collect from VMware vCloud Director Servers using the Log Insight Agent for Linux. Log Insight Agent use is highly recommended!<br>",
+    "agentConfig":"[filelog|vcd-essential]\ndirectory=/opt/vmware/vcloud-director/logs\ninclude=vcloud-container-debug*;upgrade*;vmware-vcd-support*;watchdog*\nevent_marker=(\\d{2}|\\d{4})-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\ntags={\"vmw_product\":\"vcd\"}"
+  } ],
   "author":"VMware",
   "url":"http://www.vmware.com",
   "contentVersion":"8.9",
