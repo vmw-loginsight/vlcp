@@ -1237,7 +1237,7 @@
   } ],
   "aliasFields":[ ],
   "aliasRules":[ ],
-  "author":"drew.tonnesen@dell.com",
+  "author":"Dell Technologies",
   "url":"https://www.dell.com",
   "contentVersion":"1.4",
  "info":"<span>Dell PowerMax content pack provides you with important information about your PowerMax array(s) from sources such as Solutions Enabler and Unisphere for PowerMax. The content pack enables:<br></span><br><span style=\"font-weight: bold;\">Proactive monitoring of your PowerMax array<br></span><span>Quickly identify issues using dashboards and pre-defined alerts.</span><br><span style=\"font-weight: bold;\"><br>Historical viewing of PowerMax events<br></span><span>Using the custom date functionality view PowerMax trends over extended periods of times to help identify potential problems before they impact production.<br></span><br><span style=\"font-weight: bold;\">Additional information and context<br></span><span>Each dashboard widget includes information about the widget with links to documentation or any other information that might be applicable.<br></span><span><br>The Dell PowerMax content pack will help bridge the gap between the VMware and system administrators, providing a common set of data by which the PowerMax can be monitored and issues addressed.</span>",
