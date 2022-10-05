@@ -1,0 +1,265 @@
+{
+  "name":"MySQL",
+  "namespace":"com.vmware.mysql",
+  "contentPackId":"com.vmware.mysql",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"mysql_InnoDB_page_cleaner_ms",
+    "preContext":"InnoDB: page_cleaner: 1000ms intended loop took ",
+    "postContext":"ms. The settings might not be optimal. ",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpus3ton5ceex3qmftwkx3dnrswc3tfojpw24y0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"mysql_connection_user",
+    "preContext":"user '",
+    "postContext":"'",
+    "regexValue":"\\w+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpwg33onzswg5djn5xf65ltmvza0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"mysql_db_host",
+    "preContext":"host: '",
+    "postContext":"'",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpwiys7nbxxg5a0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"mysql_db_number",
+    "preContext":"Aborted connection ",
+    "postContext":" to db:",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpwiys7nz2w2ytfoi000000",
+    "constraints":"{\"searchTerms\":\"Got an error reading communication packets\"}",
+    "info":null
+  }, {
+    "displayName":"mysql_inserted_data",
+    "preContext":"INSERT INTO",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpws3ttmvzhizlel5sgc5db",
+    "constraints":"{\"filters\":[{\"internalName\":\"filepath\",\"displayName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/var/log/mysql/mysql.log\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"values\"}",
+    "info":null
+  }, {
+    "displayName":"mysql_slow_query_time",
+    "preContext":"Query_time: ",
+    "postContext":"  Lock_time: ",
+    "regexValue":"-?\\d*\\.?\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg3dpo5pxc5lfoj4v65djnvsq0000",
+    "constraints":"{\"filters\":[{\"internalName\":\"filepath\",\"displayName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/var/log/mysql/mysql-slow.log\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}],\"searchTerms\":\"\"}",
+    "info":null
+  }, {
+    "displayName":"mysql_starting_process_id",
+    "preContext":"starting as process ",
+    "postContext":"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg5dboj2gs3thl5yhe33dmvzxgx3jmq000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"mysql_updated_data",
+    "preContext":"Query\tUPDATE",
+    "postContext":"",
+    "regexValue":".*",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxk4demf2gkzc7mrqxiyi0",
+    "constraints":"{\"filters\":[{\"internalName\":\"filepath\",\"displayName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/var/log/mysql/mysql.log\",\"fieldType\":\"STRING\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  }, {
+    "displayName":"mysql_version",
+    "preContext":"\\(mysqld ",
+    "postContext":"\\)",
+    "regexValue":"\\S+",
+    "internalName":"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxmzlsonuw63q0",
+    "constraints":null,
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"MySQL - Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"MySQL Server version",
+          "info":"This widget shows the MySQL Server version.<br>In case the version is upgraded, that will be visible on this widget.",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1663067583146,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxmzlsonuw63q0\",\"displayName\":\"mysql_version\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxmzlsonuw63q0\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"shutdown complete\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"system\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"mysqld\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"mysql_version\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxmzlsonuw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"mysql_version\",\"preContext\":\"\\\\(mysqld \",\"postContext\":\"\\\\)\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxmzlsonuw63q0\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Forcing close of thread",
+          "info":"<span>In case you get this log and MySQL server keeps on shutting down, you can resolve the issue by increasing maximum connection to MySQL server:</span><br><br><span>- login to MySQL server and navigate to /etc/my.cnf file,</span><br><span>- find and increase max_connections value and save the my.conf file,</span><div>- restart MySQL service.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"mysql/error.log\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Forcing close of thread\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"MySQL starting processes by ID",
+          "info":"This widget shows the&nbsp;MySQL starting processes by ID.",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"starting as process\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"mysqld\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg5dboj2gs3thl5yhe33dmvzxgx3jmq000000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"mysql_starting_process_id\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg5dboj2gs3thl5yhe33dmvzxgx3jmq000000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"mysql_starting_process_id\",\"preContext\":\"starting as process \",\"postContext\":\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg5dboj2gs3thl5yhe33dmvzxgx3jmq000000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Shutdown of MySQL Server",
+          "info":"This widget shows the shutdowns of MySQL server.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"shutdown complete\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"system\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"mysqld\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"source\",\"internalName\":\"__li_source_path\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Received SHUTDOWN from user",
+          "info":"This widget shows that Shutdown was received from a user.",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/var/log/mysql/error.log\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Received SHUTDOWN from user\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"XA crash recovery finished",
+          "info":"This widget shows that the&nbsp;XA crash recovery has finished.",
+          "gridWidth":"1/2",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"XA crash recovery finished\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":" InnoDB: page_cleaner's loop duration",
+          "info":"This widget shows the InnoDB's page cleaner's loop duration over time.",
+          "gridWidth":"1/2",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpus3ton5ceex3qmftwkx3dnrswc3tfojpw24y0\",\"displayName\":\"mysql_InnoDB_page_cleaner_ms\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpus3ton5ceex3qmftwkx3dnrswc3tfojpw24y0\",\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"intended loop took\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpus3ton5ceex3qmftwkx3dnrswc3tfojpw24y0\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"mysql_InnoDB_page_cleaner_ms\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpus3ton5ceex3qmftwkx3dnrswc3tfojpw24y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"mysql_InnoDB_page_cleaner_ms\",\"preContext\":\"InnoDB: page_cleaner: 1000ms intended loop took \",\"postContext\":\"ms. The settings might not be optimal. \",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpus3ton5ceex3qmftwkx3dnrswc3tfojpw24y0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"MySQL - Errors",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"MySQL Error over time",
+          "info":"This widget shows all the logs generated in the \"error.log\" log file.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"error.log\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Aborted connection to DB host",
+          "info":"This widget shows aborted connection to DB. Check the log to see the MySQL hostname and user.",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"aborted connection\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"to db:\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Got an error reading communication packets\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"mysql_db_host\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpwiys7nbxxg5a0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"mysql_db_host\",\"preContext\":\"host: '\",\"postContext\":\"'\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpwiys7nbxxg5a0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Hints",
+          "info":"The widget shows information related to&nbsp; some common logs that can be useful for the user.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"list",
+          "listType":"query",
+          "listData":[ {
+            "name":"Channel mysql_main configured to support TLS",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Channel mysql_main configured to support TLS\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+          }, {
+            "name":"Count of events over time",
+            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"CA certificate ca.pem is self signed.\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+            "messageQuery":"",
+            "info":"",
+            "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+          } ]
+        }, {
+          "name":"Access denied for user",
+          "info":"This widget shows that access is denied for a user. Check the log to see the MySQL connection user.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Access denied for user\"},{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"mysql/mysql.log\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"mysql_connection_user\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpwg33onzswg5djn5xf65ltmvza0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"mysql_connection_user\",\"preContext\":\"user '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpwg33onzswg5djn5xf65ltmvza0000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"MySQL - Queries",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Recently updated data of the Database(s)",
+          "info":"This widget shows the recent updates done with the data of the Database(s).",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/var/log/mysql/mysql.log\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"update\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"mysql_updated_data\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxk4demf2gkzc7mrqxiyi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"mysql_updated_data\",\"preContext\":\"Query\\tUPDATE\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxk4demf2gkzc7mrqxiyi0\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"filepath\\\",\\\"displayName\\\":\\\"filepath\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"/var/log/mysql/mysql.log\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Recently inserted data into the Database(s)",
+          "info":"This widget shows what data has been inserted into the Database(s) recently.",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"CONTAINS\",\"value\":\"/var/log/mysql/mysql.log\"},{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpws3ttmvzhizlel5sgc5db\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"mysql_inserted_data\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpws3ttmvzhizlel5sgc5db\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"mysql_inserted_data\",\"preContext\":\"INSERT INTO\",\"postContext\":\"\",\"regexValue\":\".*\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpws3ttmvzhizlel5sgc5db\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"filepath\\\",\\\"displayName\\\":\\\"filepath\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"/var/log/mysql/mysql.log\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"values\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Slowest queries' duration over time (seconds)",
+          "info":"This widget shows the max query durations over time.&nbsp;<br>The numbers represent seconds.<br><br><span style=\"font-weight: bold;\">Note: </span>To see data on this widget slow_query_log options needs to be configured for the database.&nbsp;",
+          "gridWidth":"1",
+          "chartType":"area",
+          "chartOptions":"{\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1662099901000,\"endTimeMillis\":1662721056000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true}],\"field\":{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg3dpo5pxc5lfoj4v65djnvsq0000\",\"displayName\":\"mysql_slow_query_time\",\"displayNamespace\":\"Unknown\"}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Max\",\"value\":\"MAX\",\"requiresField\":true,\"numericOnly\":true},\"piqlFunctionField\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg3dpo5pxc5lfoj4v65djnvsq0000\",\"fieldConstraints\":[{\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg3dpo5pxc5lfoj4v65djnvsq0000\",\"operator\":\"EXISTS\"},{\"internalName\":\"product\",\"operator\":\"CONTAINS\",\"value\":\"mysql\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"mysql_slow_query_time\",\"preContext\":\"Query_time: \",\"postContext\":\"  Lock_time: \",\"regexValue\":\"-?\\\\d*\\\\.?\\\\d+\",\"internalName\":\"ibadcns7mnxw2ltwnv3wc4tffzwxs43rnrwxs43rnrpxg3dpo5pxc5lfoj4v65djnvsq0000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"filepath\\\",\\\"displayName\\\":\\\"filepath\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"/var/log/mysql/mysql-slow.log\\\",\\\"fieldType\\\":\\\"STRING\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}],\\\"searchTerms\\\":\\\"\\\"}\"}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "agentClasses":[ {
+    "name":"MySQL",
+    "info":"This is a MySQL agents config file that needs to be applied to make it possible to collect product logs.&nbsp;",
+    "agentConfig":"[common|global]\ntags={\"product\":\"mysql\"}\n\n[filelog|error_log]\ndirectory=/var/log/mysql\ninclude=error.log\nevent_marker=\\d{4}\\-\\d{2}\\-\\d{2}\\w\\d{2}\\:\\d{2}\\:\\d{2}\\.\\d{6}\\w\n\n[filelog|mysql_log]\ndirectory=/var/log/mysql\ninclude=mysql.log\nevent_marker=\\d{4}\\-\\d{2}\\-\\d{2}\\w\\d{2}\\:\\d{2}\\:\\d{2}\\.\\d{6}\\w\n\n[filelog|mysql_slow_log]\ndirectory=/var/log/mysql\ninclude=mysql-slow.log\nevent_marker=\\#\\sTime\\:\\s\\d{4}\\-\\d{2}\\-\\d{2}\\w\\d{2}\\:\\d{2}\\:\\d{2}\nparser=query\n\n[parser|query]\nbase_parser=clf\nformat=# Time: %t \\n# User@Host: %{user}i[root] %M\ndebug=no\n"
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware",
+  "url":"",
+  "contentVersion":"1.0",
+  "info":"MySQL content pack aims to provide MySQL users with the opportunity to monitor the MySQL logs and help in troubleshooting.",
+  "instructions":"<div>MySQL content pack aims to provide MySQL users with the opportunity to monitor the MySQL logs and help in troubleshooting.<br><br></div><div><span style=\"text-decoration-line: underline; font-style: italic;\">&nbsp;First of all</span>, download the Agent on the machine where MySQL is installed.&nbsp; You can find the downloadable file from Log Insight's Management - Agent page, install the Agent.<br><br></div><div>- Find the liagent.ini Agent configuration file (location on Linux: /var/lib/loginsight-agent/).<br><br></div><div>- To configure Log Insight Agent to send logs to a vRealize Log Insight, set the communication protocol and port and other configurations in the liagent.ini file.</div><div><br><br><span style=\"text-decoration-line: underline; font-style: italic;\">Second of all,</span> apply Log Inisght Agent group.<br><br></div><div>• Go to the Management &gt; Agents page (requires Super Admin privileges),</div><div>• Select the All Agents drop-down at the top of the window and select the Copy Template button to the right of the MySQL agent group,</div><div>• Add the desired filters to restrict which agent receive the configuration (optional),</div><div>• Select the Refresh button at the top of the page,</div><div>• Select the Save Configuration button at the bottom of the page.<br><br><br></div><div><span style=\"text-decoration-line: underline; font-style: italic;\">Finally,</span> enable logging on MySQL:<br><br></div><div>Find the MySQL configuration file in /etc/mysql/mysql.conf.d/mysqld.cnf.</div><div>In the file \"mysqld.cnf\" add these configs:<br><br></div><div>#general log</div><div>general-log&nbsp; = ON</div><div>general-log-file = /var/log/mysql/mysql.log</div><div>#slow query log</div><div>slow_query_log = 1</div><div>slow_query_log_file&nbsp; = /var/log/mysql/mysql-slow.log</div><div>long_query_time = 10</div><div>log-queries-not-using-indexes<br><br></div><div>After adding and saving this,&nbsp; restart the MySQL: sudo service mysql restart</div>",
+  "icon":"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"
+}
