@@ -877,7 +877,7 @@
     "contentVersion": "4.0.8",
     "supportMode": "supported",
     "namespace": "com.vmware.nsxt",
-    "fileName": "VMware-NSX-T-v4.0.8.vlcp",
+    "fileName": "VMware-NSX-v4.0.8.vlcp",
     "framework": "#9c4",
     "contentPackId": "com.vmware.nsxt",
     "version": "4.0",
