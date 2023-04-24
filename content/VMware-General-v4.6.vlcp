@@ -39,7 +39,7 @@
           "messageQuery":null
         }, {
           "name":"Unique event types",
-          "info":"Note:&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. New event types may indicate changes to the environment or environmental issues.<br><br>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;<br>",
+          "info":"Note:&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. New event types may indicate changes to the environment or environmental issues.<br><br>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;<br>",
           "chartType":"line",
           "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":true}",
           "widgetType":"chart",
@@ -65,7 +65,7 @@
           "messageQuery":null
         }, {
           "name":"Unique error event types",
-          "info":"Note:&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. New event types may indicate changes to the environment or environmental issues.<br><br>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;<br>",
+          "info":"Note:&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. New event types may indicate changes to the environment or environmental issues.<br><br>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;<br>",
           "chartType":"line",
           "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":true}",
           "widgetType":"chart",
@@ -91,7 +91,7 @@
           "messageQuery":null
         }, {
           "name":"Unique exception event types",
-          "info":"Note:&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. New event types may indicate changes to the environment or environmental issues.<br><br>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;<br>",
+          "info":"Note:&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. New event types may indicate changes to the environment or environmental issues.<br><br>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;<br>",
           "chartType":"line",
           "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":true}",
           "widgetType":"chart",
@@ -117,7 +117,7 @@
           "messageQuery":null
         }, {
           "name":"Unique warning event types",
-          "info":"Note:&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. New event types may indicate changes to the environment or environmental issues.<br><br>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;<br>",
+          "info":"Note:&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. New event types may indicate changes to the environment or environmental issues.<br><br>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;<br>",
           "chartType":"line",
           "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":true}",
           "widgetType":"chart",
@@ -148,7 +148,7 @@
       }, {
         "widgets":[ {
           "name":"Unique error event types by event type",
-          "info":"<span><span style=\"font-weight: bold;\">Note:</span> For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
+          "info":"<span><span style=\"font-weight: bold;\">Note:</span> For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
           "gridWidth":"1",
           "chartType":null,
           "chartOptions":null,
@@ -194,7 +194,7 @@
       }, {
         "widgets":[ {
           "name":"Unique event types by event type",
-          "info":"<span><span style=\"font-weight: bold;\">Note:</span><span>&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br></span><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
+          "info":"<span><span style=\"font-weight: bold;\">Note:</span><span>&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br></span><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
           "gridWidth":"1",
           "chartType":null,
           "chartOptions":null,
@@ -205,7 +205,7 @@
       }, {
         "widgets":[ {
           "name":"Unique error event types by event type",
-          "info":"<span><span style=\"font-weight: bold;\">Note:</span><span>&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br></span><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
+          "info":"<span><span style=\"font-weight: bold;\">Note:</span><span>&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br></span><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
           "gridWidth":"1",
           "chartType":null,
           "chartOptions":null,
@@ -216,7 +216,7 @@
       }, {
         "widgets":[ {
           "name":"Unique exception event types by event exception",
-          "info":"<span><span style=\"font-weight: bold;\">Note:</span><span>&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br></span><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
+          "info":"<span><span style=\"font-weight: bold;\">Note:</span><span>&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br></span><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
           "gridWidth":"1",
           "chartType":null,
           "chartOptions":null,
@@ -227,7 +227,7 @@
       }, {
         "widgets":[ {
           "name":"Unique warning event types by event type",
-          "info":"<span><span style=\"font-weight: bold;\">Note:</span><span>&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br></span><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Log Insight or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
+          "info":"<span><span style=\"font-weight: bold;\">Note:</span><span>&nbsp;For performance reasons, it is recommended to run this query over a time range of 1 hour or less.<br></span><br>The number of event types should remain fairly consistent over time unless devices are added/removed from Operations for Logs or new events are ingested. N</span><span>ew event types may indicate changes to the environment or environmental issues.</span><br><br><span>Event types are unique message patterns that have been detected. While devices often generate a large number of events, many events are very similar except for some dynamic variables like timestamp, hostname, etc.&nbsp;</span><br>",
           "gridWidth":"1",
           "chartType":null,
           "chartOptions":null,
@@ -242,7 +242,7 @@
       "rows":[ {
         "widgets":[ {
           "name":"Unique hosts logging",
-          "info":"The number of unique hostnames indicates the number of unique event originators sending events to Log Insight. Unless devices have been added to or removed from Log Insight, the unique number of hostnames should be very consistent.",
+          "info":"The number of unique hostnames indicates the number of unique event originators sending events to Operations for Logs. Unless devices have been added to or removed from Operations for Logs, the unique number of hostnames should be very consistent.",
           "chartType":null,
           "chartOptions":"{}",
           "widgetType":"chart",
@@ -250,7 +250,7 @@
           "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1414632303126,\"endTimeMillis\":1414632603125,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}"
         }, {
           "name":"Unique sources logging",
-          "info":"The number of unique sources indicates the number of unique \"last hop\" event senders. Examples of sources include originators of events, syslog relays, NATs and load balancers. Unless devices have been added to or removed from Log Insight, the unique number of sources should be very consistent. Note it is not uncommon for the number of unique sources to be less than the number of unique hosts.",
+          "info":"The number of unique sources indicates the number of unique \"last hop\" event senders. Examples of sources include originators of events, syslog relays, NATs and load balancers. Unless devices have been added to or removed from Operations for Logs, the unique number of sources should be very consistent. Note it is not uncommon for the number of unique sources to be less than the number of unique hosts.",
           "chartType":null,
           "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
           "widgetType":"chart",
@@ -266,7 +266,7 @@
           "messageQuery":""
         }, {
           "name":"Total events",
-          "info":"Total events received from all clients. Note this number may be higher than the sum of the Total Log Insight agent events and the Total syslog agent events as it is common for syslog clients to log non-compliant events. In addition, the total accounts for API events ingested that did not come from the Log Insight agent.",
+          "info":"Total events received from all clients. Note this number may be higher than the sum of the Total Operations for Logs Agent events and the Total syslog agent events as it is common for syslog clients to log non-compliant events. In addition, the total accounts for API events ingested that did not come from the Operations for Logs Agent.",
           "chartType":null,
           "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
           "widgetType":"chart",
@@ -275,7 +275,7 @@
         } ]
       }, {
         "widgets":[ {
-          "name":"Number of Log Insight agents",
+          "name":"Number of Operations for Logs Agents",
           "info":"Number of agents seen over the time range specified. This information is similar to what is provided on the <a href=\"/admin/agents\">Agents</a> page.",
           "chartType":null,
           "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
@@ -284,7 +284,7 @@
           "messageQuery":""
         }, {
           "name":"Unique channels collected",
-          "info":"The number of Window event channels collected by the Log Insight Windows agent.",
+          "info":"The number of Window event channels collected by the Operations for Logs Windows Agent.",
           "chartType":null,
           "chartOptions":"{}",
           "widgetType":"chart",
@@ -292,15 +292,15 @@
           "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1414520483253,\"endTimeMillis\":1414606883252,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}"
         }, {
           "name":"Unique file logs collected",
-          "info":"The number of file logs collected for Windows and Linux by configured Log Insight agents.<br>",
+          "info":"The number of file logs collected for Windows and Linux by configured Operations for Logs Agents.<br>",
           "chartType":null,
           "chartOptions":"{}",
           "widgetType":"chart",
           "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1414520418274,\"endTimeMillis\":1414606818273,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"filepath\",\"displayName\":\"filepath\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"filepath\",\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
           "messageQuery":"{\"query\":\"\",\"startTimeMillis\":1414520418274,\"endTimeMillis\":1414606818273,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"filepath\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}"
         }, {
-          "name":"Total Log Insight agent events",
-          "info":"Total events received from all Log Insight agents.",
+          "name":"Total Operations for Logs Agent events",
+          "info":"Total events received from all Operations for Logs Agents.",
           "chartType":null,
           "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
           "widgetType":"chart",
@@ -335,7 +335,7 @@
         } ]
       } ]
     }, {
-      "name":"Log Insight Agents",
+      "name":"Operations for Logs Agents",
       "constraints":[ {
         "internalName":"hostname",
         "operator":"CONTAINS"
@@ -348,7 +348,7 @@
       } ],
       "rows":[ {
         "widgets":[ {
-          "name":"Log Insight agent events over time",
+          "name":"Operations for Logs Agent events over time",
           "info":"All agent events as seen by filelog and winlog configuration options. A spike or dip may indicate an environmental change or potential issue.",
           "gridWidth":"1",
           "chartType":"area",
@@ -359,7 +359,7 @@
         } ]
       }, {
         "widgets":[ {
-          "name":"Number of Log Insight agents",
+          "name":"Number of Operations for Logs Agents",
           "info":"Number of agents seen over the time range specified. This information is similar to what is provided on the <a href=\"/admin/agents\">Agents</a> page.",
           "chartType":null,
           "chartOptions":"{}",
@@ -367,7 +367,7 @@
            "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1597737408569,\"endTimeMillis\":1597737709253,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"hostname\",\"displayName\":\"hostname\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"hostname\",\"fieldConstraints\":[{\"internalName\":\"channel\",\"operator\":\"EXISTS\"},{\"internalName\":\"filepath\",\"operator\":\"EXISTS\"},{\"internalName\":\"syslog_identifier\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
           "messageQuery":""
         }, {
-          "name":"Log Insight agent events by hostname",
+          "name":"Operations for Logs Agent events by hostname",
           "info":"<span>A large slice indicates a device generating a larger number of events from other devices. This widget is meant to be informational.</span><br>",
           "chartType":"pie",
           "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piestyle\":\"normal\"}",
@@ -543,9 +543,9 @@
   "aliasRules":[ ],
   "author":"VMware, Inc.",
   "url":"https://www.vmware.com/products/vrealize-log-insight",
-  "contentVersion":"4.5",
-  "info":"The Log Insight General Content Pack includes the following dashboards:<br><ul><li><b>Overview</b>&nbsp;-&nbsp;Provides generic information about any events being sent to your Log Insight instance including errors, warnings, and exceptions.</li><li><b>Problems</b>&nbsp;- Provides generic problem information discovered by Log Insight's machine learning including event types and event trends.</li><li><b>Event Types</b>&nbsp;- Provides information discovered by Log Insight's machine learning including unique errors, warnings, and exceptions.</li><li><b>Log Insight Agents</b>&nbsp;- Provides information about configured Log Insight agents including configured filelog and winlog collection. For information about currently configured agents, visit the&nbsp;<a href=\"/admin/agents\">Agents</a>&nbsp;page.</li><li><b>Syslog Agents</b>&nbsp;- Provides information about configured syslog agents.<br></li></ul><b>IMPORTANT:</b> This content pack requires Log Insight 4.0 or newer.",
-  "instructions":"None -- you can start using the content pack now!<br>",
+  "contentVersion":"4.6",
+  "info":"The VMware Aria Operations for Logs General Content Pack includes the following dashboards:<br><ul><li><b>Overview</b>&nbsp;-&nbsp;Provides generic information about any events being sent to your Operations for Logs instance including errors, warnings, and exceptions.</li><li><b>Problems</b>&nbsp;- Provides generic problem information discovered by Operations for Logs' machine learning including event types and event trends.</li><li><b>Event Types</b>&nbsp;- Provides information discovered by Operations for Logs' machine learning including unique errors, warnings, and exceptions.</li><li><b>Operations for Logs Agents</b>&nbsp;- Provides information about configured Operations for Logs Agents including configured filelog and winlog collection. For information about currently configured agents, visit the&nbsp;<a href=\"/admin/agents\">Agents</a>&nbsp;page.</li><li><b>Syslog Agents</b>&nbsp;- Provides information about configured syslog agents.<br></li></ul><b>IMPORTANT:</b> This content pack requires Operations for Logs (previously vRLI) 4.0 or newer.",
+  "instructions":"This is a preinstalled content pack. No need of any additional configuration.<br>",
   "upgradeInstructions":"Thanks for upgrading! You are all set -- happy logging!<br>",
   "icon":"iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAEKklEQVR4nO3dv4scZRzH8e93sym0E3YTrMRKYe8ujWhhYfxZeCeI2Plj1wQMyB7+B4p/grklhT+SOxQsxCKymxSCZ2GlIOE2FyzE0sINWlrdPBYJIuYKn/k8O8/M7PtVhWWfH0femZnbm5uYAQAAAAAAAAAAAO3kKSYZzfr7ZnY2xVyoTgj27d7W4lllDimg4bT/tbu9pMyB/IKFq3ubt18uM7Z0QG9ePz3oFMXNsuNRL+5Hgysv/nErdlynzGLDWe8r4mmXEE4cDqe9L2PHlQrIzV8pMw715u6vxo6JDmg07X0fOwbNMZz2v4t5fzd6Bfcnj3s5BLu8t7U4Hz0fshnN+uG/r7nbUzFzlDqFHYd4VlOygLCaCAgSAoKEgCAhIEgICBICgoSAICEgSOJ/lJHY61dPP9ztFtfM7NHce2m28JeHzttXtn7/vMpVsx2BXrvee3A064dut/jViCcBvy94+Gw46y2qXDVbQCcL/y3X2m3m5r3R7NTzVa2XJaC3pqeey7Hu6igeqmqlLAEVXnyRY91Vsbt5+5Oq1soSkJv3cqy7CnY3F0l+0+b/yv5d2L9V/cVDx+dAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJDU6pPoRrt08IA0/p2NPxPtpFIEpNiZ/2xuj5iZWSHONZnf/UPYtPHGNXG2ynAKK+vDn/r/xJOUz9LPuTwEVFbn5G7uLdQBAZXl4f7cW6gDAoKEi+jUxutx9zRN5vc85KlJOAJBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQESbN/mDo5HJgVb8jzBPvFttcreyRKmzQ3oMk86PeR3uVmNpl/bIu1E/aBJ5q0/lI8DaWZp7Cdg/eWMm//5tFS5m2xZgbk9n7uLeCOZgZk3tB9tw9/EZA09yL6ODG3kzb8VtK6aFdAq2Yy/9HMHks+b8Q/RE5hTXVxfsaWEU8kAmqqjt3IvQUzAoKIgCAhIEj4LqxtKv4ogyMQJAQECQFBEn0NlOIeEv5XnvbgCAQJAUFCQJAQECQEBEn8J9FLuREr/GDjjSfSz4tlq8kRyB+3ycGN3LtAvJoEZGbmZ3LvAPFqFBCaiIAgISBI0t0PxK/UrCSOQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBki6gnfmnyeZCY8Q/oSyEfXN/+p7X3c7ZZH4uxaZKq8OTz3LvQV//m5g3xx+BtjeeiR6D5hivvxDz9nKnsGCXS41D3X0UO6BcQNvr5806a6XGop6OfGDj9Quxw8pfRI8Hh1aiWNRQsIv27tqtMkO1x/zeKfaCTQ72zfysNBeqF8I+17QAAAAAAAAAAKDF/gbmErLkgJ79vAAAAABJRU5ErkJggg=="
 }
