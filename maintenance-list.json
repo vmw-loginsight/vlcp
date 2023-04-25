@@ -30,5 +30,9 @@
   {
     "name":"Microsoft - SharePoint",
     "namespace":"com.microsoft.sp"
+  },
+  {
+    "name":"VMware - vROps 6.7+",
+    "namespace":"com.vmware.vrops67"
   }
 ]
