@@ -1,0 +1,213 @@
+{
+  "name":"VMware Aria Operations for Networks Content Pack",
+  "namespace":"com.vmware.vrni",
+  "contentPackId":"com.vmware.vrni",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"vmw_cp_action",
+    "preContext":"action=\"",
+    "postContext":"\"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpwcy3unfxw4000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_destination_address",
+    "preContext":"dst=\"",
+    "postContext":"\"",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpwizltoruw4ylunfxw4x3bmrshezltom000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_destination_port",
+    "preContext":"svc=\"",
+    "postContext":"\"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpwizltoruw4ylunfxw4x3qn5zhi000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_origin",
+    "preContext":"\\d+\\s+",
+    "postContext":"\\s+",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpw64tjm5uw4000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_protocol",
+    "preContext":"proto=\"",
+    "postContext":"\"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpxa4tporxwg33m",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_protocol_service",
+    "preContext":"service_id=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpxa4tporxwg33ml5zwk4twnfrwk000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_rule_name",
+    "preContext":"rule_name=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpxe5lmmvpw4ylnmu000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_rule_uuid",
+    "preContext":"rule_uid=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpxe5lmmvpxk5ljmq000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_source_address",
+    "preContext":"src=\"",
+    "postContext":"\"",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpxg33vojrwkx3bmrshezltom000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_cp_source_port",
+    "preContext":"sport_svc=\"",
+    "postContext":"\"",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpxg33vojrwkx3qn5zhi000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_action",
+    "preContext":"0[xX][0-9a-fA-F]+\\,\\w+\\,",
+    "postContext":"\\,\\d+",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf6yldoruw63q0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_destination_address",
+    "preContext":"(\\d{4})(\\/|\\-)(\\d{2})(\\/|-)(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})\\,\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\,",
+    "postContext":"\\,\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf6zdfon2gs3tboruw63s7mfsgi4tfonzq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_destination_port",
+    "preContext":"\\d+\\,",
+    "postContext":"\\,\\d+\\,\\d+\\,0[xX][0-9a-fA-F]+\\,",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf6zdfon2gs3tboruw63s7obxxe5a0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_protocol",
+    "preContext":"0[xX][0-9a-fA-F]+\\,",
+    "postContext":"\\,",
+    "regexValue":"\\w+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf64dsn52g6y3pnq000000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_receive_time",
+    "preContext":"^.+ [^,],",
+    "postContext":",[0-9A-Z]+,(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),",
+    "regexValue":"[\\d/: ]+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf64tfmnsws5tfl52gs3lf",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_rule_name",
+    "preContext":"(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\,)+",
+    "postContext":"\\,",
+    "regexValue":"([a-zA-Z0-9_-])+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf64tvnrsv63tbnvsq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_rule_uuid",
+    "preContext":"\\,",
+    "postContext":"\\,",
+    "regexValue":"[ A-Za-z0-9_-]{36}",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf64tvnrsv65lvnfsa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_serial",
+    "preContext":"^.+ [^,],[\\d/: ]+,",
+    "postContext":",(CONFIG|SYSTEM|THREAT|TRAFFIC|HIP-MATCH),",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf643fojuwc3a0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_source_address",
+    "preContext":"(\\d{4})(\\/|\\-)(\\d{2})(\\/|-)(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})\\,",
+    "postContext":"\\,\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "regexValue":"\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf643povzggzk7mfsgi4tfonzq0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"vmw_pan_source_port",
+    "preContext":"\\d+\\,",
+    "postContext":"\\,\\d+\\,\\d+\\,\\d+\\,0[xX][0-9a-fA-F]+\\,",
+    "regexValue":"-?\\d+",
+    "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf643povzggzk7obxxe5a0",
+    "constraints":null,
+    "info":null
+  } ],
+  "queries":[ {
+    "name":"cp_source_contains_regex",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1655890109741,\"endTimeMillis\":1655890411710,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpwcy3unfxw4000\",\"operator\":\"CONTAINS\",\"value\":\"0\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_cp_action\",\"preContext\":\"action=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpwcy3unfxw4000\",\"constraints\":null}]}",
+    "messageQuery":"",
+    "info":"Query to pull syslog messages for Check Point source where action is drop.",
+    "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+  }, {
+    "name":"pan_source_contains_regex",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1655969564004,\"endTimeMillis\":1655973165244,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf6yldoruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"deny\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"traffic\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_pan_action\",\"preContext\":\"0[xX][0-9a-fA-F]+\\\\,\\\\w+\\\\,\",\"postContext\":\"\\\\,\\\\d+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf6yldoruw63q0\",\"constraints\":null}]}",
+    "messageQuery":"",
+    "info":"Query to pull syslog messages for Palo Alto source where action is drop.",
+    "options":"{\"chartTypeName\":null,\"chartOptions\":\"{\\\"logaxis\\\":false,\\\"trendline\\\":false,\\\"spline\\\":false}\"}"
+  } ],
+  "alerts":[ {
+    "name":"vRNI_PAN_Dropped_Flow",
+    "info":"<span style=\"font-weight: 400; font-style: normal;\">This alert is triggered when VMware Aria Operations for Logs detects dropped flows from the Palo Alto firewall device logs.</span>",
+    "recommendation":"<span style=\"font-weight: 400; font-style: normal;\">Verify the firewall rules in Palo Alto firewall device.</span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1655969564004,\"endTimeMillis\":1655973165244,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf6yldoruw63q0\",\"operator\":\"CONTAINS\",\"value\":\"deny\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"traffic\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_pan_action\",\"preContext\":\"0[xX][0-9a-fA-F]+\\\\,\\\\w+\\\\,\",\"postContext\":\"\\\\,\\\\d+\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3qmfxf6yldoruw63q0\",\"constraints\":null}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  }, {
+    "name":"vRNI_CP_Dropped_Flow",
+    "info":"<span style=\"font-weight: 400; font-style: normal;\">This alert is triggered when VMware Aria Operations for Logs detects dropped flows from the Check Point firewall device logs.</span>",
+    "recommendation":"<span style=\"font-weight: 400; font-style: normal;\">Verify the firewall rules in Check Point firewall device.</span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1655974257405,\"endTimeMillis\":1655974557405,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpwcy3unfxw4000\",\"operator\":\"CONTAINS\",\"value\":\"0\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_cp_action\",\"preContext\":\"action=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"-?\\\\d+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3he3tjozwxox3dobpwcy3unfxw4000\",\"constraints\":null}]}",
+    "messageQuery":"",
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":300000
+  } ],
+  "dashboardSections":[ ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware Inc.",
+  "url":"https://www.vmware.com/in/products/aria-operations-for-networks.html",
+  "contentVersion":"1.1",
+  "info":"<div><span style=\"font-weight: 400; font-style: normal;\">Use this version of \nthe content pack to seamlessly connect with</span> Operations for Networks<span style=\"font-weight: 400; font-style: normal;\"> and get alerts for dropped flows on your Check Point and\n Palo Alto firewall devices. You need to configure these firewall \ndevices to send traffic logs to Operations for Logs to \nuse the functionality. To configure these devices follow the instructions\n from this page - <a href=\"https://docs.vmware.com/en/VMware-vRealize-Network-Insight/6.9/com.vmware.vrni.using.doc/GUID-29EFA50A-10F7-4874-A6CE-BB7DF4F360A3.html\"><span>https://docs.vmware.com/en/VMware-vRealize-Network-Insight/6.9/com.vmware.vrni.using.doc/GUID-29EFA50A-10F7-4874-A6CE-BB7DF4F360A3.html</span></a></span></div>",
+  "instructions":"<ol><li>Browse Alerts Definition on Operations for Logs, search for vRNI and select the 2 alerts created by the Dropped Flow Content Pack. Click the Enable button.</li><li>Edit enabled alerts, select preconfigured webhook and click save.<br></li></ol>",
+  "icon":"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"
+}
