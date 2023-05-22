@@ -226,22 +226,6 @@
   } ],
   "dashboardSections":[ {
     "views":[ {
-      "name":"Dashboard 1",
-      "constraints":[ ],
-      "rows":[ {
-        "widgets":[ {
-          "name":"Total Events",
-          "info":"The total number of events received over time.",
-          "gridWidth":"1/2",
-          "chartType":null,
-          "chartOptions":"{\"doublegroupbymultiseries\":false}",
-          "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":0,\"endTimeMillis\":0,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
-          "messageQuery":null
-        } ]
-      } ],
-      "itemUuid":"741bebfd-dcb4-3a64-b4e8-85519475c3ad"
-    }, {
       "name":"VMware Aria Suite Lifecycle - Content Management Operations Overview",
       "constraints":[ ],
       "rows":[ {
