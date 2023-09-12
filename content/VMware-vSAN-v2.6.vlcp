@@ -3,7 +3,7 @@
   "namespace":"com.vmware.vsan",
   "contentPackId":"com.vmware.vsan",
   "framework":"#9c4",
-  "version":"2.6",
+  "version":"2.7",
   "extractedFields":[ {
     "displayName":"vmw_vsan2_device_disk_uuid",
     "preContext":"with UUID ",
@@ -258,7 +258,7 @@
     "postContext":"'",
     "regexValue":"\\w+",
     "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000",
-    "constraints":"{\"searchTerms\":\"LEAF\"}",
+    "constraints":null,
     "info":null
   }, {
     "displayName":"vmw_vsan_dom_obj_uuid",
@@ -330,7 +330,7 @@
     "postContext":"'",
     "regexValue":"\\w+",
     "internalName":"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000",
-    "constraints":"{\"searchTerms\":\"LEAF\"}",
+    "constraints":"{\"searchTerms\":\"\"}",
     "info":null
   }, {
     "displayName":"vmw_vsan_node_uuid",
@@ -646,7 +646,7 @@
     "name":"vSAN - Object component state changed to degraded",
     "info":"This alert will be triggered when <span>vSAN object state changes to degraded state.</span><span>Check the state of the adapters, disks and network settings associated with the vSAN cluster.</span><br><br>",
     "alertType":"RATE_BASED",
-    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1452886490780,\"endTimeMillis\":1454026292198,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newCompState,newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"degraded\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_dom_new_component_state\",\"preContext\":\"newCompState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LEAF\\\"}\"}]}",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1452886490780,\"endTimeMillis\":1454026292198,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newCompState,newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"degraded\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_dom_new_component_state\",\"preContext\":\"newCompState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"constraints\":null}]}",
     "messageQuery":"",
     "hitCount":0.0,
     "hitOperator":"GREATER_THAN",
@@ -699,7 +699,6 @@
         "widgets":[ {
           "name":"VMkernel events",
           "info":"Total number of events for VMkernel.<br><br>Note: Unless large and/or frequent spikes are seen for a long duration there is no need for concern.<br>",
-          "gridWidth":"1/2",
           "chartType":"area",
           "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
           "widgetType":"chart",
@@ -708,7 +707,6 @@
         }, {
           "name":"VMKwarning events",
           "info":"Total number of events for VMkernel warnings.<br><br>Note: Unless large and/or frequent spikes are seen for a long duration there is no need for concern.<br>",
-          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
           "widgetType":"chart",
@@ -717,7 +715,7 @@
         } ]
       } ]
     }, {
-      "name":"Host State Information",
+      "name":"vSAN - Host State Information",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -790,7 +788,7 @@
         } ]
       } ]
     }, {
-      "name":"Networking",
+      "name":"vSAN - Networking",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -807,16 +805,25 @@
         "widgets":[ {
           "name":"No network connectivity",
           "info":"<span>Total number of events for hosts losing network connectivity in the vSAN cluster. <br><a href=\"http://kb.vmware.com/kb/2058368\">http://kb.vmware.com/kb/2058368</a><br><br><span style=\"font-weight: bold;\">Note:</span> Please check the network settings and reconfigure the network if necessary.</span><br>",
-          "gridWidth":"1",
+          "gridWidth":"1/2",
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
           "chartQuery":"{\"query\":\"vmknic\",\"startTimeMillis\":1523912253746,\"endTimeMillis\":1539641983577,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"MATCH\",\"value\":\"(v|Virtual )SAN is no longer using vmknic\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vobd\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3wnvvw42ld\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"vmw_vsan_vmknic\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3wnvvw42ld\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_vmknic\",\"preContext\":\"(v|Virtual )SAN is no longer using vmknic \",\"postContext\":\"\\\\. There\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3wnvvw42ld\",\"constraints\":\"{\\\"searchTerms\\\":\\\"vobd\\\"}\"}]}",
           "messageQuery":""
+        }, {
+          "name":"vSwitch uplink down",
+          "info":"Total number of events for&nbsp;vSwitch uplink vmnic down.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1690523906902,\"endTimeMillis\":1693365386567,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Uplink\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"is down\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Affected portgroup\"},{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vobd\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
         } ]
       } ]
     }, {
-      "name":"OSA Disk Group Failures",
+      "name":"vSAN OSA - Disk Group Failures",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -849,7 +856,7 @@
         } ]
       } ]
     }, {
-      "name":"ESA Storage Pool Failures",
+      "name":"vSAN ESA - Storage Pool Failures",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -889,7 +896,7 @@
         } ]
       } ]
     }, {
-      "name":"Disk Failures",
+      "name":"vSAN - Disk Failures",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -929,7 +936,7 @@
         } ]
       } ]
     }, {
-      "name":"Congestion",
+      "name":"vSAN - Congestion",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -980,7 +987,7 @@
         } ]
       } ]
     }, {
-      "name":"Configuration Failures",
+      "name":"vSAN - Configuration Failures",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -1050,7 +1057,7 @@
         } ]
       } ]
     }, {
-      "name":"Object Configurations",
+      "name":"vSAN - Object Configurations",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -1131,7 +1138,7 @@
         } ]
       } ]
     }, {
-      "name":"Decommissioning",
+      "name":"vSAN - Decommissioning",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -1193,7 +1200,7 @@
         } ]
       } ]
     }, {
-      "name":"Operation Failures",
+      "name":"vSAN - Operation Failures",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -1252,7 +1259,7 @@
         } ]
       } ]
     }, {
-      "name":"Health",
+      "name":"vSAN - Health",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -1285,7 +1292,7 @@
         } ]
       } ]
     }, {
-      "name":"Object Events",
+      "name":"vSAN - Object Events",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -1294,7 +1301,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"DOMTraceLeafObjectStateChange\",\"startTimeMillis\":1452886490780,\"endTimeMillis\":1454025620026,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newCompState,newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"degraded\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_dom_new_component_state\",\"preContext\":\"newCompState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LEAF\\\"}\"}]}",
+          "chartQuery":"{\"query\":\"DOMTraceLeafObjectStateChange\",\"startTimeMillis\":1452886490780,\"endTimeMillis\":1454025620026,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newCompState,newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"degraded\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_dom_new_component_state\",\"preContext\":\"newCompState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"constraints\":null}]}",
           "messageQuery":""
         }, {
           "name":"Object component state - Absent",
@@ -1302,7 +1309,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1372662000000,\"endTimeMillis\":1446796800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newCompState,newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"absent\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_dom_new_component_state\",\"preContext\":\"newCompState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LEAF\\\"}\"}]}",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1372662000000,\"endTimeMillis\":1446796800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newCompState,newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"absent\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_dom_new_component_state\",\"preContext\":\"newCompState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3en5wv63tfo5pwg33nobxw4zloorpxg5dborsq0000\",\"constraints\":null}]}",
           "messageQuery":""
         } ]
       }, {
@@ -1312,7 +1319,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"DOMTraceLeafObjectStateChange\",\"startTimeMillis\":1452886490780,\"endTimeMillis\":1454024930258,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"stale\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_new_leaf_obj_state\",\"preContext\":\"newLeafObjState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LEAF\\\"}\"}]}",
+          "chartQuery":"{\"query\":\"DOMTraceLeafObjectStateChange\",\"startTimeMillis\":1452886490780,\"endTimeMillis\":1454024930258,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"stale\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_new_leaf_obj_state\",\"preContext\":\"newLeafObjState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
           "messageQuery":""
         }, {
           "name":"Object component state - Resyncing",
@@ -1320,7 +1327,7 @@
           "chartType":null,
           "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
           "widgetType":"chart",
-          "chartQuery":"{\"query\":\"DOMTraceLeafObjectStateChange\",\"startTimeMillis\":1452886490780,\"endTimeMillis\":1454024510966,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"resyncing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_new_leaf_obj_state\",\"preContext\":\"newLeafObjState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"LEAF\\\"}\"}]}",
+          "chartQuery":"{\"query\":\"DOMTraceLeafObjectStateChange\",\"startTimeMillis\":1452886490780,\"endTimeMillis\":1454024510966,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"DOMTraceLeafObjectStateChange\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"newLeafObjState\"},{\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000\",\"operator\":\"CONTAINS\",\"value\":\"resyncing\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vsan_new_leaf_obj_state\",\"preContext\":\"newLeafObjState': '\",\"postContext\":\"'\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadcnk7mnxw2ltwnv3wc4tffz3hgyloozwxox3wonqw4x3omv3v63dfmftf633cnjpxg5dborsq0000\",\"constraints\":\"{\\\"searchTerms\\\":\\\"\\\"}\"}]}",
           "messageQuery":""
         } ]
       }, {
@@ -1336,7 +1343,7 @@
         } ]
       } ]
     }, {
-      "name":"Storage Policy Events 6.7+",
+      "name":"vSAN - Storage Policy Events",
       "constraints":[ ],
       "rows":[ {
         "widgets":[ {
@@ -1386,6 +1393,83 @@
           "messageQuery":""
         } ]
       } ]
+    }, {
+      "name":"vSAN - Encryption",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Deep rekey",
+          "info":"Total number of events for vSAN cluster deep rekey.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1692002234346,\"endTimeMillis\":1692066875085,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"vsan-mgmt\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"VsanVcClusterConfigSystemImpl::RekeyEncryptedCluster\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"deepRekey=True\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Shallow rekey",
+          "info":"Total number of events for vSAN cluster shallow rekey.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1692002234346,\"endTimeMillis\":1692066899447,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"vsan-mgmt\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"VsanVcClusterConfigSystemImpl::RekeyEncryptedCluster\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"deepRekey=False\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Enable encryption",
+          "info":"Total number of events for enabling vSAN cluster encryption.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1692002234346,\"endTimeMillis\":1692066936940,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"encryptionEnabled = true\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Disable encryption",
+          "info":"Total number of events for disabling vSAN cluster encryption.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1692002234346,\"endTimeMillis\":1692066988301,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"encryptionEnabled = false\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      } ]
+    }, {
+      "name":"vSAN - HCI Mesh",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Unicast agent update error",
+          "info":"Total number of events for HCI Mesh unicast agent update error.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1692002234346,\"endTimeMillis\":1692020780222,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vsansystem\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Error updating unicast agent\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"General error in updating client config",
+          "info":"Total number of events for HCI Mesh general error in updating client config.",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1692002234346,\"endTimeMillis\":1692020836993,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vsansystem\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Error occurs when updating vSAN compute client with fault\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Error updating site affinity info",
+          "info":"Total number of events for HCI Mesh error updating site affinity info.",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1692002234346,\"endTimeMillis\":1692020868226,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vsansystem\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Error updating site affinity info to VSI due to host exception\"},{\"internalName\":\"hostname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"hostname\",\"internalName\":\"hostname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      } ]
     } ],
     "header":""
   } ],
@@ -1393,8 +1477,8 @@
   "aliasRules":[ ],
   "author":"VMware Inc.",
   "url":"http://www.vmware.com",
-  "contentVersion":"2.6",
-  "info":"<span>The vSAN content pack provides powerful insight into your vSAN logs, allowing you to make informed and proactive decisions within your environment.</span><br><br>This content pack enables:<br><span style=\"font-weight: bold;\">Proactive monitoring of your vSAN environment</span><br><span>- Quickly identify issues: The various dashboards help to find problems in your vSAN environment.</span><br>- Drill down to determine the root cause: Dashboard filters make it easy to see logs from specific parts of your vSAN environment.<br><span>- Easily consume data: Powerful and dynamic visualizations make it possible to detect anomalies, perform trending analysis, and pinpoint specific issues through targeted queries.</span><br>- Alerts: Know what to monitor in your vSAN logs and get notified when such events are detected.<br><br><span style=\"font-weight: bold;\">Additional information and context</span><br>- Query notes: Each dashboard widget includes information about the widget with links to documentation, knowledge base articles, and any other information making it possible to understand the data presented.<br><br><br>Changelog<br><ul><li>v2.2: Bug fixes; Overview dashboard; Storage Policy Events dashboard</li><li>v2.3:&nbsp;</li><li>v2.4:&nbsp;Bug fixes; Component creation failure - No capacity; vSAN - Object component state changed to degraded</li><li>v2.5:&nbsp;Split the 'Diskgroup Failures' group to 3 groups: 1. 'OSA Disk Group Failues';2. 'ESA Storage Pool Failures';3. 'Disk Failures';Update 3 widgets to support ESA:1. 'Disk offline';2. 'Component creation failure - Maximum components reached';3. 'Object lost liveness';Add 4 widgets for ESA in group 'ESA Storage Pool Failures':1.'Storagepool disk announcement failure';2.'Storagepool disk init failure';3.'Storagepool disk mount failure';4.'Storagepool partition recovery failure'</li><li>2.6:&nbsp;Rebranding old names of Log Insight to 'VMware Aria Operations for Logs'</li></ul>",
+  "contentVersion":"2.7",
+  "info":"The vSAN content pack provides powerful insight into your vSAN logs, allowing you to make informed and proactive decisions within your environment.<br><br>This content pack enables:<br><span style=\"font-weight: bold;\">Proactive monitoring of your vSAN environment</span><br>- Quickly identify issues: The various dashboards help to find problems in your vSAN environment.<br>- Drill down to determine the root cause: Dashboard filters make it easy to see logs from specific parts of your vSAN environment.<br>- Easily consume data: Powerful and dynamic visualizations make it possible to detect anomalies, perform trending analysis, and pinpoint specific issues through targeted queries.<br>- Alerts: Know what to monitor in your vSAN logs and get notified when such events are detected.<br><br><span style=\"font-weight: bold;\">Additional information and context</span><br>- Query notes: Each dashboard widget includes information about the widget with links to documentation, knowledge base articles, and any other information making it possible to understand the data presented.<br><br><br>Changelog<br><ul><li>v2.2: Bug fixes; Overview dashboard; Storage Policy Events dashboard</li><li>v2.3:&nbsp;</li><li>v2.4:&nbsp;Bug fixes; Component creation failure - No capacity; vSAN - Object component state changed to degraded</li><li>v2.5:&nbsp;Split the 'Diskgroup Failures' group to 3 groups: 1. 'OSA Disk Group Failues';2. 'ESA Storage Pool Failures';3. 'Disk Failures';Update 3 widgets to support ESA:1. 'Disk offline';2. 'Component creation failure - Maximum components reached';3. 'Object lost liveness';Add 4 widgets for ESA in group 'ESA Storage Pool Failures':1.'Storagepool disk announcement failure';2.'Storagepool disk init failure';3.'Storagepool disk mount failure';4.'Storagepool partition recovery failure'</li><li>2.6:&nbsp;Rebranding old names of Log Insight to 'VMware Aria Operations for Logs'</li><li>2.7: Bug fixes: Object component state - Resyncing; Add a new event 'vSwitch uplink down' to networking group; Add 2 new groups: 'Encryption' and 'HCI Mesh', 'Encryption' group contains events: 'Deep rekey', 'Shallow rekey', 'Enable encryption', 'Disable encryption', 'HCI Mesh' group contains events: 'Unicast agent update error', 'General error in updating client config', 'Error updating site affinity info'.</li></ul>",
   "instructions":"<span>The VMware - vSAN content pack integrates with vSphere environments in two different ways and requires one or more of the below configurations.</span><br><br><span style=\"font-weight: bold;\">vCenter Server Events, Tasks, and Alarms</span><br>vSphere integration should be configured for each vCenter Server instance -- even if instances are in Linked Mode -- with the checkbox to allow collection of Events, Tasks, and Alarms.<br><br><span style=\"font-weight: bold;\">ESX/ESXi Syslog</span><br><span>vSphere integration should be configured for each vCenter Server instance on which ESX/ESXi logs are desired with the checkbox to configure ESX/ESXi hosts. Note if ESX/ESXi hosts are already configured to forward syslog to VMware Aria Operations for Logs through a means outside of vSphere integration then the VMware - vSAN content pack will still work. The vSphere integration for ESX/ESXi hosts is not a requirement for the VMware - vSAN content pack -- though vSphere integration is a requirement to collect vCenter Server events, tasks, and alarms.&nbsp;</span><br><br><span style=\"font-weight: bold;\">Note</span><br>1. The majority of the vSAN dashboards in VMware Aria Operations for Logs are designed to capture and render log event entries that may provide additional context and insight to vSAN alerts found in vCenter. vSAN clusters with little activity, no error conditions, or very few resources used may yield a minimal number of log events. This behavior is expected.<br>2. To make Storage Policy Events dashboard take effect, the vSphere 6.7 - vCenter (Linux) SPBM&nbsp;<a href=\"https://10.161.121.241/admin/agents\">agent group</a>&nbsp;should be enabled and configured.",
   "upgradeInstructions":"Thanks for upgrading! You are all set -- see the description for the changelog.",
   "icon":"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"
