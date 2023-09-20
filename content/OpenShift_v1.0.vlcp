@@ -1,0 +1,185 @@
+{
+  "name":"OpenShift",
+  "namespace":"com.redhat.openshift",
+  "contentPackId":"com.redhat.openshift",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Openshift Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Number of Nodes",
+          "info":"<div>Show number of nodes in provided time period.<br><br>NOTE: Represented number in the widget shows value in the defined time-range.&nbsp;</div>",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686738356195,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"k8s_host\",\"displayName\":\"k8s_host\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"k8s_host\",\"fieldConstraints\":[{\"internalName\":\"environment\",\"operator\":\"CONTAINS\",\"value\":\"openshift\"},{\"internalName\":\"k8s_host\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Namespaces",
+          "info":"<div>Show number of Namspaces in provided time period.<br><br>NOTE: Represented number in the widget shows value in the defined time-range.&nbsp;<br></div>",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686465859140,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"k8s_ns\",\"displayName\":\"k8s_ns\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"k8s_ns\",\"fieldConstraints\":[{\"internalName\":\"environment\",\"operator\":\"CONTAINS\",\"value\":\"openshift\"},{\"internalName\":\"k8s_ns\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Number of PODs",
+          "info":"<div>Show number of PODs in provided time period.<br><br>NOTE: Represented number in the widget shows value in the defined time-range.&nbsp;<br></div>",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686465859140,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"k8s_pod\",\"displayName\":\"k8s_pod\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"k8s_pod\",\"fieldConstraints\":[{\"internalName\":\"environment\",\"operator\":\"CONTAINS\",\"value\":\"openshift\"},{\"internalName\":\"k8s_pod\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Number of Containers",
+          "info":"<div>Show number of containers in provided time period.<br><br>NOTE: Represented number in the widget shows value in the defined time-range.&nbsp;<br></div>",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686738516196,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"docker_id\",\"displayName\":\"docker_id\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"docker_id\",\"fieldConstraints\":[{\"internalName\":\"environment\",\"operator\":\"CONTAINS\",\"value\":\"openshift\"},{\"internalName\":\"docker_id\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"5da9486c-4ed1-3dd0-840c-62fbd13554f3"
+    }, {
+      "name":"Openshift Health",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Logs Distributions Grouped By Logging Level",
+          "info":"Logs distributions by logging levels. My help to identify majority of&nbsp; logs with corresponding logging level.<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;",
+          "gridWidth":"1",
+          "chartType":"bar",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686739648956,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Logs Grouped By Logging Levels Over Time",
+          "info":"Logs distributions by logging levels over time period.<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686739648956,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"level\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"level\",\"internalName\":\"level\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"Error Over Time",
+          "info":"Error logs over time.<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686750844571,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"environment\",\"operator\":\"CONTAINS\",\"value\":\"openshift\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Error Grouped By Namespaces",
+          "info":"Error logs over time grouped by namespaces.<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686752351278,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"k8s_ns\",\"operator\":\"EXISTS\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"k8s_ns\",\"internalName\":\"k8s_ns\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Errors grouped BY PODs Over Time",
+          "info":"Error logs over time grouped by PODs.<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686739648956,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"k8s_pod\",\"operator\":\"EXISTS\"},{\"internalName\":\"level\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"k8s_pod\",\"internalName\":\"k8s_pod\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Error by Apps",
+          "info":"<div>Error logs over time grouped by Apps.<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;<br></div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686831224142,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"k8s_app\",\"operator\":\"EXISTS\"},{\"internalName\":\"environment\",\"operator\":\"CONTAINS\",\"value\":\"openshift\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"k8s_app\",\"internalName\":\"k8s_app\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Logging Infra errors",
+          "info":"<div>Error logs over time related to the logs collector.<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;<br></div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"error\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686465859140,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"environment\",\"operator\":\"CONTAINS\",\"value\":\"openshift\"},{\"internalName\":\"k8s_app\",\"operator\":\"CONTAINS\",\"value\":\"fluentd-loginsight-logging\"},{\"internalName\":\"k8s_container\",\"operator\":\"CONTAINS\",\"value\":\"fluentd-vrli\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"a1a1f8ba-fc7c-3a5c-901b-e7e88d5ae4cf"
+    }, {
+      "name":"Openshift PODs",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Log Distribution Grouped By PODs",
+          "info":"Shows logs distributions by PODs.<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686739648956,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"k8s_pod\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"k8s_pod\",\"internalName\":\"k8s_pod\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"PODs Grouped By Namespace ",
+          "info":"Shows PODs distributions by namespace. Widget may help to identify load distribution and location.&nbsp;&nbsp;<br><br>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686739648956,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"k8s_pod\",\"operator\":\"EXISTS\"},{\"internalName\":\"k8s_ns\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"k8s_ns\",\"internalName\":\"k8s_ns\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"k8s_pod\",\"internalName\":\"k8s_pod\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Image Usage By PODs",
+          "info":"<span>Shows image usage by PODs. Widget may help to identify image usage and location.&nbsp;&nbsp;</span><br><br><span>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;</span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":true,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686739648956,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"k8s_pod\",\"displayName\":\"k8s_pod\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"k8s_pod\",\"fieldConstraints\":[{\"internalName\":\"k8s_pod\",\"operator\":\"EXISTS\"},{\"internalName\":\"k8s_image\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"k8s_pod\",\"internalName\":\"k8s_pod\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"k8s_image\",\"internalName\":\"k8s_image\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        }, {
+          "name":"IP Usage Grouped By PODs",
+          "info":"<span>Shows IP assignment in PODs.&nbsp; &nbsp;</span><br><br><span>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;</span>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686751922337,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"k8s_pod\",\"displayName\":\"k8s_pod\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"k8s_pod\",\"fieldConstraints\":[{\"internalName\":\"k8s_pod_ip\",\"operator\":\"EXISTS\"},{\"internalName\":\"k8s_pod\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"k8s_pod\",\"internalName\":\"k8s_pod\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"k8s_pod_ip\",\"internalName\":\"k8s_pod_ip\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Containers Grouped By PODs",
+          "info":"<span>Shows container on PODs. Widget may help to identify image usage and location.&nbsp;&nbsp;</span><br><br><span>NOTE: Represented data in the widget shows value in the defined time-range.&nbsp;</span>",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"doublegroupbymultiseries\":true,\"legend\":true,\"swapfields\":false,\"doublegroupbystacking\":\"none\",\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1686434747000,\"endTimeMillis\":1686739648956,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false}],\"field\":{\"internalName\":\"k8s_container\",\"displayName\":\"k8s_container\",\"displayNamespace\":null}}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Unique count\",\"value\":\"UCOUNT\",\"requiresField\":true,\"numericOnly\":false},\"piqlFunctionField\":\"k8s_container\",\"fieldConstraints\":[{\"internalName\":\"k8s_container\",\"operator\":\"EXISTS\"},{\"internalName\":\"k8s_pod\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"k8s_pod\",\"internalName\":\"k8s_pod\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"k8s_container\",\"internalName\":\"k8s_container\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      } ],
+      "itemUuid":"d2d4ac3b-fa0d-38e1-bed1-d2324b7b4027"
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware",
+  "url":"",
+  "contentVersion":"1.0",
+  "info":"This content pack provides out of the box dashboards, queries and alerts for custom queries derived out of logs generated from a OpenShift Kubernetes Infrastructure. <br>Ensure Log forwarding is configured to forward logs from the Openshift Container Platform to VMware Aria Operations for Logs (see \"Setup Instruction\" section for details).",
+  "instructions":"The setup instructions can be found in the “Log Sources” -&gt; “Containers” -&gt; <a href=\"/log-sources/containers#item=3\">OpenShift</a> page of the VMware Aria Operations for Logs instance.",
+  "icon":"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"
+}
