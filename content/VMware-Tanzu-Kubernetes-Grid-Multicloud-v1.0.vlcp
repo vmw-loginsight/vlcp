@@ -1,0 +1,366 @@
+{
+  "name":"Vmware Tanzu Kubernetes Grid Multicloud",
+  "namespace":"vmware.tanzu.kubernetes.grid",
+  "contentPackId":"vmware.tanzu.kubernetes.grid",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ ],
+  "queries":[ ],
+  "alerts":[ {
+    "name":"Pod Out Of Space: CPU",
+    "info":"<font color=\"#565656\">This alert notifies&nbsp;when pods become out of CPU resource.&nbsp;</font>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1697105250102,\"endTimeMillis\":1697105550474,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Pod Node didn't have enough resource: cpu\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"Pod Stuck – Pending status",
+    "info":"<span style=\"color: rgb(86, 86, 86);\">This alert will notify about pods that is stuck in pending status.</span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1697104439731,\"endTimeMillis\":1697104739885,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kubernetes\"},{\"internalName\":\"tkg_cluster\",\"operator\":\"EXISTS\"},{\"internalName\":\"responseobject_status_phase\",\"operator\":\"CONTAINS\",\"value\":\"pending\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"OOMKilled",
+    "info":"This alert will triage if any pods<span style=\"color: rgb(86, 86, 86); font-family: var(--clr-font, Metropolis, &quot;Avenir Next&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif); font-size: 0.7rem; font-weight: var(--clr-p1-font-weight, 400);\">&nbsp;was killed due to insufficient resources.</span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1697104584221,\"endTimeMillis\":1697104884220,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"OOMKilled\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"Pods Failed Scheduling",
+    "info":"<font color=\"#565656\">This alert notifies&nbsp;about pods failed scheduling events in scheduler.</font>",
+    "alertType":"RATE_BASED_WITH_GROUPS",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1697105778160,\"endTimeMillis\":1697106078448,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-scheduler\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"FailedScheduling\"},{\"internalName\":\"appname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  }, {
+    "name":"Namespace has been deleted",
+    "info":"The alert will notify when&#160;<span>Kubernetes namespace deleted&#160;</span><span>events occurred.</span>",
+    "alertType":"RATE_BASED",
+    "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1697106057415,\"endTimeMillis\":1697106357414,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Namespace has been deleted\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+    "messageQuery":null,
+    "hitCount":0.0,
+    "hitOperator":"GREATER_THAN",
+    "searchPeriod":300000,
+    "searchInterval":60000
+  } ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"API Server Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"API Server Events",
+          "info":"<div>This widget provides over all events occurred to API Server over the time range.<br></div>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1691034294761,\"endTimeMillis\":1691055961486,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"kube-apiserver\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"API server events by pods",
+          "info":"<div>This widget provides over all events occurred to API Server over the time range grouped by pod.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"EXISTS\"},{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-apiserver\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Error Logs Occurred Over Time",
+          "info":"<div>This widget provides total error logs occurred in API Server.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691066552427,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"kube-apiserver\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"API Server Audit logs",
+          "info":"<div>This widget provide total audit logs in API server over time range.</div><div><span><div><span><div><span><div><span><div><span><span><span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></span></span></div></span></div></span></div></span></div></span></div>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1692020112686,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-apiserver\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"audit*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"5db736ff-3a5e-3d27-979f-83c09be4387c"
+    }, {
+      "name":"Controller Manager Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Controller Manager Events",
+          "info":"<div>This widget provides over all events occurred to Controller over the time range.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-controller-manager\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Error Logs Over Time",
+          "info":"<div>This widget provides total error count in controller manager.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"STARTS_WITH\",\"value\":\"kube-controller-manager\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Scale Up Operation Over Time",
+          "info":"<div>This widget provides scale up operation events occurred over time range.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-controller-manager\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Scaled up replica set\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Scale Down Operation Over Time",
+          "info":"<div>This widget provides scale down operation events occurred over time range.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"STARTS_WITH\",\"value\":\"kube-controller-manager\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Scaled down replica set\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Controller Manager Events by pods",
+          "info":"<div>This widget provides over all events occurred to Controller over the time range grouped by pod.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1692099104643,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-controller-manager\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Namespace deleted",
+          "info":"<div>This widget provides over all events occurred when Kubernetes namespace deleted</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1686562239237,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Namespace has been deleted\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"88205d56-60fc-3f6a-bbbd-7b8f8a0c301f"
+    }, {
+      "name":"Control Plane Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Control Plane Events",
+          "info":"<div>This widget provides over all events occurred to control plane over the time range.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1692023807217,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"control-plane\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Control Plane Events by namespace",
+          "info":"<div>This widget provides over all events occurred to control plane over the time range grouped by namespace</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"msgid\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"control-plane\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"msgid\",\"internalName\":\"msgid\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Control Plane Events by resource",
+          "info":"<div>This widget provides over all events occurred to control plane over the time range grouped by resource</div>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"control-plane\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Control Plane Events by pods",
+          "info":"<div>This widget provides over all events occurred to control plane over the time range grouped by namespace</div>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"EXISTS\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"control-plane\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"0194d9fc-9945-37ad-9566-9aedadabec42"
+    }, {
+      "name":"Pod Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Scale Up of Node Pool Completed",
+          "info":"<div>This widget provides over all events for scale up of node pool completed.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Scale Up\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"finished successfully\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Scale Down of Node Pool Completed",
+          "info":"<div>This widget provides over all events for scale down of node pool completed.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"node group min size reached\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Pod OOMKilled",
+          "info":"<div>This widget provides over all events for the number of times the pod was killed due to insufficient resources.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"OOMKilled\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Pod Stuck - pending status",
+          "info":"<div>This widget provides events for pods stuck in pending status.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685536241929,\"endTimeMillis\":1685536849122,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"log_type\",\"operator\":\"CONTAINS\",\"value\":\"kubernetes\"},{\"internalName\":\"tkg_cluster\",\"operator\":\"EXISTS\"},{\"internalName\":\"responseobject_status_phase\",\"operator\":\"CONTAINS\",\"value\":\"pending\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":null
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Pod successfully created",
+          "info":"<div>This widget provides pods successfully created events over time range.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1686556882105,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"kube-controller-manager\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"'SuccessfulCreate'\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"pod\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Created\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Pod successfully deleted",
+          "info":"<div>This widget provides pods successfully deleted events over time range.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1686557043832,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"appname\",\"operator\":\"STARTS_WITH\",\"value\":\"kube-controller-manager\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"'SuccessfulDelete'\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"pod\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Deleted\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Pod Out Of Space : CPU",
+          "info":"<div>This widget provides pod out of CPU events.</div>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Pod Node didn't have enough resource: cpu\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"61d37432-988e-31a3-b888-35174229e6c7"
+    }, {
+      "name":"Scheduler Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Scheduler Events",
+          "info":"<div>This widget provides over all events occurred to scheduler over the time range.</div>",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-scheduler\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Pods Failed Scheduling",
+          "info":"<div>This widget provides pods failed scheduling events in scheduler.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-scheduler\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"FailedScheduling\"},{\"internalName\":\"appname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Scheduler Error Logs",
+          "info":"<div>This widget provides total error logs occurred in scheduler.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"SUMMARY\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-scheduler\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"error\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Scheduler Events by pods",
+          "info":"<div>This widget provides over all events occurred to Scheduler over the time range grouped by pod name.</div>",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-scheduler\"},{\"internalName\":\"appname\",\"operator\":\"EXISTS\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"appname\",\"internalName\":\"appname\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Scheduler Event Trend",
+          "info":"<div>This widget provides event trends to scheduler events.</div>",
+          "chartType":"line",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":true,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1691956800000,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"kube-scheduler\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"dda65bd0-8fa1-3c17-92b5-e6788e029546"
+    }, {
+      "name":"Velero Overview",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Velero Credentials Expired",
+          "info":"<div>This widget provides total velvero credentials expired events.</div>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1689080636897,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"velero\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"Error listing backups in backup store\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        }, {
+          "name":"Velero Bucket Deleted After Taking a Backup",
+          "info":"<div>This widget provides total velvero bucket deleted events after taking a backup.</div>",
+          "gridWidth":"1/2",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1685101211902,\"endTimeMillis\":1689080636897,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"procid\",\"operator\":\"CONTAINS\",\"value\":\"velero\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"NoSuchBucket: The specified bucket does not exist\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[]}",
+          "messageQuery":""
+        } ]
+      } ],
+      "itemUuid":"3901d213-61b6-3cdd-871d-979ee4382fa9"
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"VMware, Inc.",
+  "url":"https://tanzu.vmware.com/",
+  "contentVersion":"1.0",
+  "info":"<span>VMware Tanzu Kubernetes Grid provides organizations with a consistent, upstream-compatible, regional Kubernetes substrate across software-defined data centers (SDDCs) and public cloud environments. This substrate is ready for end-user workloads and ecosystem integrations. Tanzu Kubernetes Grid builds on trusted upstream and community projects and delivers a Kubernetes platform that is engineered and supported by VMware, So that you do not have to build your Kubernetes environment by yourself. The Tanzu Kubernetes Grid multi-cloud (TKGm) Content Pack provides content for API server logs, controller logs, scheduler logs, pod related logs, and so on. This content pack supports Fluent Bit integration.</span>",
+  "instructions":"<span style=\"font-weight: bold;\">Content pack is based on the fluentbit agent.</span><br><br><span style=\"font-weight: bold;\">The following yaml config file that is needed to configure Fluentbit to collect logs need to save into the *.yaml file need and applied on TKGm cluster. Do not forget to replay 'VRLI-IP' with your target Aria Operations for Logs instance FQDN/IP.</span><br><br><div>namespace: tanzu-system-logging</div><div>fluent_bit:</div><div>&nbsp; config:</div><div>&nbsp; &nbsp; service: |</div><div>&nbsp; &nbsp; &nbsp; [Service]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Flush&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;1</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Log_Level&nbsp; &nbsp; &nbsp;info</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Daemon&nbsp; &nbsp; &nbsp; &nbsp; off</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Parsers_File&nbsp; parsers.conf</div><div>&nbsp; &nbsp; &nbsp; &nbsp; HTTP_Server&nbsp; &nbsp;On</div><div>&nbsp; &nbsp; &nbsp; &nbsp; HTTP_Listen&nbsp; &nbsp;0.0.0.0</div><div>&nbsp; &nbsp; &nbsp; &nbsp; HTTP_Port&nbsp; &nbsp; &nbsp;2020</div><div>&nbsp; &nbsp; outputs: |</div><div>&nbsp; &nbsp; &nbsp; [OUTPUT]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;stdout</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *</div><br><div>&nbsp; &nbsp; &nbsp; [OUTPUT]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;syslog</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kube.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Host&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;VRLI-IP&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Port&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;514</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Mode&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tcp</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Format&nbsp; &nbsp; &nbsp; &nbsp; rfc5424</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Hostname_key&nbsp; tkg_cluster</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Appname_key&nbsp; &nbsp;pod_name</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Procid_key&nbsp; &nbsp; container_name</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Message_key&nbsp; &nbsp;message</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Msgid_key&nbsp; &nbsp; &nbsp;namespace_name</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_SD_key&nbsp; &nbsp; &nbsp; &nbsp; k8s</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_SD_key&nbsp; &nbsp; &nbsp; &nbsp; labels</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_SD_key&nbsp; &nbsp; &nbsp; &nbsp; annotations</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_SD_key&nbsp; &nbsp; &nbsp; &nbsp; tkg</div><div>&nbsp; &nbsp; &nbsp; # Syslog - systemd</div><br><div>&nbsp; &nbsp; &nbsp; [OUTPUT]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;syslog</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kube.audit</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Host&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;VRLI-IP?</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Port&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;514</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Mode&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tcp</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Format&nbsp; &nbsp; &nbsp; &nbsp; rfc5424</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Hostname_key&nbsp; node_name</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Appname_key&nbsp; &nbsp;kubernetes</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Message_key&nbsp; &nbsp;message</div><br><div>&nbsp; &nbsp; &nbsp; [OUTPUT]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; syslog</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;audit.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Host&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;VRLI-IP&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Port&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 514</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Mode&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tcp</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;rfc5424</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Hostname_key&nbsp; &nbsp;node_name</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Appname_key&nbsp; &nbsp; kubernetes</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Syslog_Message_key&nbsp; &nbsp; message</div><br><div>&nbsp; &nbsp; inputs: |</div><div>&nbsp; &nbsp; &nbsp; [INPUT]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tail</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Path&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /var/log/containers/*.log</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Parser&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cri</div><div>&nbsp; &nbsp; &nbsp; &nbsp; DB&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /var/log/flb_kube.db</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Tag&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kube.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Mem_Buf_Limit&nbsp; &nbsp; &nbsp; &nbsp;5MB</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Skip_Long_Lines&nbsp; &nbsp; &nbsp;On</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Refresh_Interval&nbsp; &nbsp; 10</div><br><div>&nbsp; &nbsp; &nbsp; [INPUT]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; systemd</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Tag&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kube_systemd.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Path&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /var/log/journal</div><div>&nbsp; &nbsp; &nbsp; &nbsp; DB&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /var/log/flb_kube_systemd.db</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Systemd_Filter&nbsp; &nbsp; &nbsp; _SYSTEMD_UNIT=kubelet.service</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Systemd_Filter&nbsp; &nbsp; &nbsp; _SYSTEMD_UNIT=containerd.service</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Read_From_Tail&nbsp; &nbsp; &nbsp; On</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Strip_Underscores&nbsp; &nbsp;On</div><br><div>&nbsp; &nbsp; &nbsp; [INPUT]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tail</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Tag&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;apiserver_audit.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Path&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /var/log/kubernetes/*.log</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Parser&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; json</div><div>&nbsp; &nbsp; &nbsp; &nbsp; DB&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /var/log/flb_kube_audit.db</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Mem_Buf_Limit&nbsp; &nbsp; &nbsp; &nbsp;50MB</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Skip_Long_Lines&nbsp; &nbsp; &nbsp;On</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Refresh_Interval&nbsp; &nbsp; 10</div><br><div>&nbsp; &nbsp; &nbsp; [INPUT]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tail</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Tag&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;audit.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Path&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /var/log/audit/audit.log</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Parser&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; auditlog</div><div>&nbsp; &nbsp; &nbsp; &nbsp; DB&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /var/log/flb_system_audit.db</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Mem_Buf_Limit&nbsp; &nbsp; &nbsp; &nbsp;5MB</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Skip_Long_Lines&nbsp; &nbsp; &nbsp;On</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Refresh_Interval&nbsp; &nbsp; 10</div><div>&nbsp; &nbsp; filters: |</div><div>&nbsp; &nbsp; &nbsp; [FILTER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kubernetes</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kube.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Kube_URL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; https://kubernetes.default.svc:443</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Kube_CA_File&nbsp; &nbsp; &nbsp; &nbsp; /var/run/secrets/kubernetes.io/serviceaccount/ca.crt</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Kube_Token_File&nbsp; &nbsp; &nbsp;/var/run/secrets/kubernetes.io/serviceaccount/token</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Kube_Tag_Prefix&nbsp; &nbsp; &nbsp;kube.var.log.containers.</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Merge_Log&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;On</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Merge_Log_Key&nbsp; &nbsp; &nbsp; &nbsp;log_processed</div><div>&nbsp; &nbsp; &nbsp; &nbsp; K8S-Logging.Parser&nbsp; On</div><div>&nbsp; &nbsp; &nbsp; &nbsp; K8S-Logging.Exclude On</div><br><div>&nbsp; &nbsp; &nbsp; [FILTER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; record_modifier</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Record tkg_instance tanzu cluster-name</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Record tkg_cluster&nbsp; tanzu cluster-name</div><br><div>&nbsp; &nbsp; &nbsp; [FILTER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; record_modifier</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp;audit.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Record&nbsp; &nbsp; &nbsp; node_name ${HOSTNAME}</div><br><br><div>&nbsp; &nbsp; &nbsp; [FILTER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; modify</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kube.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Copy&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kubernetes k8s</div><br><br><div>&nbsp; &nbsp; &nbsp; [FILTER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; record_modifier</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp;kube.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Record&nbsp; &nbsp; &nbsp; node_name ${HOSTNAME}</div><br><div>&nbsp; &nbsp; &nbsp; [FILTER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; nest</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Match&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kube.*</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Operation&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lift</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Nested_Under&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kubernetes</div><div>&nbsp; &nbsp; parsers: |</div><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; json</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; json</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Key&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; time</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;%d/%b/%Y:%H:%M:%S %z</div><br><br><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;logfmt</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;logfmt</div><br><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;auditlog</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;regex</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Regex&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^(type=\\w+)\\s+msg=audit\\((\\d+\\.\\d+:\\d+)\\):\\s+(.*)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Key&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;timestamp</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; %s.%L</div><br><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;docker</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;json</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Key&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;time</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; %Y-%m-%dT%H:%M:%S.%L</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Keep&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; On</div><br><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;docker-daemon</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;regex</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Regex&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; time=\"(?&lt;time&gt;[^ ]*)\" level=(?&lt;level&gt;[^ ]*) msg=\"(?&lt;msg&gt;[^ ].*)\"</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Key&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;time</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; %Y-%m-%dT%H:%M:%S.%L</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Keep&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; On</div><br><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cri</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;regex</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Regex&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^(?&lt;time&gt;[^ ]+) (?&lt;stream&gt;stdout|stderr) (?&lt;logtag&gt;[^ ]*) (?&lt;message&gt;.*)$</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Key&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;time</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; %Y-%m-%dT%H:%M:%S.%L%z</div><br><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp;auditlog</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format regex</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Regex&nbsp; ^(type=\\w+)\\s+msg=audit\\((\\d+\\.\\d+:\\d+)\\):\\s+(.*)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Key timestamp</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Format %s.%L</div><br><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;syslog-rfc5424</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;regex</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Regex&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^\\&lt;(?&lt;pri&gt;[0-9]{1,5})\\&gt;1 (?&lt;time&gt;[^ ]+) (?&lt;host&gt;[^ ]+) (?&lt;ident&gt;[^ ]+) (?&lt;pid&gt;[-0-9]+) (?&lt;msgid&gt;[^ ]+) (?&lt;extradata&gt;(\\[(.*)\\]|-)) (?&lt;message&gt;.+)$</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Key&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;time</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; %Y-%m-%dT%H:%M:%S.%L</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Time_Keep&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; On</div><br><div>&nbsp; &nbsp; &nbsp; [PARSER]</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kube-custom</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Format&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;regex</div><div>&nbsp; &nbsp; &nbsp; &nbsp; Regex&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (?&lt;tag&gt;[^.]+)?\\.?(?&lt;pod_name&gt;[a-z0-9](?:[-a-z0-9]*[a-z0-9])?(?:\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*)_(?&lt;namespace_name&gt;[^_]+)_(?&lt;container_name&gt;.+)-(?&lt;docker_id&gt;[a-z0-9]{64})\\.log$</div><div>&nbsp; &nbsp; streams: \"\"</div><div>&nbsp; &nbsp; plugins: \"\"</div><div>&nbsp; daemonset:</div><div>&nbsp; &nbsp; resources: {}</div><div>&nbsp; &nbsp; podAnnotations: {}</div><div>&nbsp; &nbsp; podLabels: {}</div>",
+  "icon":"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"
+}
